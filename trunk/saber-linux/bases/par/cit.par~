@@ -1,0 +1,15 @@
+cit.*=%path_database%cit/data/cit.*
+prologoact.pft=%path_database%www/prologoact.pft
+epilogoact.pft=%path_database%www/epilogoact.pft
+autoridades.pft=%path_database%common/lilacs/pfts/pt/autoridades.pft
+descritores.pft=%path_database%common/lilacs/pfts/pt/descritores.pft
+lildhtm.pft=%path_database%common/lilacs/pfts/pt/lildhtm.pft
+mes.pft=%path_database%common/lilacs/pfts/es/mes.pft
+autor10.pft=%path_database%common/lilacs/pfts/en/autor10.pft
+autor11.pft=%path_database%common/lilacs/pfts/en/autor16.pft
+autor16.pft=%path_database%common/lilacs/pfts/en/autor17.pft
+autor17.pft=%path_database%common/lilacs/pfts/en/autor17.pft
+tabela.pft=%path_database%common/lilacs/pfts/en/tabela.pft
+decs.pft=%path_database%common/lilacs/pfts/decs.pft
+tp71.pft=%path_database%common/lilacs/pfts/tp71.pft
+
