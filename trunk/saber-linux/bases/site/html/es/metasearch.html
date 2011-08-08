@@ -1,0 +1,23 @@
+<div id="search" style="display: block;">
+<h3><span>Búsqueda en el ABCD</span>
+
+</h3>
+<form name="searchForm" action="#" method="post" onsubmit="return(executeSearch());">
+
+<input type="hidden" name="lang" value="pt"/>
+<input type="hidden" name="engine" value="metaiah"/>
+<input type="hidden" name="group" value="<?= $_REQUEST['id'] ?>"/>
+<input type="hidden" name="view" value="<?= $def['RESULT'] ?>"/>
+<div class="searchItens">
+
+
+<input type="text" name="expression"  class="expression" />
+
+	<p class="submit">
+<input type="submit" value="Pesquisar" name="submit" />
+</p>
+</div>
+</form>
+<span class="advancedSearch">
+<a href="/site/metaiah/search.php?lang=pt&amp;form=advanced">filtro de pesquisa</a></span>
+</div>
