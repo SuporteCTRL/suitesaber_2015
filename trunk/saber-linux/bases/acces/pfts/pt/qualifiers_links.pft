@@ -1,0 +1,8 @@
+(if p(v20) then  
+'<a href="http://localhost:9090/central/dataentry/fmt.php?Opcion=ver&base=ceids&cipar=ref.par&Mfn='ref(l(['/var/www/bases/ceids/data/ceids']'DO_'v92,v20,v4),mfn)'
+&ver=S&Formato=default">
+'ref(l(['/var/www/bases/ceids/data/ceids']'DO_'v92,v20,v4),v4,' - REGISTRO MÃE- 'mfn)'
+</a><br><br>'
+fi,)
+
+
