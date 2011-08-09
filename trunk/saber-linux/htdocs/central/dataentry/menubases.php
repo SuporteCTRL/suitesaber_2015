@@ -1,7 +1,3 @@
-<!--Editado em 27/04/2011
-Linha: 195
- -->
-
 <?php
 global $valortag;
 session_start();
