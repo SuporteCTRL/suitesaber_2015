@@ -52,7 +52,7 @@ $wxisUrl="";
 //$wxisUrl="http://localhost:9090/cgi-bin/wxis.exe";
 
 //Name of the institution
-$institution_name="Saber ABCD";
+$institution_name="Suíte Saber";
 
 //Ruta hacia el archivo con la configuración del FCKeditor
 $FCKConfigurationsPath="/".$app_path."/dataentry/fckconfig.js";
