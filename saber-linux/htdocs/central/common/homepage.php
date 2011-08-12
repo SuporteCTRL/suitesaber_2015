@@ -513,8 +513,11 @@ if ($dirtree==1){
 			<div class="boxBottom">
 			<div class="bbLeft">&#160;</div>
 			<div class="bbRight">&#160;</div>
+			
 		</div>
 	</div>
+	
+
 </div>
 
 
@@ -533,3 +536,9 @@ function MenuAcquisitionsAdministrator(){
 function MenuLoanAdministrator(){
    include("menucirculation.php");
 }
+?>
+
+						<!--[if IE]>
+<?php include ("../css/saber/iesucks/index.php"); ?>
+
+		<![endif]-->
