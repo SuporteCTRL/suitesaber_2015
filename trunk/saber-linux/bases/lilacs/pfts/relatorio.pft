@@ -1,0 +1,46 @@
+'
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+<style>
+tr {
+	width: 3433px;
+
+}
+h1 {
+	font-family:"Arial",Georgia,Serif;
+	font-size: 15px;
+}
+table {
+border-collapse: collapse; 
+
+}
+tr,td {
+	border: 2px solid #000000;
+	padding: 0;
+}
+
+
+</style>'
+'<tr>',
+'<td valign=top><font face=arial size=2>'v2+|; | if a(v2) then '&nbsp;' fi,'</td>'/
+'<td valign=top><font face=arial size=2>'v7+|<br> | if a(v7) then '&nbsp;' fi,'</td>'/
+'<td valign=top><font face=arial size=2>'(if p(v3) then | |v3^a,| <br>|v3^b,| <br>|v3^c,| |v3^t, if iocc<>nocc(v3) then '<br>' fi fi/) if a(v3) then '&nbsp;' fi,'</td>'/
+'<td valign=top><font face=arial size=2>'
+(if p(v10) then | |v10^*,| |v10^p,| |v10^c,| |v10^r,| |v10^1,| |v10^2,| |v10^3, if iocc<>nocc(v10) then '<br>' fi fi/) if a(v10) then '&nbsp;' fi,
+(if p(v11) then | |v11^*,| |v11^p,| |v11^c,| |v11^r,| |v11^1,| |v11^2,| |v11^3, if iocc<>nocc(v11) then '<br>' fi fi/) if a(v11) then '&nbsp;' fi,
+(if p(v16) then | |v16^*,| |v16^p,| |v16^c,| |v16^r,| |v16^1,| |v16^2,| |v16^3, if iocc<>nocc(v16) then '<br>' fi fi/) if a(v16) then '&nbsp;' fi,
+(if p(v17) then | |v17^*,| |v17^p,| |v17^c,| |v17^r,| |v17^1,| |v17^2,| |v17^3, if iocc<>nocc(v17) then '<br>' fi fi/) if a(v17) then '&nbsp;' fi,
+(if p(v23) then | |v23^*,| |v23^p,| |v23^c,| |v23^r,| |v23^1,| |v23^2,| |v23^3, if iocc<>nocc(v23) then '<br>' fi fi/) if a(v23) then '&nbsp;' fi,
+(if p(v24) then | |v24^*,| |v24^p,| |v24^c,| |v24^r,| |v24^1,| |v24^2,| |v24^3, if iocc<>nocc(v24) then '<br>' fi fi/) if a(v24) then '&nbsp;' fi,
+'</td>'/
+'<td valign=top><font face=arial size=2>'
+
+(if p(v12) then | |v12^*,| |v12^i, if iocc<>nocc(v12) then '<br>' fi fi/) if a(v12) then '&nbsp;' fi,
+(if p(v18) then | |v18^*,| |v18^i, if iocc<>nocc(v18) then '<br>' fi fi/) if a(v18) then '&nbsp;' fi,
+(if p(v25) then | |v25^*,| |v25^i, if iocc<>nocc(v25) then '<br>' fi fi/) if a(v25) then '&nbsp;' fi,
+
+'</td>'/
+
+'<td valign=top><font face=arial size=2>'(if p(v62) then | |v62| | if iocc<>nocc(v62) then '<br>' fi fi/) if a(v62) then '&nbsp;' fi,'</td>'/
+
+'<td valign=top><font face=arial size=2>'(if p(v64) then | |v64| | if iocc<>nocc(v64) then '<br>' fi fi/) if a(v64) then '&nbsp;' fi,'</td>'/
+'</tr>'
