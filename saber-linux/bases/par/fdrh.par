@@ -1,6 +1,0 @@
-fdrh.*=%path_database%fdrh/data/fdrh.*
-prologoact.pft=%path_database%www/prologoact.pft
-prologo.pft=%path_database%www/prologo.pft
-epilogoact.pft=%path_database%www/epilogoact.pft
-epilogo.pft=%path_database%www/epilogo.pft
-autoridades.pft=%path_database%fdrh/pfts/pt/autoridades.pft 
