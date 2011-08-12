@@ -1,159 +1,119 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
-<HTML>
-<HEAD>
-<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
-<TITLE>(Untitled)</TITLE>
-</HEAD>
-
-<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
-
-<P><A NAME="cmp852"></A></P>
-
-<P><B>852Número de Localización (R) </B></P>
-
-<P><I>Identifica la organización que tiene el ítem y su disponibilidad. Este campo puede contener la información detallada sobre como localizarlas en la colección.</I></P>
-
-<P><B>Indicadores:</B></P>
-
-<P>1er = Esquema de almacenamiento en la estantería – un valor que indica el sistema o esquema de almacenamiento en la estantería usado. </P>
-
-<P>_ = No hay información </P>
-
-<P>0 = Library of Congress classification </P>
-
-<P>1 = Dewey Decimal classification </P>
-
-<P>2 = National Library of Medicine classification </P>
-
-<P>3 = Superintendent of Documents classification </P>
-
-<P>4 = Numero de control de estante</P>
-
-<P>5 = Título </P>
-
-<P>6 = En estantes separados</P>
-
-<P>7 = Fuente especificada en el subcampo ^2 </P>
-
-<P>8 = Otro esquema</P>
-
-<P>2do = Orden dentro de la estantería – un valor que indica si el ítem esta almacenado bajo un número primario o un esquema alterno de numeración.</P>
-
-<P>_ = No hay información </P>
-
-<P>0 = No hay enumeración</P>
-
-<P>1 = Enumeración primaria – este valor se utiliza solo cuando un esquema de numeración se aplica.</P>
-
-<P>2 = Enumeración alternativa – el ítem lleva dos esquemas de numeración y se almacena siguiendo el segundo esquema.</P>
-
-<P><B>Subcampos:</B></P>
-
-<P>^a Localización (NR) – el código de USMARC para organizaciones que tienen el ítem (para Colombia se debe ingresar los códigos de bibliotecas del ICFES – Anexo A).</P>
-
-<P>^b Sublocalización o subarea(R) – el departamento, biblioteca, colección, etc., dentro de la organización donde esta localizado el ítem. .</P>
-
-<P>^c Localización en el estante (R) </P>
-
-<P>^e Dirección (R) – Calle, ciudad, estado, código postal y ciudad.</P>
-
-<P>^f Calificador de la información codificada (R) – dos o tres caracteres que identifican el número específico del ítem. El subcampo ^f debe estar en seguida del subcampo ^a, ^b, o ^c como calificador.</P>
-
-<P>Tipo de calificador </P>
-
-<P>l - Ultimo – el último, incluye el actual,  unidad actual o parte de la unidad, puede estar en otra localización.</P>
-
-<P>p - Anterior.</P>
-
-<P>No. de Unidades1-9 – No de Unidades</P>
-
-<P>Cuando un número no es fundamental para identificar una unidad específica, el número de unidades se puede omitir. Cuando el calificador tipo es último (código l), el número incluye la unidad actual o parcial. Cuando el calificador de tipo es anterior (código p), el número no incluye el actual o una parte de la unidad actualizada. </P>
-
-<P>Tipo de Unidad</P>
-
-<P>Tiempo</P>
-
-<P>m - Mes(es) </P>
-
-<P>w – Semana (s) </P>
-
-<P>y – Año (s) </P>
-
-<P>Parte</P>
-
-<P>e - Edición(es) </P>
-
-<P>i - Numero (s) </P>
-
-<P>s - Supplemento(s) </P>
-
-<P>^g Calificador de localización sin codificar (R) – un texto que se usa cuando los códigos del subcampo ^f no son los adecuados para describir la localización de la unidad en un sitio distinto del sitio donde se encuentra el ítem principal. El subcampo ^g debe aparecer a continuación de los <B>Subcampos:</B> ^a, ^b, o ^c, pues es un calificador. </P>
-
-<P>^h Clasificación de la parte (NR) </P>
-
-<P>^i Parte del Item (R) </P>
-
-<P>^j No. de control de almacenamiento/estantería (NR) </P>
-
-<P>^k Prefijo del número de llamada (NR) </P>
-
-<P>^l Almacenamiento por título (NR) – el almacenamiento por título de un ítem sin clasificar el cual se guardara por título. </P>
-
-<P>^m Sufijo del número de llamada (Call) (NR) </P>
-
-<P>^n Código de país (NR) – dos o tres caracteres de los códigos de USMARC para la localización principal del subcampo ^a. La fuente del código es USMARC Code List for Countries.</P>
-
-<P>^p Designación de la pieza (NR) – una identificación de una sola pieza cuando la información de existencias no esta contenida en los campos  863-865 (Enumeración y Cronologia) o 876-878 (Información del ítem) que contiene un subcampo ^p (Designación de la pieza). </P>
-
-<P>^q Condición física de la pieza (NR) – una descripción de características raras de la condición física de la pieza cuando la información no tiene campo 863-865 (Enumeración y Cronologia) o 876-878 (Información del Item) que contiene un  subcampo ^q (Condición física de la pieza). </P>
-
-<P>^s Código de costos de derechos de autor para artículos (R) </P>
-
-<P>^t No. de copia (NR) – un no. de copia o un rango de números para copias que tienen la misma localización y números de clasificación o ubicación (llamada/call) cuando la información de existencias no esta en los campos 863-865 Enumeración y Cronologia y no contiene subcampo ^t (No. de Copia). </P>
-
-<P>^x Nota no pública (R) - Información que no esta escrita en forma adecuada para el público.</P>
-
-<P>^z Nota pública (R) </P>
-
-<P>^2 Fuente de clasificación o  Esquema de almacenamiento en la estantería (NR) </P>
-
-<P>^3 Materiales específicos  (NR) – identifica la parte del ítem bibliográfico para el cual el campo se aplica. El subcampo ^3 es el 1er subcampo en el campo. </P>
-
-<P>^6  Apuntador (NR) – Contiene datos que hacen links de pares de campos a los campos de representación gráfica alterna. El subcampo contiene una etiqueta asociada al campo y un número de ocurrencia. Una descripción completa de este subcampo ^6 y la guía de aplicaciones dan en 880.</P>
-
-<P>^8  Apuntador y número secuencial (NR)</P>
-
-<P><B>Ejemplos:</B></P>
-
-<P>852  01^aCtY ^bMain ^hLB201 ^i.M63</P>
-
-<P>852 __^aCLU</P>
-
-<P>852 __^aNational Archives y Records Service ^bGenealogical Research Recording ^ePennsylvania Ave. at 8th St., N.W., Washington, D.C. USA ^ndcu</P>
-
-<P>852 __^aCSf ^bSci ^t1</P>
-
-<P>852 __^aNational Geographic Society ^bPersonnel Dept. ^e17th &amp; M St., N.W., Washington, DC, USA</P>
-
-<P>852 81^a[location identifier] ^bMain ^cmezzanine stacks</P>
-
-<P>852 81^aFrPALP ^hPer ^iREF</P>
-
-<P>852 4_^aDLC ^bMicRR ^jMicrofilm 82/528 MicRR</P>
-
-<P>852 __^a[location identifier] ^bMain ^coversize shelving ^qchild's graffiti on end papers</P>
-
-<P>852 __^aMH ^cCurrent issues in R.R. ^x1-54 on order in Mfiche</P>
-
-<P>852 81^a[location identifier] ^hM ^iS:55 ^p1100064014 ^xaccession no.: 90/84370</P>
-
-<P>852 _0^3Correspondence ^a[location identifier] ^bManuscript Division</P>
-
-<P><B>Fuente: </B></P>
-
-<P><B>Manual de MARC / preparado por Ana María Ocampo-Ocampo</B></P>
-
-<P><B>Bogotá: ASOISIS, 1998.</B></P>
-
-</BODY>
-</HTML>
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+<TITLE>Campo 852</TITLE>
+</HEAD>
+<BODY LINK="#0000ff" VLINK="#800080">
+<A name=top></A>
+<hr>
+<B><FONT FACE="Times New Roman" SIZE=5></B>
+<P>
+  <b><i><font size="5" face="Times New Roman, Times, serif">Formato Bibliogr&aacute;fico MARC 21 LITE: "Holdings", Localiza&ccedil;&atilde;o, Gr&aacute;ficos
+alternados, etc. Campos (841-88X)</font></i></b></P>
+<font size="3" face="Times New Roman, Times, serif"></font>
+<hr>
+<P><font size="3" face="Times New Roman">Os campos 841-86X cont&eacute;m descri&ccedil;&otilde;es de elementos que
+  s&atilde;o parte integral do <i>Formato Bibliogr&aacute;fico de MARC 21</i>, e elementos de
+  dados que podem aparecer, no mesmo registro bibliogr&aacute;fico, ou como registros
+MARC de cole&ccedil;&otilde;es separadas. </font></p>
+<UL>
+	<LI><font size="3" face="Times New Roman, Times, serif"><a href="ayuda_db.php?base=marc&campo=tag_850.html">850 &ndash; INSTITUI&Ccedil;&Atilde;O DEPOSIT&Aacute;RIA (R)</a> </font></LI>
+	<LI><font size="3" face="Times New Roman, Times, serif"><a href="ayuda_db.php?base=marc&campo=tag_856.html">856 &ndash; LOCALIZA&Ccedil;&Atilde;O ELETR&Ocirc;NICA E ACESSO (R)</a> </font></LI>
+	<LI><font size="3" face="Times New Roman, Times, serif"><a href="ayuda_db.php?base=marc&campo=tag_866.html">866 &ndash; HOLDINGS TEXTUAL - UNIDADE B&Aacute;SICA BIBLIOGR&Aacute;FICA (R) </a></font></LI>
+	<LI><font size="3" face="Times New Roman, Times, serif"><a href="ayuda_db.php?base=marc&campo=tag_867.html">867 &ndash; HOLDINGS TEXTUAL - MATERIAL SUPLEMENTAR (R) </a></font></LI>
+	<LI><font size="3" face="Times New Roman, Times, serif"><a href="ayuda_db.php?base=marc&campo=tag_868.html">868 &ndash; HOLDINGS TEXTUAL - &Iacute;NDICES (R) </a></font></LI>
+	</UL>
+<P><FONT size="3" FACE="Times New Roman, Times, serif">[Mais informa&ccedil;&otilde;es em: <A href="http://www.loc.gov/marc/bibliographic/ecbdhome.html"><EM>Formato MARC 21 Conciso</EM></A>]</FONT></p>
+<HR>
+<font size="3" face="Times New Roman, Times, serif"><a name="mrcb852"></a>
+<b><FONT FACE="Times New Roman" SIZE=4></b></font>
+<P><font size="3" face="Times New Roman, Times, serif"><b> 852 Localiza&ccedil;&atilde;o (R) </b></font></P>
+<P><font size="3" face="Times New Roman">Identifica a organiza&ccedil;&atilde;o que possui o item&nbsp;ou a sua disponibilidade. Este campo pode ainda conter a informa&ccedil;&atilde;o detalhada sobre
+como localizar o item na cole&ccedil;&atilde;o.</font></P>
+<P><font size="3"><b><font face="Times New Roman">Indicadores</font></b></font></P>
+<UL>
+	<LI><font size="3" face="Times New Roman">Primeiro – Esquema de classifica&ccedil;&atilde;o </font></LI>
+	<UL><LI><font size="3" face="Times New Roman"># - N&atilde;o informado</font></LI></UL>
+  <LI><font size="3" face="Times New Roman">Segundo – Ordem na estante</font>
+    <ul>
+      <li><font size="3" face="Times New Roman"># - N&atilde;o informado<br>
+      </font></li>
+    </ul>
+  </LI>
+</UL>
+<P><font size="3"><b><font face="Times New Roman">Subcampos</font></b></font></P>
+<UL>
+	<LI><font size="3" face="Times New Roman">^a - Localiza&ccedil;&atilde;o (NR) <br>
+  Institui&ccedil;&atilde;o ou pessoa que possui  que possui o item ou nas
+      quais est&aacute; dispon&iacute;vel. Cont&eacute;m um c&oacute;digo MARC de uma institui&ccedil;&atilde;o que possui ou o nome da institui&ccedil;&atilde;o ou pessoa. A fonte do c&oacute;digo &eacute; a</font><font size="3" face="Times New Roman"> <EM><A href="http://lcweb.loc.gov/marc/organizations/"><i><span lang=EN-US
+  style='mso-ansi-language:EN-US'>Lista de C&oacute;digo MARC para Organiza&ccedil;&otilde;es </span></i></A><span
+  lang=EN-US style='mso-ansi-language:EN-US'>
+      <o:p></o:p>
+      </span> </EM>ou
+      uma <A 
+  href="http://www.loc.gov/marc/bibliographic/ecbdorg.html">lista afiliada</A>.</font>
+	<LI><font size="3" face="Times New Roman">^b - Sub-localiza&ccedil;&atilde;o ou cole&ccedil;&atilde;o (R) <br>
+    O departamento espec&iacute;fico, biblioteca,  etc., dentro da organiza&ccedil;&atilde;o
+      onde est&aacute; localizado o item, ou da qual pode ser obtido</font></li>
+    <font size="3" face="Times New Roman">
+	<LI>^c - Localiza&ccedil;&atilde;o na estante (R) </LI>
+    </font><font size="3" face="Times New Roman">
+	</font><font face="Times New Roman">
+	<LI><font size="3">^h - Classifica&ccedil;&atilde;o (NR) </font></LI>
+	<font size="3">	</font></font>
+	<LI><font size="3" face="Times New Roman">^i - Parte do item (R) </font></LI>
+	<font face="Times New Roman"><font size="3"><LI>^j - N&uacute;mero de controle de estante (NR) </LI>
+	<LI>^t - N&uacute;mero da c&oacute;pia (NR) </LI>
+	<LI>^x - Nota n&atilde;o p&uacute;blica (R) <br>
+    Informa&ccedil;&atilde;o que n&atilde;o est&aacute; escrita em forma adequada para uso p&uacute;blico.</li>
+	<LI>^z - Nota p&uacute;blica (R) </LI>
+	</font></font><LI><font size="3" face="Times New Roman">^2 - Fonte de classifica&ccedil;&atilde;o ou esquema de arranjo na estante (NR)<br>
+	  C&oacute;digo MARC que identifica a fonte da qual a classifica&ccedil;&atilde;o ou arquivamento foi atribu&iacute;do. &Eacute; usado somente quando a primeira posi&ccedil;&atilde;o do indicador contem o valor 7 (Fonte espec&iacute;fica no subcampo ^2). C&oacute;digo de: </font><a href="http://lcweb.loc.gov/marc/relators/"><i><span lang=EN-US
+  style='mso-ansi-language:EN-US'>Lista de C&oacute;digo MARC para Relatores, Fontes,
+          Conven&ccedil;&otilde;es de Descri&ccedil;&atilde;o </span></i></a><span lang=EN-US style='mso-ansi-language:
+  EN-US'>
+          <o:p></o:p>
+          </span>.</LI>
+	  </UL>
+<P><font size="3"><b><font face="Times New Roman">Exemplos</font></b></font></P>
+<TABLE CELLSPACING=0 BORDER=0 CELLPADDING=4 WIDTH=598>
+<TR><TD WIDTH="9%" VALIGN="TOP">
+  <FONT size="3" FACE="Times New Roman, Times, serif">852</FONT></TD>
+<TD WIDTH="91%" VALIGN="TOP">
+  <FONT size="3" FACE="Times New Roman, Times, serif">##<B>^a</B>CLU</FONT></TD>
+</TR>
+<TR><TD WIDTH="9%" VALIGN="TOP">
+  <FONT size="3" FACE="Times New Roman, Times, serif">852</FONT></TD>
+<TD WIDTH="91%" VALIGN="TOP">
+  <FONT size="3" FACE="Times New Roman, Times, serif">##<B>^a</B>National Archives y Records Service<B>^b</B>Genealogical Research Recording</FONT></TD>
+</TR>
+<TR><TD WIDTH="9%" VALIGN="TOP">
+  <FONT size="3" FACE="Times New Roman, Times, serif">852</FONT></TD>
+<TD WIDTH="91%" VALIGN="TOP">
+  <FONT size="3" FACE="Times New Roman, Times, serif">##<B>^a</B>CSf<B>^b</B>Sci<B>^t</B>1</FONT></TD>
+</TR>
+<TR><TD WIDTH="9%" VALIGN="TOP">
+  <FONT size="3" FACE="Times New Roman, Times, serif">852</FONT></TD>
+<TD WIDTH="91%" VALIGN="TOP">
+  <FONT size="3" FACE="Times New Roman, Times, serif">##<B>^a</B>National Geographic Society<B>^b</B>Personnel Dept. </FONT></TD>
+</TR>
+<TR><TD WIDTH="9%" VALIGN="TOP">
+  <FONT size="3" FACE="Times New Roman, Times, serif">852</FONT></TD>
+<TD WIDTH="91%" VALIGN="TOP">
+  <FONT size="3" FACE="Times New Roman, Times, serif">##<B>^a</B>[location identifier]<B>^b</B>Main<B>^c</B>oversize shelving</FONT></TD>
+</TR>
+<TR><TD WIDTH="9%" VALIGN="TOP">
+  <FONT size="3" FACE="Times New Roman, Times, serif">852</FONT></TD>
+<TD WIDTH="91%" VALIGN="TOP">
+  <FONT size="3" FACE="Times New Roman, Times, serif">##<B>^a</B>MH<B>^c</B>Current issues in R.R <B>^x</B>1-54 on order in Microfiche</FONT></TD>
+</TR>
+</TABLE>
+<HR>
+<P><font size="3" face="Times New Roman, Times, serif"><A href="#top">In&iacute;cio da p&aacute;gina</A></font></P>
+<HR>
+<p><font size="3" face="Times New Roman, Times, serif"><a href="ayuda_db.php?base=marc&campo=Indice.html"><STRONG>&Iacute;ndice geral</STRONG></a></font></p>
+<HR>
+<p><font size="3" face="Times New Roman, Times, serif"><a href="javascript:window.history.go(-1)"><b>Voltar</b></a></font></p>
+<HR>
+</BODY>
+</HTML>

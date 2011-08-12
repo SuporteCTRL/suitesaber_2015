@@ -1,115 +1,89 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
-<HTML>
-<HEAD>
-<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
-<TITLE>(Untitled)</TITLE>
-</HEAD>
-
-<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
-
-<P><A NAME="cmp710"></A></P>
-
-<P><B>710Entradas Secundarias – Nombres Corporativos (O - R)</B></P>
-
-<P><I>Una entrada secundaria que corresponde a un elemento de nombre corporativo.</I></P>
-
-<P><B>Indicadores:</B></P>
-
-<P>1er Indicador = tipo de nombre corporativo – un valor que indica la forma de entrada del elemento del nombre</P>
-
-<P>0 = Nombre invertido</P>
-
-<P>1 = Nombre de Jurisdicción</P>
-
-<P>2 = Nombre en orden directo  - Vea la descripción del 1er indicador en el campo 110.</P>
-
-<P>2do = Tipo de entrada secundaria </P>
-
-<P>_ = No hay información </P>
-
-<P>2 = Entrada analítica</P>
-
-<P><B>Subcampos:</B></P>
-
-<P>^a Nombre corporativo o de jurisdicción como entrada (NR) </P>
-
-<P>^b Unidad subordinada (R) </P>
-
-<P>^c Localización de la reunión (NR) </P>
-
-<P>^d Fecha de la reunión o firma del tratado (R) </P>
-
-<P>^e Relator (R)</P>
-
-<P>^f Fecha del trabajo (NR)</P>
-
-<P>^g Información miscelánea (NR)</P>
-
-<P>^h Medio (R)</P>
-
-<P>^k Formas de subencabezamientos (R) </P>
-
-<P>^l Idioma del trabajo (NR)</P>
-
-<P>^m Medio de performance para música (R)</P>
-
-<P>^n Número de la parte/sección del trabajo (R)</P>
-
-<P>^o Arreglo musical (NR)</P>
-
-<P>^p Nombre de una parte/sección del trabajo (R)</P>
-
-<P>^r Llave para música (NR)</P>
-
-<P>^s Versión (NR)</P>
-
-<P>^t Título del trabajo (NR)</P>
-
-<P>^u Afiliación (NR)</P>
-
-<P>^x ISSN (NR)</P>
-
-<P>^2 Fuente del encabezamiento o término (NR)</P>
-
-<P>^3 Materiales específicos  (NR) - partes de los materiales descritos a los que se les puede aplicar este campo.</P>
-
-<P>^4 Código de relator (R)</P>
-
-<P>^5 Institución a la cual el campo se aplica (NR) </P>
-
-<P>^6  Apuntador (NR)  - Vea la descripción de los <B>Subcampos:</B> ^e, ^f, ^l, ^p, ^t, ^u, y ^4 en el campo 100; <B>Subcampos:</B> ^a, ^b, ^c, ^d, ^g, y ^n en el campo 110; y <B>Subcampos:</B> ^h, ^x, ^3, ^5, y ^6 en el campo 700.</P>
-
-<P><B>Ejemplos:</B></P>
-
-<P>710 1_^aAlgeria. ^tTratados, etc. ^gEnglaterra y Wales, ^d1682 Apr. 20.</P>
-
-<P>710 22^aIglesia Católica. ^tMass, 33rd Sunday of ordinary time (Chant). ^f1979.</P>
-
-<P>710 22^aIglesia Católica. ^bPapa (1958-1963 : Juan XXIII). ^tMater et magistra. ^lFrancés. ^kSelecciones. ^f1963.</P>
-
-<P>710 1_^aEstados Unidos. ^tConstitución. ^p13th Amendment.</P>
-
-<P>710 1_^aEcuador. ^tPlan Nacional de Desarrollo, 1980-1984. ^nParte 1, ^pGrandes objetivos nacionales. ^lIngles</P>
-
-<P>710 2_^aBridgewater Library, ^eformer owner. ^5NjP</P>
-
-<P>710 1_^aMinnesota. ^bConstitutional Convention ^d(1857 : ^gRepublican)</P>
-
-<P>710 2_^aHerbert E. Budek Films y Slides (Firm)</P>
-
-<P>710 1_^aUnited States. ^bArmy Map Service. ^tEastern United States 1:250,000.</P>
-
-<P>710 2_^aNew Orleans Blue Serenaders. ^4prf</P>
-
-<P>710 2_^aWGBH (Television station : Boston, Mass.)</P>
-
-<P>710 2_^aHallmark Coleccion (Library of Congress) ^5DLC</P>
-
-<P><B>Fuente: </B></P>
-
-<P><B>Manual de MARC / preparado por Ana María Ocampo-Ocampo</B></P>
-
-<P><B>Bogotá: ASOISIS, 1998.</B></P>
-
-</BODY>
-</HTML>
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+<TITLE>Campo 710</TITLE>
+</HEAD>
+<BODY LINK="#0000ff" VLINK="#800080">
+<A name=top></A>
+<HR>
+<B><FONT FACE="Times New Roman" SIZE=5></B>
+<P>
+<b><i><font size="5" face="Times New Roman, Times, serif">Formato Bibliogr&aacute;fico MARC 21 LITE: Entradas Secund&aacute;rias — Campos (70X-75X)</font></i></b></P>
+<font size="3" face="Times New Roman, Times, serif"></font>
+<HR>
+<P><font size="3" face="Times New Roman">Os campos 700-75X cont&eacute;m um nome e/ou t&iacute;tulo
+  ou um termo que permitem o acesso aos registros bibliogr&aacute;ficos que n&atilde;o &eacute; permitido  nas entradas principais (1XX), entradas de assuntos (6XX), informa&ccedil;&atilde;o
+de s&eacute;rie (4XX), entradas secund&aacute;rias de s&eacute;rie (8XX), ou t&iacute;tulos (20X-24X). </font></P>
+<UL>
+  <LI><font size="3" face="Times New Roman"><a href="ayuda_db.php?base=marc&campo=tag_700.html">700 - ENTRADA SECUND&Aacute;RIA &ndash; NOME PESSOAL (R) </a></font></LI>
+  <LI><font size="3" face="Times New Roman"><a href="ayuda_db.php?base=marc&campo=tag_711.html">711 - ENTRADA SECUND&Aacute;RIA &ndash; NOME DE EVENTO (R) </a></font></LI>
+  <LI><font size="3" face="Times New Roman"><a href="ayuda_db.php?base=marc&campo=tag_720.html">720 - ENTRADA SECUND&Aacute;RIA &ndash; NOME N&Atilde;O CONTROLADO (R) </a></font></LI>
+  <LI><font size="3" face="Times New Roman"><a href="ayuda_db.php?base=marc&campo=tag_730.html">730 - ENTRADA SECUND&Aacute;RIA &ndash; T&Iacute;TULO UNIFORME (R) </a></font></LI>
+  <LI><font size="3" face="Times New Roman"><a href="ayuda_db.php?base=marc&campo=tag_740.html">740 - ENTRADA SECUND&Aacute;RIA &ndash;N&Atilde;O CONTROLADA DE T&Iacute;TULO RELACIONADO/ANAL&Iacute;TICO (R) </a></font></LI>
+  <LI><font size="3" face="Times New Roman"><a href="ayuda_db.php?base=marc&campo=tag_752.html">752 - ENTRADA SECUND&Aacute;RIA &ndash; HIERARQUIA DE NOME DE LUGAR (R) </a></font></LI>
+</UL>
+<P><FONT size="3" FACE="Times New Roman, Times, serif">[Mais informa&ccedil;&otilde;es em: <A href="http://www.loc.gov/marc/bibliographic/ecbdhome.html"><EM>Formato MARC 21 Conciso</EM></A>]</FONT>
+<HR>
+<font size="3" face="Times New Roman, Times, serif"><a name="mrcb710"></a>
+<b><FONT FACE="Times New Roman" SIZE=4></b></font>
+<P><font size="3" face="Times New Roman, Times, serif"><b> 710 Entrada Secund&aacute;ria – Nome Corporativo (R) </b></font></P>
+<P><font size="3" face="Times New Roman, Times, serif">Entradas secund&aacute;rias o qual o elemento entrado &eacute; um 
+nome corporativo.</font></P>
+<P ALIGN="JUSTIFY"><font size="3" face="Times New Roman, Times, serif"><b>Indicadores</b></font></P>
+<UL>
+	<LI><font size="3" face="Times New Roman, Times, serif">Primeiro – Tipo de nome de autor corporativo como entrada <br>
+        <i>Veja a descri&ccedil;&atilde;o do primeiro indicador no <a href="ayuda_db.php?base=marc&campo=tag_110.html">campo 110</a></i>
+    </font></LI>
+	<UL>
+		<LI><font size="3" face="Times New Roman, Times, serif">1 = Nome de Jurisdi&ccedil;&atilde;o </font></LI>
+		<LI><font size="3" face="Times New Roman, Times, serif">2 = Nome em ordem direta</font></LI>
+	</UL>
+	<LI><font size="3" face="Times New Roman, Times, serif">Segundo – Tipo de entrada adicional </font></LI>
+	<UL>
+	  <LI><font size="3" face="Times New Roman, Times, serif"># - N&atilde;o informado </font></LI>
+	</UL>
+</UL>
+<P ALIGN="JUSTIFY"><font size="3" face="Times New Roman, Times, serif"><b>Subcampos</b></font></P>
+<UL>
+  <LI><font size="3" face="Times New Roman, Times, serif">^a - Nome corporativo ou de jurisdi&ccedil;&atilde;o como entrada (NR) </font></LI>
+	  <font size="3" face="Times New Roman, Times, serif"></font>
+  <LI><font size="3" face="Times New Roman, Times, serif">^b - Unidade subordinada (R) </font></LI>
+      <font size="3" face="Times New Roman, Times, serif">      </font>
+  <LI><font size="3" face="Times New Roman">^e - Termo de rela&ccedil;&atilde;o (R) </font></LI>
+      <font size="3" face="Times New Roman, Times, serif"></font>
+  <LI><font size="3" face="Times New Roman">^t - T&iacute;tulo de trabalho (NR) </font></LI>
+      <font size="3" face="Times New Roman"></font>
+  <LI><font size="3" face="Times New Roman">^u - Afilia&ccedil;&atilde;o (NR) </font></LI>
+      <font size="3" face="Times New Roman, Times, serif">
+      <LI>^4 - C&oacute;digo de rela&ccedil;&atilde;o (R) <br>
+        <i>Veja a descri&ccedil;&atilde;o dos subcampos <B>^a</B>, <B>^b</B>,<B> ^d</B>,<B> ^e</B>,<B> ^q</B>,
+            e<B> ^4</B>, no <a href="ayuda_db.php?base=marc&campo=tag_110.html">campo 110</a></i> </LI>
+      </font>
+</UL>
+<P><font size="3" face="Times New Roman, Times, serif"><b>Exemplos</b></font></P>
+<TABLE CELLSPACING=0 BORDER=0 CELLPADDING=4 WIDTH=674>
+<TR><TD WIDTH="8%" VALIGN="TOP">
+  <FONT size="3" FACE="Times New Roman, Times, serif">710 </FONT></TD>
+<TD WIDTH="92%" VALIGN="TOP"><STRONG>2#</STRONG><STRONG>^a</STRONG>Herbert E. Budek Films and Slides (Firm) </TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="TOP">
+  <FONT size="3" FACE="Times New Roman, Times, serif">710</FONT></TD>
+<TD WIDTH="92%" VALIGN="TOP"><STRONG>1#</STRONG><STRONG>^a</STRONG>United States.<STRONG>^b</STRONG>Army Map   Service.<STRONG>^t</STRONG>Eastern United States 1:250,000. </TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="TOP">
+  <FONT size="3" FACE="Times New Roman, Times, serif">710</FONT></TD>
+<TD WIDTH="92%" VALIGN="TOP"><STRONG>2#</STRONG><STRONG>^a</STRONG>New Orleans Blue   Serenaders.<STRONG>^4</STRONG>prf </TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="TOP">
+  <FONT size="3" FACE="Times New Roman, Times, serif">710</FONT></TD>
+<TD WIDTH="92%" VALIGN="TOP"><STRONG>2#</STRONG><STRONG>^a</STRONG>WGBH (Television station : Boston, Mass.) </TD>
+</TR>
+</TABLE>
+<HR>
+<P><font size="3" face="Times New Roman, Times, serif"><A href="#top">In&iacute;cio da p&aacute;gina</A></font></P>
+<HR>
+<p><font size="3" face="Times New Roman, Times, serif"><a href="ayuda_db.php?base=marc&campo=Indice.html"><STRONG>&Iacute;ndice geral</STRONG></a><a href="Indice.html"></a></font></p>
+<HR>
+<p><a href="javascript:window.history.go(-1)"><b>Voltar</b></a></p>
+</BODY>
+</HTML>
