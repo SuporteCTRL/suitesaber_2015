@@ -1,0 +1,47 @@
+'<style type="text/css">
+h1 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-weight: bold;
+	color: #000;
+	text-align: left;
+}
+h2 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	font-weight: normal;
+	color: #888;
+	text-align: left;
+}
+h3 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-weight: bold;
+	color: #333333;
+	text-align: center;
+}
+h6 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #red;
+	text-align: center;
+}
+table {
+    color:#000;
+    margin-left:10px;
+}
+.menufixo img{padding: 5px;display: inline
+}
+td {
+width: 13%;
+}
+</style>'
+'<tr>'
+(if p(v7) then '<td>' ref(mfn,(if p(v7) then |<h1>|v3^b,|<br>|,v3^c|</h1>|,v3^*|<BR></h1>|, fi))fi,
+if p(v7) then ,|<h2>|v7 ref(mfn,(if p(v7) then ,if v3^a= '559.1' THEN '- CEIDS</h2><br></td>' fi, fi))fi,)
+
+(if a(v7) then ,'<td>' ref(mfn,(if p(v30) then |<h3>|v30,|</h3><h1>V.|v31,|<br>n.|,v32|<br></h1>|, fi))fi,
+if a(v7) then '<h2>CEIDS</td>' fi,)
+
+'</tr>'

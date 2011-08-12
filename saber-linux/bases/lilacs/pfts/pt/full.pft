@@ -1,0 +1,243 @@
+'<style>
+strong,b {
+	margin-left:15px;
+	margin-top:5px;
+	color: #ffffff;
+	background: #000000;
+	padding:0 3px 0 3px;
+	border: solid 1px #ffffff;
+
+}
+
+</style>
+<h1><br />Descrição dos campos de dados</h1>'
+if p(v1) then '<b>1</b>' v1'<br />' fi,
+
+if p(v2) then '<b>2</b>'v2'<br />' fi,
+
+if p(v3) then '<b>3</b>'v3'<br />' fi,
+
+if p(v4) then '<b>4</b>'v4'<br />' fi,
+
+if p(v5) then '<b>5</b>'v5'<br />' fi,
+
+if p(v6) then '<b>6</b>'v6'<br />' fi,
+
+if p(v7) then '<b>7</b> 'v7'<br />' fi,
+
+if p(v8) then '<b>8</b>  'v8'<br />' fi,
+
+if p(v9) then '<b>9</b> 'v9'<br />' fi,
+
+'<h1><br />Nivel Analítico</h1>'
+
+
+if p(v10) then 
+
+'<b>10</b>  'v10^* 
+if p(v10^1) then '<strong> 1|</strong>' v10^1 fi,
+if p(v10^2) then '<strong> 2|</strong>' v10^2 fi,
+if p(v10^3) then '<strong> 3|</strong>' v10^3 fi,
+if p(v10^p) then '<strong> p|</strong>' v10^p fi,
+if p(v10^c) then '<strong> c|</strong>' v10^c fi,
+if p(v10^r) then '<strong> r|</strong>' v10^r fi,' <br />' 
+
+fi,
+
+
+
+
+
+if p(v11) then 
+
+'<b>16</b>  'v16^* 
+
+if p(v11^r) then '<strong> r|</strong>' v11^r fi,' <br />' 
+
+fi,
+
+
+if p(v12) then '<b>12</b>'v12'<br />' fi,
+
+if p(v13) then '<b>13</b>'v13'<br />' fi,
+
+if p(v14) then '<b>14</b>'v14'<br />' fi,
+
+if p(v16) or p(v18) then '<h1><br />Nivel Monográfico</h1>' fi,
+
+
+
+if p(v16) then 
+
+'<b>16</b>  'v16^* 
+if p(v16^1) then '<strong> 1|</strong>' v16^1 fi,
+if p(v16^2) then '<strong> 2|</strong>' v16^2 fi,
+if p(v16^3) then '<strong> 3|</strong>' v16^3 fi,
+if p(v16^p) then '<strong> p|</strong>' v16^p fi,
+if p(v16^c) then '<strong> c|</strong>' v16^c fi,
+if p(v16^r) then '<strong> r|</strong>' v16^r fi,' <br />' 
+
+fi,
+
+
+
+if p(v17) then '<b>17</b>'v17'<br />' fi,
+
+if p(v18) then '<b>18</b>'v18'<br />' fi,
+
+if p(v19) then '<b>19</b>'v19'<br />' fi,
+
+if p(v20) then '<b>20</b>'v20'<br />' fi,
+
+if p(v21) then '<b>21</b>'v11'<br />' fi,
+
+if p(v25) or p(v23) then '<h1><br />Nivel Coleção</h1>' fi,
+
+
+if p(v23) then 
+
+'<b>23</b>  'v23^* 
+if p(v23^1) then '<strong> 1|</strong>' v23^1 fi,
+if p(v23^2) then '<strong> 2|</strong>' v23^2 fi,
+if p(v23^3) then '<strong> 3|</strong>' v23^3 fi,
+if p(v23^p) then '<strong> p|</strong>' v23^p fi,
+if p(v23^c) then '<strong> c|</strong>' v23^c fi,
+if p(v23^r) then '<strong> r|</strong>' v23^r fi,' <br />' 
+
+fi,
+
+
+
+if p(v24) then '<b>24</b>'v24'<br />'fi,
+
+if p(v25) then '<b>25</b>'v25'<br />' fi,
+
+if p(v26) then '<b>26</b>'v26'<br />' fi,
+
+if p(v27) then '<b>27</b>'v27'<br />' fi,
+
+'<h1><br />Nivel Série</h1>'
+
+if p(v30) then '<b>30</b>'v30'<br />' fi,
+
+if p(v31) then '<b>31</b>'v31'<br />' fi,
+
+if p(v32) then '<b>32</b>'v32'<br />' fi,
+
+if p(v35) then '<b>35</b>'v35'<br />' fi,
+
+if p(v38) then '<b>38</b>'v38'<br />' fi,
+
+if p(v40) then '<b>40</b>'v40'<br />' fi,
+
+'<h1><br />Tese</h1>'
+
+if p(v49) then '<b>49</b>'v49'<br />' fi,
+
+
+if p(v50) then '<b>50</b>'v50'<br />' fi,
+
+
+if p(v51) then '<b>51</b>'v51'<br />' fi,
+
+
+'<h1><br />Evento</h1>'
+
+if p(v52) then '<b>52</b>'v52'<br />' fi,
+
+
+if p(v53) then '<b>53</b>'v53'<br />' fi,
+
+
+if p(v54) then '<b>54</b>'v54'<br />' fi,
+
+
+if p(v55) then '<b>55</b>'v55'<br />' fi,
+
+
+if p(v56) then '<b>56</b>'v56'<br />' fi,
+
+
+if p(v57) then '<b>57</b>'v57'<br />' fi,
+
+
+if p(v58) then '<b>58</b>'v58'<br />' fi,
+
+
+'<h1><br />Projeto</h1>'
+
+
+if p(v59) then '<b>59</b>'v59'<br />' fi,
+
+
+if p(v60) then '<b>60</b>'v60'<br />' fi,
+
+
+'<h1><br />Área da publicação</h1>'
+
+
+if p(v61) then '<b>61</b>'v61'<br />' fi,
+
+
+if p(v62) then '<b>62</b>'v62'<br />' fi,
+
+
+if p(v63) then '<b>63</b>'v63'<br />' fi,
+
+
+if p(v64) then '<b>64</b>'v64'<br />' fi,
+
+
+if p(v65) then '<b>65</b>'v65'<br />' fi,
+
+
+if p(v67) then '<b>67</b>'v67'<br />' fi,
+
+if p(v68) then '<b>68</b>'v68'<br />' fi,
+
+if p(v69) then '<b>69</b>'v69'<br />' fi,
+
+if p(v71) then '<b>71</b>'v71'<br />' fi,
+
+if p(v72) then '<b>72</b>'v72'<br />' fi,
+
+if p(v74) then '<b>74</b>'v74'<br />' fi,
+
+if p(v75) then '<b>75</b>'v75'<br />' fi,
+
+'<h1><br />Descrição</h1>'
+
+if p(v76) then '<b>76</b>'v76'<br />' fi,
+
+if p(v78) then '<b>78</b>'v78'<br />' fi,
+
+if p(v82) then '<b>82</b>'v82'<br />' fi,
+
+if p(v83) then '<b>83</b>'v83'<br />' fi,
+
+if p(v84) then '<b>66</b>'v84'<br />' fi,
+
+if p(v85) then '<b>66</b>'v85'<br />' fi,
+
+if p(v87) then '<b>87</b>'v87'<br />' fi,
+
+if p(v88) then '<b>66</b>'v88'<br />' fi,
+
+'<h1><br />Dados administrativos</h1>'
+
+if p(v91) then '<b>91</b>'v91'<br />' fi,
+
+if p(v92) then '<b>92</b>'v92'<br />' fi,
+
+if p(v93) then '<b>93</b>'v93'<br />' fi,
+
+if p(v98) then '<b>98</b>'v98'<br />' fi,
+
+if p(v66) then '<b>66</b>'v66'<br />' fi,
+
+if p(v67) then '<b>66</b>'v67'<br />' fi,
+
+
+
+
+
