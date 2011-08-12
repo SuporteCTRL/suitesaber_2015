@@ -1,16 +1,15 @@
 #container {
-    position: relative;
-    _width: 780px;
-    min-width: 780px;
-    max-width: 1004px;
-    margin: 0px auto;
-
+	margin-top: 0px; 
+	margin: auto;
+	width: 100%;
+	border: medium solid #000000;
+	border-width:1px; 
 }
 
-#content {
-	width:500px;
+/*#content {
+	width:520px;
 	min-height:500px;
-}
+}*/
 a:link, a:visited {
 	color:#000;
 	text-decoration:none;
@@ -19,48 +18,31 @@ a:hover {
 	text-decoration:underline;
 }
 a img {
-	border-width:0;
+	border-width:0px;
 }
 #topnav {
-	position:absolute;
-	/*position:relative;*/
-	z-index:99999990;
-	padding:5px 0px 5px;
-/*	font-size:9px;
-	line-height:19px;*/
-	text-align:right;
-	margin-top:0px; /* -20px */
-	margin-right:auto;
-	width:10px;
-	width:100%;/* IE */
-	margin-left:auto;/*600px; */
-	*margin-left:600px;/* IE */
-}
-#topnav { /* esconde tela login no IE */
-	padding:0px 0px 0px;
-	font-size:5px;
-	line-height:5px;
-	text-align:right;
-	margin-right: 0px;
-	height: 80px;
-	z-index: 0;
-}
-#topnav a.signin {	
+	text-align: right;
+    position: absolute;  
+    width: 990px;  
+    left: 50%;  
+    margin-left: -500px;  
 
+}
+#topnav a.signin {
+	background:#444259;
 	padding:4px 6px 6px;
 	text-decoration:none;
 	font-weight:bold;
 	color:#fff;
-	-webkit-border-radius:4px;
-	-moz-border-radius:4px;
-	border-radius:4px;
 	*background:transparent url("images/signin-nav-bg-ie.png") no-repeat 0 0;
 	*padding:4px 12px 6px;
+		border-width:1px;
 }
 #topnav a.signin:hover {
-	/*background:#FAE17D;*/
+	background:#444259;
 	*background:transparent url("images/signin-nav-bg-hover-ie.png") no-repeat 0 0;
 	*padding:4px 12px 6px;
+		border-width:1px;
 }
 #topnav a.signin, #topnav a.signin:hover {
 	*background-position:0 3px!important;
@@ -68,7 +50,6 @@ a img {
 
 a.signin {
 	position:relative;
-	margin-left:50%
 }
 a.signin span {
 	background-image:url("images/toggle_down_light.png");
@@ -78,6 +59,7 @@ a.signin span {
 	vertical-align: middle;
 }
 #topnav a.menu-open {
+	background:#444259!important;
 	color:#666!important;
 	outline:none;
 }
@@ -94,42 +76,26 @@ a.signin.menu-open span {
 }
 
 #signin_menu {
-	-moz-border-radius-topleft:5px;
-	-moz-border-radius-bottomleft:5px;
-	-moz-border-radius-bottomright:5px;
-	-webkit-border-top-left-radius:5px;
-	-webkit-border-bottom-left-radius:5px;
-	-webkit-border-bottom-right-radius:5px;
 	display:none;
-	background-color:#444259;/*#2E90BD;*/
+	background-color:#444259;
 	position:absolute;
-	*position:relative; /*IE */
 	width:210px;
 	z-index:100;
-	border:1px solid #000000;
-	/*text-align:left;*/
-	margin-left:752px;
-	*left:-603px;	/* IE */
-	margin-top: 0px;
-	margin-right: 0px;
-	*margin-right: -1px;
-	color:#FFFFFF;
-	font-size:12px;
-	/* for IE */
-  filter:alpha(opacity=80);
-  /* CSS3 standard */
-  opacity:0.9;
-	box-shadow: 0 0 .25em #000000; /* Implementação W3C */
-	-moz-box-shadow: 0 0 .25em #000000;  /* Implementação Mozilla */
-	-webkit-box-shadow: 0 0 .25em #000000; /* Implementação para browsers que renderizam via webkit */
+	border:1px transparent;
+	text-align:left;
+	padding:12px;
+	top: 24px; 
+	right: 40%; 
+	margin-top:0px;
+	margin-right: -390px;
+	color:#ffffff;
+	font-size:9px;
 }
 
 #signin_menu input[type=text], #signin_menu input[type=password] {
 	display:block;
-	-moz-border-radius:4px;
-	-webkit-border-radius:4px;
 	border:1px solid #000;
-	font-size:12px;
+	font-size:14px;
 	margin:0 0 5px;
 	padding:5px;
 	width:203px;
@@ -154,9 +120,7 @@ a.signin.menu-open span {
 	color:#000!important;
 }
 #signin_submit {
-	-moz-border-radius:4px;
-	-webkit-border-radius:4px;
-	background:#39d url('images/bg-btn-blue.png') repeat-x scroll 0 0;
+	background:#444259 url('images/bg-btn-blue.png') repeat-x scroll 0 0;
 	border:1px solid #000;
 	color:#fff;
 	text-shadow:0 -1px 0 #39d;
@@ -174,22 +138,6 @@ border:0;
 	cursor:pointer;
 }
 
-#user, #pwd {
-	background: #FFFFFF url('bg_form.png') left top repeat-x;
-
-	background: -webkit-gradient(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #cccccc), to(#FFFFFF));
-
-	background: -moz-linear-gradient(top, #FFFFFF, #cccccc 1px, #FFFFFF 25px);
-
-	box-shadow: rgba(0,0,0, 0.5) 0px 0px 8px;
-
-	-moz-box-shadow: rgba(0,0,0, 0.5) 0px 0px 8px;
-
-	-webkit-box-shadow: rgba(0,0,0, 0.5) 0px 0px 8px;	
-	
-	}
-
-/* deletar?? 
 .tipsy-inner {
 	padding:10px 15px;
 	line-height:1.5em;
@@ -206,10 +154,6 @@ border:0;
 	max-width:200px;
 	font:11px 'Lucida Grande', sans-serif;
 	font-weight:bold;
-	-moz-border-radius:4px;
-	-khtml-border-radius:4px;
-	-webkit-border-radius:4px;
-	border-radius:4px;
 	background-color:#000;
 	color:#fff;
 	text-align:left;
@@ -230,5 +174,3 @@ border:0;
 	background-image:url(images/tipsy-west.gif);
 	background-position:left center;
 }
-*/
-
