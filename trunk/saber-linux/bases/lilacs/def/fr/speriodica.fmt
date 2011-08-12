@@ -1,0 +1,45 @@
+LDR||Leader|0|1||||||||||||0||
+F|4|Base de Dados|0|1|||X|||D||DB_|v4|v4|CIT|1||
+F|30|Título|0|1|||X|||||||||1||
+F|31|Volume|0|0|||X|||||||||1||
+F|32|Número do Fascículo|0|0|||X|||||||||1||
+F|35|ISSN|0|0|||X|||||||||1||
+F|64|Data de Publicação|0|0|||X|||||||||1||
+F|65|Data Normalizada|0|0|||X|||||||||1||
+H||Descrição Bibliográfica|0|0||||||||||||0||
+F|110|Forma do Item|0|0|||S|||P|110|||||1||
+F|111|Tipo Arquivo Computador|0|0|||S|||P|111||v111|v111||1||
+F|112|Tipo Material Cartográfico|0|0|||X|||||||||1||
+F|113|Tipo Periódico|0|0|||X|||||||||1||
+F|114|Tipo Material Visual|0|0|||S|||P|114.tab||v114|v114||1||
+F|115|Designação Específica do Material|0|0|||X|||P|115|||||1||
+H||Nível monográfico|0|0||||||||||||0||
+F|10|Autor Pessoal|0|1|123pcr||X|||D||AU_|v10|v10||1||
+F|11|Autor Institucional|0|1|r||X||||||V11|V11||1||
+F|12|Título|0|1|i||X|||||TI_||||1||
+F|40|Idioma do Texto|0|1|||X|||||||||1||
+F|13|Título Traduzido para o Inglês|0|0|||X|||||TI_|V13|V13||1||
+F|14|Páginas|0|1|fl||X|||||||||1||
+F|38|Informacao Descritiva|0|1|bace||X|||||||||1||
+F|72|Número Total Referências|0|0|||X|||||||||1||
+H||Notas|0|0||||||||||||0||
+F|71|Tipo de Publicação|0|1|||X|||P|71|||||1||
+F|76|Descritor Pré-Codificado|0|1|||X|||||||||1||
+F|87|Descritor Primário|0|1|ds||X|||D|decs|MH_|mhl,v3/|v3||1||
+F|88|Descritor Secundário|0|1|ds||X|||D|decs|MH_|v3|v3||1||
+F|74|Alcance Temporal (desdde)|0|0|||X|||||||||1||
+F|75|Alcance Temporal (até)|0|0|||X|||||||||1||
+F|78|Indivíduo como Tema|0|1|||X|||D||MH_|@autoridades.pft|||1||
+F|82|Região Não DeCS|0|1|||X|||||||||1||
+F|610|Instituição como Tema|0|0|||X|||||||||1||
+F|653|Descritores Locais|0|0|||X|||||||||1||
+H||Resumo|0|0||||||||||||0||
+F|83|Resumo|0|0|i||X|5||D|||v83|v83||1||
+H||Complementos|0|0||||||||||||0||
+F|53|Evento - Nome|0|1|||X|||||||||1||
+F|54|Evento - Data|0|0|||X|||||||||1||
+F|56|Evento - Cidade|0|0|||X|||||||||1||
+F|57|Evento - País|0|0|||X|||||||||1||
+F|58|Projeto - Instituição|0|1|||X|||||||||1||
+F|59|Projeto - Nome|0|0|||X|||||||||1||
+F|60|Projeto - Número|0|0|||X|||||||||0||
