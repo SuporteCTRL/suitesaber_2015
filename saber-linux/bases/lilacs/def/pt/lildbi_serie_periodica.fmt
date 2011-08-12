@@ -1,0 +1,21 @@
+H||Informações Gerais(XXX) |0|0||||||||||||0||
+AI|2|Número de Identificação|0|0|||||25|||||||0||
+
+I|4|Base de Dados|0|1|||X||10||||v4|v4|LILACS|1||
+
+
+
+F|30|Título|0|1|i||X||100|||IS_|@autoridades.pft|||1||
+F|31|Volume|0|0|||X||10|||||||1||
+F|32|Número do fascículo|0|0|||X||5|||||||1||
+F|35|ISSN|0|0|||X|1|10|||||||1||
+
+
+F|64|Data de Publicação|0|0|||X||15|||||||1||
+F|65|Data Normalizada|0|0|||X||10|||||||1||
+
+
+H||Dados do sistema (91-93)|0|0||||||||||||0||
+DC|91|Data do Processamento|0|0|ift||D|||||||||1||
+OC|92|Documentalista|0|1|||X|||||||||1||
+OD|93|Data do Processamento|0|1|ift||D|||||||||1||
