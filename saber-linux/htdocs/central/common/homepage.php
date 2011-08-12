@@ -485,9 +485,9 @@ if ($dirtree==1){
 					<div class="sectionButtons">
 
 		
-				<a href="apoio/descricao_lilacs.pdf" target="_blank"  class="menuButton tooltip newButton">
+				<a href="http://www.oraculo.inf.br" target="_blank"  class="menuButton tooltip wiki">
 
-					<span>Manual de Descrição Bibliográfica LILACS</span>
+					<span>Wiki</span>
 				</a> 
 
 
@@ -538,7 +538,7 @@ function MenuLoanAdministrator(){
 }
 ?>
 
-						<!--[if IE]>
+		<!--[if IE]>
 <?php include ("../css/saber/iesucks/index.php"); ?>
 
 		<![endif]-->
