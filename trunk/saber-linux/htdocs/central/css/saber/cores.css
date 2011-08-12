@@ -363,6 +363,9 @@ A {
 	A.copiesdbaddButton {
 		background: url('images/icon/db_update.png') no-repeat center;
 	}
+A.wiki {
+		background: url('images/icon/oraculo.png') no-repeat center;
+	}
 	
 	/*Buttons of loan*/
 
