@@ -1,0 +1,44 @@
+LDR||Leader|0|1||||||||||||0||
+T|3|Localização do Documento|0|1|zabct||X||23||||||^a559.1^b^c^t|0||
+S||z|0|0|z||X|||||||||0||
+S||a|0|1|a||X||||||v3^a|v3^a||0||
+S||b|0|1|b||X||||||v3^b|^b||0||
+S||c|0|1|c||X||||||v3^c|v3^c||0||
+S||t|0|1|t||X||||||v3^t|v3^t||0||
+F|4|Base de Dados|0|1|||X|||D||DB_|v4|v4|CEIDS|1||
+F|7|Tombo|0|1|||X|||||||||1||
+F|8|Suporte Eletrônico|0|1|uiqygzxskl||X|||||||||1||
+F|110|Forma do Item|0|0|||S|||P|110|||||1||
+F|111|Tipo Arquivo Computador|0|0|||S|||P|111||v111|v111||1||
+F|112|Tipo Material Cartográfico|0|0|||X|||||||||1||
+F|114|Tipo Material Visual|0|0|||S|||P|114.tab||v114|v114||1||
+F|115|Designação Específica do Material|0|0|||X|||P|115|||||1||
+H||Nível Coleção|0|0||||||||||||0||
+F|23|Autor Pessoal|0|1|123pcr||X|||||||||1||
+F|24|Autor Institucional|0|1|r||X|||||||||1||
+F|25|Título|0|1|i||X|||||||||1||
+F|26|Título Traduzido para o Inglês|0|0|||X|||||||||1||
+F|27|Número Total de Volumes|0|0|||X|||||||||1||
+F|40|Idioma do Texto|0|1|||X|||||||||1||
+H||Nível monográfico|0|0||||||||||||0||
+F|38|Informacao Descritiva|0|1|bace||X|||||||||1||
+H||Dados de Publicação|0|0||||||||||||0||
+F|62|Editora|0|1|||X|||||||||1||
+F|63|Edição|0|0|||X|||||||||1||
+F|64|Data de Publicação|0|0|||X|||||||||1||
+F|65|Data Normalizada|0|0|||X|||||||||1||
+F|66|Cidade de Publicação|0|0|||X|||D|lil_cidades|CI_|v1|v66||1||
+F|67|País de Publicação|0|0|||X|||D|paises|PA_|v5|v67||1||
+F|68|Símbolo|0|1|||X|||||||||1||
+F|69|ISBN|0|0|||X|||||||||1||
+F|72|Número Total Referências|0|0|||X|||||||||1||
+H||Dados de Conteúdo|0|0||||||||||||0||
+F|71|Tipo de Publicação|0|1|||X|||P|71|||||1||
+F|76|Descritor Pré-Codificado|0|1|||X|||||||||1||
+F|87|Descritor Primário|0|1|ds||X|||D|decs|MH_|mhl,v3/|v3||1||
+F|88|Descritor Secundário|0|1|ds||X|||D|decs|MH_|v3|v3||1||
+F|74|Alcance Temporal (desdde)|0|0|||X|||||||||1||
+F|75|Alcance Temporal (até)|0|0|||X|||||||||1||
+F|78|Indivíduo como Tema|0|1|||X|||D||MH_|@autoridades.pft|||1||
+F|82|Região Não DeCS|0|1|||X|||||||||1||
+F|653|Descritores Locais|0|0|||X|||||||||1||

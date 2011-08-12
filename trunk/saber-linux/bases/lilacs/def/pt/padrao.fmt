@@ -1,0 +1,115 @@
+LDR||Leader|0|1||||||||||||0||
+H||Descrição Bibliográfica|0|0||||||||||||0||
+F|192|Código do Centro|0|0|||X||10|||CC_|BR000|000|BR000|1||
+AI|999|Empréstimo|0|0|||X|||||CN_||||0||
+T|3|Localização do Documento|0|1|zabct||X||23||||||^aBR0000^b^c^t|0||
+S||z|0|0|z||X|||||||||0||
+S||a|0|1|a||X||||||v3^a|v3^a||0||
+S||b|0|1|b||X||||||v3^b|^b||0||
+S||c|0|1|c||X||||||v3^c|v3^c||0||
+S||t|0|1|t||X||||||v3^t|v3^t||0||
+F|4|Base de Dados|0|1|||X||3|D||DB_|v4|v4|CEIDS|1||
+F|5|Tipo de Literatura|0|0|||X|||||||||1||
+M|6|Nível de Tratamento|0|0|||X|||||||||1||
+F|7|Tombo|0|1|||X|||||||||1||
+F|8|Suporte Eletrônico|0|1|uiqygzxskl||X|||||||||1||
+F|900|Tipo de Registro|0|0|||S|||P|09.tab||@autoridades.pft|||1||
+H||Autores/Título|0|0||||||||||||0||
+F|10|Autor Pessoal|0|1|123pcr||X|||D||AU_|v10|v10||1||
+F|11|Autor Institucional|0|1|r||X||||||V11|V11||1||
+F|12|Título|0|1|i||X|||||TI_||||1||
+F|13|Título Traduzido para o Inglês|0|0|||X|||||TI_|V13|V13||1||
+F|14|Páginas|0|1|fl||X|||||||||1||
+H||Nível monográfico|0|0||||||||||||0||
+T|16|Autor Pessoal|1|1|123pcr||X|||D||AU_|v16|v16||1||
+S||1|0|1|1||X||||||v16^1|v16^1||0||
+S||2|0|1|2||X||||||v16^2|v16^2||0||
+S||3|0|1|3||X||||||v16^3|v16^3||0||
+S||P|0|1|p||X||||||v16^p|v16^p||0||
+S||C|0|1|c||X||||||v16^c|v16^c||0||
+S||R|0|1|r||S|||P|16r||v4|v4||0||
+T|17|Autor Institucional|0|1|r||X|||||||||1||
+S||r|0|1|r||X|||||||||0||
+F|18|Título|0|1|i||X|||||TI_|V18|V18||1||
+F|19|Título Traduzido para o Inglês|0|0|||X|||||||||1||
+F|20|Páginas|0|0|||X|||||||||1||
+F|21|Volume|0|0|||X|||||||||1||
+H||Nível Coleção|0|0||||||||||||0||
+F|23|Autor Pessoal|0|1|123pcr||X|||||||||1||
+F|24|Autor Institucional|0|1|r||X|||||||||1||
+F|25|Título|0|1|i||X|||||||||1||
+F|26|Título Traduzido para o Inglês|0|0|||X|||||||||1||
+F|27|Número Total de Volumes|0|0|||X|||||||||1||
+H||Nível Série|0|0||||||||||||1||
+F|30|Título|0|1|||X|||||||||1||
+F|31|Volume|0|0|||X|||||||||1||
+F|32|Número do Fascículo|0|0|||X|||||||||1||
+F|35|ISSN|0|0|||X|||||||||1||
+T|38|Informacao Descritiva|0|1|bace||X|||||||||1||
+S||Descrição de detalhes físicos|0|1|b||X|||P|38.tab||v38^b|v38^b||0||
+S||Extensão do item|0|1|a||X||||||v38^a|v38^a||0||
+S||Dimensão|0|1|c||X||||||v38^c|v38^c||0||
+S||Material acompanhante|0|1|e||X||||||v38^e|v38^e||0||
+F|40|Idioma do Texto|0|1|||X|||||||||1||
+H||Notas de Tese|0|0||||||||||||0||
+F|49|Autor Pessoal|0|1|123pcr||X|||||||||1||
+F|50|Tese - Instituição|0|0|||X|||||||||1||
+F|51|Tese - Titulo Acadêmico|0|0|||X|||||||||1||
+H||Evento/Projeto|0|0||||||||||||0||
+H||Complementos|0|0||||||||||||0||
+F|52|Evento - Instituição|0|1|||X|||||||||1||
+F|53|Evento - Nome|0|1|||X|||||||||1||
+F|54|Evento - Data|0|0|||X|||||||||1||
+F|55|Evento - Data Normalizada|0|0|||X|||||||||1||
+F|56|Evento - Cidade|0|0|||X|||||||||1||
+F|57|Evento - País|0|0|||X|||||||||1||
+F|58|Projeto - Instituição|0|1|||X|||||||||1||
+F|59|Projeto - Nome|0|0|||X|||||||||1||
+F|60|Projeto - Número|0|0|||X|||||||||0||
+H||Outras Notas|0|0||||||||||||0||
+F|61|Notas Interna|0|0|||X|||||||||1||
+H||Dados de Publicação|0|0||||||||||||0||
+F|62|Editora|0|1|||X|||||||||1||
+F|63|Edição|0|0|||X|||||||||1||
+F|64|Data de Publicação|0|0|||X|||||||||1||
+F|65|Data Normalizada|0|0|||X|||||||||1||
+F|66|Cidade de Publicação|0|0|||X|||D|lil_cidades|CI_|v1|v66||1||
+F|67|País de Publicação|0|0|||X|||D|paises|PA_|v5|v67||1||
+F|68|Símbolo|0|1|||X|||||||||1||
+F|69|ISBN|0|0|||X|||||||||1||
+F|70|COCHRANE|0|1|||X|||||||||1||
+H||Dados de Conteúdo|0|0||||||||||||0||
+F|71|Tipo de Publicação|0|1|||X|||P|71|||||1||
+F|72|Número Total Referências|0|0|||X|||||||||1||
+F|74|Alcance Temporal (desdde)|0|0|||X|||||||||1||
+F|75|Alcance Temporal (até)|0|0|||X|||||||||1||
+F|76|Descritor Pré-Codificado|0|1|||X|||||||||1||
+F|78|Indivíduo como Tema|0|1|||X|||D||MH_|@autoridades.pft|||1||
+F|82|Região Não DeCS|0|1|||X|||||||||1||
+H||Dados de Conteúdo|0|0||||||||||||0||
+H||Resumo|0|0||||||||||||0||
+F|83|Resumo|0|0|i||X|5||D|||v83|v83||1||
+F|84|Data Transferência Base|0|0|||X|||||||||1||
+F|85|Palavras-chave do Autor|0|1|is||X|||D||PC_|v85|v85||1||
+F|87|Descritor Primário|0|1|ds||X|||D|decs|MH_|mhl,v3/|v3||1||
+F|88|Descritor Secundário|0|1|ds||X|||D|decs|MH_|v3|v3||1||
+F|91|Data do Processamento|0|0|ift||X|||||||||1||
+F|92|Documentalista|0|1|||X|||||||||1||
+F|93|Data Útima Modificação|0|1|ift||X|||||||||1||
+F|98|Reg Complementar(M,C,S)|0|0|||X|||||||||1||
+F|101|Reg Complementar(Evento)|0|0|||X|||||||||1||
+F|102|Reg Complementar(Proj)|0|0|||X|||||||||1||
+F|110|Forma do Item|0|0|||S|||P|110|||||1||
+F|111|Tipo Arquivo Computador|0|0|||S|||P|111||v111|v111||1||
+F|112|Tipo Material Cartográfico|0|0|||X|||||||||1||
+F|113|Tipo Periódico|0|0|||X|||||||||1||
+F|114|Tipo Material Visual|0|0|||S|||P|114.tab||v114|v114||1||
+F|115|Designação Específica do Material|0|0|||X|||P|115|||||1||
+H||Notas|0|0||||||||||||0||
+F|500|Nota Geral|0|0|||X|3||||||||1||
+F|505|Nota Formatada do Conteúdo|0|0|||X|3||||||||1||
+F|530|Nota Disp Form Fis Adic|0|0|||X|3||||||||1||
+F|533|Nota de Reprodução|0|0|||X|3||||||||1||
+F|534|Nota de Versão Original|0|0|||X|||||||||1||
+F|610|Instituição como Tema|0|0|||X|||||||||1||
+F|653|Descritores Locais|0|0|||X|||||||||1||

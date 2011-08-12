@@ -1,0 +1,89 @@
+H||Informações Gerais(XXX) |0|0||||||||||||0||
+AI|2|Número de Identificação|0|0|||||25|||||||0||
+T|3|Localização do Documento|0|1|abct||X|2|60||||v1|v1||0||
+S||Classificação|0|1|a||X||||||v3^a|v3^a|^a|0||
+S||Cutter|0|1|b||X||||||v3^b|^b|^b|0||
+S||Volume, Número, Parte|0|1|c||X||||||v3^c|v3^c|^c|0||
+S||Livre|0|1|t||X||10||||v3^t|v3^t||0||
+
+I|4|Base de Dados|0|1|||X||10||||v4|v4|LILACS|1||
+F|7|Tombo|1|1|||X|5|15|||||||1||
+F|5|Tipo de Literatura|0|0|||S|||P|05.tab||v5|v5|N|0||
+F|6|Nível de Tratamento|0|0|||S|||P|06.tab||v6|v6|m|0||
+T|8|Endereço Eletrônico|0|1|uiy||X||100|||||||1||
+S||Localizador da Fonte|0|1|u||X||||||v8^u|v8^u|^a|0||
+S||Idioma|0|1|i||S|||P|lang.tab||v8^i|v8^i||0||
+S||Tipo de arquivo|0|1|y||S|||P|08y.tab||v8^y|v8^y||0||
+F|9|Tipo de Registro|0|0|||S|||P|09.tab|||||1||
+
+
+
+
+H||Nível monográfico (16-21) |0|0||||||||||||0||
+T|16|Autor Pessoal|0|1|*pcr123||X||100|D||IM_|@autoridades.pft|||1||
+S||Autor Pessoal|0|1|*||X||100|||||v16||1||
+S||País do Autor|0|1|p||S|||P|paises.tab|||||0||
+S||Cidade do Autor|0|1|c||X|||||ICP_|@autoridades.pft|||1||
+S||Responsabilidade do Autor|0|1|r||S||25|P|16r|||||0||
+S||Instituição 1|0|1|1||X||25|||||||0||
+S||Instituição 2|0|1|2||X||25|||||||0||
+S||Instituição 3|0|1|3||X||25|||||||0||
+T|17|Autor Institucional|0|1|*r||X||100|D||AI_|@autoridades.pft|||1||
+S||Autor|0|1|*||X|||||||||0||
+S||Responsabilidade do Autor|0|1|r||S||25|P|16r|||||0||
+T|18|Título|0|1|*i||X||100|||IT_|@autoridades.pft|||1||
+S||Título|0|0|*||X|||||||v18||0||
+S||Idioma do título|0|0|i||S|||P|lang.tab|||||0||
+F|19|Título Traduzido para o Inglês|0|0|||X||100|||||||1||
+F|20|Páginas|0|0|||X||5|||||||1||
+F|21|Volume|0|0|||X||5|||||||1||
+T|38|Informacao Descritiva|0|1|abce||X|||||||||1||
+S||Extensão do item|0|0|a||X||||||v38^a|v38^a||0||
+S||Descrição de detalhes físicos|0|0|b||S|||P|38.tab|||||0||
+S||Dimensão|0|0|c||X||||||v38^c|v38^c||0||
+S||Material acompanhante|0|0|e||X||||||v38^e|v38^e||0||
+
+H||Notas (500-999)|0|0||||||||||||0||
+F|500|Nota Geral|0|0|||X|3|100|||||||1||
+F|505|Nota Formatada do Conteúdo|0|0|||X|3|100|||||||1||
+F|530|Nota Disp Form Fis Adic|0|0|||X|3|100|||||||1||
+F|533|Nota de Reprodução|0|0|||X|3|100|||||||1||
+F|534|Nota de Versão Original|0|0|||X|3|100|||||||1||
+F|590|Nota de forma de aquisição|0|0|||X|3|100|||||||1||
+
+H||Área de publicação (61-75)|0|0||||||||||||0||
+F|61|Notas Internas|0|0|||X|2|80|||||||1||
+F|62|Editora|0|1|||X||50|||||||1||
+F|63|Edição|0|0|||X||5|||||||1||
+F|64|Data de Publicação|0|0|||X||15|||||||1||
+F|65|Data Normalizada|0|0|||X||10|||||||1||
+F|66|Cidade de Publicação|0|0|||X|||||ICP_|@autoridades.pft|v66||1||
+F|67|País de Publicação|0|1|||M||10|P|paises.tab|||||1||
+F|68|Símbolo|0|1|||X||5|||||||1||
+F|69|ISBN|0|0|||X||10|||||||1||
+F|72|Número Total Referências|0|0|||X||10|||||||1||
+
+
+H||Dados de conteúdo |0|0||||||||||||0||
+F|71|Tipo de publicação|0|1|||M|||P|71.tab|||||1||
+F|76|Descritor pré-codificado|0|1|||M||50|P|desc_pre.tab|||||1||
+T|87|Descritor Primário|0|1|ds||X|3|50|||IDP_|@autoridades.pft|||1||
+S||Descritor|0|0|d||X|||||||||0||S||Qualificador|0|0|s||X|||||||||0||
+F|88|Descritor Secundário|0|1|ds||X|3|50|||IDS_|@autoridades.pft|||1||
+F|74|Alcance Temporal (desde)|0|0|||X||10|||||||1||
+F|75|Alcance Temporal (até)|0|0|||X||10|||||||1||
+F|78|Indivíduo como Tema|0|1|||X|3|50|D||MH_|@autoridades.pft|||1||
+F|82|Região Não DeCS|0|1|||X|3|50|||||||1||
+F|610|Instituição como Tema|0|0|||X|3|25|||||||1||
+F|653|Descritores Locais|0|0|||X|3|25|||||||1||
+
+H||Resumo|0|0||||||||||||0||
+T|83|Resumo|0|1|*i||X|10|100||||v83|v83||1||
+S||Resumo|0|0|*||X|20|100|||||v83||0||
+S||Idioma do resumo|0|0|i||S|||P|lang.tab|||||0||
+
+
+H||Dados do sistema (91-93)|0|0||||||||||||0||
+DC|91|Data do Processamento|0|0|ift||D|||||||||1||
+OC|92|Documentalista|0|1|||X|||||||||1||
+OD|93|Data do Processamento|0|1|ift||D|||||||||1||
