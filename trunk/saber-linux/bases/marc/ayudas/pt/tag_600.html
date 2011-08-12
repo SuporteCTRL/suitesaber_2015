@@ -1,141 +1,158 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
-<HTML>
-<HEAD>
-<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
-<TITLE>(Untitled)</TITLE>
-</HEAD>
-
-<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
-
-<P><A NAME="cmp600"></A></P>
-
-<P><B>600Entradas Secundarias - Nombre personal (O - R)</B></P>
-
-<P><I>Las entradas secundarias en las cuales el elemento es un nombre personal.</I></P>
-
-<P><B>Indicadores:</B></P>
-
-<P>1er Indicador = tipo de nombre personal.</P>
-
-<P>0 = Solo nombre</P>
-
-<P>1 = Apellido</P>
-
-<P>3 = Nombre de Familia - Vea la descripción del 1er indicador en el campo 100.</P>
-
-<P>2do = Sistema de encabezamiento/tesauros - un valor que indica el sistema de encabezamiento/tesauro o archivo de autoridades que se utilizo para construir en el encabezamiento (los valores 0-3 y 5-6 son elementos de datos de agencias.) </P>
-
-<P>0 = Library of Congress Subject Headings/LC authority files</P>
-
-<P>1 = LC subject headings for children's literature</P>
-
-<P>2 = Medical Subject Headings/NLM authority files</P>
-
-<P>3 = National Agricultural Library subject authority file</P>
-
-<P>4 = No se especifica la fuente - las entradas secundarias son una lista controlada pero no se puede identificar la fuente o no existe el subcampo ^2. </P>
-
-<P>5 = Canadian Subject Headings/NLC authority file</P>
-
-<P>6 = Repertoire des vedettes-matiere/NLC authority file</P>
-
-<P>7 = Fuente especificada en el subcampo ^2 - las entradas secundarias están construidas según las convenciones de la construcción de tesauros y listas de autoridades y se identifican en el subcampo ^2.</P>
-
-<P><B>Subcampos:</B></P>
-
-<P>^a Nombre Personal (NR)</P>
-
-<P>^b Numeración (NR)</P>
-
-<P>^c Títulos y otras palabras asociadas con el nombre (R) </P>
-
-<P>^d Fechas asociadas con el nombre (NR)</P>
-
-<P>^e Término de la relatoría (R)</P>
-
-<P>^f Fecha del trabajo (NR)</P>
-
-<P>^g Información miscelánea (NR)</P>
-
-<P>^h Medio para música (R)</P>
-
-<P>^k Formas de subencabezamientos (R) </P>
-
-<P>^l Idioma del trabajo (NR)</P>
-
-<P>^n Número de la parte/sección del trabajo (R)</P>
-
-<P>^o Arreglo musical (NR)</P>
-
-<P>^p Nombre de una parte/sección del trabajo (R)</P>
-
-<P>^q Forma completa del nombre (NR)</P>
-
-<P>^r Llave para música (NR)</P>
-
-<P>^s Versión (NR)</P>
-
-<P>^t Título del trabajo (NR)</P>
-
-<P>^u Afiliación (NR)</P>
-
-<P>^v Subdivisión (R)</P>
-
-<P>^x Subdivisión general (R)</P>
-
-<P>^y División cronológica</P>
-
-<P>^z Subdivisión Geográfica</P>
-
-<P>^2 Fuente del encabezamiento o término (NR) - un código de USMARC que identifica la fuente del encabezamiento o término de acceso cuando el 2do indicador contiene el valor 7. (Los códigos son tomados de USMARC Code List for Relators, Sources, Description Conventions).</P>
-
-<P>^3 Materiales específicos  (NR) - partes de los materiales descritos a los que se les puede aplicar este campo.</P>
-
-<P>^4 Código de relator (R)</P>
-
-<P>^6 Apuntador (NR) – una etiqueta que apunta a un campo asociado y dos caracteres con el número de la ocurrencia (justificados a la derecha con cero en la posición no usada) que une los campos que tienen representaciones gráficas alternas, subcampo ^6 es el 1er subcampo en el campo y tiene la siguiente estructura: [etiqueta][ocurrencia]</P>
-
-<P>Vea la descripción de los <B>Subcampos:</B> ^a, ^b, ^d, ^e, ^f, ^g, ^l, ^n, ^p, ^q, ^t, ^u, y ^4 en el campo 100.</P>
-
-<P><B>Ejemplos:</B></P>
-
-<P>600 00^aNorodom Sihanouk, ^cPrince, ^d1922- </P>
-
-<P>600 10^aSmith, ^dfl. 1641.</P>
-
-<P>600 30^aDunlop, familia.</P>
-
-<P>600 30^aPremyslid dynasty.</P>
-
-<P>600 30^aMorton, familia.</P>
-
-<P>600 00^aMoses ^c(Líder bíblico)</P>
-
-<P>600 10^aDrake, Francis, ^cSir, ^d1540?- 1596.</P>
-
-<P>600 10^aGarcia Lorca, Federico, ^d1898-1936, ^kficcion, drama, poesía, etc.</P>
-
-<P>600 10^aShakespeare, William, ^d1564-1616. ^tHamlet.</P>
-
-<P>600 00^aGautama Buddha ^vBiografia ^vTrabajos iniciales hasta 1800.</P>
-
-<P>600 10^aShakespeare, William, ^d1564-1616 ^xCritica e interpretación ^xHistoria ^ySiglo 18.</P>
-
-<P>600 10^aReagan, Ronald ^xAtentado de asesinato, 1981.</P>
-
-<P>600 10^aFord, Gerald R., ^d1913- ^xMuseos, reliquias, etc. ^zMichigan.</P>
-
-<P>600 10^aPushkin, Aleksandr Sergeevich, ^d1799-1837 ^xMuseos, reliquias,, etc. ^zRussia (Federación) ^zMoscu ^vMapas.</P>
-
-<P>600 10^aNixon, Richard M. ^q(Richard Milhouse), ^d1913- ^xPersonalidad.</P>
-
-<P>600 00^aJesus Christ ^xHistoria de doctrinas ^yEarly Church, C.A. 30- 600.</P>
-
-<P><B>Fuente: </B></P>
-
-<P><B>Manual de MARC / preparado por Ana María Ocampo-Ocampo</B></P>
-
-<P><B>Bogotá: ASOISIS, 1998.</B></P>
-
-</BODY>
-</HTML>
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+<TITLE>Campo 600</TITLE>
+</HEAD>
+<BODY LINK="#0000ff" VLINK="#800080">
+<A name=top></A>
+<hr>
+<B><FONT FACE="Times New Roman" SIZE=5></B>
+<P>
+<b><i><font size="5" face="Times New Roman, Times, serif">Formato Bibliogr&aacute;fico MARC 21 LITE: Campos de Acesso por Assunto (6XX)</font></i></b></P>
+<font size="3" face="Times New Roman, Times, serif"></FONT>
+<hr>
+
+<P><font size="3" face="Times New Roman">Os campos 600-65X (com exce&ccedil;&atilde;o do campo 653 que
+  &eacute; utilizado para gerar a indexa&ccedil;&atilde;o de termos n&atilde;o controlados) cont&eacute;m cabe&ccedil;alhos
+  de assunto ou termos de acesso que prov&ecirc;em acesso adicional&nbsp; ao registro bibliogr&aacute;fico, estes
+  cabe&ccedil;alhos ou termos est&atilde;o constru&iacute;dos de acordo com
+  os princ&iacute;pios e diretrizes para a elabora&ccedil;&atilde;o de listas de cabe&ccedil;alhos
+  de assunto ou tesauros. A lista padronizada ou arquivos de autoridade utilizados
+s&atilde;o identificadas pelo c&oacute;digo MARC contidos no subcampo <B>^2,</B>  usado simultaneamente com valor 7.</font></P>
+<P><font size="3" face="Times New Roman">O n&uacute;mero ar&aacute;bico que precede o campo de acesso de assunto em algumas
+  sa&iacute;das do registro, n&atilde;o &eacute; informado no registro MARC. Pode ser gerado baseado
+  na etiqueta do campo. Os tra&ccedil;os (--), que precedem uma subdivis&atilde;o geral de
+  assunto n&atilde;o s&atilde;o informados no registro MARC,&nbsp; podem ser gerados baseado na
+presen&ccedil;a dos subcampos, <B>^v</B>, <B>^x</B>, <B>^y</B>,  <B>^z</B>. </font></P>
+<UL>
+	<LI><font size="3" face="Times New Roman"><a href="ayuda_db.php?base=marc&campo=tag_610.html">610 - ASSUNTO--NOME DE ENTIDADE COLETIVA (R)</a> </font></LI>
+	<LI><font size="3" face="Times New Roman"><a href="ayuda_db.php?base=marc&campo=tag_611.html">611 - ASSUNTO--NOME DE ENTIDADE COLETIVA (R)</a> </font></LI>
+	<LI><font size="3" face="Times New Roman"><a href="ayuda_db.php?base=marc&campo=tag_630.html">630 - ASSUNTO--T&Iacute;TULO UNIFORME (R)</a> </font></LI>
+	<LI><font size="3" face="Times New Roman"><a href="ayuda_db.php?base=marc&campo=tag_650.html">650 - ASSUNTO--TERMO T&Oacute;PICO (R)</a> </font></LI>
+	<LI><font size="3" face="Times New Roman"><a href="ayuda_db.php?base=marc&campo=tag_651.html">651 - ASSUNTO--NOME GEOGR&Aacute;FICO (R) </a></font></LI>
+	<LI><font size="3" face="Times New Roman"><a href="ayuda_db.php?base=marc&campo=tag_653.html">653 - TERMO IND&Iacute;CE--N&Atilde;O CONTROLADO (R) </a></font></LI>
+	<LI><font size="3" face="Times New Roman"><a href="ayuda_db.php?base=marc&campo=tag_655.html">655 - TERMO IND&Iacute;CE--G&Ecirc;NERO/FORMA (R) </a></font></LI>
+</UL>
+<P><FONT size="3" FACE="Times New Roman, Times, serif">[Mais informa&ccedil;&otilde;es em: <A href="http://www.loc.gov/marc/bibliographic/ecbdhome.html"><EM>Formato MARC 21 Conciso</EM></A>]</FONT>
+<hr>
+
+<font size="3" face="Times New Roman, Times, serif"><a name="mrcb600"></a>
+<b><FONT FACE="Times New Roman" SIZE=4></b></font>
+<P><font size="3" face="Times New Roman, Times, serif"><b> 600 Assunto - Nome pessoal (R) </b></font></P>
+<P><font size="3" face="Times New Roman">Entradas secund&aacute;ria o qual o elemento entrado &eacute; um nome
+pessoal.</font></P>
+<P ALIGN="JUSTIFY"><font size="3"><b><font face="Times New Roman">Indicadores</font></b></font></P>
+<UL>
+	<LI><font size="3" face="Times New Roman">Primeiro – Tipo de nome pessoal <BR>
+        <i>Veja a descri&ccedil;&atilde;o do primeiro indicador no <a href="ayuda_db.php?base=marc&campo=tag_100.html"> campo 100.</a></i></font></LI>
+	<UL>
+	  <LI><font size="3" face="Times New Roman">0 = Prenome </font></LI>
+		<LI><font size="3" face="Times New Roman">1 = Sobrenome </font></LI>
+		<LI><font size="3" face="Times New Roman">3 = Nome de Fam&iacute;lia </font></LI>
+	</UL>
+  <LI><font size="3" face="Times New Roman">Segundo – Tesauro <BR>
+  O Tesauro ou arquivo de autoridades do qual procede o cabe&ccedil;alho</font></LI>
+	<UL>
+	  <LI><font size="3" face="Times New Roman">7 – Fonte especificada no subcampo ^2</font></LI>
+	</UL>
+</UL>
+<P ALIGN="JUSTIFY"><font size="3" face="Times New Roman"><b>Subcampos</b></font></P>
+<UL>
+	<LI><font size="3" face="Times New Roman">^a - Nome Pessoal (NR) </font></LI>
+	<font size="3" face="Times New Roman, Times, serif"></font>
+  <LI><font size="3" face="Times New Roman">^b - Numera&ccedil;&atilde;o (NR) </font></LI>
+    <font size="3" face="Times New Roman">
+	<LI>^c - T&iacute;tulos e outras palavras associadas com o nome (R) </LI>
+    </font><font size="3" face="Times New Roman">
+	</font><font face="Times New Roman">
+	<LI><font size="3">^d - Datas associadas com nome (NR) </font></LI>
+	<font size="3">
+	<LI>^e - Termo de rela&ccedil;&atilde;o (R) </LI>
+	<LI>^q - Forma completa do nome (NR) </LI>
+	<LI>^t - T&iacute;tulo do trabalho (NR) </LI>
+	<LI>^u - Afilia&ccedil;&atilde;o (NR)</LI>
+	<LI>^v - Subdivis&atilde;o de forma (R) </LI>
+	<LI>^x - Subdivis&atilde;o geral (R) </LI>
+	<LI>^y - Subdivis&atilde;o cronol&oacute;gica (R) </LI>
+	</font></font><LI><font size="3" face="Times New Roman">^z - Subdivis&atilde;o geogr&aacute;fica (R)</font></LI>
+	<font face="Times New Roman"><font size="3">
+	</font></font><LI><font size="3" face="Times New Roman">^2 - Fonte do cabe&ccedil;alho ou termo (NR) <BR>
+    Os c&oacute;digos s&atilde;o da: <a href="http://lcweb.loc.gov/marc/relators/"><i><span lang=EN-US
+  style='mso-ansi-language:EN-US'>Lista de C&oacute;digo MARC para Relatores, Fontes,
+          Conven&ccedil;&otilde;es de Descri&ccedil;&atilde;o </span></i></a><span lang=EN-US style='mso-ansi-language:
+  EN-US'>
+          <o:p></o:p>
+          </span><em>.</em></font></LI>
+	<font face="Times New Roman"><font size="3">
+	</font></font><LI><font size="3" face="Times New Roman">^4 - C&oacute;digo de rela&ccedil;&atilde;o (R) <BR>
+	</font></li>
+	
+</ul>
+<P><font size="3"><b><font face="Times New Roman">Exemplos</font></b></font></P>
+<TABLE CELLSPACING=0 BORDER=0 CELLPADDING=4 WIDTH=674>
+<TR><TD WIDTH="8%" VALIGN="TOP">
+  <FONT size="3" FACE="Times New Roman, Times, serif">600</FONT></TD>
+<TD WIDTH="92%" VALIGN="TOP"><font size="3" face="Times New Roman, Times, serif"><STRONG>17^a</STRONG>Pushkin, Aleksandr   Sergeevich,<STRONG>^d</STRONG>1799-1837<STRONG>^x</STRONG>Museums<STRONG>^z</STRONG>Russia   (Federation)<STRONG>^z</STRONG>Moscow<STRONG>^v</STRONG>Maps.<STRONG>^2</STRONG>lcsh </font></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="TOP">
+  <FONT size="3" FACE="Times New Roman, Times, serif">600</FONT></TD>
+<TD WIDTH="92%" VALIGN="TOP"><font size="3" face="Times New Roman, Times, serif"><STRONG>07^a</STRONG>Gautama Buddha<STRONG>^v</STRONG>Early   works to 1800.<STRONG>^2</STRONG>lcsh </font></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="TOP">
+  <FONT size="3" FACE="Times New Roman, Times, serif">600</FONT></TD>
+<TD WIDTH="92%" VALIGN="TOP"><font size="3" face="Times New Roman, Times, serif"><STRONG>07^a</STRONG>Jesus Christ<STRONG>^x</STRONG>History of   doctrines<STRONG>^y</STRONG>Early Church, ca. 30-600.<STRONG>^2</STRONG>lcsh </font></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="TOP">
+  <FONT size="3" FACE="Times New Roman, Times, serif">600</FONT></TD>
+<TD WIDTH="92%" VALIGN="TOP"><font size="3" face="Times New Roman, Times, serif"><STRONG>07^a</STRONG>Norodom   Sihanouk,<STRONG>^c</STRONG>Prince,<STRONG>^d</STRONG>1922-<STRONG>^2</STRONG>lcsh </font></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="TOP">
+  <FONT size="3" FACE="Times New Roman, Times, serif">600</FONT></TD>
+<TD WIDTH="92%" VALIGN="TOP"><font size="3" face="Times New Roman, Times, serif"><STRONG>17^a</STRONG>Smith,<STRONG>^d</STRONG>fl.   1813.<STRONG>^2</STRONG>lcsh </font></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="TOP">
+  <FONT size="3" FACE="Times New Roman, Times, serif">600</FONT></TD>
+<TD WIDTH="92%" VALIGN="TOP"><font size="3" face="Times New Roman, Times, serif"><STRONG>17^a</STRONG>Dunlap family.<STRONG>^2</STRONG>lcsh </font></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="TOP">
+  <FONT size="3" FACE="Times New Roman, Times, serif">600</FONT></TD>
+<TD WIDTH="92%" VALIGN="TOP"><font size="3" face="Times New Roman, Times, serif"><STRONG>37^a</STRONG>Premyslid dynasty.<STRONG>^2</STRONG>lcsh </font></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="TOP">
+  <FONT size="3" FACE="Times New Roman, Times, serif">600</FONT></TD>
+<TD WIDTH="92%" VALIGN="TOP"><font size="3" face="Times New Roman, Times, serif"><STRONG>37^a</STRONG>Morton family.<STRONG>^2</STRONG>lcsh </font></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="TOP">
+  <FONT size="3" FACE="Times New Roman, Times, serif">600</FONT></TD>
+<TD WIDTH="92%" VALIGN="TOP"><font size="3" face="Times New Roman, Times, serif"><STRONG>07^a</STRONG>Moses<STRONG>^c</STRONG>(Biblical   leader)<STRONG>^2</STRONG>lcsh </font></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="TOP">
+  <FONT size="3" FACE="Times New Roman, Times, serif">600</FONT></TD>
+<TD WIDTH="92%" VALIGN="TOP"><font size="3" face="Times New Roman, Times, serif"><STRONG>17^a</STRONG>Drake,   Francis,<STRONG>^c</STRONG>Sir,<STRONG>^d</STRONG>1540?-1596.<STRONG>^2</STRONG>lcsh </font></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="TOP">
+  <FONT size="3" FACE="Times New Roman, Times, serif">600</FONT></TD>
+<TD WIDTH="92%" VALIGN="TOP"><font size="3" face="Times New Roman, Times, serif"><STRONG>17^a</STRONG>Shakespeare,   William,<STRONG>^d</STRONG>1564-1616.<STRONG>^t</STRONG>Hamlet.<STRONG>^2</STRONG>lcsh </font></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="TOP">
+  <FONT size="3" FACE="Times New Roman, Times, serif">600</FONT></TD>
+<TD WIDTH="92%" VALIGN="TOP"><font size="3" face="Times New Roman, Times, serif"><STRONG>17^a</STRONG>Shakespeare,   William,<STRONG>^d</STRONG>1564-1616<STRONG>^x</STRONG>Criticism and   interpretation<STRONG>^x</STRONG>History<STRONG>^y</STRONG>18th   century.<STRONG>^2</STRONG>lcsh </font></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="TOP">
+  <FONT size="3" FACE="Times New Roman, Times, serif">600</FONT></TD>
+<TD WIDTH="92%" VALIGN="TOP"><font size="3" face="Times New Roman, Times, serif"><STRONG>17^a</STRONG>Reagan,   Ronald<STRONG>^x</STRONG>Assassination attempt, 1981.<STRONG>^2</STRONG>lcsh </font></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="TOP">
+  <FONT size="3" FACE="Times New Roman, Times, serif">600</FONT></TD>
+<TD WIDTH="92%" VALIGN="TOP"><font size="3" face="Times New Roman, Times, serif"><STRONG>17^a</STRONG>Ford, Gerald   R.,<STRONG>^d</STRONG>1913-<STRONG>^x</STRONG>Museums<STRONG>^z</STRONG>Michigan.<STRONG>^2</STRONG>lcsh </font></TD>
+</TR>
+</TABLE>
+<HR>
+<P><font size="3" face="Times New Roman, Times, serif"><A href="#top">In&iacute;cio da p&aacute;gina</A></font></P>
+<HR>
+<p><font size="3" face="Times New Roman, Times, serif"><a href="ayuda_db.php?base=marc&campo=Indice.html"><STRONG>&Iacute;ndice geral</STRONG></a><a href="Indice.html"></a></font></p>
+<HR>
+<p><a href="javascript:window.history.go(-1)"><b>Voltar</b></a></p>
+<HR>
+</BODY>
+</HTML>

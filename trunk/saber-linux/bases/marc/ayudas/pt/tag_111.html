@@ -1,99 +1,123 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
-<HTML>
-<HEAD>
-<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
-<TITLE>(Untitled)</TITLE>
-</HEAD>
-
-<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
-
-<P><A NAME="cmp111"></A></P>
-
-<P><B>111Nombre de la Reunión (O - NR)</B></P>
-
-<P><I>El nombre de una reunión usada como entrada principal en el registro bibliográfico. Las conferencias y los nombres de las reuniones se entran como subordinadas a un autor corporativo se ingresan en el campo 110 y no en este campo.</I></P>
-
-<P><B>Indicadores:</B></P>
-
-<P>1er = Tipo de nombre de reunión como entrada principal – un valor que indica la forma de la entrada del elemento de nombre.</P>
-
-<P>0 = nombre invertido – el nombre empieza con un nombre personal en orden invertido.</P>
-
-<P>1 = Nombre de jurisdicción – el elemento es una jurisdicción bajo la cual la reunión fue ingresada.</P>
-
-<P>2 = Nombre en orden directo.</P>
-
-<P>2do = En Blanco (_)</P>
-
-<P><B>Subcampos:</B></P>
-
-<P>^a Nombre de la reunión como entrada principal (NR) – el nombre de una reunión o la primera entrada cuando existen unidad subordinada; o una jurisdicción bajo la cual el nombre de la reunión se ingresa vea pre-AACR 2.</P>
-
-<P>^c Localización de la reunión (NR)</P>
-
-<P>^d Fecha de la reunión (NR)</P>
-
-<P>^e Unidad subordinada (R) – el nombre de la unidad subordina bajo una reunión.</P>
-
-<P>^f Fecha del Trabajo (NR)</P>
-
-<P>^g Información miscelánea (NR) </P>
-
-<P>^k Formas de Subencabezamientos (R)</P>
-
-<P>^l Idioma del trabajo (NR)</P>
-
-<P>^n Número de la parte/sección/reunión (R) </P>
-
-<P>^p Nombre de la parte/sección de trabajos (R)</P>
-
-<P>^q Nombre del a reunión que sigue a un nombre de jurisdicción (NR) el nombre de la reunión que se ingresa  bajo la jurisdicción entrada en el subcampo ^a</P>
-
-<P>^u Afiliación (NR)</P>
-
-<P>^4 Código del relator (R)</P>
-
-<P>^6 Apuntador (NR)</P>
-
-<P>Vea la descripción de los <B>Subcampos:</B> ^f, ^g, ^l, ^p, ^t, ^u, ^4, y ^6 en el campo 100 y <B>Subcampos:</B> ^c y  ^n en el campo 110.</P>
-
-<P><B>Ejemplos:</B></P>
-
-<P>111 2_^aSymposium Internacional "Manuel Pedroso" In Memoriam ^d(1976 : ^cGuanajuato, México)</P>
-
-<P>111 1_^aChicago. ^qCartography Conference.</P>
-
-<P>111 2_^aGovernor's Conference on Aging (N.Y.) ^d(1982 : ^cAlbany, N.Y.)</P>
-
-<P>111 2_^aEsto '84 ^d(1984 : ^cToronto, Ont). ^eRaamatunaituse Komitee.</P>
-
-<P>111 2_^aWorld Peace Conference ^n(1st : ^d1949 : ^cParis, France and Prague, Czechoslovakia)</P>
-
-<P>111 2_^aWhite House Conference on Library and Information Services ^d(1979 : ^cWashington, D.C.). ^eOhio Conference Delegation.</P>
-
-<P>111 2_^aInternational Symposium on Quality Control (1974- )</P>
-
-<P>111 2_^aNational Conference on Physical Measurement of the Disabled, ^n2nd, ^cMayo Clinic, ^d1981, ^gProjected, not held.</P>
-
-<P>111 1_^aParis. ^qPeace Conference, ^d1919.</P>
-
-<P>111 2_^aSymposium on the Underground Disposal of Radioactive Wastes ^d(1979 : ^cOtaniemi, Finland) ^4fnd</P>
-
-<P>111 2_^aSobranie innostranykh prepodavatelei russkogo iazyka.</P>
-
-<P>111 2_^aExpo '70 ^c(Osaka, Japan)</P>
-
-<P>111 __^aCongreso Internacional de CDS-ISIS ^n(1o : ^cSantafe de Bogotá, COL : ^d20-23 mayo, 1995)</P>
-
-<P>111 __^aSeminario Taller de MicroISIS ^c(Cartagena, COL : ^d1999)</P>
-
-<P>AACR2. Capítulo 24. Sección 24.7 al 24.8</P>
-
-<P><B>Fuente: </B></P>
-
-<P><B>Manual de MARC / preparado por Ana María Ocampo-Ocampo</B></P>
-
-<P><B>Bogotá: ASOISIS, 1998.</B></P>
-
-</BODY>
-</HTML>
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+<TITLE>CAMPO 111</TITLE>
+</HEAD>
+<BODY LINK="#0000ff" VLINK="#800080">
+<A name=top></A>
+<HR>
+<B><FONT FACE="Times New Roman" SIZE=5></B>
+<P><b><i><font size="5" face="Times New Roman, Times, serif">Formato Bibliogr&aacute;fico MARC 21 LITE: Entrada Principal — Campos (1XX)</font></i></b></P>
+<b></b>
+<HR>
+<FONT FACE="Times New Roman"></FONT>
+<P><font size="3" face="Times New Roman, Times, serif">Os campos 1XX cont&eacute;m nomes ou t&iacute;tulos uniformes,
+  os quais s&atilde;o utilizados como entrada principal do registro bibliogr&aacute;fico.
+  Exceto para as defini&ccedil;&otilde;es das posi&ccedil;&otilde;es dos indicadores e os subcampos que s&atilde;o campos especificos,
+os conte&uacute;dos para cada uma das entradas principais s&atilde;o iguais na Entrada principal (campo 100-130),  Acesso Tem&aacute;tico (600-630), Entradas Secund&aacute;rias (700-730).</font></P>
+<UL>
+  <LI><font size="3" face="Times New Roman, Times, serif"><a href="ayuda_db.php?base=marc&campo=tag_100.html">100 &ndash; ENTRADA PRINCIPAL - NOME PESSOAL (NR</a>) </font></LI>
+  <LI><font size="3" face="Times New Roman, Times, serif"><a href="ayuda_db.php?base=marc&campo=tag_110.html">110 &ndash; ENTRADA PRINCIPAL - NOME CORPORATIVO (NR) </a></font></LI>
+</UL>
+<P><font size="3" face="Times New Roman, Times, serif">[Maiores informa&ccedil;&otilde;s em: <A href="http://www.loc.gov/marc/bibliographic/ecbdhome.html"><EM>Formato MARC 21 Conciso</EM></A>] 
+</font>
+<HR>
+<font size="3" face="Times New Roman, Times, serif"><b><FONT FACE="Times New Roman" SIZE=4>
+</b></font>
+<P><font size="3" face="Times New Roman, Times, serif"><b>
+  111 Entrada Principal - Nome de Evento (NR)
+</b></font></P>
+
+<P><font size="3" face="Times New Roman, Times, serif">Nome de um evento ou confer&ecirc;ncia usado como entrada principal
+do registro bibliogr&aacute;fico.</font></P>
+
+<P ALIGN="JUSTIFY"><font face="Times New Roman, Times, serif"><b><font size="3">Indicadores</font></b></font></P>
+
+<UL>
+	<LI><font size="3" face="Times New Roman, Times, serif">Primeiro – Tipo de nome de evento como entrada principal</font></LI>
+	<UL>
+		<LI><font size="3" face="Times New Roman, Times, serif">1 = Nome de Jurisdi&ccedil;&atilde;o<BR>
+  O elemento de entrada &eacute; um nome jurisdicional sob o qual &eacute;
+          atribu&iacute;do o nome do evento. </font>
+	  <LI><font size="3" face="Times New Roman, Times, serif">2 = Nome em ordem direta</font></LI>
+	</UL>
+	<LI><font size="3" face="Times New Roman, Times, serif">Segundo –N&atilde;o definido </font></LI>
+	<UL><LI><font size="3" face="Times New Roman, Times, serif"># - n&atilde;o definido</font></LI></UL>
+</UL>
+
+<P ALIGN="JUSTIFY"><font face="Times New Roman, Times, serif"><b><font size="3">Subcampos</font></b></font></P>
+
+<UL>
+	<LI><font size="3" face="Times New Roman, Times, serif">^a - Nome do evento como entrada principal (NR) </font></LI>
+	<font size="3" face="Times New Roman, Times, serif"></font>
+      <LI><font size="3" face="Times New Roman, Times, serif">^c - Localiza&ccedil;&atilde;o do evento (NR) <br>
+           Nome do lugar ou institui&ccedil;&atilde;o onde o evento foi realizado</font></LI>
+     <LI><font size="3" face="Times New Roman">^d - Data do evento (NR) </font></LI>
+     <LI><font size="3" face="Times New Roman, Times, serif">^e - Unidade subordinada (R)
+	    <br>
+	    Nome da unidade subordinada ao evento.</font></LI>
+     <LI><font size="3" face="Times New Roman, Times, serif">^j - Termo de rela&ccedil;&atilde;o (R) <br>
+          Um termo que descreve a rela&ccedil;&atilde;o entre o nome e um trabalho.</font></LI>
+    <LI><font size="3" face="Times New Roman">^n - N&uacute;mero da parte/se&ccedil;&atilde;o/evento (R) <BR>
+         N&uacute;mero de um evento ou o n&uacute;mero designado da parte ou se&ccedil;&atilde;o de um trabalho. </font></LI>
+    <LI><font size="3" face="Times New Roman, Times, serif">^u - Afilia&ccedil;&atilde;o (NR) <br>
+         Uma afilia&ccedil;&atilde;o ou&nbsp; endere&ccedil;o do nome.</font></LI>
+    <LI><font size="3" face="Times New Roman, Times, serif">^4 - C&oacute;digo de rela&ccedil;&atilde;o (R) <br>
+         C&oacute;digo MARC para a rela&ccedil;&atilde;o entre o nome e a obra. A fonte do c&oacute;digo
+         &eacute; <EM><A href="http://lcweb.loc.gov/marc/relators/"><i><span lang=EN-US
+         style='mso-ansi-language:EN-US'>Lista de C&oacute;digo MARC para Relatores, Fontes,
+         Conven&ccedil;&otilde;es de Descri&ccedil;&atilde;o</span></i></A><span lang=EN-US style='mso-ansi-language:
+  EN-US'>
+          <o:p></o:p>
+          </span>.</EM></font></LI>
+</UL>
+<P><font face="Times New Roman, Times, serif"><b><font size="3">Exemplos</font></b></font></P>
+
+
+<TABLE CELLSPACING=0 BORDER=0 CELLPADDING=4 WIDTH=727>
+<TR><TD WIDTH="7%" VALIGN="TOP">
+  <FONT size="3" FACE="Times New Roman, Times, serif">111</FONT></TD>
+<TD WIDTH="93%" VALIGN="TOP">
+  <FONT size="3" FACE="Times New Roman, Times, serif">2#<B>^a</B>Symposium Internacional "Manuel Pedroso" In Memoriam<B>^d</B>(1976 :<B>^c</B>Guanajuato, M&eacute;xico)</FONT></TD>
+</TR>
+<TR><TD WIDTH="7%" VALIGN="TOP">
+  <FONT size="3" FACE="Times New Roman, Times, serif">111</FONT></TD>
+<TD WIDTH="93%" VALIGN="TOP">
+  <FONT size="3" FACE="Times New Roman, Times, serif">2#<B>^a</B>Governor's Conference on Aging (N.Y.)<B>^d</B>(1982 :<B>^c</B>Albany,
+N.Y.)</FONT></TD>
+</TR>
+<TR><TD WIDTH="7%" VALIGN="TOP">
+  <FONT size="3" FACE="Times New Roman, Times, serif">111</FONT></TD>
+<TD WIDTH="93%" VALIGN="TOP">
+  <FONT size="3" FACE="Times New Roman, Times, serif">2#<B>^a</B>Esto '84<B>^d</B>(1984 :<B>^c</B>Toronto, Ont).<B>^e</B>Raamatunaituse Komitee.</FONT></TD>
+</TR>
+<TR><TD WIDTH="7%" VALIGN="TOP">
+  <FONT size="3" FACE="Times New Roman, Times, serif">111</FONT></TD>
+<TD WIDTH="93%" VALIGN="TOP">
+  <FONT size="3" FACE="Times New Roman, Times, serif">2#<B>^a</B>White House Conference on Library and Information Services<B>^d</B>(1979 :<B>^c</B>Washington, D.C.). <B>^e</B>Ohio Conference Delegation.</FONT></TD>
+</TR>
+<TR><TD WIDTH="7%" VALIGN="TOP">
+  <FONT size="3" FACE="Times New Roman, Times, serif">111</FONT></TD>
+<TD WIDTH="93%" VALIGN="TOP">
+  <FONT size="3" FACE="Times New Roman, Times, serif">2#<B>^a</B>International Symposium on Quality Control (1974- )<strong>^n</strong>(3rd <strong>:^d</strong>1978 :<strong>^c</strong>Tokyo, Japan) </FONT></TD>
+</TR>
+<TR><TD WIDTH="7%" VALIGN="TOP">
+  <FONT size="3" FACE="Times New Roman, Times, serif">111</FONT></TD>
+<TD WIDTH="93%" VALIGN="TOP">
+  <FONT size="3" FACE="Times New Roman, Times, serif">2#<B>^a</B>Symposium on the Underground Disposal of Radioactive Wastes<B>^d</B>(1979 :<B>^c</B>Otaniemi, Finland)<B>^4</B>fnd</FONT></TD>
+</TR>
+<TR><TD WIDTH="7%" VALIGN="TOP">
+  <FONT size="3" FACE="Times New Roman, Times, serif">111</FONT></TD>
+<TD WIDTH="93%" VALIGN="TOP">
+  <FONT size="3" FACE="Times New Roman, Times, serif">2#<B>^a</B>Expo '70<B>^c</B>(Osaka, Japan)</FONT></TD>
+</TR>
+</TABLE>
+<HR>
+<P><font size="3" face="Times New Roman, Times, serif"><A href="#top">In&iacute;cio da p&aacute;gina</A></font></P>
+<HR>
+<p><font size="3" face="Times New Roman, Times, serif"><a href="ayuda_db.php?base=marc&campo=Indice.html"><STRONG>&Iacute;ndice geral</STRONG></a></font></p>
+<HR>
+<p><font size="3" face="Times New Roman, Times, serif"><a href="javascript:window.history.go(-1)"><b>Voltar</b></a></font></p>
+<HR>
+</BODY>
+</HTML>
