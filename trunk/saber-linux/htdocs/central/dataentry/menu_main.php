@@ -75,7 +75,7 @@ function GenerarWks(){
 
 </script>
 </head>
-<body  text=#000000 LEFTMARGIN=0 TOPMARGIN=0 MARGINWIDTH=0 MARGINHEIGHT=0 >
+<body>
 <form name=forma1 onsubmit="return false" method=post>
 <link rel="STYLESHEET" type="text/css" href="js/dhtmlXToolbar.css">
 <script language="JavaScript" src="js/dhtmlXProtobar.js"></script>
