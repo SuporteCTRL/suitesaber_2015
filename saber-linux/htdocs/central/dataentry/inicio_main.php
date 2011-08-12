@@ -100,7 +100,9 @@ if (isset($arrHttp["base"])){
 	$llave=LeerRegistro();
 	$stat=explode("\|",$llave);
 	$llave=substr($stat[2],7);
-	echo "<HTML><title>ABCD</title>
+	echo "<HTML><title>";
+	echo utf8_decode($institution_name);
+	echo "</title>
 				<head>
 				<script language=javascript src=js/lr_trim.js></script>
 				<script languaje=javascript>
