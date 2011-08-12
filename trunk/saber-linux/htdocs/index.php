@@ -1,15 +1,7 @@
-<!-- update in 8/4/2011 23:14:10 por Roger C. Guilherme
-#    Página inicial do ABCD integrada com o acesso ao modo Administrativo
--->
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 <?
-//session_start();
+session_start();
 include("central/config.php");
 include("$app_path/common/get_post.php");
-
 
 if (isset($_SESSION["lang"])){
 
@@ -23,44 +15,27 @@ if (isset($_SESSION["lang"])){
 }
 include ("$app_path/lang/admin.php");
 include ("$app_path/lang/lang.php");
-
+include ("meta.php");
 ?>
 
-
-<html lang="pt-br" xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br">
-
+<html lang="pt-BR" xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-BR">
 	<head>
-<? include ("meta.php"); ?>
-
-		<!-- Stylesheets 
-		<link rel="stylesheet" rev="stylesheet" href="<? echo $app_path?>/css/default_index.css" type="text/css" media="screen"/>-->
-        <link rel="stylesheet" rev="stylesheet" href="<? echo $tema ?>" type="text/css" media="screen"/>
-		<!--[if IE]>
-
-			<link rel="stylesheet" rev="stylesheet" href="<? echo $app_path?>/css/bugfixes_ie.css" type="text/css" media="screen"/>
-
-		<![endif]-->
-
-		<!--[if IE 6]>
-
-			<link rel="stylesheet" rev="stylesheet" href="<? echo $app_path?>/css/bugfixes_ie6.css" type="text/css" media="screen"/>
-
-		<![endif]-->
-
-
-		<style>
-		</style>
-
-		
+	
+	<?php include ("meta.php");?>
+	
 		<!--Permite o iframe que executa o BVS-Site tenha uma altura de acordo com a página-->
-		<script type='text/javascript'>
+
+		<script type="text/javascript">
+
 		function iframeAutoHeight(quem){
-		//by Micox - elmicox.blogspot.com - elmicox.com - webly.com.br  
+
 		if(navigator.appName.indexOf("Internet Explorer")>-1){ //ie sucks
-        var func_temp = function(){
+   
+		var func_temp = function(){
             var val_temp = quem.contentWindow.document.body.scrollHeight + 15
             quem.style.height = val_temp + "px";
         }
+
         setTimeout(function() { func_temp() },100) //ie sucks
 		}else{
         var val = quem.contentWindow.document.body.parentNode.offsetHeight + 15
@@ -72,8 +47,6 @@ include ("$app_path/lang/lang.php");
 <script src=<? echo $app_path?>/dataentry/js/lr_trim.js></script>
 
 <script languaje=javascript>
-
-
 
 document.onkeypress =
 
@@ -88,23 +61,23 @@ document.onkeypress =
 			if (c==13) Enviar()
 
 			return true;
-
 	}
-
-
 
 function UsuarioNoAutorizado(){
 
 	alert("<?php echo $msgstr["menu_noau"]?>")
 		return
 }
+
 function Enviar(){
 	login=Trim(document.administra.login.value)
 	password=Trim(document.administra.password.value)
 	if (login=="" || password==""){
 		alert("<?php echo $msgstr["datosidentificacion"]?>")
 		return
-	}else{
+
+		}else{
+
 		if (document.administra.newindow.checked){
 			document.administra.target="new_window";
 			ancho=screen.availWidth-15
@@ -120,9 +93,6 @@ function Enviar(){
 	}
 
 }
-
-
-
 
 </script>
 
@@ -156,34 +126,27 @@ function Enviar(){
     });
   </script>
 
-
-
-	</head>
+  </head>
 
 
 	
 <body>
 
-
 <div id="container">
 	<div id="topnav" class="topnav"> <a href="login" class="signin">
-	<span><img src="central/css/saber/images/cadeado.png" /></span></a> </div>
+	<span><img src="central/css/<? echo $theme  ?>/images/cadeado.png" /></span></a> </div>
 	<input type=hidden name=Opcion value=admin>
 	<input type=hidden name=cipar value=acces.par>
 	<input type=hidden name=lang value=<?php echo $arrHttp["lang"]?>>
 
-
-
-  <fieldset id="signin_menu">
-<form name=administra onsubmit="javascript:return false" method=post action=<?php echo $app_path?>/common/inicio.php>
-
+	<fieldset id="signin_menu">
+	<form name=administra onsubmit="javascript:return false" method=post action=<?php echo $app_path?>/common/inicio.php>
 
 <?php
 if (isset($arrHttp["login"]) and $arrHttp["login"]=="N"){
 		echo "
 			<div class=\"helper alert\">".$msgstr["menu_noau"]."</div> ";
 }
-
 ?>
 
 
@@ -216,23 +179,19 @@ else
 ?> />
 
 			<a href="javascript:Enviar()"><div><br>
-<img src="central/css/abasaude/images/conectar.png" style="float: right; " />
+<img src="central/css/<? echo $theme  ?>/images/conectar.png" style="float: right; " />
 			</div></a>
         <input id="remember" name="remember_me" value="1" tabindex="7" type="checkbox">
         <label for="remember">Lembrar de mim</label>
       </p>
-  <!--      <p class="forgot"> <a href="#" id="resend_password_link">Perdeu sua senha?</a> </p>
-      <p class="forgot-username"> <A id=forgot_username_link 
-title="If you remember your password, try logging in with your email" 
-href="#">Perdeu seu login?</A> </p> -->
+  <!-- <p class="forgot"> <a href="#" id="resend_password_link">Perdeu sua senha?</a> </p>
+       <p class="forgot-username"> <a id=forgot_username_link title="If you remember your password, try logging in with your email" href="#">Perdeu seu login?</a> </p> -->
     </form>
   </fieldset>
 </div>
 
 <div id="todo">
-
 <iframe  id='ha' src="/site"  onload='iframeAutoHeight(this)' frameborder='0' width="100%" scrolling="auto"></iframe>
-
 </div>
 </body>
 </html>
