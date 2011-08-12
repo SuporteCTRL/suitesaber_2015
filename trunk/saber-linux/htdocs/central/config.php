@@ -1,6 +1,6 @@
 <?
 //Caminho físico no servidor
-$localserver = "/var/www/suitesaber/saber-linux/;
+$localserver = "/var/www/suitesaber/saber-linux";
 
 //Nome do arquivo CSS principal do tema
 $theme ="saber";
@@ -25,10 +25,10 @@ $config_date_format="DD/MM/YY";
 $app_path="central";
 
 //Path to the databases
-$db_path="/bases/";
+$db_path="$localserver/bases/";
 
 //Path to the folder where the uploaded images are to be stored (the database name will be added to this path)
-$img_path="$localserver/bases/";
+$img_path="$localserver/htdocs/bases/";
 
 //Path to the wwwisis executable (include the name of the program)
 //$Wxis="$localserver/cgi-bin/wxis.exe";
