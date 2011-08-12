@@ -2,10 +2,10 @@
 [PATH]
 
 PATH_DATA=/iah/
-PATH_CGI-BIN=/home/storage/0/eb/a8/saberabcd/public_html/demo/iah/scripts/
-PATH_DATABASE=/home/storage/0/eb/a8/saberabcd/dbdemo/
-PATH_DEF=/home/storage/0/eb/a8/saberabcd/dbdemo/par/
-PATH_CGI-BIN=/home/storage/0/eb/a8/saberabcd/public_html/cgi-local/wxis.exe
+PATH_CGI-BIN=/var/www/suitesaber/saber-linux/htdocs/iah/scripts/
+PATH_DATABASE=/var/www/suitesaber/saber-linux/bases/
+PATH_DEF=/var/www/suitesaber/saber-linux/bases/par/
+PATH_CGI-BIN=/var/www/suitesaber/saber-linux/cgi-bin/wxis.exe
 
 [APPEARANCE]
 
