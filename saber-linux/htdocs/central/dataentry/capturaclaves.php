@@ -203,7 +203,7 @@ msg_pv=\"\"\n";
         	else
         		echo "script_name='show.php'\n";
         	?>
-        	msgwin_preview=window.open(script_name+"?"+url,"preview","width=400, height=400,resizable,scrollbars,status")
+        	msgwin_preview=window.open(script_name+"?"+url,"preview","width=400, height=400,scrollbars,status")
 			msgwin_preview.focus()
 			return
 		}
