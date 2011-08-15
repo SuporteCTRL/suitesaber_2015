@@ -100,11 +100,6 @@ A.menuButton:hover  {
 /* #specific classes */
 
 	/*#heading classes */
-	.heading,  .footer{
-		background: #000000;
-		color: #ffffff; 
-	}
-
 	.institutionalInfo H1 {
 		font-size: 250%;
 		color: #ffffff;
@@ -128,10 +123,10 @@ A.menuButton:hover  {
 	}
 	/* #END #heading classes */
 
-	/*#sectionInfo classes */
+	/*#sectionInfo classes 
 	.sectionInfo {
 		background: #8A919B;
-	}
+	}*/
 
 	.breadcrumb H3 {
 		color: #fff;
@@ -155,8 +150,8 @@ A.menuButton:hover  {
 	/*#footer classes  */
 	 .footer {
 	/* 	background: #364c6c;
-		color: #ffffff;*/
-	}
+		color: #ffffff;
+	}*/
 
 	.footer A {
 		color: #cddef6;
@@ -723,16 +718,5 @@ td {
 
 tr:hover {
 	border-bottom-color: #ccc;
-
-}
-
-input[type=text], textarea {
-	background-color: #ffffff; 
-
-}
-
-input[type=text]:focus, textarea:focus {
-	border-left-color: #697096;
-	background-color: #eeeeee; 
 
 }
