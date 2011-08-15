@@ -2,11 +2,12 @@
 <meta http-equiv="Expires" content="-1"/>
 <meta http-equiv="pragma" content="no-cache"/>
 
-<? include( $localPath['html'] . "/metainfo.html"); ?>
+<?php include( $localPath['html'] . "/metainfo.html"); ?>
+<?php include ("../../central/config.php");  ?>
 
 <meta name="robots" content="all" />
 <meta name="MSSmartTagsPreventParsing" content="true" />
-<meta name="generator" content="BVS-Site <?= VERSION ?>" />
+<meta name="generator" content="Bluefish 2.0.2" />
 
 <script type="text/javascript">var lang = '<?=$checked['lang']?>';</script>
 <script type="text/javascript" src="<?=$def['DIRECTORY']?>js/functions.js"></script>
@@ -17,3 +18,7 @@
 <link rel="shortcut icon" href="<?=$def['DIRECTORY']?>favicon.ico"/>
 <link rel="stylesheet" href="<?=$def['DIRECTORY']?>css/public/print.css" type="text/css" media="print"/>
 <link rel="stylesheet" href="<?=$def['DIRECTORY']?>css/public/skins/<?=SKIN_NAME?>/style-<?=$checked['lang']?>.css" type="text/css" media="screen"/>
+
+
+
+<link rel="stylesheet" rev="stylesheet" href="../../<? echo $app_path?>/css/<? echo $theme?>/colors_theme.css" type="text/css" media="screen"/>
