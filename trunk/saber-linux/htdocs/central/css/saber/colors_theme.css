@@ -1,0 +1,24 @@
+	/*#heading classes */
+.heading, .footer, .top, #signin_menu, input, .submit input, .bottom #footNotes{
+		background: #333333;
+		color: #ffffff; 
+	}
+	
+.sectionInfo {
+		background: #4A586D;
+		color: #ffffff;
+	}
+
+input[type=text], textarea {
+	background-color: #ffffff; 
+	color: #000000
+
+}
+
+input[type=text]:focus, textarea:focus {
+	border-left-color: #697096;
+	background-color: #eeeeee; 
+
+}
+
+/*-----------FIM DAS CLASS BÁSICAS----------------*/
