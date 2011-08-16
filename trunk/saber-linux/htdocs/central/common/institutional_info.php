@@ -14,5 +14,4 @@ if (isset($_SESSION["newindow"]) or isset($arrHttp["newindow"])){
 	echo "<a href='javascript:top.location.href=\"../dataentry/logout.php\";top.close()' xclass=\"button_logout\"><span><img alt=\"$msgstr[logout]\" src=\"../css/$theme/images/logout.png\"></span></a>";}else{	echo "<a href=\"../dataentry/logout.php\" xclass=\"button_logout\"><span><img alt=\"$msgstr[logout]\" src=\"../css/$theme/images/logout.png\"></span></a>";}
 ?>
 	</div>
-	<div class="spacer">&#160;</div>
 </div>

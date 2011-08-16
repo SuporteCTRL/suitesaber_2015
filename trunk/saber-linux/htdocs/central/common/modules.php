@@ -12,7 +12,7 @@ foreach ($_SESSION["permiso"] as $key=>$value){	if (substr($key,0,8)=="CENTRAL_
 if ($central=="Y" and $ixcentral>1 and ($circulation=="Y" or $acquisitions=="Y")){
 	echo $msgstr["modulo"];
 ?>
-	<select name=modulo style="width:140px;font-size:8pt;font-family:arial narrow"  onchange=CambiarModulo()>
+	<select name=modulo  onchange=CambiarModulo()>
 		<option value=""></option>
 		<option value=catalog><?php echo $msgstr["catalogacion"]?>
 <?php
@@ -21,7 +21,6 @@ if ($acquisitions=="Y") echo "<option value=acquisitions>".$msgstr["acquisitions
 echo "	</select>";
 }
 ?>
-	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
 </form>
 <script>
 function CambiarModulo(){	ix=document.frmModulo.modulo.selectedIndex

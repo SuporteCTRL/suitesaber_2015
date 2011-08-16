@@ -17,6 +17,7 @@ foreach ($fp as $linea){
 	}
 
 }
+include("header.php");
 $central="";
 $circulation="";
 $acquisitions="";
@@ -29,6 +30,7 @@ foreach ($_SESSION["permiso"] as $key=>$value){
 
 }
 // Se determina el nombre de la página de ayuda a mostrar
+
 if (!isset($_SESSION["MODULO"])) {	if ($central=="Y" and $ixcentral>1) {		$arrHttp["modulo"]="catalog";	}else{		if ($circulation=="Y"){			$arrHttp["modulo"]="loan";		}else{			$arrHttp["modulo"]="acquisitions";		}	}}
 switch ($arrHttp["modulo"]){	case "catalog":
 		$ayuda="homepage.html";
@@ -44,7 +46,7 @@ switch ($arrHttp["modulo"]){	case "catalog":
 		$ayuda="circulation/homepage.html";
 		$module_name=$msgstr["loantit"];
 		$_SESSION["MODULO"]="loan";}
-include("header.php");
+
 ?>
 <script languaje=javascript>
 	function CambiarLenguaje(){
@@ -190,6 +192,7 @@ include("header.php");
 		die;
 	}
 ?>
+<div class="sectionInfo">
 <div class="language"><form name=cambiolang><?php echo $msgstr["lang"]?>:
 	<select name=lenguaje onchange=CambiarLenguaje() >
 		<option value=""></option>
@@ -214,18 +217,21 @@ include("header.php");
 ?>
 	</select>
 	</form>
+	
+			<?php include("modules.php")?>
 </div>
-<div class="sectionInfo">
+
+</div>
 	<div class="breadcrumb">
 		<h3><?php echo $msgstr["inicio"]." - $module_name"?></h3>
 	</div>
 	<div class="actions">
-		<?php include("modules.php")?>
-	</div>
-	<div class="spacer">&#160;</div>
+
+
+
 </div>
-<div class="helper">
-	<a href=../documentacion/ayuda.php?help=<?php echo $_SESSION["lang"]."/$ayuda"?> target=_blank><?php echo $msgstr["help"]?></a>&nbsp &nbsp;
+<div class="helper" >
+	<a href=../documentacion/ayuda.php?help=<?php echo $_SESSION["lang"]."/$ayuda"?> target=_blank><?php echo $msgstr["help"]?></a>
  <?php
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"])){
  	echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/$ayuda target=_blank>".$msgstr["edhlp"];
@@ -233,7 +239,9 @@ if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"])){
 		<font color=white>&nbsp; &nbsp; Script: homepage.php </font>";
 }
 ?>
+
 </div>
+		
 <div class="middle homepage">
 <?php
 $Permiso=$_SESSION["permiso"];
@@ -519,8 +527,8 @@ if ($dirtree==1){
 	
 
 </div>
-
-
+</div>
+</div>
 
 <?php
 	}
@@ -542,3 +550,5 @@ function MenuLoanAdministrator(){
 <?php include ("../css/saber/iesucks/index.php"); ?>
 
 		<![endif]-->
+		
+		<?php include ("footer.php"); ?>
