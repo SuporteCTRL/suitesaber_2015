@@ -21,27 +21,24 @@
 		<meta http-equiv="description" content="" />
 
 		<!-- Stylesheets -->
-		<![if !IE]>
+
 		<link rel="stylesheet" rev="stylesheet" href="<? echo $app_path?>/css/<? echo $theme?>.css" type="text/css" media="screen"/>
 
   		<link rel="stylesheet" rev="stylesheet" href="../css/<? echo $theme?>.css" type="text/css" media="screen"/>
 
 		<link rel="stylesheet" rev="stylesheet" href="../../<? echo $app_path?>/css/<? echo $theme?>.css" type="text/css" media="screen"/>
-		<![endif]>
+		<![if !IE]><link rel="stylesheet" rev="stylesheet" href="<? echo $app_path?>/css/<? echo $theme?>/front.css" type="text/css" media="screen"/><![endif]>
 
+	
 		<!--[if IE]>
 
-		<link rel="stylesheet" rev="stylesheet" href="<? echo $app_path?>/css/<? echo $theme?>/bugfixes_ie.css" type="text/css" media="screen"/>
-
-  		<link rel="stylesheet" rev="stylesheet" href="../css/<? echo $theme?>/bugfixes_ie.css" type="text/css" media="screen"/>
-
-		<link rel="stylesheet" rev="stylesheet" href="../../<? echo $app_path?>/css/<? echo $theme?>/bugfixes_ie.css" type="text/css" media="screen"/>
+		<link rel="stylesheet" rev="stylesheet" href="<? echo $app_path?>/css/<? echo $theme?>/front_ie.css" type="text/css" media="screen"/>
 
 		<![endif]-->
 
 		<!--[if IE 6]>
 
-			<link rel="stylesheet" rev="stylesheet" href="<? echo $app_path?>/css/bugfixes_ie6.css" type="text/css" media="screen"/>
+			<link rel="stylesheet" rev="stylesheet" href="<? echo $app_path?>/css/bugfixes_ie6.css" type="text/css" media="screen"/> 
 
 		<![endif]-->
 
