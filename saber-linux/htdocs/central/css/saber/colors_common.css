@@ -1,9 +1,9 @@
 /* #general styles */
-body {
-	background-color: #ffffff;
+BODY {
+	background: rgba(255, 255, 255, 0.0);
 }
 
-body, input, select, textarea {
+BODY, INPUT, SELECT, TEXTAREA {
 	color: #000000;
 }
 
@@ -20,23 +20,26 @@ A {
 	}
 
 	/* #defaultButton classes */
-	A.defaultButton, 	A.menuButton {
-		color: #ffffff;
-	}
-
-	A.defaultButton:hover IMG, A.menuButton:hover, 	A.singleButton:hover, A.singleButtonSelected  {
-		background-color: #4E6100;
-	}
-
-
-	/* #menuButton classes 
-A.menuButton {
+	A.defaultButton {
 		color: #fff;
 	}
-A.menuButton:hover  {
+
+	A.defaultButton:hover IMG {
 		background-color: #4E617C;
 	}
-*/
+
+
+	/* #menuButton classes */
+	A.menuButton {
+		color: #fff;
+
+		
+	}
+
+	A.menuButton:hover  {
+		background-color: #4E617C;
+	}
+
 
 	A.menuButton SPAN {
 		font-size: 90%;
@@ -68,7 +71,7 @@ A.menuButton:hover  {
 	}
 
 	.helper {
-		background: url('images/icon/helper_bg.png') no-repeat top left;
+		background: url('images/icon/helper_bg.png') no-repeat ;
 		color: #646567
 	}
 
@@ -83,10 +86,10 @@ A.menuButton:hover  {
 		background: url('images/singleButton_bg.gif') repeat-x top left;
 	}
 
-/*	A.singleButton:hover, A.singleButtonSelected {
+	A.singleButton:hover, A.singleButtonSelected {
 		background-color: #4e617c;
 	}
-*/
+
 	A.singleButton .sb_lb {
 		background: url('images/singleButton_lb.gif') no-repeat top left;
 	}
@@ -100,6 +103,11 @@ A.menuButton:hover  {
 /* #specific classes */
 
 	/*#heading classes */
+/*	.heading,  .footer{
+		background: #000000;
+		color: #ffffff; 
+	} */
+
 	.institutionalInfo H1 {
 		font-size: 250%;
 		color: #ffffff;
@@ -123,10 +131,10 @@ A.menuButton:hover  {
 	}
 	/* #END #heading classes */
 
-	/*#sectionInfo classes 
-	.sectionInfo {
-		background: #8A919B;
-	}*/
+	/*#sectionInfo classes */
+/*	.sectionInfo {
+	background: #8A919B;
+	} */
 
 	.breadcrumb H3 {
 		color: #fff;
@@ -143,19 +151,15 @@ A.menuButton:hover  {
 
 	/*#middle classes */
 	.middle {
-		background: #fff;
+
 	}
 	/*#END #middle classes */
 
-	/*#footer classes  */
+	/*#footer classes  
 	 .footer {
 	/* 	background: #364c6c;
 		color: #ffffff;
 	}*/
-
-	.footer A {
-		color: #cddef6;
-	}
 
 	.distributorLogo A {
 		background: url('images/distributorLogo.gif') no-repeat top left;
@@ -164,7 +168,6 @@ A.menuButton:hover  {
 
 	.homepage .mainBox .boxContent {
 
-		background: #fff;
 	}
 
 
@@ -213,7 +216,7 @@ A.menuButton:hover  {
 		background: url('images/icon/mainBox_helpSection.png') no-repeat center;
 	}
 
-/*	.homepage .mainBox .boxContent .sectionButtons A.defaultButton {
+	.homepage .mainBox .boxContent .sectionButtons A.defaultButton {
 		color: #000000;
 	}
 
@@ -221,7 +224,7 @@ A.menuButton:hover  {
 	.homepage .mainBox .boxContent .sectionButtons A.menuButton {
 		color: #000000;
 	}
-*/
+
 	.homepage .mainBox .boxContent .searchTitles .stInput LABEL {
 		color: #4c4c4c;
 	}
@@ -231,11 +234,11 @@ A.menuButton:hover  {
 	}
 
 	.homepage .mainBox A.defaultButton:hover IMG {
-		background-color: #ffffff;
+
 	}
 
 	.homepage .mainBox A.menuButton:hover  {
-		background-color: #ffffff;
+
 
 	}
 	/*#END #homepage classes */
@@ -578,7 +581,7 @@ A.wiki {
 
 	/* #Login */
 	.login .loginForm .boxContent {
-		background: #fff url('images/mainBox_boxContent_bg.gif') repeat-x bottom left;
+		background:  url('images/mainBox_boxContent_bg.gif') repeat-x bottom left;
 		border-left: 1px solid #b2c2d4;
 		border-right: 1px solid #b2c2d4
 	}
