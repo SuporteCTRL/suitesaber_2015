@@ -6,13 +6,10 @@
         ?>
 
 		<div class="footer">
-			<div class="systemInfo">
-				<strong>ABCD <?php echo $def["VERSION"] ?></strong>
-				<span><?php echo $def["LEGEND1"]; ?></span>
-				<a href="<?php echo $def["URL1"]; ?>" target=_blank><?php echo $def["URL1"]; ?></a>
-			</div>
-			<div class="distributorLogo">
-				<a href="<?php echo $def["URL2"]; ?>" target=_blank><span><?php echo $def["LEGEND2"]; ?></span></a>
-			</div>
-			<div class="spacer">&#160;</div>
+
+				<strong><?php  echo utf8_decode($institution_name); ?><?php echo $def["VERSION"] ?></strong><br />
+				<a href="<?php echo $def["URL1"]; ?>" target=_blank><span><?php echo $def["LEGEND1"]; ?></span></a> -
+				<a href="<?php echo $def["URL2"]; ?>" target=_blank><span><?php echo $def["LEGEND2"]; ?></span></a><br />
+
+
 		</div>
