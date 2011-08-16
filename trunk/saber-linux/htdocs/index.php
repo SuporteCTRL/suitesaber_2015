@@ -150,7 +150,7 @@ if (isset($arrHttp["login"]) and $arrHttp["login"]=="N"){
 ?>
 
 
-			<label for="user"><?php echo $msgstr["userid"]?></label>
+			<label for="user"><?php echo $msgstr["userid"]?></label><br />
 <?php
 if (isset($arrHttp["login"]) and $arrHttp["login"]=="N"){
 		echo "
@@ -163,7 +163,7 @@ if (isset($arrHttp["login"]) and $arrHttp["login"]=="N"){
 ?>
       </p>
     <p>
-        <label for="password">Senha</label>
+        <label for="password">Senha</label><br />
         <input type="password" class="pwd" name="password" id="pwd" value="" onClick="this.value='';" />
       </p>
       <p class="remember">
