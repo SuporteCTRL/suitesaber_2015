@@ -1,15 +1,25 @@
 	/*#heading classes */
-.heading, .footer, .top, #signin_menu, input, .submit input, .bottom #footNotes{
+.heading,.top, #signin_menu, input, .submit input, .bottom #footNotes, .sectionInfo, .language, .systemInfo,
+ .distributorLogo{
 		background: #3684a9;
 		color: #ffffff; 
 	}
+ .footer   {
+	border-top-color: #3684a9;
+	border-top-width: 2px; 	
+	border-top-style: solid;
+ 	
+ 	}
 	
-.sectionInfo {
-		background: #4A586D;
+ .breadcrumb {
+		background: #1a6b91;
 		color: #ffffff;
+		border-top-color: #6cb3d4;
+		border-top-width: 1px;
+		border-top-style: solid;
 	}
 
-input[type=text], textarea {
+input[type=text],input[type=password], textarea {
 	background-color: #ffffff; 
 	color: #000000
 
