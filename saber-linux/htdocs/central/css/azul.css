@@ -1,8 +1,7 @@
 @import url(azul/layout.css);
 @import url(azul/colors_common.css);
-@import url(azul/colors_theme.css);
 @import url(azul/styles.css);
-@import url(azul/front.css);
+@import url(azul/colors_theme.css); 
 
 
 /* style rule: para correção de erros para float */
