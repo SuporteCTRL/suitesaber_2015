@@ -81,24 +81,26 @@ function GenerarWks(){
 <script language="JavaScript" src="js/dhtmlXProtobar.js"></script>
 <script language="JavaScript" src="js/dhtmlXToolbar.js"></script>
 <script language="JavaScript" src="js/dhtmlXCommon.js"></script>
-<table width=100% class="sectionInfo" >
-	<td align=center valign=top ><font style="font-size:10px;font-family:arial"> <?php echo $msgstr["m_ir"]?>:<br>
-		<input type=text  name=ir_a size=15 value='' onClick="javascript:this.value=''" style="font-size:10px;font-family:arial">
-   	</td>
+<table width="100%" class="sectionInfo" >
+	<td align=center valign=top ><?php echo $msgstr["m_ir"]?>:<br>
+		<input type=text  name=ir_a size=15 value='' onClick="javascript:this.value=''">
+  	</td>
 	<td ><div id="toolbarBox" style="height:30;position:relative"></div></td>
-    <td align=right>
-       	<table cellspacing=0 cellpadding=0><td align=right><font style="font-size:7pt"><?php echo $msgstr["displaypft"]?>:</td>
-			<td><select name=formato onChange=Javascript:GenerarDespliegue()  style="width:90;font-size:8pt;font-family:arial narrow">
+
+	</td>
+<td>
+<div>
+       	<?php echo $msgstr["displaypft"]?>:
+			<select name=formato onChange=Javascript:GenerarDespliegue()>
 				<option></option>
 				</select>
-			</td>
-	  	 <tr><td align=right><font style="font-size:7pt"><?php echo $msgstr["fmt"]?>:&nbsp; </td><td>
-				<select name=wks onChange=Javascript:GenerarWks() style="width:90;font-size:8pt;font-family:arial narrow">
+<br />
+	  	 <?php echo $msgstr["fmt"]?>:&nbsp; 
+				<select name=wks onChange=Javascript:GenerarWks()>
 					<option></option>
 				</select>
-			</td>
-		</table>
-	</td>
+</div>
+</td>
 	<td width=3>&nbsp;</td>
 </table>
 <script>
