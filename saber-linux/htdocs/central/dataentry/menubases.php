@@ -174,7 +174,7 @@ function CambiarLenguaje(){
 }
 </script>
 </head>
-<body>
+<body class="heading">
 <form name=OpcionesMenu>
 <input type=hidden name=base value="">
 <input type=hidden name=cipar value="">
@@ -192,9 +192,8 @@ function CambiarLenguaje(){
 if (isset($_SESSION["newindow"]) or isset($arrHttp["newindow"])){
 	echo "<a href='javascript:top.location.href=\"../dataentry/logout.php\";top.close()' xclass=\"button_logout\"><span><img alt=\"$msgstr[logout]\" src=\"../css/$theme/images/logout.png\"></span></a>";}else{	echo "<a href=\"../dataentry/logout.php\" xclass=\"button_logout\"><span><img alt=\"$msgstr[logout]\" src=\"../css/$theme/images/logout.png\"></span></a>";}
 ?>
-<br>		<table cellpadding=0 cellspacing=0 border=0 align=right>
 
-		<tr><td align=right width=105><font color=white face=arial size=1>
+<div class="opt_catalog">
 <?php
 $central="";
 $circulation="";
@@ -206,42 +205,44 @@ foreach ($_SESSION["permiso"] as $key=>$value){
 
 }
 if ($circulation=="Y" or $acquisitions=="Y"){
-		echo $msgstr["modulo"].":</td><td><font color=white face=arial size=1>";
+		echo $msgstr["modulo"].":";
          ?>
-  			<select name=modulo style="width:140;font-size:8pt;font-family:arial narrow"  onclick=VerificarEdicion() onchange=Modulo()>
+  			<select name=modulo onclick=VerificarEdicion() onchange=Modulo()>
   				<option value=catalog><?php echo $msgstr["catalogacion"]?>
   				<option value=dbadmin><?php echo $msgstr["dbadmin"]?>
   				<option value=loan><?php echo $msgstr["prestamo"]?>
   				<option value=acquisitions><?php echo $msgstr["acquisitions"]?>
-  			</select></td><td width=10 rowspan=4>&nbsp;</td><tr><td align=right>
+  			</select>
           <?php } ?>
-            <font color=white face=arial size=1>
-  			<?php echo $msgstr["lang"]?>:</td><td>
-  			<select name=lenguaje style="width:140;font-size:8pt;font-family:arial narrow"  onclick=VerificarEdicion() onchange=CambiarLenguaje()>
- <?php
- 	$a=$db_path."lang.tab";
- 	if (file_exists($a)){
-		$fp=file($a);
-		$selected="";
-		foreach ($fp as $value){
 
-			$value=trim($value);
-			if ($value!=""){				$l=explode('=',$value);
-				if ($l[0]!="lang"){
-					if ($l[0]==$_SESSION["lang"]) $selected=" selected";
-					echo "<option value=$l[0] $selected>".$msgstr[$l[0]]."</option>";
-					$selected="";
-				}
-			}
-		}
-	}else{
-		echo $msgstr["flang"].$db_path."lang/".$_SESSION["lang"]."/lang.tab";
-		die;
-	}
+  	<?php //echo $msgstr["lang"]?></td><td>
+  	<!--	<select name=lenguaje style="width:140;font-size:8pt;font-family:arial narrow"  onclick=VerificarEdicion() onchange=CambiarLenguaje()> -->
+ <?php
+// 	$a=$db_path."lang.tab";
+// 	if (file_exists($a)){
+//		$fp=file($a);
+//		$selected="";
+//		foreach ($fp as $value){
+//
+//			$value=trim($value);
+//			if ($value!=""){				$l=explode('=',$value);
+//				if ($l[0]!="lang"){
+//					if ($l[0]==$_SESSION["lang"]) $selected=" selected";
+//					echo "<option value=$l[0] $selected>".$msgstr[$l[0]]."</option>";
+//					$selected="";
+//				}
+//			}
+//		}
+//	}else{
+//		echo $msgstr["flang"].$db_path."lang/".$_SESSION["lang"]."/lang.tab";
+//		die;
+//	}
 ?>
-		</select></td><tr><td align=right><font color=white face=arial size=1>
-<?php echo $msgstr["bd"]?>:</td><td>
-		<select name=baseSel onchange=CambiarBase() onclick=VerificarEdicion() style="width:140;font-size:8pt;font-family:arial narrow">
+		</select>
+		
+		
+<?php echo $msgstr["bd"]?>:
+		<select name=baseSel onchange=CambiarBase() onclick=VerificarEdicion()>
 		<option value=""></option>
 <?
 $i=-1;
@@ -259,14 +260,20 @@ foreach ($lista_bases as $key => $value) {
 		echo "<option value=\"^a$key^badm^c".$t[1]."\" $xselected>".$t[0]."\n";
 	}
 }
-echo "</select></td></table>" ;
+echo "</select>" ;
 if ($hascopies=="Y" and (isset($_SESSION["permiso"]["CENTRAL_ADDCO"]) or isset($_SESSION["permiso"]["CENTRAL_ALL"]))){	echo "\n<script>top.db_copies='Y'\n</script>\n";}
 ?>
+</form>
+
+
+
+</div>
+
 
 	</div>
 
 </div>
-</form>
+
 
 <script>
 <?php
