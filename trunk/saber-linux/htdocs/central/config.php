@@ -3,7 +3,7 @@
 $localserver = "/var/www/suitesaber/saber-linux";
 
 //Nome do arquivo CSS principal do tema
-$theme ="saber";
+$theme ="azul";
 
 //Nome do Arquivo de Logotipo
 $imglogo ="logoabcd.png";
@@ -16,7 +16,7 @@ $context_menu="Y";
 $logo ="/css/$theme/images/$imglogo";
 
 //Tamanho do logotipo em Largura
-$sizelogo="164";
+$sizelogo="170";
 
 //USED FOR ALL THE DATE FUNCTIONS. DD=DAYS, MM=MONTH, AA=YEAR. USE / AS SEPARATOR
 $config_date_format="DD/MM/YY";
