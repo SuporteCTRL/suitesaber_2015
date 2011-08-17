@@ -42,7 +42,7 @@ global $arrHttp,$msgstr,$db_path,$valortag,$lista_bases;
 						&#160;
 					</div>
 					<div class="sectionTitle">
-						<h4>&#160;<strong><?php echo $msgstr["trans"]?></strong></h4>
+		<!--				<h4>&#160;<strong><?php echo $msgstr["trans"]?></strong></h4> -->
 					</div>
 					<div class="sectionButtons">
 <?php
@@ -130,7 +130,7 @@ if (isset($_SESSION["permiso"]["CENTRAL_ALL"]) or isset($_SESSION["permiso"]["CI
 						&#160;
 					</div>
 					<div class="sectionTitle">
-						<h4>&#160;<strong><?php echo $msgstr["basedatos"]?></strong></h4>
+					<!--	<h4>&#160;<strong><?php echo $msgstr["basedatos"]?></strong></h4> -->
 					</div>
 					<div class="sectionButtons">
 						<a href="../dataentry/browse.php?base=users&modulo=loan" class="menuButton tooltip userButton">
@@ -174,7 +174,7 @@ if (isset($_SESSION["permiso"]["CENTRAL_ALL"]) or isset($_SESSION["permiso"]["CI
 						&#160;
 					</div>
 					<div class="sectionTitle">
-						<h4>&#160;<strong><?php echo $msgstr["admin"]?></strong></h4>
+			<!--			<h4>&#160;<strong><?php echo $msgstr["admin"]?></strong></h4> -->
 					</div>
 					<div class="sectionButtons">
 <?php
@@ -197,15 +197,15 @@ if (isset($_SESSION["permiso"]["CENTRAL_ALL"]) or isset($_SESSION["permiso"]["CI
 if (isset($_SESSION["permiso"]["CENTRAL_ALL"]) or isset($_SESSION["permiso"]["CIRC_CIRCALL"]) or isset($_SESSION["permiso"]["CIRC_CIRCSTAT"])){
 ?>
 			<a href="../statistics/tables_generate.php?base=users&encabezado=s" class="menuButton tooltip multiLine statButton">
-				<img src="../css/<? echo $theme ?>/images/mainBox_iconBorder.gif" alt="" title="" />
+
 				<span><strong><?php echo $msgstr["stat_users"]?></strong></span>
 			</a>
 			<a href="../statistics/tables_generate.php?base=trans&encabezado=s" class="menuButton tooltip multiLine statButton">
-				<img src="../css/<? echo $theme ?>/images/mainBox_iconBorder.gif" alt="" title="" />
+				
 				<span><strong><?php echo $msgstr["stat_trans"]?></strong></span>
 			</a>
 			<a href="../statistics/tables_generate.php?base=suspml&encabezado=s" class="menuButton tooltip multiLine statButton">
-				<img src="../css/<? echo $theme ?>/images/mainBox_iconBorder.gif" alt="" title="" />
+
 				<span><strong><?php echo $msgstr["stat_suspml"]?></strong></span>
 			</a>
 <?php
