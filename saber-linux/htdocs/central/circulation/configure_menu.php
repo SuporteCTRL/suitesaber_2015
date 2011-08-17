@@ -50,19 +50,54 @@ echo "<div class=\"sectionInfo\">
 	<div class=\"actions\">\n";
 
 		echo "<a href=\"../common/inicio.php?reinicio=s&modulo=loan\" class=\"defaultButton backButton\">
-			<img src=\"../images/mainBox_iconBorder.gif\" alt=\"\" title=\"\" />
 			<span><strong>". $msgstr["back"]."</strong></span>
 		</a>
 	</div>
 	<div class=\"spacer\">&#160;</div>
 </div>";
 ?>
+
+	<script>
+	$(function() {
+		$( "#tabs" ).tabs().find( ".ui-tabs-nav" ).sortable({ axis: "x" });
+	});
+	</script>
+		<style type="text/css">
+			/*demo page css*/
+			.demoHeaders { margin-top: 2em; }
+			#dialog_link {padding: .4em 1em .4em 20px;text-decoration: none;position: relative;}
+			#dialog_link span.ui-icon {margin: 0 5px 0 0;position: absolute;left: .2em;top: 50%;margin-top: -8px;}
+			ul#icons {margin: 0; padding: 0;}
+			ul#icons li {margin: 2px; position: relative; padding: 4px 0; cursor: pointer; float: left;  list-style: none;}
+			ul#icons span.ui-icon {float: left; margin: 0 4px;}
+		</style>
+
+
+	<style>
+	#draggable { width: 60px; height: 60px; padding: 0.5em; }
+	</style>
+	<script>
+	$(function() {
+		$( ".menuButton" ).draggable();
+	});
+	</script>
+
+
 <div class="helper">
 	<a href=../documentacion/ayuda.php?help=<?php echo $_SESSION["lang"]?>/circulation/configure_menu.html target=_blank><?php echo $msgstr["help"]?></a>&nbsp &nbsp;
 <?php if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"])) echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/circulation/configure_menu.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "<font color=white>&nbsp; &nbsp; Script: configure_menu.php" ?></font>
+echo "&nbsp; &nbsp; Script: configure_menu.php" ?>
 	</div>
-<div class="middle homepage">
+	
+	<div class="middle homepage">
+	
+			<div id="tabs">
+			<ul>
+				<li><a href="#tabs-1"><?php echo $msgstr["policy"]?></a></li>
+				<li><a href="#tabs-2"><?php echo $msgstr["outputs"]?></a></li>
+			</ul>
+
+	<div id="tabs-1">
 	<div class="mainBox" onmouseover="this.className = 'mainBox mainBoxHighlighted';" onmouseout="this.className = 'mainBox';">
 		<div class="boxTop">
 			<div class="btLeft">&#160;</div>
@@ -73,39 +108,39 @@ echo "<font color=white>&nbsp; &nbsp; Script: configure_menu.php" ?></font>
 				<h4><strong><?php echo $msgstr["policy"]?></strong></h4>
 			</div>
 			<div class="sectionButtons">
-				<a href="databases.php" class="menuButton multiLine databaseButton">
-					<img src="../images/mainBox_iconBorder.gif" alt="" title="" /
+				<a href="databases.php" class="menuButton tooltip databaseButton">
+		
 					<span><strong><?php echo $msgstr["sourcedb"]?></strong></span>
 				</a>
-				<a href="borrowers_configure.php" class="menuButton multiLine importButton">
-					<img src="../images/mainBox_iconBorder.gif" alt="" title="" /
+				<a href="borrowers_configure.php" class="menuButton tooltip importButton">
+		
 					<span><strong><?php echo $msgstr["bconf"]?></strong></span>
 				</a>
-				<a href="typeofusers.php" class="menuButton multiLine userButton">
-					<img src="../images/mainBox_iconBorder.gif" alt="" title="" />
+				<a href="typeofusers.php" class="menuButton tooltip userButton">
+		
 					<span><strong><?php echo $msgstr["typeofusers"]?></strong></span>
 				</a>
-                      <a href="typeofitems.php" class="menuButton multiLine importButton">
-					<img src="../images/mainBox_iconBorder.gif" alt="" title="" /
+                      <a href="typeofitems.php" class="menuButton tooltip importButton">
+		
 					<span><strong><?php echo $msgstr["typeofitems"]?></strong></span>
 				</a>
-                      <a href="loanobjects.php" class="menuButton multiLine newButton">
-					<img src="../images/mainBox_iconBorder.gif" alt="" title="" />
+                      <a href="loanobjects.php" class="menuButton tooltip newButton">
+		
 					<span><strong><?php echo $msgstr["objectpolicy"]?></strong></span>
 				</a>
 
-				<a href="locales.php" class="menuButton multiLine importButton">
-					<img src="../images/mainBox_iconBorder.gif" alt="" title="" /
+				<a href="locales.php" class="menuButton tooltip importButton">
+		
 					<span><strong><?php echo $msgstr["local"]?></strong></span>
 				</a>
 
-				<a href="calendario.php" class="menuButton multiLine importButton">
-					<img src="../images/mainBox_iconBorder.gif" alt="" title="" /
+				<a href="calendario.php" class="menuButton tooltip importButton">
+		
 					<span><strong><?php echo $msgstr["calendar"]?></strong></span>
 				</a>
 
-                <a href="../reservas/inicio.php" class="menuButton multiLine importButton">
-					<img src="../images/mainBox_iconBorder.gif" alt="" title="" /
+                <a href="../reservas/inicio.php" class="menuButton tooltip importButton">
+		
 					<span><strong><?php echo $msgstr["reserves_conf"]?></strong></span>
 				</a>
 
@@ -117,7 +152,12 @@ echo "<font color=white>&nbsp; &nbsp; Script: configure_menu.php" ?></font>
 			<div class="bbRight">&#160;</div>
 		</div>
 	</div>
+	
+	
+</div>
 
+
+<div id="tabs-2">
 	<div class="mainBox" onmouseover="this.className = 'mainBox mainBoxHighlighted';" onmouseout="this.className = 'mainBox';">
 		<div class="boxTop">
 			<div class="btLeft">&#160;</div>
@@ -128,16 +168,16 @@ echo "<font color=white>&nbsp; &nbsp; Script: configure_menu.php" ?></font>
 				<h4>&#160;<strong><?php echo $msgstr["outputs"]?></strong></h4>
 			</div>
 			<div class="sectionButtons">
-				<a href="../dbadmin/pft.php?base=trans&encabezado=s&retorno=../circulation/configure_menu.php" class="menuButton multiLine reportButton">
-					<img src="../images/mainBox_iconBorder.gif" alt="" title="" />
+				<a href="../dbadmin/pft.php?base=trans&encabezado=s&retorno=../circulation/configure_menu.php" class="menuButton tooltip reportButton">
+		
 					<span><strong><?php echo $msgstr["reports_trans"]?></strong></span>
 				</a>
-				<a href="../dbadmin/pft.php?base=suspml&encabezado=s&retorno=../circulation/configure_menu.php" class="menuButton multiLine reportButton">
-					<img src="../images/mainBox_iconBorder.gif" alt="" title="" />
+				<a href="../dbadmin/pft.php?base=suspml&encabezado=s&retorno=../circulation/configure_menu.php" class="menuButton tooltip reportButton">
+		
 					<span><strong><?php echo $msgstr["reports_suspml"]?></strong></span>
 				</a>
-				<a href="../dbadmin/pft.php?base=users&encabezado=s&retorno=../circulation/configure_menu.php" class="menuButton multiLine reportButton">
-					<img src="../images/mainBox_iconBorder.gif" alt="" title="" />
+				<a href="../dbadmin/pft.php?base=users&encabezado=s&retorno=../circulation/configure_menu.php" class="menuButton tooltip reportButton">
+		
 					<span><strong><?php echo $msgstr["reports_borrowers"]?></strong></span>
 				</a>
 
@@ -153,12 +193,16 @@ echo "<font color=white>&nbsp; &nbsp; Script: configure_menu.php" ?></font>
 		</div>
 	</div>
 </div>
+
+
 <form name=admin method=post action=administrar_ex.php onSubmit="Javascript:return false">
 <input type=hidden name=base>
 <input type=hidden name=cipar>
 <input type=hidden name=Opcion>
 </form>
 </div>
+</div>
+
 </div>
 <?php include("../common/footer.php");?>
 

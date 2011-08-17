@@ -705,13 +705,14 @@ a.tooltip:hover span {
 .areas1{
 	color: #536072;
 	background-color: #CCDBE8; 
-	text-shadow: 0.1em 0.1em #ffffff;
+	text-decoration: none;
+
 		
 }
 .areas2{
 	color: #DEECF7;
 	background-color: #CCDBE8; 
-	text-shadow: 0.1em 0.1em #536072;
+
 }
 
 td {
