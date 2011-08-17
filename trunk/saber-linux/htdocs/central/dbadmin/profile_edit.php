@@ -67,7 +67,7 @@ function getElement(psID) {
 }
 
 function DeleteProfile(Profile){	if (confirm("<?PHP echo $msgstr["DELETE"]?> "+Profile))
-		self.location.href="profile_edit.php?profile="+Profile+"&Opcion=delete&encabezado=<?php echo $encabezado?>"
+		self.location.href="profile_edit.php?profile="+Profile+"&Opcion=delete&encabezado=<?php echo $encabezado?> "
 }
 
 function AllDatabases(){
@@ -162,9 +162,9 @@ function SendForm(){
 <?php echo $msgstr["PROFILES"]?>
 	</div>
 	<div class="actions">
-<?php echo "<a href=\"users_adm.php?xx=s"."$encabezado\" class=\"defaultButton backButton\">";?>
+<?php echo "<a  href=\"users_adm.php?xx=s"."$encabezado\" class=\"defaultButton backButton\">";?>
 		<img src="../images/defaultButton_iconBorder.gif" alt="" title="" /></a>
-<?php if (isset($arrHttp["Opcion"])and $arrHttp["Opcion"]!="delete"){	  echo "<a href=\"javascript:SendForm()\" class=\"defaultButton saveButton\">";?>
+<?php if (isset($arrHttp["Opcion"])and $arrHttp["Opcion"]!="delete"){	  echo "<a  href=\"javascript:SendForm()\" class=\"defaultButton saveButton\">";?>
 		<img src="../images/defaultButton_iconBorder.gif" alt="" title="" />
 		<span><strong><?php echo $msgstr["SAVE"]?></strong></span></a>
 <?php } ?>
@@ -176,13 +176,13 @@ function SendForm(){
 <?php
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
  	echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/profiles.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "<font color=white>&nbsp; &nbsp; Script: profile_edit.php";
+echo "&nbsp; &nbsp; Script: profile_edit.php";
 ?>
 </font>
 	</div>
 <div class="middle form">
 	<div class="formContent">
-<form name=profile action=profile_save.php onsubmit="javascript:return false" >
+<form  name=profile action=profile_save.php onsubmit="javascript:return false" >
 <?php
 if (isset($arrHttp["encabezado"]))
 	echo "<input type=hidden name=encabezado value=S>\n";
@@ -213,13 +213,13 @@ function DisplayProfiles(){global $db_path,$msgstr,$encabezado;
 		if ($val!=""){
 			$p=explode('|',$val);
 			if ($p[0]!="adm"){
-				echo "<tr><td>".$p[1]." (".$p[0].")</td><td><a href=profile_edit.php?profile=".$p[0]."$encabezado&Opcion=edit>".$msgstr["EDIT"]."</A> | ";
-				echo "<a href=javascript:DeleteProfile(\"".$p[0]."\")>".$msgstr["delete"]."</A></td>";
+				echo "<tr><td><li><h2>".$p[1]." (".$p[0].")</td><td><a href=profile_edit.php?profile=".$p[0]."$encabezado&Opcion=edit id=\"botoes\"> ".$msgstr["EDIT"]."</a>";
+				echo "<a id=\"botoes\" href=javascript:DeleteProfile(\"".$p[0]."\")>".$msgstr["delete"]."</a></td>";
 			}
 		}
 	}
 	echo "</table>\n";
-	echo "<a href=profile_edit.php?Opcion=new&encabezado=s>".$msgstr["new"]."</a>";}
+	echo "<a id=\"botoes\" href=profile_edit.php?Opcion=new&encabezado=s>".$msgstr["new"]."</a>";}
 
 function DeleteProfile(){global $db_path,$msgstr,$lang_db,$arrHttp,$xWxis,$Wxis;
 // READ ACCES DATABASE AND FIND IF THE PROFILE IS IN USE

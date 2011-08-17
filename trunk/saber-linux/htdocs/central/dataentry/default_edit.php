@@ -52,7 +52,7 @@ if (isset($arrHttp["encabezado"])){
 				echo "</div>
 				<div class=\"actions\">
 					<a href=\"../$retorno/browse.php?encabezado=s\" class=\"defaultButton backButton\">
-						<img src=\"../images/defaultButton_iconBorder.gif\" alt=\"\" title=\"\" />
+
 						<span><strong>".$msgstr["back"]."</strong></span>
 					</a>
 				</div>

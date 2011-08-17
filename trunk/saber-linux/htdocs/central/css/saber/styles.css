@@ -330,6 +330,20 @@ TD.showSTitle .collectionMode A.selected {
 	-webkit-border-radius: 5px;
 }
 
+#botoes {
+	display: inline-block;
+	margin:1px;
+	text-align: center;
+	cursor:pointer;
+	border: 0;
+	font-size: 120%;
+	font-weight: bold;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	padding: 9px;
+	text-decoration: none;
+}
+
 /*tooltip da administração */
 a:hover {
 	text-decoration:none;
