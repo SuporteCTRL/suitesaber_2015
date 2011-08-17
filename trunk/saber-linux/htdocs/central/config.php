@@ -3,7 +3,7 @@
 $localserver = "/var/www/suitesaber/saber-linux";
 
 //Nome do arquivo CSS principal do tema
-$theme ="azul";
+$theme ="saber";
 
 //Nome do Arquivo de Logotipo
 $imglogo ="logoabcd.png";
