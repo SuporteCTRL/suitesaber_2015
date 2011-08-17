@@ -440,7 +440,7 @@ display: inline;
 	/*#footer classes */
 
 	.footer {
-	position: fixed;
+	position: relative;
 	width: 100%;
 	text-align: center;
 	bottom: 0px;

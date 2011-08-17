@@ -154,7 +154,6 @@ echo "
 if (isset($arrHttp["encabezado"])){
 	echo "<a href=\"../common/inicio.php?reinicio=s&base=".$arrHttp["base"]."\" class=\"defaultButton backButton\">";
 echo "
-					<img src=\"../images/defaultButton_iconBorder.gif\" alt=\"\" title=\"\" />
 					<span><strong>". $msgstr["back"]."</strong></span>
 				</a>";
 }
@@ -189,7 +188,7 @@ echo "<font color=white>&nbsp; &nbsp; Script: menu_modificardb.php";
  <div class="middle form">
 			<div class="formContent">
 </center>
-<table width=400 align=center>
+<table width=600 align=center>
 	<tr>
 		<td>
 			<form name=update_base onSubmit="return false">
@@ -197,10 +196,10 @@ echo "<font color=white>&nbsp; &nbsp; Script: menu_modificardb.php";
 			<input type=hidden name=type value="">
 			<input type=hidden name=base value=<?php echo $arrHttp["base"]?>>
 			<?php if (isset($arrHttp["encabezado"])) echo "<input type=hidden name=encabezado value=s>";?>
-            <br>
-            <ul>
+    
+            <h2>Campos e Planilhas</h2><h3><ul>
 			<li><a href='javascript:Update("fdt")'><?php echo $msgstr["fdt"]?></a></li>
-			<li><a href='javascript:Update("fdt_new")'><font color=red><?php echo $msgstr["fdt_compressed"]?></font></a></li>
+			<li><a href='javascript:Update("fdt_new")'><?php echo $msgstr["fdt_compressed"]?></a></li>
 			<?php
 // SI ES UN REGISTRO MARC SE INCLUYE LA OPCION PARA MANEJO DE LOS TIPOS DE REGISTRO DE ACUERDO AL LEADER
 			if ($ldr=="s" ){
@@ -209,24 +208,32 @@ echo "<font color=white>&nbsp; &nbsp; Script: menu_modificardb.php";
 				echo "<li><a href=javascript:Update(\"fixedfield\")>". $msgstr["typeofrecord_aw"]."</a></li>";
 			}
 			?>
-			<li><a href=javascript:Update("fst")><?php echo $msgstr["fst"]?></a></li>
 			<li><a href=javascript:Update("fmt")><?php echo $msgstr["fmt"]?></a></li>
+			<li><a href=javascript:Update("recval")><?php echo $msgstr["recval"]?></a></li>
+    <!--<li><a href=javascript:Update("delval")><?php echo $msgstr["delval"]?></a></li>-->
+			</ul>
+			
+			<h2>Outras opções</h2><h3><ul>
+
+
 			<li><a href=javascript:Update("pft")><?php echo $msgstr["pft"]?></a></li>
 			<?php
 			if (!isset($ldr) or $ldr!="s" )// SI NO ES UN REGISTRO MARC SE INCLUYE EL MANEJO DE LOS TIPOS DE REGISTRO NO MARC
 			    echo "<li><a href=javascript:Update(\"typeofrecs\")>".$msgstr["typeofrecords"]."</a></li>";
 			?>
+			<li><a href=javascript:Update("fst")><?php echo $msgstr["fst"]?></a></li>
 
-			<li><a href=javascript:Update("recval")><?php echo $msgstr["recval"]?></a></li>
-			<li><a href=javascript:Update("delval")><?php echo $msgstr["delval"]?></a></li>
 			<li><a href=javascript:Update("search")><?php echo $msgstr["advsearch"]?></a></li>
-			<li><a href=javascript:Update("bases")><?php echo $msgstr["dblist"]?></a></li>
+			<li><a href=javascript:Update("IAH")><?php echo $msgstr["iah-conf"]?></a></li>
+
 			<li><a href=javascript:Update("par")><?php echo $msgstr["dbnpar"]?></a>
             <li><a href=javascript:Update("help")><?php echo $msgstr["helpdatabasefields"]?></a></li>
-            <li><a href=javascript:Update("IAH")><?php echo $msgstr["iah-conf"]?></a></li>
+            
             <li><a href=javascript:Update("stats_var")><?php echo $msgstr["estadisticas"]." - ".$msgstr["var_list"]?></a></li>
             <li><a href=javascript:Update("stats_tab")><?php echo $msgstr["estadisticas"]." - ".$msgstr["tab_list"]?></a></li>
-            </ol>
+  </ul>
+      	<h2>Bases de dados</h2><h3><ul>      
+           <li><a href=javascript:Update("bases")><?php echo $msgstr["dblist"]?></a></li>
 			</form>
 		</td>
 </table>
