@@ -229,16 +229,13 @@ A.menuButton {
 		width: 120px;
 
 	}
-<<<<<<< .mine
-
-=======
->>>>>>> .r79
 	.helper {
 /*		margin-top: 25px;
 		height: 10px;
 		position: relative; */
 		padding: 0px 0px 0px 25px;
 	}
+
 
 
 	A.singleButton {
@@ -351,7 +348,17 @@ A.menuButton {
 		padding: 15px 15px 0px 0px;
 	}
 
-	.language {
+.opt_catalog {
+		margin-right: 10px;
+		position: relative;
+		float: right;
+		margin-top: 0px;		
+}
+
+.opt_catalog select{
+		font-size: 10px;
+}
+.language {
 		position: relative;
 		float: right;
 		top: -35px;		

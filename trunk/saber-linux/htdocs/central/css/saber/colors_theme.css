@@ -1,20 +1,20 @@
 	/*#heading classes */
 .heading,.top, #signin_menu, input, .submit input, .bottom #footNotes, .sectionInfo, .language, .systemInfo,
  .distributorLogo{
-		background: #3684a9;
+		background: #444444;
 		color: #ffffff; 
 	}
  .footer   {
-	border-top-color: #3684a9;
+	border-top-color: #333333;
 	border-top-width: 2px; 	
 	border-top-style: solid;
  	
  	}
 	
  .breadcrumb {
-		background: #1a6b91;
+		background: #444444;
 		color: #ffffff;
-		border-top-color: #6cb3d4;
+		border-top-color: #333333;
 		border-top-width: 1px;
 		border-top-style: solid;
 	}
@@ -26,7 +26,7 @@ input[type=text],input[type=password], textarea {
 }
 
 input[type=text]:focus, textarea:focus {
-	border-left-color: #697096;
+	border-left-color: #333333;
 	background-color: #eeeeee; 
 
 }
