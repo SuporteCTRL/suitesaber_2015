@@ -267,7 +267,7 @@ if (isset($arrHttp["encabezado"])){	include("../common/institutional_info.php")
 <?php
 if (isset($arrHttp["encabezado"]))
 	echo "<a href=\"../common/inicio.php?reinicio=S&base=".$arrHttp["base"]."$encabezado\" class=\"defaultButton backButton\">
-	<img src=\"../images/defaultButton_iconBorder.gif\" alt=\"\" title=\"\" />
+
 <span><strong>".$msgstr["back"]."</strong></span></a>
 	";
 ?>
@@ -282,7 +282,7 @@ if (isset($arrHttp["encabezado"]))
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 	echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/stats/stats_tables_generate.html target=_blank>".$msgstr["edhlp"]."</a>";
 ?>
-<font color=white>&nbsp; &nbsp; Script: tables_generate.php</font>
+&nbsp; &nbsp; Script: tables_generate.php
 </div>
 <form name=forma1 method=post action=tables_generate_ex.php onsubmit="Javascript:return false">
 <input type=hidden name=base value=<?php echo $arrHttp["base"]?>>
@@ -299,7 +299,7 @@ if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 	echo "<table width=600 border=0  class=listTable>
 			<tr>
 			<td align=left   valign=center bgcolor=#ffffff>
-    		&nbsp; <A HREF=\"javascript:toggleLayer('useextable')\"> <u><strong>". $msgstr["exist_tb"]."</strong></u></a>
+    		&nbsp; <A class=\"areas1\" HREF=\"javascript:toggleLayer('useextable')\"> <u><strong>". $msgstr["exist_tb"]."</strong></u></a>
     		<div id=useextable>
     		<br>".$msgstr["tab_list"].": <select name=tables  style=\"width:300\">
     		<option value=''>";
@@ -331,7 +331,7 @@ if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 <table border=0 width=600 class=listTable>
 	<tr>
 		<td valign=top width=600 align=left bgcolor=#ffffff>
-		&nbsp; <A HREF="javascript:toggleLayer('createtable')"><u><strong><?php echo $msgstr["create_tb"]?></strong></u></a>
+		&nbsp; <A class="areas1" HREF="javascript:toggleLayer('createtable')"><u><strong><?php echo $msgstr["create_tb"]?></strong></u></a>
     	<div id=createtable>
     	<table width=600>
     		<td>
@@ -391,7 +391,7 @@ if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 <table width=600 class=listTable>
 	<tr>
 		<td bgcolor=white>
-			&nbsp; <A HREF="javascript:toggleLayer('generate')"><u><strong><?php echo $msgstr["gen_output"]?></strong></u></a>
+			&nbsp; <A class="areas1" HREF="javascript:toggleLayer('generate')"><u><strong><?php echo $msgstr["gen_output"]?></strong></u></a>
     		<div id=generate><p>
     		<table>
     <tr>
@@ -424,7 +424,7 @@ if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 if (isset($_SESSION["permiso"]["CENTRAL_STATCONF"]) or isset($_SESSION["permiso"]["CENTRAL_ALL"])){?>
 <tr>
 	<td align=left   valign=center bgcolor=#ffffff><p>
-    	&nbsp; <A HREF="javascript:toggleLayer('configure')"> <u><strong><?echo $msgstr["stats_conf"]?></strong></u></a>
+    	&nbsp; <a class="areas1" HREF="javascript:toggleLayer('configure')"> <u><strong><?echo $msgstr["stats_conf"]?></strong></u></a>
     	<div id=configure>
     	<ul>
     		<li><a href=javascript:Configure("stats_var")><?php echo $msgstr["var_list"]?></a></li>

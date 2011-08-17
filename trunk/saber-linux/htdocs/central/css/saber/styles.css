@@ -351,16 +351,17 @@ a:hover {
 	/* background-color e necessario para o IE6 */
 
 a.tooltip span {
-	position:absolute; 
+	
+	position:relative; 
 	display:none; 
 	padding:0px; 
-	margin-top: 70px;
+	margin-top: 0px;
 	margin-left:-20px;  
 	width:auto;
 	height: auto;
 }
 a.tooltip:hover span {
-	display:inline; 	
+	display:block; 	
 	position:absolute; 
 }
 
@@ -368,6 +369,7 @@ a.tooltip:hover span {
 .tag {
 	width: 20px;
 	vertical-align:top;
+	text-decoration: none;
 }
 
 
@@ -376,11 +378,13 @@ a.tooltip:hover span {
 	font-size: 14px;
 	font-weight: bold;
 	border-left-width: 7px;
+	text-decoration: none;
 
 }
 
 .areas1{
 	display: inline-block;
+	text-decoration: none;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 14px;
 	font-weight: bold;
@@ -394,6 +398,7 @@ a.tooltip:hover span {
 		
 }
 .areas2{
+	text-decoration: none;
 	display: inline-block;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 9px;
@@ -404,7 +409,7 @@ a.tooltip:hover span {
         border-radius-bottomright: 10px;
         border-radius-bottomleft: 10px;
        -moz-border-radius: 0px 0px 10px 10px;
-	text-shadow: 0.1em 0.1em #536072;
+
 }
 #rotuloIng {
 	width: 150px;

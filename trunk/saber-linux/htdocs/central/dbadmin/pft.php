@@ -629,10 +629,9 @@ if (isset($arrHttp["encabezado"])){
 if ($arrHttp["Opcion"]=="new"){
 	$ayuda="pft_create.html";
 	echo "<a href=fst.php?Opcion=new&base=".$arrHttp["base"]."$encabezado class=\"defaultButton backButton\">
-	<img src=\"../images/defaultButton_iconBorder.gif\" />
 	<span><strong>".$msgstr["back"]."</strong></span></a>";
 	echo "<a href=\"menu_creardb.php?$encabezado\"$encabezado class=\"defaultButton cancelButton\">
-	<img src=\"../images/defaultButton_iconBorder.gif\" alt=\"\" title=\"\" />
+
 <span><strong>".$msgstr["cancel"]."</strong></span></a>
 	";
 }else{
@@ -643,13 +642,13 @@ if ($arrHttp["Opcion"]=="new"){
 				$retorno=$arrHttp["retorno"];
 			else
 				$retorno="menu_modificardb.php";
-			echo "<a href=\"$retorno"."?base=".$arrHttp["base"]."$encabezado\" class=\"defaultButton cancelButton\">
-			<img src=\"../images/defaultButton_iconBorder.gif\" alt=\"\" title=\"\" />
+			echo "<a href=\"$retorno"."?base=".$arrHttp["base"]."$encabezado\" class=\"defaultButton tooltip cancelButton\">
+
 		<span><strong>".$msgstr["cancel"]."</strong></span></a>
 			";
 		}else{
-			echo "<a href=\"../common/inicio.php?reinicio=s&base=".$arrHttp["base"]."$encabezado\" class=\"defaultButton cancelButton\">
-			<img src=\"../images/defaultButton_iconBorder.gif\" alt=\"\" title=\"\" />
+			echo "<a href=\"../common/inicio.php?reinicio=s&base=".$arrHttp["base"]."$encabezado\" class=\"defaultButton tooltip cancelButton\">
+
 		<span><strong>".$msgstr["cancel"]."</strong></span></a>
 			";
 		}
@@ -695,7 +694,7 @@ echo "</table>\n";
 	echo "<table width=600  class=listTable>
 			<tr>
 			<td align=left   valign=center>
-    		&nbsp; <A HREF=\"javascript:toggleLayer('useexformat');\"> <u><strong>". $msgstr["useexformat"]."</strong></u></a>
+    		&nbsp; <A class=\"areas1\" HREF=\"javascript:toggleLayer('useexformat');\"> <u><strong>". $msgstr["useexformat"]."</strong></u></a>
     		<div id=useexformat>
     		<br>".$msgstr["r_formatos"].": <select name=fgen onclick=javascript:BorrarFormato(\"todos\")>
     		<option value=''>";
@@ -733,7 +732,7 @@ if (isset($_SESSION["permiso"]["CENTRAL_ALL"]) or isset($_SESSION["permiso"]["CE
 <table bgcolor=#FFFFFF width=600 class=listTable border=0>
 	<tr>
 		<td valign=top width=600>
-		&nbsp; <A HREF="javascript:EsconderVentana('pftedit');toggleLayer('createformat');toggleLayer('pftedit')"><u><strong><?php echo $msgstr["r_creaf"]?></strong></u></a>
+		&nbsp; <A class="areas1" HREF="javascript:EsconderVentana('pftedit');toggleLayer('createformat');toggleLayer('pftedit')"><u><strong><?php echo $msgstr["r_creaf"]?></strong></u></a>
     	<div id=createformat>
     	<P><?php echo $msgstr["r_incluirc"]?><br>
 			<table width=600 border=0>
@@ -761,7 +760,7 @@ if (isset($_SESSION["permiso"]["CENTRAL_ALL"]) or isset($_SESSION["permiso"]["CE
 				</TD>
 				<TD ALIGN="left" VALIGN="MIDDLE" width=50>
 					<a href=# onClick="moveOptionUp(document.forms[0]['list21'])" class=boton><?php echo $msgstr["r_subir"]?></a>
-					<BR><BR>
+
 					<a href="javascript:moveOptionDown(document.forms[0]['list21'])" class=boton><?php echo $msgstr["r_bajar"]?></a>
 				</TD>
 
@@ -808,7 +807,7 @@ if ($arrHttp["Opcion"]!="new"){?>
 <table width=600 cellpadding=5 class=listTable>
 	<tr>
 		<td>
-			&nbsp; <A HREF="javascript:toggleLayer('testformat')"><u><strong><?php echo $msgstr["generateoutput"]?></strong></u></a>
+			&nbsp; <A class="areas1" HREF="javascript:toggleLayer('testformat')"><u><strong><?php echo $msgstr["generateoutput"]?></strong></u></a>
     		<div id=testformat><p>
     		<table>
 		<td colspan=2 align=center height=1 bgcolor=#eeeeee><?php echo $msgstr["r_recsel"]?></td>
@@ -849,7 +848,7 @@ if ($fp){
 			<a href=javascript:BorrarExpresion() class=boton><?php echo $msgstr["borrar"]?></a>
 <?php
 if (isset($_SESSION["permiso"]["CENTRAL_ALL"]) or isset($_SESSION["permiso"]["CENTRAL_SAVEXPR"])){
-	echo "&nbsp; <A HREF=\"javascript:toggleLayer('savesearch')\"> <u><strong>". $msgstr["savesearch"]."</strong></u></a>";
+	echo "&nbsp; <a class=\"areas1\" HREF=\"javascript:toggleLayer('savesearch')\"> <u><strong>". $msgstr["savesearch"]."</strong></u></a>";
 	echo "<div id=savesearch>".$msgstr["r_desc"].": <input type=text name=Descripcion size=40>
      	&nbsp &nbsp <input type=button value=\"". $msgstr["savesearch"]."\" onclick=GuardarBusqueda()>
 		</div>\n";
@@ -889,13 +888,13 @@ if (isset($_SESSION["permiso"]["CENTRAL_ALL"]) or isset($_SESSION["permiso"]["CE
 	<tr>
 		<td colspan=2 width=100%>
 			<strong><?php echo $msgstr["sendto"]?></strong>:
-			<a href=javascript:EnviarForma('WP')><?php echo $msgstr["word"]?></a>
-			&nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp;
-			<a href=javascript:EnviarForma('TB')><?php echo $msgstr["wsproc"]?></a>
-			&nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp;
-			<a href=javascript:EnviarForma('P')><?php echo $msgstr["vistap"]?></a>
-			&nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp;
-			<a href=javascript:EnviarForma('TXT') value=T>TXT</a>
+			<a id="botoes"  href=javascript:EnviarForma('WP')><?php echo $msgstr["word"]?></a>
+
+			<a id="botoes" href=javascript:EnviarForma('TB')><?php echo $msgstr["wsproc"]?></a>
+
+			<a id="botoes" href=javascript:EnviarForma('P')><?php echo $msgstr["vistap"]?></a>
+
+			<a id="botoes"  href=javascript:EnviarForma('TXT') value=T>TXT</a>
 		</td>
 </table>
 </div>
@@ -909,7 +908,7 @@ $save="Y";
 <table width=600 cellpadding=5 class=listTable>
 	<tr>
 		<td>
-			&nbsp; <A HREF="javascript:toggleLayer('saveformat')"><u><strong><?php echo $msgstr["r_guardar"]?></strong></u></a>
+			&nbsp; <a class="areas1" href="javascript:toggleLayer('saveformat')"><u><strong><?php echo $msgstr["r_guardar"]?></strong></u></a>
     		<div id=saveformat><p>
 			<table width=600 border=0 cellpadding=0>
 				<td  align=right bgcolor=#dddddd>
