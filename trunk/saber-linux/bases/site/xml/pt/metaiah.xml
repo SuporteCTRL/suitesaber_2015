@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <define>
   <sourceList>
-    <group label="Total de registros encontrados">
+    <group label="Bases de dados da Instituição">
       <item id="40-1" label="MARC" href="/iah/?base=MARC&amp;lang=pt" base-search-url="http://demo.saberabcd.com/cgi-local/wxis.exe/iah/scripts/?IsisScript=iah.xis&amp;lang=pt&amp;base=MARC&amp;nextAction=xml&amp;count=1" base-browse-url="http://demo.saberabcd.com/cgi-local/wxis.exe/iah/scripts/?IsisScript=iah.xis&amp;lang=pt&amp;base=MARC&amp;nextAction=lnk"/>
       <item id="40-2" label="CEPAL" href="/iah/?base=BIBLO&amp;lang=pt" base-search-url="http://demo.saberabcd.com/cgi-local/wxis.exe/iah/scripts/?IsisScript=iah.xis&amp;lang=pt&amp;base=BIBLO&amp;nextAction=xml&amp;count=1" base-browse-url="http://demo.saberabcd.com/cgi-local/wxis.exe/iah/scripts/?IsisScript=iah.xis&amp;lang=pt&amp;base=BIBLO&amp;nextAction=lnk"/>
       <item id="40-4" label="LILACS" href="/iah/?base=LILACS&amp;lang=pt" base-search-url="http://demo.saberabcd.com/cgi-local/wxis.exe/iah/scripts/?IsisScript=iah.xis&amp;lang=pt&amp;base=LILACS&amp;nextAction=xml&amp;count=1" base-browse-url="http://demo.saberabcd.com/cgi-local/wxis.exe/iah/scripts/?IsisScript=iah.xis&amp;lang=pt&amp;base=LILACS&amp;nextAction=lnk"/>
-      <item id="40-6" label="Biblioteca Pública do Estado do Rio Grande do Sul" href="http://saberabcd.com/cgi-local/wxis.exe/iah/scripts/?IsisScript=iah.xis&amp;base=BPE&amp;lang=en&amp;form=F" base-search-url="http://saberabcd.com/cgi-local/wxis.exe/iah/scripts/?IsisScript=iah.xis&amp;lang=en&amp;base=BPE&amp;nextAction=xml&amp;count=1" base-browse-url="http://saberabcd.com/cgi-local/wxis.exe/iah/scripts/?IsisScript=iah.xis&amp;lang=en&amp;base=BPE&amp;nextAction=lnk"/>
+      <item id="40-6" label="Biblioteca Pública do Estado do Rio Grande do Sul" href="http://buscabpe.saberabcd.com" base-search-url="http://bpe.saberabcd.com/cgi-local/wxis.exe/iah/scripts/?IsisScript=iah.xis&amp;lang=en&amp;base=BPE&amp;nextAction=xml&amp;count=1" base-browse-url="http://bpe.saberabcd.com/cgi-local/wxis.exe/iah/scripts/?IsisScript=iah.xis&amp;lang=en&amp;base=BPE&amp;nextAction=lnk"/>
     </group>
     <group label="Revistas científicas de accesso livre"/>
   </sourceList>
