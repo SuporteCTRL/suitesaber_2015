@@ -72,7 +72,7 @@ echo "</div>
 		</div>";
 ?>
 <div class="helper">
-<?php echo "<font color=white>&nbsp; &nbsp; Script: menu_traducir.php" ?></font>
+<?php echo "&nbsp; &nbsp; Script: menu_traducir.php" ?></font>
 	</div>
 <div class="middle homepage">
 

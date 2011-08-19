@@ -144,7 +144,7 @@ function ActualizarForma(){
 <div class="helper">
 <a href=../documentacion/ayuda.php?help=<?php echo $_SESSION["lang"]?>/campofijo.html target=_blank><?php echo $msgstr["help"]?></a>&nbsp &nbsp;
 <?php if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"])) echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/campofijo.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "<font color=white>&nbsp; &nbsp; Script: campofijo.php" ?>
+echo "&nbsp; &nbsp; Script: campofijo.php" ?>
 </font>
 	</div>
  <div class="middle form">

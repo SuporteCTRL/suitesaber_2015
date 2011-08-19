@@ -255,7 +255,7 @@ global $msgstr,$arrHttp,$reservas_p,$signatura,$posicion_cola,$msg_1,$cont,$inst
 <a href=../documentacion/ayuda.php?help=". $_SESSION["lang"]."/circulation/borrower_history.html target=_blank>". $msgstr["help"]."</a>&nbsp &nbsp;";
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
     echo "<a href=../documentacion/edit.php?archivo=". $_SESSION["lang"]."/circulation/borrower_history.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "<font color=white>&nbsp; &nbsp; Script: borrower_history_ex.php </font>
+echo "&nbsp; &nbsp; Script: borrower_history_ex.php </font>
 	</div>";
 // prestar, reservar o renovar
 ?>

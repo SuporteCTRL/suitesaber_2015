@@ -96,7 +96,7 @@ if (isset($arrHttp["usuario"]) and $arrHttp["usuario"]!="") $link_u="&usuario=".
 <a href=../documentacion/ayuda.php?help=<?php echo $_SESSION["lang"]?>/reservar.html target=_blank><?php echo $msgstr["help"]?></a>&nbsp &nbsp;
 <?php if ($_SESSION["permiso"]=="loanadm"){
 		echo "        		<a href=../documentacion/edit.php?archivo=". $_SESSION["lang"]."/reservar.html target=_blank>".$msgstr["edhlp"]."</a>";
-      	echo "<font color=white>&nbsp; &nbsp; Script: reservar.php</font>\n";
+      	echo "&nbsp; &nbsp; Script: reservar.php</font>\n";
       }
 ?>
 	</div>

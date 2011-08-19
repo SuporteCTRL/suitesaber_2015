@@ -90,7 +90,7 @@ if (isset($arrHttp["encabezado"])) {
 <?php
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 	echo "<a href=../documentacion/edit.php?archivo=". $_SESSION["lang"]."/resetautoinc.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "<font color=white>&nbsp; &nbsp; Script: resetautoinc.php</font>\n";
+echo "&nbsp; &nbsp; Script: resetautoinc.php</font>\n";
 echo "
 	</div>
 <div class=\"middle form\">

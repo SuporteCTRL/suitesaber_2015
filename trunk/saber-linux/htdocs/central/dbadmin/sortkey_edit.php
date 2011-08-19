@@ -175,7 +175,7 @@ if (isset($arrHttp["encabezado"])){
 <?php
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 	echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/sortkey.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "<font color=white>&nbsp; &nbsp; Script: sortkey_edit.php </font>";
+echo "&nbsp; &nbsp; Script: sortkey_edit.php </font>";
 ?>
 	</div>
 <div class="middle form">

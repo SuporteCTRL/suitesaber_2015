@@ -136,7 +136,7 @@ if (isset($arrHttp["encabezado"])){
 <?php
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 	echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/helpfilesdb.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "<font color=white>&nbsp; &nbsp; Script: help_ed.php";
+echo "&nbsp; &nbsp; Script: help_ed.php";
 ?>
 </font>
 	</div>

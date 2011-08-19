@@ -95,7 +95,7 @@ echo "
 	<a href=../documentacion/ayuda.php?help=". $_SESSION["lang"]."/importiso.html target=_blank>".$msgstr["help"]."</a>&nbsp &nbsp";
 	if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 		echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/importiso.html target=_blank>".$msgstr["edhlp"]."</a>";
-		echo "<font color=white>&nbsp; &nbsp; Script: carga_iso.php</font>";
+		echo "&nbsp; &nbsp; Script: carga_iso.php</font>";
 	echo "
 
 	</div>

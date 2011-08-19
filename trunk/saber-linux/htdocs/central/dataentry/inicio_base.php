@@ -214,7 +214,7 @@ top.lock_db=\"\"
 <?php
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 	echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/inicio_base.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "<font color=white>&nbsp; &nbsp; Script: inicio_base.php" ?>
+echo "&nbsp; &nbsp; Script: inicio_base.php" ?>
 </font>
 	</div>
 <div class="middle form">

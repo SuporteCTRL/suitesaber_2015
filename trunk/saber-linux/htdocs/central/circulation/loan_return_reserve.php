@@ -129,7 +129,7 @@ if (isset($arrHttp["usuario"]) and $arrHttp["usuario"]!="") $link_u="&usuario=".
 <?php
 if ($_SESSION["permiso"]=="loanadm"){
 	echo "<a href=../documentacion/edit.php?archivo=". $_SESSION["lang"]."/loan_return_reserve.html target=_blank>".$msgstr["edhlp"]."</a>";
-	echo "<font color=white>&nbsp; &nbsp; Script: loan_return_reserve.php</font>\n";
+	echo "&nbsp; &nbsp; Script: loan_return_reserve.php</font>\n";
 }
 ?>
 	</div>

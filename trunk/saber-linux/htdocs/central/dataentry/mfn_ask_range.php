@@ -137,7 +137,7 @@ echo ": ".$arrHttp["base"]?>
 <?php
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 	echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/".$ayuda." target=_blank>".$msgstr["edhlp"]."</a>";
-echo "<font color=white>&nbsp; &nbsp; Script: mfn_ask_range.php";
+echo "&nbsp; &nbsp; Script: mfn_ask_range.php";
 ?>
 </font>
 	</div>

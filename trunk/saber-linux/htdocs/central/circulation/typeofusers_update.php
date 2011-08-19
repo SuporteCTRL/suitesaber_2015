@@ -59,7 +59,7 @@ include("../common/institutional_info.php");
 	<div class="spacer">&#160;</div>
 </div>
 <div class="helper">
-<?php if ($_SESSION["permiso"]=="admloan") echo "<font color=white>&nbsp; &nbsp; Script: typeofusers_update.php" ?></font>
+<?php if ($_SESSION["permiso"]=="admloan") echo "&nbsp; &nbsp; Script: typeofusers_update.php" ?></font>
 	</div>
 <div class="middle form">
 			<div class="formContent">

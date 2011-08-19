@@ -105,7 +105,7 @@ if (isset($arrHttp["encabezado"]) and $arrHttp["encabezado"]=="s"){
 		<div class=\"actions\">\n";
 if (isset($arrHttp["encabezado"])){
 			echo "<a href=\"../common/inicio.php?reinicio=s\" class=\"defaultButton cancelButton\">
-					<img src=\"../images/defaultButton_iconBorder.gif\" alt=\"\" title=\"\" />
+
 					<span><strong>". $msgstr["cancel"]."</strong></span>
 				</a>";
 }
@@ -117,7 +117,7 @@ echo "	</div>
 	<a href=../documentacion/ayuda.php?help=<?php echo $_SESSION["lang"]?>/administrar.html target=_blank><?php echo $msgstr["help"]?></a>&nbsp &nbsp;
 <?php
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"])) echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/administrar.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "<font color=white>&nbsp; &nbsp; Script: administrar.php" ?></font>
+echo "&nbsp; &nbsp; Script: administrar.php" ?></font>
 	</div>
 
 	<div class="middle homepage">

@@ -230,7 +230,7 @@ global $arrHttp,$msgstr,$institution_name;
 	 	<div class=\"helper\">
 	<a href=../documentacion/ayuda.php?help=".$_SESSION["lang"]."/dirtree.html target=_blank>".$msgstr["help"]."</a>&nbsp &nbsp;
     ";
-    echo "<font color=white>&nbsp; &nbsp; Script: dirtree.php</font></div>";
+    echo "&nbsp; &nbsp; Script: dirtree.php</font></div>";
 
      echo "<div class=\"middle form\">
 			<div class=\"formContent\">";

@@ -13,7 +13,7 @@ if (!isset($fmt_test)){
 	    	if (isset($_SESSION["permiso"]["EDHLPSYS"])) echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/dataentry.html target=_blank>". $msgstr["edhlp"]."</a>";
 	  	}
 	}
-	echo "<font color=white>&nbsp; &nbsp; Script: fmt.php</font>";
+	echo "&nbsp; &nbsp; Script: fmt.php</font>";
 }
 
 ?>

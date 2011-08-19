@@ -49,7 +49,7 @@ function Copiar(Expresion){
 	<div class="helper">
 	<a href=../documentacion/ayuda.php?help=<?php echo $_SESSION["lang"]?>/alfa.html target=_blank><?php echo $msgstr["help"]?></a>&nbsp &nbsp;
 	<?php if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"])) echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/alfa.html target=_blank>".$msgstr["edhlp"]."</a>";
-	echo "<font color=white>&nbsp; &nbsp; Script: alfa.php" ?>
+	echo "&nbsp; &nbsp; Script: alfa.php" ?>
 </font>
 	</div>
  <div class="middle form">

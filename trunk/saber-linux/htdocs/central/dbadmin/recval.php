@@ -333,7 +333,7 @@ echo "<a href=\"typeofrecs.php?Opcion=update&type=&base=".$arrHttp["base"]."$enc
 <?php
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 	echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/recval.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "<font color=white>&nbsp; &nbsp; Script: recval.php";
+echo "&nbsp; &nbsp; Script: recval.php";
 ?>
 </font>
 </div>
