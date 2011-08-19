@@ -2,7 +2,7 @@
 /**
  * @program:   ABCD - ABCD-Central - http://reddes.bvsaude.org/projects/abcd
  * @copyright:  Copyright (C) 2009 BIREME/PAHO/WHO - VLIR/UOS
- * @file:      alpa.php
+ * @file:      alfa.php
  * @desc:      Alphabetic list of an selected field for capturing the record
  * @author:    Guilda Ascencio
  * @since:     20091203

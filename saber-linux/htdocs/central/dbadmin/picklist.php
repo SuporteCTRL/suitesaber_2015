@@ -105,7 +105,7 @@ echo "
 
 echo "<a href=\"javascript:self.close()\" class=\"defaultButton cancelButton\">";
 echo "
-					<img src=\"../images/defaultButton_iconBorder.gif\" alt=\"\" title=\"\" />
+		
 					<span><strong>". $msgstr["cancel"]."</strong></span>
 				</a>";
 echo "			</div>

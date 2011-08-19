@@ -311,7 +311,7 @@ if (isset($arrHttp["encabezado"])){	include("../common/institutional_info.php")
 	<div class="actions">
 <?php
 	if (isset($arrHttp["encabezado"])){		echo "<a href=\"../common/inicio.php?reinicio=s&modulo=loan&base=".$arrHttp["base"]."$encabezado\" class=\"defaultButton backButton\">
-			<img src=\"../images/defaultButton_iconBorder.gif\" alt=\"\" title=\"\" />
+
 		<span><strong>".$msgstr["back"]."</strong></span></a>
 			";	}
 ?>

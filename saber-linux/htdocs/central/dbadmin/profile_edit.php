@@ -163,9 +163,9 @@ function SendForm(){
 	</div>
 	<div class="actions">
 <?php echo "<a  href=\"users_adm.php?xx=s"."$encabezado\" class=\"defaultButton backButton\">";?>
-		<img src="../images/defaultButton_iconBorder.gif" alt="" title="" /></a>
+		</a>
 <?php if (isset($arrHttp["Opcion"])and $arrHttp["Opcion"]!="delete"){	  echo "<a  href=\"javascript:SendForm()\" class=\"defaultButton saveButton\">";?>
-		<img src="../images/defaultButton_iconBorder.gif" alt="" title="" />
+		
 		<span><strong><?php echo $msgstr["SAVE"]?></strong></span></a>
 <?php } ?>
 	</div>

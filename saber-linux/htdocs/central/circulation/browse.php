@@ -130,11 +130,11 @@ echo "<body>";
 	</div>
 	<div class="actions">
 		<a href="../inicio.php?reinicio=s<?php echo $encabezado?>" class="defaultButton backButton">
-		<img src="../images/defaultButton_iconBorder.gif" alt="" title="" />
+
 		<span><strong><?php echo $msgstr["back"]?></strong></span>
 		</a>
 		<a href="../dataentry/fmt.php?base=users&cipar=users.par&Mfn=New<?php echo $encabezado?>&Opcion=nuevo" class="defaultButton  newButton">
-		<img src="../images/defaultButton_iconBorder.gif" alt="" title="" />
+
 		<span><strong><?php echo $msgstr["newoper"]?></strong> </span>
 		</a>
 

@@ -667,7 +667,7 @@ if (isset($arrHttp["encabezado"])){
 		}
 	}
 	echo "
-					<img src=\"../images/defaultButton_iconBorder.gif\" alt=\"\" title=\"\" />
+		
 					<span><strong>". $msgstr["cancel"]."</strong></span>
 				</a>
 			</div>

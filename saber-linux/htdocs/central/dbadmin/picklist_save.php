@@ -59,7 +59,7 @@ if (isset($arrHttp["desde"])){
 	echo "<a href=\"picklist.php?base=". $arrHttp["base"]."&row=".$arrHttp["row"]."&picklist=".$arrHttp["picklist"]."\" class=\"defaultButton backButton\">";
 }
 echo "
-					<img src=\"../images/defaultButton_iconBorder.gif\" alt=\"\" title=\"\" />
+		
 					<span><strong>". $msgstr["back"]."</strong></span>
 				</a>";
 echo "			</div>

@@ -154,7 +154,7 @@ function Presentar(Mfn){	url="leer_all.php?base=<?php echo $arrHttp["base"]?>&c
 	<div class="actions">
 <?php echo "<a href=\"c_global.php?base=".$arrHttp["base"]."\"  class=\"defaultButton backButton\">";?>
 
-		<img src="../images/defaultButton_iconBorder.gif" alt="" title="" />
+
 		<span><strong><?php echo $msgstr["regresar"]?></strong></span></a>
 	</div>
 	<div class="spacer">&#160;</div>

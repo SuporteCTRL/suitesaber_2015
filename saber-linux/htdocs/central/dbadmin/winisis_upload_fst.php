@@ -98,7 +98,7 @@ if (isset($arrHttp["encabezado"]))
 		$encabezado="";
 echo "<a href=winisis_upload_fdt.php?base=".$arrHttp["base"]."&nombre=".$arrHttp["base"]."&desc=".urlencode($arrHttp["desc"]).$encabezado." class=\"defaultButton backButton\">";
 echo "
-					<img src=\"../images/defaultButton_iconBorder.gif\" alt=\"\" title=\"\" />
+		
 					<span><strong>". $msgstr["back"]."</strong></span>
 				</a>
 			</div>

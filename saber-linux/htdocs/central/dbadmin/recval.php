@@ -320,7 +320,7 @@ echo "
 	</div>
 	<div class=\"actions\">\n";
 echo "<a href=\"typeofrecs.php?Opcion=update&type=&base=".$arrHttp["base"]."$encabezado\" class=\"defaultButton cancelButton\">
-	<img src=\"../images/defaultButton_iconBorder.gif\" alt=\"\" title=\"\" />
+
 	<span><strong>". $msgstr["cancel"]."</strong></span>
 	</a>
 	</div>

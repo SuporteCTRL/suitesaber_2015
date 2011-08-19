@@ -164,7 +164,7 @@ if (isset($arrHttp["encabezado"])){
 <?php
 	if ($encabezado!="") echo "<a href=javascript:self.close() class=\"defaultButton cancelButton\">";
 ?>
-<img src="../images/defaultButton_iconBorder.gif" alt="" title="" />
+
 <span><strong><?php echo $msgstr["close"]?></strong></span>
 </a>
 			</div>

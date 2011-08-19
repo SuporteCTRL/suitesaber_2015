@@ -59,7 +59,7 @@ include("../common/institutional_info.php");
 	</div>
 	<div class="actions">
 		<a href="javascript:document.continuar.submit()" class="defaultButton backButton">
-			<img src="../images/defaultButton_iconBorder.gif" alt="" title="" />
+	
 			<span><?php echo $msgstr["back"]?></strong></span>
 		</a>
 	</div>

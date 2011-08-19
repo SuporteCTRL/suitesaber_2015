@@ -69,11 +69,11 @@ if (isset($arrHttp["encabezado"]))include("../common/institutional_info.php");
 
 			<div class="actions">
 				<a href="javascript:Enviar()" class="defaultButton saveButton">
-					<img src="../images/defaultButton_iconBorder.gif" alt="" title="" />
+
 					<span><strong><?php echo $msgstr["m_guardar"]?></strong></span></a>
 <?php if (isset($arrHttp["encabezado"])){?>
  				<a href="menu_traducir.php?encabezado=s" class="defaultButton backButton">
-					<img src="../images/defaultButton_iconBorder.gif" alt="" title="" />
+
 					<span><strong><?php echo $msgstr["back"]?></strong></span>
 				</a>
 

@@ -119,11 +119,11 @@ echo ": ".$arrHttp["base"]?>
 	$ayuda="";
 	if (isset($_SESSION["permiso"]["CENTRAL_ALL"]) or isset($_SESSION["permiso"]["CENTRAL_MODIFYDEF"])){
 		echo "<a href=\"administrar.php?base=".$arrHttp["base"]."\" class=\"defaultButton cancelButton\">
-		<img src=\"../images/defaultButton_iconBorder.gif\" alt=\"\" title=\"\" />
+	
 	<span><strong>".$msgstr["cancel"]."</strong></span></a>
 		";
 	}else{		echo "<a href=\"../common/inicio.php?reinicio=s&base=".$arrHttp["base"]."$encabezado\" class=\"defaultButton cancelButton\">
-		<img src=\"../images/defaultButton_iconBorder.gif\" alt=\"\" title=\"\" />
+	
 	<span><strong>".$msgstr["cancel"]."</strong></span></a>
 		";	}
 ?>

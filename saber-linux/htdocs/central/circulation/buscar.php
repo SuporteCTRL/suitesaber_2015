@@ -350,7 +350,7 @@ function Diccionario(jx){
 			<div class=\"actions\">\n";
 
 				echo "<a href=\"browse.php?encabezado=s\" class=\"defaultButton backButton\">
-					<img src=\"../images/defaultButton_iconBorder.gif\" alt=\"\" title=\"\" />
+
 					<span><strong>". $msgstr["back"]."</strong></span>
 				</a>
 			</div>
@@ -425,11 +425,11 @@ function Diccionario(jx){
 	?>
 	<div class="sectionButtons">
 		<a href="javascript:PrepararExpresion()" class="defaultButton multiLine listButton">
-		<img src="../images/mainBox_iconBorder.gif" alt="" title="" />
+
 							<span><?php echo $msgstr["m_buscar"]?></strong></span>
 						</a>
 		<a href="javascript:LimpiarBusqueda(this,1)" class="defaultButton multiLine listButton">
-		<img src="../images/mainBox_iconBorder.gif" alt="" title="" />
+
 							<span><?php echo $msgstr["borrar"]?></strong></span>
 						</a>
 	</div>

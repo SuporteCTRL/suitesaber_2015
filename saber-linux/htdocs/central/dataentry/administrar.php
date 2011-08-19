@@ -138,7 +138,7 @@ echo "&nbsp; &nbsp; Script: administrar.php" ?></font>
        	<?PHP if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"])) echo "<a href=../documentacion/edit.php?archivo=". $_SESSION["lang"]."/importiso.html target=_blank>edit help file</a>"?>
                            <br>
         					<a href=javascript:Activar("imptxt") class="">
-						<ximg src="../images/mainBox_iconBorder.gif" alt="" title="" />
+
 						<span><strong><?php echo $msgstr["cnv_txt"]?></strong></span>
 					</a>
                        <a href=../documentacion/ayuda.php?help=<?php echo $lang?>/txt2isis.html target=_blank><img src=img/barHelp.png border=0 align=absmiddle></a>&nbsp &nbsp;

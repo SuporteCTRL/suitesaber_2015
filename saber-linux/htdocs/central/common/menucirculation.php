@@ -57,7 +57,7 @@ if (isset($_SESSION["permiso"]["CENTRAL_ALL"]) or isset($_SESSION["permiso"]["CI
 if (isset($_SESSION["permiso"]["CENTRAL_ALL"]) or isset($_SESSION["permiso"]["CIRC_CIRCALL"]) or isset($_SESSION["permiso"]["CIRC_RESERVE"])){
 ?>
 <!--						<a href="../circulation/reservar.php?encabezado=s" class="menuButton tooltip newButton">
-							<img src="images/mainBox_iconBorder.gif" alt="" title="" />
+
 							<span><strong><?php echo $msgstr["reserve"]?></strong></span>
 						</a> -->
 <?php
@@ -98,7 +98,7 @@ if (isset($_SESSION["permiso"]["CENTRAL_ALL"]) or isset($_SESSION["permiso"]["CI
 							<span><strong><?php echo $msgstr["bo_history"]?></strong></span>
 						</a>
 				<!--		<a href="circulation/item_history.php?encabezado=s" class="menuButton tooltip newButton">
-							<img src="images/mainBox_iconBorder.gif" alt="" title="" />
+
 							<span><strong><?php echo $msgstr["co_history"]?></strong></span>
 						</a>                                                                 -->
 					</div>

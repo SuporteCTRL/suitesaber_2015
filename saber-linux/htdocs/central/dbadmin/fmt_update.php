@@ -114,7 +114,7 @@ if (isset($arrHttp["encabezado"])){
 	echo "<a href=\"fmt.php?base=".$arrHttp["base"]."$encabezado\" class=\"defaultButton backButton\">";
 }
 ?>
-<img src="../images/defaultButton_iconBorder.gif" alt="" title="" />
+
 <span><strong><?php echo $msgstr["back"]?></strong></span>
 </a>
 			</div>

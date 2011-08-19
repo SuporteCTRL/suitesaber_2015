@@ -79,7 +79,7 @@ if (isset($arrHttp["encabezado"])){
 <?php
 	 echo "<a href=\"pft.php?base=".$arrHttp["base"]."$encabezado\" class=\"defaultButton backButton\">";
 ?>
-<img src="../images/defaultButton_iconBorder.gif" alt="" title="" />
+
 <span><strong><?php echo $msgstr["back"]?></strong></span>
 </a>
 			</div>
