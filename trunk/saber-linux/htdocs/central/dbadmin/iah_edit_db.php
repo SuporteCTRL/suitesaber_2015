@@ -810,13 +810,13 @@ if (isset($arrHttp["encabezado"])){
 <?php
 	echo "<a href=\"menu_modificardb.php?base=".$arrHttp["base"]."$encabezado\" class=\"defaultButton backButton\">";
 ?>
-		<img src="../images/defaultButton_iconBorder.gif" alt="" title="" />
+		
 		<span><strong><?php echo $msgstr["back"]?></strong></span></a>
 <?php if (isset($fst)){
 ?>
 
 		<a href="javascript:Guardar()" class="defaultButton saveButton">
-		<img src="../images/defaultButton_iconBorder.gif" alt="" title="" />
+		
 		<span><strong><?php echo $msgstr["save"]?></strong></span></a>
 <?php }?>
 	</div>

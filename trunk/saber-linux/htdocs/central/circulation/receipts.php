@@ -88,11 +88,11 @@ function Guardar(){	nombre=Trim(document.receipts.pr_loan.value)
 	</div>
 	<div class="actions">
 		<a href="javascript:history.back()" class="defaultButton backButton">
-		<img src="../images/defaultButton_iconBorder.gif" alt="" title="" />
+
 		<span><strong><?php echo  $msgstr["back"]?></strong></span>
 		</a>
 		<a href=javascript:Guardar() class="defaultButton saveButton">
-		<img src="../images/defaultButton_iconBorder.gif" alt="" title="" />
+
 		<span><strong><?php echo $msgstr["update"]?></strong></span>
 		</a>
 	</div>

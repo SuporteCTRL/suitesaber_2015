@@ -62,7 +62,7 @@ echo "
 	<div class=\"breadcrumb\">".$msgstr["recval"].": ".$arrHttp["base"]."</div>
 	<div class=\"actions\">\n";
 echo "<a href=typeofrecs.php?base=". $arrHttp["base"].$encabezado." class=\"defaultButton backButton\">
-	<img src=\"../images/defaultButton_iconBorder.gif\" alt=\"\" title=\"\" />
+
 		<span><strong>". $msgstr["back"]."</strong></span>
 		</a>
 		</div>

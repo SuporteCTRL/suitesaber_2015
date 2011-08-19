@@ -64,7 +64,7 @@ if (isset($arrHttp["encabezado"])){
 
 			<div class="actions">
  				<a href="menu_traducir.php?encabezado=s" class="defaultButton backButton">
-					<img src="../images/defaultButton_iconBorder.gif" alt="" title="" />
+
 					<span><strong><?php echo $msgstr["back"]?></strong></span>
 				</a>
 			</div>

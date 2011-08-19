@@ -359,11 +359,11 @@ function Diccionario(jx){
 	?>
 	<div class="sectionButtons"><center>
 		<a href="javascript:PrepararExpresion()" class="defaultButton multiLine listButton">
-		<img src="../images/mainBox_iconBorder.gif" alt="" title="" />
+
 							<span><?php echo $msgstr["m_buscar"]?></strong></span>
 						</a>
 		<a href="javascript:LimpiarBusqueda(this,1)" class="defaultButton multiLine cancelButton">
-		<img src="../images/mainBox_iconBorder.gif" alt="" title="" />
+
 							<span><?php echo $msgstr["borrar"]?></strong></span>
 						</a>
 	</div>

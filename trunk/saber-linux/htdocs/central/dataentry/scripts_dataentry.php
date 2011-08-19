@@ -456,7 +456,7 @@ if (isset($arrHttp["encabezado"])){
 				</div>";
 		echo "<div class=\"actions\">
 			<a href=\"$retorno$return\" class=\"defaultButton backButton\">
-				<img src=\"../images/defaultButton_iconBorder.gif\" alt=\"\" title=\"\" />
+			
 				<span><strong>".$msgstr["back"]."</strong></span>
 			</a>
 		</div>

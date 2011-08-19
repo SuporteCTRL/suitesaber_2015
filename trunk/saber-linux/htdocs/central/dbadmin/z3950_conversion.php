@@ -69,11 +69,11 @@ if (isset($arrHttp["encabezado"])){
 	<div class="actions">
 <?php
 	echo "<a href=z3950_conf.php?base=^a".$arrHttp["base"]."$encabezado class=\"defaultButton backButton\">
-		<img src=\"../images/defaultButton_iconBorder.gif\" alt=\"\" title=\"\" />
+
 		<span><strong>".$msgstr["back"]."</strong></span>
 		</a>\n";
 	echo "<a href=javascript:Enviar() class=\"defaultButton saveButton\">
-		<img src=\"../images/defaultButton_iconBorder.gif\" alt=\"\" title=\"\" />
+
 		<span><strong>".$msgstr["save"]."</strong></span>
 		</a>\n";
 ?>

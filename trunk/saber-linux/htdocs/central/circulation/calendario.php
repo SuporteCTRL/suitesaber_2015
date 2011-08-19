@@ -88,17 +88,17 @@ echo "
 			</div>
 			<div class=\"actions\">\n";
 if (isset($arrHttp["ver"])){	  echo "<a href=javascript:self.close() class=\"defaultButton cancelButton\">
-					<img src=\"../images/defaultButton_iconBorder.gif\" alt=\"\" title=\"\" />
+
 					<span><strong>". $msgstr["cancel"]."</strong></span>
 				</a>\n";}else{
 				echo "<a href=\"configure_menu.php?encabezado=s\" class=\"defaultButton backButton\">
-					<img src=\"../images/defaultButton_iconBorder.gif\" alt=\"\" title=\"\" />
+
 					<span><strong>". $msgstr["back"]."</strong></span>
 				</a>\n";
 }
 echo "
 				<a href=javascript:Dias_Fe(0) class=\"defaultButton saveButton\">
-					<img src=\"../images/defaultButton_iconBorder.gif\" alt=\"\" title=\"\" />
+
 					<span><strong>".$msgstr["update"]."</strong></span>
 				</a>
 			</div>

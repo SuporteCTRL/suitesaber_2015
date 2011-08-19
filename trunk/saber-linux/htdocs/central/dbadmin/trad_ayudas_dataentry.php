@@ -42,7 +42,7 @@ if (isset($arrHttp["encabezado"])) {
 	";
 echo "<a href=\"menu_traducir.php?$encabezado\" class=\"defaultButton backButton\">";
 echo "
-					<img src=\"../images/defaultButton_iconBorder.gif\" alt=\"\" title=\"\" />
+		
 					<span><strong>". $msgstr["back"]."</strong></span>
 				</a>";
 echo "			</div>

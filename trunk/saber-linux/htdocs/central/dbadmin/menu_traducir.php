@@ -54,15 +54,14 @@ if (isset($arrHttp["encabezado"])){
 }
 echo "
 	<div class=\"sectionInfo\">
-	<div class=\"breadcrumb\">".
+	<div class=\"breadcrumb\"><h3>".
 	$msgstr["translate"]."
-	</div>
+	</h3></div>
 	<div class=\"actions\">\n";
 if (isset($arrHttp["encabezado"])){
 	echo "<a href=\"../common/inicio.php?reinicio=s";
 	if (isset($arrHttp["base"]))echo "&base=".$arrHttp["base"];
 	echo "\" class=\"defaultButton backButton\">
-		<img src=\"../images/defaultButton_iconBorder.gif\" alt=\"\" title=\"\" />
 		<span><strong>". $msgstr["back"]."</strong></span>
 		</a>
 	";
@@ -119,36 +118,36 @@ echo "&nbsp; &nbsp; Script: menu_traducir.php";
 			</div>
 			<div class="sectionButtons">
 				<a href="translate.php?lang=<?php echo $_SESSION["lang"]?>&componente=admin.tab<?php echo $encabezado?>" class="menuButton tooltip listButton">
-					<img src="../images/mainBox_iconBorder.gif" alt="" title="" />
+
 					<span><strong><?php echo $msgstr["catalogacion"]?></strong></span>
 				</a>
 
 				<a href="translate.php?lang=<?php echo $_SESSION["lang"]?>&componente=dbadmin.tab<?php echo $encabezado?>" class="menuButton tooltip databaseButton">
-					<img src="../images/mainBox_iconBorder.gif" alt="" title="" />
+
 					<span><strong><?php echo $msgstr["dbadmin"]?></strong></span>
 				</a>
 				<a href="translate.php?lang=<?php echo $_SESSION["lang"]?>&componente=soporte.tab<?php echo $encabezado?>" class="menuButton tooltip utilsButton">
-					<img src="../images/mainBox_iconBorder.gif" alt="" title="" />
+
 					<span><strong><?php echo $msgstr["maintenance"]?></strong></span>
 				</a>
                       <a href="translate.php?lang=<?php echo $_SESSION["lang"]?>&componente=prestamo.tab<?php echo $encabezado?>" class="menuButton tooltip importButton">
-					<img src="../images/mainBox_iconBorder.gif" alt="" title="" />
+
 					<span><strong><?php echo $msgstr["prestamo"]?></strong></span>
 				</a>
 				 <a href="translate.php?lang=<?php echo $_SESSION["lang"]?>&componente=statistics.tab<?php echo $encabezado?>" class="menuButton tooltip statButton">
-					<img src="../images/mainBox_iconBorder.gif" alt="" title="" />
+
 					<span><strong><?php echo $msgstr["statistics"]?></strong></span>
 				</a>
 				<a href="translate.php?lang=<?php echo $_SESSION["lang"]?>&componente=acquisitions.tab<?php echo $encabezado?>" class="menuButton tooltip databaseButton">
-					<img src="../images/mainBox_iconBorder.gif" alt="" title="" />
+
 					<span><strong><?php echo $msgstr["acquisitions"]?></strong></span>
 				</a>
                 <a href="translate.php?lang=<?php echo $_SESSION["lang"]?>&componente=iah_conf.tab<?php echo $encabezado?>" class="menuButton tooltip databaseButton">
-					<img src="../images/mainBox_iconBorder.gif" alt="" title="" />
+
 					<span><strong><?php echo $msgstr["iah-conf"]?></strong></span>
 				</a>
 				<a href="translate.php?lang=<?php echo $_SESSION["lang"]?>&componente=profile.tab<?php echo $encabezado?>" class="menuButton tooltip userButton">
-					<img src="../images/mainBox_iconBorder.gif" alt="" title="" />
+
 					<span><strong><?php echo $msgstr["profiles"]?></strong></span>
 				</a>
 			</div>
@@ -172,20 +171,20 @@ echo "&nbsp; &nbsp; Script: menu_traducir.php";
 			</div>
 			<div class="sectionButtons">
 				<a href="trad_ayudas_dataentry.php?><?php echo $encabezado?>" class="menuButton tooltip listButton">
-					<img src="../images/mainBox_iconBorder.gif" alt="" title="" />
+
 					<span><strong><?php echo $msgstr["catalogacion"]?></strong></span>
 				</a>
 
 				<a href="trad_ayudas_adm.php?<?php echo $encabezado?>" class="menuButton tooltip databaseButton">
-					<img src="../images/mainBox_iconBorder.gif" alt="" title="" />
+
 					<span><strong><?php echo $msgstr["dbadmin"]?></strong></span>
 				</a>
     			<a href="trad_ayudas_loan.php?lang=<?php echo $_SESSION["lang"]?>&componente=prestamo.php<?php echo $encabezado?>" class="menuButton tooltip importButton">
-					<img src="../images/mainBox_iconBorder.gif" alt="" title="" />
+
 					<span><strong><?php echo $msgstr["prestamo"]?></strong></span>
 				</a>
 				<a href="trad_ayudas_statistics.php?lang=<?php echo $_SESSION["lang"]?>&componente=estadisticas.php<?php echo $encabezado?>" class="menuButton tooltip statButton">
-					<img src="../images/mainBox_iconBorder.gif" alt="" title="" />
+
 					<span><strong><?php echo $msgstr["statistics"]?></strong></span>
 				</a>
 

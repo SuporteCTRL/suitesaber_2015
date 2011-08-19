@@ -112,7 +112,7 @@ if (isset($arrHttp["Fixed_field"])) {
 		echo "<a href=\"javascript:self.close()\" class=\"defaultButton backButton\">";
 }
 echo "
-		<img src=\"../images/defaultButton_iconBorder.gif\" alt=\"\" title=\"\" />
+
 		<span><strong>". $msgstr["back"]."</strong></span>
 		</a>
 	</div>

@@ -81,7 +81,7 @@ echo "</div>
 	<div class=\"actions\">
 ";
 if ($arrHttp["Opcion"]!="fullinv"){	echo "<a href=\"administrar.php?base=".$arrHttp["base"]."\"  class=\"defaultButton backButton\">";    echo "
-		<img src=\"../images/defaultButton_iconBorder.gif\" alt=\"\" title=\"\" />
+
 		<span><strong>".$msgstr["back"]."</strong></span></a>";
 }
 echo "

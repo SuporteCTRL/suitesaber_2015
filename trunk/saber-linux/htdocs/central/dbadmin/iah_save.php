@@ -68,7 +68,7 @@ if (isset($arrHttp["encabezado"])){
 if (isset($arrHttp["encabezado"]))
 	echo "<a href=\"menu_modificardb.php?base=".$arrHttp["base"]."$encabezado\" class=\"defaultButton backButton\">";
 ?>
-		<img src="../images/defaultButton_iconBorder.gif" alt="" title="" />
+		
 		<span><strong><?php echo $msgstr["back"]?></strong></span></a>
 	</div>
 	<div class="spacer">&#160;</div>

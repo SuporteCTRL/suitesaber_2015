@@ -248,7 +248,7 @@ if (isset($arrHttp["encabezado"])){	include("../common/institutional_info.php")
 <?php
 	$ayuda="pft.html";
 	if (isset($arrHttp["encabezado"])){			echo "<a href=\"reports_menu.php?$encabezado\" class=\"defaultButton backButton\">
-			<img src=\"../images/defaultButton_iconBorder.gif\" alt=\"\" title=\"\" />
+
 		<span><strong>".$msgstr["back"]."</strong></span></a>
 			";
 	}

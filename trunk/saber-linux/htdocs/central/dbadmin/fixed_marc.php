@@ -56,7 +56,7 @@ if (isset($arrHttp["encabezado"]))
 else
 	$encabezado="";
 echo "<a href=menu_modificardb.php?base=". $arrHttp["base"].$encabezado." class=\"defaultButton cancelButton\">
-	<img src=\"../images/defaultButton_iconBorder.gif\" alt=\"\" title=\"\" />
+
 	<span><strong>". $msgstr["cancel"]."</strong></span>
 	</a>
 	</div>

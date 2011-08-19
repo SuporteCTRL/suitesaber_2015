@@ -254,11 +254,11 @@ if (file_exists($db_path."/menu.dat")){
 		}
 	?>
 		<a href=<?php echo $ret?> class="defaultButton backButton">
-	<!--	<img src="../images/defaultButton_iconBorder.gif" alt="" title="" /> -->
+
 		<span><strong><?php echo $msgstr["back"]?></strong></span>
 		</a>
 		<a href="javascript:Crear()" class="defaultButton  newButton">
-		<!--<img src="../images/defaultButton_iconBorder.gif" alt="" title="" /> -->
+
 		<span><strong><?php echo $msgstr["crear"]?></strong> </span>
 		</a>
 

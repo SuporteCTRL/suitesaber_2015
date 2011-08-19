@@ -52,7 +52,7 @@ if (isset($arrHttp["encabezado"])){
 <?php
 	if ($encabezado!="") echo "<a href=javascript:self.close() class=\"defaultButton backButton\">";
 ?>
-<img src="../images/defaultButton_iconBorder.gif" alt="" title="" />
+
 <span><strong><?php echo $msgstr["back"]?></strong></span>
 </a>
 			</div>

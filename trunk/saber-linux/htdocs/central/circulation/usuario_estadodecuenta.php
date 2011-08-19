@@ -194,7 +194,7 @@ echo "<body>";
 	</div>
 	<div class="actions">
 		<a href="loan.php?base=".$arrHttp["base"]."&encabezado=s" class="defaultButton backButton">
-			<img src="../images/defaultButton_iconBorder.gif" alt="" title="" />
+	
 			<span><?php echo $msgstr["back"]?></strong></span>
 		</a>
 	</div>

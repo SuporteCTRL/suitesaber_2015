@@ -47,7 +47,7 @@ set_time_limit(420);
 	<div class="actions">
 <?php echo "<a href=javascript:self.close()  class=\"defaultButton cancelButton\">";
 ?>
-		<img src="../images/defaultButton_iconBorder.gif" alt="" title="" />
+
 		<span><strong><?php echo $msgstr["cerrar"]?></strong></span></a>
 	</div>
 	<div class="spacer">&#160;</div>

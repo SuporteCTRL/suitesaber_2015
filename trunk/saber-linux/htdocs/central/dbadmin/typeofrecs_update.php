@@ -47,7 +47,7 @@ echo "
 	<div class=\"breadcrumb\">".$msgstr["typeofrecords"].": ".$arrHttp["base"]."</div>
 	<div class=\"actions\">\n";
 echo "<a href=menu_modificardb.php?base=". $arrHttp["base"].$encabezado." class=\"defaultButton backButton\">
-	<img src=\"../images/defaultButton_iconBorder.gif\" alt=\"\" title=\"\" />
+
 		<span><strong>". $msgstr["back"]."</strong></span>
 		</a>
 		</div>
