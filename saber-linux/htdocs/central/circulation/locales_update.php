@@ -57,7 +57,7 @@ echo "
 	<a href=../documentacion/ayuda.php?help=".$_SESSION["lang"]."/locales.html target=_blank>".$msgstr["help"]."</a>&nbsp &nbsp;";
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 	echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/locales.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "<font color=white>&nbsp; &nbsp; Script: locales.php </font>";
+echo "&nbsp; &nbsp; Script: locales.php </font>";
 echo "</div>
 		<div class=\"middle form\">
 			<div class=\"formContent\"> ";

@@ -108,7 +108,7 @@ echo "<body>";
 <a href=../documentacion/ayuda.php?help=<?php echo $_SESSION["lang"]?>/prestamo_procesar.html target=_blank><?php echo $msgstr["help"]?></a>&nbsp &nbsp;
 <?php if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 		echo "        		<a href=../documentacion/edit.php?archivo=". $_SESSION["lang"]."/prestamo_procesar.html target=_blank>".$msgstr["edhlp"]."</a>";
-  echo "<font color=white>&nbsp; &nbsp; Script: usuario_prestamos_presentar.php</font>\n";
+  echo "&nbsp; &nbsp; Script: usuario_prestamos_presentar.php</font>\n";
 ?>
 	</div>
 <div class="middle form">

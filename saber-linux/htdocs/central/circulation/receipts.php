@@ -103,7 +103,7 @@ function Guardar(){	nombre=Trim(document.receipts.pr_loan.value)
 <a href=../documentacion/ayuda.php?help=<?php echo $_SESSION["lang"]?>/<?php echo $ayuda?> target=_blank><?php echo $msgstr["help"]?></a>&nbsp &nbsp;
 <?php if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 	echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/".$ayuda." target=_blank>".$msgstr["edhlp"]."</a>";
-echo "<font color=white>&nbsp; &nbsp; Script: receipts.php";
+echo "&nbsp; &nbsp; Script: receipts.php";
 ?></font>
 </div>
 <div class="middle form">

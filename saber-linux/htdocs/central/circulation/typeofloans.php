@@ -160,7 +160,7 @@ echo "
         		<a href=../../documentacion/".$_SESSION["lang"]."/typeofloans.html target=_blank><img src=../dataentry/img/about.gif border=0 align=middle>".$msgstr["help"]."</a>&nbsp &nbsp;";
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 	 echo "<a href=../../documentacion/edit.php?archivo=../". $_SESSION["lang"]."/typeofloans.html target=_blank>".$msgstr["edhlp"]."</a> &nbsp; &nbsp; Script: typeofloans.php";
-echo "<font color=white>&nbsp; &nbsp; Script: typeofloans.php</font>\n";
+echo "&nbsp; &nbsp; Script: typeofloans.php</font>\n";
 ?>
 		<br>
 			<a href="javascript:void(0)" onclick="mygrid.addRow((new Date()).valueOf(),['','','','','','','','','','','','','','','','','','',''],mygrid.getRowIndex(mygrid.getSelectedId()))"><?php echo $msgstr["addrowbef"]?></a>

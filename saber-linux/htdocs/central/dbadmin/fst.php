@@ -129,7 +129,7 @@ if ($arrHttp["Opcion"]=="new"){
 <?php
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 	echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/fst.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "<font color=white>&nbsp; &nbsp; Script: fst.php";
+echo "&nbsp; &nbsp; Script: fst.php";
 ?>
 </font>
 	</div>

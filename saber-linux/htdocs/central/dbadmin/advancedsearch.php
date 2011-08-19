@@ -130,7 +130,7 @@ if (isset($arrHttp["encabezado"])){
 <?php
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 	echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/asearch_schema.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "<font color=white>&nbsp; &nbsp; Script: advancedsearch.php";
+echo "&nbsp; &nbsp; Script: advancedsearch.php";
 ?>
 </font>
 	</div>

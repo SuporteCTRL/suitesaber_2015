@@ -127,7 +127,7 @@ if (isset($arrHttp["encabezado"])){
 <?php
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 	echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/admin.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "<font color=white>&nbsp; &nbsp; Script: menu_creardb.php</font>";
+echo "&nbsp; &nbsp; Script: menu_creardb.php</font>";
 ?>
 	</div>
 	<form method=post name=forma1 onsubmit="javascript:return false">

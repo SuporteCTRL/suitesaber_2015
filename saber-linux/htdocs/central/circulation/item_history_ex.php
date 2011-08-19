@@ -162,7 +162,7 @@ function EnviarForma(Opcion){	eliminar=""	if (Opcion==0){		document.continuar
 <?php
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 	echo "<a href=../documentacion/edit.php?archivo=". $_SESSION["lang"]."/circulation/item_history.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "<font color=white>&nbsp; &nbsp; Script: item_history_ex.php</font>\n";
+echo "&nbsp; &nbsp; Script: item_history_ex.php</font>\n";
 
 echo "
 	</div>

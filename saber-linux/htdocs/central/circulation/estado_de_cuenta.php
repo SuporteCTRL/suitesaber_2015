@@ -124,7 +124,7 @@ if (isset($arrHttp["usuario"]) and $arrHttp["usuario"]!="") $link_u="&usuario=".
 <?php
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 	echo "<a href=../documentacion/edit.php?archivo=". $_SESSION["lang"]."/loans/user_statment.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "<font color=white>&nbsp; &nbsp; Script: estado_de_cuenta.php</font>\n";
+echo "&nbsp; &nbsp; Script: estado_de_cuenta.php</font>\n";
 ?>
 	</div>
 <div class="middle list">

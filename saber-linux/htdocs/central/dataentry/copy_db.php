@@ -48,7 +48,7 @@ echo "
 	if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 		echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/copy_db.html target=_blank>".$msgstr["edhlp"]."</a>";
 	echo " &nbsp; &nbsp; <a href='http://isisabcd.pbworks.com/w/page/Copiar-base-de-datos' target=_blank>".$msgstr["online_help"]."</a>";
-	echo "<font color=white>&nbsp; &nbsp; Script: copy_db.php</font>";
+	echo "&nbsp; &nbsp; Script: copy_db.php</font>";
 
 	echo "
 

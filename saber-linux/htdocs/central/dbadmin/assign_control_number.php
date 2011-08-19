@@ -186,7 +186,7 @@ if (isset($arrHttp["encabezado"])){	include("../common/institutional_info.php")
 <?php
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 	echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/".$ayuda." target=_blank>".$msgstr["edhlp"]."</a>";
-echo "<font color=white>&nbsp; &nbsp; Script: assign_control_number.php";
+echo "&nbsp; &nbsp; Script: assign_control_number.php";
 ?>
 </font>
 	</div>

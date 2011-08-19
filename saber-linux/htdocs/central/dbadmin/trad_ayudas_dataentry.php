@@ -55,7 +55,7 @@ echo "			</div>
 <?php
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 	echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/trad_ayudas.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "<font color=white>&nbsp; &nbsp; Script: trad_ayudas_dataentry.php";
+echo "&nbsp; &nbsp; Script: trad_ayudas_dataentry.php";
 ?>
 </font>
 	</div>

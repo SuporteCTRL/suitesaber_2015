@@ -238,7 +238,7 @@ echo "
 	<a href=../documentacion/ayuda.php?help=". $_SESSION["lang"]."/exportiso.html target=_blank>".$msgstr["help"]."</a>&nbsp &nbsp";
 	if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 		echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/exportiso.html target=_blank>".$msgstr["edhlp"]."</a>
-		<font color=white>&nbsp; &nbsp; Script: exporta_txt.php</font>";
+		&nbsp; &nbsp; Script: exporta_txt.php</font>";
 	echo "
 
 	</div>

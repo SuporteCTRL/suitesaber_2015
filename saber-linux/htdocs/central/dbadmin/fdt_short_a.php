@@ -769,7 +769,7 @@ if (!isset($arrHttp["Subc"])){
 <?php
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 	if ($_SESSION["permiso"]=="adm") echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/fdt.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "<font color=white>&nbsp; &nbsp; Script: fdt_short_a.php";
+echo "&nbsp; &nbsp; Script: fdt_short_a.php";
 ?>
 </font>
 	</div>

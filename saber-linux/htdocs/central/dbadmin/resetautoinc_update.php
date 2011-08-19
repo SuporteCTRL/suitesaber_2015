@@ -89,7 +89,7 @@ else
 <?php
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 	echo "<a href=../documentacion/edit.php?archivo=". $_SESSION["lang"]."/copies_configuration.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "<font color=white>&nbsp; &nbsp; Script: resetautoinc_update.php</font>\n";
+echo "&nbsp; &nbsp; Script: resetautoinc_update.php</font>\n";
 echo "
 	</div>
 <div class=\"middle form\">

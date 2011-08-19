@@ -146,7 +146,7 @@ if (isset($arrHttp["encabezado"])){
 <?php
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 	echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/z3950_conf.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "<font color=white>&nbsp; &nbsp; Script: z3950_diacritics_edit.php </font>";
+echo "&nbsp; &nbsp; Script: z3950_diacritics_edit.php </font>";
 ?>
 	</div>
 <div class="middle form">

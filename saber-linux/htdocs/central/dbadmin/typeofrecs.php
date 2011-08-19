@@ -66,7 +66,7 @@ if (isset($arrHttp["encabezado"])){
 <div class="helper">
 	<a href=../documentacion/ayuda.php?help=<?php echo $_SESSION["lang"]?>/recval.html target=_blank><?php echo $msgstr["help"]?></a>&nbsp &nbsp;
  	<a href=../documentacion/edit.php?archivo=<?php echo $_SESSION["lang"]?>/recval.html target=_blank><?php echo $msgstr["edhlp"]?></a>
-<?php echo "<font color=white>&nbsp; &nbsp; Script: typeofrecs.php" ?></font>
+<?php echo "&nbsp; &nbsp; Script: typeofrecs.php" ?></font>
 	</div>
 <div class="middle form">
 	<div class="formContent">

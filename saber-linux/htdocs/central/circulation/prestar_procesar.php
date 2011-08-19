@@ -160,7 +160,7 @@ if (isset($arrHttp["usuario"])) $link_u="&usuario=".$arrHttp["usuario"];
 echo "<a href=documentacion/ayuda.php?help=". $_SESSION["lang"]."/prestar.html target=_blank>". $msgstr["help"]."</a>&nbsp &nbsp;";
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 	echo "<a href=documentacion/edit.php?archivo=". $_SESSION["lang"]."/prestar.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "<font color=white>&nbsp; &nbsp; Script: prestar_procesar.php </font>
+echo "&nbsp; &nbsp; Script: prestar_procesar.php </font>
 	</div>";
 // prestar, reservar
 echo "

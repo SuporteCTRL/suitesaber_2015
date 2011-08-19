@@ -70,7 +70,7 @@ include("../common/institutional_info.php");
 <?php
 if ($_SESSION["permiso"]=="loanadm"){
 	echo "<a href=../documentacion/edit.php?archivo=". $_SESSION["lang"]."/reservas_eliminar.html target=_blank>".$msgstr["edhlp"]."</a>";
-	echo "<font color=white>&nbsp; &nbsp; Script: reservas_eliminar_ex.php</font>\n";
+	echo "&nbsp; &nbsp; Script: reservas_eliminar_ex.php</font>\n";
 }
 
 echo "

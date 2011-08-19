@@ -108,7 +108,7 @@ echo "			</div>
 <div class="helper">
 <a href=../documentacion/ayuda.php?help=<?php echo $_SESSION["lang"]?>/admin.html target=_blank><?php echo $msgstr["help"]?></a>&nbsp &nbsp;
 <?php if ($_SESSION["permiso"]=="adm") echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/admin.html target=_blank>".$msgstr["edhlp"]."</a>
-<font color=white>&nbsp; &nbsp; Script: menu_statistics.php" ?>
+&nbsp; &nbsp; Script: menu_statistics.php" ?>
 </font>
 	</div>
  <div class="middle form">

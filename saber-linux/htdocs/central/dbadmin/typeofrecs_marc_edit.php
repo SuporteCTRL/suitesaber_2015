@@ -133,7 +133,7 @@ echo "<a href=menu_modificardb.php?base=". $arrHttp["base"].$encabezado." class=
 <?php
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 	echo "<a href=../documentacion/php/edit.php?archivo=".$_SESSION["lang"]."/typeofrecs_marc.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "<font color=white>&nbsp; &nbsp; Script: typeofrecs_marc_edit.php";
+echo "&nbsp; &nbsp; Script: typeofrecs_marc_edit.php";
 ?>
 </font>
 	</div>

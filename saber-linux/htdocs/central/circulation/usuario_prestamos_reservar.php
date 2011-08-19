@@ -169,7 +169,7 @@ if (isset($arrHttp["usuario"])) $link_u="&usuario=".$arrHttp["usuario"];
 <a href=../documentacion/ayuda.php?help=<?php echo $_SESSION["lang"]?>/prestamo_procesar.html target=_blank><?php echo $msgstr["help"]?></a>&nbsp &nbsp;
 <?php if ($_SESSION["permiso"]=="loanadm"){
 		echo "        		<a href=../documentacion/edit.php?archivo=". $_SESSION["lang"]."/prestamo_procesar.html target=_blank>".$msgstr["edhlp"]."</a>";
-      	echo "<font color=white>&nbsp; &nbsp; Script: usuario_prestamos_reservar.php</font>\n";
+      	echo "&nbsp; &nbsp; Script: usuario_prestamos_reservar.php</font>\n";
       }
 ?>
 	</div>

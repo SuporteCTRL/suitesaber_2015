@@ -474,11 +474,11 @@ if (isset($arrHttp["encabezado"])){
 				echo "</div>
 				<div class=\"actions\">
 					<a href=javascript:EnviarForma() class=\"defaultButton saveButton\">
-						<img src=\"../images/defaultButton_iconBorder.gif\" alt=\"\" title=\"\" />
+	
 						<span><strong>".$msgstr["m_guardar"]."</strong></span>
 					</a>
 					<a href=\"$retorno$return\" class=\"defaultButton cancelButton\">
-						<img src=\"../images/defaultButton_iconBorder.gif\" alt=\"\" title=\"\" />
+	
 						<span><strong>".$msgstr["cancelar"]."</strong></span>
 					</a>
 				</div>

@@ -170,8 +170,8 @@ foreach  ($type_items as $var=>$value){
     	Redraw(sel)    }
 
 	function Cancelar(){
-		elem = document.getElementById("acciones");		html="<a href=javascript:Enviar()><?php echo $msgstr["update"]?></a>&nbsp; &nbsp; &nbsp; &nbsp;"
-    	html+="<a href=configure_menu.php?encabezado=s><?php echo $msgstr["cancel"]?></a>"        elem.innerHTML = html
+		elem = document.getElementById("acciones");		html="<a id=\"botoes\" href=javascript:Enviar()><?php echo $msgstr["update"]?></a>&nbsp; &nbsp; &nbsp; &nbsp;"
+    	html+="<a id=\"botoes\" href=configure_menu.php?encabezado=s><?php echo $msgstr["cancel"]?></a>"        elem.innerHTML = html
         elem = document.getElementById("type_e");
         elem.innerHTML = ""
         Redraw_Table()
@@ -414,7 +414,7 @@ foreach  ($type_items as $var=>$value){
     	}
     	elem.innerHTML = html+"</table>"
     	elem = document.getElementById("acciones")
-    	elem.innerHTML = "<a href=javascript:Aceptar_Item("+index+")><?php echo $msgstr["update"]?></a>&nbsp &nbsp; <a href=javascript:Cancelar()><?php echo $msgstr["cancel"]?></a>"
+    	elem.innerHTML = "<a id=\"botoes\" href=javascript:Aceptar_Item("+index+")><?php echo $msgstr["update"]?></a>&nbsp &nbsp; <a id=\"botoes\" href=javascript:Cancelar()><?php echo $msgstr["cancel"]?></a>"
 
 	}
 
@@ -433,7 +433,7 @@ foreach  ($type_items as $var=>$value){
 		    		switch (c){
 		    			case "0":
 		    				html+="<td width=100><a href=javascript:Eliminar("+i+")><img src=../dataentry/img/cancelar.gif border=0 height=10 alt='<?php echo $msgstr["delete"]?>'></a>"
-		    				html+=" <a href=javascript:Agregar("+i+")><img src=../dataentry/img/add.gif border=0 height=10 alt='<?php echo $msgstr["crear"]?>'><a href=javascript:Editar_Tabla("+i+")>"+TI[cell[c]]+" ("+cell[c]+")</a></td>\n"
+		    				html+=" <a href=javascript:Agregar("+i+")><img src=../dataentry/img/add.gif border=0 height=10 alt='<?php echo $msgstr["crear"]?>'><a id=\"botoes\" href=javascript:Editar_Tabla("+i+")>"+TI[cell[c]]+" ("+cell[c]+")</a></td>\n"
 		    				break
 		    			case "1":
 		    				html+="<td>"+TU[cell[c]]+" ("+cell[c]+")</td>\n"
@@ -484,8 +484,8 @@ foreach  ($type_items as $var=>$value){
 	  	}
     	elem.innerHTML = html+"</table>"
     	elem = document.getElementById("acciones");
-		html="<a href=javascript:Enviar()><?php echo $msgstr["update"]?></a>&nbsp; &nbsp; &nbsp; &nbsp;"
-    	html+="<a href=configure_menu.php?encabezado=s><?php echo $msgstr["cancel"]?></a>"
+		html="<a id=\"botoes\" href=javascript:Enviar()><?php echo $msgstr["update"]?></a>&nbsp; &nbsp; &nbsp; &nbsp;"
+    	html+="<a id=\"botoes\" href=configure_menu.php?encabezado=s><?php echo $msgstr["cancel"]?></a>"
         elem.innerHTML = html
 
 	}
@@ -612,7 +612,7 @@ echo "
 	<a href=../documentacion/ayuda.php?help=".$_SESSION["lang"]."/circulation/policy.html target=_blank>".$msgstr["help"]."</a>&nbsp &nbsp;";
 	if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 		echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/circulation/policy.html target=_blank>".$msgstr["edhlp"]."</a>";
-	echo "<font color=white>&nbsp; &nbsp; Script: loanobjects.php </font>";
+	echo "&nbsp; &nbsp; Script: loanobjects.php </font>";
 
 echo"</div>
 		<div class=\"middle form\">
@@ -621,7 +621,7 @@ echo"</div>
 ?>
 
     <form name=forma1>
-  	<a href="javascript:NuevoTipo()" ><?php echo $msgstr["crear"]?></a>
+  	<a id="botoes" href="javascript:NuevoTipo()" ><?php echo $msgstr["crear"]?></a>
     <div id=type_e class="middle list"> </div>
     <p>
     <div id=acciones>

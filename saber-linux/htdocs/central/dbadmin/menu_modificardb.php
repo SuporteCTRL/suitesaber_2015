@@ -181,7 +181,7 @@ foreach ($fp as $value){	$value=trim($value);
 <?php
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 	echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/admin.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "<font color=white>&nbsp; &nbsp; Script: menu_modificardb.php";
+echo "&nbsp; &nbsp; Script: menu_modificardb.php";
 ?>
 </font>
 	</div>

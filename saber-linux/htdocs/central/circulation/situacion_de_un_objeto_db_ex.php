@@ -175,7 +175,7 @@ function EnviarForma(Opcion){	eliminar=""	if (Opcion==0){		document.continuar
 <?php
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 	echo "<a href=../documentacion/edit.php?archivo=". $_SESSION["lang"]."/situacion_de_un_objeto.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "<font color=white>&nbsp; &nbsp; Script: situacion_de_un_objeto_ex.php</font>\n";
+echo "&nbsp; &nbsp; Script: situacion_de_un_objeto_ex.php</font>\n";
 
 echo "
 	</div>

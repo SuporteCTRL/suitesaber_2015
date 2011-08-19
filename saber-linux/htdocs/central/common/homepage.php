@@ -236,7 +236,7 @@ switch ($arrHttp["modulo"]){	case "catalog":
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"])){
  	echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/$ayuda target=_blank>".$msgstr["edhlp"];
 	echo "</a>
-		<font color=white>&nbsp; &nbsp; Script: homepage.php </font>";
+		&nbsp; &nbsp; Script: homepage.php </font>";
 }
 ?>
 
@@ -499,19 +499,13 @@ if ($dirtree==1){
 				</a> 
 
 
-				<a href="http://bireme.br" target="_blank"  class="menuButton tooltip newButton">
+				<a href="http://help.suitesaber.org" target="_blank"  class="menuButton tooltip newButton">
 
-					<span>Pesquisar BIREME</span>
+					<span>Help</span>
 				</a> 
 
 
-				<a href="javascript:void(1)"onclick="window.open('http://decs.bvs.br/cgi-bin/wxis1660.exe/decsserver/?IsisScript=../cgi-bin/decsserver/decsserver.xis&interface_language=p&previous_page=homepage&previous_task=NULL&task=start','windowname1','width=680, height=400,scrollbars=yes');return false;"  class="menuButton tooltip newButton">
-
-					<span>Consulta ao DeCS</span>
-				</a> 
-
-
-				<a href="javascript:void(1)"onclick="window.open('http://biblioteca.saude.rs.gov.br/relatorios-estatisticas/index.html','windowname1','width=680, height=400,scrollbars=yes');return false;"  class="menuButton tooltip newButton">
+					<a href="javascript:void(1)"onclick="window.open('http://biblioteca.saude.rs.gov.br/relatorios-estatisticas/index.html','windowname1','width=680, height=400,scrollbars=yes');return false;"  class="menuButton tooltip newButton">
 
 					<span>Como gerar relatórios</span>
 				</a> 

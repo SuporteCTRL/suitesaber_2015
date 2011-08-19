@@ -72,7 +72,7 @@ if (isset($arrHttp["encabezado"])){
 			<div class="spacer">&#160;</div>
 </div>
 <div class="helper">
-<?php echo "<font color=white>&nbsp; &nbsp; Script: delete_file.php" ?></font>
+<?php echo "&nbsp; &nbsp; Script: delete_file.php" ?></font>
 	</div>
 <div class="middle form">
 			<div class="formContent">
