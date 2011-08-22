@@ -1,5 +1,5 @@
 '<table border=0 width=90%>'
-'<td rowspan=21 valign=top width=150><img src=../common/show_image.php?image='v620'&base=users></td>'
+'<td rowspan=21 valign=top width=150><img width="120" src=../common/show_image.php?image='v620'&base=users></td>'
 if p(v10) then '<tr><td width=20% valign=top><font face=arial size=2><b>Tipo de usuário</b></td><td valign=top><font face=arial size=2>',v10^*,". "v10^b,,'</td>' fi/
 if p(v12) then '<tr><td width=20% valign=top><font face=arial size=2><b>Sexo</b></td><td valign=top><font face=arial size=2>',v12^*,". "v12^b,mpl,'</td>' fi/
 if p(v15) then '<tr><td width=20% valign=top><font face=arial size=2><b>Data limite validade cartão</b></td><td valign=top><font face=arial size=2>'v15+|<br>|,'</td>' fi/
