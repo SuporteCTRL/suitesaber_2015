@@ -110,7 +110,7 @@ inprocess('','end');        // close progress window
     </head>
     <body>
         <div class="container">
-            <div class="level2">
+           <div class="level2"> 
                 <? include( $localPath['html'] . "/bvs.html"); ?>
                 <div class="middle">
                     <?php
@@ -127,7 +127,7 @@ inprocess('','end');        // close progress window
 
                     ?>
                 </div>
-            </div>
+               </div> 
         </div>
         <div class="copyright">
           <a href="http://www.saberabcd.com" target="_blank">Saber ABCD</a>
