@@ -33,6 +33,7 @@ INDEX Au=^1Autor^2Autor^3Author^4Auteur^xAU ^uAU_^yDATABASE^mAU_
 INDEX Ai=^1Autor institucional^2Autor institucional^3Institutional author^4Institutionnel auteur^xAI ^uAI_^yDATABASE^mAI_
 INDEX Ma=^1Descritor geográfico^2Descriptor geográfico^3Subject geographic^4Sujet géographique^xDG ^uDG_^yDATABASE^mDG_
 INDEX Pa=^1País^2País^3Country^4Pays^xPA ^uPA_^yDATABASE^mPA_^tshort
+INDEX Mf=^1MFN^2País^3MFN^4MFN^xMFN ^uMFN_^yDATABASE^mMFN_^tshort
 
 [APPLY_GIZMO]
 
