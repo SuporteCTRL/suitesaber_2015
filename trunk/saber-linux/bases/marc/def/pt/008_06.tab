@@ -1,7 +1,15 @@
+b|Nenhuma data fornecida/data A.C.
 c|Publicação seriada corrente
 d|Publicação seriada encerrada
-m|Data múltiplas
-r|Data de Reimpressão/reedição e original
-s|Uma única data conhecida/data provável
-t|Data de publicação e de direitos autorais (copyright)
- | Não se tentou codificar 
+e|Data detalhada
+i|Data inclusiva de coleção
+k|Intervalo de datas
+m|Datas múltiplas
+n|Datas desconhecidas
+p|Data de produção
+q|Data questionável
+r|Data de reimpressão/reedição e original
+s|Única data conhecida/data provável
+t|Data de publicação e de copyright
+u|Publicação seriada desconhecida
+-|Não se tentou codificar

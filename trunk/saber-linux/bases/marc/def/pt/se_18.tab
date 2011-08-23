@@ -1,19 +1,20 @@
-#|Freqüência não determinável (a freqüência é intencionalmente irregular)  
-a|Anual 
-b|Bimestral (podendo ser de 6, 7, ou 8 números por ano) 
-c|Bissemanal(duas vezes por semana) 
-d|Diário 
-e|Quizenal 
-f|Semestral (podendo ser 2 números por ano) 
-g|Bienal 
-h|Trienal 
-i|Três vezes por semana 
-j|Três vezes por mês 
-m|Mensal (podendo ser de 9, 10, 11, ou 12 números por ano) 
-q|Trimestral (inclui 4 números por ano) 
+#|Freqüência não determinável
+a|Anual
+b|Bimestral
+c|Bissemanal
+d|Diário
+e|Quizenal
+f|Semestral
+g|Bienal
+h|Trienal
+i|Três vezes por semana
+j|Três vezes por mês
+k|Atualização contínua
+m|Mensal
+q|Trimestral
 s|Duas vezes por mês 
-t|Quadrimestral (de quatro em quatro meses) 
-u|Desconhecido 
-w|Semanal 
-z|Outro 
- |Não se tentou codificar
+t|Quadrimestral
+u|Desconhecido
+w|Semanal
+z|Outro
+-|Não se tentou codificar

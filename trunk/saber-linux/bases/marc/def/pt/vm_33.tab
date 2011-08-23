@@ -1,15 +1,15 @@
-a|Arte (original) 
-b|Kit (um ítem que contem um conjunto de componentes)
-c|Arte (reprodução)
-d|Diorama 
-f|Diafilme	
+a|Original de arte
+b|Kit
+c|Reprodução de arte
+d|Diorama
+f|Diafilme
 g|Jogo
-i|Figura
+i|Ilustração
 k|Gráfico 
 l|Desenho técnico
-m|Filme
+m|Filme cinematográfico
 n|Quadro
-o|Cartão de memória (Flash card) 
+o|Cartão de memória
 p|Slide de microscópio
 q|Modelo 
 r|Reália
@@ -18,4 +18,4 @@ t|Transparência
 v|Gravação de vídeo
 w|Brinquedo
 z|Outro
- |Não se tentou codificar
+-|Não se tentou codificar
