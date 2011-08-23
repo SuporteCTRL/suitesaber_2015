@@ -3,7 +3,7 @@ BK_a_NL.fmt|a|m|Material textual
 VM_g_NL.fmt|g|m|Material projetável
 VM_k_NL.fmt|k|m|Material não projetável bidimensional
 VM_o_NL.fmt|o|m|Kit (dois ou mais tipos)
-VM_p_NL.fmt|p|m|Material misto
+MX_p_NL.fmt|p|m|Material misto
 VM_r_NL.fmt|r|m|Objeto tridimensional
 AM_t_NL.fmt|t|m|Material textual manuscrito
 CF_m_NL.fmt|m|m|Arquivo de computador

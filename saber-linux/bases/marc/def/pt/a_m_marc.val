@@ -1,0 +1,4 @@
+1:if (L("cn="v1) > 0) and (L("cn="v1) <> mfn) then 'Numero de controle nao pode ser duplicado!',/,v1,' ja esta associado ao mfn: ', F(L("nc="v1),0,0) fi,$$|$$false
+###
+:
+###

@@ -1,6 +1,6 @@
-#|Nenum alfabeto informado/não é título chave 
+#|Nenhum alfabeto informado/não é título chave 
 a|Alfabeto romano básico 
-b|Alfabeto romano estendido
+b|Alfabeto romano expandido
 c|Cirílico 
 d|Japonês 
 e|Chinês 
@@ -13,4 +13,4 @@ k|Coreano
 l|Tâmil 
 u|Desconhecido 
 z|Outro 
- |Não se tentou codificar
+-|Não se tentou codificar

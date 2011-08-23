@@ -1,12 +1,8 @@
 '<tr>',
     '<td colspan="2"><br>'
-
-	'
-<script type="text/javascript">var switchTo5x=true;</script><script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script><script type="text/javascript">stLight.options({publisher:"c5b45ee9-8b49-40ab-a271-069d9193f624"});</script>
-	
-	
-	<span  class="st_twitter_large" ></span><span  class="st_facebook_large" ></span><span  class="st_yahoo_large" ></span><span  class="st_gbuzz_large" ></span><span  class="st_email_large" ></span><span  class="st_sharethis_large" ></span>
-
-	'
+        `<a href="http://www.addthis.com/bookmark.php?v=20" onmouseover="return addthis_open(this, '', 'http://`getenv('HTTP_HOST')getenv('SCRIPT_NAME')v5000^d`scripts/?IsisScript=iah.xis&base=TITLE&lang=es&form=F&nextAction=lnk&indexSearch=Kw&exprSearch=`v6002`' , 'ABCD - iAH search engine')" onmouseout="addthis_close()" onclick="return addthis_sendto()">`
+            '<img src="http://s7.addthis.com/static/btn/lg-bookmark-en.gif" width="125" height="16" alt="Bookmark and Share" style="border:0"/>'
+	'</a>'
+	'<script type="text/javascript" src="http://s7.addthis.com/js/200/addthis_widget.js"></script>'
     '</td>',
 '</tr>',

@@ -1,4 +1,4 @@
-#|Sem ilustrações
+####|Sem ilustrações
 a|Ilustrações
 b|Mapas
 c|Retratos
@@ -14,4 +14,7 @@ l|Amostras, tabelas estatísticas
 m|Gravações
 o|Fotografias
 p|Transparências
- |Não se tentou codificar
+#|(Um vazio)
+##|(Dois vazios)
+###|(Três vazios)
+----|Não se tentou codificar

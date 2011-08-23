@@ -293,7 +293,7 @@ function IrA(ixj){	a=document.Lista.ira.value
 function CloseWindows(){	if (msg_pv=="Y"){		msgwin_preview.close()	}}
 
 function AbrirTesauro(Tes,Index){
-	if (Tes=="<?php echo $arrHttp["baseactiva"]?>"){        document.Lista.baseactiva.value=""
+	if (Tes=="<?php echo $arrHttp["baseactiva"]?>"){        document.Lista.baseactiva.value=""
         document.Lista.tesauro.value=""
         document.Lista.base.value="<?php echo $arrHttp["baseactiva"]?>"
         document.Lista.Formato.value="<?php echo $arrHttp["ba_Formato"]?>"
@@ -341,7 +341,7 @@ if (isset($arrHttp["width"])){	$width=$arrHttp["width"];
 
 <?php
 if (!isset($arrHttp["index"])) $arrHttp["index"]="";
-switch($arrHttp["index"]){
+switch($arrHttp["index"]){
 	case "permu":
 		foreach ($contenido as $linea)  {
 
