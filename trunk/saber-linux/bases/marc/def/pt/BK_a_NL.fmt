@@ -180,7 +180,7 @@ S||Data de aprovação ou publicação da norma|0|0|c||X|||||||||0||
 S||Data de validade|0|0|d||X|||||||||0||
 S||Data de cancelamento ou substituição|0|0|e||X|||||||||0||
 H||1XX: Entradas principais|0|1||||||||||||0||
-T|100|Entrada principal - Nome pessoal|0|0|12abcdefgjklnpqtu246||X|2|103|D|autoridades|CP_|@author.pft|||1||
+T|100|Entrada principal - Nome pessoal|0|0|12abcdefgjklnpqtu246||X|2|103|DB|autoridades|CP_|@author.pft|||1||
 S||Indicador 1|0|0|1||X||1|P|100-ind1.tab|||||0||
 S||Indicador 2|0|0|2||X||1|||||||0||
 S||Nome pessoal|0|0|a||X|||D|autoridades|CP_|@author.pft|||0||
