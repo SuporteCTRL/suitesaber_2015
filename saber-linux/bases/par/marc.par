@@ -15,3 +15,5 @@ loanobject.*=%path_database%loanobjects/data/loanobjects.*
 loan.pft=%path_database%loanobjects/pfts/es/loan.pft
 
 trans.*=%path_database%trans/data/trans.*
+
+author2.pft=%path_database%autoridades/pfts/pt/author2.pft 
