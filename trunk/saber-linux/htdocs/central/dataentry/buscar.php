@@ -112,7 +112,8 @@ global $arrHttp,$matriz_c,$camposbusqueda;
 			}
 			$xor="¬or¬$pref";
 			$xand="¬and¬$pref";
-
+			$pref2=str_replace("$pref2","*",$pref);
+			
 			$formula=stripslashes($formula);
 			while (is_integer(strpos($formula,'"'))){
 				$nse=$nse+1;
@@ -132,8 +133,8 @@ global $arrHttp,$matriz_c,$camposbusqueda;
 			$formula=str_replace (" and ", $xand, $formula);
 			$formula=str_replace ("*", $xand, $formula);
 			$formula=str_replace ('\"', '"', $formula);
-			$formula=str_replace (" ", "*",$formula);
-            $formula=str_replace (",", "",$formula);
+			$formula=str_replace (" ","*$pref",$formula);
+         $formula=str_replace (",", "",$formula);
 		//	if (substr($formula,0,strlen($pref))!=$pref)
 		//		$formula=$pref.$formula;
 			while (is_integer(strpos($formula,"{"))){
@@ -246,4 +247,4 @@ switch ($arrHttp["Opcion"]){
 		die;
 		break;
 }
-?>HH
+?>
