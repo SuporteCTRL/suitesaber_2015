@@ -702,14 +702,14 @@ echo "</script>";
 						echo "	<div class=\"formContent\">\n";
 		echo $salida;
 //SE AVERIGUA SE SE VA A LEER LA INFORMACIÓN DE OTRA BASE DE DATOS
-		if (isset($record_deleted) and $record_deleted=="Y"){			echo "<a href=javascript:Undelete(".$arrHttp["Mfn"].")>undelete</a>";		}
+		if (isset($record_deleted) and $record_deleted=="Y"){			echo "<a href=javascript:Undelete(".$arrHttp["Mfn"].")>Reativar registro</a>";		}
 		if (!isset($arrHttp["capturar"])){
 			ColocarMfn();
 		}
 		echo "</form></div></div>\n";
 
 		//include("../common/footer.php");//footer da visualização - PFT
-		die;
+		die;Reativar registro
 		break;
 	case "presentarformulario":
 		PresentarFormulario("nuevo");
