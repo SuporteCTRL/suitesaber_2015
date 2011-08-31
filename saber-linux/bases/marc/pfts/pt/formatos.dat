@@ -1,3 +1,4 @@
-admarc|Formato completo
-breve|IAH (Breve)
-mrclte|IAH (Completo)
+todos|Todos os campos
+ficha|Ficha
+mrclte|Detalhado (iah)
+formato_marc|Formato MARC (iah)

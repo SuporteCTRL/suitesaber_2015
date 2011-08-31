@@ -112,8 +112,6 @@ if p(v830) then '<tr><td class="etiqueta">830</td><td class="conteudo">'(if p(v8
 if p(v850) then '<tr><td class="etiqueta">850</td><td class="conteudo">'(if p(v850) then mpl,v850, if iocc<>nocc(v850) then '<br />' fi fi/),'</td>' fi/
 if p(v852) then '<tr><td class="etiqueta">852</td><td class="conteudo">'(if p(v852) then mpl,v852, if iocc<>nocc(v852) then '<br />' fi fi/),'</td>' fi/
 if p(v856) then '<tr><td class="etiqueta">856</td><td class="conteudo">'(if p(v856) then mpl,v856, if iocc<>nocc(v856) then '<br />' fi fi/),'</td>' fi/
-if p(v949) then '<tr><td class="etiqueta">949</td><td class="conteudo">'(if p(v949) then mpl,v949, if iocc<>nocc(v949) then '<br />' fi fi/),'</td>' fi/
-if p(v980) then '<tr><td class="etiqueta">980</td><td class="conteudo">'v980+|<br />|,'</td>' fi/
 '</table>
 </div></body>
 </html>'
