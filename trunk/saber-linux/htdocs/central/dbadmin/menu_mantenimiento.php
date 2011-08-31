@@ -37,10 +37,6 @@ include("../lang/soporte.php");
 include("../lang/dbadmin.php");
 
 include("../common/get_post.php");
-
-include("../common/header.php");
-
-
 if (!isset($arrHttp["base"])) $arrHttp["base"]="";
 
 if (strpos($arrHttp["base"],"|")===false){
@@ -50,7 +46,7 @@ if (strpos($arrHttp["base"],"|")===false){
 		$arrHttp["base"]=substr($arrHttp["base"],2,$ix-2);
 }
 //foreach ($arrHttp as $var=>$value) echo "$var = $value<br>";
-//include("../common/header.php");
+include("../common/header.php");
 ?>
 
 <script src=../dataentry/js/lr_trim.js></script>
@@ -98,14 +94,6 @@ function EnviarForma(Opcion,Mensaje){
 				document.admin.action="reset_control_number.php"
 				document.admin.target=""
 				break;
-			case "unlock":
-					document.admin.action="../dataentry/mfn_ask_range.php";
-					document.admin.target=""
-					break;
-				default:
-					document.admin.target=""
-					break;	
-				
 			case "linkcopies":    //LINK BIBLIOGRAPHIC DATABASE WITH COPIES DATABASE
 				document.admin.base.value=base
 				document.admin.cipar.value=base+".par"
@@ -142,7 +130,7 @@ echo "
 	";
 if (isset($arrHttp["encabezado"])){
 	echo "<a href=\"../common/inicio.php?reinicio=s&base=".$arrHttp["base"]."\" class=\"defaultButton backButton\">";
-echo "
+echo "<img src=\"../images/defaultButton_iconBorder.gif\" alt=\"\" title=\"\" />
 	<span><strong>". $msgstr["back"]."</strong></span></a>";
 }
 echo "</div>
@@ -154,30 +142,29 @@ echo "</div>
 <?php
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
  	echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/menu_mantenimiento.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "&nbsp; &nbsp; Script: menu_mantenimiento.php";
+echo "<font color=white>&nbsp; &nbsp; Script: menu_mantenimiento.php";
 ?>
 </font>
 </div>
 <div class="middle form">
 	<div class="formContent">
 <form name=maintenance>
-<table cellspacing=5 width=600 align=center>
+<table cellspacing=5 width=400 align=center>
 	<tr>
 		<td>
 
 		<input type=hidden name=base value=<?php echo $arrHttp["base"]?>>
-        <h2>
+             <br>
 			<ul>
 			<li><a href='javascript:EnviarForma("inicializar","<?php echo $msgstr["mnt_ibd"]?>")'><?php echo $msgstr["mnt_ibd"]?></a></li>
 			<li><a href='javascript:EnviarForma("eliminarbd","<?php echo $msgstr["mnt_ebd"]?>")'><?php echo $msgstr["mnt_ebd"]?></a></li>
 			<li><a href='javascript:EnviarForma("lock","<?php echo $msgstr["mnt_lock"]?>")'><?php echo $msgstr["mnt_lock"]?></a></li>
-			<li><a href='javascript:EnviarForma("unlockbd","<?php echo $msgstr["mnt_unlock"]?>")'><?php echo $msgstr["mnt_unlock"]?></a></li>
-			<li><a href='javascript:EnviarForma("unlock","<?php echo $msgstr["mnt_dr"]?>")'><?php echo $msgstr["mnt_dr"]?></a></li>	
-    		<li><a href='javascript:EnviarForma("cn","<?php echo $msgstr["assigncn"]?>")'><?php echo $msgstr["assigncn"]?></a></li>
+			<li><a href='javascript:EnviarForma("unlock","<?php echo $msgstr["mnt_unlock"]?>")'><?php echo $msgstr["mnt_unlock"]?></a></li>
+			<li><a href='javascript:EnviarForma("cn","<?php echo $msgstr["assigncn"]?>")'><?php echo $msgstr["assigncn"]?></a></li>
 			<li><a href='javascript:EnviarForma("linkcopies","<?php echo $msgstr["linkcopies"]?>")'><?php echo $msgstr["linkcopies"]?></a></li>
 			<li><a href='Javascript:EnviarForma("resetcn","<?php echo $msgstr["resetcn"]?>")'><?php echo $msgstr["resetcn"]?></a></li>
 			</ul>
-</h2>
+
 		</td>
 </table></form>
 <form name=admin method=post action=administrar_ex.php onSubmit="Javascript:return false">

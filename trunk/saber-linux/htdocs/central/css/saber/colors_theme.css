@@ -41,8 +41,14 @@ input[type=text],input[type=password], textarea {
 
 input[type=text]:focus, textarea:focus {
 	border-left-color: #333333;
-	background-color: #eeeeee; 
+	background-color: #eeeeee;
 
 }
+
+#dataentry:active{
+	background-color: #eeeeee;	
+	}
+
+
 
 /*-----------FIM DAS CLASS BÁSICAS----------------*/

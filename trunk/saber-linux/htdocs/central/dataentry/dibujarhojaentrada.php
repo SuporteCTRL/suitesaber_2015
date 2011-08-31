@@ -89,12 +89,12 @@ function DibujarTabla($filas,$tag,$fondocelda,$field_t){
  $ind=Array();
  echo "<td colspan=5>\n<table border=0 ";
  if ($cant_fil==1 or !$ver) {
-  	echo " bgcolor=white";
+  	echo "";
  }else{
- 	 echo " bgcolor=white";
+ 	 echo " ";
  }
  echo " $celda>";
-echo "<td colspan=$cant_cols><strong>".$t[2]."</strong></td><tr>";
+echo "<td colspan=$cant_cols><strong>".$t[2]."</strong></td><tr id=dataentry>";
  $indice_alfa="";  // para desplegar el índice alfabético del campo
  foreach($filas as $lin){
 
@@ -141,7 +141,7 @@ echo "<td colspan=$cant_cols><strong>".$t[2]."</strong></td><tr>";
 	  	}
 	  	$ind[$cols]=$lin;
 		if (trim($l[2])!="" and $l[7]!="I") {     //columns title
-		    echo "<td bgcolor=#eeeeee><b>".trim($l[2])."</b></td>";
+		    echo "<td><b>".trim($l[2])."</b></td>";
 		}
 	}
 }
@@ -177,7 +177,7 @@ echo "<td colspan=$cant_cols><strong>".$t[2]."</strong></td><tr>";
     			}
    			}
   		}
-  		echo "<tr>";
+  		echo "<tr id=dataentry>";
   		for ($j=0;$j<=$cols;$j++){
    			$n=$size[$j];
    			if ($n==0) $n=100;
@@ -199,7 +199,7 @@ echo "<td colspan=$cant_cols><strong>".$t[2]."</strong></td><tr>";
      			$linea=$ind[$j];
      			$type_de=explode("|",$linea);
 				$Etq=$tag."_".$i."_".substr($subc,$j,1);
-				echo "<td bgcolor=#FFFFFF  valign=top>";
+				echo "<td valign=top>";
 				if ($type_de[10]=="D"){
 					if ($j==0){
 						$sc_col=$subc;
@@ -396,7 +396,7 @@ if (!$ver){
 
      		if ($ixo>=$tope-1 and $tope>1) {
         		$ixo=-1;
-      			echo "<tr>";
+      			echo "<tr id=dataentry>";
      		}else{
 				if ($tope==0) echo "<br>";
 			}
@@ -429,7 +429,7 @@ function DibujarSelect($linea,$fondocelda,$valor,$tag,$ksc,$opciones,$rep,$subc)
  $subc=rtrim($t[5]);
  $ksc=strlen($subc);
  $delimsc=rtrim($t[6]);
-echo "<td bgcolor=#FFFFFF class=textbody03>";
+echo "<td class=textbody03>";
 $TipoS="";
 if ($rep==1) $TipoS=" multiple";
 if (!$ver){
@@ -588,7 +588,7 @@ function TextBox($linea,$fondocelda,$titulo,$ver,$len,$tag,$ksc,$rep,$delimrep,$
 			echo "&nbsp; &nbsp; <a href=javascript:DesplegarArchivo('tag$tag')><img src=../dataentry/img/toolbarSearch.png border=0 align=absmiddle></a>";
    		}
    		if ($tipo=="P")
-   			echo "</td><tr><td colspan=2></td><td>Confirm password</td><td><input type=password size=$len name=confirm value=\"$campo\">";
+   			echo "</td><tr id=dataentry><td colspan=2></td><td>Confirm password</td><td><input type=password size=$len name=confirm value=\"$campo\">";
  }
  if ($tipo!="I") echo "</td></tr>\n";
 
@@ -658,7 +658,7 @@ Function PrepararFormato() {
 			if ($tipo=="L"){
 				$lin01=$titulo;
        			if ($lin01=="") $lin01="&nbsp;";
-       				if ($t[7]!="I") echo "\n<tr><td width=10> &nbsp;</td><td width=10 align=right> &nbsp; </td><td colspan=2  ><b>".$lin01."</b></td></tr>\n";
+       				if ($t[7]!="I") echo "\n<tr id=dataentry><td width=10> &nbsp;</td><td width=10 align=right> &nbsp; </td><td colspan=2  ><b>".$lin01."</b></td></tr>\n";
 			}else{
   				if (!isset($valortag[$tag]))
   					$valortag[$tag]="";
@@ -668,7 +668,7 @@ Function PrepararFormato() {
 		 		if (isset($valortag[$tag]) and $t[0]!="H"){
    					if ($ver && $valortag[$tag] || !$ver){;
    						if  ($t[7]!="I"){
-      						echo "<tr><td class=tag><p id=tag>";
+      						echo "<tr id=dataentry><td class=tag><p id=tag>";
       					}
 						if ($tag<1000 and $t[7]!="I")
 							echo  $tag.$ksc;
@@ -771,7 +771,7 @@ Function PrepararFormato() {
        										echo "<input type=hidden name=tag$tag  value=\"".$campo."\" >\n";
        									}
       									echo nl2br($campo);
-       									echo "</td><tr>\n";
+       									echo "</td><tr id=dataentry>\n";
        								}
    	   								break;
    	   							case "OC":   //OPERATOR WHO CREATED THE RECORD
@@ -785,7 +785,7 @@ Function PrepararFormato() {
       											$campo=$_SESSION["login"];
        										echo "<input type=text name=tag$tag  value=\"".$campo."\" size=20 >\n";
        									}
-       									echo "</td><tr>\n";
+       									echo "</td><tr id=dataentry>\n";
        								}
    	   								break;
    	   							case "DC":  //DATE THE RECORD WAS CREATED
@@ -799,7 +799,7 @@ Function PrepararFormato() {
       											$campo=date("Ymd h:i:s");
        										echo "<input type=text name=tag$tag  value=\"".$campo."\" size=20 >\n";
        									}
-       									echo "</td><tr>\n";
+       									echo "</td><tr id=dataentry>\n";
        								}
    	   								break;
 		        				case "OD":     //Operator and date
@@ -826,7 +826,7 @@ Function PrepararFormato() {
        										echo "<input type=hidden name=tag$tag  value=\"".$campo."\" >\n";
        									}
       									echo nl2br($campo);
-       									echo "</td><tr>\n";
+       									echo "</td><tr id=dataentry>\n";
        								}
    	   								break;
 		        				case "LDR":
@@ -847,7 +847,7 @@ Function PrepararFormato() {
         									$ksc++;
         									$filas[]=rtrim($linea);
                                             $ld=explode("|",$linea);
-                                            $ldr_tit[$ksc]=  "<tr><td>".$ld[2]." (".$ld[1].")</td>";
+                                            $ldr_tit[$ksc]=  "<tr id=dataentry><td>".$ld[2]." (".$ld[1].")</td>";
                                             //echo "<td align=center>".$ld[2]." (".$ld[1].")</td>";
         								}
 
