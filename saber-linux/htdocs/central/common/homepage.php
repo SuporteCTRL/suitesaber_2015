@@ -371,7 +371,10 @@ if (isset($Permiso["CENTRAL_DBUTILS"]) or isset($Permiso["CENTRAL_ALL"])){
 }
 if (isset($Permiso["CENTRAL_Z3950CONF"])  or isset($Permiso["CENTRAL_ALL"])){
 ?>
-	
+					<a href="javascript:CambiarBaseAdministrador('z3950')"  class="menuButton z3950Button">
+					<img src="../images/mainBox_iconBorder.gif" alt="" title="" />
+					<span><strong><?php echo $msgstr["z3950"]?></strong></span>
+				</a>
 <?php
 }
 ?>
