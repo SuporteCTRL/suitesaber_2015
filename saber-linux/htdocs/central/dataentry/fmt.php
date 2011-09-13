@@ -1,29 +1,29 @@
 <?php
 /**
- * @program:   ABCD - ABCD-Central - http://reddes.bvsaude.org/projects/abcd
- * @copyright:  Copyright (C) 2009 BIREME/PAHO/WHO - VLIR/UOS
- * @file:      fmt.php
- * @desc:      FMT
- * @author:    Guilda Ascencio
- * @since:     20091203
- * @version:   1.0
- *
- * == BEGIN LICENSE ==
- *
- *    This program is free software: you can redistribute it and/or modify
- *    it under the terms of the GNU Lesser General Public License as
- *    published by the Free Software Foundation, either version 3 of the
- *    License, or (at your option) any later version.
- *
- *    This program is distributed in the hope that it will be useful,
- *    but WITHOUT ANY WARRANTY; without even the implied warranty of
- *    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *    GNU Lesser General Public License for more details.
- *   
- *    You should have received a copy of the GNU Lesser General Public License
- *    along with this program.  If not, see <http://www.gnu.org/licenses/>.
- *   
- * == END LICENSE ==
+ * @program:   ABCD - ABCD-Central - http://reddes.bvsaude.org/projects/abcd
+ * @copyright:  Copyright (C) 2009 BIREME/PAHO/WHO - VLIR/UOS
+ * @file:      fmt.php
+ * @desc:      FMT
+ * @author:    Guilda Ascencio
+ * @since:     20091203
+ * @version:   1.0
+ *
+ * == BEGIN LICENSE ==
+ *
+ *    This program is free software: you can redistribute it and/or modify
+ *    it under the terms of the GNU Lesser General Public License as
+ *    published by the Free Software Foundation, either version 3 of the
+ *    License, or (at your option) any later version.
+ *
+ *    This program is distributed in the hope that it will be useful,
+ *    but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *    GNU Lesser General Public License for more details.
+ *   
+ *    You should have received a copy of the GNU Lesser General Public License
+ *    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *   
+ * == END LICENSE ==
 */
 session_start();
 if (!isset($_SESSION["permiso"])){
@@ -47,7 +47,7 @@ $lang=$_SESSION["lang"];
 global  $arrHttp, $valortag,$variables,$maxmfn;
 global $xEditor,$xUrlEditor,$Marc,$Leader,$fdt,$tab_prop,$Html_ingreso,$tl,$nr;
 $tab_prop="";
-$ArchivoTexto="";  //para colocar el nombre del archivo de texto para la continuaciÃ³n
+$ArchivoTexto="";  //para colocar el nombre del archivo de texto para la continuación
 $FdtHtml="";
 $kardex="";   //para indicar la presencia de una KK
 $valortag = Array();
@@ -241,7 +241,7 @@ global $arrHttp,$db_path,$xWxis,$Wxis,$valortag,$tl,$nr,$Mfn,$wxisUrl,$lang_db,$
 	$valortag=array();
 	$ic=-1;
 	foreach($contenido as $linea){
-		if ($ic==-1){  //para saltar la primera lÃ­nea que tiene el mfn en el formato all
+		if ($ic==-1){  //para saltar la primera línea que tiene el mfn en el formato all
 			$ic=2;
 		}else{
 			$linea=trim($linea);
@@ -249,7 +249,7 @@ global $arrHttp,$db_path,$xWxis,$Wxis,$valortag,$tl,$nr,$Mfn,$wxisUrl,$lang_db,$
    				$pos=strpos($linea, " ");
    				if (is_integer($pos)) {
    					$tag=trim(substr($linea,0,$pos));
-////El formato ALL envÃ­a un <br> al final de cada lÃ­nea y hay que quitarselo
+////El formato ALL envía un <br> al final de cada línea y hay que quitarselo
 //
    					$linea=rtrim(substr($linea, $pos+2,strlen($linea)-($pos+2)-5));
 					if ($tag==1002){
@@ -362,7 +362,7 @@ function GetRecordType(){global $arrHttp,$valortag,$tm,$nr,$tl,$tym;
 	if (isset($tm)){   //para ver si hay tipo de material  y no viene fijado anteriormente
 		foreach ($tm as $linea){
 			$tym=explode('|',trim($linea));
-			if (count($tym)>1){  // la hoja de ingreso no se toma del menÃº de hojas de entrada
+			if (count($tym)>1){  // la hoja de ingreso no se toma del menú de hojas de entrada
 				if (!isset($valortag[$tl])){
 					$arrHttp["wks"]=$tym[0];
 					$arrHttp["wk_tipom_1"]=$tym[1];
@@ -387,7 +387,7 @@ function GetRecordType(){global $arrHttp,$valortag,$tm,$nr,$tl,$tym;
 
 //
 
-// nota: aquÃ­ no se usa el include get_post.php por que el mÃ©todo de leer las variables es diferente
+// nota: aquí no se usa el include get_post.php por que el método de leer las variables es diferente
 
 $ValorCapturado="";
 $arrHttp=Array();
@@ -430,7 +430,7 @@ echo "\n<script>top.toolbarEnabled=\"\"\n</script>";
 
 // Settings for returning to the script browse.php  (added 14-04-2009)
 $retorno="";  // Para regresar a browse.php
-$return="";   // para regresar al procedimiento que invocÃ³ a browse.php
+$return="";   // para regresar al procedimiento que invocó a browse.php
 if (isset($arrHttp["retorno"])){
 	$retorno =str_replace('~','&',$arrHttp["retorno"]);  // se reconstruye el url del retorno
  	$retorno.="?encabezado=s&base=".$arrHttp["base"]."&unlock=s&Mfn=".$arrHttp["Mfn"];
@@ -479,7 +479,7 @@ foreach ($arrHttp as $var => $value) {	if (substr($var,0,3)=="tag" ){
 }
 //foreach ($valortag as $key => $value) echo "$key=$value<br>";
 
-// Si la opcion es copiar_captura, se cambia la base de datos para poder leer los archivos de definiciÃ³n
+// Si la opcion es copiar_captura, se cambia la base de datos para poder leer los archivos de definición
 
 if ($arrHttp["Opcion"]=="captura_bd") {
     $basecap=$arrHttp["base"];
@@ -516,7 +516,7 @@ if (isset ($arrHttp["Opcion"]))  {
 		$actualizar="SI";
 
 	}
-// si se seleccionÃ³ la opciÃ³n nuevo en el menÃº superior, se transforma a crear para poder crear el nuevo registro
+// si se seleccionó la opción nuevo en el menú superior, se transforma a crear para poder crear el nuevo registro
 	if ($arrHttp["Opcion"]=="nuevo" or $arrHttp["Opcion"]=="nuevoregistro" ||$arrHttp["Opcion"]=="nuevoregistrousuario") {
 		$Mfn="New";
 		$arrHttp["Opcion"]="crear";
@@ -650,7 +650,7 @@ switch ($arrHttp["Opcion"]) {
 	        }else{	        	echo $registro;	        }
 		}
 		echo "</form></div></div>\n";
-		include("../common/footer.php"); //footer da planilha de catalogaÃ§Ã£o
+		include("../common/footer.php"); //footer da planilha de catalogação
 		die;
 		
  	
@@ -662,7 +662,7 @@ switch ($arrHttp["Opcion"]) {
 		$arrHttp["Opcion"]=="ninguna";
         	echo "<div class=\"middle form\">";
         	
-//NavegaÃ§Ã£o - teclas de atalhos entre fichas ================================================================================       	
+//Navegação - teclas de atalhos entre fichas ================================================================================       	
         	
 
 $next="$arrHttp[Mfn]"+"1";
@@ -701,15 +701,15 @@ echo "</script>";
         	
 						echo "	<div class=\"formContent\">\n";
 		echo $salida;
-//SE AVERIGUA SE SE VA A LEER LA INFORMACIÃ“N DE OTRA BASE DE DATOS
-		if (isset($record_deleted) and $record_deleted=="Y"){			echo "<a href=javascript:Undelete(".$arrHttp["Mfn"].")>Reativar registro</a>";		}
+//SE AVERIGUA SE SE VA A LEER LA INFORMACIÓN DE OTRA BASE DE DATOS
+		if (isset($record_deleted) and $record_deleted=="Y"){			echo "<a href=javascript:Undelete(".$arrHttp["Mfn"].")>undelete</a>";		}
 		if (!isset($arrHttp["capturar"])){
 			ColocarMfn();
 		}
 		echo "</form></div></div>\n";
 
-		//include("../common/footer.php");//footer da visualizaÃ§Ã£o - PFT
-		die;Reativar registro
+		//include("../common/footer.php");//footer da visualização - PFT
+		die;
 		break;
 	case "presentarformulario":
 		PresentarFormulario("nuevo");
@@ -787,7 +787,7 @@ echo "</script>";
 		$res=ActualizarRegistro();
 		if (trim($res)=="DELETED"){			echo "<h4>".$arrHttp["Mfn"]." ". $msgstr["recdel"]."</h4>";
 			$record_deleted="Y";
-			echo "<a href=javascript:Undelete(".$arrHttp["Mfn"].")>Reativar registro</a>";		}else{			echo "<h4>".$arrHttp["Mfn"]." ". $msgstr["notdeleted"]."</h4>";
+			echo "<a href=javascript:Undelete(".$arrHttp["Mfn"].")>undelete</a>";		}else{			echo "<h4>".$arrHttp["Mfn"]." ". $msgstr["notdeleted"]."</h4>";
 			$record_deleted="N";		}
         echo "\n<script>if (top.window.frames.length>0) top.ApagarEdicion()</script>
         </div></div></body></html>\n";
