@@ -275,8 +275,23 @@ global $msgstr,$db_path,$arrHttp,$lista_bases,$Permiso,$dirtree;
 		<div id="tabs">
 			<ul>
 				<li><a href="#tabs-1"><?php echo $msgstr["database"]?></a></li>
-				<li><a href="#tabs-2"><?php echo $msgstr["admtit"]?></a></li>
+				<li><a href="#tabs-4">Pesquisa</a></li>
+<?php
+if (isset($Permiso["CENTRAL_ALL"])  or isset($Permiso["CENTRAL_CRDB"])  or isset($Permiso["CENTRAL_URDADM"])
+  or isset($Permiso["CENTRAL_RESETLIN"])  or isset($Permiso["CENTRAL_TRANSLATE"])  or isset($Permiso["CENTRAL_EXDBDIR"]))
+{
+?>
+				<li><a href="#tabs-2"><?php echo $msgstr["admtit"]?></a></li>		
+<?php } 
+if (isset($_SESSION["permiso"]))
+{
+
+?>
+				
+				
 				<li><a href="#tabs-3">Ajuda!</a></li>
+<?php } ?>				
+				
 			</ul>
 
 <div id="tabs-1">
@@ -314,7 +329,9 @@ foreach ($lista_bases as $key => $value) {
 		echo "<option value=\"^a$key^badm|$value\" $xselected>".$t[0]."\n";
 	}
 }
+
 ?>
+
 	<!--	<option value=""></option> -->
 						</select>
 					</div>
@@ -329,7 +346,7 @@ foreach ($lista_bases as $key => $value) {
 
 <a href="javascript:CambiarBaseAdministrador('toolbar')" class="menuButton tooltip catal ">
 						
-						<span><?php echo $msgstr["dataentry"]?></span></a>
+						<span><?php echo $msgstr["dataentry"] ?></span></a>
 
 
 
@@ -399,7 +416,9 @@ if (isset($Permiso["CENTRAL_ALL"])  or isset($Permiso["CENTRAL_CRDB"])  or isset
 {
 ?>
 
-
+<div id="tabs-4">       			
+       <iframe width="100%" height="620" frameborder="0" scrolling="auto" src="/site/php/level.php?lang=pt&component=40#search"></iframe>		  			
+</div> 
 
 <!-- SEGUNDO ACORDEON -->
 
@@ -464,22 +483,8 @@ if ($dirtree==1){
 					<div class="bbLeft">&#160;</div>
 					<div class="bbRight">&#160;</div>
 				</div>
-			
-
-
-
-
 </div>
-
-
-
-
-
-
-
 </div>
-
-
 <div id="tabs-3"> 
       <div>
 
@@ -513,11 +518,23 @@ if ($dirtree==1){
 					<span>Como gerar relatórios</span>
 				</a> 
          			</div>
+         			
+   			
+         			
+         			
+         			
 			<div class="spacer">&#160;</div>
+			
+ 		
+			
+			
 			</div>
 			<div class="boxBottom">
 			<div class="bbLeft">&#160;</div>
 			<div class="bbRight">&#160;</div>
+			
+			
+ 
 			
 		</div>
 	</div>
@@ -526,6 +543,8 @@ if ($dirtree==1){
 </div>
 </div>
 </div>
+
+
 
 <?php
 	}
@@ -541,6 +560,9 @@ function MenuAcquisitionsAdministrator(){
 function MenuLoanAdministrator(){
    include("menucirculation.php");
 }
+
+
+
 ?>
 
 		<!--[if IE]>
@@ -549,3 +571,6 @@ function MenuLoanAdministrator(){
 		<![endif]-->
 		
 		<?php include ("footer.php"); ?>
+		
+
+		
