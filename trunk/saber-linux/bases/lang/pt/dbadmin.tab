@@ -334,3 +334,4 @@ edithelp=*editar help*
 verifyperms=*O arquivo não pode ser atualizado. Check as permissões*
 bdexiste=Base de dados já existe
 delval=Validação da eliminação de registros
+undelete=Reativar Registro
