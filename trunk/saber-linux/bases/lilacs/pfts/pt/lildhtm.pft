@@ -1,523 +1,221 @@
-'<style type="text/css">
-
-h1 {
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 10px;
-	font-weight: bold;
-	color: #666666;
-	text-align: center;
-	text-shadow: #fff 0.1em 0.1em;
-
-}
-h2 {
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	font-weight: bold;
-	color: #000;
-	text-align: left;
-}
-h3 {
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	font-weight: bold;
-	color: #333333;
-	text-align: center;
-}
-h6 {
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	font-weight: bold;
-	color: #red;
-	text-align: center;
-}
-h4 {
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 9px;
-	font-weight: bold;
-	color: #000000;
-	text-align: center;
-
-}
-.tabela {
-   color:#000000;
-   margin-left:-2px;
-   margin-top: -2px;
-	width: 102%;
-	padding-right: 10px;
-
-
-}
-.res{
-
-	border-top-width: thin;
-	border-right-width: thin;
-	border-bottom-width: thin;
-	border-left-width: thin;
-	border-top-style: none;
-	border-right-style: none;
-	border-bottom-style: solid 1px;
-	border-left-style: none;
-	border-bottom-color: #222;
-
-
-}
-
-div#round {
-	width:100px;
-	margin:10px auto 10px;
-	padding:0;
-	text-shadow: #999 0.1em 0.1em 0.3em;
-/*	background:#E6E6E6; */
-	background:#FFCC00;
-	box-shadow:5px 5px 10px #ccc;
-	/* implementação para o firefox */
-	-moz-box-shadow:5px 5px 10px #ccc;
-	/* implementação para safari */
-	-webkit-box-shadow:5px 5px 10px, #ccc;
-	border-top-left-radius: 7px;
-	border-top-right-radius: 7px;
-	border-bottom-left-radius: 7px;
-	border-bottom-right-radius: 7px;
-	border-color:  #D1A808;
-	border-style: solid;
-	border-bottom-width: 5px ;
-	border-top-width: 0px;
-	border-right-width: 2px;
-	border-left-width: 0px;
-	
-}
-div#round h1{
-
-	margin:0;
-	padding:0px;
-}
-div#round h4 {
-	background:#FFEB9B;
-	margin:0;
-	padding:0px;
-}
-
-.menufixo {
-	float: right;
-	margin-right: 30px;
-
-}
-.menufixo img {
-	padding: 5px;
-
-}
-
-#ficha {
-	margin-top: auto;
-	margin-left: 0px;
-	width: 90%;	
-	border: thin solid #ccc;
-	text-align:left;
-	margin-bottom: 10%; 
-	background: #ffffff;
--moz-border-radius-topleft: 7px;
--moz-border-radius-topright: 50px;
--moz-border-radius-bottomleft: 30px;
--moz-border-radius-bottomright: 7px;
-
--webkit-border-top-left-radius: 25px;
--webkit-border-top-right-radius: 50px;
--webkit-border-bottom-left-radius: 30px;
--webkit-border-bottom-right-radius: 7px;
-
-
-border-top-left-radius: 7px;
-border-top-right-radius: 50px;
-border-bottom-left-radius: 30px;
-border-bottom-right-radius: 7px;
-
-overflow: hidden;
-
-box-shadow:5px 5px 10px #ccc;
-/* implementação para o firefox */
--moz-box-shadow:5px 5px 10px #ccc;
-/* implementação para safari */
--webkit-box-shadow:5px 5px 10px, #ccc;
-}
-
-a:link {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	font-weight: bold;
-	color: #333333;
-	border-bottom-width: thin;
-	border-bottom-style: dotted;
-	border-bottom-color: #999999;
-
-
-}
-
-</style>
-<table class="tabela">
-<tr>
-<td>
-<div style=" position:fixed; top:15px; right:5px;">
-<div class="menufixo">
-<a href="#" title="Adicione aos Favoritos"><img border="0" src="http://biblioteca.saude.rs.gov.br/central/images/'v5001'.png" height="25" alt="'v5001'" /></a>'
-
-if p(v7) or p(v3^a) or p(v30) then,
-'<a target="blank_" href="http://biblioteca.saude.rs.gov.br/central/dataentry/lombada.php?Opcion=ver&base='v5001'&cipar='v5001'.par&Mfn='mfn'&ver=S&Formato=lombada&Diferido=N#"><div id="round">
-
-<h4>Gerar Etiqueta</h4>
-
-</div></a>'
-
-fi,
-
-'<div id="round">
-		<span class="rtop">
-			<span class="r1"></span>
-			<span class="r2"></span>
-			<span class="r3"></span>
-			<span class="r4"></span>
-		</span>
-<a href="#" target="_blank" title="MFN"><h1>MFN</h1><h3>',f(mfn,1,0),/,'</h3></a>
-<span class="rbottom">
-			<span class="r4"></span>
-			<span class="r3"></span>
-			<span class="r2"></span>
-			<span class="r1"></span>
-		</span>
-</div>'
-
-if p(v2) then,
-'<div id="round">
-		<span class="rtop">
-			<span class="r1"></span>
-			<span class="r2"></span>
-			<span class="r3"></span>
-			<span class="r4"></span>
-		</span>
-<h1>LILDBI - id</h1><h3>'v2'</h3>		
-<span class="rbottom">
-			<span class="r4"></span>
-			<span class="r3"></span>
-			<span class="r2"></span>
-			<span class="r1"></span>
-		</span>
-</div>'
-fi,
-if p(v7) then,
-'<div id="round">
-		<span class="rtop">
-			<span class="r1"></span>
-			<span class="r2"></span>
-			<span class="r3"></span>
-			<span class="r4"></span>
-		</span>
-         <h1>Exemplares</h1><h3>'f(nocc(v7),2,0),'</h3><span class="rbottom">
-			<span class="r4"></span>
-			<span class="r3"></span>
-			<span class="r2"></span>
-			<span class="r1"></span>
-</span>
-</div>'
-fi,
-if a(v3^a) then,
-'<div id="round">
-		<span class="rtop">
-			<span class="r1"></span>
-			<span class="r2"></span>
-			<span class="r3"></span>
-			<span class="r4"></span>
-		</span>
-<h1>Localização</u></h1><h3>'(if p(v3^*) then v3^*|<br>|, fi)(if p(v35) then v30|<br>v.|v31|<br>n.|v32, fi)'</h3><span class="rbottom">
-			<span class="r4"></span>
-			<span class="r3"></span>
-			<span class="r2"></span>
-			<span class="r1"></span>
-</span>
-</div>'	
-fi,
-if p(v3^a) then,
-'<div id="round">
-		<span class="rtop">
-			<span class="r1"></span>
-			<span class="r2"></span>
-			<span class="r3"></span>
-			<span class="r4"></span>
-		</span>
-<h1>Localização</h1><h3>'(if p(v3^*) then v3^a|<br>|v3^b|<br>|,v3^c|<br>| fi)(if p(v35) then v30|<br>v.|v31|<br>n.|v32, fi)'</h3><span class="rbottom">
-			<span class="r4"></span>
-			<span class="r3"></span>
-			<span class="r2"></span>
-			<span class="r1"></span>
-</span>
-</div>'	
-fi,
-
-if p(v7) then,
-'<div id="round">
-		<span class="rtop">
-			<span class="r1"></span>
-			<span class="r2"></span>
-			<span class="r3"></span>
-			<span class="r4"></span>
-		</span>
-
-<h1>Tombo</h1><h3>'(if p(v7) then v7[1]^*|<br>|, fi)'</h3>
-<span class="rbottom">
-			<span class="r4"></span>
-			<span class="r3"></span>
-			<span class="r2"></span>
-			<span class="r1"></span>
-</span>
-</div>'
-fi,
-if a(v7) then,
-'<div id="round">
-		<span class="rtop">
-			<span class="r1"></span>
-			<span class="r2"></span>
-			<span class="r3"></span>
-			<span class="r4"></span>
-		</span>
-<h1>Tipo</h1><h3>Analítica</h3>
-<span class="rbottom">
-			<span class="r4"></span>
-			<span class="r3"></span>
-			<span class="r2"></span>
-			<span class="r1"></span>
-</span>
-</div>'
-fi,
+/* ,if p(v98) then,
+proc(ref(l(v98),		
+	'a16~',v16,'~a17~',v17,'~a18~',v18,'~a19~',v19,'~a20~',v20,'~a21~',v21,'~a23~',v23,'~',
+	'a24~',v24,'~a25~',v25,'~a27~',v27,'~a30~',v30,'~a31~',v31,'~a35~',v35,'~a62~',v62,'~',
+	'a63~',v63,'~a64~',v64,'~a65~',v65,'~a66~',v66,'~a67~',v68,'~a69~',v69,'~'	
+	),	
+	ref(l(v101),		
+		'a52~',v52,'~a53~',v53,'~a54~',v54,'~a55~',v55,'~a56~',v56,'~a57~',v57,'~'
+	),				
+	ref(l(v102),		
+		'a58~',v58,'~a59~',v59,'~a60~',v60,'~'
+	),				
+	ref(l(v103),		
+		'a50~',v50,'~a51~',v50,'~'
+	),				
+,),	
+fi, */
 
 
 
+    '<table width="100%">'
 
-'</td><td></div></div>'
-
-
-'<div id="ficha"><table class="tabela">
-             <tr bgcolor="silver"><td align="center" valign="top" nowrap width="220" colspan="3" ><font size=2 face="Arial"><b>DESCRIÇÃO DOS DADOS</td></tr>
-
-<tr>'
-			  ,'</tr>',
-              if p(v6) then,
-              '<tr><td align="right" width="220" width="220" valign="top" nowrap ><font size=2 face="Arial"><b>Nível de tratamento:</td>'
-			  ,'<td valign="top"><font face="Arial" size=2>
-						'(if v6 = 'm' THEN 'Nível monográfico' fi),
-						 (if v6 = 'mc' THEN 'Nível monográfico de coleção' fi),
-						 (if v6 = 'ms' THEN 'Nível monográfico de série' fi),
-						 (if v6 = 'am' THEN 'Nível analítico monográfico' fi),
-						 (if v6 = 'amc' THEN 'Nível analítico monográfico de coleção' fi),
-                         (if v6 = 'ams' THEN 'Nível analítico monográfico de série' fi),
-                         (if v6 = 'as' THEN 'Nível analítico de série' fi),
-                         (if v6 = 'c' THEN 'Nível coleção' fi),'.'/,'</td></tr>','</td></tr>',
+              '<tr><td align="right" width="13%" valign="top" nowrap><font size=2 face="Arial"><b>Id:</td>'
+			  ,'<td valign="top" width="97%"><font face="Arial" size=2>',v2,/,'</td></tr>',
+			    '<tr><td align="right" width="13%" valign="top" nowrap><font size=2 face="Arial"><b>MFN:</td>'
+			  ,'<td valign="top" width="97%"><font face="Arial" size=2>',f(mfn,1,0),/,'</td></tr>',
+			  
+              if p(v10) then
+                  '<tr><td align="right" width="13%" valign="top" nowrap><font size=2 face="Arial"><b>Autor (analítico):</td>'
+				  ,'<td valign="top" width="97%"><font face="Arial" size=2>'(v10^*+|; |"."),'</td></tr>',
               fi,
-              if a(v6) then,
-              '<tr><td align="right" width="220" valign="top" nowrap><font size=2 face="Arial"><b>Nível de tratamento:</td>'
-			  ,'<td valign="top"><font face="Arial" size=2 color="red">CAMPO NÍVEL DE TRATAMENTO NÃO PREENCHIDO (6)</td></tr>',
+              if p(v11^p) then
+                  '<tr><td align="right" width="13%" valign="top" nowrap><font size=2 face="Arial"><b>Autor (analítico):</td>'
+				  ,'<td valign="top" width="97%"><font face="Arial" size=2>'(v11^p+|; |"."),/,'</td></tr>',
+              else
+                  if p(v11^*) then,
+                     '<tr><td align="right" width="13%" valign="top" nowrap><font size=2 face="Arial"><b>Autor:</td>'
+					 ,'<td valign="top" width="97%"><font face="Arial" size=2>'(v11^*+|; |"."),/,'</td></tr>',
+                  fi,
+              fi,
+              if p(v12) then              
+                  '<tr><td align="right" width="13%" valign="top" nowrap><font size=2 face="Arial"><b>Título (analítico):</td>'
+				  ,'<td valign="top" width="97%"><font face="Arial" size=2>'(v12^*),| / |v13,"."n13,/,'</td></tr>',
+              fi,
+                          
+              IF v06 = 'as' THEN
+
+                 if p(v30) then,
+                    '<tr><td align="right" width="13%" valign="top" nowrap><font size=2 face="Arial"><b>Fonte:</td>'
+					,'<td valign="top" width="97%"><font face="Arial" size=2>'v30|;|,v31,|(|v32|)|,":"d14,
+                   ,if v14^f='' then ,v14, else ,v14^f,'-',v14^l, fi,
+,|, |v64|. |,(v38+|, |),'.'/,'</td></tr>',
+                 fi,
+
+              FI,
+
+              IF v06 : 'am' THEN,
+
+                if p(v16^*) then,
+                   '<tr><td align="right" width="13%" valign="top" nowrap><font size=2 face="Arial"><b>Imprenta:</td>'
+				   ,'<td valign="top" width="97%"><font face="Arial" size=2>In: '(v16^*+|; |"."),
+                fi,
+
+                if p(v17^p) then
+                   '<tr><td align="right" width="13%" valign="top" nowrap><font size=2 face="Arial"><b>Imprenta:</td>'
+				   ,'<td valign="top" width="97%"><font face="Arial" size=2>In: '(v17^p+|; |"."),
+                else
+                   if p(v17) then
+                      '<tr><td align="right" width="13%" valign="top" nowrap><font size=2 face="Arial"><b>Imprenta:</td>'
+					  ,'<td valign="top" width="97%"><font face="Arial" size=2>In: '(v17^*+|; |"."),
+                   fi,
+                fi,
+
+                if p(v16) or p(v17) then
+                   v18'. ',v66', ',v62', ',v64'. ',"p."d14,
+                   ,if v14^f='' then ,v14, else ,v14^f,'-',v14^l, fi,
+                   ,(v38+|, |),'. ',/,|(|v30,|, |v31,|, |v32, if p(v30) then ').' fi, | (|v68|)|,/,'</td></tr>',
+                fi,
+
+  
+
+
+
+
+              FI,
+             
+  
+             
+             
+              IF v06*0.1 = 'm' THEN
+
+                if p(v16^*) then
+                   '<tr><td align="right" width="13%" valign="top" nowrap><font size=2 face="Arial"><b>Autor:</td>'
+				   ,'<td valign="top" width="97%"><font face="Arial" size=2>'(v16^*+|; |),/,'</td></tr>',
+                fi,
+   
+                if p(v17^p) then
+                   '<tr><td align="right" width="13%" valign="top" nowrap><font size=2 face="Arial"><b>Autor:</td>'
+				   ,'<td valign="top" width="97%"><font face="Arial" size=2>'(v17^p+|; |),/,'</td></tr>',
+                else
+                    if p(v17^*) then
+                       '<tr><td align="right" width="13%" valign="top" nowrap><font size=2 face="Arial"><b>Autor:</td>'
+					   ,'<td valign="top" width="97%"><font face="Arial" size=2>'(v17^*+|; |'*.'),/,'</td></tr>',
+                    fi,
+                fi,
+                
+                if p(v49) then
+                   '<tr><td align="right" width="13%" valign="top" nowrap><font size=2 face="Arial"><b>Orientador:</td>'
+				   ,'<td valign="top" width="97%"><font face="Arial" size=2>'v49^*,/,'</td></tr>',
+                fi,
+                
+
+                if p(v18) then
+                   '<tr><td align="right" width="13%" valign="top" nowrap><font size=2 face="Arial"><b>Título:</td>'
+				   ,'<td valign="top" width="97%"><font face="Arial" size=2>'v18^*,'  ',v18^i,/,v19,".","."n19,'-',V21,/,'</td></tr>',
+                fi,
+                if p(v66) then
+                   '<tr><td align="right" width="13%" valign="top" nowrap><font size=2 face="Arial"><b>Imprenta:</td>'
+				   ,'<td valign="top" width="97%"><font face="Arial" size=2>'v66,'; ',v62,'; ',v64,'. ',v20| p. |,if p(v38) then v38+|, |'.' fi,/,   |, |v32, if p(v30) then '' fi,| (|v68|).|,/,'</td></tr>',
+                fi,
+
+                if p(v30) then
+                   '<tr><td align="right" width="13%" valign="top" nowrap><font size=2 face="Arial"><b>S&eacute;rie:</td>'
+				   ,'<td valign="top" width="97%"><font face="Arial" size=2>'|(|v30,   |, |v31,   |, |v32,  ').'|(|v68|).|,/,'</td></tr>',
+                fi,
+
+              FI,
+
+              IF v06 = 'c' THEN
+
+                 if p(v23^*) then
+                    '<tr><td align="right" width="13%" valign="top" nowrap><font size=2 face="Arial"><b>Autor:</td>'
+					,'<td valign="top" width="97%"><font face="Arial" size=2>'(v23^*+|;|),/,'</td></tr>',
+                 fi,
+
+                 if p(v24^p) then
+                    '<tr><td align="right" width="13%" valign="top" nowrap><font size=2 face="Arial"><b>Autor:</td>'
+					,'<td valign="top" width="97%"><font face="Arial" size=2>'(v24^p+|; |),/,'</td></tr>',
+                 else
+                    if p(v24^*) then
+                       '<tr><td align="right" width="13%" valign="top" nowrap><font size=2 face="Arial"><b>Autor:</td>'
+					   ,'<td valign="top" width="97%"><font face="Arial" size=2>'(v24^*+|; |),/,'</td></tr>',
+                    fi,
+                 fi,
+
+                 if p(v25) then
+                    '<tr><td align="right" width="13%" valign="top" nowrap><font size=2 face="Arial"><b>Título:</td>'
+					,'<td valign="top" width="97%"><font face="Arial" size=2>'(v25),|. |v27| vol.|,/,'</td></tr>',
+                 fi,
+                 if p(v66) then
+                    '<tr><td align="right" width="13%" valign="top" nowrap><font size=2 face="Arial"><b>Imprenta:</td>'
+					,'<td valign="top" width="97%"><font face="Arial" size=2>'v66'; ',v62'; ',v64'. ',v20| p. |,v38'.',/,'</td></tr>',
+                 fi,
+
+              FI,
+
+              if p(v50) then
+                '<tr><td align="right" width="13%" valign="top" nowrap><font size=2 face="Arial"><b>Tese:</td>'
+				,'<td valign="top" width="97%"><font face="Arial" size=2>',|Apresentada a |,v50| para obtenção do grau de |,v51|.|,/,'</td></tr>',
               fi,
 
-              if p(v5) then,
-              '<tr><td align="right" width="220" valign="top" nowrap ><font size=2 face="Arial"><b>Tipo de Literatura:</td>'
-			  ,'<td valign="top"><font face="Arial" size=2>
-						'(if v5 = 'm' THEN 'Monografia' fi),
-                         (if v5 = 'M' THEN 'Monografia' fi),
-						 (if v5 = 'mc' THEN 'Conferência em uma monografia' fi),
-						 (if v5 = 'ms' THEN 'Série monográfica' fi),
-						 (if v5 = 'MS' THEN 'Série monográfica' fi),
-						 (if v5 = 'MC' THEN 'Conferência em Monografia' fi),
-						 (if v5 = 'S' THEN 'Série periódica' fi),
-				     	 (if v5 = 's' THEN 'Série periódica' fi),
-                   (if v5 = 't' THEN 'Tese, Dissertação (publicado ou não)' fi),
-                   (if v5 = 'T' THEN 'Tese, Dissertação (publicado ou não)' fi),
-                   (if v5 = 'np' THEN 'Não convencional' fi),'.'/,'</td></tr>','</td></tr>',
-              fi,
-              if a(v5) then,
-              '<tr><td align="right" width="220" valign="top" nowrap><font size=2 face="Arial"><b>Tipo de Literatura:</td>'
-			  ,'<td valign="top"><font face="Arial" size=2 color="red">CAMPO TIPO DE LITERATURA NÃO PREENCHIDO (5)</td></tr>',
+              if p(v53) then
+                 '<tr><td align="right" width="13%" valign="top" nowrap><font size=2 face="Arial"><b>Conferência:</td>'
+				 ,'<td valign="top" width="97%"><font face="Arial" size=2>',|Apresentado em: |,v53|, |,v56|, |,v54|.|,/,'</td></tr>',
               fi,
 
-              if p(v8) then,
-              '<tr>'               
-               '<td align="right" width="220" valign="top" nowrap><font size=2 face="Arial"><b>Suporte Eletrônico:</td>'
-			  ,'<td valign="top"><font face="Arial" size=2><a href="'v8^u'" target="_blank">',v8^u,'</a>',if p(v8^i) then '    |   <strong>Idioma: </strong>' v8^i fi '</td></tr>',
-				fi,
-              if p(v9) then,
-              '<tr><td align="right" width="220" valign="top" nowrap><font size=2 face="Arial"><b>Tipo de Registro:</td>'
-			  ,'<td valign="top"><font face="Arial" size=2>'
-                         (if v9= 'a' THEN 'Material textual(BK)' fi),
-						 (if v9 = 'c' THEN 'Música impressa(MU)' fi),
-						 (if v9 = 'd' THEN 'Manuscritos de música(MU)' fi),
-						 (if v9 = 'e' THEN 'Material cartográfico(MP)' fi),
-						 (if v9 = 'f' THEN 'Manuscritos de material cartográfico(MP)' fi),
-                         (if v9 = 'g' THEN 'Material projetável(VM)' fi),
-                         (if v9 = 'i' THEN 'Registros sonoros não musicais(MU)' fi),
-                         (if v9 = 'j' THEN 'Registros musicais(MU)' fi),
-                         (if v9 = 'k' THEN 'Gráficos bi-dimensionais não projetáveis(VM)' fi),
-                         (if v9 = 'm' THEN 'Arquivo de computador(CF)' fi),
-                         (if v9 = 'o' THEN 'Kit(VM)' fi),
-                         (if v9 = 'p' THEN 'Material misto(XM)' fi),
-                         (if v9 = 'r' THEN 'Material tridimensional, artefato(VM)' fi),
-                         (if v9 = 't' THEN 'Manuscritos(AM)' fi),'.'/,'</td></tr>',
-				fi,
-
-              if p(v7) then,
-              '<tr><td align="right" width="220" valign="top" nowrap><font size=2 face="Arial"><b>Tombo:</td>'
-			  ,'<td valign="top"><font face="Arial" size=2>'(if p(v7) then v7|<br>|, fi)'</td></tr>',
-			  fi,
-              if p(v110) then,
-              '<tr><td align="right" width="220" valign="top" nowrap><font size=2 face="Arial"><b>Forma do Item:</td>'
-			  ,'<td valign="top"><font face="Arial" size=2>
-                        '(if v110 = 'a' THEN 'Microfilme' fi),
-						 (if v110 = 'b' THEN 'Microficha' fi),
-						 (if v110 = 'c' THEN 'Microficha opaca' fi),
-						 (if v110 = 'd' THEN 'Impresso grande' fi),
-						 (if v110 = 'f' THEN 'Braille' fi),
-                         (if v110 = 'r' THEN 'Reprodução impressa regular – impressão legível' fi),
-                         (if v110 = 's' THEN 'Eletrônico' fi),'.'/,'</td></tr>',
-               fi,
-              if p(v111) then,
-              '<tr><td align="right" width="220" valign="top" nowrap><font size=2 face="Arial"><b>Tipo de Arquivo de Computador:</td>'
-			  ,'<td valign="top"><font face="Arial" size=2>',v111,/,'</td></tr>',
-               fi,
-               if p(v112) then,
-              '<tr><td align="right" width="220" valign="top" nowrap><font size=2 face="Arial"><b>Tipo de Material Cartográfico:</td>'
-			  ,'<td valign="top"><font face="Arial" size=2>',v112,/,'</td></tr>',
-               fi,
-              if p(v114) then,
-              '<tr><td align="right" width="220" valign="top" nowrap><font size=2 face="Arial"><b>Tipo de material visual:</td>'
-			  ,'<td valign="top"><font face="Arial" size=2>',v114,/,'</td></tr>',
-               fi,
-              if p(v115) then,
-              '<tr><td align="right" width="220" valign="top" nowrap><font size=2 face="Arial"><b>Designação específica de material:</td>'
-			  ,'<td valign="top"><font face="Arial" size=2>',v115,/,'</td></tr>',
-              fi,
-              if p(v64) then,
-              '<tr><td align="right" width="220" valign="top" nowrap><font size=2 face="Arial"><b>Ano de publicação:</td>'
-			  ,'<td valign="top"><font face="Arial" size=2>',v64,/,'</td></tr>',
-              fi,
-              '</table>'
-               if p(v10) or p(v12) then,
-               '<table class="tabela"><tr bgcolor="silver"><td align="center" valign="top" nowrap width="220" colspan="3" ><font size=2 face="Arial"><b>NÍVEL ANALÍTICO</td>'
-			  ,'</tr>',
-				
-              if p(v10) then,
-              '<tr><td align="right" width="220" valign="top" nowrap ><font size=2 face="Arial"><b>Autor(es):</td>'
-			  ,'<td valign="top"><font face="Arial" size=2>',v10^*|<br>|, '<br /></td>',
-              fi,
-              
-              '</tr>' 
-               
-              if p(v12) then,
-              '<tr><td align="right" width="220" valign="top" nowrap><font size=2 face="Arial"><b>Título:</td>'
-			     '<td valign="top"><font face="Arial" size=2>',v12^*,/,'</td>',
-              fi,
-              
-               if p(v12^i) then
-               '<td><font size=2 face="Arial"><b>Idioma: </font>' v12^i fi,'</td></tr>'
-              
-              if p(v13) then,
-              '<tr><td align="right" width="220" valign="top" nowrap><font size=2 face="Arial"><b>Título traduzido para o Inglês:</td>'
-			  ,'<td valign="top"><font face="Arial" size=2>',v13,/,'</td></tr>',
-               fi,
-               
-              if p(v14^f) then,
-              '<tr><td align="right" width="220" valign="top" nowrap><font size=2 face="Arial"><b>Página(s):</td>'
-			  ,'<td valign="top"><font face="Arial" size=2>',v14^f'p.',/,if p(v14^l) then ' a ' v14^l'p.' fi, '</td></tr>',
-              fi,
-              
-             if a(v14^f) then,
-              '<tr><td align="right" width="220" valign="top" nowrap><font size=2 face="Arial"><b>Página(s):</td>'
-			   ,'<td valign="top"><font face="Arial" size=2>'v14 '<p style="color:red;display:inline;"> (Adequar paginação ao padrão LILACS) </p></td></tr>',
-              fi,
-              
-              
-              '</table>' fi,
-
-
-               if p(v30) or p(v35) then,
-               '<table class="tabela"><tr bgcolor="silver"><td align="center" valign="top" nowrap width="220" colspan="3"  ><font size=2 face="Arial"><b>NÍVEL SÉRIE</td>'
-			  ,'</tr>',
-				
-              if p(v30) then,
-              '<tr><td align="right" width="220" valign="top" nowrap ><font size=2 face="Arial"><b>Título da Série:</td>'
-			  ,'<td valign="top"><font face="Arial" size=2>',v30,/,'</td></tr>',
-              fi,
-              if p(v31) then,
-              '<tr><td align="right" width="220" valign="top" nowrap><font size=2 face="Arial"><b>Volume:</td>'
-			  ,'<td valign="top"><font face="Arial" size=2>',v31,/,'</td></tr>',
-              fi,
-              if p(v32) then,
-              '<tr><td align="right" width="220" valign="top" nowrap><font size=2 face="Arial"><b>Número do Fascículo:</td>'
-			  ,'<td valign="top"><font face="Arial" size=2>',v32,/,'</td></tr>',
-               fi,
-              if p(v35) then,
-              '<tr><td align="right" width="220" valign="top" nowrap><font size=2 face="Arial"><b>ISSN:</td>'
-			  ,'<td valign="top"><font face="Arial" size=2><a href="http://www.ncbi.nlm.nih.gov/sites/entrez?linkbar=plain&db=journals&term='v35'" target="_blank">',v35,/,'</a></td></tr>',
-               fi,
-               '</table>' fi,
-
-
-               if p(v16) or p(v18) then,
-               '<table class="tabela"><tr bgcolor="silver"><td align="center" valign="top" nowrap width="220" colspan="3"  ><font size=2 face="Arial"><b>NÍVEL MONOGRÁFICO</td>'
-			  ,'</tr>',
-              if p(v16) then,
-              '<tr><td align="right" width="220" valign="top" nowrap width="220"><font size=2 face="Arial"><b>Autor(es):</td>'
-			  ,'<td valign="top"><font face="Arial" size=2>',v16^*|<br>|,if p(v16^p) then '<strong> | País do autor: </strong>' , @paises16.pft, fi, '</td></tr>',
-              fi,
-			
-              if p(v49) then,
-              '<tr><td align="right" width="220" valign="top" nowrap width="220"><font size=2 face="Arial"><b>Orientador:</td>'
-			  ,'<td valign="top"><font face="Arial" size=2>'(if p(v49^*) then v49^*+||,if p(v49^p) then '<strong> | País: </strong>' , @paises49.pft, fi,fi),'</tr>'
-              fi,
-	
-              if p(v17) then,
-              '<tr><td align="right" width="220" valign="top" nowrap><font size=2 face="Arial"><b>Autor Institucional:</td>'
-			  ,'<td valign="top"><font face="Arial" size=2>',v17^*|<br>|,'  Função: ' v17^r|<br>|,/,'</td></tr>',
-              fi,
-              if p(v18) then,
-              '<tr><td align="right" width="220" valign="top" nowrap><font size=2 face="Arial"><b>Título:</td>'
-			  ,'<td valign="top"><font face="Arial" size=2>',v18^*,/,if p(v18^i) then '    |   <strong>Idioma: </strong>' v18^i fi '</td></tr>',
-              fi,
-              if p(v19) then,
-              '<tr><td align="right" width="220" valign="top" nowrap><font size=2 face="Arial"><b>Título traduzido para o Inglês:</td>'
-			  ,'<td valign="top"><font face="Arial" size=2>',v19,/,'</td></tr>',
-              fi,
-              if p(v50) then,
-              '<tr><td align="right" width="220" valign="top" nowrap><font size=2 face="Arial"><b>Instituição:</td>'
-			  ,'<td valign="top"><font face="Arial" size=2>Apresentado a ',v50,/,'</td></tr>',
-              fi,
-              if p(v62) then,
-              '<tr><td align="right" width="220" valign="top" nowrap><font size=2 face="Arial"><b>Editora:</td>'
-			  ,'<td valign="top"><font face="Arial" size=2>',v62|<br>|,/,'</td></tr>',
-              fi,
-              if p(v63) then,
-              '<tr><td align="right" width="220" valign="top" nowrap><font size=2 face="Arial"><b>Edição:</td>'
-			  ,'<td valign="top"><font face="Arial" size=2>',v63 ,/,'</td></tr>',
-              fi,
-              if p(v66) then,
-              '<tr><td align="right" width="220" valign="top" nowrap><font size=2 face="Arial"><b>Local de Publicação:</td>'
-			  ,'<td valign="top"><font face="Arial" size=2>',v66,/,'</td></tr>',
-              fi,
-              if p(v67) then,
-              '<tr><td align="right" width="220" valign="top" nowrap><font size=2 face="Arial"><b>País de Publicação:</td>'
-			  ,'<td valign="top"><font face="Arial" size=2>',@paises67.pft,'</td></tr>',
+              if p(v58) then
+                '<tr><td align="right" width="13%" valign="top" nowrap><font size=2 face="Arial"><b>Projeto</td>',
+				'<td valign="top" width="97%"><font face="Arial" size=2>',(v58+|; |,'. '),v59|. |,v60|. |,/,'</td></tr>',
               fi,
 
-               if p(v20) then,
-              '<tr><td align="right" width="220" valign="top" nowrap><font size=2 face="Arial"><b>Páginas:</td>'
-			  ,'<td valign="top"><font face="Arial" size=2>'v20' p.</td></tr>',
+              if p(v68) then
+                '<tr><td align="right" width="13%" valign="top" nowrap><font size=2 face="Arial"><b>Símbolo:</td>'
+				,'<td valign="top" width="97%"><font face="Arial" size=2>'v68".",/,'</td></tr>',
               fi,
-              '</table>'	
-               fi,
-               
-			   '<table class="tabela">'
-                if p(v83) then,
-                '<tr>
-                <td align="right" width="220" width="220" valign="top" nowrap><font size=2 face="Arial"><b>Resumo:</td>'
-			  ,'<td valign="top" style="padding-right:50px; text-align: justify;" ><font face="Arial" size=2>',v83,/,'</td></tr>',
-			   fi,	
+
+              if p(v83) then
+                 '<tr><td align="right" width="13%" valign="top" nowrap><font size=2 face="Arial"><b>Resumo:</td>'
+				 ,'<td valign="top" width="97%"><font face="Arial" size=2>'v83^*".",/,'</td></tr>',
+              fi,
+
               if p(v87) or p(v88) then
-                   '<tr><td align="right" width="220" width="220" valign="top" nowrap><font size=2 face="Arial"><b>Descritores:</td>'
-				   ,'<td valign="top"><font face="Arial" size=2>',@descritores.pft,'</td></tr>',
+                   '<tr><td align="right" width="13%" valign="top" nowrap><font size=2 face="Arial"><b>Descritores:</td>'
+				   ,'<td valign="top" width="97%"><font face="Arial" size=2>',@descritores.pft,'</td></tr>',
               fi
-'</table></div></td></tr></table>'
+			  
+			  if p(v76^*) then
+                    '<tr><td align="right" width="13%" valign="top" nowrap><font size=2 face="Arial"><b>Limites:</td>'
+					,'<td valign="top" width="97%"><font face="Arial" size=2>'(v76^*'<br>'),'</td></tr>',
+             fi,
+			 if p(v8) then        
+            	'<tr><td align="right" width="17%" valign="top" ><font size=2 face="Arial"><b>Meio Eletrônico:</td>',
+				'<td  valign="top" align="left" ><font face="arial" size=2>'
+					(if s(mhu,v8^*,mpl) = 'INTERNET' then '<a href="'v8^i'">Internet</a>' else v8^*,| / |v8^i fi'<br>'/),
+				'</td></tr>'
+	         fi,       
+	         if p(v500) or p(v505) or p(v534) then
+                '<tr><td align="right" width="13%" valign="top" nowrap><font size=2 face="Arial"><b>Notas:</td>'
+				,'<td valign="top" width="97%"><font face="Arial" size=2>'mhl,(v500+|; |),'</td></tr>',
+             fi, 
+	         
+	              
+          
+             if p(v3) then
+                '<tr><td align="right" width="13%" valign="top" nowrap><font size=2 face="Arial"><b>Localização:</td>'
+				,'<td valign="top" width="97%"><font face="Arial" size=2>'mhl,(v3+|; |),'</td></tr>',
+             fi,
 
+
+
+
+
+   '</table>',
+
+mpl,
+
+'<p>'/,
+'<p>'/,
+
+,
+,
