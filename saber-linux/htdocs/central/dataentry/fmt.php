@@ -702,7 +702,7 @@ echo "</script>";
 						echo "	<div class=\"formContent\">\n";
 		echo $salida;
 //SE AVERIGUA SE SE VA A LEER LA INFORMACIÓN DE OTRA BASE DE DATOS
-		if (isset($record_deleted) and $record_deleted=="Y"){			echo "<a href=javascript:Undelete(".$arrHttp["Mfn"].")>undelete</a>";		}
+		if (isset($record_deleted) and $record_deleted=="Y"){			echo "<a href=javascript:Undelete(".$arrHttp["Mfn"].")>$msgstr[undelete]</a>";		}
 		if (!isset($arrHttp["capturar"])){
 			ColocarMfn();
 		}
@@ -787,7 +787,7 @@ echo "</script>";
 		$res=ActualizarRegistro();
 		if (trim($res)=="DELETED"){			echo "<h4>".$arrHttp["Mfn"]." ". $msgstr["recdel"]."</h4>";
 			$record_deleted="Y";
-			echo "<a href=javascript:Undelete(".$arrHttp["Mfn"].")>undelete</a>";		}else{			echo "<h4>".$arrHttp["Mfn"]." ". $msgstr["notdeleted"]."</h4>";
+			echo "<a href=javascript:Undelete(".$arrHttp["Mfn"].")>$msgstr[undelete]</a>";		}else{			echo "<h4>".$arrHttp["Mfn"]." ". $msgstr["notdeleted"]."</h4>";
 			$record_deleted="N";		}
         echo "\n<script>if (top.window.frames.length>0) top.ApagarEdicion()</script>
         </div></div></body></html>\n";
