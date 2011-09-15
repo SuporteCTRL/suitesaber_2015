@@ -36,7 +36,8 @@ if (isset($_REQUEST['GET']))
 else
 	if (isset($_REQUEST['POST'])) $page = $_REQUEST['POST'];
 
-if (!(eregi("^[a-z_./]*$", $page) && !eregi("\\.\\.", $page))) {
+$palavra="/(^a-z_.*$)/i";
+if ((preg_match($palavra, $page) && preg_match("/\\.\\./i", $page))) {
 	// Abort the script
 	die("Invalid request");
 
@@ -869,5 +870,3 @@ if ($actualizar=="SI"){
 }
 if (!isset($arrHttp["encabezado"]) and $arrHttp["Opcion"]!="captura_bd")
 	if ($arrHttp["Opcion"]!="eliminar" ) ColocarMfn();
-
-
