@@ -291,13 +291,17 @@ global $valortag;
 				$valorcap[$indice]=$valorcap[$indice]."\n".substr($lin,$pos+1);
 			}else{
 				$valorcap[$indice]=substr($lin,$pos+1);
+
+	//COPY THE CAPTURED RECORD TO THE EMPTY FIELDS
+	foreach ($valorcap as $tag=>$value){		if (!isset($valortag["$tag"])) $valortag[$tag]=$value;	}
 			}
 
 		}
 
-	}
-	//COPY THE CAPTURED RECORD TO THE EMPTY FIELDS
-	foreach ($valorcap as $tag=>$value){		if (!isset($valortag["$tag"])) $valortag[$tag]=$value;	}
+	}	
+	
+	
+	
 }
 
 function ColocarMfn(){
@@ -870,3 +874,5 @@ if ($actualizar=="SI"){
 }
 if (!isset($arrHttp["encabezado"]) and $arrHttp["Opcion"]!="captura_bd")
 	if ($arrHttp["Opcion"]!="eliminar" ) ColocarMfn();
+
+
