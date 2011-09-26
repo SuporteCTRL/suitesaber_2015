@@ -1,0 +1,15 @@
+#pic {
+	border-style: solid;
+	border-color: #cccccc;
+	border-width: 1px;
+	padding: 5px;
+	width:120px;
+}
+#name {
+	font-size: 24px;
+	color: #3b5998;
+	font-weight: bold;
+	padding-bottom: 15px;
+	
+	
+	}
