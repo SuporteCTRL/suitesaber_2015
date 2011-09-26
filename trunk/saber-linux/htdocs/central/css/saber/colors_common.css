@@ -54,10 +54,7 @@ A {
 	}
 
 	INPUT.textEntry, TEXTAREA.textEntry {
-		border-top: 2px solid #a7a6aa;
-		border-left: 2px solid #a7a6aa;
-		border-bottom: 2px solid #dcdfe4;
-		border-right: 2px solid #dcdfe4;
+	border-color: #333333;
 		background: #f5f5f5;
 	}
 
@@ -698,7 +695,7 @@ a.tooltip:hover span {
 
 .rotuloIng,textbody03 {
 	color: #000000;
-	border-color: #ccc;
+	border-color: #333333;
 		
 }
 
