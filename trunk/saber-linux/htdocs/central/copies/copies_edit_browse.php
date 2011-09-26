@@ -122,10 +122,10 @@ if (isset($arrHttp["encabezado"])){
 		}
 		?>
 		<a href='javascript:top.toolbarEnabled="";top.Menu("same")' class="defaultButton backButton">
-		<img src="../images/defaultButton_iconBorder.gif" alt="" title="" />
+
 		<span><strong><?php echo $msgstr["back"]?></strong></span>
 		<a href=loan_objects_add.php?cn=<?php echo $arrHttp["Expresion"]?> class="defaultButton copiesdbaddButton">
-		<img src="../images/defaultButton_iconBorder.gif" alt="" title="" />
+
 		<span><strong><?php echo $msgstr["addloansdb"]?></strong></span>
 		</a>
 

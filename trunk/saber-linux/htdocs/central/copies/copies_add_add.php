@@ -48,7 +48,7 @@ echo "<body>\n";
 	</div>
 	<div class="actions">
     	<a href="javascript:top.Menu('addcopies')" class="defaultButton backButton">
-				<img src=../images/defaultButton_iconBorder.gif alt="" title="" />
+
 				<span><strong><?php echo $msgstr["back"]?></strong></span>
 			</a>
 	</div>

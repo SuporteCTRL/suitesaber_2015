@@ -73,7 +73,7 @@ if ($err_copies=="Y"){
 		</div>
 		<div class="actions">
 		<a href='javascript:top.toolbarEnabled="";top.Menu("same")' class="defaultButton backButton">
-		<img src="../images/defaultButton_iconBorder.gif" alt="" title="" /><?php echo $msgstr["back"]?></a>
+<?php echo $msgstr["back"]?></a>
 
 		</div>
 		<div class="spacer">&#160;</div>
