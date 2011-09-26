@@ -159,7 +159,7 @@ Global $arrHttp,$msgstr,$cn,$db;
 	</div>
 	<div class="actions">
 		<a href=copies_edit_browse.php?Expresion=CN_<?php echo $arrHttp["db"]."_". $arrHttp["cn"]?> class="defaultButton backButton">
-		<img src="../images/defaultButton_iconBorder.gif" alt="" title="" />
+
 		<span><strong><?php echo $msgstr["back"]?></strong></span>
         </a>
 	</div>

@@ -231,11 +231,11 @@ function Send(){
 
 		?>
 		<a href='javascript:top.toolbarEnabled="";top.Menu("same")' class="defaultButton backButton">
-		<img src="../images/defaultButton_iconBorder.gif" alt="" title="" /><?php echo $msgstr["back"]?></a>
+<?php echo $msgstr["back"]?></a>
 		<?php if ($error==""){
 		?>
 		<a href=javascript:Send() class="defaultButton copiesdbaddButton">
-		<img src="../images/defaultButton_iconBorder.gif" alt="" title="" />
+
 		<?php echo $msgstr["update"]?>
 		</a>
 		<?php
