@@ -1,11 +1,11 @@
 arquivo|Formato ARQUIVO
 marc|Formato MARC|Y
-biblo|Formato CEPAL|Y
+biblo|Formato CEPAL
 lilacs|Formato LILACS
 autoridades|Base de autoridades (MARC)
-copies|Aquisições, Cópias
+copies|Regitro patrimonial
 providers|Fornecedores
-suggestions|Suggestions (Acquisitions)
-purchaseorder|Purchase Orders
-users|Usuarios de Empréstimo
+suggestions|Sugestões de compra
+purchaseorder|Ordens de compra
+users|Leitores
 loanobjects|Objetos para empréstimo
