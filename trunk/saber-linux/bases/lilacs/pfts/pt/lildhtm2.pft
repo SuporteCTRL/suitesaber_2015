@@ -1,0 +1,435 @@
+'<head>
+<link rel="stylesheet" type="text/css" href="/bases/'v5001'/css/style.css" />
+		<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1" />
+</head>
+
+<style type="text/css">
+	.one tr:nth-child(even) { background-color:#EFEFEF; }
+</style>'
+
+'<table class="ahmcs one" cellpadding="2" cellspacing="2" border="2" align="left" width="100%" frame="box">
+<tr class="ahmcs">
+<td class="ahmcs" rowspan="100%" width="150" >'
+if p(v2) then,
+'<div id="round">
+<h1>LILDBI - id</h1><h3>'v2'</h3>		
+</div>'
+fi,
+if p(v7) then,
+'<div id="round">
+
+         <h1>Exemplares</h1><h3>'f(nocc(v7),2,0),'</h3>
+</div>'
+fi,
+if a(v3^a) then,
+'<div id="round">
+
+<h1>Localização</u></h1><h3>'(if p(v3^*) then v3^*|<br>|, fi)(if p(v35) then v30|<br>v.|v31|<br>n.|v32, fi)'</h3>
+</div>'	
+fi,
+if p(v3^a) then,
+'<div id="round">
+
+<h1>Localização</h1><h3>'(if p(v3^*) then v3^a|<br>|v3^b|<br>|,v3^c|<br>| fi)(if p(v35) then v30|<br>v.|v31|<br>n.|v32, fi)'</h3>
+</div>'	
+fi,
+
+if p(v7) then,
+'<div id="round">
+
+<h1>Tombo</h1><h3>'(if p(v7) then v7^*|<br>|, fi)'</h3>
+
+</div>'
+fi,
+if a(v7) then,
+'<div id="round">
+		<span class="rtop">
+
+		</span>
+<h1>Tipo</h1><h3>Analítica</h3>
+
+</div>'
+fi,
+
+'</td>
+<th class="ahmcs">Código do Centro</th>
+<td class="ahmcs">'v1'</td>
+</tr>
+
+<tr>
+<th class="ahmcs">Id.</th>
+<td class="ahmcs">'v2'</td>
+
+</tr>
+<tr>
+<th class="ahmcs">Localização</th>
+<td class="ahmcs">'v3+|<br>|'</td>
+
+</tr>
+<tr>
+<th class="ahmcs">Base de dados</th>
+<td class="ahmcs">'v4+|<br>|'</td>
+
+</tr>
+<tr>
+<th class="ahmcs">Tipo de literatura</th>
+<td class="ahmcs">'v5'</td>
+
+</tr>
+<tr>
+<th class="ahmcs">Nível de tratamento</th>
+<td class="ahmcs">'v6'</td>
+
+</tr>
+<tr>
+<th class="ahmcs">Tombo</th>
+<td class="ahmcs">'v7+|<br>|'</td>
+
+</tr>
+<tr>
+<th class="ahmcs">Enderêço eletrônico</th>
+<td class="ahmcs">'v8+|+|'</td>
+
+</tr>
+<tr>
+<th class="ahmcs">v9</th>
+<td class="ahmcs">'v9'</td>
+
+</tr>
+<tr>
+<th class="ahmcs">v10</th>
+<td class="ahmcs">'v10'</td>
+
+</tr>
+<tr>
+<th class="ahmcs">v11</th>
+<td class="ahmcs">'v11'</td>
+
+</tr>
+<tr>
+<th class="ahmcs">v12</th>
+<td class="ahmcs">'v12'</td>
+
+</tr>
+<tr>
+<th class="ahmcs">v13</th>
+<td class="ahmcs">'v13'</td>
+
+</tr>
+<tr>
+<th class="ahmcs">v14</th>
+<td class="ahmcs">'v14'</td>
+
+</tr>
+<tr>
+<th class="ahmcs">v16</th>
+<td class="ahmcs">'v16'</td>
+
+</tr>
+<tr>
+<th class="ahmcs">v17</th>
+<td class="ahmcs">'v17'</td>
+
+</tr>
+<tr>
+<th class="ahmcs">v18</th>
+<td class="ahmcs">'v18'</td>
+
+</tr>
+<tr>
+<th class="ahmcs">v19</th>
+<td class="ahmcs">'v19'</td>
+
+</tr>
+<tr>
+<th class="ahmcs">v20</th>
+<td class="ahmcs">'v20'</td>
+
+</tr>
+<tr>
+<th class="ahmcs">v21</th>
+<td class="ahmcs">'v21'</td>
+</tr>
+<tr>
+<th class="ahmcs">v23</th>
+<td class="ahmcs">'v23'</td>
+
+</tr>
+<tr>
+<th class="ahmcs">v24</th>
+<td class="ahmcs">'v24'</td>
+
+</tr>
+<tr>
+<th class="ahmcs">v25</th>
+<td class="ahmcs">'v25'</td>
+
+</tr>
+<tr>
+<th class="ahmcs">v26</th>
+<td class="ahmcs">'v26'</td>
+
+</tr>
+<tr>
+<th class="ahmcs">v27</th>
+<td class="ahmcs">'v27'</td>
+
+</tr>
+<tr>
+<th class="ahmcs">v30</th>
+<td class="ahmcs">'v30'</td>
+
+</tr>
+<tr>
+<th class="ahmcs">v31</th>
+<td class="ahmcs">'v31'</td>
+
+</tr>
+<tr>
+<th class="ahmcs">v32</th>
+<td class="ahmcs">'v32'</td>
+
+</tr>
+<tr>
+<th class="ahmcs">v35</th>
+<td class="ahmcs">'v35'</td>
+
+</tr>
+<tr>
+<th class="ahmcs">v38</th>
+<td class="ahmcs">'v38'</td>
+
+</tr>
+<tr>
+<th class="ahmcs">v40</th>
+<td class="ahmcs">'v40'</td>
+
+</tr>
+<tr>
+<th class="ahmcs">v49</th>
+<td class="ahmcs">'v49'</td>
+
+</tr>
+<tr>
+<th class="ahmcs">v50</th>
+<td class="ahmcs">'v50'</td>
+</tr>
+<tr>
+<th class="ahmcs">v51</th>
+<td class="ahmcs">'v51'</td>
+</tr>
+<tr>
+<th class="ahmcs">v52</th>
+<td class="ahmcs">'v52'</td>
+</tr>
+<tr>
+<th class="ahmcs">v53</th>
+<td class="ahmcs">'v53'</td>
+</tr>
+<tr>
+<th class="ahmcs">v54</th>
+<td class="ahmcs">'v54'</td>
+</tr>
+<tr>
+<th class="ahmcs">v55</th>
+<td class="ahmcs">'v55'</td>
+</tr>
+<tr>
+<th class="ahmcs">v56</th>
+<td class="ahmcs">'v56'</td>
+</tr>
+<tr>
+<th class="ahmcs">v57</th>
+<td class="ahmcs">'v57'</td>
+</tr>
+<tr>
+<th class="ahmcs">v58</th>
+<td class="ahmcs">'v58'</td>
+</tr>
+<tr>
+<th class="ahmcs">v59</th>
+<td class="ahmcs">'v59'</td>
+</tr>
+<tr>
+<th class="ahmcs">v60</th>
+<td class="ahmcs">'v60'</td>
+</tr>
+<tr>
+<th class="ahmcs">v61</th>
+<td class="ahmcs">'v61'</td>
+</tr>
+<tr>
+<th class="ahmcs">v62</th>
+<td class="ahmcs">'v62'</td>
+</tr>
+<tr>
+<th class="ahmcs">v63</th>
+<td class="ahmcs">'v63'</td>
+</tr>
+<tr>
+<th class="ahmcs">v64</th>
+<td class="ahmcs">'v64'</td>
+</tr>
+<tr>
+<th class="ahmcs">v65</th>
+<td class="ahmcs">'v65'</td>
+</tr>
+<tr>
+<th class="ahmcs">v66</th>
+<td class="ahmcs">'v66'</td>
+</tr>
+<tr>
+<th class="ahmcs">v67</th>
+<td class="ahmcs">'v67'</td>
+</tr>
+<tr>
+<th class="ahmcs">v68</th>
+<td class="ahmcs">'v68'</td>
+</tr>
+<tr>
+<th class="ahmcs">v69</th>
+<td class="ahmcs">'v69'</td>
+</tr>
+<tr>
+<th class="ahmcs">v71</th>
+<td class="ahmcs">'v71'</td>
+</tr>
+<tr>
+<th class="ahmcs">v72</th>
+<td class="ahmcs">'v72'</td>
+</tr>
+<tr>
+<th class="ahmcs">v74</th>
+<td class="ahmcs">'v74'</td>
+</tr>
+<tr>
+<th class="ahmcs">v75</th>
+<td class="ahmcs">'v75'</td>
+</tr>
+<tr>
+<th class="ahmcs">v76</th>
+<td class="ahmcs">'v76'</td>
+</tr>
+<tr>
+<th class="ahmcs">v78</th>
+<td class="ahmcs">'v78'</td>
+</tr>
+<tr>
+<th class="ahmcs">v82</th>
+<td class="ahmcs">'v82'</td>
+</tr>
+<tr>
+<th class="ahmcs">v83</th>
+<td class="ahmcs">'v83'</td>
+</tr>
+<tr>
+<th class="ahmcs">v84</th>
+<td class="ahmcs">'v84'</td>
+</tr>
+<tr>
+<th class="ahmcs">v85</th>
+<td class="ahmcs">'v85'</td>
+</tr>
+<tr>
+<th class="ahmcs">v87</th>
+<td class="ahmcs">'v87'</td>
+</tr>
+<tr>
+<th class="ahmcs">v88</th>
+<td class="ahmcs">'v88'</td>
+</tr>
+<tr>
+<th class="ahmcs">v91</th>
+<td class="ahmcs">'v91'</td>
+</tr>
+<tr>
+<th class="ahmcs">v92</th>
+<td class="ahmcs">'v92'</td>
+</tr>
+<tr>
+<th class="ahmcs">v93</th>
+<td class="ahmcs">'v93'</td>
+</tr>
+<tr>
+<th class="ahmcs">v98</th>
+<td class="ahmcs">'v98'</td>
+</tr>
+<tr>
+<th class="ahmcs">v101</th>
+<td class="ahmcs">'v101'</td>
+</tr>
+<tr>
+<th class="ahmcs">v102</th>
+<td class="ahmcs">'v102'</td>
+</tr>
+<tr>
+<th class="ahmcs">v110</th>
+<td class="ahmcs">'v110'</td>
+</tr>
+<tr>
+<th class="ahmcs">v111</th>
+<td class="ahmcs">'v111'</td>
+</tr>
+<tr>
+<th class="ahmcs">112</th>
+<td class="ahmcs">'v112'</td>
+</tr>
+<tr>
+<th class="ahmcs">v113</th>
+<td class="ahmcs">'v113'</td>
+</tr>
+<tr>
+<th class="ahmcs">v114</th>
+<td class="ahmcs">'v114'</td>
+</tr>
+<tr>
+<th class="ahmcs">v115</th>
+<td class="ahmcs">'v115'</td>
+</tr>
+<tr>
+<th class="ahmcs">v500</th>
+<td class="ahmcs">'v500'</td>
+</tr>
+<tr>
+<th class="ahmcs">v505</th>
+<td class="ahmcs">'v505'</td>
+</tr>
+<tr>
+<th class="ahmcs">v530</th>
+<td class="ahmcs">'v530'</td>
+</tr>
+<tr>
+<th class="ahmcs">v533</th>
+<td class="ahmcs">'v533'</td>
+</tr>
+<tr>
+<th class="ahmcs">v534</th>
+<td class="ahmcs">'v534'</td>
+</tr>
+<tr>
+<th class="ahmcs">v610</th>
+<td class="ahmcs">'v610'</td>
+</tr>
+<tr>
+<th class="ahmcs">v653</th>
+<td class="ahmcs">'v653'</td>
+</tr>
+<tr>
+<th class="ahmcs">v700</th>
+<td class="ahmcs">'v700'</td>
+</tr>
+<tr>
+<th class="ahmcs">v724</th>
+<td class="ahmcs">'v724'</td>
+</tr>
+<tr>
+<th class="ahmcs">v899</th>
+<td class="ahmcs">'v899'</td>
+</tr>
+<tr>
+<th class="ahmcs">v995</th>
+<td class="ahmcs">'v995'</td>
+</tr>
+
+</table>'
+
