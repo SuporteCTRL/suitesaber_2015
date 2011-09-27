@@ -1,243 +1,387 @@
-'<style>
-strong,b {
-	margin-left:15px;
-	margin-top:5px;
-	color: #ffffff;
-	background: #000000;
-	padding:0 3px 0 3px;
-	border: solid 1px #ffffff;
-
-}
-
-</style>
-<h1><br />Descrição dos campos de dados</h1>'
-if p(v1) then '<b>1</b>' v1'<br />' fi,
-
-if p(v2) then '<b>2</b>'v2'<br />' fi,
-
-if p(v3) then '<b>3</b>'v3'<br />' fi,
-
-if p(v4) then '<b>4</b>'v4'<br />' fi,
-
-if p(v5) then '<b>5</b>'v5'<br />' fi,
-
-if p(v6) then '<b>6</b>'v6'<br />' fi,
-
-if p(v7) then '<b>7</b> 'v7'<br />' fi,
-
-if p(v8) then '<b>8</b>  'v8'<br />' fi,
-
-if p(v9) then '<b>9</b> 'v9'<br />' fi,
-
-'<h1><br />Nivel Analítico</h1>'
-
-
-if p(v10) then 
-
-'<b>10</b>  'v10^* 
-if p(v10^1) then '<strong> 1|</strong>' v10^1 fi,
-if p(v10^2) then '<strong> 2|</strong>' v10^2 fi,
-if p(v10^3) then '<strong> 3|</strong>' v10^3 fi,
-if p(v10^p) then '<strong> p|</strong>' v10^p fi,
-if p(v10^c) then '<strong> c|</strong>' v10^c fi,
-if p(v10^r) then '<strong> r|</strong>' v10^r fi,' <br />' 
-
-fi,
-
-
-
-
-
-if p(v11) then 
-
-'<b>16</b>  'v16^* 
-
-if p(v11^r) then '<strong> r|</strong>' v11^r fi,' <br />' 
-
-fi,
-
-
-if p(v12) then '<b>12</b>'v12'<br />' fi,
-
-if p(v13) then '<b>13</b>'v13'<br />' fi,
-
-if p(v14) then '<b>14</b>'v14'<br />' fi,
-
-if p(v16) or p(v18) then '<h1><br />Nivel Monográfico</h1>' fi,
-
-
-
-if p(v16) then 
-
-'<b>16</b>  'v16^* 
-if p(v16^1) then '<strong> 1|</strong>' v16^1 fi,
-if p(v16^2) then '<strong> 2|</strong>' v16^2 fi,
-if p(v16^3) then '<strong> 3|</strong>' v16^3 fi,
-if p(v16^p) then '<strong> p|</strong>' v16^p fi,
-if p(v16^c) then '<strong> c|</strong>' v16^c fi,
-if p(v16^r) then '<strong> r|</strong>' v16^r fi,' <br />' 
-
-fi,
-
-
-
-if p(v17) then '<b>17</b>'v17'<br />' fi,
-
-if p(v18) then '<b>18</b>'v18'<br />' fi,
-
-if p(v19) then '<b>19</b>'v19'<br />' fi,
-
-if p(v20) then '<b>20</b>'v20'<br />' fi,
-
-if p(v21) then '<b>21</b>'v11'<br />' fi,
-
-if p(v25) or p(v23) then '<h1><br />Nivel Coleção</h1>' fi,
-
-
-if p(v23) then 
-
-'<b>23</b>  'v23^* 
-if p(v23^1) then '<strong> 1|</strong>' v23^1 fi,
-if p(v23^2) then '<strong> 2|</strong>' v23^2 fi,
-if p(v23^3) then '<strong> 3|</strong>' v23^3 fi,
-if p(v23^p) then '<strong> p|</strong>' v23^p fi,
-if p(v23^c) then '<strong> c|</strong>' v23^c fi,
-if p(v23^r) then '<strong> r|</strong>' v23^r fi,' <br />' 
-
-fi,
-
-
-
-if p(v24) then '<b>24</b>'v24'<br />'fi,
-
-if p(v25) then '<b>25</b>'v25'<br />' fi,
-
-if p(v26) then '<b>26</b>'v26'<br />' fi,
-
-if p(v27) then '<b>27</b>'v27'<br />' fi,
-
-'<h1><br />Nivel Série</h1>'
-
-if p(v30) then '<b>30</b>'v30'<br />' fi,
-
-if p(v31) then '<b>31</b>'v31'<br />' fi,
-
-if p(v32) then '<b>32</b>'v32'<br />' fi,
-
-if p(v35) then '<b>35</b>'v35'<br />' fi,
-
-if p(v38) then '<b>38</b>'v38'<br />' fi,
-
-if p(v40) then '<b>40</b>'v40'<br />' fi,
-
-'<h1><br />Tese</h1>'
-
-if p(v49) then '<b>49</b>'v49'<br />' fi,
-
-
-if p(v50) then '<b>50</b>'v50'<br />' fi,
-
-
-if p(v51) then '<b>51</b>'v51'<br />' fi,
-
-
-'<h1><br />Evento</h1>'
-
-if p(v52) then '<b>52</b>'v52'<br />' fi,
-
-
-if p(v53) then '<b>53</b>'v53'<br />' fi,
-
-
-if p(v54) then '<b>54</b>'v54'<br />' fi,
-
-
-if p(v55) then '<b>55</b>'v55'<br />' fi,
-
-
-if p(v56) then '<b>56</b>'v56'<br />' fi,
-
-
-if p(v57) then '<b>57</b>'v57'<br />' fi,
-
-
-if p(v58) then '<b>58</b>'v58'<br />' fi,
-
-
-'<h1><br />Projeto</h1>'
-
-
-if p(v59) then '<b>59</b>'v59'<br />' fi,
-
-
-if p(v60) then '<b>60</b>'v60'<br />' fi,
-
-
-'<h1><br />Área da publicação</h1>'
-
-
-if p(v61) then '<b>61</b>'v61'<br />' fi,
-
-
-if p(v62) then '<b>62</b>'v62'<br />' fi,
-
-
-if p(v63) then '<b>63</b>'v63'<br />' fi,
-
-
-if p(v64) then '<b>64</b>'v64'<br />' fi,
-
-
-if p(v65) then '<b>65</b>'v65'<br />' fi,
-
-
-if p(v67) then '<b>67</b>'v67'<br />' fi,
-
-if p(v68) then '<b>68</b>'v68'<br />' fi,
-
-if p(v69) then '<b>69</b>'v69'<br />' fi,
-
-if p(v71) then '<b>71</b>'v71'<br />' fi,
-
-if p(v72) then '<b>72</b>'v72'<br />' fi,
-
-if p(v74) then '<b>74</b>'v74'<br />' fi,
-
-if p(v75) then '<b>75</b>'v75'<br />' fi,
-
-'<h1><br />Descrição</h1>'
-
-if p(v76) then '<b>76</b>'v76'<br />' fi,
-
-if p(v78) then '<b>78</b>'v78'<br />' fi,
-
-if p(v82) then '<b>82</b>'v82'<br />' fi,
-
-if p(v83) then '<b>83</b>'v83'<br />' fi,
-
-if p(v84) then '<b>66</b>'v84'<br />' fi,
-
-if p(v85) then '<b>66</b>'v85'<br />' fi,
-
-if p(v87) then '<b>87</b>'v87'<br />' fi,
-
-if p(v88) then '<b>66</b>'v88'<br />' fi,
-
-'<h1><br />Dados administrativos</h1>'
-
-if p(v91) then '<b>91</b>'v91'<br />' fi,
-
-if p(v92) then '<b>92</b>'v92'<br />' fi,
-
-if p(v93) then '<b>93</b>'v93'<br />' fi,
-
-if p(v98) then '<b>98</b>'v98'<br />' fi,
-
-if p(v66) then '<b>66</b>'v66'<br />' fi,
-
-if p(v67) then '<b>66</b>'v67'<br />' fi,
-
-
-
-
+'<head>
+<link rel="stylesheet" type="text/css" href="/bases/'v5001'/css/style.css" />
+</head>'
+'<table cellpadding="2" cellspacing="2" border="2" align="left" width="100%" frame="box">
+<tr>
+<td rowspan="100%" width="150" >ffff</td>
+<td>v1</td>
+<td>'v1'</td>
+</tr>
+
+<tr>
+<td>v2</td>
+<td>'v2'</td>
+
+</tr>
+<tr>
+<td>v3</td>
+<td>'v3'</td>
+
+</tr>
+<tr>
+<td>v4</td>
+<td>'v4'</td>
+
+</tr>
+<tr>
+<td>v5</td>
+<td>'v5'</td>
+
+</tr>
+<tr>
+<td>v6</td>
+<td>'v6'</td>
+
+</tr>
+<tr>
+<td>v7</td>
+<td>'v7'</td>
+
+</tr>
+<tr>
+<td>v8</td>
+<td>'v8'</td>
+
+</tr>
+<tr>
+<td>v9</td>
+<td>'v9'</td>
+
+</tr>
+<tr>
+<td>v10</td>
+<td>'v10'</td>
+
+</tr>
+<tr>
+<td>v11</td>
+<td>'v11'</td>
+
+</tr>
+<tr>
+<td>v12</td>
+<td>'v12'</td>
+
+</tr>
+<tr>
+<td>v13</td>
+<td>'v13'</td>
+
+</tr>
+<tr>
+<td>v14</td>
+<td>'v14'</td>
+
+</tr>
+<tr>
+<td>v16</td>
+<td>'v16'</td>
+
+</tr>
+<tr>
+<td>v17</td>
+<td>'v17'</td>
+
+</tr>
+<tr>
+<td>v18</td>
+<td>'v18'</td>
+
+</tr>
+<tr>
+<td>v19</td>
+<td>'v19'</td>
+
+</tr>
+<tr>
+<td>v20</td>
+<td>'v20'</td>
+
+</tr>
+<tr>
+<td>v21</td>
+<td>'v21'</td>
+</tr>
+<tr>
+<td>v23</td>
+<td>'v23'</td>
+
+</tr>
+<tr>
+<td>v24</td>
+<td>'v24'</td>
+
+</tr>
+<tr>
+<td>v25</td>
+<td>'v25'</td>
+
+</tr>
+<tr>
+<td>v26</td>
+<td>'v26'</td>
+
+</tr>
+<tr>
+<td>v27</td>
+<td>'v27'</td>
+
+</tr>
+<tr>
+<td>v30</td>
+<td>'v30'</td>
+
+</tr>
+<tr>
+<td>v31</td>
+<td>'v31'</td>
+
+</tr>
+<tr>
+<td>v32</td>
+<td>'v32'</td>
+
+</tr>
+<tr>
+<td>v35</td>
+<td>'v35'</td>
+
+</tr>
+<tr>
+<td>v38</td>
+<td>'v38'</td>
+
+</tr>
+<tr>
+<td>v40</td>
+<td>'v40'</td>
+
+</tr>
+<tr>
+<td>v49</td>
+<td>'v49'</td>
+
+</tr>
+<tr>
+<td>v50</td>
+<td>'v50'</td>
+</tr>
+<tr>
+<td>v51</td>
+<td>'v51'</td>
+</tr>
+<tr>
+<td>v52</td>
+<td>'v52'</td>
+</tr>
+<tr>
+<td>v53</td>
+<td>'v53'</td>
+</tr>
+<tr>
+<td>v54</td>
+<td>'v54'</td>
+</tr>
+<tr>
+<td>v55</td>
+<td>'v55'</td>
+</tr>
+<tr>
+<td>v56</td>
+<td>'v56'</td>
+</tr>
+<tr>
+<td>v57</td>
+<td>'v57'</td>
+</tr>
+<tr>
+<td>v58</td>
+<td>'v58'</td>
+</tr>
+<tr>
+<td>v59</td>
+<td>'v59'</td>
+</tr>
+<tr>
+<td>v60</td>
+<td>'v60'</td>
+</tr>
+<tr>
+<td>v61</td>
+<td>'v61'</td>
+</tr>
+<tr>
+<td>v62</td>
+<td>'v62'</td>
+</tr>
+<tr>
+<td>v63</td>
+<td>'v63'</td>
+</tr>
+<tr>
+<td>v64</td>
+<td>'v64'</td>
+</tr>
+<tr>
+<td>v65</td>
+<td>'v65'</td>
+</tr>
+<tr>
+<td>v66</td>
+<td>'v66'</td>
+</tr>
+<tr>
+<td>v67</td>
+<td>'v67'</td>
+</tr>
+<tr>
+<td>v68</td>
+<td>'v68'</td>
+</tr>
+<tr>
+<td>v69</td>
+<td>'v69'</td>
+</tr>
+<tr>
+<td>v71</td>
+<td>'v71'</td>
+</tr>
+<tr>
+<td>v72</td>
+<td>'v72'</td>
+</tr>
+<tr>
+<td>v74</td>
+<td>'v74'</td>
+</tr>
+<tr>
+<td>v75</td>
+<td>'v75'</td>
+</tr>
+<tr>
+<td>v76</td>
+<td>'v76'</td>
+</tr>
+<tr>
+<td>v78</td>
+<td>'v78'</td>
+</tr>
+<tr>
+<td>v82</td>
+<td>'v82'</td>
+</tr>
+<tr>
+<td>v83</td>
+<td>'v83'</td>
+</tr>
+<tr>
+<td>v84</td>
+<td>'v84'</td>
+</tr>
+<tr>
+<td>v85</td>
+<td>'v85'</td>
+</tr>
+<tr>
+<td>v87</td>
+<td>'v87'</td>
+</tr>
+<tr>
+<td>v88</td>
+<td>'v88'</td>
+</tr>
+<tr>
+<td>v91</td>
+<td>'v91'</td>
+</tr>
+<tr>
+<td>v92</td>
+<td>'v92'</td>
+</tr>
+<tr>
+<td>v93</td>
+<td>'v93'</td>
+</tr>
+<tr>
+<td>v98</td>
+<td>'v98'</td>
+</tr>
+<tr>
+<td>v101</td>
+<td>'v101'</td>
+</tr>
+<tr>
+<td>v102</td>
+<td>'v102'</td>
+</tr>
+<tr>
+<td>v110</td>
+<td>'v110'</td>
+</tr>
+<tr>
+<td>v111</td>
+<td>'v111'</td>
+</tr>
+<tr>
+<td>112</td>
+<td>'v112'</td>
+</tr>
+<tr>
+<td>v113</td>
+<td>'v113'</td>
+</tr>
+<tr>
+<td>v114</td>
+<td>'v114'</td>
+</tr>
+<tr>
+<td>v115</td>
+<td>'v115'</td>
+</tr>
+<tr>
+<td>v500</td>
+<td>'v500'</td>
+</tr>
+<tr>
+<td>v505</td>
+<td>'v505'</td>
+</tr>
+<tr>
+<td>v530</td>
+<td>'v530'</td>
+</tr>
+<tr>
+<td>v533</td>
+<td>'v533'</td>
+</tr>
+<tr>
+<td>v534</td>
+<td>'v534'</td>
+</tr>
+<tr>
+<td>v610</td>
+<td>'v610'</td>
+</tr>
+<tr>
+<td>v653</td>
+<td>'v653'</td>
+</tr>
+<tr>
+<td>v700</td>
+<td>'v700'</td>
+</tr>
+<tr>
+<td>v724</td>
+<td>'v724'</td>
+</tr>
+<tr>
+<td>v899</td>
+<td>'v899'</td>
+</tr>
+<tr>
+<td>v995</td>
+<td>'v995'</td>
+</tr>
+
+</table>'
 
