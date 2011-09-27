@@ -1,0 +1,19 @@
+'<head>
+
+<link rel="stylesheet" type="text/css" href="/bases/barcode/estilo.css" />
+</head><body>'
+
+
+if p(v7) then ('
+
+<div class="barbox">'
+
+'Nome da Biblioteca<br />'
+'<span class="barcode">'v7'</span><br />'
+v7
+
+'</div>
+
+'/) fi,
+'<br /><br /></body>'
+
