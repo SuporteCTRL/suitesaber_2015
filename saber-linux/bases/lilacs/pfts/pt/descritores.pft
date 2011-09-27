@@ -1,18 +1,18 @@
 ,(if p(v87^d) then
-     ,'<a href="/cgi-bin/wxis.exe/iah/scripts/?IsisScript=iah.xis&lang=pt&base=LILACS&nextAction=lnk&exprSearch=',s(mpu,v87^d,|/|v87^s,mpl),'&indexSearch=MH">',v87^d,|/|v87^s,'</a>',
+     ,'<a href="/cgi-bin/wxis.exe/iah/scripts/?IsisScript=iah.xis&lang=pt&base='mhu,v5001[1],mpl'&nextAction=lnk&exprSearch=',s(mpu,v87^d,|/|v87^s,mpl),'&indexSearch=MH">',v87^d,|/|v87^s,'</a>',
 ,else
-     ,'<a href="/cgi-bin/wxis.exe/iah/scripts/?IsisScript=iah.xis&lang=pt&base=LILACS&nextAction=lnk&exprSearch=',s(mpu,v87^*,mpl),'&indexSearch=MH">',v87^*,'</a>',
+     ,'<a href="/cgi-bin/wxis.exe/iah/scripts/?IsisScript=iah.xis&lang=pt&base='mhu,v5001[1],mpl'&nextAction=lnk&exprSearch=',s(mpu,v87^*,mpl),'&indexSearch=MH">',v87^*,'</a>',
 fi,'<br>'),
 ,(if p(v653) then
-     ,'<a href="/cgi-bin/wxis.exe/iah/scripts/?IsisScript=iah.xis&lang=pt&base=LILACS&nextAction=lnk&exprSearch=',s(mpu,v653,mpl),'&indexSearch=MH">',v653'</a>',
+     ,'<a href="/cgi-bin/wxis.exe/iah/scripts/?IsisScript=iah.xis&lang=pt&base='mhu,v5001[1],mpl'&nextAction=lnk&exprSearch=',s(mpu,v653,mpl),'&indexSearch=MH">',v653'</a>',
 ,else
-     ,'<a href="/cgi-bin/wxis.exe/iah/scripts/?IsisScript=iah.xis&lang=pt&base=LILACS&nextAction=lnk&exprSearch=',s(mpu,v87^*,mpl),'&indexSearch=MH">',v653,'</a>',
+     ,'<a href="/cgi-bin/wxis.exe/iah/scripts/?IsisScript=iah.xis&lang=pt&base='mhu,v5001[1],mpl'&nextAction=lnk&exprSearch=',s(mpu,v87^*,mpl),'&indexSearch=MH">',v653,'</a>',
 fi,'<br>'),
 ,if p(v88) then
     ,'-',
 ,(if p(v88^d) then
-     ,'&nbsp;<a href="/cgi-bin/wxis.exe/iah/scripts/?IsisScript=iah.xis&lang=pt&base=LILACS&nextAction=lnk&exprSearch=',s(mpu,v88^d,|/|v88^s,mpl),'&indexSearch=MH">',v88^d,|/|v88^s,'</a>',
+     ,'&nbsp;<a href="/cgi-bin/wxis.exe/iah/scripts/?IsisScript=iah.xis&lang=pt&base='mhu,v5001[1],mpl'&nextAction=lnk&exprSearch=',s(mpu,v88^d,|/|v88^s,mpl),'&indexSearch=MH">',v88^d,|/|v88^s,'</a>',
 ,else
-     ,'&nbsp;<a href="/cgi-bin/wxis.exe/iah/scripts/?IsisScript=iah.xis&lang=pt&base=LILACS&nextAction=lnk&exprSearch=',s(mpu,v88^*,mpl),'&indexSearch=MH">',v88^*,'</a>',
+     ,'&nbsp;<a href="/cgi-bin/wxis.exe/iah/scripts/?IsisScript=iah.xis&lang=pt&base='mhu,v5001[1],mpl'&nextAction=lnk&exprSearch=',s(mpu,v88^*,mpl),'&indexSearch=MH">',v88^*,'</a>',
 fi,'<br>'),
 ,fi,
