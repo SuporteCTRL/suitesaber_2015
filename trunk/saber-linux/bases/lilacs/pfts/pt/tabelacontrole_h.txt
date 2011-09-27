@@ -1,0 +1,10 @@
+Título
+Área Autora
+Edição
+ISBN
+Editora
+Tipo de Material
+Nº de Pags.
+Data de Publicação
+Apoio
+URL

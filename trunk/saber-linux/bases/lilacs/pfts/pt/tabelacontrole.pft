@@ -1,0 +1,10 @@
+'<tr>','<td valign=top><font face=arial size=2>'(if p(v18) then | |v18^*, if iocc<>nocc(v18) then '<br>' fi fi/) if a(v18) then ' ' fi,'</td>'/
+'<td valign=top><font face=arial size=2>'(if p(v17) then | |v17^*, if iocc<>nocc(v17) then '<br>' fi fi/) if a(v17) then ' ' fi,'</td>'/
+'<td valign=top><font face=arial size=2>'v63+|; | if a(v63) then ' ' fi,'</td>'/
+'<td valign=top><font face=arial size=2>'v69+|; | if a(v69) then ' ' fi,'</td>'/
+'<td valign=top><font face=arial size=2>'v62+|; | if a(v62) then ' ' fi,'</td>'/
+'<td valign=top><font face=arial size=2>'v38+|; | if a(v38) then ' ' fi,'</td>'/
+'<td valign=top><font face=arial size=2>'v14+|; | if a(v14) then ' ' fi,'</td>'/
+'<td valign=top><font face=arial size=2>'v64+|; | if a(v64) then ' ' fi,'</td>'/
+'<td valign=top><font face=arial size=2>'(if p(v508) then | |v508^*,| |v508^r, if iocc<>nocc(v508) then '<br>' fi fi/) if a(v508) then ' ' fi,'</td>'/
+'<td valign=top><font face=arial size=2>'v8+|; | if a(v8) then ' ' fi,'</td>'/

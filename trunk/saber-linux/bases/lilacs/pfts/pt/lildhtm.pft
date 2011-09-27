@@ -68,22 +68,13 @@ div#round {
 	padding:0;
 	text-shadow: #999 0.1em 0.1em 0.3em;
 /*	background:#E6E6E6; */
-	background:#FFCC00;
-	box-shadow:5px 5px 10px #ccc;
+	background:#ccc;
+	box-shadow:2px 2px 2px #ccc;
 	/* implementação para o firefox */
-	-moz-box-shadow:5px 5px 10px #ccc;
+	-moz-box-shadow:2px 2px 2px #ccc;
 	/* implementação para safari */
-	-webkit-box-shadow:5px 5px 10px, #ccc;
-	border-top-left-radius: 7px;
-	border-top-right-radius: 7px;
-	border-bottom-left-radius: 7px;
-	border-bottom-right-radius: 7px;
-	border-color:  #D1A808;
-	border-style: solid;
-	border-bottom-width: 5px ;
-	border-top-width: 0px;
-	border-right-width: 2px;
-	border-left-width: 0px;
+	-webkit-box-shadow:2px 2px 2px, #ccc;
+
 	
 }
 div#round h1{
@@ -107,34 +98,18 @@ div#round h4 {
 }
 
 #ficha {
-	margin-top: auto;
+	margin-top: 0px;
 	margin-left: 0px;
 	width: 90%;	
 	border: thin solid #ccc;
 	text-align:left;
 	margin-bottom: 10%; 
 	background: #ffffff;
--moz-border-radius-topleft: 7px;
--moz-border-radius-topright: 50px;
--moz-border-radius-bottomleft: 30px;
--moz-border-radius-bottomright: 7px;
-
--webkit-border-top-left-radius: 25px;
--webkit-border-top-right-radius: 50px;
--webkit-border-bottom-left-radius: 30px;
--webkit-border-bottom-right-radius: 7px;
-
-
-border-top-left-radius: 7px;
-border-top-right-radius: 50px;
-border-bottom-left-radius: 30px;
-border-bottom-right-radius: 7px;
-
-overflow: hidden;
+   overflow: hidden;
 
 box-shadow:5px 5px 10px #ccc;
 /* implementação para o firefox */
--moz-box-shadow:5px 5px 10px #ccc;
+-moz-box-shadow:3px 3px 3px #ccc;
 /* implementação para safari */
 -webkit-box-shadow:5px 5px 10px, #ccc;
 }
@@ -170,82 +145,52 @@ fi,
 
 '<div id="round">
 		<span class="rtop">
-			<span class="r1"></span>
-			<span class="r2"></span>
-			<span class="r3"></span>
-			<span class="r4"></span>
+
 		</span>
 <a href="#" target="_blank" title="MFN"><h1>MFN</h1><h3>',f(mfn,1,0),/,'</h3></a>
 <span class="rbottom">
-			<span class="r4"></span>
-			<span class="r3"></span>
-			<span class="r2"></span>
-			<span class="r1"></span>
+
 		</span>
 </div>'
 
 if p(v2) then,
 '<div id="round">
 		<span class="rtop">
-			<span class="r1"></span>
-			<span class="r2"></span>
-			<span class="r3"></span>
-			<span class="r4"></span>
+
 		</span>
 <h1>LILDBI - id</h1><h3>'v2'</h3>		
 <span class="rbottom">
-			<span class="r4"></span>
-			<span class="r3"></span>
-			<span class="r2"></span>
-			<span class="r1"></span>
+
 		</span>
 </div>'
 fi,
 if p(v7) then,
 '<div id="round">
 		<span class="rtop">
-			<span class="r1"></span>
-			<span class="r2"></span>
-			<span class="r3"></span>
-			<span class="r4"></span>
+
 		</span>
          <h1>Exemplares</h1><h3>'f(nocc(v7),2,0),'</h3><span class="rbottom">
-			<span class="r4"></span>
-			<span class="r3"></span>
-			<span class="r2"></span>
-			<span class="r1"></span>
+
 </span>
 </div>'
 fi,
 if a(v3^a) then,
 '<div id="round">
 		<span class="rtop">
-			<span class="r1"></span>
-			<span class="r2"></span>
-			<span class="r3"></span>
-			<span class="r4"></span>
+
 		</span>
 <h1>Localização</u></h1><h3>'(if p(v3^*) then v3^*|<br>|, fi)(if p(v35) then v30|<br>v.|v31|<br>n.|v32, fi)'</h3><span class="rbottom">
-			<span class="r4"></span>
-			<span class="r3"></span>
-			<span class="r2"></span>
-			<span class="r1"></span>
+
 </span>
 </div>'	
 fi,
 if p(v3^a) then,
 '<div id="round">
 		<span class="rtop">
-			<span class="r1"></span>
-			<span class="r2"></span>
-			<span class="r3"></span>
-			<span class="r4"></span>
+
 		</span>
 <h1>Localização</h1><h3>'(if p(v3^*) then v3^a|<br>|v3^b|<br>|,v3^c|<br>| fi)(if p(v35) then v30|<br>v.|v31|<br>n.|v32, fi)'</h3><span class="rbottom">
-			<span class="r4"></span>
-			<span class="r3"></span>
-			<span class="r2"></span>
-			<span class="r1"></span>
+
 </span>
 </div>'	
 fi,
@@ -253,35 +198,23 @@ fi,
 if p(v7) then,
 '<div id="round">
 		<span class="rtop">
-			<span class="r1"></span>
-			<span class="r2"></span>
-			<span class="r3"></span>
-			<span class="r4"></span>
+
 		</span>
 
-<h1>Tombo</h1><h3>'(if p(v7) then v7[1]^*|<br>|, fi)'</h3>
+<h1>Tombo</h1><h3>'(if p(v7) then v7^*|<br>|, fi)'</h3>
 <span class="rbottom">
-			<span class="r4"></span>
-			<span class="r3"></span>
-			<span class="r2"></span>
-			<span class="r1"></span>
+
 </span>
 </div>'
 fi,
 if a(v7) then,
 '<div id="round">
 		<span class="rtop">
-			<span class="r1"></span>
-			<span class="r2"></span>
-			<span class="r3"></span>
-			<span class="r4"></span>
+
 		</span>
 <h1>Tipo</h1><h3>Analítica</h3>
 <span class="rbottom">
-			<span class="r4"></span>
-			<span class="r3"></span>
-			<span class="r2"></span>
-			<span class="r1"></span>
+	
 </span>
 </div>'
 fi,

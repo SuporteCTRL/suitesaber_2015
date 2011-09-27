@@ -1,0 +1,14 @@
+(if p(v3) then 
+'<div style="
+float:left;'
+'width:364px;'
+'border-style:solid;border-width:1px;border-color:#FFF;height:155px;float:left;">'
+'<br><span style="font-size:18px;font-family:courier new;"><b>'
+if p(v3^d) then 'F/',v3^d'<br>'fi,
+if p(v3^a) then replace(v3^a,' ','<br>'),'<br>', fi,
+if p(v3^b) then v3^b'<br>'fi,
+if not v64:'s.d' then v64[1]'<br>'fi,
+if p(v3^e) then v3^e'<br>'fi,
+if p(v3^c) then replace(v3^c,' ','<br>'),'<br>', fi,
+'</b></span></div>'
+fi)
