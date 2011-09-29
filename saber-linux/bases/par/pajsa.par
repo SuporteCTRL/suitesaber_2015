@@ -1,7 +1,0 @@
-pajsa.*=%path_database%pajsa/data/pajsa.*
-pajsa.pft=%path_database%pajsa/pfts/pt/pajsa.pft
-prologoact.pft=%path_database%www/prologoact.pft
-epilogoact.pft=%path_database%www/epilogoact.pft
-isisac.tab=%path_database%pajsa/data/isisac.tab
-isisuc.tab=%path_database%pajsa/data/isisuc.tab
-STW=%path_database%pajsa/data/pajsa.stw
