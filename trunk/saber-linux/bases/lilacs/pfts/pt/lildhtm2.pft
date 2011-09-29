@@ -8,7 +8,7 @@
 </style>'
 
 '<table class="ahmcs one" cellpadding="2" cellspacing="2" border="2" align="left" width="100%" frame="box">
-<tr><th class="nivel" colspan="3">Dados da Obra</th></tr>
+<tr><th colspan="3" class="nivel heading" id="nivel" colspan="3">Dados da Obra</th></tr>
 <tr class="ahmcs">
 <td class="ahmcs" rowspan="100%" width="150" >'
 if p(v2) then,
@@ -111,7 +111,7 @@ fi,
 
 
 if p(v10) or p(v12) then
-'<tr><th colspan="2">Nível Analítico</th></tr>'
+'<tr><th class="nivel heading" colspan="2">Nível Analítico</th></tr>'
 
 if p(v10) then
 '<tr>
@@ -146,7 +146,7 @@ fi,
 fi,
 
 if p(v16) or p(v18) or p(v20) then
-'<tr><th colspan="2">Nível Monográfico</th></tr>'
+'<tr><th class="nivel heading" colspan="2">Nível Monográfico</th></tr>'
 if p(v16) then
 '<tr>
 <th class="ahmcs">Autor Pessoal</th>
@@ -186,7 +186,7 @@ fi,
 fi,
 
 if p(v23) or p(v24) or p(v27) then,
-'<tr><th colspan="2">Nível Coleção</th></tr>'
+'<tr><th class="nivel heading" colspan="2">Nível Coleção</th></tr>'
 if p(v23) then
 '<tr>
 <th class="ahmcs">Autor Pessoal</th>
@@ -223,7 +223,7 @@ fi,
 
 fi,
 if p(v30) or p(v31) or p(v32) or p(v35) or p(v40) then
-'<tr><th colspan="2">Nível Série</th></tr>'
+'<tr><th class="nivel heading" colspan="2">Nível Série</th></tr>'
 
 if p(v30) then
 '<tr>
@@ -252,7 +252,7 @@ fi,
 if p(v38) then
 '<tr>
 <th class="ahmcs">Informação descritiva</th>
-<td class="ahmcs">'v38'</td>
+<td class="ahmcs">'v38+|<br>|'</td>
 </tr>'
 fi,
 if p(v40) then
@@ -263,7 +263,7 @@ if p(v40) then
 fi,
 fi,
 if p(v49) or p(v50) or p(v51) then
-'<tr><th colspan="2">Tese</th></tr>'
+'<tr><th class="nivel heading" colspan="2">Tese</th></tr>'
 
 if p(v49) then
 '<tr>
@@ -286,7 +286,7 @@ fi,
 fi,
 
 if p(v52) or p(v53) or p(v54) or p(v55) or p(v56) or p(v57) then
-'<tr><th colspan="2">Evento</th></tr>'
+'<tr><th class="nivel heading" colspan="2">Evento</th></tr>'
 if p(v52) then
 '<tr>
 <th class="ahmcs">Instituição patrocinadora</th>
@@ -327,7 +327,7 @@ fi,
 fi,
 
 if p(v58) or p(v59) or p(v60) then
-'<tr><th colspan="2">Projeto</th></tr>
+'<tr><th class="nivel heading" colspan="2">Projeto</th></tr>
 <tr>
 <th class="ahmcs">Instituição Patrocinadora</th>
 <td class="ahmcs">'v58'</td>
@@ -342,7 +342,7 @@ if p(v58) or p(v59) or p(v60) then
 </tr>'
 fi,
 
-'<tr><th colspan="2">Dados da publicação</th></tr>'
+'<tr><th class="nivel heading"  colspan="2">Dados da publicação</th></tr>'
 if p(v61) then
 '<tr>
 <th class="ahmcs">Nota interna</th>
@@ -555,7 +555,7 @@ if p(v115) then
 fi,
 
 if p(v500) or p(v505) or p(v530) or p(v533) or p(v534) or p(v610) then
-'<tr><th colspan="2">Notas</th></tr>'
+'<tr><th class="nivel heading"  colspan="2">Notas</th></tr>'
 
 if p(v500) then
 '<tr>
