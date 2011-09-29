@@ -1,6 +1,6 @@
 /* #general styles */
 body, input, select, textarea {
-	font-family: "Trebuchet MS", Arial, Verdana, Helvetica;
+	font-family: "lucida grande",tahoma,verdana,arial,sans-serif;
 	font-size: 10pt;
 }
 
@@ -434,9 +434,9 @@ td {
 	border-bottom-style: groove;  */
 }
 
-tr:hover {
+/*tr:hover {
 	border-bottom-style: groove;
-	border-bottom-width: thin;
+	border-bottom-width: thin;*/
 }
 
 input[type=text], textarea {
