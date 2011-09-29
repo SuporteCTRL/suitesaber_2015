@@ -489,7 +489,7 @@ global $msgstr,$arrHttp,$ret;
 	?>
 		<a href=<?php echo $ret?>><?php echo $msgstr["back"]?></a> |
 		<a href="javascript:Crear()"><?php echo $msgstr["crear"]?></a> |
-		<a href="javascript:Generar()"><?php echo "Generar Agenda"?>
+		<a href="javascript:Generar()"><?php echo "Gerar Agenda"?>
 		</a>
         &nbsp; &nbsp; &nbsp;
 	</div>
