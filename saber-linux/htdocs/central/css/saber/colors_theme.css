@@ -1,7 +1,7 @@
 	/*#heading classes */
 .heading,.top, #signin_menu, input, .submit input, .bottom #footNotes, .sectionInfo, .language, .systemInfo,
  .distributorLogo, #botoes{
-		background: #444444;
+		background: #3b5998;
 		color: #ffffff; 
 	}
 
@@ -19,16 +19,16 @@ A.defaultButton:hover SPAN {
 	}		
 
  .footer   {
-	border-top-color: #333333;
-	border-top-width: 2px; 	
+	border-top-color: #A1BAEA;
+	border-top-width: 1px; 	
 	border-top-style: solid;
  	
  	}
 	
  .breadcrumb {
-		background: #444444;
+		background: #687aad;
 		color: #ffffff;
-		border-top-color: #333333;
+		border-top-color: #1D4088;
 		border-top-width: 1px;
 		border-top-style: solid;
 	}
