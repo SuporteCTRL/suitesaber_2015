@@ -4,7 +4,6 @@
 </head>
 <body>
 <table class="mrc">'
-'<tr class="mrc"><th class="mrc">MFN</th><td class="mrc">'mfn(1)'</td></tr>' 
 if s(v3005, v3006, v3007, v3017, v3018, v3019)<>'' then '<tr class="mrc"><th class="mrc">LDR</th><td class="mrc">'v3005,v3006,v3007,v3017,v3018,v3019'</td>' fi,/
 if p(v1) then '<tr class="mrc"><th class="mrc">1</th><td class="mrc">'v1+|<br />|,'</td>' fi/
 if p(v3) then '<tr class="mrc"><th class="mrc">3</th><td class="mrc">'v3+|<br />|,'</td>' fi/
@@ -119,8 +118,6 @@ if p(v830) then '<tr class="mrc"><th class="mrc">830</th><td class="mrc">'(if p(
 if p(v850) then '<tr class="mrc"><th class="mrc">850</th><td class="mrc">'(if p(v850) then mpl,v850, if iocc<>nocc(v850) then '<br />' fi fi/),'</td>' fi/
 if p(v852) then '<tr class="mrc"><th class="mrc">852</th><td class="mrc">'(if p(v852) then mpl,v852, if iocc<>nocc(v852) then '<br />' fi fi/),'</td>' fi/
 if p(v856) then '<tr class="mrc"><th class="mrc">856</th><td class="mrc">'(if p(v856) then mpl,v856, if iocc<>nocc(v856) then '<br />' fi fi/),'</td>' fi/
-if p(v949) then '<tr class="mrc"><th class="mrc">949</th><td class="mrc">'(if p(v949) then mpl,v949, if iocc<>nocc(v949) then '<br />' fi fi/),'</td>' fi/
-if p(v980) then '<tr class="mrc"><th class="mrc">980</th><td class="mrc">'v980+|<br />|,'</td>' fi/
 '</table>
 </body>
 </html>'

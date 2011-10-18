@@ -1,7 +1,6 @@
 select e3
 		case 1:   v1
 		case 260: v260*4'$$$'v260
-		case 490: v490*4'$$$'v490
 		case 653: v653*4'$$$'v653
 		
 
