@@ -324,7 +324,7 @@ A.menuButton {
 
 	/* #heading classes */
 	.heading {
-		height: 88px;
+		height: 98px;
 
 	}
 
