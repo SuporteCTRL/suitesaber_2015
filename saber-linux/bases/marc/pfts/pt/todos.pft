@@ -1,6 +1,6 @@
 '<html>
 <head>
-<link rel="stylesheet" type="text/css" href="/bases/marc/css/todos.css" />
+<link rel="stylesheet" type="text/css" href="http://localhost:2222/bases/marc/css/todos.css" />
 </head>
 <body><div id="pft">
 <table>'
