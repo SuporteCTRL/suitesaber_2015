@@ -934,6 +934,10 @@ display: inline;
 
 	}
 
+/* Ajusta visual do Formato ALL */
+.formContent xmp {
+    font-size:13px;
+    color:#000000; }
 
 
 	.formHead H4 {
