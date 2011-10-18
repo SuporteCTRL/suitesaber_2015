@@ -4,10 +4,10 @@ S||06-06 Tipo de Data/Status de publicação|0|0|||X||1|P|008_06.tab|||||0|
 S||07-10 Data 1|0|0|||X||4|||||||0|
 S||11-14 Data 2|0|0|||X||4|||||||0|
 S||15-17 Lugar de pub./prod./exec.|0|0|||X||3|P|countries_008.tab|||||0|
-S||18-18 Periodicidade|0|1|||X||1|P|se_18.tab|||||0|
+S||18-18 Frequência da publicação|0|1|||X||1|P|se_18.tab|||||0|
 S||19-19 Regularidade|0|1|||X||1|P|se_19.tab|||||0|
 S||20-20 Não usado|0|0|||X||1|P|undefined1.tab|||||0|
-S||21-21 Tipo do recurso contínuo|0|1|||X||1|P|se_21.tab|||||0|
+S||21-21 Tipo de periódico/seriado orginal|0|1|||X||1|P|se_21.tab|||||0|
 S||22-22 Forma do item original|0|0|||X||1|P|form_item.tab|||||0|
 S||23-23 Forma do item|0|0|||X||1|P|form_item.tab|||||0|
 S||24-24 Natureza da obra|0|1|||X||1|P|nature_contents_1.tab|||||0|
