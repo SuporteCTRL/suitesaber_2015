@@ -1,8 +1,8 @@
-No. control
+No. de controle
 Base de dados
 Assinatura
-Inventário
-Situação
+Patrimônio
+Status
 Biblioteca princ.
 Biblioteca sec.
 No. cópia

@@ -1,8 +1,8 @@
 '<table border=0 width=90%>'
-if p(v1) then '<tr><td width=20% valign=top><font face=arial size=2><b>Id Objeto</b></td><td valign=top><font face=arial size=2>'v1+|<br>|,'</td>' fi/
+if p(v1) then '<tr><td width=20% valign=top><font face=arial size=2><b>N. de Controle</b></td><td valign=top><font face=arial size=2>'v1+|<br>|,'</td>' fi/
 if p(v10) then '<tr><td width=20% valign=top><font face=arial size=2><b>Base de dados</b></td><td valign=top><font face=arial size=2>'v10+|<br>|,'</td>' fi/
 if p(v20) then '<tr><td width=20% valign=top><font face=arial size=2><b>Número de chamada</b></td><td valign=top><font face=arial size=2>'v20+|<br>|,'</td>' fi/
-if p(v30) then '<tr><td width=20% valign=top><font face=arial size=2><b>Numero de inventário</b></td><td valign=top><font face=arial size=2>'v30+|<br>|,'</td>' fi/
+if p(v30) then '<tr><td width=20% valign=top><font face=arial size=2><b>Numero de patrimônio</b></td><td valign=top><font face=arial size=2>'v30+|<br>|,'</td>' fi/
 if p(v200) then '<tr><td width=20% valign=top><font face=arial size=2><b>Status</b></td><td valign=top><font face=arial size=2>'(if p(v200) then v200^a,| = |v200^b, if iocc<>nocc(v200) then '<br>' fi fi/),'</td>' fi/
 if p(v35) then '<tr><td width=20% valign=top><font face=arial size=2><b>Biblioteca Central</b></td><td valign=top><font face=arial size=2>'v35+|<br>|,'</td>' fi/
 if p(v40) then '<tr><td width=20% valign=top><font face=arial size=2><b>Biblioteca Setorial</b></td><td valign=top><font face=arial size=2>'v40+|<br>|,'</td>' fi/
