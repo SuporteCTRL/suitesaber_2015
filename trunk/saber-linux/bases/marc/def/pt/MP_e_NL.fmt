@@ -349,7 +349,7 @@ S||Outros pares de coordenadas G-ring|0|0|f||X|||||||||0
 S||Exclusão de coordenadas G-ring|0|0|g||X|||||||||0
 S||Ligação|0|0|6||X|||||||||0
 T|260|Área de publicação|0|1|12abcefg36||X|1|100|||||v260||1
-S||Indicador 1|0|0|1||X||1|||||||0
+S||Indicador 1|0|0|1||X||1|P|260-ind1.tab|||||0
 S||Indicador 2|0|0|2||X||1|||||||0
 S||Lugar de publicação, distribuição, etc.|0|1|a||X|||D||CI_|v260^a|v260^a||0
 S||Nome do editor, distribuidor, etc.|0|1|b||X|||D||ED_|v260^b|v260^b||0
@@ -1196,7 +1196,7 @@ S||Método de acesso|0|0|2||X|||||||||0
 S||Material especificado|0|0|3||X|||||||||0
 S||Ligação|0|0|6||X|||||||||0
 H||9XX: Informações locais|0|0||||||||||||0
-T|949|Número de tombo|0|1|12aevybcfnpqktwz||X|3|100|||||||1
+T|949|Dados de registro|0|1|12aevybcfnpqktwz||X|3|100|||||||1
 S||Indicador 1|0|0|1||X||1|||||||0
 S||Indicador 2|0|0|2||X||1|||||||0
 S||Número sequencial atribuído à obra|0|0|a||X|||||||||0
