@@ -1206,7 +1206,7 @@ S||Método de acesso|0|0|2||X|||||||||0
 S||Material especificado|0|0|3||X|||||||||0
 S||Ligação|0|0|6||X|||||||||0
 H||9XX: Informações locais|0|0||||||||||||0
-T|949|Dados de registro|0|1|12aevybcfnpqktwz||X|3|100|||||||1
+T|949|Dados de registro|0|1|12aevybcfdnpqktxwz||X|3|100|||||||1
 S||Indicador 1|0|0|1||X||1|||||||0
 S||Indicador 2|0|0|2||X||1|||||||0
 S||Número sequencial atribuído à obra|0|0|a||X|||||||||0
@@ -1216,12 +1216,13 @@ S||Ano/mês/dia em que a obra foi registrada|0|0|y||X|||||||||0
 S||Biblioteca depositária|0|0|b||X|||||||||0
 S||Tipo de aquisição|0|0|c||X|||P|949-subc.tab|||||0
 S||Fatura/empenho/nota fiscal|0|0|f||X|||||||||0
+S||Fornecedor|0|0|d||X|||||||||
 S||Número de patrimônio|0|0|n||X|||||||||0
 S||Preço|0|0|p||X|||||||||0
 S||Origem/fonte da verba|0|0|q||X|||||||||0
 S||Motivo da baixa|0|0|k||X|||P|949-subk.tab|||||0
 S||Tomo|0|0|t||X|||||||||0
+S||Tipo de documento|0|0|x||X|||||||||
 S||Observações|0|1|w||X|||||||||0
 S||Ano/mês/dia da baixa|0|0|z||X|||||||||0
 OD|980|Data de modificação e usuário|0|1|||X|||||||||1
-
