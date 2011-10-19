@@ -22,7 +22,7 @@ fi,
 if p(v9) then 
 '<tr class="mrc capa">
 <td class="mrc" colspan=2></td>
-<td class="mrc capa" rowspan="100%" valign="top">'('<a href="http://abcd.fee.tche.br/bases/marc/'v9'"><img src="http://abcd.fee.tche.br/bases/marc/'v9'" title="'v9'" width="120"></a><br />')'</td>
+<td class="mrc capa" rowspan="100%" valign="top">'('<a href="',@server.pft,'bases/marc/'v9'"><img src="',@server.pft,'/bases/marc/'v9'" title="'v9'" width="120"></a><br />')'</td>
 </tr>'fi/
 
 '<!-- FIM Capa -->'
