@@ -215,7 +215,7 @@ switch ($arrHttp["modulo"]){	case "catalog":
 		die;
 	}
 ?>
-	</select>
+	</select> 
 	</form>
 	
 			<?php include("modules.php")?>
@@ -510,12 +510,6 @@ if ($dirtree==1){
 				<a href="http://help.suitesaber.org" target="_blank"  class="menuButton tooltip newButton">
 
 					<span>Help</span>
-				</a> 
-
-
-					<a href="javascript:void(1)"onclick="window.open('http://biblioteca.saude.rs.gov.br/relatorios-estatisticas/index.html','windowname1','width=680, height=400,scrollbars=yes');return false;"  class="menuButton tooltip newButton">
-
-					<span>Como gerar relatórios</span>
 				</a> 
          			</div>
          			
