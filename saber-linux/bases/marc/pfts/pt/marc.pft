@@ -83,14 +83,14 @@ if p(v242^a) then '</td></tr>'/fi/
 
 '<!-- Edição -->'
 
-if p(v250^a) then '<tr class="mrc"><th class="mrc">Edição</th><td valign=top >'fi,
+if p(v250^a) then '<tr class="mrc"><th class="mrc">Edição</th><td class="mrc">'fi,
     v250^a |  |, v250^b |  |, '</td>'/, 
 if p(v250^a) then '</td></tr>' fi,
 
 '<!-- FIM Edição -->'
 
 '<!-- Dados de publicação Cidade : Editora, 9999 -->'
-if p(v260^*) then '<tr class="mrc"><th class="mrc">Publicação</th><td valign=top >'fi,
+if p(v260^*) then '<tr class="mrc"><th class="mrc">Publicação</th><td class="mrc">'fi,
     (v260^a | : |, v260^b |, |, v260^c|.| ,'<br />'/), 
 if p(v260^*) then '</td></tr>' fi,
 
