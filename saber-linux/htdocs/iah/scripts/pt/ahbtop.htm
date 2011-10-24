@@ -93,7 +93,7 @@
                 &nbsp;
             [pft]else[/pft]
                     <input type="button" class="defaultButton submit" value="Imprimir seleção" name="yselect" onclick="javascript:void(AnySelected())" />
-                    <input type="submit" class="defaultButton submit" name="list.x" value="Exportar resultado" />
+                    <input type="submit" class="defaultButton submit" name="list.x" value="Enviar resultado" />
                     <input type="submit" class="defaultButton submit" name="new search.x" value="Nova pesquisa" />
                     <input type="submit" class="defaultButton submit" name="config.x" value="Configurar" />
                     <input type="button" class="defaultButton submit" onclick=window.location="#bottom" value="Fim da página" />
@@ -101,13 +101,13 @@
             [pft]fi[/pft]            
         </div>
 
-        <div class="rowResult">
+      <!--  <div class="rowResult">
             <div class="columnA">Base de dados:</div>
             <div class="columnB"><b>[pft]v5003^*[/pft]</b></div>
-        </div>
+        </div>-->
 
         <div class="rowResult">
-            <div class="columnA">Pesquisar:</div>
+            <div class="columnA">Pesquisa por:</div>
             <div class="columnB"><b>
                         [pft]
                         if p(v8000) and v5001^* <>  'refine/resubmit' then,

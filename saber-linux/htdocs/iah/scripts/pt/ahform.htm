@@ -11,7 +11,7 @@ function changeForm(valor)
 
 [pft]if v5001^s = 'FORM' then[/pft]
 
-    <form action="[pft]getenv('SCRIPT_NAME')v5000^d,'scripts/'[/pft]" method="POST" name="search">
+    <form action="[pft]getenv('SCRIPT_NAME')v5000^d,'scripts/'[/pft]" method="GET" name="search" target="_parent">
     [pft]@AHHIDD.PFT[/pft]
     <input type="hidden" name="nextAction" value="search" />    
     
@@ -22,7 +22,7 @@ function changeForm(valor)
     <div class="middle">
       <div class="formHead">
             <h3 class="context">
-                Base de dados&nbsp;
+                Biblioteca
             [pft]
                 ,if p(v5004) then,                    
                     '<select name="base" size="1">'
@@ -94,7 +94,7 @@ function changeForm(valor)
             <div class="columnA">&nbsp;</div>
             <div class="columnB">
                 <input type="submit" class="defaultButton submit" value="Configurar" name="config.x" />
-                <input type="submit" class="defaultButton submit" value="Pesquisar" name="search.x />
+                <input type="submit" class="defaultButton submit" value="Pesquisar" name="search.x"/>
             </div>
         </div>
 
@@ -107,7 +107,7 @@ function changeForm(valor)
     <div class="middle">
       <div class="formHead">
             <h3 class="context">
-                Base de dados&nbsp;
+                Biblioteca
             [pft]
                 ,if p(v5004) then,                    
                     '<select name="base" size="1">'
@@ -196,7 +196,7 @@ function changeForm(valor)
         <div class="rowAction">
                 <input type="submit" class="defaultButton submit" value="Configurar" name="config.x" />
                 <input type="submit" class="defaultButton submit" value="Nova pesquisa" name="new search.x" />
-                <input type="submit" class="defaultButton submit" value="Pesquisar" name="search.x />
+                <input type="submit" class="defaultButton submit" value="Pesquisar" name="search.x" />
         </div>
 
     </div>
@@ -208,7 +208,7 @@ function changeForm(valor)
     <div class="middle">
       <div class="formHead">
             <h3 class="context">
-                Base de dados&nbsp;
+                Biblioteca
             [pft]
                 ,if p(v5004) then,                    
                     '<select name="base" size="1">'
@@ -301,7 +301,7 @@ function changeForm(valor)
 
                 <input type="submit" class="defaultButton submit" value="Nova pesquisa" name="new search.x" />
 
-                <input type="submit" class="defaultButton submit" value="Pesquisar" name="search.x />
+                <input type="submit" class="defaultButton submit" value="Pesquisar" name="search.x" />
             </div>
         </div>
 
