@@ -198,14 +198,14 @@ if p(v773^w) then '<tr class="mrc"><th class="mrc">Fonte</th><td class="mrc">' v
 
 '<br />'
 
-if s(v1,v5,v980)<>'' then 
+if s(v1,v8,v980)<>'' then 
 '<dl class="ctrl">
 	<dt class="destaque">MFN:</dt>
 		<dd>'mfn(6)'</dd>
 	<dt class="destaque">Número de controle:</dt>
 		<dd>'v1'</dd>
 	<dt class="destaque">Data de inclusão:</dt>
-		<dd>' v5*6.2"/", v5*4.2,"/" v5*0.4,'</dd>'
+		<dd>' v8*4.2"/",v8*2.2"/",'20'v8*0.2, '</dd>'
 	if p(v980^d) then
 	'<dt class="destaque">Última alteração:</dt>
 		<dd>' v980[last]^d*6.2"/", v980[last]^d*4.2,"/" v980[last]^d*0.4, '</dd>'
