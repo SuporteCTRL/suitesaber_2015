@@ -205,7 +205,7 @@ if s(v1,v8,v980)<>'' then
 	<dt class="destaque">Número de controle:</dt>
 		<dd>'v1'</dd>
 	<dt class="destaque">Data de inclusão:</dt>
-		<dd>' v8*4.2"/",v8*2.2"/",'20'v8*0.2, '</dd>'
+		<dd>' v8*4.2"/",v8*2.2"/",v8*0.2, '</dd>'
 	if p(v980^d) then
 	'<dt class="destaque">Última alteração:</dt>
 		<dd>' v980[last]^d*6.2"/", v980[last]^d*4.2,"/" v980[last]^d*0.4, '</dd>'
