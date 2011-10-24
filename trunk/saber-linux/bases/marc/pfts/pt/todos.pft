@@ -90,6 +90,7 @@ if p(v600) then '<tr class="mrc"><th class="mrc">600</th><td class="mrc">'(if p(
 if p(v610) then '<tr class="mrc"><th class="mrc">610</th><td class="mrc">'(if p(v610) then mpl,v610, if iocc<>nocc(v610) then '<br />' fi fi/),'</td>' fi/
 if p(v611) then '<tr class="mrc"><th class="mrc">611</th><td class="mrc">'(if p(v611) then mpl,v611, if iocc<>nocc(v611) then '<br />' fi fi/),'</td>' fi/
 if p(v630) then '<tr class="mrc"><th class="mrc">630</th><td class="mrc">'(if p(v630) then mpl,v630, if iocc<>nocc(v630) then '<br />' fi fi/),'</td>' fi/
+if p(v648) then '<tr class="mrc"><th class="mrc">648</th><td class="mrc">'(if p(v648) then mpl,v648, if iocc<>nocc(v648) then '<br />' fi fi/),'</td>' fi/
 if p(v650) then '<tr class="mrc"><th class="mrc">650</th><td class="mrc">'(if p(v650) then mpl,v650, if iocc<>nocc(v650) then '<br />' fi fi/),'</td>' fi/
 if p(v651) then '<tr class="mrc"><th class="mrc">651</th><td class="mrc">'(if p(v651) then mpl,v651, if iocc<>nocc(v651) then '<br />' fi fi/),'</td>' fi/
 if p(v653) then '<tr class="mrc"><th class="mrc">653</th><td class="mrc">'(if p(v653) then mpl,v653, if iocc<>nocc(v653) then '<br />' fi fi/),'</td>' fi/
