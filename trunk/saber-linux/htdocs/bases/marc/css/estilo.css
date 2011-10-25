@@ -14,8 +14,11 @@ body {
 #supDir { 
 	text-align:right; }
 
-table.mrc { 
-	width:80%; }
+/*table.mrc { 
+	width:80%; }*/
+
+th.mrc {
+	width:140px;}
 
 table.mrc,
 th.mrc,
@@ -26,7 +29,6 @@ td.mrc {
 	font-size:13px;}
 
 th.mrc {
-	max-width:130px;
 	color:#0E5188;
 	vertical-align:top;
 	text-align:right; 
