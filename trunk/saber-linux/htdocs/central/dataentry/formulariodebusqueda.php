@@ -2,15 +2,6 @@
 function DibujarFormaBusqueda(){
 global $arrHttp,$camposbusqueda,$db_path,$tagisis,$msgstr;
 
-// Prepare the advanced search form
-
-	echo "<style type=text/css>
-			#myvar {
-			border:1px solid #ccc;
-			background:#ffffff;
-			padding:2px;}
-		</style>";
-
 //read search expressions stored
 echo "\n<script>
 str_expr=\"\"
@@ -89,16 +80,6 @@ function switchMenu(obj) {
 		el.style.display = '';
 	}
 }
-
-/*function LeerExpresion(TipoR,Obj){
-	var el = document.getElementById('Expre')
-	el.style.display = 'none';
-	var el = document.getElementById('myvar')
-	el.style.display = '';
-	url="busqueda_leer.php?base=<?php echo $arrHttp["base"]?>&tipor="+TipoR+"&obj="+Obj
-	msgwin=window.open(url,"busqueda","menu=no,status=yes")
-	msgwin.focus()
-} */
 
 function Buscar_Expre(){
 	document.forma1.Expresion.value=document.forma1.Expre_b.value
@@ -277,9 +258,9 @@ function Diccionario(jx){
 			<tr>
 				<td colspan=3>". $msgstr["mensajeb"]."</td>
 			<tr>
-				<td bgcolor=#cccccc width=150><font face=verdana size=2 color=#697782><b>".$msgstr["campo"]."</b></td>
-				<td bgcolor=#cccccc width=300><font face=verdana size=2 color=#697782><b>".$msgstr["expresion"]."</td>
-				<td bgcolor=#cccccc width=150>&nbsp;</td>
+				<td width=150><b>".$msgstr["campo"]."</b></td>
+				<td width=300><b>".$msgstr["expresion"]."</td>
+				<td width=150>&nbsp;</td>
 			</tr>\n";
 	for ($jx=0;$jx<$Tope;$jx++){
 		echo "<tr><td  valign=center>";
@@ -348,9 +329,9 @@ function Diccionario(jx){
        		echo "<option value=^>and not\n";
        		echo "</select>\n";
  		}else {
-       		echo "<input type=hidden name=oper>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;";
+       		echo "<input type=hidden name=oper>&nbsp;";
     	}
-    	echo "<font size=1><a href=\"javascript:Diccionario(".$jx.")\"><font size=1>".$msgstr["indice"]."</a>\n";
+    	echo "<a href=\"javascript:Diccionario(".$jx.")\">".$msgstr["indice"]."</a>\n";
    		echo "</td>\n";
 
 	}
