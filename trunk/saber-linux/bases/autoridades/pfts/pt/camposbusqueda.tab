@@ -1,3 +1,4 @@
+Por palavra em todos os campos|900|TW_|
 Número de controle|1|CN_|
 Nome pessoal (x00)|100|CP_|
 Entidade (x10)|110|CE_|
@@ -11,4 +12,3 @@ Subdivisão geral (x80)|180|ST_
 Subdivisão geográfica (x81)|181|SG_|
 Subdivisão cronológica (x82)|182|SC_|
 Subdivisão de forma (x85)|185|SF_|
-Por palavra em todos os campos|900|TW_|
