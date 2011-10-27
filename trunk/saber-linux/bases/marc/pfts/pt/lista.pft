@@ -1,0 +1,4 @@
+'<td class="lista alinhaEsq terceira">',v100^a,'</td>
+<td class="lista alinhaEsq quarta">',v245^a," : "v245^b,'</td>
+<td class="lista alinhaCentro quinta">',v260^c,'</td>
+<td class="lista alinhaCentro sexta">'v90[1]^a"&nbsp;&nbsp;&nbsp;",v90[1]^b"&nbsp;&nbsp;&nbsp;",v90[1]^c"&nbsp;&nbsp;&nbsp;",v90[1]^g"&nbsp;&nbsp;&nbsp;",v90[1]^d,'</td></tr>'
