@@ -1,0 +1,138 @@
+'<form name="copiar">
+<SCRIPT LANGUAGE="JavaScript">
+var copytoclip=1
+function HighlightAll(theField) {
+var tempval=eval("document."+theField)
+tempval.focus()
+tempval.select()
+ if (document.all&&copytoclip==1){
+  therange=tempval.createTextRange()
+  therange.execCommand("Copy")
+  window.status="Conteúdo selecionado e copiado para a área de transferência!"
+  setTimeout("window.status=",2400);
+  }
+}
+
+function highlight(field) {
+       field.focus();
+       field.select();
+}
+
+function goToURL() { window.location = "javascript:HighlightAll(forms[0].select)"; }
+</script>
+
+
+
+<textarea  name=txt style="height:400px; text-align:justify; font-family:monospace;padding:5px;" rows="15" cols="100"  type="text" value="">
+<?xml version="1.0"?>
+
+<metadata
+  xmlns="http://example.org/myapp/"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://example.org/myapp/ http://example.org/myapp/schema.xsd"
+  xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+'if p(v100^a) then ( '<dc:contributor>' v100^a, '</dc:contributor>' /) fi,
+if p(v600^a) then ( '<dc:contributor>' v600^a, '</dc:contributor>' /) fi,
+if p(v700^a) then ( '<dc:contributor>' v700^a, '</dc:contributor>' /) fi,
+if p(v110^a) then ( '<dc:contributor>' v110^a, '</dc:contributor>' /) fi,
+if p(v610^a) then ( '<dc:contributor>' v610^a, '</dc:contributor>' /) fi,
+if p(v710^a) then ( '<dc:contributor>' v710^a, '</dc:contributor>' /) fi,
+if p(v111^a) then ( '<dc:contributor>' v111^a, '</dc:contributor>' /) fi,
+if p(v611^a) then ( '<dc:contributor>' v611^a, '</dc:contributor>' /) fi,
+if p(v711^a) then ( '<dc:contributor>' v711^a, '</dc:contributor>' /) fi,
+if p(v711^a) then ( '<dc:contributor>' v720^a, '</dc:contributor>' /) fi,
+
+if p(v651^a) then ( '<dc:coverage>' v651^a '</dc:coverage>' /) fi,
+if s(v752^a,v752^b,v752^c,v752^d,v752^f,v752^g)<>''   then ( '<dc:coverage>' v752^a". ",v752^b". ",v752^c". ",v752^d". ",v752^f". ",v752^g, '</dc:coverage>' /) fi,
+
+if p(v8)     then (    '<dc:date>' v8*7.4 '</dc:date>' /) fi,
+if p(v260^c) then (    '<dc:date>' v260^c". "v260^g '</dc:date>' /) fi,
+
+if p(v500^a) then ( '<dc:description>' v500^a '</dc:description>' /) fi,
+if p(v501^a) then ( '<dc:description>' v501^a '</dc:description>' /) fi,
+if p(v502^a) then ( '<dc:description>' v502^a '</dc:description>' /) fi,
+if p(v504^a) then ( '<dc:description>' v504^a '</dc:description>' /) fi,
+if p(v505^a) then ( '<dc:description>' v505^a '</dc:description>' /) fi,
+if p(v510^a) then ( '<dc:description>' v510^a '</dc:description>' /) fi,
+if p(v513^a) then ( '<dc:description>' v513^a '</dc:description>' /) fi,
+if p(v515^a) then ( '<dc:description>' v515^a '</dc:description>' /) fi,
+if p(v516^a) then ( '<dc:description>' v516^a '</dc:description>' /) fi,
+if p(v518^a) then ( '<dc:description>' v518^a '</dc:description>' /) fi,
+if p(v520^a) then ( '<dc:description>' v520^a '</dc:description>' /) fi,
+if p(v521^a) then ( '<dc:description>' v521^a '</dc:description>' /) fi,
+if p(v525^a) then ( '<dc:description>' v525^a '</dc:description>' /) fi,
+if p(v533^a) then ( '<dc:description>' v533^a '</dc:description>' /) fi,
+if p(v534^a) then ( '<dc:description>' v534^a '</dc:description>' /) fi,
+if p(v536^a) then ( '<dc:description>' v536^a '</dc:description>' /) fi,
+if p(v538^a) then ( '<dc:description>' v538^a '</dc:description>' /) fi,
+if p(v545^a) then ( '<dc:description>' v545^a '</dc:description>' /) fi,
+if p(v550^a) then ( '<dc:description>' v550^a '</dc:description>' /) fi,
+if p(v555^a) then ( '<dc:description>' v555^a '</dc:description>' /) fi,
+if p(v561^a) then ( '<dc:description>' v561^a '</dc:description>' /) fi,
+if p(v562^a) then ( '<dc:description>' v562^a '</dc:description>' /) fi,
+if p(v580^a) then ( '<dc:description>' v580^a '</dc:description>' /) fi,
+
+if p(v856^q) then ( '<dc:format>' v856^q '</dc:format>' /) fi,
+
+if p(v20^a)  then ( '<dc:identifier>' v20^a '</dc:identifier>' /) fi,
+if p(v22^a)  then ( '<dc:identifier>' v22^a '</dc:identifier>' /) fi,
+if p(v24^a)  then ( '<dc:identifier>' v24^a '</dc:identifier>' /) fi,
+if p(v856^u) then ( '<dc:identifier>' v856^u '</dc:identifier>' /) fi,
+
+if p(v8)     then ( '<dc:language>' v8*35.3 '</dc:language>' /) fi,
+if p(v41)    then ( '<dc:language>' v41^a" "v41^b" "v41^d" "v41^e" "v41^f" "v41^g" "v41^h" "v41^j '</dc:language>' /) fi,
+if p(v546^a) then ( '<dc:language>' v546^a '</dc:language>' /) fi,
+
+if s(v260^a,v260^b)<>'' then ( '<dc:publisher>'v260^a" : "v260^b'</dc:publisher>' /) fi,
+    
+if p(v530^a) then ( '<dc:relation>' v530^a '</dc:relation>' /) fi,
+if s(v760^o,v760^t)<>'' then ( '<dc:relation>' v760^o" . "v760^t '</dc:relation>' /) fi,
+if s(v762^o,v762^t)<>'' then ( '<dc:relation>' v762^o" . "v762^t '</dc:relation>' /) fi,
+if s(v765^o,v765^t)<>'' then ( '<dc:relation>' v765^o" . "v765^t '</dc:relation>' /) fi,
+if s(v767^o,v767^t)<>'' then ( '<dc:relation>' v767^o" . "v767^t '</dc:relation>' /) fi,
+if s(v770^o,v770^t)<>'' then ( '<dc:relation>' v770^o" . "v770^t '</dc:relation>' /) fi,
+if s(v772^o,v772^t)<>'' then ( '<dc:relation>' v772^o" . "v772^t '</dc:relation>' /) fi,
+if s(v773^o,v773^t)<>'' then ( '<dc:relation>' v773^o" . "v773^t '</dc:relation>' /) fi,
+if s(v774^o,v774^t)<>'' then ( '<dc:relation>' v774^o" . "v774^t '</dc:relation>' /) fi,
+if s(v775^o,v775^t)<>'' then ( '<dc:relation>' v775^o" . "v775^t '</dc:relation>' /) fi,
+if s(v776^o,v776^t)<>'' then ( '<dc:relation>' v776^o" . "v776^t '</dc:relation>' /) fi,
+if s(v777^o,v777^t)<>'' then ( '<dc:relation>' v777^o" . "v777^t '</dc:relation>' /) fi,
+if s(v780^o,v780^t)<>'' then ( '<dc:relation>' v780^o" . "v780^t '</dc:relation>' /) fi,
+if s(v785^o,v785^t)<>'' then ( '<dc:relation>' v785^o" . "v785^t '</dc:relation>' /) fi,
+if s(v787^o,v787^t)<>'' then ( '<dc:relation>' v787^o" . "v787^t '</dc:relation>' /) fi,
+
+if p(v506) then ( '<dc:rights>' mdl, v506 '</dc:rights>' /) fi,
+
+if p(v534^t) then ( '<dc:source>' v534^t '</dc:source>' /) fi,
+if s(v786^o,v786^t)<>'' then ( '<dc:source>' v786^o" . "v786^t '</dc:source>' /) fi,
+
+if p(v50)  then ( '<dc:subject>' mdl,v50 '</dc:subject>' /) fi,
+if p(v80)  then ( '<dc:subject>' mdl,v80 '</dc:subject>' /) fi,
+if p(v82)  then ( '<dc:subject>' mdl,v82 '</dc:subject>' /) fi,
+if p(v600) then ( '<dc:subject>' mdl,v600 '</dc:subject>' /) fi,
+if p(v610) then ( '<dc:subject>' mdl,v610 '</dc:subject>' /) fi,
+if p(v611) then ( '<dc:subject>' mdl,v611 '</dc:subject>' /) fi,
+if p(v630) then ( '<dc:subject>' mdl,v630 '</dc:subject>' /) fi,
+if p(v650) then ( '<dc:subject>' mdl,v650 '</dc:subject>' /) fi,
+if p(v653) then ( '<dc:subject>' mdl,v653 '</dc:subject>' /) fi,
+
+if p(v245) then ( '<dc:title>' mdl,v245'</dc:title>' /) fi,
+if p(v246) then ( '<dc:title>' mdl,v246'</dc:title>' /) fi,
+if p(v210) then ( '<dc:title>' mdl,v210'</dc:title>' /) fi,
+if p(v222) then ( '<dc:title>' mdl,v222'</dc:title>' /) fi,
+if p(v240) then ( '<dc:title>' mdl,v240'</dc:title>' /) fi,
+if p(v242) then ( '<dc:title>' mdl,v242'</dc:title>' /) fi,
+if p(v243) then ( '<dc:title>' mdl,v243'</dc:title>' /) fi,
+if p(v247) then ( '<dc:title>' mdl,v247'</dc:title>' /) fi,
+
+if p(v3006) then ( '<dc:type>' v3006 '</dc:type>' /) fi,
+if p(v3007) then ( '<dc:type>' v3007 '</dc:type>' /) fi,
+if p(v655) then ( '<dc:type>' mdl,v655 '</dc:type>' /) fi,
+
+'
+</metadata>
+</textarea>
+<br>
+	<INPUT onclick=javascript:this.form.txt.focus();this.form.txt.select(); type=radio value=Selecionar name=value>Selecionar
+</form>',
