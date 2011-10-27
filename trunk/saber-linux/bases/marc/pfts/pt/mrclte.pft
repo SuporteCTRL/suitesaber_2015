@@ -194,6 +194,7 @@ if p(v773^w) then '<tr class="mrc"><th class="mrc">Fonte</th><td class="mrc">' v
 
 '</table>'
 
+'<div class="fechaUnico"><a class="pftLink" href="',@server.pft,'cgi-bin/wxis.exe/iah/scripts/?IsisScript=unico.xis&lang=pt&base='v5003'&nextAction=lnk&exprSearch='v1'&indexSearch=MF&format=todos_iah.pft">Ver estrutura MARC</a></div>'
 
 '</div></body>'
 

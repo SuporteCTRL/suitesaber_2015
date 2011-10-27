@@ -2,7 +2,7 @@
 <head>
 <link rel="stylesheet" type="text/css" href="/bases/marc/css/estilo.css" />
 </head>
-<body>
+<body><div id="wrap">
 <table class="mrc">'
 if s(v3005, v3006, v3007, v3017, v3018, v3019)<>'' then '<tr class="mrc"><th class="mrc">LDR</th><td class="mrc">'v3005,v3006,v3007,v3017,v3018,v3019'</td>' fi,/
 if p(v1) then '<tr class="mrc"><th class="mrc">1</th><td class="mrc">'v1+|<br />|,'</td>' fi/
@@ -120,5 +120,6 @@ if p(v850) then '<tr class="mrc"><th class="mrc">850</th><td class="mrc">'(if p(
 if p(v852) then '<tr class="mrc"><th class="mrc">852</th><td class="mrc">'(if p(v852) then mpl,v852, if iocc<>nocc(v852) then '<br />' fi fi/),'</td>' fi/
 if p(v856) then '<tr class="mrc"><th class="mrc">856</th><td class="mrc">'(if p(v856) then mpl,v856, if iocc<>nocc(v856) then '<br />' fi fi/),'</td>' fi/
 '</table>
-</body>
+<div class="fechaUnico"><a class="pftLink" href onclick="history.back()">Voltar</a></div>
+</div></body>
 </html>'
