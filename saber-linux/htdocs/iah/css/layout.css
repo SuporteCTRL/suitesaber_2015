@@ -374,6 +374,7 @@ span.colMark {
 	width: 13%;
 	font-size: 80%;
 	font-style: italic;
+	padding:2px;
 }
 
 .colFldLabl {
@@ -512,3 +513,45 @@ div.rowJnlDetl {
 .copyright {
 	text-align: center;
 }
+
+
+/***********    ***********/
+
+/*  lista pft */
+
+table.lista {
+	width:100%;}
+th.lista,
+td.lista {
+	border:1px solid #DDD;
+	padding:5px;
+	text-align:left; }
+th.alinhaCentro,
+td.alinhaCentro {
+	text-align:center; }
+	
+th.lista {
+	background-color:#D9EDFF; }
+tr.lista:hover {
+	background-color:#D9EDFF;}
+
+/* largura colunas */
+.primeira { width:4%;}
+.segunda,
+.quinta,
+.sexta { width:8%; }
+.terceira,
+.quarta { width:36%; }
+
+a.linkUnico {
+	cursor:pointer;
+	display:block;
+	text-decoration:underline;
+	color:#003366;}
+
+a.linkUnico:hover  {
+	color:#0000CC;}
+
+.fechaUnico {
+	text-align:right;
+	padding:15px;}
