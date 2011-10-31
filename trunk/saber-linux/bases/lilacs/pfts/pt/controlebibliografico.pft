@@ -1,7 +1,0 @@
-
-'<tr>','<td valign=top><font face=arial size=2>'v7+|; | if a(v7) then '&nbsp;' fi,'</td>'/
-'<td valign=top><font face=arial size=2>'(if p(v16) then | |v16^*, if iocc<>nocc(v16) then '<br>' fi fi/) if a(v16) then '&nbsp;' fi,'</td>'/
-'<td valign=top><font face=arial size=2>'(if p(v17) then | |v17^*, if iocc<>nocc(v17) then '<br>' fi fi/) if a(v17) then '&nbsp;' fi,'</td>'/
-'<td valign=top><font face=arial size=2>'(if p(v18) then | |v18^*, if iocc<>nocc(v18) then '<br>' fi fi/) if a(v18) then '&nbsp;' fi,'</td>'/
-'<td valign=top><font face=arial size=2>'v63+|; | if a(v63) then '&nbsp;' fi,'</td>'/
-'<td valign=top><font face=arial size=2>'v69+|; | if a(v69) then '&nbsp;' fi,'</td>'/
