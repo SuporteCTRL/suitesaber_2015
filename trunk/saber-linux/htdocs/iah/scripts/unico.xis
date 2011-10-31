@@ -44,35 +44,34 @@
 			,(v7999/),
 
 			/* iah format */
-			,'AHFORM.HTM=',v5000^c,v5021,'/ahform.htm'/
-			,'AHCONF.HTM=',v5000^c,v5021,'/ahconf.htm'/
+			,'AHFORM.HTM=',v5000^c,v5021,''/
+			,'AHCONF.HTM=',v5000^c,v5021,''/
 			,'AHHEAD.PFT=',v5000^c,v5021,'/ahhead.pft'/
-			,'AHFOOT.PFT=',v5000^c,v5021,'/ahfoot.pft'/
+			,'AHFOOT.PFT=',v5000^c,v5021,''/
 			,'AHHIDD.PFT=',v5000^c,v5021,'/ahhidd.pft'/
 			,'AHMANU.PFT=',v5000^c,'pfts/ahmanu.pft'/
 
-			,'AHBBOT.HTM=',v5000^c,v5021,'/ahbbot.htm'/
-			,'AHINDX.HTM=',v5000^c,v5021,'/ahindx.htm'/
-			,'AHSEND.HTM=',v5000^c,v5021,'/ahsend.htm'/
-			,'AHLIST.PFT=',v5000^c,v5021,'/ahlist.pft'/
-			,'NAVPAGE.UNICO.PFT=',v5000^c,v5021,'/navpage.unico.pft',/
-			,'NAVPAGE.PFT=',v5000^c,v5021,'/navpage.pft',/
-			,'AHEMAIL.PFT=',v5000^c,v5021,'/ahemail.pft',/
-			,'LIST6003.PFT=',v5000^c,v5021,'/list6003.pft'/
+			,'AHBBOT.HTM=',v5000^c,v5021,'/ahbbot.unico.htm'/
+			,'AHINDX.HTM=',v5000^c,v5021,''/
+			,'AHSEND.HTM=',v5000^c,v5021,''/
+			,'AHLIST.PFT=',v5000^c,v5021,''/
+			,'NAVPAGE.PFT=',v5000^c,v5021,'',/
+			,'AHEMAIL.PFT=',v5000^c,v5021,'',/
+			,'LIST6003.PFT=',v5000^c,v5021,''/
 
-			,'AHSCAD.HTM=',v5000^c,v5021,'/ahscad.htm'/
-			,'CDSCAD.HTM=',v5000^c,v5021,'/cdscad.htm'/
+			,'AHSCAD.HTM=',v5000^c,v5021,''/
+			,'CDSCAD.HTM=',v5000^c,v5021,''/
 			,'SCAD.PRC=',v5000^c,'scad.prc'/
 
-			,'AHRTOP.HTM=',v5000^c,v5021,'/ahrtop.htm'/
-			,'AHRBOT.HTM=',v5000^c,v5021,'/ahrbot.htm'/
-			,'AHRNAV.HTM=',v5000^c,v5021,'/ahrnav.htm'/
+			,'AHRTOP.HTM=',v5000^c,v5021,''/
+			,'AHRBOT.HTM=',v5000^c,v5021,''/
+			,'AHRNAV.HTM=',v5000^c,v5021,''/
 
-			,'AHBTOP.HTM=',v5000^c,v5021,'/ahbtop.htm'/
-			,'SHORTCUT.IAH=',v5000^c,v5021,'/dumy.pft',/
+			,'AHBTOP.HTM=',v5000^c,v5021,'/ahbtop.unico.htm'/
+			,'SHORTCUT.IAH=',v5000^c,v5021,'',/
 			,'QUERY.IAH=',v5000^c,v5021,'/query.pft',/
-			,'HEADER.IAH=',v5000^c,v5021,'/header.pft',/
-			,'AHBNAV.HTM=',v5000^c,v5021,'/ahbnav.htm'/
+			,'HEADER.IAH=',v5000^c,v5021,'',/
+			,'AHBNAV.HTM=',v5000^c,v5021,'/ahbnav.unico.htm'/
 		</pft>
 	</parm>
   
