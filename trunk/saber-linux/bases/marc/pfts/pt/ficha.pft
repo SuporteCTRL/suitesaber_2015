@@ -1,36 +1,12 @@
 '<html>
 <head>
-<style type="text/css">
-body {
-font-family: "Courier New", "Lucida console", monospace;
-font-size:12px;
-color:#000000;
-}
-.etiqueta {
-font-weight:bold;
-}
-.cabecalho {
-font-weight:normal;
-font-variant:small-caps;
-}
-.destaque {
-font-weight:bold;
-color:#0178AE;
-}
-.baixa {
-text-decoration:underline;
-}
-p {
-/*padding-left:25px;*/
-text-indent:20px;
-line-height:12px;
-}
 
-</style>
+<link rel="stylesheet" type="text/css" href="/bases/marc/css/estilo.css" />
+
 </head>
-<body><div>'
+<body><div id="ficha">'
 
-'<span class="etiqueta">N. de controle: </span>'v1[1],'&nbsp;&nbsp;&nbsp;' '<span class="etiqueta">MFN: </span>' mfn,'<br /><br />'
+'<strong>N. de controle: </strong>'v1[1],'&nbsp;&nbsp;&nbsp;' '<strong>MFN: </strong>' mfn,'<br /><br />'
 
 if p(v90) then (v90^a |&nbsp;&nbsp;&nbsp;|, v90^b |&nbsp;&nbsp;&nbsp;|, v90^c |&nbsp;&nbsp;&nbsp;|, v90^g |&nbsp;&nbsp;&nbsp;|, v90^d |&nbsp;&nbsp;&nbsp;|,'<br />'/)fi,'</span><br />'
  
@@ -114,9 +90,9 @@ if p(v111^a) then
 fi,/
 '</p>'
 
-
-'<span class="etiqueta">Registro: </span>' (v949^a+| ; |,/)
-
+if p(v949) then
+'<strong>Registro: </strong>' (v949^a+| ; |,/)
+fi,
 
 '</div>'/
 
