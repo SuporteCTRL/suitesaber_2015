@@ -60,19 +60,20 @@
 			,'AHEMAIL.PFT=',v5000^c,v5021,'/ahemail.pft',/
 			,'LIST6003.PFT=',v5000^c,v5021,'/list6003.pft'/
 
-			,'AHSCAD.HTM=',v5000^c,v5021,'/ahscad.htm'/
-			,'CDSCAD.HTM=',v5000^c,v5021,'/cdscad.htm'/
-			,'SCAD.PRC=',v5000^c,'scad.prc'/
+			,'AHSCAD.HTM=',v5000^c,v5021,'/ahscad.htm',/
+			,'CDSCAD.HTM=',v5000^c,v5021,'/cdscad.htm',/
+			,'SCAD.PRC=',v5000^c,'scad.prc',/
 
-			,'AHRTOP.HTM=',v5000^c,v5021,'/ahrtop.htm'/
-			,'AHRBOT.HTM=',v5000^c,v5021,'/ahrbot.htm'/
-			,'AHRNAV.HTM=',v5000^c,v5021,'/ahrnav.htm'/
+			,'AHRTOP.HTM=',v5000^c,v5021,'/ahrtop.htm',/
+			,'AHRBOT.HTM=',v5000^c,v5021,'/ahrbot.htm',/
+			,'AHRNAV.HTM=',v5000^c,v5021,'/ahrnav.htm',/
 
 			,'AHBTOP.HTM=',v5000^c,v5021,'/ahbtop.htm'/
 			,'SHORTCUT.IAH=',v5000^c,v5021,'/dumy.pft',/
 			,'QUERY.IAH=',v5000^c,v5021,'/query.pft',/
 			,'HEADER.IAH=',v5000^c,v5021,'/header.pft',/
-			,'AHBNAV.HTM=',v5000^c,v5021,'/ahbnav.htm'/
+			,'AHBNAV.HTM=',v5000^c,v5021,'/ahbnav.htm',/
+
 		</pft>
 	</parm>
   
