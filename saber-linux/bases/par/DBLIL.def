@@ -59,7 +59,6 @@ INDEX Lo=^1Localização^2Situación^3Location^4Emplacement^xLO ^uLO_^yDATABASE^mLO
 INDEX Fe=^1Suporte eletrônico^2Apoyo electrónico^3Electronic support^4Support électronique^xFE ^uFE_^yDATABASE^mFE_
 INDEX Dt=^1Data de entrada^2Fecha de entrada^3Entry date^4Date d'entrée^xDT ^uDT_^yDATABASE^mDT_
 
-
 [APPLY_GIZMO]
 
 GIZMO=QLFANS

@@ -2,8 +2,9 @@
 
 FILE DATABASE.*=%path_database%marc/data/marc.*
 FILE DATABASE.XML=%path_database%marc/pfts/lilXML.pft
-FILE standard.pft=%path_database%marc/pfts/%lang%/breve.pft
+FILE standard.pft=%path_database%marc/pfts/%lang%/mrclte.pft
 FILE detailed.pft=%path_database%marc/pfts/%lang%/mrclte.pft
+FILE todos_iah.pft=%path_database%marc/pfts/%lang%/todos_iah.pft
 FILE descritores.pft=%path_database%marc/pfts/%lang%/descritores.pft
 FILE doc-principal.pft=%path_database%marc/pfts/%lang%/doc-principal.pft
 FILE server.pft=%path_database%marc/pfts/%lang%/server.pft
@@ -35,6 +36,8 @@ INDEX Au=^1Autor^2Autor^3Author^4Auteur^xAU ^uAU_^yDATABASE^mAU_
 INDEX Ai=^1Autor institucional^2Autor institucional^3Institutional author^4Institutionnel auteur^xAI ^uAI_^yDATABASE^mAI_
 INDEX Ma=^1Descritor geográfico^2Descriptor geográfico^3Subject geographic^4Sujet géographique^xDG ^uDG_^yDATABASE^mDG_
 INDEX Pa=^1País^2País^3Country^4Pays^xPA ^uPA_^yDATABASE^mPA_^tshort
+INDEX Mf=^1MFN^2MFN^3MFN^4MFN^xMFN ^uMFN_^yDATABASE^mMFN_^tshort
+
 
 [APPLY_GIZMO]
 
@@ -43,7 +46,8 @@ INDEX Pa=^1País^2País^3Country^4Pays^xPA ^uPA_^yDATABASE^mPA_^tshort
 
 FORMAT standard.pft=^1Longo^2Largo^3Large^4Grand
 FORMAT detailed.pft=^1Detalhado^2Detallado^3Detailed^4Détaillée
-FORMAT DEFAULT=detailed.pft
+FORMAT citation.pft=^1Citação^2Citación^3Citation^4Citation
+FORMAT title.pft=^1Título^2Título^3Title^4Titre
 
 [HELP_FORM]
 
