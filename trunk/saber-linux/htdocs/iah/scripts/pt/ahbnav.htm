@@ -1,36 +1,7 @@
           
 [pft]if s(mpu,v5007,mpl) = 'ON' then[/pft]
-<<<<<<< .mine
 <!-- Rótulo das colunas: navpage.pft -->      
 
-=======
-        <div class="barNav">
-            <div class="leftCol">&nbsp;
-            [pft]if val(v1001) = val(v1002) or val(v1001) = val(v1032) then[/pft]
-                 <a name="last"></a>
-            [pft]fi[/pft]
-            [pft]if val(v1001) = val(v1031) then[/pft]
-                <a name="first"></a>
-            [pft]fi[/pft]
-            <a name="[pft]v1001[/pft]"><b>[pft]v1001' / 'v1002[/pft]</b></a>
-            </div>
-            <div class="centerCol">[pft]v245^a[/pft]</div>
-            <div class="rightCol">
-                    <!--img src="[pft]v5002[/pft]help.gif" border="0"-->            
-                    [pft]if val(v1001) <> val(v1031) then[/pft]
-                          <a href="#first"><img src="[pft]v5002[/pft]top.gif" border="0" /></a>
-                    [pft]fi[/pft]
-                    [pft]if val(v1001) <> val(v1031) then[/pft]
-                          <a href="#[pft]f(val(v1001)-1,1,0)[/pft]"><img src="[pft]v5002[/pft]prev.gif" border="0" /></a>
-                    [pft]fi[/pft]
-                    [pft]if (val(v1001) <> val(v1002)) and (val(v1001) <> val(v1032)) then[/pft]
-                          <a href="#[pft]f(val(v1001)+1,1,0)[/pft]"><img src="[pft]v5002[/pft]next.gif" border="0" /></a>
-                    [pft]fi[/pft]
-                    [pft]if (val(v1001) <> val(v1002)) and  (val(v1001) <> val(v1032)) then[/pft]
-                          <a href="#last"><img src="[pft]v5002[/pft]bott.gif" border="0" /></a>
-                    [pft]fi[/pft]
-            </div>
->>>>>>> .r271
         </div>
 [pft]else[/pft]
         <br />
