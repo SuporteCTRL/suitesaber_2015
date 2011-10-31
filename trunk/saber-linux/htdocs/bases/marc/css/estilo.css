@@ -88,3 +88,15 @@ dl.ctrl dd {
 dl.ctrl dd {
 	margin:0px; 
 	padding:0 10px 0 10px; }
+
+/***** Dublin Core *****/
+
+textarea.mrc {
+	width:600px;
+	height:400px; 
+	font-family: "Courier New", "Lucida console", monospace; 
+	font-size:13px;
+	padding:5px;
+	border:1px solid #CCCCCC; }
+
+
