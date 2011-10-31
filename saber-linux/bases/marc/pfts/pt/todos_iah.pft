@@ -120,6 +120,5 @@ if p(v850) then '<tr class="mrc"><th class="mrc">850</th><td class="mrc">'(if p(
 if p(v852) then '<tr class="mrc"><th class="mrc">852</th><td class="mrc">'(if p(v852) then mpl,v852, if iocc<>nocc(v852) then '<br />' fi fi/),'</td>' fi/
 if p(v856) then '<tr class="mrc"><th class="mrc">856</th><td class="mrc">'(if p(v856) then mpl,v856, if iocc<>nocc(v856) then '<br />' fi fi/),'</td>' fi/
 '</table>
-<div class="fechaUnico"><a class="pftLink" href onclick="history.back()">Voltar</a></div>
-</div></body>
-</html>'
+
+</div></body>'
