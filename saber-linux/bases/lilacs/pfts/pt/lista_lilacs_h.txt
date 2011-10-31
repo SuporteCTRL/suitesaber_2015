@@ -1,9 +1,0 @@
-Número de Identificação
-Base de dados
-Título
-Autor Pessoal
-Autor Institucional
-Editora
-ISBN
-Edição
-Cidade de publicação

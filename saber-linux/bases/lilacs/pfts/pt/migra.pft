@@ -1,6 +1,0 @@
-if p(v2) then 'v2@',v2, fi/
-(if p(v7) then 'v7@',v7, fi/)
-if p(v18) then 'v18@',v18, fi/
-if p(v16) then 'v16@',v16, fi/
-if p(v17) then 'v17@',v17, fi/
-'mfn@',mfn/
