@@ -194,7 +194,7 @@ if p(v773^w) then '<tr class="mrc"><th class="mrc">Fonte</th><td class="mrc">' v
 
 '</table>'
 
-'<div class="fechaUnico">Ver estrutura: <a class="pftLink" href="/cgi-bin/wxis.exe/iah/scripts/?IsisScript=unico.xis&lang=pt&base='v5003'&nextAction=lnk&exprSearch='v1'&indexSearch=MF&format=todos_iah.pft">MARC</a> <a class="pftLink" href="/cgi-bin/wxis.exe/iah/scripts/?IsisScript=unico.xis&lang=pt&base='v5003'&nextAction=lnk&exprSearch='v1'&indexSearch=MF&format=dublin-core.pft">Dublin Core</a></div>'
+'<div class="fechaUnico">Ver estrutura: <a class="pftLink" href="/cgi-bin/wxis.exe/iah/scripts/?IsisScript=unico.xis&lang=pt&base='v5003'&nextAction=lnk&exprSearch='v1'&indexSearch=MF&format=todos_iah.pft">MARC</a> <a class="pftLink" href="/cgi-bin/wxis.exe/iah/scripts/?IsisScript=unico.xis&lang=pt&base='v5003'&nextAction=lnk&exprSearch='v1'&indexSearch=MF&format=dublin.pft">Dublin Core</a></div>'
 
 '</div></body>'
 
