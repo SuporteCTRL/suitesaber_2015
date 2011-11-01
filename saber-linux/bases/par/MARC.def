@@ -30,15 +30,14 @@ FILE call_statment.pft=%path_database%marc/pfts/%lang%/call_statment.pft
 
 [INDEX_DEFINITION]
 
-INDEX Tw=^1Palavras^2Palabras^3Words^4Mots^d*^xTW ^uTW_^yDATABASE^mTW_
-INDEX Ti=^1Palavras do título^2Palabras del título^3Title words^4Mots du titre^xTX ^uTx_^yDATABASE^mTX_
-INDEX Tt=^1Título^2Título^3Title^4Titre^xTI ^uTI_^yDATABASE^mTI_
-INDEX Ab=^1Palavras do resumo^2Palabras del resumen^3Abstract words^4Résumé mots^xAB ^uAB_^yDATABASE^mAB_
-INDEX Au=^1Autor^2Autor^3Author^4Auteur^xAU ^uAU_^yDATABASE^mAU_
-INDEX Ai=^1Autor institucional^2Autor institucional^3Institutional author^4Institutionnel auteur^xAI ^uAI_^yDATABASE^mAI_
-INDEX Ma=^1Descritor geográfico^2Descriptor geográfico^3Subject geographic^4Sujet géographique^xDG ^uDG_^yDATABASE^mDG_
-INDEX Pa=^1País^2País^3Country^4Pays^xPA ^uPA_^yDATABASE^mPA_^tshort
-INDEX Mf=^1MFN^2MFN^3MFN^4MFN^xMFN ^uMFN_^yDATABASE^mMFN_^tshort
+INDEX Uu=^1Autor^2Autor^3Autor^4Autor^xUU ^uUU_^yDATABASE^mUU_
+INDEX Ti=^1Título^2Título^3Título^4Título^xTI ^uTI_^yDATABASE^mTI_
+INDEX Aa=^1Assunto^2Assunto^3Assunto^4Assunto^xAA ^uAA_^yDATABASE^mAA_
+INDEX Da=^1Data^2Data^3Data^4Data^xDA ^uDA_^yDATABASE^mDA_
+INDEX Ms=^1Série^2Série^3Série^4Série^xMS ^uMS_^yDATABASE^mMS_
+INDEX Ab=^1Resumo^Resumo^Resumo^Resumo^xAB ^uAB_^yDATABASE^mAB_
+INDEX Tw=^1Todos os campos^2Todos os campos^3Todos os campos^4Todos os campos^d*^xTW ^uTW_^yDATABASE^mTW_
+INDEX Mf=^1MFN^2MFN^3MFN^4MFN^xMFN ^uMFN_^yDATABASE^mMFN_^thidden
 
 
 [APPLY_GIZMO]
