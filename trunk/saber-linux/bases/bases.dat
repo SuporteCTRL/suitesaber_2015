@@ -1,7 +1,6 @@
 arquivo|Formato ARQUIVO
-marc|Formato MARC|Y
-biblo|Formato CEPAL
-autoridades|Base de autoridades
+marc|Base bibliográfica (MARC)
+autoridades|Base de autoridades (MARC)
 copies|Regitro patrimonial
 providers|Fornecedores
 suggestions|Sugestões de compra
