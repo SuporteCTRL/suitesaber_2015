@@ -95,24 +95,25 @@
 
         <div class="celRight">
             <div class="rowHigh">
-                    <input type="Radio" name="listOption" value="list_all" [pft]if a(v6210) then 'checked' fi[/pft] />
-                Todas as referências ([pft]v1002[/pft])
+                    <input type="Radio" name="listOption" value="list_all" id="list_all" [pft]if a(v6210) then 'checked' fi[/pft] />
+                <label for="list_all">Todas as referências ([pft]v1002[/pft])</label>
             </div>
             <div class="rowHigh">
-                    <input type="Radio" name="listOption" value="list_hits" />
-                Intervalo de referências de
+                    <input type="Radio" name="listOption" value="list_hits" id="list_hits" />
+                <label for="list_hits">Intervalo de referências de</label>
                     <input type="text" name="listHit" maxlength="6" size="4" onFocus="document.Option.listOption[1].checked = true" />
                 <span class="labl">&nbsp;-&nbsp;</span>
                 <input type="text" name="listHit" maxlength="6" size="4" onFocus="document.Option.listOption[1].checked = true" />
             </div>
             <div class="rowHigh">
                     [pft]if p(v6210) then[/pft]
-                        <input type="Radio" name="listOption" value="list_selected" checked />
+                        <input type="Radio" name="listOption" value="list_selected" id="list_selected" checked />
 
-                Referências selecionadas [pft]if p(v6210) then '('f(nocc(v6210),1,0)')' fi[/pft]
+                <label for="list_selected">Referências selecionadas [pft]if p(v6210) then '('f(nocc(v6210),1,0)')' fi[/pft]</label>
                     [pft]else[/pft]
                         <!--Nenhuma referência selecionada.-->
                     [pft]fi[/pft]
+               <label for="list_selected">Referências selecionadas [pft]if p(v6210) then '('f(nocc(v6210),1,0)')' fi[/pft]</label>
             </div>
         </div>
 
@@ -126,10 +127,12 @@
 
         <div class="celRight">
             <div class="rowHigh">
-                <input type="Radio" name="sendOption" value="print" checked />&nbsp;Enviar para impressão
+                <input type="Radio" name="sendOption" value="print" id="print" checked />
+                     <label for="print">Enviar para impressão</label>
             </div>
             <div class="rowHigh">
-                <input type="Radio" name="sendOption" value="save" />&nbsp;Enviar para seu computador no formato&nbsp;
+                <input type="Radio" name="sendOption" value="save" id="save" />
+                     <label for="save">Enviar para seu computador no formato</label>
             <select name="saveFileType" onFocus="document.Option.sendOption[1].checked = true">
             [pft]if v5018^f : 'XML' then[/pft]
                     <option value="save-xml">XML</option>
