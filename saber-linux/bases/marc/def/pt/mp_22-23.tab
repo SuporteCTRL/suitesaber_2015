@@ -1,7 +1,7 @@
 ##|Projeção não especificada
 aa|Projeção de Aitoff
 ab|Gnômica
-ac|Azimutal Igual Área de Lambert
+ac|Azimutal de Lambert, área igual
 ad|Ortográfica
 ae|Azimutal eqüidistante
 af|Esterográfica
@@ -13,7 +13,7 @@ au|Azimutal, tipo específico desconhecido
 az|Azimutal, outra
 ba|Projeção de Gall
 bb|Homolográfica de Goode
-bc|Igual área cilíndrica de Lambert
+bc|Cilíndrica de Lambert, área igual
 bd|Projeção de Mercator
 be|Projeção segundo Miller
 bf|Projeção de Mollweide
@@ -21,7 +21,9 @@ bg|Sinuosoidal
 bh|Projeção transversal de Mercator
 bi|Projeção de Gauss-Kruger
 bj|Eqüiretangular
-bo|Oblíqua de Mercantor
+bk|Krovak
+bl|Cassini-Soldner 
+bo|Oblíqua de Mercator
 br|Projeção de Robinson
 bs|Espaço oblíquo de Mercantor
 bu|Cilíndrica, tipo específico desconhecido
@@ -41,6 +43,6 @@ de|Bipolar oblíqua conformal cônica de Miller
 df|Projeção Van Der Grinten
 dg|Projeção de Dimaxion
 dh|Cordiforme
-dl|Lambert conformal
+dl|Conformal Lambert
 zz|Outra
 --|Não se tentou codificar

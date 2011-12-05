@@ -1,7 +1,7 @@
-#|Freqüência não determinável/Irregular
+#|Irregular
 a|Anual
 b|Bimestral
-c|Bissemanal
+c|Bissemanal (Duas vezes por semana)
 d|Diário
 e|Quinzenal
 f|Semestral
@@ -9,11 +9,11 @@ g|Bienal
 h|Trienal
 i|Três vezes por semana
 j|Três vezes por mês
-k|Atualização contínua
+k|Atualizado continuamente
 m|Mensal
 q|Trimestral
-s|Duas vezes por mês 
-t|Quadrimestral
+s|Bimensal
+t|Quadrimestral (Três vezes por ano)
 u|Desconhecido
 w|Semanal
 z|Outro

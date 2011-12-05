@@ -2,14 +2,14 @@ b|Nenhuma data fornecida/data A.C.
 c|Publicação seriada corrente
 d|Publicação seriada encerrada
 e|Data detalhada
-i|Data inclusiva de coleção
-k|Intervalo de datas
+i|Datas limite de uma coleção
+k|Intervalo de datas de uma coleção
 m|Datas múltiplas
-n|Datas desconhecidas
-p|Data de produção
-q|Data questionável
-r|Data de reimpressão/reedição e original
+n|Data desconhecida	
+p|Data de distribuição e de produção, quando diferentes 
+q|Data incerta
+r|Data de reimpressão/reedição e data original
 s|Única data conhecida/data provável
-t|Data de publicação e de copyright
-u|Publicação seriada desconhecida
+t|Data de publicação e copyright
+u|Publicação seriada com status desconhecido
 -|Não se tentou codificar
