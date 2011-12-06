@@ -6,10 +6,11 @@ S||11-14 Data 2|0|0|||X||4|||||||0|
 S||15-17 Lugar de pub./prod./exec.|0|0|||X||3|P|countries_008.tab|||||0|
 S||18-21 Não usado|0|0|||X||4|P|undefined4.tab|||||0|
 S||22-22 Público alvo|0|0|||X||1|P|audience.tab|||||0|
-S||23-25 Não usado|0|0|||X||3|P|undefined3.tab|||||0|
+S||23-23 Forma do item|0|0|||X||1|P|cf_23.tab|||||0|
+S||24-25 Não usado|0|0|||X||2|P|undefined2.tab|||||0|
 S||26-26 Tipo de arquivo de computador|0|0|||X||1|P|cf_26.tab|||||0|
 S||27-27 Não usado|0|0|||X||1|P|undefined1.tab|||||0|
-S||28-28 Publicação oficial|0|0|||X||1|P|pub_gov.tab|||||0|
+S||28-28 Publicação governamental|0|0|||X||1|P|pub_gov.tab|||||0|
 S||29-34 Não usado|0|0|||X||6|||||||0|
 S||35-37 Idioma|0|0|||X||3|P|languages.tab|||||0|
 S||38-38 Modificação do registro|0|0|||X||1|P|008_38.tab|||||0|
