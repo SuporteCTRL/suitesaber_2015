@@ -107,25 +107,25 @@ function GenerarWks(){
 	//horisontal toolbar
 	toolbar=new dhtmlXToolbarObject("toolbarBox","400","24","ABCD");
 	toolbar.setOnClickHandler(onButtonClick);
-	toolbar.addItem(new dhtmlXImageButtonObject('img/barArrowLeft2.png',18,24,1,'0_primero','<?php echo $msgstr["m_primero"]?>'))
-    toolbar.addItem(new dhtmlXImageButtonObject('img/barArrowLeft.png',18,24,2,'0_anterior','<?php echo $msgstr["m_anterior"]?>'))
-    toolbar.addItem(new dhtmlXImageButtonObject('img/barArrowRight.png',18,24,3,'0_siguiente','<?php echo $msgstr["m_siguiente"]?>'))
-    toolbar.addItem(new dhtmlXImageButtonObject('img/barArrowRight2.png',18,24,4,'0_ultimo','<?php echo $msgstr["m_ultimo"]?>'))
+	toolbar.addItem(new dhtmlXImageButtonObject('/central/css/<? echo $theme?>/images/barArrowLeft2.png',18,24,1,'0_primero','<?php echo $msgstr["m_primero"]?>'))
+    toolbar.addItem(new dhtmlXImageButtonObject('/central/css/<? echo $theme?>/images/barArrowLeft.png',18,24,2,'0_anterior','<?php echo $msgstr["m_anterior"]?>'))
+    toolbar.addItem(new dhtmlXImageButtonObject('/central/css/<? echo $theme?>/images/barArrowRight.png',18,24,3,'0_siguiente','<?php echo $msgstr["m_siguiente"]?>'))
+    toolbar.addItem(new dhtmlXImageButtonObject('/central/css/<? echo $theme?>/images/barArrowRight2.png',18,24,4,'0_ultimo','<?php echo $msgstr["m_ultimo"]?>'))
     toolbar.addItem(new dhtmlXSelectButtonObject('select',',mfn,search','<?php echo $msgstr["browse"]?>,Mfn,<?php echo $msgstr["busqueda"]?>','browse',80,80,''))
     toolbar.addItem(new dhtmlXToolbarDividerXObject('div_1'))
-    toolbar.addItem(new dhtmlXImageButtonObject("img/toolbarSearch.png","16","16",5,"1_buscar","<?php echo $msgstr["m_buscar"]?>"))
-	toolbar.addItem(new dhtmlXImageButtonObject("img/toolbarOrder.png","16","16",6,"1_alfa","<?php echo $msgstr["m_indice"]?>"))
+    toolbar.addItem(new dhtmlXImageButtonObject("/central/css/<? echo $theme?>/images/toolbarSearch.png","16","16",5,"1_buscar","<?php echo $msgstr["m_buscar"]?>"))
+	toolbar.addItem(new dhtmlXImageButtonObject("/central/css/<? echo $theme?>/images/toolbarOrder.png","16","16",6,"1_alfa","<?php echo $msgstr["m_indice"]?>"))
 	toolbar.addItem(new dhtmlXToolbarDividerXObject('div_2'))
 	<?php
-	if (isset($_SESSION["permiso"]["CENTRAL_ALL"]) or isset($_SESSION["permiso"]["CENTRAL_CREC"])){	?>		toolbar.addItem(new dhtmlXImageButtonObject("img/toolbarNew.png","16","16",7,"2_nuevo","<?php echo $msgstr["m_crear"]?>"))
+	if (isset($_SESSION["permiso"]["CENTRAL_ALL"]) or isset($_SESSION["permiso"]["CENTRAL_CREC"])){	?>		toolbar.addItem(new dhtmlXImageButtonObject("/central/css/<? echo $theme?>/images/toolbarNew.png","16","16",7,"2_nuevo","<?php echo $msgstr["m_crear"]?>"))
 	<?php }
 	if (isset($_SESSION["permiso"]["CENTRAL_ALL"]) or isset($_SESSION["permiso"]["CENTRAL_CAPTURE"])){
 	?>
-		toolbar.addItem(new dhtmlXImageButtonObject("img/toolbarCopy.png","18","24",9,"2_capturar","<?php echo $msgstr["m_capturar"]?>"))
+		toolbar.addItem(new dhtmlXImageButtonObject("/central/css/<? echo $theme?>/images/toolbarCopy.png","18","24",9,"2_capturar","<?php echo $msgstr["m_capturar"]?>"))
 	<?php }
 	if (isset($_SESSION["permiso"]["CENTRAL_ALL"]) or isset($_SESSION["permiso"]["CENTRAL_Z3950CAT"])){
 	?>
-		toolbar.addItem(new dhtmlXImageButtonObject("img/z3950.png","18","16",19,"2_z3950","<?php echo $msgstr["m_z3950"]?>"))
+		toolbar.addItem(new dhtmlXImageButtonObject("/central/css/<? echo $theme?>/images/z3950.png","18","16",19,"2_z3950","<?php echo $msgstr["m_z3950"]?>"))
 	<?php }
 	if (isset($_SESSION["permiso"]["CENTRAL_ALL"]) or isset($_SESSION["permiso"]["CENTRAL_VALDEF"])){
 	?>
@@ -135,11 +135,11 @@ function GenerarWks(){
 	<?php }
 	if (isset($_SESSION["permiso"]["CENTRAL_ALL"]) or isset($_SESSION["permiso"]["CENTRAL_PREC"])){
 	?>
-		toolbar.addItem(new dhtmlXImageButtonObject("img/toolbarPrint.png","16","24",12,"3_imprimir","<?php echo $msgstr["m_reportes"]?>"))
+		toolbar.addItem(new dhtmlXImageButtonObject("/central/css/<? echo $theme?>/images/toolbarPrint.png","16","24",12,"3_imprimir","<?php echo $msgstr["m_reportes"]?>"))
 	<?php }
 	if (isset($_SESSION["permiso"]["CENTRAL_ALL"]) or isset($_SESSION["permiso"]["CENTRAL_UTILS"])  or isset($_SESSION["permiso"]["CENTRAL_IMPEX"])  or isset($_SESSION["permiso"]["CENTRAL_GLOBC"])){
 	?>
-		toolbar.addItem(new dhtmlXImageButtonObject("img/toolbarTool.png","16","24",13,"config","<?php echo $msgstr["mantenimiento"]?>"))
+		toolbar.addItem(new dhtmlXImageButtonObject("/central/css/<? echo $theme?>/images/toolbarTool.png","16","24",13,"config","<?php echo $msgstr["mantenimiento"]?>"))
 	<?php }?>
 	toolbar.addItem(new dhtmlXToolbarDividerXObject('div_5'))
 
@@ -154,11 +154,11 @@ function GenerarWks(){
 	}
 if (isset($_SESSION["permiso"]["CENTRAL_ALL"]) or isset($_SESSION["permiso"]["CENTRAL_STATGEN"])  or isset($_SESSION["permiso"]["CENTRAL_STATCONF"])){
 ?>
-	toolbar.addItem(new dhtmlXImageButtonObject("img/grafico.gif","18","24",13,"stats","<?php echo $msgstr["estadisticas"]?>"))
+	toolbar.addItem(new dhtmlXImageButtonObject("/central/css/<? echo $theme?>/images/grafico.png","18","24",13,"stats","<?php echo $msgstr["estadisticas"]?>"))
 <?PHP }?>
-	toolbar.addItem(new dhtmlXImageButtonObject("img/toolbarHelp.png","16","24",14,"5_ayuda","<?php echo $msgstr["m_ayuda"]?>"))
+	toolbar.addItem(new dhtmlXImageButtonObject("/central/css/<? echo $theme?>/images/toolbarHelp.png","16","24",14,"5_ayuda","<?php echo $msgstr["m_ayuda"]?>"))
 	toolbar.addItem(new dhtmlXToolbarDividerXObject('div_6'))
-	toolbar.addItem(new dhtmlXImageButtonObject("/central/css/saber/images/home.png","16","24",14,"home","<?php echo $msgstr["inicio"]?>"))
+	toolbar.addItem(new dhtmlXImageButtonObject("/central/css/<? echo $theme?>/images/home.png","16","24",14,"home","<?php echo $msgstr["inicio"]?>"))
 	toolbar.showBar();
 	function onButtonClick(itemId,itemValue){
 		switch (itemId){

@@ -267,7 +267,7 @@
 }
 
  this.topNod=0;this.action=0;this.persAction=0;this.id=id||0;
- this.className=className||"defaultButton";
+ this.className=className||"defaultbutton botoes_top";
  this.src=src;this.disableImage=disableImage;
  this.tooltip=tooltip||"";
 
@@ -338,8 +338,8 @@
 }
  this.topNod=0;
  this.action=0;this.persAction=0;
- this.className=className||"defaultButton";
- this.textClassName=textClassName||"defaultButtonText";
+ this.className=className||"defaultbutton botoes_top";
+ this.textClassName=textClassName||"defaultbutton botoes_topText";
  this.src=src;this.disableImage=disableImage;
  this.tooltip=tooltip||"";this.id=id||0;
 
@@ -511,8 +511,8 @@ function dhtmlXTwoStateButtonObject(id,src,text,width,height,action,tooltip,clas
  this.state=0;
  this.topNod=0;
  this.action=0;this.persAction=0;
- this.className=className||"defaultButton";
- this.textClassName=textClassName||"defaultButtonText";
+ this.className=className||"defaultbutton botoes_top";
+ this.textClassName=textClassName||"defaultbutton botoes_topText";
 
  this.disableImage=disableImage;
  this.tooltip=tooltip||"";this.id=id||0;
