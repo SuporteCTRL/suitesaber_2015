@@ -1,9 +1,6 @@
-'<font face=arial size=2><b>Centro de documentação de ABCD</b>. Recibo de empréstimo<br>'
-"Cód.usuario: "v20,'<br>',
-'Data de empréstimo: ' v30*6.2,'-',v30*4.2,'-',v30.4'<br>',
-'Data de devolução: 'v40*6.2,'-',v40*4.2,'-',v40.4'<br>',
-'Título: 'v100^a,'<br><br>',
-
-'_______________________________'
-
-/
+'<tr>','<td valign=top>'(if p(v100) then | |v100, if iocc<>nocc(v100) then '<br>' fi fi/) if a(v100) then '&nbsp;' fi,'</td>'/
+'<td valign=top>'v120^b+|; | if a(v30) then '&nbsp;' fi,'</td>'/
+'<td valign=top>'v130^b+|; | if a(v60) then '&nbsp;' fi,'</td>'/
+'<td valign=top>'v20+|; | if a(v20) then '&nbsp;' fi,'</td>'/
+'<td valign=top>'v10+|; | if a(v10) then '&nbsp;' fi,'</td>'/
+'<td valign=top>'(if p(v90) then | |v90, if iocc<>nocc(v100) then '<br>' fi fi/) if a(v100) then '&nbsp;' fi,'</td>'/

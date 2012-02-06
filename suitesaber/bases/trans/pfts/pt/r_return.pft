@@ -1,4 +1,4 @@
-'<font face=arial size=2><b>Centro de documentacion de ABCD</b>. Recibo de devolução<br>'
+'<font face=arial size=2><b>Fundação de Economia e Estatística</b><br>. Recibo de devolução<br>'
 "Cód.usuario: "v20,'<br>',
 'Data de empréstimo: ' v30*6.2,'-',v30*4.2,'-',v30.4'<br>',
 'Data de devolução: 'v40*6.2,'-',v40*4.2,'-',v40.4'<br>',

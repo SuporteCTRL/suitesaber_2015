@@ -1,5 +1,5 @@
-pr_loan|r_loan
-pr_return|r_return
-pr_fine|
+pr_loan|recibo
+pr_return|recibo_h
+pr_fine|r_return
 pr_statment|
 pr_solvency|
