@@ -1,0 +1,9 @@
+     '   <table class="lista">
+        		<tr class="lista">
+            	<th class="lista alinhaCentro">n.</th>
+            	<th class="lista alinhaCentro" style="text-align:center;">&#10004;</th>
+	            <th class="lista">Autor</th>
+	            <th class="lista">Título</th>
+	            <th class="lista alinhaCentro">Ano</th>
+	            <th class="lista alinhaCentro">Localização</th> 
+            </tr>'

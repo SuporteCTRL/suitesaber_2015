@@ -1,0 +1,18 @@
+@import url(./fdrh/layout.css);
+@import url(./fdrh/styles.css);
+@import url(./fdrh/jquery-ui-1.8.5.custom.css);
+@import url(./fdrh/ui.selectmenu.css);
+@import url(./fdrh/front.css);
+
+
+/* style rule: para correção de erros para float */
+DIV.spacer {
+	font-size: 1px !important;
+	margin: 0px !important;
+	padding: 0px !important;
+	float: none !important;
+	clear: both !important;
+	width: 100% !important;
+	height: 1px !important;
+}
+

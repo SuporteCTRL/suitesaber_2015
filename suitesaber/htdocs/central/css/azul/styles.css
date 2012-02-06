@@ -1,0 +1,423 @@
+/* #general styles */
+body, input, select, textarea {
+	font-family: "Trebuchet MS", Arial, Verdana, Helvetica;
+	font-size: 10pt;
+}
+
+A IMG {
+	border: 0px;
+}
+
+LABEL {
+	cursor: pointer;
+}
+
+/* #master classes */
+
+/* ABCD ADDED*/
+
+ 	/* #defaultButton classes */
+A.defaultButton {
+		text-decoration: none;
+	}
+
+A.defaultButton SPAN {
+		cursor: pointer;
+		font-size: 90%;
+	}
+
+A.defaultButton STRONG {
+		font-size: 110%;
+	}
+
+	/* #menuButton classes */
+A.menuButton {
+		text-decoration: none;
+	
+	}
+
+A.menuButton SPAN {
+		cursor: pointer;
+		font-size: 90%;
+	}
+
+A.menuButton STRONG {
+		font-size: 110%;
+	}
+
+INPUT.superTextEntry,
+TEXTAREA.superTextEntry {
+		font-size: 180%;
+	}
+.alert {
+
+		font-weight: bold;
+
+	}
+
+A.singleButton {
+		color: #fff;
+		text-decoration: none;
+		background: url('images/singleButton_bg.gif') repeat-x top left;
+	}
+
+A.singleButton:hover, A.singleButtonSelected {
+		background-color: #4e617c;
+	}
+
+A.singleButton .sb_lb {
+		background: url('images/singleButton_lb.gif') no-repeat top left;
+	}
+
+A.singleButton .sb_rb {
+		background: url('images/singleButton_rb.gif') no-repeat top right;
+	}
+
+	/* #END #defaultButton classes */
+
+/* #specific classes */
+
+	/*#heading classes */
+.institutionalInfo H1, .institutionalInfo H2 {
+		letter-spacing: 1px;
+	}
+
+.institutionalInfo H1 {
+		font-size: 250%;
+	}
+
+.institutionalInfo H2 {
+		font-weight: normal;
+		font-size: 100%;
+	}
+
+.userInfo, .userInfo A, .language, .language A {
+		font-weight: normal;
+		font-size: 12px;
+		vertical-align: top;
+
+	}
+
+.userInfo A.button_logout {
+		background: url('images/button_logout.gif') no-repeat center right;
+		text-decoration: none;
+	}
+
+.userInfo A.button_logout:hover SPAN {
+		text-decoration: underline;
+
+	}
+	/* #END #heading classes */
+
+	/*#sectionInfo classes */
+.breadcrumb {
+		font-size: 110%;  /*cambiado */
+	}
+
+.breadcrumb H3 {
+		font-size: 190%;
+	}
+
+.breadcrumb SUP {
+		font-size: 45%;
+	}
+
+.actions, .actions A {
+		text-decoration: none;
+	}
+
+	/*#END #sectionInfo classes */
+
+	/*#footer classes  */
+
+.systemInfo STRONG {
+		font-size: 110%;
+	}
+
+/*#END #footer classes */
+
+/*#homepage classes */
+
+	.homepage .mainBox .boxContent .sectionTitle H4 {
+		font-size: 100%;
+		font-weight: normal;
+	}
+
+.homepage .mainBox .boxContent .sectionTitle H4 STRONG {
+		font-size: 210%;
+		font-weight: normal;
+	}
+
+.homepage .mainBox .boxContent .searchTitles .stInput INPUT.textEntry {
+		border: 0px none;
+	}
+
+
+	/*#END #homepage classes */
+
+.searchBox INPUT.submit {
+		border: 0px none;
+	}
+
+.searchBox INPUT.submitAdvanced {
+		border: 0px none;
+	}
+
+
+.statTable {
+		border-collapse: collapse;
+		border-spacing: 0px;
+	}
+
+.statTable TH {
+		cursor: pointer;
+
+	}
+
+
+.listTable {
+		border-collapse: collapse;
+		border-spacing: 0px;
+	}
+
+
+.listTable TH {
+		cursor: pointer;
+
+	}
+
+.listTable TH.checkboxes,
+.listTable TH.action {
+		cursor: default;
+	}
+
+.listTable TH.desc {
+		background-repeat: no-repeat;
+		background-position:  right center;
+
+	}
+
+.listTable TH.asc {
+		background-repeat: no-repeat;
+		background-position:  right center;
+	}
+
+
+.listTable .tButton {
+		text-decoration: none;
+	}
+
+	/*#END #list classes */
+
+	/*#form classes */
+
+td{
+		font-family:arial;
+		font-size:12px;
+	}
+
+.formHead H4 {
+		font-size: 160%;
+	}
+h4 {
+
+		font-size:160%;
+	}
+	/*#END #form classes */
+
+
+TD.showSTitle .singleLoading {
+		font-size: 90%;
+	}
+
+TD.showSTitle .collectionInfo {
+
+		font-size: 90%;
+	}
+
+TD.showSTitle .collectionMode A:hover {
+
+		text-decoration: underline;
+	}
+
+TD.showSTitle .collectionMode A.selected {
+
+		text-decoration: none;
+		font-weight: bold;
+	}
+
+	TD.showSTitle .collectionMode A.selected:hover {
+		text-decoration: none;
+	}
+
+
+	/* #END #colection Title loading */
+
+	/* #Login */
+
+	.login .loginForm .submitRow A.defaultButton SPAN {
+
+		font-size: 120%;
+	}
+
+
+	/* #END Login */
+	
+
+.toggler {
+	width: auto;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	margin-top: 0px;
+	}
+
+/* Styles do dibujarhojadeentrada.php */
+#indice {
+	display: inline-block;
+	margin:1px;
+	text-align: center;
+	cursor:pointer;
+	width: 20px;
+	height: 20px;
+	border: 0;
+	font-size: 150%;
+	font-weight: bold;
+	text-shadow: -0.1em -0.1em #536072;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+#assist{
+	display: inline-block;
+	margin:1px;
+	text-align: center;
+	cursor:pointer;
+	width: 20px;
+	height: 20px;
+	border: 0;
+	font-size: 150%;
+	font-weight: bold;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+#ajuda {
+	display: inline-block;
+	margin:1px;
+	text-align: center;
+	cursor:pointer;
+	width: 20px;
+	height: 20px;
+	border: 0;
+	font-size: 150%;
+	font-weight: bold;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+
+#tag {
+	display: inline-block;
+	margin:1px;
+	text-align: center;
+	width: 25px;
+	height: 20px;
+	border: 0;
+	font-size: 150%;
+	font-weight: bold;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+
+/*tooltip da administração */
+a:hover {
+	text-decoration:none;
+} 
+	/* background-color e necessario para o IE6 */
+
+a.tooltip span {
+	position:absolute; 
+	display:none; 
+	padding:0px; 
+	margin-top: 70px;
+	margin-left:-20px;  
+	width:auto;
+	height: auto;
+}
+a.tooltip:hover span {
+	display:inline; 	
+	position:absolute; 
+}
+
+
+.tag {
+	width: 20px;
+	vertical-align:top;
+}
+
+
+.rotuloIng,textbody03 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	border-left-width: 7px;
+
+}
+
+.areas1{
+	display: inline-block;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	height: 25px;
+	width: 90%;
+	padding-left: 20px;
+   border-radius-topright: 10px;
+   border-radius-topleft: 10px;
+  -moz-border-radius: 10px 10px 0px 0px;
+
+		
+}
+.areas2{
+	display: inline-block;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	font-weight: bold;
+	height: 15px;
+	padding-left: 20px;
+	width: 90%;
+        border-radius-bottomright: 10px;
+        border-radius-bottomleft: 10px;
+       -moz-border-radius: 0px 0px 10px 10px;
+	text-shadow: 0.1em 0.1em #536072;
+}
+#rotuloIng {
+	width: 150px;
+		
+}
+
+
+td {
+/*	border-bottom-width: thin;
+	border-bottom-style: groove;  */
+}
+
+tr:hover {
+	border-bottom-style: groove;
+	border-bottom-width: thin;
+}
+
+input[type=text], textarea {
+	border-bottom-width: thin;
+	-moz-border-radius: 5px;
+}
+
+input[type=text]:focus, textarea:focus {
+	border-bottom-width: thin;
+	border-left-width: 7px;
+	-moz-border-radius: 5px;
+}
+div #wrapper {
+	padding: 0px;
+	margin-top: -10px;
+	margin-bottom: -20px;
+	
+}

@@ -1,0 +1,21 @@
+<div class="collection">
+
+<h3>
+
+<span><a href="../php/level.php?lang=pt&amp;component=40">Fontes de Informações</a></span></h3>
+
+<ul><li><a href="../php/level.php?lang=pt&amp;component=40&amp;item=5">Bases de dados da Instituição</a>
+
+<span><a href="/cgi-bin/wxis.exe//iah/?base=MARC&amp;lang=pt" target="_blank">MARC</a>, 
+
+<a href="/cgi-bin/wxis.exe//iah/?base=BIBLO&amp;lang=pt" target="_blank">CEPAL</a>, 
+
+<a href="/cgi-bin/wxis.exe/iah/scripts/?IsisScript=iah.xis&amp;lang=pt&amp;base=TITLE&amp;pathLibrary=MAIN" target="_blank">REVISTAS</a>, 
+
+<a href="/cgi-bin/wxis.exe//iah/?base=LILACS&amp;lang=pt" target="_blank">LILACS</a></span>
+
+</li>
+
+</ul>
+
+</div>

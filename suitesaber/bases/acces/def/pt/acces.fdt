@@ -1,0 +1,10 @@
+F|10|Nome do usuário|0|0|||X|||||||||0||
+F|20|Login|0|0|||X||10|||||||0||
+F|30|Senha|0|0|||P||10|||||||0||
+F|40|Perfil|0|0|ab||C|||P|%path_database%par/profiles/profiles.lst|||||0||
+F|50|Data limite|0|0|||D|||||||||0||
+F|60|Data ISO|0|0|||ISO|||||||||0||
+F|70|Email|0|0|||X|||||||||0||
+F|80|Instituição|0|0|||X|||||||||0||
+F|90|Telefone|0|0|||X|||||||||0||
+F|100|Número|0|0|||X|||||||mfn()||0||

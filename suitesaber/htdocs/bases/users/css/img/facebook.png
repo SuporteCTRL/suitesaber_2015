@@ -1,0 +1,654 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+    <head>
+        <title>Komodo Media   &raquo; Downloads</title>
+        
+        <!--
+        
+         // komodomedia v4 - codename expedition aka code commando - go commando	
+        
+        hi curious person that is viewing source of my site.  now that you are here, i know 
+        that you are an uber-nerd.  now i can talk about star wars and use my lame han solo
+        voice...see i'm doing it right now.  ok, so you are a nerd and you like the codes...
+        the html codes to be exact.  well, you are in a semi-decent area to learn.
+        
+        feel free to learn from, analyze, and/or use the techniques used in this site.  i'm
+        just a regular dude that learned css/xhtml/js the same exact way you are doing now.
+        
+        whatever you do, don't clone this site.  i'll have to hack your site.
+        
+        -->
+        
+        <!-- this is the section where i explain the data, this is data about data, yeah im a dork -->
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta http-equiv="imagetoolbar" content="no" />
+        <meta name="author" content="Rogie King" />
+        <meta name="copyright" content="Rogie King" />
+        <meta name="company" content="Komodo Media" />
+        <meta name="revisit-after" content="3 days" />
+        
+        
+        <!-- Facebook Like Stuffes -->
+        <meta property="og:title" content="Komodo Media" />
+        <meta property="og:image" content="http://d2dnrmagaqciul.cloudfront.net/wp-content/uploads/2009/06/komodomedia_wood_32.png" />
+        
+        <link rel="alternate" type="application/rss+xml" title="Komodo Media &raquo; Downloads Comments Feed" href="http://www.komodomedia.com/download/feed/" />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.komodomedia.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.komodomedia.com/wp-includes/wlwmanifest.xml" /> 
+<link rel='index' title='Komodo Media' href='http://www.komodomedia.com' />
+<meta name="generator" content="WordPress 2.9.2" />
+<link rel='canonical' href='http://www.komodomedia.com/download/' />
+       
+               
+        <!-- this is where i put a mini little cute icon that makes you happy :)  -->
+        <link rel="shortcut icon" href="http://d2dnrmagaqciul.cloudfront.net/favicon.ico" type="image/x-icon" />
+        
+        <!-- Feed Me - Ommm Nommm Nom -->
+        <link rel="alternate" type="application/rss+xml" title="The Blog" href="http://feeds.feedburner.com/komodomedia" />
+        <link rel="alternate" type="application/rss+xml" title="The Nerdlab" href="http://feeds.feedburner.com/komodomedia_nerdlab" />
+        <link rel="alternate" type="application/rss+xml" title="The Inspiration" href="http://feeds.feedburner.com/komodomedia_inspiration" />
+        <link rel="alternate" type="application/rss+xml" title="Komodomedia's del.icio.us bookmarks" href="http://del.icio.us/rss/rogie" /> 
+        <link rel="alternate" type="application/rss+xml" title="My Twitter Feed (RSS)" href="http://twitter.com/statuses/user_timeline/9085252.rss" />
+	    <link rel="alternate" type="application/atom+xml" title="My Twitter Feed (Atom)" href="http://twitter.com/statuses/user_timeline/9085252.atom" />
+        <link rel="alternate" type="application/atom+xml" title="Everything: Bookmarks, Blog Posts, Twitter Updates..." href="http://friendfeed.com/tingo?format=atom" /> 
+        
+        
+        <link rel="pingback" href="http://www.komodomedia.com/xmlrpc.php" />
+        
+        <!-- this is where i seperate the presentation of the site into, the CSS, the magic -->
+		<link rel="stylesheet" href="http://d2dnrmagaqciul.cloudfront.net/wp-content/themes/kmv4/style.css?aug222010" type="text/css" media="screen" />
+         
+        <!-- this is where i insert sleight-of-hand javascriptery -->
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.1/jquery.min.js"></script> 
+        <script type="text/javascript" src="http://d2dnrmagaqciul.cloudfront.net/wp-content/themes/kmv4/scripts/jquery.lazyload.pack.js"></script> 
+
+        <!-- Is my breath fresh and minty? -->
+        <!--script src="/mint/?js" type="text/javascript"></script-->
+                         
+        <!-- this is where i am forced to link to another CSS file so that IE6 (bagga smashed buttholes) is pseudo-bearable  -->   
+        <!--[if lte IE 7]>
+        <link href="http://d2dnrmagaqciul.cloudfront.net/wp-content/themes/kmv4/style/ie.css?new" type="text/css" rel="stylesheet" media="screen" />
+        <![endif]-->
+        
+    </head>
+    
+    <body id="body" class="download">
+    	
+    	<script type="text/javascript">document.getElementById('body').className += ' deathray';</script>
+    	
+        <!-- START SITE -->
+        <div id="site">
+        	
+            <!-- START HEADER -->
+            <div id="header">
+                <div class="content">
+                    <div id="identity">
+                        <a href="http://www.komodomedia.com/" title="Home" class="home">Komodo Media</a>
+                        <small class="skills">blog, webdesign, illustration &amp; newsk00l javascript</small>
+                    </div>
+                                        <div id="nav">
+                        <ul>
+                            <li class="home ">
+                                <a href="/" title="home page, full of awesomeness">
+                                    Home
+                                </a>
+                            </li>
+                            <li class="blog ">
+                                <a href="/blog" title="the blog, or journal">
+                                    Blog
+                                </a>
+                            </li>
+                            <li class="lab ">
+                                <a href="/lab" title="the laboratory">
+                                    The Lab
+                                </a>
+                            </li>
+                            <li class="folio ">
+                                <a href="/portfolio" title="stuff i have made">
+                                    Portfolio
+                                </a>
+                            </li>
+                            <li class="downloads current">
+                                <a href="/download" title="stuff you can download">
+                                    Downloads
+                                </a>
+                            </li>
+                            <li class="contact ">
+                                <a href="/contact" title="talk to me">
+                                    Contact
+                                </a>
+                            </li>
+                            <li class="about ">
+                                <a href="/about" title="random bits about me and this company">
+                                    About
+                                </a>
+                            </li>
+                        </ul>
+                        
+                    </div>
+                    
+                    <div id="search">
+                        <form action="http://www.komodomedia.com/" id="searchform" method="get" enctype="text/plain">
+    <fieldset>
+        <label for="search_input">
+            Search Here...
+        </label>
+        <input id="search_input" type="text" name="s" value="" />
+    </fieldset>
+</form>
+                    </div>
+                </div>
+                <div class="volcanoes"></div>
+            </div>
+            <!-- END HEADER -->
+            
+            <!-- START MAIN CONTENT -->
+            <div id="main">
+            	
+        <div id="ad_block">        
+        <div id="ads_wide"><script type="text/javascript">
+    /* <![CDATA[ */
+    document.write('<scr' + 'ipt type="text/javascript" src="http://adn.fusionads.net/www/pull/get.php?zoneid=48&charset=UTF-8&withtext=1&cb=' + Math.floor(Math.random() * 99999999999) + '"></scr' + 'ipt>');
+    /* ]]> */
+    </script>
+<a href="http://fusionads.net" title="Powered by Fusion Ads" class="powered_by_fusion">Powered by Fusion</a></div></div>
+            
+        <!-- DOWNLOADS LISTING -->
+        <ul id="portfolio_list">
+                        <li>
+            	<div class="portfolio_item_title">
+            		<h2><a name="hud-growl-theme" href="http://www.komodomedia.com/blog/2010/03/hud-growl-theme/">Hud Growl Theme</a></h2>
+            	</div>
+           		 <div class="content">
+			
+					<div class="portfolio_item">
+						<a href="http://www.komodomedia.com/downloads/Hud.growlStyle.zip" title="Download Hud Growl Theme">
+							<img src="http://d2dnrmagaqciul.cloudfront.net/wp-content/uploads/2010/03/hud_downloads_banner.jpg" alt="Hud Growl Theme" />
+						</a>
+							
+						<div class="portfolio_meta">		
+							<div class="portfolio_description">
+								<h3>Description</h3>
+								<div>
+									<p>I designed a theme for Growl, a Mac OSX based notification system, free for download.</p>
+									<p><a href="http://www.komodomedia.com/blog/2010/03/hud-growl-theme/">Read more <span class="amp">&amp;</span> comment&hellip;</a></p>
+								</div>
+							</div>
+								<div class="portfolio_more">
+								
+																<div class="license">
+									<h3>License</h3>
+								
+									<p>
+										<span xmlns:dc="http://purl.org/dc/elements/1.1/" property="dc:title">Hud</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-Share Alike 3.0 Unported License</a>.									</p>
+								
+								</div>
+																
+
+							</div>		
+							<div class="portfolio_thumbnails">
+																    							
+																<h3>Download</h3>
+								<div>
+									<p>
+										<a class="download" href="http://www.komodomedia.com/downloads/Hud.growlStyle.zip">Download it!</a>
+									</p>
+									
+								</div>
+																
+								<h3>Donate</h3>
+								<div>
+								<p><form action="https://www.paypal.com/cgi-bin/webscr" method="post"><input type="hidden" name="cmd" value="_s-xclick" /><input type="hidden" name="hosted_button_id" value="6383325" /><input type="image" src="https://www.paypal.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!" /><img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" /></form></p>
+								<p><small><span style="color:#ff9900;font-size:11px;">&#x2605;</span> A donation helps me buy baby food.</small></p>
+
+								</div>
+							</div>
+							
+							
+						</div>
+						
+						 
+						<em class="overlay"></em>
+						
+						
+					</div>     
+					
+					     		         		
+            		
+            	</div>
+            	<!-- /.content -->
+
+            </li>
+                        <li>
+            	<div class="portfolio_item_title">
+            		<h2><a name="social-network-icon-pack" href="http://www.komodomedia.com/blog/2009/06/social-network-icon-pack/">Social Network Icon Pack</a></h2>
+            	</div>
+           		 <div class="content">
+			
+					<div class="portfolio_item">
+						<a href="http://www.komodomedia.com/downloads/social_networking_iconpack.zip" title="Download Social Network Icon Pack">
+							<img src="http://d2dnrmagaqciul.cloudfront.net/wp-content/uploads/2009/06/social_network_icons_downloads_banner.png" alt="Social Network Icon Pack" />
+						</a>
+							
+						<div class="portfolio_meta">		
+							<div class="portfolio_description">
+								<h3>Description</h3>
+								<div>
+									<p>Introducing over 100 ridiculously rad social networking icons, skillfully hand-hewn and lovingly crafted by me. I've developed these social networking icons for the top networks around. They're all the rage with you crazy newsk00l intarweb kids.</p>
+									<p><a href="http://www.komodomedia.com/blog/2009/06/social-network-icon-pack/">Read more <span class="amp">&amp;</span> comment&hellip;</a></p>
+								</div>
+							</div>
+								<div class="portfolio_more">
+								
+																<div class="license">
+									<h3>License</h3>
+								
+									<p>
+										Free for use with a link back to komodomedia.com. <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/80x15.png" /></a><br /><span xmlns:dc="http://purl.org/dc/elements/1.1/" property="dc:title">Social Network Icon Pack</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://komodomedia.com" property="cc:attributionName" rel="cc:attributionURL">Komodo Media, Rogie King</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-Share Alike 3.0 Unported License</a>.<br />Based on a work at <a xmlns:dc="http://purl.org/dc/elements/1.1/" href="http://www.komodomedia.com/download/#social-network-icon-pack" rel="dc:source">www.komodomedia.com</a>.									</p>
+								
+								</div>
+																
+
+							</div>		
+							<div class="portfolio_thumbnails">
+																    							
+																<h3>Download</h3>
+								<div>
+									<p>
+										<a class="download" href="http://www.komodomedia.com/downloads/social_networking_iconpack.zip">Download it!</a>
+									</p>
+									
+								</div>
+																
+								<h3>Donate</h3>
+								<div>
+								<p><form action="https://www.paypal.com/cgi-bin/webscr" method="post"><input type="hidden" name="cmd" value="_s-xclick" /><input type="hidden" name="hosted_button_id" value="6383325" /><input type="image" src="https://www.paypal.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!" /><img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" /></form></p>
+								<p><small><span style="color:#ff9900;font-size:11px;">&#x2605;</span> A donation helps me buy baby food.</small></p>
+
+								</div>
+							</div>
+							
+							
+						</div>
+						
+						 
+						<em class="overlay"></em>
+						
+						
+					</div>     
+					
+					     		         		
+            		
+            	</div>
+            	<!-- /.content -->
+
+            </li>
+                        <li>
+            	<div class="portfolio_item_title">
+            		<h2><a name="sign-in-with-twitter-facebook-and-openid" href="http://www.komodomedia.com/blog/2009/06/sign-in-with-twitter-facebook-and-openid/">Sign in with Twitter, Facebook, OpenID and LinkedIn</a></h2>
+            	</div>
+           		 <div class="content">
+			
+					<div class="portfolio_item">
+						<a href="http://www.komodomedia.com/downloads/social_signin_buttons_icons.zip" title="Download Sign in with Twitter, Facebook, OpenID and LinkedIn">
+							<img src="http://d2dnrmagaqciul.cloudfront.net/wp-content/uploads/2009/06/social_signin_folio.png" alt="Sign in with Twitter, Facebook, OpenID and LinkedIn" />
+						</a>
+							
+						<div class="portfolio_meta">		
+							<div class="portfolio_description">
+								<h3>Description</h3>
+								<div>
+									<p>A finely crafted set of social sign in icons and buttons. Features 16x16, 32x32 icons and buttons with default, hover and pressed states. Free for personal and commercial use with link back.</p>
+									<p><a href="http://www.komodomedia.com/blog/2009/06/sign-in-with-twitter-facebook-and-openid/">Read more <span class="amp">&amp;</span> comment&hellip;</a></p>
+								</div>
+							</div>
+								<div class="portfolio_more">
+								
+																<div class="license">
+									<h3>License</h3>
+								
+									<p>
+										Licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-Share Alike 3.0 Unported License <img alt="Creative Commons License" style="border-width:0;vertical-align:middle;" src="http://i.creativecommons.org/l/by-sa/3.0/80x15.png" /></a>									</p>
+								
+								</div>
+																
+
+							</div>		
+							<div class="portfolio_thumbnails">
+																    							
+																<h3>Download</h3>
+								<div>
+									<p>
+										<a class="download" href="http://www.komodomedia.com/downloads/social_signin_buttons_icons.zip">Download it!</a>
+									</p>
+									
+								</div>
+																
+								<h3>Donate</h3>
+								<div>
+								<p><form action="https://www.paypal.com/cgi-bin/webscr" method="post"><input type="hidden" name="cmd" value="_s-xclick" /><input type="hidden" name="hosted_button_id" value="6383325" /><input type="image" src="https://www.paypal.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!" /><img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" /></form></p>
+								<p><small><span style="color:#ff9900;font-size:11px;">&#x2605;</span> A donation helps me buy baby food.</small></p>
+
+								</div>
+							</div>
+							
+							
+						</div>
+						
+						 
+						<em class="overlay"></em>
+						
+						
+					</div>     
+					
+					     		         		
+            		
+            	</div>
+            	<!-- /.content -->
+
+            </li>
+                        <li>
+            	<div class="portfolio_item_title">
+            		<h2><a name="sexy-music-album-overlays" href="http://www.komodomedia.com/blog/2009/03/sexy-music-album-overlays/">Sexy Music Album Overlays</a></h2>
+            	</div>
+           		 <div class="content">
+			
+					<div class="portfolio_item">
+						<a href="http://d2dnrmagaqciul.cloudfront.net/projects/music_covers/album_overlays.zip" title="Download Sexy Music Album Overlays">
+							<img src="http://d2dnrmagaqciul.cloudfront.net/wp-content/uploads/2009/03/music_overlays_banner.jpg" alt="Sexy Music Album Overlays" />
+						</a>
+							
+						<div class="portfolio_meta">		
+							<div class="portfolio_description">
+								<h3>Description</h3>
+								<div>
+									<p>3 sexy music album overlays for your blog and music feeds. I hear its all the rage with you kids these days. Jewel Case, Vinyl Sleeve, Compact Disc and empty album states to tickle your fancy. Rock.</p>
+									<p><a href="http://www.komodomedia.com/blog/2009/03/sexy-music-album-overlays/">Read more <span class="amp">&amp;</span> comment&hellip;</a></p>
+								</div>
+							</div>
+								<div class="portfolio_more">
+								
+																<div class="license">
+									<h3>License</h3>
+								
+									<p>
+										Licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-Share Alike 3.0 Unported License <img alt="Creative Commons License" style="border-width:0;vertical-align:middle;" src="http://i.creativecommons.org/l/by-sa/3.0/80x15.png" /></a>									</p>
+								
+								</div>
+																
+
+							</div>		
+							<div class="portfolio_thumbnails">
+																    							
+																<h3>Download</h3>
+								<div>
+									<p>
+										<a class="download" href="http://d2dnrmagaqciul.cloudfront.net/projects/music_covers/album_overlays.zip">Download it!</a>
+									</p>
+									
+								</div>
+																
+								<h3>Donate</h3>
+								<div>
+								<p><form action="https://www.paypal.com/cgi-bin/webscr" method="post"><input type="hidden" name="cmd" value="_s-xclick" /><input type="hidden" name="hosted_button_id" value="6383325" /><input type="image" src="https://www.paypal.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!" /><img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" /></form></p>
+								<p><small><span style="color:#ff9900;font-size:11px;">&#x2605;</span> A donation helps me buy baby food.</small></p>
+
+								</div>
+							</div>
+							
+							
+						</div>
+						
+						 
+						<em class="overlay"></em>
+						
+						
+					</div>     
+					
+					     		         		
+            		
+            	</div>
+            	<!-- /.content -->
+
+            </li>
+                        <li>
+            	<div class="portfolio_item_title">
+            		<h2><a name="social-media-mini-iconpack" href="http://www.komodomedia.com/blog/2008/12/social-media-mini-iconpack/">Social Media Mini Icon Pack</a></h2>
+            	</div>
+           		 <div class="content">
+			
+					<div class="portfolio_item">
+						<a href="http://www.komodomedia.com/downloads/social_media_mini_iconpack.zip" title="Download Social Media Mini Icon Pack">
+							<img src="http://d2dnrmagaqciul.cloudfront.net/wp-content/uploads/2008/12/smmi_downloads_banner.jpg" alt="Social Media Mini Icon Pack" />
+						</a>
+							
+						<div class="portfolio_meta">		
+							<div class="portfolio_description">
+								<h3>Description</h3>
+								<div>
+									<p>This icon set consists of 30 (16x16) finely crafted social media icons. They are free to use with a link back to komodomedia.com. Put them on your blog or on your website to help users bookmark or share your site socially. I hear its all-the-rage these days.</p>
+									<p><a href="http://www.komodomedia.com/blog/2008/12/social-media-mini-iconpack/">Read more <span class="amp">&amp;</span> comment&hellip;</a></p>
+								</div>
+							</div>
+								<div class="portfolio_more">
+								
+																<div class="license">
+									<h3>License</h3>
+								
+									<p>
+										Free for use with a link back to komodomedia.com. <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/80x15.png" /></a><br /><span xmlns:dc="http://purl.org/dc/elements/1.1/" property="dc:title">Social Network Icon Pack</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://komodomedia.com" property="cc:attributionName" rel="cc:attributionURL">Komodo Media, Rogie King</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-Share Alike 3.0 Unported License</a>.<br />Based on a work at <a xmlns:dc="http://purl.org/dc/elements/1.1/" href="http://www.komodomedia.com/download/#social-network-icon-pack" rel="dc:source">www.komodomedia.com</a>.									</p>
+								
+								</div>
+																
+
+							</div>		
+							<div class="portfolio_thumbnails">
+																    							
+																<h3>Download</h3>
+								<div>
+									<p>
+										<a class="download" href="http://www.komodomedia.com/downloads/social_media_mini_iconpack.zip">Download it!</a>
+									</p>
+									
+								</div>
+																
+								<h3>Donate</h3>
+								<div>
+								<p><form action="https://www.paypal.com/cgi-bin/webscr" method="post"><input type="hidden" name="cmd" value="_s-xclick" /><input type="hidden" name="hosted_button_id" value="6383325" /><input type="image" src="https://www.paypal.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!" /><img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" /></form></p>
+								<p><small><span style="color:#ff9900;font-size:11px;">&#x2605;</span> A donation helps me buy baby food.</small></p>
+
+								</div>
+							</div>
+							
+							
+						</div>
+						
+						 
+						<em class="overlay"></em>
+						
+						
+					</div>     
+					
+					     		         		
+            		
+            	</div>
+            	<!-- /.content -->
+
+            </li>
+            		</ul>
+    
+            </div>
+            <!-- END MAIN CONTENT -->
+            
+            <!-- START FOOTER -->
+            <div id="footer">
+             <div class="wrap">
+                <div class="content">
+                    
+                    <div id="social_networks">
+						<div class="recent_tracks">
+							
+							<h4>I'm Jammin' out to <small>if you see britney spears  or hillary duff here, it's my wife's ...*cough* </small></h4>
+							<div id="recent_tracks">
+								
+								
+								
+<!-- RETRIEVING last_fm_tracks FROM CACHE 1317057984 --><ul class="playlist"><li class="cover0">
+					<a href="http://www.last.fm/music/Jesus Culture/_/One Thing Remains">
+		          		<img src="http://userserve-ak.last.fm/serve/126/57201063.jpg" alt="Jesus Culture: One Thing Remains" />
+		        		<span class="info">
+		        			<span class="artist">Jesus Culture</span>
+		       				<span class="album">One Thing Remains</span>
+		       			</span>
+		       			<em class="disc"></em>
+		       			<span class="fader"></span>
+		       		</a>
+				</li><li class="cover1">
+					<a href="http://www.last.fm/music/Jesus Culture/_/I Want To know You">
+		          		<img src="http://userserve-ak.last.fm/serve/126/57201063.jpg" alt="Jesus Culture: I Want To know You" />
+		        		<span class="info">
+		        			<span class="artist">Jesus Culture</span>
+		       				<span class="album">I Want To know You</span>
+		       			</span>
+		       			<em class="disc"></em>
+		       			<span class="fader"></span>
+		       		</a>
+				</li><li class="cover2">
+					<a href="http://www.last.fm/music/Jesus Culture/_/06 Freedom Reigns">
+		          		<img src="http://userserve-ak.last.fm/serve/126/57201063.jpg" alt="Jesus Culture: 06 Freedom Reigns" />
+		        		<span class="info">
+		        			<span class="artist">Jesus Culture</span>
+		       				<span class="album">06 Freedom Reigns</span>
+		       			</span>
+		       			<em class="disc"></em>
+		       			<span class="fader"></span>
+		       		</a>
+				</li><li class="cover3">
+					<a href="http://www.last.fm/music/Jesus Culture/_/Rooftops">
+		          		<img src="http://userserve-ak.last.fm/serve/126/57201063.jpg" alt="Jesus Culture: Rooftops" />
+		        		<span class="info">
+		        			<span class="artist">Jesus Culture</span>
+		       				<span class="album">Rooftops</span>
+		       			</span>
+		       			<em class="disc"></em>
+		       			<span class="fader"></span>
+		       		</a>
+				</li><li class="clear"><!-- --></li><li class="cover4">
+					<a href="http://www.last.fm/music/Jesus Culture/_/Let it Rain">
+		          		<img src="http://userserve-ak.last.fm/serve/126/57201063.jpg" alt="Jesus Culture: Let it Rain" />
+		        		<span class="info">
+		        			<span class="artist">Jesus Culture</span>
+		       				<span class="album">Let it Rain</span>
+		       			</span>
+		       			<em class="disc"></em>
+		       			<span class="fader"></span>
+		       		</a>
+				</li><li class="cover5">
+					<a href="http://www.last.fm/music/Jesus Culture/_/06 Freedom Reigns">
+		          		<img src="http://userserve-ak.last.fm/serve/126/57201063.jpg" alt="Jesus Culture: 06 Freedom Reigns" />
+		        		<span class="info">
+		        			<span class="artist">Jesus Culture</span>
+		       				<span class="album">06 Freedom Reigns</span>
+		       			</span>
+		       			<em class="disc"></em>
+		       			<span class="fader"></span>
+		       		</a>
+				</li><li class="cover6">
+					<a href="http://www.last.fm/music/Jesus Culture/_/I Want To know You">
+		          		<img src="http://userserve-ak.last.fm/serve/126/57201063.jpg" alt="Jesus Culture: I Want To know You" />
+		        		<span class="info">
+		        			<span class="artist">Jesus Culture</span>
+		       				<span class="album">I Want To know You</span>
+		       			</span>
+		       			<em class="disc"></em>
+		       			<span class="fader"></span>
+		       		</a>
+				</li><li class="cover7">
+					<a href="http://www.last.fm/music/Jesus Culture/_/03 You Are My Passion">
+		          		<img src="http://userserve-ak.last.fm/serve/126/57201063.jpg" alt="Jesus Culture: 03 You Are My Passion" />
+		        		<span class="info">
+		        			<span class="artist">Jesus Culture</span>
+		       				<span class="album">03 You Are My Passion</span>
+		       			</span>
+		       			<em class="disc"></em>
+		       			<span class="fader"></span>
+		       		</a>
+				</li></ul>								
+							</div>
+							<div class="last_fm"><a href="#">Last.FM</a></div>
+							
+						</div>
+												<div class="recent_tweets">
+							
+							<h4>Twitter Status <small>twitter equals sign addiction</small></h4>
+							<div id="recent_tweets">
+								<ul class="twitter">
+								<li class="tweet tweet_0"><p><span class="who"><img src="http://a2.twimg.com/profile_images/1385229687/skull_logo_normal.png" alt="hypoxik's avatar"/></span><a href="http://twitter.com/hypoxik" class="hypoxik">hypoxik</a> <a href="http://twitter.com/rogie">@rogie</a> exactly</p></li><li class="tweet tweet_1"><p><span class="who"><img src="http://a2.twimg.com/profile_images/1557816248/puW7d_normal.png" alt="ilovecomputers's avatar"/></span><a href="http://twitter.com/ilovecomputers" class="ilovecomputers">ilovecomputers</a> RT <a href="http://twitter.com/acalzadilla">@acalzadilla</a>: Jeez, FINALLY! - “<a href="http://twitter.com/rogie">@rogie</a>: Textmate 2 will be here this year <a href="http://t.co/XU6Wyt0i">http://t.co/XU6Wyt0i</a>” (via <a href="http://twitter.com/parenteau">@parenteau</a> )</p></li><li class="tweet tweet_2"><p><span class="who"><img src="http://a1.twimg.com/profile_images/1477350574/lucywoodman_normal.png" alt="dolfingz's avatar"/></span><a href="http://twitter.com/dolfingz" class="dolfingz">dolfingz</a> <a href="http://twitter.com/rogie">@rogie</a> You doodled my name! I am honoured - Thank you! I like it. Now if you could just come up with a monogram for Woodman... :D</p></li><li class="tweet tweet_3"><p><span class="who"><img src="http://a0.twimg.com/profile_images/1497592253/insta_drob_normal.jpg" alt="davidrdesign's avatar"/></span><a href="http://twitter.com/davidrdesign" class="davidrdesign">davidrdesign</a> My top news stories: <a href="http://t.co/vZmlH3Px">http://t.co/vZmlH3Px</a> thanks <a href="http://twitter.com/mwalsh">@mwalsh</a>, <a href="http://twitter.com/hnshah">@hnshah</a> &amp; <a href="http://twitter.com/rogie">@rogie</a></p></li><li class="tweet tweet_4"><p><span class="who"><img src="http://a3.twimg.com/profile_images/1522384443/anthony-calzadilla-2011_normal.png" alt="acalzadilla's avatar"/></span><a href="http://twitter.com/acalzadilla" class="acalzadilla">acalzadilla</a> Jeez, FINALLY! - “<a href="http://twitter.com/rogie">@rogie</a>: Textmate 2 will be here this year <a href="http://t.co/XU6Wyt0i">http://t.co/XU6Wyt0i</a>” (via <a href="http://twitter.com/parenteau">@parenteau</a> )</p></li></ul>	
+								</ul>
+								<div class="fadeout"><!-- --></div> 
+							</div>
+							<div class="follow">
+								<a href="http://twitter.com/rogie" class="follow">Follow me on twitter</a>
+							</div>
+							<div class="clearboth"><!-- --></div>
+						</div>
+											</div>
+                    
+                    <div id="subscribe_links">
+                        <ul>
+                            <li class="nerdlab">
+                                <a href="http://feeds.feedburner.com/komodomedia_nerdlab" title="Subscribe to the Nerdlab">nerdlab</a>
+                            </li>
+                            <li class="radness">
+                                <a title="Subscribe to the Inspiration" href="http://feeds.feedburner.com/komodomedia_inspiration">inspiration</a>
+                            </li>
+                            <li class="blog">
+                                <a href="http://feeds.feedburner.com/komodomedia" title="Subscribe to the Blog">blog</a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <small id="site_version">
+                        v.4 codename "expedition"
+                    </small>
+                    
+                                        
+            	</div>
+            	
+                <div class="toucan"></div>
+            	
+            	</div>
+            </div>
+            <!-- END FOOTER -->
+            
+        </div>
+        <!-- END SITE -->
+        <script type="text/javascript" src="http://d2dnrmagaqciul.cloudfront.net/wp-content/themes/kmv4/scripts/cufon-yui.js"></script>           
+        <script type="text/javascript" src="http://d2dnrmagaqciul.cloudfront.net/wp-content/themes/kmv4/scripts/pwn.font.js"></script>
+        <script type="text/javascript">
+            Cufon.replace('h1,h2,h3,li.year',{hover:true});
+            Cufon.now();
+            document.getElementById('body').className += ' cufon';
+        </script>
+        
+        <script type="text/javascript" src="http://d2dnrmagaqciul.cloudfront.net/wp-content/themes/kmv4/scripts/zoombox/jquery.zoombox.js?autorun"></script>
+                <script type="text/javascript" src="http://d2dnrmagaqciul.cloudfront.net/wp-content/themes/kmv4/scripts/global.js?new"></script>
+                
+        <script type="text/javascript">
+			  (function() {
+			    var t   = document.createElement('script');
+			    t.type  = 'text/javascript';
+			    t.async = true;
+			    t.id    = 'gauges-tracker';
+			    t.setAttribute('data-site-id',
+			                   '4d596ac46bb4ba2c48000002');
+			    t.src = '//secure.gaug.es/track.js';
+			    var s = document.getElementsByTagName('script')[0];
+			    s.parentNode.insertBefore(t, s);
+			  })();
+			</script>
+        
+    </body>
+</html>
+
+<!-- Served from: komodomedia.com @ 2011-09-26 10:18:46 by W3 Total Cache -->
