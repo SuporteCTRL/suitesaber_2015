@@ -40,19 +40,32 @@ include("../common/get_post.php");
 $base=$arrHttp["base"];
 $fp=file($db_path."bases.dat");
 $copies_link="";
-foreach ($fp as $value){	$value=trim($value);	$v=explode('|',$value);
-	if ($v[0]==$base){		if ($v[2]=="Y") $copies_link=" checked";
-		break;	}}
+foreach ($fp as $value){
+	$value=trim($value);
+	$v=explode('|',$value);
+	if ($v[0]==$base){
+		if ($v[2]=="Y") $copies_link=" checked";
+		break;
+	}
+}
 
 
 include("../common/header.php");
 echo "<script src=../dataentry/js/lr_trim.js></script>"
 ?>
 <script>
-function Enviar(){	control=Trim(document.forma1.control_n.value)
-	if (control=="" || control=="0"){		if (confirm("<?php echo $msgstr["resetcn0"]?>")){
+function Enviar(){
+	control=Trim(document.forma1.control_n.value)
+	if (control=="" || control=="0"){
+		if (confirm("<?php echo $msgstr["resetcn0"]?>")){
 			if (confirm("<?php echo $msgstr["seguro"]?>")){
-			}else{				return			}		}else{			return		}	}
+			}else{
+				return
+			}
+		}else{
+			return
+		}
+	}
 	control=Trim(document.forma1.inv_n.value)
 	if (control=="" || control=="0"){
 		if (confirm("<?php echo $msgstr["resetinv0"]?>")){
@@ -64,7 +77,8 @@ function Enviar(){	control=Trim(document.forma1.control_n.value)
 			return
 		}
 	}
-	document.forma1.submit()}
+	document.forma1.submit()
+}
 
 
 </script>
@@ -83,7 +97,7 @@ if (isset($arrHttp["encabezado"])) {
 	<div class="actions">
 <?php echo "<a href=\"menu_mantenimiento.php?base=".$base."$encabezado\" class=\"defaultButton backButton\">";
 ?>
-
+					<img src="../images/defaultButton_iconBorder.gif" alt="" title="" />
 					<span><strong><?php echo $msgstr["back"]?></strong></span>
 				</a>
 	</div>
@@ -94,7 +108,7 @@ if (isset($arrHttp["encabezado"])) {
 <?php
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 	echo "<a href=../documentacion/edit.php?archivo=". $_SESSION["lang"]."/copies_linkdb.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "&nbsp; &nbsp; Script: copies_linkdb.php</font>\n";
+echo "<font color=white>&nbsp; &nbsp; Script: copies_linkdb.php</font>\n";
 echo "
 	</div>
 <div class=\"middle form\">
@@ -105,7 +119,8 @@ echo "<form name=forma1 action=resetautoinc_update.php method=post>
 if (isset($arrHttp["encabezado"]))  echo "<input type=hidden name=encabezado value=s>\n";
 echo "<h3>".$msgstr["database"]." ".$base."<p>";
 echo "<br><input type=checkbox name=copies value=on $copies_link>".$msgstr["incopies"].".<br>".$msgstr["copiesreq"]."</h3>";
-echo "<input type=submit name=mark value=".$msgstr["update"].">";
+echo "<input type=submit name=mark value=".$msgstr["update"].">";
+
 echo "<form></div></div>";
 include("../common/footer.php");
 echo "</body></html>";

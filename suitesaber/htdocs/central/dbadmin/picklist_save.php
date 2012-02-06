@@ -59,7 +59,7 @@ if (isset($arrHttp["desde"])){
 	echo "<a href=\"picklist.php?base=". $arrHttp["base"]."&row=".$arrHttp["row"]."&picklist=".$arrHttp["picklist"]."\" class=\"defaultButton backButton\">";
 }
 echo "
-		
+					<img src=\"../images/defaultButton_iconBorder.gif\" alt=\"\" title=\"\" />
 					<span><strong>". $msgstr["back"]."</strong></span>
 				</a>";
 echo "			</div>
@@ -70,7 +70,7 @@ echo "			</div>
 <a href=../documentacion/ayuda.php?help=".$_SESSION["lang"]."/picklist_tab.html target=_blank>".$msgstr["help"]."</a>&nbsp &nbsp;";
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 	echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/picklist_tab.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "&nbsp; &nbsp; Script: picklist_save.php" ;
+echo "<font color=white>&nbsp; &nbsp; Script: picklist_save.php" ;
 
 echo "</font>
 	</div>

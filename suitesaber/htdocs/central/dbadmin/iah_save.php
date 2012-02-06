@@ -68,7 +68,7 @@ if (isset($arrHttp["encabezado"])){
 if (isset($arrHttp["encabezado"]))
 	echo "<a href=\"menu_modificardb.php?base=".$arrHttp["base"]."$encabezado\" class=\"defaultButton backButton\">";
 ?>
-		
+		<img src="../images/defaultButton_iconBorder.gif" alt="" title="" />
 		<span><strong><?php echo $msgstr["back"]?></strong></span></a>
 	</div>
 	<div class="spacer">&#160;</div>
@@ -78,7 +78,7 @@ if (isset($arrHttp["encabezado"]))
 <?php
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
  	echo "\<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/iah_edit_db.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "&nbsp; &nbsp;&nbsp; &nbsp; Script: iah_save.php";
+echo "&nbsp; &nbsp;<font color=white>&nbsp; &nbsp; Script: iah_save.php";
 ?>
 </font>
 	</div>

@@ -54,14 +54,15 @@ if (isset($arrHttp["encabezado"])){
 }
 echo "
 	<div class=\"sectionInfo\">
-	<div class=\"breadcrumb\"><h3>".
+	<div class=\"breadcrumb\">".
 	$msgstr["translate"]."
-	</h3></div>
+	</div>
 	<div class=\"actions\">\n";
 if (isset($arrHttp["encabezado"])){
 	echo "<a href=\"../common/inicio.php?reinicio=s";
 	if (isset($arrHttp["base"]))echo "&base=".$arrHttp["base"];
 	echo "\" class=\"defaultButton backButton\">
+		<img src=\"../images/defaultButton_iconBorder.gif\" alt=\"\" title=\"\" />
 		<span><strong>". $msgstr["back"]."</strong></span>
 		</a>
 	";
@@ -70,43 +71,16 @@ echo "</div>
 			<div class=\"spacer\">&#160;</div>
 		</div>";
 ?>
-
-
-	<script>
-	$(function() {
-		$( "#tabs" ).tabs().find( ".ui-tabs-nav" ).sortable({ axis: "x" });
-	});
-	</script>
-		<style type="text/css">
-			/*demo page css*/
-			.demoHeaders { margin-top: 2em; }
-			#dialog_link {padding: .4em 1em .4em 20px;text-decoration: none;position: relative;}
-			#dialog_link span.ui-icon {margin: 0 5px 0 0;position: absolute;left: .2em;top: 50%;margin-top: -8px;}
-			ul#icons {margin: 0; padding: 0;}
-			ul#icons li {margin: 2px; position: relative; padding: 4px 0; cursor: pointer; float: left;  list-style: none;}
-			ul#icons span.ui-icon {float: left; margin: 0 4px;}
-		</style>
-
-
 <div class="helper">
 <a href=../documentacion/ayuda.php?help=<?php echo $_SESSION["lang"]?>/menu_traducir.html target=_blank><?php echo $msgstr["help"]?></a>&nbsp &nbsp;
 <?php
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 	echo "<a href=../documentacion/edit.php?archivo=". $_SESSION["lang"]."/menu_traducir.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "&nbsp; &nbsp; Script: menu_traducir.php";
+echo "<font color=white>&nbsp; &nbsp; Script: menu_traducir.php";
 ?>
 </font>
 	</div>
 <div class="middle homepage">
-
-		<div id="tabs">
-			<ul>
-				<li><a href="#tabs-1"><?php echo $msgstr["traducir"]?></a></li>
-				<li><a href="#tabs-2"><?php echo $msgstr["tradyudas"]?></a></li>
-			</ul>
-
-<div id="tabs-1">
-
 	<div class="mainBox" onmouseover="this.className = 'mainBox mainBoxHighlighted';" onmouseout="this.className = 'mainBox';">
 		<div class="boxTop">
 			<div class="btLeft">&#160;</div>
@@ -117,37 +91,37 @@ echo "&nbsp; &nbsp; Script: menu_traducir.php";
 				<h4><strong><?php echo $msgstr["traducir"]?></strong></h4>
 			</div>
 			<div class="sectionButtons">
-				<a href="translate.php?lang=<?php echo $_SESSION["lang"]?>&componente=admin.tab<?php echo $encabezado?>" class="menuButton tooltip listButton">
-
+				<a href="translate.php?lang=<?php echo $_SESSION["lang"]?>&componente=admin.tab<?php echo $encabezado?>" class="defaultButton multiLine listButton">
+					<img src="../images/mainBox_iconBorder.gif" alt="" title="" />
 					<span><strong><?php echo $msgstr["catalogacion"]?></strong></span>
 				</a>
 
-				<a href="translate.php?lang=<?php echo $_SESSION["lang"]?>&componente=dbadmin.tab<?php echo $encabezado?>" class="menuButton tooltip databaseButton">
-
+				<a href="translate.php?lang=<?php echo $_SESSION["lang"]?>&componente=dbadmin.tab<?php echo $encabezado?>" class="defaultButton multiLine databaseButton">
+					<img src="../images/mainBox_iconBorder.gif" alt="" title="" />
 					<span><strong><?php echo $msgstr["dbadmin"]?></strong></span>
 				</a>
-				<a href="translate.php?lang=<?php echo $_SESSION["lang"]?>&componente=soporte.tab<?php echo $encabezado?>" class="menuButton tooltip utilsButton">
-
+				<a href="translate.php?lang=<?php echo $_SESSION["lang"]?>&componente=soporte.tab<?php echo $encabezado?>" class="defaultButton multiLine utilsButton">
+					<img src="../images/mainBox_iconBorder.gif" alt="" title="" /
 					<span><strong><?php echo $msgstr["maintenance"]?></strong></span>
 				</a>
-                      <a href="translate.php?lang=<?php echo $_SESSION["lang"]?>&componente=prestamo.tab<?php echo $encabezado?>" class="menuButton tooltip importButton">
-
+                      <a href="translate.php?lang=<?php echo $_SESSION["lang"]?>&componente=prestamo.tab<?php echo $encabezado?>" class="defaultButton multiLine importButton">
+					<img src="../images/mainBox_iconBorder.gif" alt="" title="" /
 					<span><strong><?php echo $msgstr["prestamo"]?></strong></span>
 				</a>
-				 <a href="translate.php?lang=<?php echo $_SESSION["lang"]?>&componente=statistics.tab<?php echo $encabezado?>" class="menuButton tooltip statButton">
-
+				 <a href="translate.php?lang=<?php echo $_SESSION["lang"]?>&componente=statistics.tab<?php echo $encabezado?>" class="defaultButton multiLine statButton">
+					<img src="../images/mainBox_iconBorder.gif" alt="" title="" /
 					<span><strong><?php echo $msgstr["statistics"]?></strong></span>
 				</a>
-				<a href="translate.php?lang=<?php echo $_SESSION["lang"]?>&componente=acquisitions.tab<?php echo $encabezado?>" class="menuButton tooltip databaseButton">
-
+				<a href="translate.php?lang=<?php echo $_SESSION["lang"]?>&componente=acquisitions.tab<?php echo $encabezado?>" class="defaultButton multiLine databaseButton">
+					<img src="../images/mainBox_iconBorder.gif" alt="" title="" /
 					<span><strong><?php echo $msgstr["acquisitions"]?></strong></span>
 				</a>
-                <a href="translate.php?lang=<?php echo $_SESSION["lang"]?>&componente=iah_conf.tab<?php echo $encabezado?>" class="menuButton tooltip databaseButton">
-
+                <a href="translate.php?lang=<?php echo $_SESSION["lang"]?>&componente=iah_conf.tab<?php echo $encabezado?>" class="defaultButton multiLine databaseButton">
+					<img src="../images/mainBox_iconBorder.gif" alt="" title="" /
 					<span><strong><?php echo $msgstr["iah-conf"]?></strong></span>
 				</a>
-				<a href="translate.php?lang=<?php echo $_SESSION["lang"]?>&componente=profile.tab<?php echo $encabezado?>" class="menuButton tooltip userButton">
-
+				<a href="translate.php?lang=<?php echo $_SESSION["lang"]?>&componente=profile.tab<?php echo $encabezado?>" class="defaultButton multiLine userButton">
+					<img src="../images/mainBox_iconBorder.gif" alt="" title="" /
 					<span><strong><?php echo $msgstr["profiles"]?></strong></span>
 				</a>
 			</div>
@@ -158,8 +132,8 @@ echo "&nbsp; &nbsp; Script: menu_traducir.php";
 			<div class="bbRight">&#160;</div>
 		</div>
 	</div>
-</div>
-<div id="tabs-2">
+
+
 	<div class="mainBox" onmouseover="this.className = 'mainBox mainBoxHighlighted';" onmouseout="this.className = 'mainBox';">
 		<div class="boxTop">
 			<div class="btLeft">&#160;</div>
@@ -170,21 +144,21 @@ echo "&nbsp; &nbsp; Script: menu_traducir.php";
 				<h4><strong><?php echo $msgstr["tradyudas"]?></strong></h4>
 			</div>
 			<div class="sectionButtons">
-				<a href="trad_ayudas_dataentry.php?><?php echo $encabezado?>" class="menuButton tooltip listButton">
-
+				<a href="trad_ayudas_dataentry.php?><?php echo $encabezado?>" class="defaultButton multiLine listButton">
+					<img src="../images/mainBox_iconBorder.gif" alt="" title="" />
 					<span><strong><?php echo $msgstr["catalogacion"]?></strong></span>
 				</a>
 
-				<a href="trad_ayudas_adm.php?<?php echo $encabezado?>" class="menuButton tooltip databaseButton">
-
+				<a href="trad_ayudas_adm.php?<?php echo $encabezado?>" class="defaultButton multiLine databaseButton">
+					<img src="../images/mainBox_iconBorder.gif" alt="" title="" />
 					<span><strong><?php echo $msgstr["dbadmin"]?></strong></span>
 				</a>
-    			<a href="trad_ayudas_loan.php?lang=<?php echo $_SESSION["lang"]?>&componente=prestamo.php<?php echo $encabezado?>" class="menuButton tooltip importButton">
-
+    			<a href="trad_ayudas_loan.php?lang=<?php echo $_SESSION["lang"]?>&componente=prestamo.php<?php echo $encabezado?>" class="defaultButton multiLine importButton">
+					<img src="../images/mainBox_iconBorder.gif" alt="" title="" /
 					<span><strong><?php echo $msgstr["prestamo"]?></strong></span>
 				</a>
-				<a href="trad_ayudas_statistics.php?lang=<?php echo $_SESSION["lang"]?>&componente=estadisticas.php<?php echo $encabezado?>" class="menuButton tooltip statButton">
-
+				<a href="trad_ayudas_statistics.php?lang=<?php echo $_SESSION["lang"]?>&componente=estadisticas.php<?php echo $encabezado?>" class="defaultButton multiLine statButton">
+					<img src="../images/mainBox_iconBorder.gif" alt="" title="" /
 					<span><strong><?php echo $msgstr["statistics"]?></strong></span>
 				</a>
 
@@ -202,8 +176,6 @@ echo "&nbsp; &nbsp; Script: menu_traducir.php";
 <input type=hidden name=Opcion>
 </form>
 </div>
-</div>
-
 <?php include("../common/footer.php");?>
 
 </body>

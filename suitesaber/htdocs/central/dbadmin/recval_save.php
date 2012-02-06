@@ -42,9 +42,12 @@ else
 $lang=$_SESSION["lang"];
 $fp=fopen($db_path.$arrHttp["base"]."/def/".$_SESSION["lang"]."/".$arrHttp["fn"],"w");
 if (!$fp){
-	echo $arrHttp["base"]."/def/".$_SESSION["lang"]."/".$arrHttp["fn"].": ";	echo $msgstr["nopudoseractualizado"];
-	die;}
-foreach ($pft as $value){	$tag=substr($value,0,4);
+	echo $arrHttp["base"]."/def/".$_SESSION["lang"]."/".$arrHttp["fn"].": ";
+	echo $msgstr["nopudoseractualizado"];
+	die;
+}
+foreach ($pft as $value){
+	$tag=substr($value,0,4);
 	$value=trim(substr($value,4));
 	fwrite($fp,ltrim($tag, "0").":".urldecode($value)."\n###\n");
 }
@@ -62,7 +65,7 @@ echo "
 	<div class=\"breadcrumb\">".$msgstr["recval"].": ".$arrHttp["base"]."</div>
 	<div class=\"actions\">\n";
 echo "<a href=typeofrecs.php?base=". $arrHttp["base"].$encabezado." class=\"defaultButton backButton\">
-
+	<img src=\"../images/defaultButton_iconBorder.gif\" alt=\"\" title=\"\" />
 		<span><strong>". $msgstr["back"]."</strong></span>
 		</a>
 		</div>

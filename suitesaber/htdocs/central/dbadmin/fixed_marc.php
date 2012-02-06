@@ -56,7 +56,7 @@ if (isset($arrHttp["encabezado"]))
 else
 	$encabezado="";
 echo "<a href=menu_modificardb.php?base=". $arrHttp["base"].$encabezado." class=\"defaultButton cancelButton\">
-
+	
 	<span><strong>". $msgstr["cancel"]."</strong></span>
 	</a>
 	</div>
@@ -68,7 +68,7 @@ echo "<a href=menu_modificardb.php?base=". $arrHttp["base"].$encabezado." class=
 <?php
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 	echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/typeofrecs_marc.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "&nbsp; &nbsp; Script: fixed_marc.php";
+echo "<font color=white>&nbsp; &nbsp; Script: fixed_marc.php";
 ?>
 </font>
 	</div>

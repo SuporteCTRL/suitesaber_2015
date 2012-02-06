@@ -1,6 +1,21 @@
+
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <script type="text/javascript" src="jqwidgetstabmenu.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            jqwidgetstabmenu("tabmenuid");
+        });
+    </script>
+	
+	
 	<script>
 	$(function() {
+		$( ".selector" ).tabs({ cookie: { expires: 30 } });
 		$( "#tabs" ).tabs().find( ".ui-tabs-nav" ).sortable({ axis: "x" });
+			//getter
+		var cookie = $( ".selector" ).tabs( "option", "cookie" );
+			//setter
+		$( ".selector" ).tabs( "option", "cookie", { expires: 30 } );
 	});
 	</script>
 		<style type="text/css">
@@ -12,6 +27,8 @@
 			ul#icons li {margin: 2px; position: relative; padding: 4px 0; cursor: pointer; float: left;  list-style: none;}
 			ul#icons span.ui-icon {float: left; margin: 0 4px;}
 		</style>
+
+
 
 <?php
 
@@ -42,7 +59,7 @@ global $arrHttp,$msgstr,$db_path,$valortag,$lista_bases;
 						&#160;
 					</div>
 					<div class="sectionTitle">
-		<!--				<h4>&#160;<strong><?php echo $msgstr["trans"]?></strong></h4> -->
+						<!--		<h4>&#160;<strong><?php echo $msgstr["trans"]?></strong></h4> -->
 					</div>
 					<div class="sectionButtons">
 <?php
@@ -50,23 +67,25 @@ if (isset($_SESSION["permiso"]["CENTRAL_ALL"]) or isset($_SESSION["permiso"]["CI
 ?>
 						<a href="../circulation/prestar.php?encabezado=s" class="menuButton tooltip emp">
 
-							<span><strong><?php echo $msgstr["loan"]?></strong></span>
+							<span><?php echo $msgstr["loan"]?></span>
 						</a>
 <?php
 }
 if (isset($_SESSION["permiso"]["CENTRAL_ALL"]) or isset($_SESSION["permiso"]["CIRC_CIRCALL"]) or isset($_SESSION["permiso"]["CIRC_RESERVE"])){
 ?>
-<!--						<a href="../circulation/reservar.php?encabezado=s" class="menuButton tooltip newButton">
-
-							<span><strong><?php echo $msgstr["reserve"]?></strong></span>
-						</a> -->
+						<a href="../circulation/reservar.php?encabezado=s" class="menuButton tooltip newButton" >
+				
+						
+							<span><?php echo $msgstr["reserve"]?></span>							
+							
+						</a> 	
 <?php
 }
 if (isset($_SESSION["permiso"]["CENTRAL_ALL"]) or isset($_SESSION["permiso"]["CIRC_CIRCALL"]) or isset($_SESSION["permiso"]["CIRC_RETURN"])){
 ?>
 						<a href="../circulation/devolver.php?encabezado=s" class="menuButton tooltip devolve">
 
-							<span><strong><?php echo $msgstr["return"]?></strong></span>
+							<span><?php echo $msgstr["return"]?></span>
 						</a>
 <?php
 }
@@ -74,7 +93,7 @@ if (isset($_SESSION["permiso"]["CENTRAL_ALL"]) or isset($_SESSION["permiso"]["CI
 ?>
 						<a href="../circulation/renovar.php?encabezado=s" class="menuButton tooltip renov">
 
-							<span><strong><?php echo $msgstr["renew"]?></strong></span>
+							<span><?php echo $msgstr["renew"]?></span>
 						</a>
 <?php
 }
@@ -82,24 +101,24 @@ if (isset($_SESSION["permiso"]["CENTRAL_ALL"]) or isset($_SESSION["permiso"]["CI
 ?>
 						<a href="../circulation/sanctions.php?encabezado=s" class="menuButton tooltip multa">
 
-							<span><strong><?php echo $msgstr["suspen"]." / ".$msgstr["fine"]?></strong></span>
+							<span><?php echo $msgstr["suspen"]." / ".$msgstr["fine"]?></span>
 						</a>
 <?php }?>
-						<a href="../circulation/situacion_de_un_objeto.php?encabezado=s" class="menuButton tooltip newButton">
+			      	<!--<a href="../circulation/situacion_de_un_objeto.php?encabezado=s" class="menuButton tooltip newButton">
 
-							<span><strong><?php echo $msgstr["ecobj"]?></strong></span>
-						</a>
+							<span><?php echo $msgstr["ecobj"]?></span>
+						</a> -->
 						<a href="../circulation/estado_de_cuenta.php?encabezado=s" class="menuButton tooltip newButton">
 
-							<span><strong><?php echo $msgstr["statment"]?></strong></span>
+							<span><?php echo $msgstr["statment"]?></span>
 						</a>
                         <a href="../circulation/borrower_history.php?encabezado=s" class="menuButton tooltip history">
 
-							<span><strong><?php echo $msgstr["bo_history"]?></strong></span>
+							<span><?php echo $msgstr["bo_history"]?></span>
 						</a>
 				<!--		<a href="circulation/item_history.php?encabezado=s" class="menuButton tooltip newButton">
-
-							<span><strong><?php echo $msgstr["co_history"]?></strong></span>
+							<img src="images/mainBox_iconBorder.gif" alt="" title="" />
+							<span><?php echo $msgstr["co_history"]?></span>
 						</a>                                                                 -->
 					</div>
 					<div class="spacer">&#160;</div>
@@ -130,20 +149,20 @@ if (isset($_SESSION["permiso"]["CENTRAL_ALL"]) or isset($_SESSION["permiso"]["CI
 						&#160;
 					</div>
 					<div class="sectionTitle">
-					<!--	<h4>&#160;<strong><?php echo $msgstr["basedatos"]?></strong></h4> -->
+						<!--		<h4>&#160;<strong><?php echo $msgstr["basedatos"]?></strong></h4> -->
 					</div>
 					<div class="sectionButtons">
 						<a href="../dataentry/browse.php?base=users&modulo=loan" class="menuButton tooltip userButton">
 
-							<span><strong><?php echo $msgstr["users"]?></strong></span>
+							<span><?php echo $msgstr["users"]?></span>
 						</a>
 						<a href="../dataentry/browse.php?base=trans&modulo=loan" class="menuButton tooltip userButton">
 
-							<span><strong><?php echo $msgstr["trans"]?></strong></span>
+							<span><?php echo $msgstr["trans"]?></span>
 						</a>
 						<a href="../dataentry/browse.php?base=suspml&modulo=loan" class="menuButton tooltip userButton">
 
-							<span><strong><?php echo $msgstr["suspen"]."/".$msgstr["multas"]?></strong></span>
+							<span><?php echo $msgstr["suspen"]."/".$msgstr["multas"]?></span>
 						</a>
 					</div>
 					<div class="spacer">&#160;</div>
@@ -174,7 +193,7 @@ if (isset($_SESSION["permiso"]["CENTRAL_ALL"]) or isset($_SESSION["permiso"]["CI
 						&#160;
 					</div>
 					<div class="sectionTitle">
-			<!--			<h4>&#160;<strong><?php echo $msgstr["admin"]?></strong></h4> -->
+				<!--		<h4>&#160;<strong><?php echo $msgstr["admin"]?></strong></h4> -->
 					</div>
 					<div class="sectionButtons">
 <?php
@@ -182,7 +201,7 @@ if (isset($_SESSION["permiso"]["CENTRAL_ALL"]) or isset($_SESSION["permiso"]["CI
 ?>
 						<a href="../circulation/reports_menu.php?base=trans&encabezado=s" class="menuButton tooltip reportButton">
 
-							<span><strong><?php echo $msgstr["reports"]?></strong></span>
+							<span><?php echo $msgstr["reports"]?></span>
 						</a>
 <?php
 }
@@ -190,7 +209,7 @@ if (isset($_SESSION["permiso"]["CENTRAL_ALL"]) or isset($_SESSION["permiso"]["CI
 ?>
 						<a href="../circulation/configure_menu.php?encabezado=s" class="menuButton tooltip toolsButton">
 
-							<span><strong><?php echo $msgstr["configure"]?></strong></span>
+							<span><?php echo $msgstr["configure"]?></span>
 						</a>
 <?php
 }
@@ -198,15 +217,15 @@ if (isset($_SESSION["permiso"]["CENTRAL_ALL"]) or isset($_SESSION["permiso"]["CI
 ?>
 			<a href="../statistics/tables_generate.php?base=users&encabezado=s" class="menuButton tooltip multiLine statButton">
 
-				<span><strong><?php echo $msgstr["stat_users"]?></strong></span>
+				<span><?php echo $msgstr["stat_users"]?></span>
 			</a>
 			<a href="../statistics/tables_generate.php?base=trans&encabezado=s" class="menuButton tooltip multiLine statButton">
-				
-				<span><strong><?php echo $msgstr["stat_trans"]?></strong></span>
+
+				<span><?php echo $msgstr["stat_trans"]?></span>
 			</a>
 			<a href="../statistics/tables_generate.php?base=suspml&encabezado=s" class="menuButton tooltip multiLine statButton">
-
-				<span><strong><?php echo $msgstr["stat_suspml"]?></strong></span>
+	
+				<span><?php echo $msgstr["stat_suspml"]?></span>
 			</a>
 <?php
 }

@@ -172,9 +172,11 @@ function switchMenu(obj) {
 	<div class="actions">
 
 		<a href=overview.php?encabezado=s&base=<?php echo $arrHttp["base"]?> class="defaultButton cancelButton">
+			<img src=../images/defaultButton_iconBorder.gif alt="" title="" />
 			<span><strong><?php echo $msgstr["cancel"]?></strong></span>
 		</a>
-		<a href=javascript:EnviarForma() class="defaultButton ">
+		<a href=javascript:EnviarForma() class="defaultButton saveButton">
+			<img src=../images/defaultButton_iconBorder.gif alt="" title="" />
 			<span><strong><?php echo $msgstr["actualizar"]?></strong></span>
 		</a>
 	</div>

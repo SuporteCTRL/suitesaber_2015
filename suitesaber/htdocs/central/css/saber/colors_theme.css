@@ -1,11 +1,29 @@
 	/*#heading classes */
-.heading,.top, #signin_menu, input, .submit input, .bottom #footNotes, .sectionInfo, .language, .systemInfo,
- .distributorLogo, #botoes{
-		background: #3b5998;
+.top, #signin_menu, input, .submit input, .bottom #footNotes, .sectionInfo, .language, .systemInfo,
+ .distributorLogo, #botoes, div.top{
+		background: #3A89AF;
 		color: #ffffff; 
 	}
-
-#botoes:hover{
+#botoes_top {
+		background: #1A6B91;
+		color: #ffffff; 
+	}	
+	
+	/*#heading classes */
+	.heading{
+		background: #3A89AF;
+		color: #ffffff; 
+	}	
+th.th_tit {
+   color: #ffffff;
+	font-size: 13px;	
+	border-left: #70B7D8 thin solid;
+	padding-top: 0px;
+	padding-bottom: 0px;	
+	}	
+	
+	
+#botoes:hover, #botoes_top:hover{
 		background: #666666;
 		color: #ffffff; 
 	}
@@ -26,7 +44,7 @@ A.defaultButton:hover SPAN {
  	}
 	
  .breadcrumb {
-		background: #687aad;
+		background: #1a6b91;
 		color: #ffffff;
 		border-top-color: #1D4088;
 		border-top-width: 1px;
@@ -51,4 +69,4 @@ input[type=text]:focus, textarea:focus {
 
 
 
-/*-----------FIM DAS CLASS B√ÅSICAS----------------*/
+/*-----------FIM DAS CLASS B¡SICAS----------------*/

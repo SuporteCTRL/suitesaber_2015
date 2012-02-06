@@ -72,7 +72,7 @@ FORM {
 
 
 A.menuButton {
-
+		vertical-align: top;
 		display: inline-block;
 
 		width: 40px;
@@ -81,11 +81,7 @@ A.menuButton {
 
 		border: 1px;
 
-		color: #697096;
-
 		margin: 10px;
-
-		font-weight: bold;
 
 		-moz-border-radius: 7px;
 
@@ -117,7 +113,7 @@ A.menuButton {
 
 		height: 40px;
 
-		vertical-align: middle;
+		vertical-align: top;
 
 		margin-right: 7px;
 
@@ -128,12 +124,16 @@ A.menuButton {
 
 
 	A.menuButton SPAN {
+	display: block;
+	margin-top: 70px;
+	text-align: center;
+	text-shadow:-2px 1px 3px #888;
+	color: #333;	
+	font-size: 12px;
+	width: 80px;
+	margin-left: -20px;
 
-		display: none;
 
-		vertical-align: middle;
-
-		padding: 0px 0px 0px 100px;
 	}
 
 
@@ -233,7 +233,11 @@ A.menuButton {
 /*		margin-top: 25px;
 		height: 10px;
 		position: relative; */
-		padding: 0px 0px 0px 25px;
+		padding: 0px 0px 0px 20px;
+		margin-bottom: 50px;
+		-moz-box-shadow: 0px 0px 15px #888;
+		-webkit-box-shadow: 0px 0px 15px #888;
+		box-shadow: 0px 0px 15px #888;
 	}
 
 
@@ -330,14 +334,14 @@ A.menuButton {
 
 	.institutionalInfo {
 		float: left;
-		width: 60%;
 	/*	padding: 15px 0px 14px 15px;*/
 	}
 
 	.institutionalInfo H1, .institutionalInfo H2 {
-			margin-left: 200px;
-			margin-top: -62px;
-			position: relative;	
+			margin-left: 10px;
+			margin-top: 10px;
+			position: relative;
+			display: inline;	
 	}
 
 	.userInfo {
@@ -407,7 +411,7 @@ display: inline;
 
 	.actions {
 		float: right;
-		width: 50%;
+		width: 70%;
 		text-align: right;
 		padding: 2px 0px 5px 0px;
 	}
@@ -624,11 +628,12 @@ display: inline;
 
 	.homepage .mainBox .boxContent .sectionButtons {
 
-		margin: 27px 0px 0px 0px;
+		margin: 27px 0px 90px 0px;
 
 		float: left;
 
-		width: 60%;
+		width: 70%;
+		height: auto;
 
 	}
 

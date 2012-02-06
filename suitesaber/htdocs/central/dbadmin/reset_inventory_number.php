@@ -79,7 +79,7 @@ if (isset($arrHttp["encabezado"])) {
 	<div class="actions">
 <?php echo "<a href=\"../common/inicio.php?reinicio=s$encabezado\" class=\"defaultButton backButton\">";
 ?>
-
+					<img src="../images/defaultButton_iconBorder.gif" alt="" title="" />
 					<span><strong><?php echo $msgstr["back"]?></strong></span>
 				</a>
 	</div>
@@ -90,7 +90,7 @@ if (isset($arrHttp["encabezado"])) {
 <?php
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 	echo "<a href=../documentacion/edit.php?archivo=". $_SESSION["lang"]."/resetautoinc.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "&nbsp; &nbsp; Script: resetautoinc.php</font>\n";
+echo "<font color=white>&nbsp; &nbsp; Script: resetautoinc.php</font>\n";
 echo "
 	</div>
 <div class=\"middle form\">

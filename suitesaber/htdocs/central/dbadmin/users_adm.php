@@ -36,7 +36,6 @@ $lang=$_SESSION["lang"];
 include("../lang/dbadmin.php");
 include("../lang/profile.php");
 include("../common/get_post.php");
-include ("../../meta.php");
 //foreach ($arrHttp as $var => $value) echo "$var = $value<br>";
 echo "<body>\n";
 if (isset($arrHttp["encabezado"])){
@@ -54,7 +53,7 @@ if (isset($arrHttp["encabezado"])){
 
 	<div class="actions">
 <?php echo "<a href=\"../common/inicio.php?reinicio=s$encabezado\" class=\"defaultButton backButton\">";?>
-		
+
 		<span><strong><?php echo $msgstr["BACK"]?></strong></span></a>
 	</div>
 	<div class="spacer">&#160;</div>
@@ -65,18 +64,17 @@ if (isset($arrHttp["encabezado"])){
 <?php
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
  	echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/profiles.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "&nbsp; &nbsp; Script: users_adm.php" ?></font>
+echo "<font color=white>&nbsp; &nbsp; Script: users_adm.php" ?></font>
 	</div>
 <div class="middle form">
 	<div class="formContent">
-	
-						<h4><?php echo $msgstr["usuarios"]?></h4>
+	<ul>
 <?php
-echo "<a  class=\"menuButton  userButton\" href=../dataentry/browse.php?showdeleted=Y&encabezado=s&base=acces&cipar=acces.par&return=../dbadmin/users_adm.php|></a><p>" .$msgstr["usuarios"]. "</p>";
-echo "<a class=\"menuButton  userButton\" href=profile_edit.php?encabezado=s></p></a><p>".$msgstr["profiles"]."</p>";
+echo "<li><a href=../dataentry/browse.php?showdeleted=Y&encabezado=s&base=acces&cipar=acces.par&return=../dbadmin/users_adm.php|>".$msgstr["usuarios"] ."</a><p>";
+echo "<li><a href=profile_edit.php?encabezado=s>".$msgstr["profiles"]."</a>";
 
 ?>
-
+	</ul>
 	</div>
 </div>
 </center>

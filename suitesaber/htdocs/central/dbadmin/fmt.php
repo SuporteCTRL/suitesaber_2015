@@ -194,7 +194,7 @@ if (isset($arrHttp["encabezado"])){
 		       echo "<a href=\"menu_modificardb.php?base=".$arrHttp["base"]."$encabezado\" class=\"defaultButton cancelButton\">";
 	}
 ?>
-
+					<img src="../images/defaultButton_iconBorder.gif" alt="" title="" />
 					<span><strong><?php echo $msgstr["cancel"]?></strong></span>
 				</a>
 			</div>
@@ -221,7 +221,7 @@ if (isset($arrHttp["encabezado"])){
 <?php
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 	echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/fmt.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "&nbsp; &nbsp; Script: fmt.php";
+echo "<font color=white>&nbsp; &nbsp; Script: fmt.php";
 ?></font>
 	</div>
 <div class="middle form">

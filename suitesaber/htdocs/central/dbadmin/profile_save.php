@@ -52,7 +52,7 @@ if (isset($arrHttp["encabezado"])){
 
 	<div class="actions">
 <?php echo "<a href=\"profile_edit.php?base="."$encabezado\" class=\"defaultButton backButton\">";?>
-		
+		<img src="../images/defaultButton_iconBorder.gif" alt="" title="" />
 		<span><strong><?php echo $msgstr["BACK"]?></strong></span></a>
 	</div>
 	<div class="spacer">&#160;</div>
@@ -63,7 +63,7 @@ if (isset($arrHttp["encabezado"])){
 <?php
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
  	echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/profiles.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "&nbsp; &nbsp; Script: profile_save.php";
+echo "<font color=white>&nbsp; &nbsp; Script: profile_save.php";
 ?>
 </font>
 	</div>
@@ -72,19 +72,25 @@ echo "&nbsp; &nbsp; Script: profile_save.php";
 <?php
 $file=fopen($db_path."par/profiles/".$arrHttp["profilename"],"w");
 foreach ($arrHttp as $key=> $value){
-	if ($key!="encabezado"){		//echo "$key=$value<br>";
+	if ($key!="encabezado"){
+		//echo "$key=$value<br>";
 		fwrite($file,$key."=".$value."\n");
-	}}
+	}
+}
 $profiles=array();
 $fp=file($db_path."par/profiles/profiles.lst");
 foreach ($fp as $val){
 	$val=trim($val);
-	if ($val!=""){		$p=explode('|',$val);
-		$profiles[$p[0]]=$p[1];	}}
+	if ($val!=""){
+		$p=explode('|',$val);
+		$profiles[$p[0]]=$p[1];
+	}
+}
 $profiles[$arrHttp["profilename"]]=$arrHttp["profiledesc"];
 $fp=fopen($db_path."par/profiles/profiles.lst","w");
 foreach ($profiles as $key=>$value){
-	fwrite($fp,$key.'|'.$value."\n");}
+	fwrite($fp,$key.'|'.$value."\n");
+}
 fclose($fp);
 echo "<h4>".$arrHttp["profilename"]." - " .$arrHttp["profiledesc"]." ".$msgstr['SAVED']."</h4>";
 echo "</div>

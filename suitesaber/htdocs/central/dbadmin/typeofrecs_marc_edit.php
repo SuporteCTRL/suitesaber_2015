@@ -46,18 +46,28 @@ function VerFdt(Fdt){
 	Fdt=Ctrl.value
 	if (Trim(Fdt)==""){
 		return
-    }	msgwin=window.open("","FDT","resizable,scrollbars,status")
-	document.FdtEdit.target="FDT"	document.FdtEdit.type.value=Fdt
+    }
+	msgwin=window.open("","FDT","resizable,scrollbars,status")
+	document.FdtEdit.target="FDT"
+	document.FdtEdit.type.value=Fdt
 	msgwin.focus()
 	document.FdtEdit.submit()
-}
 
-function EnviarTipoR(){	if (Trim(document.tipordef.tipom.value)==""){		alert("<?php echo $msgstr["typeofrecords_new"]?>")
-		return	}
-	document.tipordef.submit()}
+
+}
+
+function EnviarTipoR(){
+	if (Trim(document.tipordef.tipom.value)==""){
+		alert("<?php echo $msgstr["typeofrecords_new"]?>")
+		return
+	}
+	document.tipordef.submit()
+}
 
 function Enviar(rows){
-	err=false	for (i=1;i<rows;i++){		c1=""
+	err=false
+	for (i=1;i<rows;i++){
+		c1=""
 		c2=""
 		c3=""
 		c4=""
@@ -65,8 +75,10 @@ function Enviar(rows){
 		tr=0
 		for (j=1;j<5;j++){
 			Ctrl=eval("document.tor.cell"+i+"_"+j)
-			switch (j){				case 1:
-					if (Ctrl.selectedIndex!=-1){						c1=Ctrl.options[Ctrl.selectedIndex].value
+			switch (j){
+				case 1:
+					if (Ctrl.selectedIndex!=-1){
+						c1=Ctrl.options[Ctrl.selectedIndex].value
 					}
 					break
 				case 2:
@@ -82,11 +94,17 @@ function Enviar(rows){
 					break
 				case 5:
 					c5=Ctrl.value
-					break			}
+					break
+			}
 		}
 
-		if (Trim(c1)+Trim(c2)+Trim(c3)+Trim(c4)+Trim(c5)==""){		}else{			if (Trim(c1)=="" || (Trim(c2)=="" && Trim(c3)=="") || Trim(c4)==""){				alert ("<?php echo $msgstr["typeofrecerror"]?>")
-				err=true			}else{
+		if (Trim(c1)+Trim(c2)+Trim(c3)+Trim(c4)+Trim(c5)==""){
+
+		}else{
+			if (Trim(c1)=="" || (Trim(c2)=="" && Trim(c3)=="") || Trim(c4)==""){
+				alert ("<?php echo $msgstr["typeofrecerror"]?>")
+				err=true
+			}else{
 				if (c2==""){
 					Ctrl=eval("document.tor.cell"+i+"_"+2)
 					Ctrl.value="_"
@@ -97,8 +115,11 @@ function Enviar(rows){
 					Ctrl.value="_"
 				}
 				tr++
-			}		}
-	}    if (err==false) document.tor.submit();}
+			}
+		}
+	}
+    if (err==false) document.tor.submit();
+}
 
 function SelectFixedFormat(Ctrl,i){
 	ix=Ctrl.selectedIndex
@@ -108,7 +129,8 @@ function SelectFixedFormat(Ctrl,i){
 	cell=eval("document.tor.cell"+i+"_4")
 	cell.value=t[1]
 
-}
+
+}
 
 </script>
 <body>
@@ -121,7 +143,7 @@ if (isset($arrHttp["encabezado"]))
 else
 	$encabezado="";
 echo "<a href=menu_modificardb.php?base=". $arrHttp["base"].$encabezado." class=\"defaultButton cancelButton\">
-
+	
 	<span><strong>". $msgstr["cancel"]."</strong></span>
 	</a>
 	</div>
@@ -133,7 +155,7 @@ echo "<a href=menu_modificardb.php?base=". $arrHttp["base"].$encabezado." class=
 <?php
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 	echo "<a href=../documentacion/php/edit.php?archivo=".$_SESSION["lang"]."/typeofrecs_marc.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "&nbsp; &nbsp; Script: typeofrecs_marc_edit.php";
+echo "<font color=white>&nbsp; &nbsp; Script: typeofrecs_marc_edit.php";
 ?>
 </font>
 	</div>
@@ -149,10 +171,16 @@ if (!file_exists($db_path.$arrHttp["base"]."/def/".$_SESSION["lang"]."/formatos.
 		if (!isset($arrHttp["encabezado"]))
 			echo "<p><a href=menu_modificardb.php?base=".$arrHttp["base"].">".$msgstr["back"]."</a><p>";
 		die;
-	}else{		$fp=file($db_path.$arrHttp["base"]."/def/".$lang_db."/formatos.wks");	}}else{	$fp = file($db_path.$arrHttp["base"]."/def/".$_SESSION[	"lang"]."/formatos.wks");}
+	}else{
+		$fp=file($db_path.$arrHttp["base"]."/def/".$lang_db."/formatos.wks");
+	}
+}else{
+	$fp = file($db_path.$arrHttp["base"]."/def/".$_SESSION[	"lang"]."/formatos.wks");
+}
 if (isset($fp)){
 	foreach ($fp as $linea){
-		$fmt[]=$linea;	}
+		$fmt[]=$linea;
+	}
 }
 //READ THE TYPE OF RECORDS USING THE PICKLIST ASSOCIATED TO THE FIELD 3006 OF THE LEADER
 if (file_exists($db_path.$arrHttp["base"]."/def/".$_SESSION["lang"]."/ldr_06.tab"))
@@ -160,7 +188,8 @@ if (file_exists($db_path.$arrHttp["base"]."/def/".$_SESSION["lang"]."/ldr_06.tab
 else
     if (file_exists($db_path.$arrHttp["base"]."/def/".$lang_db."/ldr_06.tab"))
 		$fixed_list=file($db_path.$arrHttp["base"]."/def/".$lang_db."/ldr_06.tab");
-if (!isset($fixed_list)){	foreach ($fixed_list as $val) echo "$val<br>";
+if (!isset($fixed_list)){
+	foreach ($fixed_list as $val) echo "$val<br>";
 }
 unset($ldr_06);
 if (file_exists($db_path.$arrHttp["base"]."/def/".$_SESSION["lang"]."/ldr_06.tab"))
@@ -177,10 +206,13 @@ else
 echo "<script>
 ldr=new Array()\n";
 foreach ($ldr_06 as $leader){
-	$leader=trim($leader);	$l=explode("|",$leader);
-	echo "ldr['".$l[0]."']='".$leader."'\n";}
+	$leader=trim($leader);
+	$l=explode("|",$leader);
+	echo "ldr['".$l[0]."']='".$leader."'\n";
+}
 echo "</script>";
-if (!isset($fpType)){	echo "
+if (!isset($fpType)){
+	echo "
 	<form name=tipordef method=post action=typeofrecs_update.php onsubmit='javascript:return false'>
 	<input type=hidden name=Opcion value=tipom>
 	<input type=hidden name=base value=".$arrHttp["base"].">";
@@ -217,8 +249,10 @@ if (isset($fpType)) {
 			$linea=trim($linea);
 			if ($ix==0){
 				$ixpos=strpos($linea," ");
-				if ($ixpos===false){					$tipom=trim($linea);
-					$nivelr="";				}else{
+				if ($ixpos===false){
+					$tipom=trim($linea);
+					$nivelr="";
+				}else{
 					$tipom=trim(substr($linea,0,$ixpos));
 					$nivelr=trim(substr($linea,$ixpos+1));
 				}
@@ -238,7 +272,8 @@ if (isset($fpType)) {
 				$ix=1;
 				echo "<table  border=0 cellspacing=0>";
 				echo "<tr><td align=center>".$msgstr["fmt"]."</td><td align=center>".$msgstr["tag"]." 1<br>".$msgstr["value"]."</td><td align=center>".$msgstr["tag"]." 2<br>".$msgstr["value"]."</td><td align=center>".$msgstr["typeofrecords"]." ".$msgstr["description"]."</td></tr>\n";
-			}else{				$j=$j+1;
+			}else{
+				$j=$j+1;
 				$i=0;
 				$l=explode('|',$linea);
 				echo "<tr>";
@@ -248,7 +283,8 @@ if (isset($fpType)) {
 					$link="";
 					$xsize="";
 					switch ($i){
-						case 1:
+
+						case 1:
 							$link="<a href='javascript:VerFdt(\"cell$j"."_".$i."\")'>edit</a>";
 							echo "<td>$link <select name=cell$j"."_".$i.">
 								<option value=\"\"></option> ";
@@ -281,7 +317,8 @@ if (isset($fpType)) {
 							break;
 						case 5:
 							$link="<a href='javascript:VerFdt(\"cell$j"."_".$i."\")'>edit</a>";
-							$xsize="size=20";					}
+							$xsize="size=20";
+					}
 					if ($i!=1 and $i!=2)echo "<td><input type=text name=cell$j"."_".$i." value=\"$value\" $xsize>$link</td>\n";
 				}
 			}
@@ -290,7 +327,8 @@ if (isset($fpType)) {
 
 }
 
-for ($k=$j+1;$k<$j+8;$k++){	$i=0;
+for ($k=$j+1;$k<$j+8;$k++){
+	$i=0;
 	$linea="|||";
 	$l=explode('|',$linea);
 	echo "<tr>";
@@ -333,7 +371,9 @@ for ($k=$j+1;$k<$j+8;$k++){	$i=0;
 		}
 		$value=trim($value);
 		if ($i!=1 and $i!=2)echo "<td><input type=text name=cell$k"."_".$i." value=\"$value\" $xsize>$link</td>";
-	}}
+	}
+
+}
 echo "</table>
 <p>
 <a href=javascript:Enviar($k)>".$msgstr["update"]."</a> &nbsp; &nbsp;";

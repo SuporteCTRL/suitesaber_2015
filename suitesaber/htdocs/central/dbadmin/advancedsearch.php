@@ -110,7 +110,9 @@ include("../common/header.php");
 if (isset($arrHttp["encabezado"])){
 	include("../common/institutional_info.php");
 	$encabezado="&encabezado=s";
-}else{	$encabezado="";}
+}else{
+	$encabezado="";
+}
 ?>
 <div class="sectionInfo">
 	<div class="breadcrumb">
@@ -130,7 +132,7 @@ if (isset($arrHttp["encabezado"])){
 <?php
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 	echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/asearch_schema.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "&nbsp; &nbsp; Script: advancedsearch.php";
+echo "<font color=white>&nbsp; &nbsp; Script: advancedsearch.php";
 ?>
 </font>
 	</div>
@@ -187,13 +189,15 @@ echo "&nbsp; &nbsp; Script: advancedsearch.php";
 	//mygrid.enableMultiselect(false);
 
 	mygrid.init();
-	if (Opcion=="new")  {		for (i=0;i<30;i++){
+	if (Opcion=="new")  {
+		for (i=0;i<30;i++){
 			id=(new Date()).valueOf()
 			mygrid.addRow(id,['','',''],i)
         }
 
 	}else{
-<?php
+
+<?php
 	if ($arrHttp["Opcion"]=="update"){
 		$fp=file($archivo);
 		$i=-1;
@@ -206,7 +210,8 @@ echo "&nbsp; &nbsp; Script: advancedsearch.php";
 				id=(new Date()).valueOf()
 				mygrid.addRow(id,['".trim($t[0])."','".trim($t[1])."','".trim($t[2])."'],i)\n
 				mygrid.setRowTextStyle( id,\"font-family:courier new;\")\n ";
-			}		}
+			}
+		}
    }
 ?> }
 	i++

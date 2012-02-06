@@ -98,7 +98,7 @@ if (isset($arrHttp["encabezado"]))
 		$encabezado="";
 echo "<a href=winisis_upload_fdt.php?base=".$arrHttp["base"]."&nombre=".$arrHttp["base"]."&desc=".urlencode($arrHttp["desc"]).$encabezado." class=\"defaultButton backButton\">";
 echo "
-		
+					<img src=\"../images/defaultButton_iconBorder.gif\" alt=\"\" title=\"\" />
 					<span><strong>". $msgstr["back"]."</strong></span>
 				</a>
 			</div>
@@ -110,7 +110,7 @@ echo "
 	<a href=../documentacion/ayuda.php?help=".$_SESSION["lang"]."/winisis_upload_fst.html target=_blank>".$msgstr["help"]."</a>&nbsp &nbsp;";
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 	echo "<a href=../documentacion/edit.php?archivo=". $_SESSION["lang"]."/winisis_upload_fst.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "&nbsp; &nbsp; Script: winisis_upload_fst.php</font></div>";
+echo "<font color=white>&nbsp; &nbsp; Script: winisis_upload_fst.php</font></div>";
 
 echo "
 <div class=\"middle form\">
@@ -131,7 +131,9 @@ if (!isset($_SESSION["FST"])){
 		CrearFst($Fst);
 		$_SESSION["FST"]=$Fst;
 	}
-}else{	CrearFst($_SESSION["FST"]);}
+}else{
+	CrearFst($_SESSION["FST"]);
+}
 echo "
 <form name=winisis action=winisis_upload_pft.php method=POST enctype=multipart/form-data onsubmit='javascript:EnviarForma();return false'>
 <input type=hidden name=Opcion value=PFT>

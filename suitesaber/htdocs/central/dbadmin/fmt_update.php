@@ -114,14 +114,14 @@ if (isset($arrHttp["encabezado"])){
 	echo "<a href=\"fmt.php?base=".$arrHttp["base"]."$encabezado\" class=\"defaultButton backButton\">";
 }
 ?>
-
+<img src="../images/defaultButton_iconBorder.gif" alt="" title="" />
 <span><strong><?php echo $msgstr["back"]?></strong></span>
 </a>
 			</div>
 			<div class="spacer">&#160;</div>
 </div>
 <div class="helper">
-<?php echo "&nbsp; &nbsp; Script: fmt_update.php" ?></font>
+<?php echo "<font color=white>&nbsp; &nbsp; Script: fmt_update.php" ?></font>
 	</div>
 <div class="middle form">
 			<div class="formContent">

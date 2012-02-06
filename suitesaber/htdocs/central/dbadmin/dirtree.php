@@ -218,7 +218,7 @@ global $arrHttp,$msgstr,$institution_name;
 		<div class=\"actions\">\n";
 	if (isset($arrHttp["encabezado"]))
 			echo "<a href=\"../common/inicio.php?reinicio=s\" class=\"defaultButton backButton\">
-		
+					<img src=\"../images/defaultButton_iconBorder.gif\" alt=\"\" title=\"\" />
 					<span><strong>". $msgstr["back"]."</strong></span>
 				</a>";
 	echo "
@@ -230,7 +230,7 @@ global $arrHttp,$msgstr,$institution_name;
 	 	<div class=\"helper\">
 	<a href=../documentacion/ayuda.php?help=".$_SESSION["lang"]."/dirtree.html target=_blank>".$msgstr["help"]."</a>&nbsp &nbsp;
     ";
-    echo "&nbsp; &nbsp; Script: dirtree.php</font></div>";
+    echo "<font color=white>&nbsp; &nbsp; Script: dirtree.php</font></div>";
 
      echo "<div class=\"middle form\">
 			<div class=\"formContent\">";

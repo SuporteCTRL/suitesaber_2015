@@ -130,7 +130,7 @@ echo "
 	";
 if (isset($arrHttp["encabezado"])){
 	echo "<a href=\"../common/inicio.php?reinicio=s&base=".$arrHttp["base"]."\" class=\"defaultButton backButton\">";
-echo "<img src=\"../images/defaultButton_iconBorder.gif\" alt=\"\" title=\"\" />
+echo "
 	<span><strong>". $msgstr["back"]."</strong></span></a>";
 }
 echo "</div>

@@ -320,7 +320,7 @@ echo "
 	</div>
 	<div class=\"actions\">\n";
 echo "<a href=\"typeofrecs.php?Opcion=update&type=&base=".$arrHttp["base"]."$encabezado\" class=\"defaultButton cancelButton\">
-
+	<img src=\"../images/defaultButton_iconBorder.gif\" alt=\"\" title=\"\" />
 	<span><strong>". $msgstr["cancel"]."</strong></span>
 	</a>
 	</div>
@@ -333,7 +333,7 @@ echo "<a href=\"typeofrecs.php?Opcion=update&type=&base=".$arrHttp["base"]."$enc
 <?php
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 	echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/recval.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "&nbsp; &nbsp; Script: recval.php";
+echo "<font color=white>&nbsp; &nbsp; Script: recval.php";
 ?>
 </font>
 </div>

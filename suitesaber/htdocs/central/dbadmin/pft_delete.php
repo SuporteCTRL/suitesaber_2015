@@ -79,14 +79,14 @@ if (isset($arrHttp["encabezado"])){
 <?php
 	 echo "<a href=\"pft.php?base=".$arrHttp["base"]."$encabezado\" class=\"defaultButton backButton\">";
 ?>
-
+<img src="../images/defaultButton_iconBorder.gif" alt="" title="" />
 <span><strong><?php echo $msgstr["back"]?></strong></span>
 </a>
 			</div>
 			<div class="spacer">&#160;</div>
 </div>
 <div class="helper">
-<?php  echo "&nbsp; &nbsp; Script: delete_file.php" ?></font>
+<?php  echo "<font color=white>&nbsp; &nbsp; Script: delete_file.php" ?></font>
 	</div>
 <div class="middle form">
 			<div class="formContent">

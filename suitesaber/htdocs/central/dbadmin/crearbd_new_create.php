@@ -170,7 +170,7 @@ if ($arrHttp["Opcion"]=="new"){
 	echo "<a href=menu_modificardb.php?base=". $arrHttp["base"].$encabezado." class=\"defaultButton backButton\">";
 }
 echo "
-		
+					<img src=\"../images/defaultButton_iconBorder.gif\" alt=\"\" title=\"\" />
 					<span><strong>". $msgstr["back"]."</strong></span>
 				</a>
 			</div>
@@ -182,7 +182,7 @@ echo "
 	<a href=../documentacion/ayuda.php?help=".$_SESSION["lang"]."/crearbd_new_create.html target=_blank>".$msgstr["help"]."</a>&nbsp &nbsp;";
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 	echo "<a href=../documentacion/edit.php?archivo=". $_SESSION["lang"]."/crearbd_new_create.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "&nbsp; &nbsp; Script: crearbd_new_create.php</font></div>";
+echo "<font color=white>&nbsp; &nbsp; Script: crearbd_new_create.php</font></div>";
 echo "
 <div class=\"middle form\">
 			<div class=\"formContent\">
