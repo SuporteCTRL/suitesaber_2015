@@ -44,8 +44,10 @@ include("../common/header.php");
 <script src=../dataentry/js/lr_trim.js></script>
 <script language=javascript>
 function Enviar(){
-	if (Trim(document.cnv.namecnvtb.value)=="" || Trim(document.cnv.descr.value)==""){		alert("<?php echo $msgstr["namecnvtamiss"]?>")
-		return	}
+	if (Trim(document.cnv.namecnvtb.value)=="" || Trim(document.cnv.descr.value)==""){
+		alert("<?php echo $msgstr["namecnvtamiss"]?>")
+		return
+	}
 	document.cnv.target=""
 	document.cnv.action="z3950_conversion_update.php"
 	document.cnv.submit()
@@ -69,11 +71,11 @@ if (isset($arrHttp["encabezado"])){
 	<div class="actions">
 <?php
 	echo "<a href=z3950_conf.php?base=^a".$arrHttp["base"]."$encabezado class=\"defaultButton backButton\">
-
+		<img src=\"../images/defaultButton_iconBorder.gif\" alt=\"\" title=\"\" />
 		<span><strong>".$msgstr["back"]."</strong></span>
 		</a>\n";
 	echo "<a href=javascript:Enviar() class=\"defaultButton saveButton\">
-
+		<img src=\"../images/defaultButton_iconBorder.gif\" alt=\"\" title=\"\" />
 		<span><strong>".$msgstr["save"]."</strong></span>
 		</a>\n";
 ?>
@@ -85,7 +87,7 @@ if (isset($arrHttp["encabezado"])){
 <?php
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 	echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/z3950_conf.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "&nbsp; &nbsp; Script: z3950_conversion.php </font>";
+echo "<font color=white>&nbsp; &nbsp; Script: z3950_conversion.php </font>";
 ?>
 	</div>
 <div class="middle form">
@@ -144,7 +146,8 @@ foreach ($fp as $value){
 
 echo "</table><p><dd>";
 echo $msgstr["namecnvtb"].":";
-if (!isset($arrHttp["Table"])){	echo  "<input type=text name=namecnvtb size=30> &nbsp &nbsp;";
+if (!isset($arrHttp["Table"])){
+	echo  "<input type=text name=namecnvtb size=30> &nbsp &nbsp;";
 	echo $msgstr["description"].": ";
 	echo "<input type=text name=descr size=30>\n";
 }else{

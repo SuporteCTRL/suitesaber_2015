@@ -42,7 +42,8 @@ include("fdt_include.php");
 ?>
 <script  src="../dataentry/js/lr_trim.js"></script>
 <script languaje=javascript>
-function EditarAyuda(){	ix=document.edithlp.FDT.selectedIndex
+function EditarAyuda(){
+	ix=document.edithlp.FDT.selectedIndex
 	if (ix==0) return
 	ix1=document.edithlp.FDT.options[ix].value
 	a=fdt[ix1]
@@ -51,7 +52,8 @@ function EditarAyuda(){	ix=document.edithlp.FDT.selectedIndex
 	lenguaje="<?php echo $_SESSION["lang"]?>"
 	msgwin=window.open("../documentacion/edit_help_db.php?base=<?php echo $arrHttp["base"]?>&help="+tag)
 	msgwin.focus()
-}
+
+}
 
 function VerAyuda(){
 	ix=document.edithlp.FDT.selectedIndex
@@ -65,7 +67,8 @@ function VerAyuda(){
 	msgwin.focus()
 
 }
-function ProducirSalida(a,tipo){	tab=a.split('|')
+function ProducirSalida(a,tipo){
+	tab=a.split('|')
 	out=""
 	if (tipo!="sc"){
 		if (tab[1]!="") out="<?php echo $msgstr['tag']?>"+": "+tab[1]+"\r"
@@ -74,7 +77,8 @@ function ProducirSalida(a,tipo){	tab=a.split('|')
 			out+="<?php echo $msgstr['mainentry']?>"+": yes\r"
 		if (tab[4]==1)
 			out+="<?php echo $msgstr['repeat']?>"+": yes\r"
-	}    if (tab[5]!="") out+="<?php echo $msgstr['subfields']?>"+": "+tab[5]+"\r"
+	}
+    if (tab[5]!="") out+="<?php echo $msgstr['subfields']?>"+": "+tab[5]+"\r"
     if (tipo=="sc") out+="<?php echo $msgstr['title']?>"+": "+tab[2]+"\r"
     if (tab[6]!="") out+="<?php echo $msgstr['subfields']?>"+" "+"<?php echo $msgstr['preliteral']?>"+": "+tab[6]+"\r"
     if (tab[7]!="") out+="<?php echo $msgstr['inputtype']?>"+": "+input_type[tab[7]]+"\r"
@@ -87,13 +91,16 @@ function ProducirSalida(a,tipo){	tab=a.split('|')
     if (tab[14]!="") out+="<?php echo $msgstr['picklist']?>"+" "+"<?php echo $msgstr['formate']?>"+": "+tab[14]+"\r"
     if (tab[15]==1) out+="<?php echo $msgstr['subfields']?>"+" "+"<?php echo $msgstr['help']?>"+": yes\r"
     if (tab[16]==1) out+="<?php echo $msgstr['tradyudas']?>"+": yes\r"
-    return out}
+    return out
+}
 
 function Edit(){
 	input_type=Array()
 	pick_type=Array()
 <?php
-	foreach ($input_type as $key=>$type){		echo  "input_type[\"$key\"]=\"$type\"\n";	}
+	foreach ($input_type as $key=>$type){
+		echo  "input_type[\"$key\"]=\"$type\"\n";
+	}
 	foreach ($pick_type as $key=>$type){
 		echo  "pick_type[\"$key\"]=\"$type\"\n";
 	}
@@ -104,19 +111,28 @@ function Edit(){
 	a=fdt[ix1]
 	variable=ProducirSalida(a,"campo")
     ix1++
-    for (i=ix1;i<999;i++){    	a=fdt[i]
+    for (i=ix1;i<999;i++){
+    	a=fdt[i]
 		tab=a.split('|')
-		if (tab[0]!="S") {			i=1000		}else{			linea=ProducirSalida(a,"sc")
-			variable+="\r"+linea		}
-    }
-	document.edithlp.campo.value=variable}
+		if (tab[0]!="S") {
+			i=1000
+		}else{
+			linea=ProducirSalida(a,"sc")
+			variable+="\r"+linea
+		}
+
+    }
+	document.edithlp.campo.value=variable
+}
 </script>
 <?php
 echo "<body>\n";
 if (isset($arrHttp["encabezado"])){
 	include("../common/institutional_info.php");
 	$encabezado="&encabezado=s";
-}else{	$encabezado="";}
+}else{
+	$encabezado="";
+}
 ?>
 <div class="sectionInfo">
 	<div class="breadcrumb">
@@ -136,7 +152,7 @@ if (isset($arrHttp["encabezado"])){
 <?php
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 	echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/helpfilesdb.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "&nbsp; &nbsp; Script: help_ed.php";
+echo "<font color=white>&nbsp; &nbsp; Script: help_ed.php";
 ?>
 </font>
 	</div>
@@ -148,14 +164,16 @@ echo "&nbsp; &nbsp; Script: help_ed.php";
 <?php
 $archivo=$db_path.$arrHttp["base"]."/def/".$_SESSION["lang"]."/".$arrHttp["base"].".fdt";
 if (!file_exists($archivo)) $archivo=$db_path.$arrHttp["base"]."/def/".$lang_db."/".$arrHttp["base"].".fdt";
-if (file_exists($archivo))	$fp=file($archivo);
+if (file_exists($archivo))
+	$fp=file($archivo);
 else
 	echo $msgstr["misfile"].": ".$archivo;
 $ixFdt=0;
 echo "<script>\n";
 echo "fdt=new Array()\n";
 echo "fdt[0]=\"\"\n";
-foreach ($fp as $value){	$value=trim($value);
+foreach ($fp as $value){
+	$value=trim($value);
 	$t=explode('|',$value);
 	if ($t[1]!=""){
 		$fdt[$t[1]]=$value;
@@ -169,7 +187,8 @@ echo $msgstr["selfields"].": ";
 echo "<select name=FDT onchange=Edit()>
 	<option></option>\n";
 $ixFdt=0;
-foreach ($fdt as $key=>$value){	$t=explode('|',$value);
+foreach ($fdt as $key=>$value){
+	$t=explode('|',$value);
 	$ixFdt=$ixFdt+1;
 	echo "<option value=$ixFdt>".$t[1]." ".$t[2]."</option>\n";
 

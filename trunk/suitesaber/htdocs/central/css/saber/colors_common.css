@@ -29,21 +29,10 @@ A {
 	}
 
 
-	/* #menuButton classes */
-	A.menuButton {
-		color: #fff;
-
-		
-	}
-
 	A.menuButton:hover  {
 		background-color: #4E617C;
 	}
 
-
-	A.menuButton SPAN {
-		font-size: 90%;
-	}
 
 	A.menuButton STRONG {
 		font-size: 110%;
@@ -218,7 +207,7 @@ A {
 	}
 
 
-	.homepage .mainBox .boxContent .sectionButtons A.menuButton {
+	.homepage .mainBox .boxContent .sectionButtons  {
 		color: #000000;
 	}
 
@@ -389,7 +378,7 @@ A.wiki {
 	}
 
 	.searchBox {
-		background: #d8dade;
+		background: #ffffff;
 	}
 
 	.searchBox LABEL {
@@ -686,12 +675,7 @@ A.wiki {
 
 }
 
-a.tooltip:hover span {
-	background:#ffffff; 
-	border:1px solid #cccccc; 
-	color:#6c6c6c; 
 
-}
 
 .rotuloIng,textbody03 {
 	color: #000000;

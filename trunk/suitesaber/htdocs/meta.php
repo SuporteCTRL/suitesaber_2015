@@ -4,7 +4,7 @@
 
 	<head>
 
-		<title>Saber ABCD |  <?php  echo utf8_decode($institution_name); ?></title>
+		<title>Suíte Saber |  <?php  echo utf8_decode($institution_name); ?></title>
 
 		<meta http-equiv="Expires" content="-1" />
 
@@ -61,8 +61,6 @@
 	<script src="../../jquery/development-bundle/ui/jquery.ui.mouse.js"></script>
 
 	<script src="../../jquery/development-bundle/ui/jquery.ui.sortable.js"></script>
-
-	<script src="../../jquery/development-bundle/ui/jquery.ui.draggable.js"></script>
 
 	<script src="../../jquery/development-bundle/ui/jquery.ui.widget.js"></script>
 

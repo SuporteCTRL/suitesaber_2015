@@ -79,12 +79,12 @@ $ayuda="control_number.html";
 if (isset($arrHttp["encabezado"])){
 	if (isset($_SESSION["permiso"]["CENTRAL_ALL"]) or isset($_SESSION["permiso"]["CENTRAL_RESETLCN"])){
 		echo "<a href=\"assign_control_number.php?base=".$arrHttp["base"]."$encabezado\" class=\"defaultButton backButton\">
-
+		<img src=\"../images/defaultButton_iconBorder.gif\" alt=\"\" title=\"\" />
 	<span><strong>".$msgstr["back"]."</strong></span></a>
 		";
 	}else{
 		echo "<a href=\"../common/inicio.php?reinicio=s&base=".$arrHttp["base"]."$encabezado\" class=\"defaultButton backButton\">
-
+		<img src=\"../images/defaultButton_iconBorder.gif\" alt=\"\" title=\"\" />
 	<span><strong>".$msgstr["back"]."</strong></span></a>
 		";
 	}
@@ -102,11 +102,13 @@ if (isset($arrHttp["encabezado"])){
 
 $Formato=$tag_ctl;
 if ($tag_ctl==""){
-	echo "<h4>".$msgstr["missingctl"]."</h4>";}else{
+	echo "<h4>".$msgstr["missingctl"]."</h4>";
+}else{
 	echo $msgstr["cn"]." ".$msgstr["tag"].": $tag_ctl<br>";
 	echo "<table>";
 	echo "<th>Mfn</th><th>".$msgstr["cn"]."</th>";
-	for ($Mfn=$arrHttp["Mfn"];$Mfn<=$arrHttp["to"];$Mfn++){		$control=ProximoNumero($arrHttp["base"]);
+	for ($Mfn=$arrHttp["Mfn"];$Mfn<=$arrHttp["to"];$Mfn++){
+		$control=ProximoNumero($arrHttp["base"]);
 		$tag_ctl=trim($tag_ctl);
 		if (strlen($tag_ctl)==1) $tag_ctl="000".$tag_ctl;
 		if (strlen($tag_ctl)==2) $tag_ctl="00".$tag_ctl;
@@ -117,10 +119,12 @@ if ($tag_ctl==""){
 		include("../common/wxis_llamar.php");
 		echo "<tr><td>$Mfn</td><td>$control</td>" ;
 		echo "<td>";
-		//foreach ($contenido as $value) {		//	if (!empty($value)) 
+		//foreach ($contenido as $value) {
+		//	if (!empty($value)) 
 		//		echo "---$value<br>";
 		//}
-		echo "</td>";	}
+		echo "</td>";
+	}
 
 	echo "<form name=forma1 action=assign_control_number.php method=post>
 	<input type=hidden name=base value=".$arrHttp["base"].">

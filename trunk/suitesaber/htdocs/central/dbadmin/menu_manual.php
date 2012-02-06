@@ -62,7 +62,7 @@ if (isset($arrHttp["encabezado"])){
 	echo "<a href=\"../common/inicio.php?reinicio=s";
 	if (isset($arrHttp["base"]))echo "&base=".$arrHttp["base"];
 	echo "\" class=\"defaultButton backButton\">
-
+		<img src=\"../images/defaultButton_iconBorder.gif\" alt=\"\" title=\"\" />
 		<span><strong>". $msgstr["back"]."</strong></span>
 		</a>
 	";
@@ -72,7 +72,7 @@ echo "</div>
 		</div>";
 ?>
 <div class="helper">
-<?php echo "&nbsp; &nbsp; Script: menu_traducir.php" ?></font>
+<?php echo "<font color=white>&nbsp; &nbsp; Script: menu_traducir.php" ?></font>
 	</div>
 <div class="middle homepage">
 

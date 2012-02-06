@@ -158,7 +158,7 @@ if (isset($_SESSION["permiso"]["CENTRAL_ALL"]) or isset($_SESSION["permiso"]["CE
 <?PHP }?>
 	toolbar.addItem(new dhtmlXImageButtonObject("img/toolbarHelp.png","16","24",14,"5_ayuda","<?php echo $msgstr["m_ayuda"]?>"))
 	toolbar.addItem(new dhtmlXToolbarDividerXObject('div_6'))
-	toolbar.addItem(new dhtmlXImageButtonObject("img/toolbarHome.png","16","24",14,"home","<?php echo $msgstr["inicio"]?>"))
+	toolbar.addItem(new dhtmlXImageButtonObject("/central/css/saber/images/home.png","16","24",14,"home","<?php echo $msgstr["inicio"]?>"))
 	toolbar.showBar();
 	function onButtonClick(itemId,itemValue){
 		switch (itemId){

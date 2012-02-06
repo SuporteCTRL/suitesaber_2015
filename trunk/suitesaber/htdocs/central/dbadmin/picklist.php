@@ -105,7 +105,7 @@ echo "
 
 echo "<a href=\"javascript:self.close()\" class=\"defaultButton cancelButton\">";
 echo "
-		
+					<img src=\"../images/defaultButton_iconBorder.gif\" alt=\"\" title=\"\" />
 					<span><strong>". $msgstr["cancel"]."</strong></span>
 				</a>";
 echo "			</div>
@@ -116,7 +116,7 @@ echo "			</div>
 <a href=../documentacion/ayuda.php?help=".$_SESSION["lang"]."/picklist_tab.html target=_blank>".$msgstr["help"]."</a>&nbsp &nbsp;";
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 	echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/picklist_tab.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "&nbsp; &nbsp; Script: picklist.php" ;
+echo "<font color=white>&nbsp; &nbsp; Script: picklist.php" ;
 ?>
 </font>
 	</div>

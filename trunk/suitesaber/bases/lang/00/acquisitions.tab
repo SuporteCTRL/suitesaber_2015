@@ -66,10 +66,9 @@ notfound=Not found
 listorders=List pending orders
 err2=Missing status
 err2_1=The status must be approved or rejected
-err3=Missing type of acquisition
-err5=Missing database
+err3=Missign type of acquisition
+err5=Missign database
 err6=New copies: you must specify the control number existing object
-err6_1=New object: control number is not required
 err16=Missign author (16/17)
 err18=Missing title (18)
 err200=Missing recommended by (200)
@@ -85,8 +84,8 @@ err300r=Missing reference number
 err300b=Missing number of copies
 err300c=Missing price
 err300f=You must select Yes/No
-err300g=Missing date of selection
-err300h=Missing ISO date of selection
+err300g=Missign date of selection
+err300h=Missign ISO date of selection
 err330=Missing date beginning bidding process (330)
 err331=Missing ISO date beginning bidding process (331)
 err360b=Missing date of decision
@@ -100,10 +99,10 @@ objectid=Object Id.
 newobject=New object
 precatal=Bibliographic information
 create=Create object
-missingctl=Missing the tag for storing the control number. Please include in the FDT a field with type «Auto increment» and in the FST with the prefix "CN_"
+missingctl=Missign the tag for storing the control number. Please, include it in the FST with the prefix "CN_"
 objectexist=The control number already exists in the catalog database
 go=Go
-objnoex=The control number does not exist in the catalog database
+objnoex=The control number doesnot exists in the catalog database
 inventory=Inventory number
 orderloaded=This purchase order has its copies already created in the copies database
 objectcreated=Object created
@@ -127,13 +126,10 @@ newitems=New items
 exitems=Items already loaded
 closeorder=Close order
 orderclosed=Order closed
-loanobjadd=Select the type of object for each item and click on update for adding the copies to the loan objects database
-all_oper=See all suggestions
-operator=Operator
-pending_sort=Pending suggestions sorted by
-copies_approved=Copies Approved
-stats=Stats
-reports=Reports
-linkedtocopies=Linked to copies database
-unlinkedtocopies=Unlinked to copies database
+
+
+
+
+
+
 

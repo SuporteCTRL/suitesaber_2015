@@ -164,11 +164,7 @@ switch ($arrHttp["modulo"]){	case "catalog":
 	<style>
 	#draggable { width: 60px; height: 60px; padding: 0.5em; }
 	</style>
-	<script>
-	$(function() {
-		$( ".menuButton" ).draggable();
-	});
-	</script>
+
 
 </head>
 <body>
@@ -217,18 +213,14 @@ switch ($arrHttp["modulo"]){	case "catalog":
 ?>
 	</select> 
 	</form>
-	
 			<?php include("modules.php")?>
 </div>
-
 </div>
+
 	<div class="breadcrumb">
 		<h3><?php echo $msgstr["inicio"]." - $module_name"?></h3>
 	</div>
 	<div class="actions">
-
-
-
 </div>
 <div class="helper" >
 	<a href=../documentacion/ayuda.php?help=<?php echo $_SESSION["lang"]."/$ayuda"?> target=_blank><?php echo $msgstr["help"]?></a>
@@ -275,7 +267,7 @@ global $msgstr,$db_path,$arrHttp,$lista_bases,$Permiso,$dirtree;
 		<div id="tabs">
 			<ul>
 				<li><a href="#tabs-1"><?php echo $msgstr["database"]?></a></li>
-				<li><a href="#tabs-4">Pesquisa</a></li>
+
 <?php
 if (isset($Permiso["CENTRAL_ALL"])  or isset($Permiso["CENTRAL_CRDB"])  or isset($Permiso["CENTRAL_URDADM"])
   or isset($Permiso["CENTRAL_RESETLIN"])  or isset($Permiso["CENTRAL_TRANSLATE"])  or isset($Permiso["CENTRAL_EXDBDIR"]))
@@ -389,8 +381,7 @@ if (isset($Permiso["CENTRAL_DBUTILS"]) or isset($Permiso["CENTRAL_ALL"])){
 if (isset($Permiso["CENTRAL_Z3950CONF"])  or isset($Permiso["CENTRAL_ALL"])){
 ?>
 					<a href="javascript:CambiarBaseAdministrador('z3950')"  class="menuButton tooltip z3950Button">
-					<img src="../images/mainBox_iconBorder.gif" alt="" title="" />
-					<span><strong><?php echo $msgstr["z3950"]?></strong></span>
+					<span><?php echo $msgstr["z3950"]?></span>
 				</a>
 <?php
 }
@@ -416,9 +407,7 @@ if (isset($Permiso["CENTRAL_ALL"])  or isset($Permiso["CENTRAL_CRDB"])  or isset
 {
 ?>
 
-<div id="tabs-4">       			
-       <iframe width="100%" height="620" frameborder="0" scrolling="auto" src="/site/php/level.php?lang=pt&component=40#search"></iframe>		  			
-</div> 
+
 
 <!-- SEGUNDO ACORDEON -->
 
@@ -565,6 +554,3 @@ function MenuLoanAdministrator(){
 		<![endif]-->
 		
 		<?php include ("footer.php"); ?>
-		
-
-		

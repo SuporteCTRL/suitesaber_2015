@@ -22,13 +22,12 @@ A.defaultButton {
 	}
 
 A.defaultButton SPAN {
-	font-size: 90%;
+	font-size: 12px;
 	display: inline-block;
 	margin:1px;
 	text-align: center;
 	cursor:pointer;
 	border: 0;
-	font-size: 120%;
 	font-weight: bold;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
@@ -37,7 +36,7 @@ A.defaultButton SPAN {
 	}
 
 A.defaultButton STRONG {
-		font-size: 110%;
+		font-size: 14px;
 	}
 
 	/* #menuButton classes */
@@ -48,12 +47,9 @@ A.menuButton {
 
 A.menuButton SPAN {
 		cursor: pointer;
-		font-size: 90%;
+
 	}
 
-A.menuButton STRONG {
-		font-size: 110%;
-	}
 
 INPUT.superTextEntry,
 TEXTAREA.superTextEntry {
@@ -93,7 +89,7 @@ A.singleButton .sb_rb {
 	}
 
 .institutionalInfo H1 {
-		font-size: 250%;
+		font-size: 25px;
 	}
 
 .institutionalInfo H2 {
@@ -134,7 +130,8 @@ A.singleButton .sb_rb {
 
 .actions, .actions A {
 		text-decoration: none;
-	}
+
+}		
 
 	/*#END #sectionInfo classes */
 
@@ -356,27 +353,51 @@ TD.showSTitle .collectionMode A.selected {
 	text-decoration: none;
 }
 
+#botoes_top {
+	display: inline-block;
+	margin:1px;
+	text-align: center;
+	cursor:pointer;
+	border: 0;
+	font-size: 120%;
+	font-weight: bold;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	padding: 9px;
+	text-decoration: none;
+}
+
 /*tooltip da administração */
 a:hover {
 	text-decoration:none;
 } 
 	/* background-color e necessario para o IE6 */
 
-a.tooltip span {
+/*a.tooltip span {
+	margin-top: 70px;
+	text-shadow:0px 1px 4px #000000;
+	color: #000000;	
+	font-family: verdana,
+	font-weight: normal;
+	font-size: 10px;
+	position:fixed; 
+	margin-left: -120px;
+	width:100px;
+	height: auto;
 	
-	position:relative; 
+/*	position:relative; 
 	display:none; 
 	padding:0px; 
 	margin-top: 0px;
 	margin-left:-20px;  
 	width:auto;
-	height: auto;
+	height: auto; 
 }
 a.tooltip:hover span {
 	display:block; 	
 	position:absolute; 
 }
-
+*/
 
 .tag {
 	width: 20px;

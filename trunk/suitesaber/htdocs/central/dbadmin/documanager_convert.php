@@ -31,7 +31,8 @@ global $db_path;
 	foreach ($fp as $value){
 		$ix++;
 
-		if (trim($value)!=""){			$nc="";
+		if (trim($value)!=""){
+			$nc="";
 			$subc="";
 			$editsubc="";
 			$tag="";
@@ -43,9 +44,12 @@ global $db_path;
 			$rep="";
 			$repetible="";
 			$tipo="";
-			if (substr($value,0,2)=='##'){				$tipo="H";
+			if (substr($value,0,2)=='##'){
+				$tipo="H";
 				$nc=trim(substr($value,8));
-			}else{				$nc=trim(substr($value,3,26));
+
+			}else{
+				$nc=trim(substr($value,3,26));
 				$cols=trim(substr($value,33,3))*1;
 				$rows=trim(substr($value,37,3))*1;
 				if ($cols==0) $cols="";
@@ -65,11 +69,14 @@ global $db_path;
 				if ($rep=="R") $rep=1;
 				if ($rep=="1")  $repetible="yes";
 				$tabla=trim(substr($value,89));
-				if ($tabla!=""){					if (strpos($tabla,".tab")>0)
+				if ($tabla!=""){
+					if (strpos($tabla,".tab")>0)
 						$tipoau="P";
 					else
-						$tipoau="D";				}
-				if ($prefijo!="") $tipoau="D";			}
+						$tipoau="D";
+				}
+				if ($prefijo!="") $tipoau="D";
+			}
             if ($tag!="***"){
 				$salida="$tipo|$tag|$nc|0|$rep|$subc|$editsubc||$rows|$cols|$tipoau|$tabla|$prefijo||\n";
 				fwrite($fout,$salida);
@@ -96,9 +103,11 @@ global $db_path;
 
 if (isset($arrHttp["DocuManager"]))
 	CrearFdtOrbita();
-else{	echo "<form name=dm method=post action=documanager_convert.php>
+else{
+	echo "<form name=dm method=post action=documanager_convert.php>
 <textarea name=DocuManager rows=30 cols=150 wrap=off></textarea>
 <input type=submit value=enviar>
-</form>";}
+</form>";
+}
 
 ?>

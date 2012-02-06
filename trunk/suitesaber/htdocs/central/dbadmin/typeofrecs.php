@@ -42,13 +42,20 @@ if (isset($arrHttp["encabezado"])){
 }
 ?>
 <script>
-	function SendForm(wks){		check=""		for (i=0;i<document.validation.format.length;i++){			if (document.validation.format[i].checked)  check=document.validation.format[i].value		}
-		if (check==""){			alert("<?php echo $msgstr["selformat"]?>")
-			return		}
+	function SendForm(wks){
+		check=""
+		for (i=0;i<document.validation.format.length;i++){
+			if (document.validation.format[i].checked)  check=document.validation.format[i].value
+		}
+		if (check==""){
+			alert("<?php echo $msgstr["selformat"]?>")
+			return
+		}
 		document.forma1.format.value=check
 		document.forma1.wks.value=wks
 		document.forma1.submit()
-	}
+
+	}
 </script>
 <body>
 <div class="sectionInfo">
@@ -66,7 +73,7 @@ if (isset($arrHttp["encabezado"])){
 <div class="helper">
 	<a href=../documentacion/ayuda.php?help=<?php echo $_SESSION["lang"]?>/recval.html target=_blank><?php echo $msgstr["help"]?></a>&nbsp &nbsp;
  	<a href=../documentacion/edit.php?archivo=<?php echo $_SESSION["lang"]?>/recval.html target=_blank><?php echo $msgstr["edhlp"]?></a>
-<?php echo "&nbsp; &nbsp; Script: typeofrecs.php" ?></font>
+<?php echo "<font color=white>&nbsp; &nbsp; Script: typeofrecs.php" ?></font>
 	</div>
 <div class="middle form">
 	<div class="formContent">
@@ -94,9 +101,13 @@ $nr="";
 if (isset($fp)){
 	foreach($fp as $value){
 		$value=trim($value);
-		if ($value!=""){			if ($ix==0){				$ttm=explode(" ",$value);				$tl=trim($ttm[0]);
+		if ($value!=""){
+			if ($ix==0){
+				$ttm=explode(" ",$value);
+				$tl=trim($ttm[0]);
 				if (isset($ttm[1])) $nr=trim($ttm[1]);
-				$ix=1;			}else{
+				$ix=1;
+			}else{
 				$ttm=explode('|',$value);
 				echo "<tr><td><a href='javascript:SendForm(\"".urlencode($value)."\")'>".$ttm[3]."</a></td>\n";
 			}

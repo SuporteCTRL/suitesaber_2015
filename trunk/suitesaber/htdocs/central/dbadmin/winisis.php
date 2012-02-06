@@ -44,15 +44,22 @@ include("../common/get_post.php");
 include("../common/header.php");
 echo "<script  src=\"../dataentry/js/lr_trim.js\"></script>\n";
 echo "<script languaje=javascript>
-function EnviarForma(){	if (Trim(document.winisis.userfile.value)==''){		alert('".$msgstr["missing"]." ".$msgstr["fdt"]."')
-		return	}
+function EnviarForma(){
+	if (Trim(document.winisis.userfile.value)==''){
+		alert('".$msgstr["missing"]." ".$msgstr["fdt"]."')
+		return
+	}
 	ext=document.winisis.userfile.value
 	e=ext.split(\".\")
-	if (e.length==1 || e[1].toUpperCase()!=\"FDT\"){		alert('".$msgstr["missing"]." ".$msgstr["fdt"]."')
-		return	}
-	document.winisis.submit()}
+	if (e.length==1 || e[1].toUpperCase()!=\"FDT\"){
+		alert('".$msgstr["missing"]." ".$msgstr["fdt"]."')
+		return
+	}
+	document.winisis.submit()
+}
 </script>";
-if (isset($arrHttp["encabezado"]))	include("../common/institutional_info.php");
+if (isset($arrHttp["encabezado"]))
+	include("../common/institutional_info.php");
 echo "
 	<div class=\"sectionInfo\">
 
@@ -69,7 +76,7 @@ if (isset($arrHttp["encabezado"]))
 echo "<a href=menu_creardb.php$encabezado class=\"defaultButton backButton\">";
 
 echo "
-		
+					<img src=\"../images/defaultButton_iconBorder.gif\" alt=\"\" title=\"\" />
 					<span><strong>". $msgstr["back"]."</strong></span>
 				</a>
 			</div>
@@ -81,7 +88,7 @@ echo "
 	<a href=../documentacion/ayuda.php?help=".$_SESSION["lang"]."/crearbd_winisis_create.html target=_blank>".$msgstr["help"]."</a>&nbsp &nbsp;";
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 	echo "<a href=../documentacion/edit.php?archivo=". $_SESSION["lang"]."/crearbd_winisis_create.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "&nbsp; &nbsp; Script: winisis.php</font></div>";
+echo "<font color=white>&nbsp; &nbsp; Script: winisis.php</font></div>";
 
 echo "
 <div class=\"middle form\">

@@ -112,7 +112,7 @@ if (isset($arrHttp["encabezado"])){
 		<div class="actions">
 <?php if (isset($arrHttp["encabezado"])){
 	echo "<a href=\"../common/inicio.php?reinicio=s\" class=\"defaultButton cancelButton\">
-		
+					<img src=\"../images/defaultButton_iconBorder.gif\" alt=\"\" title=\"\" />
 					<span><strong>". $msgstr["cancel"]."</strong></span>
 				</a>
 	";
@@ -127,7 +127,7 @@ if (isset($arrHttp["encabezado"])){
 <?php
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 	echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/admin.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "&nbsp; &nbsp; Script: menu_creardb.php</font>";
+echo "<font color=white>&nbsp; &nbsp; Script: menu_creardb.php</font>";
 ?>
 	</div>
 	<form method=post name=forma1 onsubmit="javascript:return false">

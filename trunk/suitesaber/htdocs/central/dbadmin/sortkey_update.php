@@ -52,7 +52,7 @@ if (isset($arrHttp["encabezado"])){
 <?php
 	if ($encabezado!="") echo "<a href=javascript:self.close() class=\"defaultButton backButton\">";
 ?>
-
+<img src="../images/defaultButton_iconBorder.gif" alt="" title="" />
 <span><strong><?php echo $msgstr["back"]?></strong></span>
 </a>
 			</div>
@@ -63,7 +63,7 @@ if (isset($arrHttp["encabezado"])){
 <?php
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 	echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/sortkey.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "&nbsp; &nbsp; Script:sortkey_update.php </font>";
+echo "<font color=white>&nbsp; &nbsp; Script:sortkey_update.php </font>";
 ?>
 	</div>
 <div class="middle form">
@@ -79,9 +79,12 @@ $ix=0;
 foreach ($accents as $val){
 	$val=trim($val);
 	$ix=$ix+1;
-	if($val!=""){		$a=explode('|',$val);
+	if($val!=""){
+		$a=explode('|',$val);
 		echo "window.opener.document.forma1.sort.options[$ix]= new Option('".$a[0]."','".$a[1]."')\n";
-		fwrite($fp,$a[0]."|".$a[1]."\n");	}}
+		fwrite($fp,$a[0]."|".$a[1]."\n");
+	}
+}
 fclose($fp);
 echo "</script>\n";
 echo "sort.tab ".$msgstr["updated"]."<p>";
