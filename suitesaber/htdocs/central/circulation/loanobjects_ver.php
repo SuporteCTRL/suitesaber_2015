@@ -47,7 +47,7 @@ $rows_title[7]=$msgstr["tit_multa"];
 $rows_title[8]=$msgstr["tit_multar"];
 $rows_title[9]=$msgstr["tit_susp"];
 $rows_title[10]=$msgstr["tit_suspr"];
-$rows_title[11]=$msgstr["tit_espera"];
+$rows_title[11]=$msgstr["tit_reserva"];
 $rows_title[12]=$msgstr["tit_permitirp"];
 $rows_title[13]=$msgstr["tit_permitirr"];
 $rows_title[14]=$msgstr["tit_copias"];
@@ -66,7 +66,7 @@ $rows_title_a[7]=$msgstr["tit_multa_a"];
 $rows_title_a[8]=$msgstr["tit_multar_a"];
 $rows_title_a[9]=$msgstr["tit_susp_a"];
 $rows_title_a[10]=$msgstr["tit_suspr_a"];
-$rows_title_a[11]=$msgstr["tit_espera_a"];
+$rows_title_a[11]=$msgstr["tit_reserva_a"];
 $rows_title_a[12]=$msgstr["tit_permitirp_a"];
 $rows_title_a[13]=$msgstr["tit_permitirr_a"];
 $rows_title_a[14]=$msgstr["tit_copias_a"];
@@ -78,14 +78,18 @@ $archivo= $db_path."users/def/".$_SESSION["lang"]."/usuarios.tab";
 if (!file_exists($archivo))  $db_path."users/def/".$lang_db."/usuarios.tab";
 $fp=file($archivo);
 foreach ($fp as $value){
-	$value=trim($value);	if ($value!=""){		$t=explode('|',$value);
+	$value=trim($value);
+	if ($value!=""){
+		$t=explode('|',$value);
 		$type_users[$t[0]]=$t[1];
-	}}
+	}
+}
 unset($fp);
 $archivo=$db_path."circulation/def/".$_SESSION["lang"]."/items.tab";
 if (!file_exists($archivo)) $db_path."circulation/def/".$lang_db."/items.tab";
 $fp=file($archivo);
-foreach ($fp as $value){	$value=trim($value);
+foreach ($fp as $value){
+	$value=trim($value);
 	if ($value!=""){
 		$t=explode('|',$value);
 		$type_items[$t[0]]=$t[1];
@@ -118,17 +122,22 @@ $fp=file($archivo);
 	foreach ($rows_title as $r=>$v) echo "<td bgcolor=white align=center>$v</td>";
 	$ixc=count($rows_title);
 
-	foreach ($fp as $value) {		if (!empty($value)) {			$Ti=explode('|',$value);
+	foreach ($fp as $value) {
+		if (!empty($value)) {
+			$Ti=explode('|',$value);
 			echo "<tr>";
 			$i=0;
-			foreach ($Ti as $obj) {				$i=$ix+1;
+			foreach ($Ti as $obj) {
+				$i=$ix+1;
 				if ($i>$ixc) break;
-				switch ($i){					case 1:
+				switch ($i){
+					case 1:
 						$obj=$type_items[$obj];
 						break;
 					case 2:
 						$obj=$type_users[$obj];
-						break;				}
+						break;
+				}
 				echo "<td bgcolor=white>".$obj."</td>";
 			}
         }

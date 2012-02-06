@@ -44,8 +44,10 @@ IF (!isset($arrHttp["mes"])) $arrHttp["mes"]="";
 if (!isset($arrHttp["cadena"])) $arrHttp["cadena"]="";
 if (!isset($arrHttp["ano"])) $arrHttp["ano"]="";
 //foreach ($arrHttp as $var=>$value) echo "$var = $value<br>";
-if (isset($arrHttp["Opcion"]) and $arrHttp["Opcion"]=="guardar"){	Calendario("feriados.tab");
-	die;}
+if (isset($arrHttp["Opcion"]) and $arrHttp["Opcion"]=="guardar"){
+	Calendario("feriados.tab");
+	die;
+}
 
 include("../common/header.php");
 ?>
@@ -87,10 +89,12 @@ echo "
 				$msgstr["calendar"]."
 			</div>
 			<div class=\"actions\">\n";
-if (isset($arrHttp["ver"])){	  echo "<a href=javascript:self.close() class=\"defaultButton cancelButton\">
+if (isset($arrHttp["ver"])){
+	  echo "<a href=javascript:self.close() class=\"defaultButton cancelButton\">
 
 					<span><strong>". $msgstr["cancel"]."</strong></span>
-				</a>\n";}else{
+				</a>\n";
+}else{
 				echo "<a href=\"configure_menu.php?encabezado=s\" class=\"defaultButton backButton\">
 
 					<span><strong>". $msgstr["back"]."</strong></span>
@@ -108,7 +112,7 @@ echo "
 	<a href=../documentacion/ayuda.php?help=".$_SESSION["lang"]."/circulation/calendario.html target=_blank>".$msgstr["help"]."</a>&nbsp &nbsp;";
 	if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 		echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/circulation/calendario.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "&nbsp; &nbsp; calendario.php </font>";
+echo "<font color=white>&nbsp; &nbsp; calendario.php </font>";
 echo "</div>
 			<div class=\"spacer\">&#160;</div>
 		</div>

@@ -18,12 +18,18 @@ $pr_return="";
 $pr_fine="";
 $pr_statment="";
 $pr_solvency="";
-if (file_exists($db_path."trans/pfts/".$_SESSION["lang"]."/receipts.lst")){	$archivo=$db_path."trans/pfts/".$_SESSION["lang"]."/receipts.lst";
-}else{	if (file_exists($db_path."trans/pfts/".$_SESSION["lang"]."/receipts.lst"))
-		$archivo=$db_path."trans/pfts/".$lang_db."/receipts.lst";}
-if ($archivo!=""){	$fp=file($archivo);
-	foreach ($fp as $value){		$v=explode('|',$value);
-		switch($v[0]){			case "pr_loan":
+if (file_exists($db_path."trans/pfts/".$_SESSION["lang"]."/receipts.lst")){
+	$archivo=$db_path."trans/pfts/".$_SESSION["lang"]."/receipts.lst";
+}else{
+	if (file_exists($db_path."trans/pfts/".$_SESSION["lang"]."/receipts.lst"))
+		$archivo=$db_path."trans/pfts/".$lang_db."/receipts.lst";
+}
+if ($archivo!=""){
+	$fp=file($archivo);
+	foreach ($fp as $value){
+		$v=explode('|',$value);
+		switch($v[0]){
+			case "pr_loan":
 				$pr_loan=$v[1];
 				break;
 			case "pr_return":
@@ -37,23 +43,32 @@ if ($archivo!=""){	$fp=file($archivo);
 				break;
 			case "pr_solvency":
 				$pr_solvency=$v[1];
-				break;		}	}}
+				break;
+		}
+	}
+}
 ?>
 <script language="javascript1.2" src="../dataentry/js/lr_trim.js"></script>
 <script>
-function CheckName(fn,Ctrl){	res= /^[a-z][\w]+$/i.test(fn)
+function CheckName(fn,Ctrl){
+	res= /^[a-z][\w]+$/i.test(fn)
 	if (res==false){
 		alert("<?php echo $msgstr["errfilename"]?>");
 		Ctrl.focus()
 		return false
-	}}
-function Guardar(){	nombre=Trim(document.receipts.pr_loan.value)
-	if (nombre!=""){		res=CheckName(nombre,document.receipts.pr_loan)
-		if (res==false){			return
+	}
+}
+function Guardar(){
+	nombre=Trim(document.receipts.pr_loan.value)
+	if (nombre!=""){
+		res=CheckName(nombre,document.receipts.pr_loan)
+		if (res==false){
+			return
 		}
 	}
 	nombre=Trim(document.receipts.pr_return.value)
-	if (nombre!=""){		res=CheckName(nombre,document.receipts.pr_return)
+	if (nombre!=""){
+		res=CheckName(nombre,document.receipts.pr_return)
 		if (res==false){
 			return
 		}
@@ -79,7 +94,8 @@ function Guardar(){	nombre=Trim(document.receipts.pr_loan.value)
 			return
 		}
 	}
-	document.receipts.submit()}
+	document.receipts.submit()
+}
 </script>
 <body>
 <div class="sectionInfo">

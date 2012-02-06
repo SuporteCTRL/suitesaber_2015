@@ -64,7 +64,8 @@ if (!file_exists($archivo)) $archivo=$db_path.$arrHttp["base"]."/loans/".$lang_d
 $fp=file_exists($archivo);
 if ($fp){
 	$fp=file($archivo);
-	foreach ($fp as $value){		$value=trim($value);
+	foreach ($fp as $value){
+		$value=trim($value);
     	if ($value!="")$uskey=$value;
 	}
 }

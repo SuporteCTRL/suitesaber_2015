@@ -85,7 +85,7 @@ function GenerarWks(){
 	<td align=center valign=top ><?php echo $msgstr["m_ir"]?>:<br>
 		<input type=text  name=ir_a size=15 value='' onClick="javascript:this.value=''">
   	</td>
-	<td ><div id="toolbarBox" style="height:25;position:relative"></div></td>
+	<td ><div id="toolbarBox" style="height:30;position:relative"></div></td>
 
 	</td>
 <td>
@@ -129,9 +129,9 @@ function GenerarWks(){
 	<?php }
 	if (isset($_SESSION["permiso"]["CENTRAL_ALL"]) or isset($_SESSION["permiso"]["CENTRAL_VALDEF"])){
 	?>
-		//toolbar.addItem(new dhtmlXToolbarDividerXObject('xedit'))
-		//toolbar.addItem(new dhtmlXSelectButtonObject('defaultval',',editdv,deletedv','<?php echo $msgstr["valdef"]?>,<?php echo $msgstr["editar"]?>,<?php echo $msgstr["eliminar"]?>','',80,80,''))
-		//toolbar.addItem(new dhtmlXToolbarDividerXObject('div_5'))
+		toolbar.addItem(new dhtmlXToolbarDividerXObject('xedit'))
+		toolbar.addItem(new dhtmlXSelectButtonObject('defaultval',',editdv,deletedv','<?php echo $msgstr["valdef"]?>,<?php echo $msgstr["editar"]?>,<?php echo $msgstr["eliminar"]?>','',80,80,''))
+		toolbar.addItem(new dhtmlXToolbarDividerXObject('div_5'))
 	<?php }
 	if (isset($_SESSION["permiso"]["CENTRAL_ALL"]) or isset($_SESSION["permiso"]["CENTRAL_PREC"])){
 	?>

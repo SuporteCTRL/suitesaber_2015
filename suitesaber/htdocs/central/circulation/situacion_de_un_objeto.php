@@ -39,6 +39,45 @@ include("../common/get_post.php");
 $arrHttp["base"]="biblo";
 //foreach ($arrHttp as $var=>$value) echo "$var = $value<br>";
 include("../common/header.php");
+
+function LeerPft($pft_name,$base){
+global $arrHttp,$db_path,$lang_db;
+	$pft="";
+	$archivo=$db_path.$base."/loans/".$_SESSION["lang"]."/$pft_name";
+	if (!file_exists($archivo)) $archivo=$db_path.$base."/loans/".$lang_db."/$pft_name";
+	$fp=file_exists($archivo);
+	if ($fp){
+		$fp=file($archivo);
+		foreach ($fp as $value){
+			$pft.=$value;
+		}
+
+	}
+    return $pft;
+}
+
+function LeerNumeroClasificacion($base){
+global $db_path,$lang_db;
+	$prefix_nc="";
+	$archivo=$db_path.$base."/loans/".$_SESSION["lang"]."/loans_conf.tab";
+	if (!file_exists($archivo)) $archivo=$db_path.$base."/loans/".$lang_db."/loans_conf.tab";
+	$fp=file_exists($archivo);
+	if ($fp){
+		$fp=file($archivo);
+		foreach ($fp as $value){
+			$ix=strpos($value," ");
+			$tag=trim(substr($value,0,$ix));
+			switch($tag){
+				case "IN": $prefix_in=trim(substr($value,$ix));
+					break;
+				case "NC":
+					$prefix_nc=trim(substr($value,$ix));
+					break;
+			}
+		}
+	}
+	return $prefix_nc;
+}
 ?>
 <script src=../dataentry/js/lr_trim.js></script>
 <script>
@@ -51,11 +90,19 @@ document.onkeypress =
     return true;
   }
 
-function EnviarForma(){	if (Trim(document.searchBox.Expresion.value)=="" && Trim(document.inventorysearch.code.value)==""){		alert("<?php echo $msgstr["falta"]." ".$msgstr["control_n"]?>")
-		return	}
-	if (Trim(document.searchBox.Expresion.value)!=""){
-		document.searchBox.submit()
-	}else{		document.inventorysearch.submit()	}
+function EnviarForma(){
+	if (Trim(document.inventorysearch.code.value)==""){
+		alert("<?php echo $msgstr["falta"]." ".$msgstr["control_n"]?>")
+		return
+	}
+<?php
+if (file_exists($db_path."loans.dat"))
+	echo 'document.inventorysearch.action="situacion_de_un_objeto_db_ex.php"';
+else
+    echo 'document.inventorysearch.action="situacion_de_un_objeto_ex.php"';
+?>
+
+	document.inventorysearch.submit()
 }
 
 function AbrirIndiceAlfabetico(xI,Prefijo,Subc,Separa,db,cipar,tag,postings,Repetible,Formato){
@@ -70,10 +117,19 @@ function AbrirIndiceAlfabetico(xI,Prefijo,Subc,Separa,db,cipar,tag,postings,Repe
 }
 
 function AbrirIndice(Ix,Ctrl){
-	switch (Ix){		case "S":
-			db="biblio"
-			prefijo="ST_"
-			AbrirIndiceAlfabetico(Ctrl,"ST_","","","loanobjects","biblo.par","3",1,"","v3^*,|.|v3^b,|.|v3^c,|.|v3^d")
+	switch (Ix){
+		case "S":
+			bd_sel=document.inventorysearch.db.selectedIndex
+			if (bd_sel<=0){
+				alert("debe seleccinar una base de datos")
+				return
+			}
+			bd_a=document.inventorysearch.db.options[bd_sel].value
+			b=bd_a.split('|')
+			bd=b[0]
+			prefijo=b[2]
+			formato=b[3]
+			AbrirIndiceAlfabetico(Ctrl,prefijo,"","",bd,bd+".par","3",1,"",formato)
 			break
 		case "I":
 
@@ -95,7 +151,7 @@ function PresentarDiccionario(){
 		document.diccionario.campo.value=escape(t[0])
 		document.diccionario.prefijo.value=t[2]
 		document.diccionario.id.value=t[1]
-		document.diccionario.Diccio.value="document.searchBox.searchExpr"
+		document.diccionario.Diccio.value="document.inventorysearch.searchExpr"
 		document.diccionario.submit()
 		msgwin.focus()
 	}
@@ -126,60 +182,53 @@ echo "&nbsp; &nbsp; Script: situacion_de_un_objeto.php</font>\n";
 	</div>
 <div class="middle list">
 	<div class="searchBox">
-	<form name=searchBox action="situacion_de_un_objeto_ex.php" method=post onsubmit="javascript:return false">
-	<input type=hidden name=Opcion value=buscar>
-	<input type=hidden name=base value=biblo>
-	<input type=hidden name=desde value=1>
-	<table width=100%>
-		<td width=100>
-		<label for="searchExpr">
-			<strong><?php //echo $msgstr["search"]?></strong>
+	<form name=inventorysearch action="situacion_de_un_objeto_ex.php" method=post onsubmit="javascript:return false">
+<?php
+//READ BASES.DAT TO FIND THOSE DATABASES IF NOT WORKING WITH COPIES DATABASES
+$sel_base="N";
+if (file_exists($db_path."loans.dat")){
+	$fp=file($db_path."loans.dat");
+	$sel_base="S";
+?>
+	<table width=100% border=0>
+		<td width=150>
+		<label for="dataBases">
+			<strong><?php echo $msgstr["basedatos"]?></strong>
 		</label>
 		</td><td>
+		<select name=db>
+		<option></option>
 <?php
-$arrHttp["base"]="biblo";
-$archivo=$db_path.$arrHttp["base"]."/pfts/".$_SESSION["lang"]."/camposbusqueda.tab";
-if (!file_exists($archivo)) $archivo=$db_path.$arrHttp["base"]."/pfts/".$lang_db."/camposbusqueda.tab";
-?>
-				<input type="hidden" name="Expresion" id="searchExpr" class="textEntry" onfocus="this.className = 'textEntry textEntryFocus';"  onblur="this.className = 'textEntry';"
-				value='<?php if (isset($arrHttp["Expresion"])) echo trim(stripslashes($arrHttp["Expresion_b"]))?>' />
-<!--				<select name="indexes" class="textEntry">
-					<option></option>
-<?php
-
-$fp=file($archivo);
-foreach ($fp as $value){	$value=trim($value);
-	$t=explode('|',$value);
-	$xselected="";
-	if (isset($arrHttp["Indice"])){
-		if ($arrHttp["Indice"]==$t[1]) $xselected=" selected";
+	foreach ($fp as $value){
+		$value=trim($value);
+		$v=explode('|',$value);
+		//SE LEE EL PREFIJO PARA OBTENER EL NUMERO DE CLASIFICACION DE LA BASE DE DATOS
+		$prefijo_nc=LeerNumeroClasificacion($v[0]);
+		$pft_nc=LeerPft("loans_cn.pft",$v[0]);
+		$value.="|".$prefijo_nc."|".urlencode($pft_nc);
+		echo "<option value='$value'>".$v[1]."</option>";
 	}
-	echo "<Option value='$value' $xselected>".trim($t[0])."\n";
-
-}
 ?>
-				</select>
-				<input type="submit" name="ok" value="<?php echo $msgstr["index"]?>" class="submit" onClick=javascript:PresentarDiccionario() />
-				<input type="submit" name="ok" value="<?php echo $msgstr["search"]?>" class="submit" onClick=javascript:document.diccionario.from.value=1;EnviarForma() />
-  -->
-		</td></table>
-	</form>
+		</select>
+		</td>
+	</table>
 	</div>
+
+<?php }?>
 	<div class=\"spacer\">&#160;</div>
 	<div class="searchBox">
-	<form name=inventorysearch action="situacion_de_un_objeto_ex.php" method=post onsubmit="javascript:return false">
+
 	<input type=hidden name=Opcion value=inventario>
-	<input type=hidden name=base value=biblo>
 	<input type=hidden name=desde value=1>
 	<table width=100%>
-		<td width=100>
+		<td width=150>
 		<label for="searchExpr">
-			<strong><?php echo $msgstr["control_n"]?></strong>
+			<strong><?php echo $msgstr["controlnum"]?></strong>
 		</label>
 		</td><td>
 		<input type="text" name="code" id="searchExpr" value="" class="textEntry" onfocus="this.className = 'textEntry';"  onblur="this.className = 'textEntry';" />
 
-		<input type="button" name="list" value="<?php echo $msgstr["list"]?>" class="submit" onclick="javascript:AbrirIndice('I',document.inventorysearch.code)"/>
+		<input type="button" name="list" value="<?php echo $msgstr["list"]?>" class="submit" onclick="javascript:AbrirIndice('<?php if ($sel_base=="S") echo "S"; else echo "I";?>',document.inventorysearch.code)"/>
 		<input type="submit" name="ok" value="<?php echo $msgstr["search"]?>" class="submit" onClick=EnviarForma() />
 		</td></table>
 	</form>

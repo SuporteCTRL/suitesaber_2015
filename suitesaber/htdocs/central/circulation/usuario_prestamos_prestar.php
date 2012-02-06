@@ -42,6 +42,44 @@ include("fecha_de_devolucion.php");
 ///////////////////////////////////////////////////////////////////////////////////////////
 include("../common/get_post.php");
 //foreach ($arrHttp as $var => $value) echo "$var = $value<br>";
+//die;
+$archivo="";
+$pr_loan="";
+$pr_return="";
+$pr_fine="";
+$pr_statment="";
+$pr_solvency="";
+if (file_exists($db_path."trans/pfts/".$_SESSION["lang"]."/receipts.lst")){
+	$archivo=$db_path."trans/pfts/".$_SESSION["lang"]."/receipts.lst";
+}else{
+	if (file_exists($db_path."trans/pfts/".$lang_db."/receipts.lst"))
+		$archivo=$db_path."trans/pfts/".$lang_db."/receipts.lst";
+}
+if ($archivo!=""){
+	$fp=file($archivo);
+	foreach ($fp as $value){
+		$value=trim($value);
+		$v=explode('|',$value);
+		switch($v[0]){
+			case "pr_loan":
+				$pr_loan=$v[1];
+				break;
+			case "pr_return":
+				$pr_return=$v[1];
+				break;
+			case "pr_fine":
+				$pr_fine=$v[1];
+				break;
+			case "pr_statment":
+				$pr_statment=$v[1];
+				break;
+			case "pr_solvency":
+				$pr_solvency=$v[1];
+				break;
+		}
+	}
+}
+
 $item_data=explode('||',$arrHttp["item"]);
 $nc=$item_data[0];                  // Control number of the object
 $bib_db=$item_data[1];
@@ -83,15 +121,19 @@ include ('../dataentry/leerregistroisispft.php');
     $item="$item '\$\$' $pft_typeofr '\$\$'$pft_storobj";
 	// Read the bibliographic database that contains the object using the control mumber extracted from the copy
 	$IsisScript=$xWxis."loans/prestamo_disponibilidad.xis";
-	if ($arrHttp["copies"]=="Y")
+	if ($arrHttp["copies"]=="Y"){
 		$Expresion="CN_".$nc;
-	else
+	}else{
+		//SE LEE EL PREFIJO A UTILIZAR PARA LOCALIZAR EL OBJETO A TRAVÉS DE SU NÚMERO DE INVENTARIO
 		$Expresion="IN_".$nc;
+	}
 	$query = "&Opcion=disponibilidad&base=$bib_db&cipar=$db_path"."par/$bib_db.par&Expresion=".$Expresion."&Pft=".urlencode($item);
 //	echo $query;
 	include("../common/wxis_llamar.php");
 	$obj="";
-	foreach ($contenido as $value){		$value=trim($value);		if (!empty($value))
+	foreach ($contenido as $value){
+		$value=trim($value);
+		if (!empty($value))
 			$obj.=$value;
 	}
 	$objeto=explode('$$',$obj);
@@ -131,11 +173,26 @@ include ('../dataentry/leerregistroisispft.php');
 	if (isset($arrHttp["signatura"])and $arrHttp["signatura"]!="") $ValorCapturado.="0090".$arrHttp["signatura"]."\n";
 	$ValorCapturado.="0100".$objeto[2]."\n";
 	$ValorCapturado.="0400".$arrHttp["policy"]."\n";
+	$ValorCapturado.="0120^a".$_SESSION["login"]."^b".date("Ymd H:i:s");
 	$ValorCapturado=urlencode($ValorCapturado);
 	$IsisScript=$xWxis."crear_registro.xis";
-	$Formato=$db_path."trans/pfts/en/trans";
-	$query = "&base=trans&cipar=$db_path"."par/trans.par&login=".$_SESSION["login"]."&Formato=$Formato&Mfn=&ValorCapturado=".$ValorCapturado;
+	$Formato="";
+	$recibo="";
+	if ($pr_loan!=""){
+		if (file_exists($db_path."trans/pfts/".$_SESSION["lang"]."/".$pr_loan.".pft")){
+			$Formato=$db_path."trans/pfts/".$_SESSION["lang"]."/".$pr_loan;
+		}else{
+			if (file_exists($db_path."trans/pfts/".$lang_db."/".$pr_loan.".pft")){
+				$Formato=$db_path."trans/pfts/".$lang_db."/".$pr_loan;
+			}
+		}
+		if ($Formato!="") $Formato="&Formato=$Formato";
+	}
+	$query = "&base=trans&cipar=$db_path"."par/trans.par&login=".$_SESSION["login"]."$Formato&Mfn=&ValorCapturado=".$ValorCapturado;
 	include("../common/wxis_llamar.php");
+	$recibo=implode(" ",$contenido);
+	if(trim($recibo)!=""){
+		$recibo="&recibo=$recibo";
+	}
+    header("Location: usuario_prestamos_presentar.php?show=Y&base=users&usuario=".$arrHttp["usuario"]."$recibo");
 
-	header("Location: usuario_prestamos_presentar.php?show=Y&base=users&usuario=".$arrHttp["usuario"]);
-?>

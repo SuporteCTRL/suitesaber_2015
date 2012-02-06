@@ -1,6 +1,6 @@
 <?
 //Caminho físico no servidor
-$localserver = "/var/www/suitesaber/saber-linux";
+$localserver = "/var/www/suitesaber/suitesaber";
 
 //Nome do arquivo CSS principal do tema
 $theme ="saber";

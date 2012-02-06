@@ -51,10 +51,10 @@ $contenido="";
 $IsisScript=$xWxis."buscar_ingreso.xis";
 include("../common/wxis_llamar.php");
 $Total=0;
-foreach ($contenido as $linea){	$linea=trim($linea);
+foreach ($contenido as $linea){	$linea=trim($linea);
 	if ($linea!="") {
 		$l=explode('|',$linea);
-		if (substr($linea,0,6)=="[MFN:]"){			$Mfn=trim(substr($linea,6));		}else{			if (substr($linea,0,8)=="[TOTAL:]"){				$Total=trim(substr($linea,8));			}else{				$prestamo=$linea;			}
+		if (substr($linea,0,6)=="[MFN:]"){			$Mfn=trim(substr($linea,6));		}else{			if (substr($linea,0,8)=="[TOTAL:]"){				$Total=trim(substr($linea,8));			}else{				$prestamo=$linea;			}
 		}
 	}
 }
@@ -107,7 +107,7 @@ if ($Total>0){
 	$newdate=date("m/d/Y h:i:s A");
 	//echo "----$newdate---";
 	$unidad="D";
-	switch ($unidad){		case "H":
+	switch ($unidad){		case "H":
 			$date1 = time();
 			$tt=explode(' ',$hora_d);
 			$date2 = mktime(0,0,0, substr($fecha_d,4,2),substr($fecha_d,6,2),substr($fecha_d,0,4));
@@ -119,7 +119,7 @@ if ($Total>0){
 			$newdate=date("m/d/Y");
 			$fecha_d=  substr($fecha_d,4,2)."/".substr($fecha_d,6,2)."/".substr($fecha_d,0,4);
 			$atraso=dateDiff("/", $newdate, $fecha_d);
-			break;	}
+			break;	}
 
 //	echo "<p>Atraso= $atraso $unidad<br>";
 //	echo "<p>".$Mfn;
@@ -139,7 +139,7 @@ if (isset($arrHttp["usuario"]) and !isset($cod_usuario))
 	$cu="&usuario=".$arrHttp["usuario"];
 else
 	$cu="&usuario=$cod_usuario";
-if (isset($arrHttp["vienede"])){	header("Location: usuario_prestamos_presentar.php?encabezado=s$error$cu");}else{
+if (isset($arrHttp["vienede"])){	header("Location: usuario_prestamos_presentar.php?encabezado=s$error$cu");}else{
 	header("Location: devolver.php?encabezado=s$error$cu");
 }
 die;

@@ -51,42 +51,10 @@ Function Iso2Fecha($fecha){
 	$f=substr($fecha,6,2)."/".substr($fecha,4,2)."/".substr($fecha,0,4);
 	return $f;
 }
-/*
-// se determina si el préstamo está vencido
-function compareDate ($FechaP){
-global $locales,$config_date_format;
-
-//Se convierte la fecha a formato ISO (yyyymmaa) utilizando el formato de fecha local
-	$df=explode('/',$config_date_format);
-	switch ($df[0]){
-		case "DD":
-			$dia=substr($FechaP,0,2);
-			break;
-		case "MM":
-			$mes=substr($FechaP,0,2);
-			break;
-	}
-	switch ($df[1]){
-		case "DD":
-			$dia=substr($FechaP,3,2);
-			break;
-		case "MM":
-			$mes=substr($FechaP,3,2);
-			break;
-	}
-	$year=substr($FechaP,6,4);
-	$exp_date=$year."-".$mes."-".$dia;
-	$todays_date = date("Y-m-d");
-	$today = strtotime($todays_date);
-	$expiration_date = strtotime($exp_date);
-	$diff=$expiration_date-$today;
-	return $diff;
-
-}//end Compare Date
-*/
 
 // ------------------------------------------------------
-
+include("../common/header.php");
+ 	include("../common/institutional_info.php");
 
 
 echo "<body>";
@@ -97,7 +65,7 @@ echo "<body>";
 	</div>
 	<div class="actions">
 		<a href="javascript:history.back()" class="defaultButton backButton">
-<!-- -->
+		<img src="../images/defaultButton_iconBorder.gif" alt="" title="" />
 		<span><strong><?php echo $msgstr["back"]?></strong></span>
 		</a>
 	</div>
@@ -108,7 +76,7 @@ echo "<body>";
 <a href=../documentacion/ayuda.php?help=<?php echo $_SESSION["lang"]?>/prestamo_procesar.html target=_blank><?php echo $msgstr["help"]?></a>&nbsp &nbsp;
 <?php if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 		echo "        		<a href=../documentacion/edit.php?archivo=". $_SESSION["lang"]."/prestamo_procesar.html target=_blank>".$msgstr["edhlp"]."</a>";
-  echo "&nbsp; &nbsp; Script: usuario_prestamos_presentar.php</font>\n";
+  echo "&nbsp; &nbsp; Script: usuario.php</font>\n";
 ?>
 	</div>
 <div class="middle form">
@@ -118,12 +86,8 @@ echo "<body>";
 
 include("ec_include.php");  //se incluye el procedimiento para leer el usuario y los préstamos pendientes
 echo $ec_output;
-if ($cont=="S" and ($reservas_p==0 or $posicion_cola==1)){
-	echo " <a href=usuario_prestamos_prestar.php?usuario=".$arrHttp["usuario"]."&inventario=".$arrHttp["inventory"]."&signatura=".$signatura."&reserva=$posicion_cola class=class=\"submit\"><dd><h4>".$msg_1.": </font>".$msgstr["inventory"].": ".$arrHttp["inventory"]."</h4></a>";
-}
 ?>
-</form></div></div>
+</div></div>
 <?php include("../common/footer.php");?>
 </body>
 </html>
-

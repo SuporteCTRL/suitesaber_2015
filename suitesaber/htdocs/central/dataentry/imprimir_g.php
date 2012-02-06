@@ -29,9 +29,11 @@ session_start();
 if (!isset($_SESSION["permiso"])){
 	header("Location: ../common/error_page.php") ;
 }
+include ("../../meta.php");
 include("../config.php");
 include ("../lang/admin.php");
 include("../common/get_post.php");
+
 //foreach ($arrHttp as $var=>$value) echo "$var=$value<br>";
 
 if (isset($arrHttp["Expresion"])){	$arrHttp["Expresion"]=stripslashes($arrHttp["Expresion"]);
@@ -66,6 +68,20 @@ if (isset($arrHttp["pft"]) and trim($arrHttp["pft"])!=""){
 	    		foreach ($fp as $value) {	    			$arrHttp["headings"].=trim($value)."\r";	    		}
 	    	}
 	    }
+ //footer	    
+		    if ($arrHttp["tipof"]!=""){	    	$footer=$db_path.$arrHttp["base"]."/pfts/".$_SESSION["lang"]."/".$pft_name[0]."_f.txt";
+
+	    	if (!file_exists($footer)){
+	    		$footer=$db_path.$arrHttp["base"]."/pfts/".$lang_db."/".$pft_name[0]."_f.txt";
+
+	    	}
+	    	if (file_exists($footer)){	    		$fp=file($footer);
+	    		$arrHttp["footer"]="";
+	    		foreach ($fp as $value) {	    			$arrHttp["footer"].=trim($value)."\r";	    		}
+	    	}
+	    }   
+	    
+	    
 	}
 }
 
@@ -101,9 +117,11 @@ switch ($arrHttp["tipof"]){              //TYPE OF FORMAT
 	case "P":  //PARRAGRAPH
 		break;
 	case "CT": //COLUMNS (TABLE)
-		$data="<table border=1>";
+		$data="<table>";
 		if (isset($arrHttp["headings"])){			$h=explode("\r",$arrHttp["headings"]);
-			foreach ($h as $value){				$data.="<th>$value</th>";			}		}
+			foreach ($h as $value){				$data.="<th>$value</th>";
+			}
+		}
 		break;
 	case "CD":
 		if (isset($arrHttp["headings"])){
@@ -125,11 +143,17 @@ foreach ($contenido as $linea){
 	 			$expr_ref=$f[2];
 	 			$IsisScript=$xWxis."buscar.xis";
  				$query = "&cipar=$db_path"."par/".$arrHttp["cipar"]. "&Expresion=".$expr_ref."&Opcion=buscar&base=" .$bd_ref."&Formato=$pft_ref";
+ 				
+				
 				include("../common/wxis_llamar.php");
 				foreach($contenido as $linea) $data.= "$linea\n";
-	}else{		$data.= $linea."\n" ;	}
+
+
+	}else{		$data.= $linea."\n" ;
+		}
 
 }
+
 switch ($arrHttp["vp"]){	case "WP":
     	$filename=$arrHttp["base"].".doc";
 		header('Content-Type: application/msword; charset=windows-1252');
@@ -165,13 +189,25 @@ switch ($arrHttp["vp"]){	case "WP":
    echo $data;
 switch ($arrHttp["tipof"]){              //TYPE OF FORMAT
 	case "T":  //TABLE
+	
 		echo "</body></html>";
 		break;
 	case "P":  //PARRAGRAPH
 		echo "</body></html>";
 		break;
+		
 	case "CT": //COLUMNS (TABLE)
-		echo "</table></body></html>";
+			include("../circulation/registro_rec.php");			
+		echo "</table>";
+
+
+			$f=explode("\r",$arrHttp["footer"]);
+				foreach ($f as $value){				$data.="$value";
+}		
+
+		echo "$arrHttp[footer]";
+		echo "</body></html>";		
+
 		break;
 	case "CD":
 		break;

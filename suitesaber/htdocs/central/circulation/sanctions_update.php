@@ -68,7 +68,8 @@ $fecha_desde= $year.$mes.$dia;
 
 // se calcula la fecha de vencimiento de la sanción sumando los días de suspensión
 if ($arrHttp["type"]=="S"){
-}
+
+}
 switch ($arrHttp["type"]){
 	case "M":
 		$tipor="M";                                     		//v1

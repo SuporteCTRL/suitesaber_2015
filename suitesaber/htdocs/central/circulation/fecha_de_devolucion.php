@@ -1,4 +1,30 @@
 <?php
+/**
+ * @program:   ABCD - ABCD-Central - http://reddes.bvsaude.org/projects/abcd
+ * @copyright:  Copyright (C) 2009 BIREME/PAHO/WHO - VLIR/UOS
+ * @file:      fecha_de_devolucion.php
+ * @desc:      Return date calculation
+ * @author:    Guilda Ascencio
+ * @since:     20091203
+ * @version:   1.0
+ *
+ * == BEGIN LICENSE ==
+ *
+ *    This program is free software: you can redistribute it and/or modify
+ *    it under the terms of the GNU Lesser General Public License as
+ *    published by the Free Software Foundation, either version 3 of the
+ *    License, or (at your option) any later version.
+ *
+ *    This program is distributed in the hope that it will be useful,
+ *    but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *    GNU Lesser General Public License for more details.
+ *
+ *    You should have received a copy of the GNU Lesser General Public License
+ *    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * == END LICENSE ==
+*/
 //Se calcula la fecha de devolución, tomando en cuenta los días feriados
 function FechaDevolucion($lapso,$unidad,$fecha_inicio){
 global $feriados,$locales,$notrabaja,$config_date_format;
@@ -14,7 +40,9 @@ global $feriados,$locales,$notrabaja,$config_date_format;
 		case "D":
             if ($fecha_inicio==""){
 				$dev= date("Y-m-d",strtotime("+0 days"));
-	        }else{	        	$dev= date("Y-m-d",strtotime($fecha_inicio."+0 days"));	        }
+	        }else{
+	        	$dev= date("Y-m-d",strtotime($fecha_inicio."+0 days"));
+	        }
 			break;
 	}
     $d=0;
@@ -42,7 +70,9 @@ global $feriados,$locales,$notrabaja,$config_date_format;
     		if (!isset($locales[$dia_sem]["from"])) {
     			$df=$df+1;
     			$dia_sem="F";
-    		}else{    			$d++;    		}
+    		}else{
+    			$d++;
+    		}
     	}
     }
     $lapso=$lapso+$df-1;

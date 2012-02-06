@@ -54,7 +54,7 @@ $archivo=$db_path.$arrHttp["base"]."/pfts/".$_SESSION["lang"]."/".$arrHttp["base
 if (!file_exists($archivo)){
     $archivo=$db_path.$arrHttp["base"]."/pfts/".$lang_db."/".$arrHttp["base"].".pft";
     if (!file_exists($archivo))
-		$warning="<br><h6>".$msgstr["warning"]."... ".$msgstr["misfile"]." $db_path".$arrHttp["base"]."/def/".$_SESSION['lang']."/".$arrHttp["base"].".pft";
+		$warning="<br><h6><font face=Verdana>".$msgstr["warning"]."... ".$msgstr["misfile"]." $db_path".$arrHttp["base"]."/def/".$_SESSION['lang']."/".$arrHttp["base"].".pft";
 }
 if ($cont=="N") die;
 

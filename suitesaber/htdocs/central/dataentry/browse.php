@@ -113,7 +113,7 @@ if (!isset($arrHttp["from"])) $arrHttp["from"]=1;
 $arrHttp["Mfn"]=1;
 $Formato=$db_path.$arrHttp["base"]."/pfts/".$_SESSION["lang"]."/tb".$arrHttp["base"];
 if (!file_exists($Formato.".pft")) $Formato=$db_path.$arrHttp["base"]."/pfts/".$lang_db."/tb".$arrHttp["base"];
-$to=$arrHttp["from"]+9;
+$to=$arrHttp["from"]+29;
 if (!isset($arrHttp["Expresion"])){
 	$query = "&base=".$arrHttp["base"]."&cipar=$db_path"."par/".$arrHttp["base"].".par"."&from=".$arrHttp["from"]."&to=$to&Formato=$Formato&Opcion=buscar";
 	$IsisScript=$xWxis."leer_mfnrange.xis";
@@ -160,7 +160,7 @@ function EjecutarBusqueda(Accion){
 			document.browse.from.value=1
 			break
 		case "previous":
-               desde=desde-20
+               desde=desde-29
                if (desde<=0) desde=1
                document.diccionario.from.value=desde
                document.browse.from.value=desde
@@ -168,7 +168,7 @@ function EjecutarBusqueda(Accion){
 		case "next":
 			break
 		case "last":
-			desde=last-9
+			desde=last-29
 			if (desde<=0) desde=1
 			document.diccionario.from.value=desde
 			document.browse.from.value=desde
@@ -354,11 +354,11 @@ foreach ($lista_users as $value){
 			echo "</td>";
 			for ($ix=4;$ix<count($u);$ix++) echo "<td>" .$u[$ix]."</td>";
 			echo "<td class=\"action\" nowrap>
-				<a href=javascript:Editar($Mfn,$Status)>
-				<img src=\"../images/edit.png\" alt=\"".$msgstr["edit"]."\" title=\"".$msgstr["edit"]."\" /></a>
-				<a href=javascript:Mostrar(".$Mfn.")><img src=\"../images/zoom.png\"  alt=\"".$msgstr["show"]."\" title=\"".$msgstr["show"]."\" /></a>";
+				<a id=botoes href=javascript:Editar($Mfn,$Status)>
+				".$msgstr["edit"]."</a>
+				<a id=botoes href=javascript:Mostrar(".$Mfn.")>".$msgstr["show"]."</a>";
 			if ($Status==0) echo "
-				<a href=\"javascript:Eliminar($Mfn)\"><img src=\"../images/delete.png\" alt=\"".$msgstr["eliminar"]."\" title=\"".$msgstr["eliminar"]."\" /></a>";
+				<a id=botoes href=\"javascript:Eliminar($Mfn)\">".$msgstr["eliminar"]."</a>";
 			else {
 				switch ($Status){
 					case -2:
@@ -378,25 +378,25 @@ echo "			</table>";
 
 ?>			<div class="tMacroActions">
 				<div class="pagination">
-					<a href="javascript:EjecutarBusqueda('first')" class="singleButton eraseButton">
-						<span class="sb_lb">&#160;</span>
+					<a id="botoes_top" href="javascript:EjecutarBusqueda('first')" class="singleButton eraseButton">
+						<span>&#160;</span>
 						&#171; <?php echo $msgstr["first"]?>
-						<span class="sb_lb">&#160;</span>
+						<span>&#160;</span>
 					</a>
-					<a href="javascript:EjecutarBusqueda('previous')" class="singleButton eraseButton">
-						<span class="sb_lb">&#160;</span>
+					<a id="botoes_top" href="javascript:EjecutarBusqueda('previous')" class="singleButton eraseButton">
+						<span>&#160;</span>
 						&#171; <?php echo $msgstr["previous"]?>
-						<span class="sb_lb">&#160;</span>
+						<span>&#160;</span>
 					</a>
-					<a href="javascript:EjecutarBusqueda('next')" class="singleButton eraseButton">
-						<span class="sb_rb">&#160;</span>
+					<a id="botoes_top"  href="javascript:EjecutarBusqueda('next')" class="singleButton eraseButton">
+						<span >&#160;</span>
 						&#187; <?php echo $msgstr["next"] ?>
-						<span class="sb_rb">&#160;</span>
+						<span>&#160;</span>
 					</a>
-					<a href="javascript:EjecutarBusqueda('last')" class="singleButton eraseButton">
-						<span class="sb_rb">&#160;</span>
+					<a id="botoes_top" href="javascript:EjecutarBusqueda('last')" class="singleButton eraseButton">
+						<span>&#160;</span>
 						&#171; <?php echo $msgstr["last"]?>
-						<span class="sb_rb">&#160;</span>
+						<span>&#160;</span>
 					</a>
 					<div class="spacer">&#160;</div>
 				</div>

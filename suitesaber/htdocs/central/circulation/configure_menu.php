@@ -50,6 +50,7 @@ echo "<div class=\"sectionInfo\">
 	<div class=\"actions\">\n";
 
 		echo "<a href=\"../common/inicio.php?reinicio=s&modulo=loan\" class=\"defaultButton backButton\">
+
 			<span><strong>". $msgstr["back"]."</strong></span>
 		</a>
 	</div>
@@ -82,66 +83,66 @@ echo "<div class=\"sectionInfo\">
 	});
 	</script>
 
-
 <div class="helper">
 	<a href=../documentacion/ayuda.php?help=<?php echo $_SESSION["lang"]?>/circulation/configure_menu.html target=_blank><?php echo $msgstr["help"]?></a>&nbsp &nbsp;
 <?php if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"])) echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/circulation/configure_menu.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "&nbsp; &nbsp; Script: configure_menu.php" ?>
+echo "&nbsp; &nbsp; Script: configure_menu.php" ?></font>
 	</div>
 	
-	<div class="middle homepage">
-	
-			<div id="tabs">
+		<div id="tabs">
 			<ul>
 				<li><a href="#tabs-1"><?php echo $msgstr["policy"]?></a></li>
 				<li><a href="#tabs-2"><?php echo $msgstr["outputs"]?></a></li>
-			</ul>
-
+			</ul>	
+	
 	<div id="tabs-1">
 	<div class="mainBox" onmouseover="this.className = 'mainBox mainBoxHighlighted';" onmouseout="this.className = 'mainBox';">
 		<div class="boxTop">
 			<div class="btLeft">&#160;</div>
 			<div class="btRight">&#160;</div>
 		</div>
-		<div class="boxContent titleSection">
+		<div class="boxContent toolSection ">
+			<div class="sectionIcon">
+				&#160;
+			</div>
 			<div class="sectionTitle">
-				<h4><strong><?php echo $msgstr["policy"]?></strong></h4>
+
 			</div>
 			<div class="sectionButtons">
-				<a href="databases.php" class="menuButton tooltip databaseButton">
-		
-					<span><strong><?php echo $msgstr["sourcedb"]?></strong></span>
+				<a href="databases.php"  class="menuButton tooltip databaseButton">
+
+					<span><?php echo $msgstr["sourcedb"]?></span>
 				</a>
 				<a href="borrowers_configure.php" class="menuButton tooltip importButton">
-		
-					<span><strong><?php echo $msgstr["bconf"]?></strong></span>
+
+					<span><?php echo $msgstr["bconf"]?></span>
 				</a>
 				<a href="typeofusers.php" class="menuButton tooltip userButton">
-		
-					<span><strong><?php echo $msgstr["typeofusers"]?></strong></span>
+
+					<span><?php echo $msgstr["typeofusers"]?></span>
 				</a>
                       <a href="typeofitems.php" class="menuButton tooltip importButton">
-		
-					<span><strong><?php echo $msgstr["typeofitems"]?></strong></span>
+
+					<span><?php echo $msgstr["typeofitems"]?></span>
 				</a>
                       <a href="loanobjects.php" class="menuButton tooltip newButton">
-		
-					<span><strong><?php echo $msgstr["objectpolicy"]?></strong></span>
+
+					<span><?php echo $msgstr["objectpolicy"]?></span>
 				</a>
 
 				<a href="locales.php" class="menuButton tooltip importButton">
-		
-					<span><strong><?php echo $msgstr["local"]?></strong></span>
+
+					<span><?php echo $msgstr["local"]?></span>
 				</a>
 
 				<a href="calendario.php" class="menuButton tooltip importButton">
-		
-					<span><strong><?php echo $msgstr["calendar"]?></strong></span>
+
+					<span><?php echo $msgstr["calendar"]?></span>
 				</a>
 
                 <a href="../reservas/inicio.php" class="menuButton tooltip importButton">
-		
-					<span><strong><?php echo $msgstr["reserves_conf"]?></strong></span>
+
+					<span><?php echo $msgstr["reserves_conf"]?></span>
 				</a>
 
 			</div>
@@ -152,12 +153,11 @@ echo "&nbsp; &nbsp; Script: configure_menu.php" ?>
 			<div class="bbRight">&#160;</div>
 		</div>
 	</div>
-	
-	
 </div>
 
+<!-- SEGUNDO ACORDEON -->
 
-<div id="tabs-2">
+<div id="tabs-2"> 
 	<div class="mainBox" onmouseover="this.className = 'mainBox mainBoxHighlighted';" onmouseout="this.className = 'mainBox';">
 		<div class="boxTop">
 			<div class="btLeft">&#160;</div>
@@ -165,20 +165,23 @@ echo "&nbsp; &nbsp; Script: configure_menu.php" ?>
 		</div>
 		<div class="boxContent toolSection">
 			<div class="sectionTitle">
-				<h4>&#160;<strong><?php echo $msgstr["outputs"]?></strong></h4>
 			</div>
 			<div class="sectionButtons">
+				<a href="../circulation/receipts.php?base=trans&encabezado=s&retorno=../circulation/configure_menu.php" class="menuButton tooltip reportButton">
+
+					<span><?php echo $msgstr["receipts"]?></span>
+				</a>
 				<a href="../dbadmin/pft.php?base=trans&encabezado=s&retorno=../circulation/configure_menu.php" class="menuButton tooltip reportButton">
-		
-					<span><strong><?php echo $msgstr["reports_trans"]?></strong></span>
+
+					<span><?php echo $msgstr["reports_trans"]?></span>
 				</a>
 				<a href="../dbadmin/pft.php?base=suspml&encabezado=s&retorno=../circulation/configure_menu.php" class="menuButton tooltip reportButton">
-		
-					<span><strong><?php echo $msgstr["reports_suspml"]?></strong></span>
+
+					<span><?php echo $msgstr["reports_suspml"]?></span>
 				</a>
 				<a href="../dbadmin/pft.php?base=users&encabezado=s&retorno=../circulation/configure_menu.php" class="menuButton tooltip reportButton">
-		
-					<span><strong><?php echo $msgstr["reports_borrowers"]?></strong></span>
+
+					<span><?php echo $msgstr["reports_borrowers"]?></span>
 				</a>
 
 
@@ -193,7 +196,6 @@ echo "&nbsp; &nbsp; Script: configure_menu.php" ?>
 		</div>
 	</div>
 </div>
-
 
 <form name=admin method=post action=administrar_ex.php onSubmit="Javascript:return false">
 <input type=hidden name=base>
@@ -202,7 +204,6 @@ echo "&nbsp; &nbsp; Script: configure_menu.php" ?>
 </form>
 </div>
 </div>
-
 </div>
 <?php include("../common/footer.php");?>
 

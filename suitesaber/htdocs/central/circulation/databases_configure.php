@@ -52,7 +52,8 @@ function LeerPft($pft_name){
 global $arrHttp,$db_path,$lang_db;
 	$pft="";
 	$archivo=$db_path.$arrHttp["base"]."/loans/".$_SESSION["lang"]."/$pft_name";
-	if (!file_exists($archivo)) $archivo=$db_path.$arrHttp["base"]."/loans/".$lang_db."/$pft_name";	$fp=file_exists($archivo);
+	if (!file_exists($archivo)) $archivo=$db_path.$arrHttp["base"]."/loans/".$lang_db."/$pft_name";
+	$fp=file_exists($archivo);
 	if ($fp){
 		$fp=file($archivo);
 		foreach ($fp as $value){
@@ -60,19 +61,27 @@ global $arrHttp,$db_path,$lang_db;
 		}
 
 	}
-    return $pft;}
+    return $pft;
+}
 
 
 $archivo=$db_path.$arrHttp["base"]."/loans/".$_SESSION["lang"]."/loans_conf.tab";
 if (!file_exists($archivo)) $archivo=$db_path.$arrHttp["base"]."/loans/".$lang_db."/loans_conf.tab";
 $fp=file_exists($archivo);
-if ($fp){	$fp=file($archivo);
-	foreach ($fp as $value){		$ix=strpos($value," ");
+if ($fp){
+	$fp=file($archivo);
+	foreach ($fp as $value){
+		$ix=strpos($value," ");
 		$tag=trim(substr($value,0,$ix));
-		switch($tag){			case "IN": $prefix_in=substr($value,$ix);
+		switch($tag){
+			case "IN": $prefix_in=substr($value,$ix);
 				break;
-			case "NC": $prefix_cn=substr($value,$ix);
-				break;		}	}}
+			case "NC":
+				$prefix_nc=trim(substr($value,$ix));
+				break;
+		}
+	}
+}
 $pft_totalitems=LeerPft("loans_totalitems.pft");
 $pft_in=LeerPft("loans_inventorynumber.pft");
 $pft_nc=LeerPft("loans_cn.pft");
@@ -86,19 +95,26 @@ include("../common/header.php");
 <script>
 function Guardar(){
 	ix=document.forma1.base.selectedIndex
-	if (ix<1){		alert("<?php echo $msgstr["seldb"]?>")
-		return	}
+	if (ix<1){
+		alert("<?php echo $msgstr["seldb"]?>")
+		return
+	}
 	document.forma1.action="databases_configure_update.php"
 	document.forma1.target="_self";
-    document.forma1.submit()}
+    document.forma1.submit()
+}
 
 function Test(){
-	if (document.forma1.Mfn.value==""){		alert("<?php echo $msgstr["test_mfn_err"]?>")
-		return	}
+	if (document.forma1.Mfn.value==""){
+		alert("<?php echo $msgstr["test_mfn_err"]?>")
+		return
+	}
     msgwin_t=window.open("","TestPft","")
-    msgwin_t.focus()	document.forma1.action="databases_configure_test.php"
+    msgwin_t.focus()
+	document.forma1.action="databases_configure_test.php"
 	document.forma1.target="TestPft";
-	document.forma1.submit()}
+	document.forma1.submit()
+}
 </script>
 <?php
 $encabezado="";
@@ -133,27 +149,29 @@ echo"</div>
 echo "<h5>".$msgstr["database"].": ".$arrHttp["base"]." &nbsp; &nbsp;[<a href=../dbadmin/fst_leer.php?base=".$arrHttp["base"]." target=_blank>Open FST</a>]"."  &nbsp; &nbsp;[<a href=../dbadmin/fdt_leer.php?base=".$arrHttp["base"]." target=_blank>Open FDT</a>]"."</h5>";
 echo "<form name=forma1 action=databases_configure_save.php method=post>\n";
 echo "<input type=hidden name=base value=".$arrHttp["base"].">\n";
-if (file_exists($db_path.$arrHttp["base"]."/loans.dat")){
+if (file_exists($db_path."loans.dat")){
+	echo "
+	<table>
+	<tr><td valign=top>1. ".$msgstr["pft_obj"]."<br>(loans_display.pft)</td><td><textarea rows=5 cols=80 name=bibref>".$pft_dispobj."</textarea></td>
+	<tr><td valign=top>2. ".$msgstr["pft_store"]."<br>(loans_store.pft)</td><td><textarea rows=5 cols=80 name=bibstore>".$pft_storobj."</textarea></td>
+	<tr><td valign=top>3. ".$msgstr["pft_loandisp"]."<br>(loans_show.pft)</td><td><textarea rows=5 cols=80 name=loandisp>".$pft_loandisp."</textarea></td>
+	<tr><td valign=top>4. ".$msgstr["pft_ninv"]."<br>(loans_inventorynumber.pft)</td><td><textarea rows=2 cols=80 name=num_i>".$pft_in."</textarea></td>
+	<tr><td valign=top>5. ".$msgstr["invkey"]."<br>(loans_conf.tab)</td><td valign=top><input type=text name=invkey value='".$prefix_in."'></td>
+	<tr><td valign=top>6. ".$msgstr["nckey"]."<br>(loans_conf.tab)</td><td valign=top><input type=text name=nckey value='".$prefix_nc."'></td>
+	<tr><td valign=top>7. ".$msgstr["pft_nclas"]."<br>(loans_cn.pft)</td><td><textarea rows=2 cols=80 name=num_c>".$pft_nc."</textarea></td>
+	<tr><td valign=top>8. ".$msgstr["pft_nejem"]."<br>(loans_totalitems.pft)</td><td valign=top><textarea rows=2 cols=80 name=totalej>".$pft_totalitems."</textarea></td>
+	<tr><td valign=top>9. ".$msgstr["pft_typeofr"]."<br>(loans_typeofobject.pft)</td><td><textarea rows=5 cols=80 name=tm>".$pft_typeofr."</textarea></td>
+	</table>
+	";
+}else{
 	echo "
 	<table>
 	<tr><td valign=top>1. ".$msgstr["pft_obj"]."</td><td><textarea rows=5 cols=80 name=bibref>".$pft_dispobj."</textarea></td>
 	<tr><td valign=top>2. ".$msgstr["pft_store"]."</td><td><textarea rows=5 cols=80 name=bibstore>".$pft_storobj."</textarea></td>
 	<tr><td valign=top>3. ".$msgstr["pft_loandisp"]."</td><td><textarea rows=5 cols=80 name=loandisp>".$pft_loandisp."</textarea></td>
-	<tr><td valign=top>4. ".$msgstr["pft_ninv"]."</td><td><textarea rows=2 cols=80 name=num_i>".$pft_in."</textarea></td>
-<!-- <tr><td valign=top>1. ".$msgstr["invkey"]."</td><td valign=top><input type=text name=invkey value='".$prefix_in."'></td> -->
-	<tr><td valign=top>5. ".$msgstr["nckey"]."</td><td valign=top><input type=text name=nckey value='".$prefix_cn."'></td>
-	<tr><td valign=top>6. ".$msgstr["pft_nclas"]."</td><td><textarea rows=2 cols=80 name=num_c>".$pft_nc."</textarea></td>
-	<tr><td valign=top>7. ".$msgstr["pft_nejem"]."</td><td valign=top><textarea rows=2 cols=80 name=totalej>".$pft_totalitems."</textarea></td>
-	<tr><td valign=top>8. ".$msgstr["pft_typeofr"]."</td><td><textarea rows=5 cols=80 name=tm>".$pft_typeofr."</textarea></td>
 	</table>
 	";
-}else{	echo "
-	<table>
-	<tr><td valign=top>1. ".$msgstr["pft_obj"]."</td><td><textarea rows=5 cols=80 name=bibref>".$pft_dispobj."</textarea></td>
-	<tr><td valign=top>2. ".$msgstr["pft_store"]."</td><td><textarea rows=5 cols=80 name=bibstore>".$pft_storobj."</textarea></td>
-	<tr><td valign=top>3. ".$msgstr["pft_loandisp"]."</td><td><textarea rows=5 cols=80 name=loandisp>".$pft_loandisp."</textarea></td>
-	</table>
-	";}
+}
 echo "&nbsp; &nbsp;<a href=javascript:Test()>".$msgstr["test"]."</a>
 Mfn: <input type=text name=Mfn size=10>&nbsp; &nbsp;
 </form></div></div>";

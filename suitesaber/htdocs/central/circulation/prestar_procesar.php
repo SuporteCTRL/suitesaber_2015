@@ -46,7 +46,7 @@ $query = "&Expresion=TR_P_".$arrHttp["inventory"]."&base=trans&cipar=$db_path"."
 $IsisScript=$xWxis."cipres_usuario.xis";
 include("../common/wxis_llamar.php");
 $prestamos=array();
-foreach ($contenido as $linea){	$prestamos[]=$linea;
+foreach ($contenido as $linea){	$prestamos[]=$linea;
 }
 $die="";
 $msg="";
@@ -76,7 +76,7 @@ $formato_obj.="\n /".urlencode($formato_ex);
 $query = "&Opcion=disponibilidad&base=".$arrHttp["base"]."&cipar=$db_path"."par/".$arrHttp["base"].".par&Expresion=".$Expresion."&Formato=$formato_obj";
 include("../common/wxis_llamar.php");
 $total=0;
-foreach ($contenido as $linea){	$linea=trim($linea);
+foreach ($contenido as $linea){	$linea=trim($linea);
 	if (substr($linea,0,8)=='$$TOTAL:')
 		$total=trim(substr($linea,8));
 	else
@@ -91,20 +91,20 @@ $xt=explode('||',$ejemplar);
 $n_clasificacion=$xt[2];
 $Opcion="";
 // se leen las reservas del título
-if ($total==0) { //Si el script wxis devuelve $$TOTAL:0 no existe el número de inventario en la base de datos de objetos	$titulo.=$arrHttp["inventory"].": ".$msgstr["copynoexists"];
+if ($total==0) { //Si el script wxis devuelve $$TOTAL:0 no existe el número de inventario en la base de datos de objetos	$titulo.=$arrHttp["inventory"].": ".$msgstr["copynoexists"];
 }else{
-	if (count($prestamos)>0){   // Si ya existe una transacción de préstamo para ese número de inventario, el ejemplar está prestado		$msg=$msgstr["itemloaned"];
-	}else{		$Opcion="prestar";
+	if (count($prestamos)>0){   // Si ya existe una transacción de préstamo para ese número de inventario, el ejemplar está prestado		$msg=$msgstr["itemloaned"];
+	}else{		$Opcion="prestar";
 		$action="usuario_prestamos_prestar.php";
 		$msg_1=$msgstr["loan"];
-	}}
+	}}
 include("../common/header.php");
 ?>
 <script src=../dataentry/js/lr_trim.js></script>
 <script>
 PrimeraVez="s"
-function BorrarUsuario(Ctrl){	if (PrimeraVez=="s") Ctrl.value=""
-	PrimeraVez="n"}
+function BorrarUsuario(Ctrl){	if (PrimeraVez=="s") Ctrl.value=""
+	PrimeraVez="n"}
 
 document.onkeypress =
 	function (evt) {
@@ -114,11 +114,11 @@ document.onkeypress =
 			if (c==13) EnviarForma()
 			return true;
 	}
-function EnviarForma(){	if (Trim(document.usersearch.usuario.value)==""){		alert("<?php echo $msgstr["falta"]." ".$msgstr["usercode"]?>")
-		return	}
-	document.usersearch.submit()}
+function EnviarForma(){	if (Trim(document.usersearch.usuario.value)==""){		alert("<?php echo $msgstr["falta"]." ".$msgstr["usercode"]?>")
+		return	}
+	document.usersearch.submit()}
 
-function Prestar(){	self.location.href="prestar.php?encabezado=s"}
+function Prestar(){	self.location.href="prestar.php?encabezado=s"}
 
 function AbrirIndiceAlfabetico(xI){
 		Ctrl_activo=xI
@@ -172,7 +172,7 @@ echo "
 	echo "</ul>";
 	if ($msg!="") echo"<dd><h3><font color=red>".$msg."";
 	$msgreserva="";
-	if ($Opcion=="reservar"){		$msgreserva= "<dd><h3><font color=red><a href=javascript:PresentarReservas()>".$msgstr["reservewait"].": ".$reservado."</a>";		$msgreserva.= "<dd>".$msg_1.": ".$msgstr["signature"].": ".$n_clasificacion."</font></h3>";	}
+	if ($Opcion=="reservar"){		$msgreserva= "<dd><h3><font color=red><a href=javascript:PresentarReservas()>".$msgstr["reservewait"].": ".$reservado."</a>";		$msgreserva.= "<dd>".$msg_1.": ".$msgstr["signature"].": ".$n_clasificacion."</font></h3>";	}
 echo "
 	<div class=\"spacer\">&#160;</div>
 	<div class=\"searchBox\">
@@ -188,7 +188,7 @@ if ($Opcion=="prestar" or $Opcion=="reservar"){
         <input type=hidden name=inventory value="<?php echo $arrHttp["inventory"]?>">
         <input type=hidden name=ejemplar value="<?php echo urlencode($ejemplar)?>">
         <input type=hidden name=titulo value="<?php echo urlencode($titulo)?>">
-<?}else{	echo "<br><br>";}?>
+<?}else{	echo "<br><br>";}?>
 	</form>
 	</div>
 

@@ -2,7 +2,7 @@
 /**
  * @program:   ABCD - ABCD-Central - http://reddes.bvsaude.org/projects/abcd
  * @copyright:  Copyright (C) 2009 BIREME/PAHO/WHO - VLIR/UOS
- * @file:      alfa.php
+ * @file:      alpa.php
  * @desc:      Alphabetic list of an selected field for capturing the record
  * @author:    Guilda Ascencio
  * @since:     20091203
@@ -39,10 +39,15 @@ if (count($arrHttp)==0){
 	}
 }
 $fp=file($db_path.$arrHttp["base"]."/".$arrHttp["base"].".fdt");
-foreach($fp as $value) {	$f=explode('|',$value);
-	if ($f[3]==1){		if (substr($f[13],0,1)!="@")			$arrHttp["formato_e"]=$f[13]."'$$$'f(mfn,1,0)";
+foreach($fp as $value) {
+	$f=explode('|',$value);
+	if ($f[3]==1){
+		if (substr($f[13],0,1)!="@")
+			$arrHttp["formato_e"]=$f[13]."'$$$'f(mfn,1,0)";
 		else
-			$arrHttp["formato_e"]=$f[13];	}}
+			$arrHttp["formato_e"]=$f[13];
+	}
+}
 $arrHttp["formato_e"]=stripslashes($arrHttp["formato_e"]);
 foreach ($arrHttp as $var=>$value) echo "$var=$value<br>";
 
@@ -93,7 +98,8 @@ if (!isset($arrHttp["pref"]))$arrHttp["pref"]=$arrHttp["prefijo"];
 	echo "Tag=\"".$arrHttp["Tag"]."\"\n";
 	echo "Prefijo=\"".$arrHttp["prefijo"]."\"\n";
 ?>
-	function ObtenerTerminos(){		Seleccion=""
+	function ObtenerTerminos(){
+		Seleccion=""
 		icuenta=0
 		i=document.Lista.autoridades.selectedIndex
 		for (i=0;i<document.Lista.autoridades.options.length; i++){
@@ -112,7 +118,8 @@ if (!isset($arrHttp["pref"]))$arrHttp["pref"]=$arrHttp["prefijo"];
 			pref="<?php echo $arrHttp["pref"]?>"
     		cipar="<?php echo $arrHttp["cipar"]?>"
  <?
- 			if (isset($arrHttp["capturar"]) and $arrHttp["capturar"]!=""){ 				echo "top.xeditar=\"S\"\n";
+ 			if (isset($arrHttp["capturar"]) and $arrHttp["capturar"]!=""){
+ 				echo "top.xeditar=\"S\"\n";
 				echo 'parent.main.location="fmt.php?xx=xx&base='.$_SESSION["base"]."&cipar=".$_SESSION["cipar"].'&basecap="+db+"&ciparcap="+cipar+"&Mfn="+Seleccion+"&Opcion=captura_bd&ver=S&capturar=S"'."\n";
 			}else{
 				echo 'window.opener.top.main.location.href="fmt.php?cc=xx&base="+db+"&cipar="+cipar+"&Mfn="+Seleccion+"&Opcion=leer&ver=S&Formato=ALL"+db'."\n";

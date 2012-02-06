@@ -54,10 +54,10 @@ $contenido="";
 $IsisScript=$xWxis."buscar_ingreso.xis";
 include("../common/wxis_llamar.php");
 $Total=0;
-foreach ($contenido as $linea){	$linea=trim($linea);
+foreach ($contenido as $linea){	$linea=trim($linea);
 	if ($linea!="") {
 		$l=explode('|',$linea);
-		if (substr($linea,0,6)=="[MFN:]"){			$Mfn=trim(substr($linea,6));		}else{			if (substr($linea,0,8)=="[TOTAL:]"){				$Total=trim(substr($linea,8));			}else{				$prestamo=$linea;			}
+		if (substr($linea,0,6)=="[MFN:]"){			$Mfn=trim(substr($linea,6));		}else{			if (substr($linea,0,8)=="[TOTAL:]"){				$Total=trim(substr($linea,8));			}else{				$prestamo=$linea;			}
 		}
 	}
 }
@@ -107,7 +107,7 @@ if ($Total==0){
 	$newdate=date("m/d/Y h:i:s A");
 	//echo "----$newdate---";
 	$unidad="D";
-	switch ($unidad){		case "H":
+	switch ($unidad){		case "H":
 			$date1 = time();
 			$tt=explode(' ',$hora_d);
 			$date2 = mktime(0,0,0, substr($fecha_d,4,2),substr($fecha_d,6,2),substr($fecha_d,0,4));
@@ -119,14 +119,14 @@ if ($Total==0){
 			$newdate=date("m/d/Y");
 			$fecha_d=  substr($fecha_d,4,2)."/".substr($fecha_d,6,2)."/".substr($fecha_d,0,4);
 			$atraso=dateDiff("/", $newdate, $fecha_d);
-			break;	}
-    if ($atraso>0){    	$error="&error=Está atrasado. No se puede renovar";
+			break;	}
+    if ($atraso>0){    	$error="&error=Está atrasado. No se puede renovar";
     	Regresar($error);
-    	die;    }
+    	die;    }
 // Se pasa la fecha de préstamo y devolución anteriores al campo 200
 	$f_ant="^a".$fecha_p."^b".$hora_p."^c".$fecha_d."^d".$hora_p;
 //se calcula la nueva fecha de devolución
-	$fecha_dev=FechaDevolucion($lapso,$unidad);
+	$fecha_dev=FechaDevolucion($lapso,$unidad,"");
 	$fecha_pres=date("Ymd h:i:s A");
 	$ixp=strpos($fecha_dev," ");
 	$fecha_d=trim(substr($fecha_dev,0,$ixp));
@@ -149,7 +149,7 @@ if ($Total==0){
     Regresar("");
 die;
 
-function Regresar($error){global $arrHttp,$cod_usuario;	$cu="";
+function Regresar($error){global $arrHttp,$cod_usuario;	$cu="";
 	if (isset($arrHttp["usuario"]) and !isset($cod_usuario))
 		$cu="&usuario=".$arrHttp["usuario"];
 	else
@@ -159,7 +159,7 @@ function Regresar($error){global $arrHttp,$cod_usuario;	$cu="";
 	}else{
 		header("Location: renovar.php?encabezado=s$error$cu");
 	}
-	die;}
+	die;}
 
 
 

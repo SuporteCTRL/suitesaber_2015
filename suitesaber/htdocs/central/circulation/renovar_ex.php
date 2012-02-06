@@ -26,12 +26,14 @@
  * == END LICENSE ==
 */
 session_start();
-if (!isset($_SESSION["permiso"])){
-	header("Location: ../common/error_page.php") ;
+if (!isset($arrHttp["vienede"]) or $arrHttp["vienede"]!="ecta_web"){
+	if (!isset($_SESSION["permiso"])){
+		header("Location: ../common/error_page.php") ;
+	}
 }
 include("../config.php");
 include("../common/get_post.php");
-date_default_timezone_set('UTC');
+//date_default_timezone_set('UTC');
 //foreach ($arrHttp as $var=>$value) echo "$var=$value<br>";
 //die;
 
@@ -63,7 +65,7 @@ global $locales;
 //Se ubica el ejemplar prestado en la base de datos de transacciones
 $inventario="TR_P_".trim($arrHttp["searchExpr"]);
 if (!isset($arrHttp["base"])) $arrHttp["base"]="trans";
-$Formato="v10'|'v20'|'v30'|'v35'|'v40'|'v45'|'v70'|'v80'|'v100,'|'f(nocc(v200),1,0)/";
+$Formato="v10'|$'v20'|$'v30'|$'v35'|$'v40'|$'v45'|$'v70'|$'v80'|$'v100,'|$'f(nocc(v200),1,0)'|$'v400/";
 $query = "&base=".$arrHttp["base"] ."&cipar=$db_path"."par/".$arrHttp["base"].".par&count=1&Expresion=".$inventario."&Pft=$Formato";
 $contenido="";
 $IsisScript=$xWxis."buscar_ingreso.xis";
@@ -72,15 +74,8 @@ $Total=0;
 foreach ($contenido as $linea){
 	$linea=trim($linea);
 	if ($linea!="") {
-		$l=explode('|',$linea);
-		if (substr($linea,0,6)=="[MFN:]"){
-			$Mfn=trim(substr($linea,6));
-		}else{
-			if (substr($linea,0,8)=="[TOTAL:]"){
-				$Total=trim(substr($linea,8));
-			}else{
-				$prestamo=$linea;
-			}
+		$l=explode('|$',$linea);
+		if (substr($linea,0,6)=="[MFN:]"){			$Mfn=trim(substr($linea,6));		}else{			if (substr($linea,0,8)=="[TOTAL:]"){				$Total=trim(substr($linea,8));			}else{				$prestamo=$linea;			}
 		}
 	}
 }
@@ -94,7 +89,7 @@ if ($Total==0){
 }
 
 // se extrae la información del ejemplar a devolver
-$p=explode('|',$prestamo);
+$p=explode('|$',$prestamo);
 $cod_usuario=$p[1];
 $inventario=$p[0];
 $fecha_p=$p[2];
@@ -105,6 +100,7 @@ $tipo_usuario=$p[6];
 $tipo_objeto=$p[7];
 $referencia=$p[8];
 $no_renova=$p[9];         // Número de renovaciones procesadas
+$ppres=$p[10];    //Loan policy
 
 // se lee la política de préstamos
 include("loanobjects_read.php");
@@ -114,25 +110,30 @@ include("calendario_read.php");
 include("locales_read.php");
 
 //se determina la política a aplicar
-$politica=$politica[$tipo_objeto][$tipo_usuario];
-$p=explode('|',$politica);
+if ($ppres==""){
+	$ppres=$politica[$tipo_objeto][$tipo_usuario];   //read the policy
+	if (trim($ppres)==""){
+		$ppres=$politica[strtoupper($tipo_objeto)][trim(strtoupper($tipo_usuario))];
+	}
+	if (trim($ppres)==""){
+		$ppres=$politica["0"]["0"];
+	}
+}
+$p=explode('|',$ppres);
 $lapso=$p[3];
 $unidad=$p[5];
 //se verifica si el objeto admite más renovaciones
-if ($no_renova>=$p[6]){
-	$error="&error=".$msgstr["nomorenew"];
-	Regresar($error);
-}
+if ($no_renova>=$p[6]){	$error="&error=".$msgstr["nomorenew"];
+	Regresar($error);}
 
 //se verifica la fecha límite del usuario
-if (!empty($p[15])) {
-	if (compareDate ($p[15])>0){
-		$error="&error=".$msgstr["limituserdata"]." ".$msgstr["noitrenew"];
+if (trim($p[15])!=""){
+	if (compareDate ($p[15])>0){		$error="&error=".$msgstr["limituserdata"]." ".$msgstr["noitrenew"];
 		Regresar($error);
 	}
 }
 // se verifica la fecha límite del objeto
-if (!empty($p[16])) {
+if (trim($p[16])!=""){
 	if (compareDate ($p[16])>0){
 		$error="&error=".$msgstr["limitobjectdata"]." ".$msgstr["noitrenew"];
 		Regresar($error);
@@ -143,8 +144,7 @@ if (!empty($p[16])) {
 $atraso=compareDate($fecha_d);
 
 if ($atraso<0){
-	if ($p[13]!="Y"){  // se verifica si la política permite renovar cuando está atrasado
-		$error="&error=".$msgstr["loanoverdued"];
+	if ($p[13]!="Y"){  // se verifica si la política permite renovar cuando está atrasado		$error="&error=".$msgstr["loanoverdued"];
 		Regresar($error);
 	}
 //	Sanciones($fecha_d,$atraso,$cod_usuario,$inventario,$politica);
@@ -158,7 +158,7 @@ if ($atraso<0){
 // Se pasa la fecha de préstamo y devolución anteriores al campo 200
 $f_ant="^a".$fecha_p."^b".$hora_p."^c".$fecha_d."^d".$hora_p."^e".$_SESSION["login"];
 //se calcula la nueva fecha de devolución
-$fecha_dev=FechaDevolucion($lapso,$unidad);
+$fecha_dev=FechaDevolucion($lapso,$unidad,"");
 $fecha_pres=date("Ymd h:i:s A");
 $ixp=strpos($fecha_dev," ");
 $fecha_d=trim(substr($fecha_dev,0,$ixp));
@@ -169,9 +169,9 @@ $hora_d=trim(substr($fecha_pres,$ixp));
 
 $ValorCapturado="d30\nd35\nd40\nd45\n";
 $ValorCapturado.="a30~".$fecha_p."~\n";
-$ValorCapturado.="a35~".$hora_p."~\n";
+//$ValorCapturado.="a35~".$hora_p."~\n";
 $ValorCapturado.="a40~".$fecha_d."~\n";
-$ValorCapturado.="a45~".$hora_d."~\n";
+//$ValorCapturado.="a45~".$hora_d."~\n";
 $ValorCapturado.="a200~".$f_ant."~";
 $ValorCapturado=urlencode($ValorCapturado);
 $IsisScript=$xWxis."updaterec.xis";
@@ -181,22 +181,16 @@ include("../common/wxis_llamar.php");
 Regresar("");
 die;
 
-function Regresar($error){
-global $arrHttp,$cod_usuario;
-
-	$cu="";
-	if (isset($arrHttp["usuario"]) and !isset($cod_usuario))
+function Regresar($error){global $arrHttp,$cod_usuario;
+    if (isset($arrHttp["vienede"]) and $arrHttp["vienede"]=="ecta_web"){    	header("Location: opac_statment_ex.php?usuario=$cod_usuario$error&vienede=ecta_web");
+    	die;    }	$cu="";
+	if (isset($arrHttp["usuario"]) and !isset($cod_usuario)){
 		$cu="&usuario=".$arrHttp["usuario"];
-	else
+	}else{
 		$cu="&usuario=$cod_usuario";
-
-//	if (isset($arrHttp["vienede"])){
 		header("Location: usuario_prestamos_presentar.php?encabezado=s$error$cu");
-//	}else{
-//		header("Location: renovar.php?encabezado=s$error$cu");
-//	}
-	die;
-}
+	}
+	die;}
 
 
 

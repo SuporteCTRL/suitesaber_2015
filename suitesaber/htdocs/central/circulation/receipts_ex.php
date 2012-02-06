@@ -53,7 +53,7 @@ fclose($fp);
 	</div>
 	<div class="actions">
 		<a href="configure_menu.php?encabezado=s" class="defaultButton backButton">
-
+		<img src="../images/defaultButton_iconBorder.gif" alt="" title="" />
 		<span><strong><?php echo  $msgstr["menu"]?></strong></span>
 		</a>
 	</div>

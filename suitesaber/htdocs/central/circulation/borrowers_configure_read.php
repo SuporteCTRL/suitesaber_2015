@@ -48,10 +48,13 @@ $bd="users";
 $uskey="";
 $archivo=$db_path.$bd."/loans/".$_SESSION["lang"]."/loans_uskey.tab";
 if (!file_exists($archivo)) $archivo=$db_path.$bd."/loans/".$lang_db."/loans_uskey.tab";
-if (!file_exists($archivo)){	echo $msgstr["missing"]. " ".$archivo;
-	die;}
+if (!file_exists($archivo)){
+	echo $msgstr["missing"]. " ".$archivo;
+	die;
+}
 $fp=file($archivo);
-foreach ($fp as $value){	$value=trim($value);
+foreach ($fp as $value){
+	$value=trim($value);
    	if ($value!="")$uskey=$value;
 }
 $pft_uskey=LeerPft_Borrowers("loans_uskey.pft");     // pft para leer el código de usuario

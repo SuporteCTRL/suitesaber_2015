@@ -3,7 +3,7 @@
  * @program:   ABCD - ABCD-Central - http://reddes.bvsaude.org/projects/abcd
  * @copyright:  Copyright (C) 2009 BIREME/PAHO/WHO - VLIR/UOS
  * @file:      situacion_de_un_objeto_ex.php
- * @desc:      Checks the status of an item copies
+ * @desc:      Shows the status of the items of an bibliographic record when the items are defined in the loanobjects database
  * @author:    Guilda Ascencio
  * @since:     20091203
  * @version:   1.0
@@ -19,16 +19,18 @@
  *    but WITHOUT ANY WARRANTY; without even the implied warranty of
  *    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *    GNU Lesser General Public License for more details.
- *  
+ *
  *    You should have received a copy of the GNU Lesser General Public License
  *    along with this program.  If not, see <http://www.gnu.org/licenses/>.
- *  
+ *
  * == END LICENSE ==
 */
 session_start();
 // Situación de un objeto
-if (!isset($_SESSION["permiso"])){	header("Location: ../common/error_page.php") ;
-}if (!isset($_SESSION["lang"]))  $_SESSION["lang"]="en";
+if (!isset($_SESSION["permiso"])){
+	header("Location: ../common/error_page.php") ;
+}
+if (!isset($_SESSION["lang"]))  $_SESSION["lang"]="en";
 include("../config.php");
 include("../config_loans.php");
 $lang=$_SESSION["lang"];
@@ -39,11 +41,8 @@ include("../lang/prestamo.php");
 include("../common/get_post.php");
 //foreach ($arrHttp as $var=>$value) echo "$var=$value<br>";
 $Opcion_leida=$arrHttp["Opcion"];
-
-
 include("leer_pft.php");
 include("borrowers_configure_read.php");
-$arrHttp["base"]="biblo/loans/";
 
 include("loanobjects_read.php");
 include("calendario_read.php");
@@ -107,10 +106,11 @@ global $db_path,$Wxis,$xWxis,$arrHttp,$pft_totalitems,$pft_in,$pft_nc,$pft_typeo
 
 
 function ListarPrestamo($Expresion){
-//se ubican todas las copias disponibles para verificar si están prestadasglobal $xWxis,$arrHttp,$db_path,$Wxis;
+//se ubican todas las copias disponibles para verificar si están prestadas
+global $xWxis,$arrHttp,$db_path,$Wxis;
 	$IsisScript=$xWxis."loans/prestamo_disponibilidad.xis";
 	$Expresion=urlencode($Expresion);
-	$formato_obj="v20'$$$'v30,'###'" ;
+	$formato_obj="v20'$$$'v40,'###'" ;
  	$query = "&Opcion=".$arrHttp["Opcion"]."&base=trans&cipar=$db_path"."par/trans.par&Expresion=".$Expresion."&Pft=$formato_obj&desde=".$arrHttp["desde"]."&cuenta=10";
     include("../common/wxis_llamar.php");
 	return $contenido;
@@ -125,12 +125,27 @@ include("../common/header.php");
 include("../common/institutional_info.php");
 ?>
 <script>
-function EnviarForma(Opcion){	eliminar=""	if (Opcion==0){		document.continuar.submit()	}else{		for (i=0; i<document.objeto.elements.length;i++){			if (document.objeto.elements[i].type=="checkbox"){				if (document.objeto.elements[i].checked) eliminar+=document.objeto.elements[i].value+"|"			}		}
-		if (eliminar==""){			alert('<?php echo $msgstr["selreserv"]?>')
-			return		}else{
-			alert(eliminar)			document.continuar.action="reservas_eliminar_ex.php"
+function EnviarForma(Opcion){
+	eliminar=""
+	if (Opcion==0){
+		document.continuar.submit()
+	}else{
+		for (i=0; i<document.objeto.elements.length;i++){
+			if (document.objeto.elements[i].type=="checkbox"){
+				if (document.objeto.elements[i].checked) eliminar+=document.objeto.elements[i].value+"|"
+			}
+		}
+		if (eliminar==""){
+			alert('<?php echo $msgstr["selreserv"]?>')
+			return
+		}else{
+			alert(eliminar)
+			document.continuar.action="reservas_eliminar_ex.php"
 			document.continuar.reservas.value=eliminar
-			document.continuar.submit()		}	}}
+			document.continuar.submit()
+		}
+	}
+}
 </script>
 <body>
 <div class="sectionInfo">
@@ -176,8 +191,10 @@ switch ($arrHttp["Opcion"]){
 	// se busca el título para ver el total de ejemplares y los ejemplares prestados
 		$arrHttp["Opcion"]="disponibilidad";
 		$total=LocalizarInventario($arrHttp["code"]);
-		if ($total==0){			echo $msgstr["ctrlnumno"];
-			die;		}
+		if ($total==0){
+			echo $msgstr["ctrlnumno"];
+			die;
+		}
         foreach ($tit_cat as $tit){
 			$t=explode('||',$tit);
 			$catalog_db=$t[1];
@@ -185,7 +202,9 @@ switch ($arrHttp["Opcion"]){
 				$arrHttp["db"]=$catalog_db;
 				require_once("databases_configure_read.php");
 				$total=ReadCatalographicRecord($arrHttp["code"],$catalog_db);
-				if ($total>1){					echo "<font color=red>".$msgstr["dupctrl"]."</font><p>";				}
+				if ($total>1){
+					echo "<font color=red>".$msgstr["dupctrl"]."</font><p>";
+				}
 				echo '<font color=darkblue><strong>'.$msgstr["bd"].": ". $catalog_db.". ".$msgstr["control_n"].": ".$arrHttp["code"]."</strong></font><br>";
 				echo $titulo;
 
@@ -198,7 +217,9 @@ switch ($arrHttp["Opcion"]){
 						<th>".$msgstr["typeofitems"]."</th>
 						<th>".$msgstr["usercode"]."</th>
 						<th>".$msgstr["devdate"]."</th>";
-				foreach ($items as $val) {					if (!empty($val)) ShowItems($val);				}
+				foreach ($items as $val) {
+					if (!empty($val)) ShowItems($val);
+				}
                 echo "</table>";
 				$Expresion="CN_".$arrHttp["code"];
 			//	$arrHttp["Opcion"]="disponibilidad";
@@ -231,13 +252,19 @@ Function ShowItems($item){
     	$cont=explode('###',$cont);
     	$c=explode('$$$',$cont[0]);
     	echo "<td bgcolor=white>".$c[0]."</td><td bgcolor=white>".$c[1]."</td>";
-    }else{    	echo "<td bgcolor=white>&nbsp;</td><td bgcolor=white>&nbsp;</td>";    }
+    }else{
+    	echo "<td bgcolor=white>&nbsp;</td><td bgcolor=white>&nbsp;</td>";
+    }
 
 }
 $hasta=$arrHttp["desde"]+10;
 echo "<form name=continuar action=situacion_de_un_objeto_ex.php onsubmit='return false'>\n";
-if (isset($arrHttp["Expresion"])){	echo "<input type=hidden name=Expresion value=\"".$arrHttp["Expresion"]."\">";
-}else{	echo "<input type=hidden name=code value=\"".$arrHttp["code"]."\">";}echo "<input type=hidden name=Opcion value=".$Opcion_leida.">
+if (isset($arrHttp["Expresion"])){
+	echo "<input type=hidden name=Expresion value=\"".$arrHttp["Expresion"]."\">";
+}else{
+	echo "<input type=hidden name=code value=\"".$arrHttp["code"]."\">";
+}
+echo "<input type=hidden name=Opcion value=".$Opcion_leida.">
 <input type=hidden name=base value=".$arrHttp["base"].">
 <input type=hidden name=reservas>
 <input type=hidden name=desde value=";
@@ -251,7 +278,8 @@ include("../common/footer.php");
 echo "</body></html>";
 
 function EjemplaresPrestados($inventory){
-global $db_path,$Wxis,$xWxis;	$formato_obj=$db_path."trans/pfts/".$_SESSION["lang"]."/loans_display.pft";
+global $db_path,$Wxis,$xWxis;
+	$formato_obj=$db_path."trans/pfts/".$_SESSION["lang"]."/loans_display.pft";
     if (!file_exists($formato_obj)) $formato_obj=$db_path."trans/pfts/".$lang_db."/loans_display.pft";
    	$query = "&Expresion=TR_P_".$inventory."&base=trans&cipar=$db_path"."par/trans.par&Formato=".$formato_obj;
 	$IsisScript=$xWxis."cipres_usuario.xis";

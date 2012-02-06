@@ -51,8 +51,10 @@ document.onkeypress =
   }
 
 function EnviarForma(){
-	if (Trim(document.usersearch.usuario.value)=="" ){		alert("<?php echo $msgstr["falta"]." ".$msgstr["usercode"]?>")
-		return	}
+	if (Trim(document.usersearch.usuario.value)=="" ){
+		alert("<?php echo $msgstr["falta"]." ".$msgstr["usercode"]?>")
+		return
+	}
 	document.usersearch.action="sanctions_ex.php"
 	document.usersearch.submit()
 }
@@ -116,7 +118,7 @@ echo "&nbsp; &nbsp; Script: sanctions.php</font>\n";
 		<input type="text" name="usuario" id="code" value="<?php if (isset($arrHttp["usuario"])) echo $arrHttp["usuario"]?>" class="textEntry" onfocus="this.className = 'textEntry textEntryFocus';"  onblur="this.className = 'textEntry';" />
 
 		<input type="button" name="index" value="<?php echo $msgstr["list"]?>" class="submit" onClick="AbrirIndice('U',document.usersearch.usuario)" />
-		<input type="submit" name="buscar" value="<?php echo $msgstr["search"]?>" xclass="submitAdvanced" onclick="EnviarForma()"/>
+		<input type="submit"  id="botoes"  name="buscar" value="<?php echo $msgstr["search"]?>" xclass="submitAdvanced" onclick="EnviarForma()"/>
 		</td>
 	</table>
 	</form>

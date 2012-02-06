@@ -27,8 +27,10 @@
 */
 session_start();
 // Situación de un objeto
-if (!isset($_SESSION["permiso"])){	header("Location: ../common/error_page.php") ;
-}if (!isset($_SESSION["lang"]))  $_SESSION["lang"]="en";
+if (!isset($_SESSION["permiso"])){
+	header("Location: ../common/error_page.php") ;
+}
+if (!isset($_SESSION["lang"]))  $_SESSION["lang"]="en";
 include("../config.php");
 include("../config_loans.php");
 $lang=$_SESSION["lang"];
@@ -132,7 +134,8 @@ global $db_path,$Wxis,$xWxis,$arrHttp,$pft_totalitems,$pft_in,$pft_nc,$pft_typeo
 
 
 function ListarPrestamo($Expresion){
-//se ubican todas las copias disponibles para verificar si están prestadasglobal $xWxis,$arrHttp,$db_path,$Wxis;
+//se ubican todas las copias disponibles para verificar si están prestadas
+global $xWxis,$arrHttp,$db_path,$Wxis;
 	$IsisScript=$xWxis."loans/prestamo_disponibilidad.xis";
 	$Expresion=urlencode($Expresion);
 	$formato_obj="v20'$$$'if p(v500) then v500 else v40 fi,'###'" ;
@@ -150,12 +153,27 @@ include("../common/header.php");
 include("../common/institutional_info.php");
 ?>
 <script>
-function EnviarForma(Opcion){	eliminar=""	if (Opcion==0){		document.continuar.submit()	}else{		for (i=0; i<document.objeto.elements.length;i++){			if (document.objeto.elements[i].type=="checkbox"){				if (document.objeto.elements[i].checked) eliminar+=document.objeto.elements[i].value+"|"			}		}
-		if (eliminar==""){			alert("debe seleccionar las reservas que va a eliminar")
-			return		}else{
-			alert(eliminar)			document.continuar.action="reservas_eliminar_ex.php"
+function EnviarForma(Opcion){
+	eliminar=""
+	if (Opcion==0){
+		document.continuar.submit()
+	}else{
+		for (i=0; i<document.objeto.elements.length;i++){
+			if (document.objeto.elements[i].type=="checkbox"){
+				if (document.objeto.elements[i].checked) eliminar+=document.objeto.elements[i].value+"|"
+			}
+		}
+		if (eliminar==""){
+			alert("debe seleccionar las reservas que va a eliminar")
+			return
+		}else{
+			alert(eliminar)
+			document.continuar.action="reservas_eliminar_ex.php"
 			document.continuar.reservas.value=eliminar
-			document.continuar.submit()		}	}}
+			document.continuar.submit()
+		}
+	}
+}
 </script>
 <body>
 <div class="sectionInfo">
@@ -201,7 +219,9 @@ $catalog_db=$b[0];
 $arrHttp["db"]=$catalog_db;
 require_once("databases_configure_read.php");
 $total=ReadCatalographicRecord($arrHttp["code"],$catalog_db);
-if ($total>1){	echo "<font color=red>".$msgstr["dupctrl"]."</font><p>";}
+if ($total>1){
+	echo "<font color=red>".$msgstr["dupctrl"]."</font><p>";
+}
 echo '<font color=darkblue><strong>'.$msgstr["bd"].": ". $catalog_db.". ".$msgstr["control_n"].": ".$arrHttp["code"]."</strong></font><br>";
 echo $titulo;
 echo "<table bgcolor=#dddddd cellpadding=5>
@@ -221,7 +241,9 @@ $pft_inventory=LeerPft("loans_inventorynumber.pft");
 $pft_inventory="(".$pft_inventory."/)";
 $query = "&Opcion=disponibilidad&base=$catalog_db&cipar=$db_path"."par/$catalog_db.par&Expresion=".$Expresion."&Pft=$pft_inventory";
 include("../common/wxis_llamar.php");
-foreach ($contenido as $val) {	if (trim($val)!="") ShowItems($val);}
+foreach ($contenido as $val) {
+	if (trim($val)!="") ShowItems($val);
+}
 echo "</table>";
 echo "<p>";
 echo "</div></div>";
@@ -244,14 +266,17 @@ Function ShowItems($item){
 	    	$cont=explode('###',$cont);
 	    	$c=explode('$$$',$cont[0]);
 	    	echo "<td bgcolor=white>".$c[0]."</td><td bgcolor=white>".PrepararFecha($c[1])."</td>";
-	    }else{	    	echo "<td bgcolor=white>&nbsp;</td><td bgcolor=white>&nbsp;</td>";	    }
+	    }else{
+	    	echo "<td bgcolor=white>&nbsp;</td><td bgcolor=white>&nbsp;</td>";
+	    }
 	 }
 
 }
 
 
 function EjemplaresPrestados($inventory){
-global $db_path,$Wxis,$xWxis;	$formato_obj=$db_path."trans/pfts/".$_SESSION["lang"]."/loans_display.pft";
+global $db_path,$Wxis,$xWxis;
+	$formato_obj=$db_path."trans/pfts/".$_SESSION["lang"]."/loans_display.pft";
     if (!file_exists($formato_obj)) $formato_obj=$db_path."trans/pfts/".$lang_db."/loans_display.pft";
    	$query = "&Expresion=TR_P_".$inventory."&base=trans&cipar=$db_path"."par/trans.par&Formato=".$formato_obj;
 	$IsisScript=$xWxis."cipres_usuario.xis";

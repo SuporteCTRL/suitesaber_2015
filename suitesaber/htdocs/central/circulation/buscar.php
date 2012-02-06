@@ -325,7 +325,8 @@ function Diccionario(jx){
 	echo "dt[".$ix."][1]=\"\"\n";
 	echo "dt[".$ix."][2]=\"\"\n";
 
-	foreach ($camposbusqueda as $linea) {
+	foreach ($camposbusqueda as $linea) {
+
 		$ix=$ix+1;
 		$l=explode('|',$linea);
 		$parte2=trim(substr($linea,39));
@@ -350,7 +351,7 @@ function Diccionario(jx){
 			<div class=\"actions\">\n";
 
 				echo "<a href=\"browse.php?encabezado=s\" class=\"defaultButton backButton\">
-
+					<img src=\"../images/defaultButton_iconBorder.gif\" alt=\"\" title=\"\" />
 					<span><strong>". $msgstr["back"]."</strong></span>
 				</a>
 			</div>
@@ -425,11 +426,11 @@ function Diccionario(jx){
 	?>
 	<div class="sectionButtons">
 		<a href="javascript:PrepararExpresion()" class="defaultButton multiLine listButton">
-
+		<img src="../images/mainBox_iconBorder.gif" alt="" title="" />
 							<span><?php echo $msgstr["m_buscar"]?></strong></span>
 						</a>
 		<a href="javascript:LimpiarBusqueda(this,1)" class="defaultButton multiLine listButton">
-
+		<img src="../images/mainBox_iconBorder.gif" alt="" title="" />
 							<span><?php echo $msgstr["borrar"]?></strong></span>
 						</a>
 	</div>
@@ -510,7 +511,10 @@ if (!isset($arrHttp['count'])) $arrHttp["count"]="10";
 	}
 	$fp = fopen ($a, "r");
 	$fp = file($a);
-	foreach ($fp as $linea){		$linea=trim($linea);		if ($linea!=""){			$camposbusqueda[]= $linea;
+	foreach ($fp as $linea){
+		$linea=trim($linea);
+		if ($linea!=""){
+			$camposbusqueda[]= $linea;
 			$t=explode('|',$linea);
 			$tag=$t[1];
 			$matriz_c[$tag]=$linea;

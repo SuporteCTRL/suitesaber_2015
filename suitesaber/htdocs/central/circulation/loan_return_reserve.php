@@ -55,8 +55,11 @@ document.onkeypress =
     return true;
   }
 
-function EnviarForma(Proceso){	if (Trim(document.usersearch.code.value)=="" && Trim(document.inventorysearch.inventory.value)==""){		alert("<?php echo $msgstr["falta"]." ".$msgstr["usercode"]."/".$msgstr["inventory"]?>")
-		return	}
+function EnviarForma(Proceso){
+	if (Trim(document.usersearch.code.value)=="" && Trim(document.inventorysearch.inventory.value)==""){
+		alert("<?php echo $msgstr["falta"]." ".$msgstr["usercode"]."/".$msgstr["inventory"]?>")
+		return
+	}
 	if (Proceso==""){
 		if (Trim(document.usersearch.code.value)!=""){
 			document.EnviarFrm.usuario.value=document.usersearch.usercode.value
@@ -68,7 +71,8 @@ function EnviarForma(Proceso){	if (Trim(document.usersearch.code.value)=="" && 
 			}
 		}
 	}else{
-		switch (Proceso){			case "U":
+		switch (Proceso){
+			case "U":
 				document.EnviarFrm.usuario.value=document.usersearch.usercode.value
 				document.EnviarFrm.action="usuario_prestamos_presentar.php"
 				break
@@ -76,7 +80,8 @@ function EnviarForma(Proceso){	if (Trim(document.usersearch.code.value)=="" && 
 				document.EnviarFrm.inventory.value=document.inventorysearch.inventory.value
 				document.EnviarFrm.action="numero_inventario.php"
 				document.EnviarFrm.submit()
-				break		}
+				break
+		}
 	}
 	document.EnviarFrm.submit()
 }
@@ -177,9 +182,11 @@ if ($_SESSION["permiso"]=="loanadm"){
 </form>
 <?php include("../common/footer.php");
 echo "</body></html>" ;
-if (isset($arrHttp["error"]) and $arrHttp["inventory"]!=""){	echo "
+if (isset($arrHttp["error"]) and $arrHttp["inventory"]!=""){
+	echo "
 	<script>
 	alert('".$arrHttp["inventory"].": ".$msgstr["inventory"]." ".$msgstr["noloan"]."')
 	</script>
-	";}
+	";
+}
 ?>

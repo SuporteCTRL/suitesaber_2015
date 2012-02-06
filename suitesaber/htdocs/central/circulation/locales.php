@@ -1,7 +1,8 @@
 <?php
 function LeerLocales(){
 global $db_path,$locales,$config_date_format;
-	if (file_exists($db_path."circulation/def/".$_SESSION["lang"]."/locales.tab")){		$locales=parse_ini_file($db_path."circulation/def/".$lang_db."/locales.tab",true);
+	if (file_exists($db_path."circulation/def/".$_SESSION["lang"]."/locales.tab")){
+		$locales=parse_ini_file($db_path."circulation/def/".$lang_db."/locales.tab",true);
 	}
 }
 session_start();
@@ -37,7 +38,8 @@ include("../common/header.php");
 <script language=javascript src=../dataentry/js/lr_trim.js></script>
 <script>
 function LimpiarHorario(Ctrl){
-	switch (Ctrl.name){		case "mon":
+	switch (Ctrl.name){
+		case "mon":
 			document.forma1.mon_from.value=""
 			document.forma1.mon_to.value=""
 			break
@@ -64,7 +66,9 @@ function LimpiarHorario(Ctrl){
 		case "sun":
 			document.forma1.sun_from.value=""
 			document.forma1.sun_to.value=""
-			break	}}
+			break
+	}
+}
 
 function IsValidTime(timeStr,Day) {
 // Checks if time is in HH:MM:SS AM/PM format.
@@ -237,13 +241,16 @@ $locales["currency"]="";
 $locales["fine"]="";
 $locales["date1"]="";
 $locales["date2"]="";
-for ($i=0;$i<7;$i++){	$locales[$i]["from"]="";
+for ($i=0;$i<7;$i++){
+	$locales[$i]["from"]="";
 	$locales[$i]["to"]="";
 	$locales[$i]["f_ampn"]="";
-	$locales[$i]["t_ampn"]="";}
+	$locales[$i]["t_ampn"]="";
+}
 $archivo=$db_path."circulation/def/".$_SESSION["lang"]."/locales.tab";
 if (!file_exists($archivo)) $archivo=$db_path."circulation/def/".$lang_db."/locales.tab";
-if (file_exists($archivo)){	$locales=parse_ini_file($archivo,true);
+if (file_exists($archivo)){
+	$locales=parse_ini_file($archivo,true);
 }
 
 echo "<br>
