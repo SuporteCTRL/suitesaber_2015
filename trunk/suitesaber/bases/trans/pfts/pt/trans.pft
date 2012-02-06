@@ -1,19 +1,30 @@
 
 '<table border=0 width=90%>'
-if p(v1) then '<tr><td width=20% valign=top><font face=arial size=2><b>Tipo de registro</b></td><td valign=top><font face=arial size=2>'v1+|; |,'</td>' fi/
-if p(v10) then '<tr><td width=20% valign=top><font face=arial size=2><b>Número de inventário</b></td><td valign=top><font face=arial size=2>'v10+|; |,'</td>' fi/
-if p(v20) then '<tr><td width=20% valign=top><font face=arial size=2><b>Código de usuário</b></td><td valign=top><font face=arial size=2>'v20+|; |,'</td>' fi/
-if p(v30) then '<tr><td width=20% valign=top><font face=arial size=2><b>Data de empréstimo</b></td><td valign=top><font face=arial size=2>'v30+|; |,'</td>' fi/
-if p(v35) then '<tr><td width=20% valign=top><font face=arial size=2><b>Hora de empréstimo</b></td><td valign=top><font face=arial size=2>'v35+|; |,'</td>' fi/
-if p(v40) then '<tr><td width=20% valign=top><font face=arial size=2><b>Data de renovação</b></td><td valign=top><font face=arial size=2>'v40+|; |,'</td>' fi/
-if p(v45) then '<tr><td width=20% valign=top><font face=arial size=2><b>Hora de renovação</b></td><td valign=top><font face=arial size=2>'v45+|; |,'</td>' fi/
-if p(v50) then '<tr><td width=20% valign=top><font face=arial size=2><b>Data de devolução (programada)</b></td><td valign=top><font face=arial size=2>'v50+|; |,'</td>' fi/
-if p(v55) then '<tr><td width=20% valign=top><font face=arial size=2><b>Hora de devolução (programada)</b></td><td valign=top><font face=arial size=2>'v55+|; |,'</td>' fi/
-if p(v60) then '<tr><td width=20% valign=top><font face=arial size=2><b>Data de devolução (real)</b></td><td valign=top><font face=arial size=2>'v60+|; |,'</td>' fi/
-if p(v65) then '<tr><td width=20% valign=top><font face=arial size=2><b>Hora de devolução (real)</b></td><td valign=top><font face=arial size=2>'v65+|; |,'</td>' fi/
-if p(v70) then '<tr><td width=20% valign=top><font face=arial size=2><b>Tipo de usuário</b></td><td valign=top><font face=arial size=2>'v70+|; |,'</td>' fi/
-if p(v80) then '<tr><td width=20% valign=top><font face=arial size=2><b>Tipo de Objeto</b></td><td valign=top><font face=arial size=2>'v80+|; |,'</td>' fi/
-if p(v100) then '<tr><td width=20% valign=top><font face=arial size=2><b>Referência</b></td><td valign=top><font face=arial size=2>'v100+|; |,'</td>' fi/
+if p(v1) then '<tr><td width=20% valign=top><b>Tipo de registro (1)</b></td><td valign=top>'v1+|; |,'</td>' fi/
+if p(v10) then '<tr><td width=20% valign=top><b>Número de inventário (10)</b></td><td valign=top>'v10+|; |,'</td>' fi/
+if p(v12) then '<tr><td width=20% valign=top><b>Volume (12)</b></td><td valign=top>'v12+|; |,'</td>' fi/
+if p(v15) then '<tr><td width=20% valign=top><b>Tomo (15)</b></td><td valign=top>'v10+|; |,'</td>' fi/
+if p(v20) then '<tr><td width=20% valign=top><b>Código do leitor</b></td><td valign=top>'v20+|; |,'</td>' fi/
+if p(v30) then '<tr><td width=20% valign=top><b>Data de empréstimo</b></td><td valign=top>'v30+|; |,'</td>' fi/
+if p(v35) then '<tr><td width=20% valign=top><b>Hora de empréstimo</b></td><td valign=top>'v35+|; |,'</td>' fi/
+if p(v40) then '<tr><td width=20% valign=top><b>Data de renovação</b></td><td valign=top>'v40+|; |,'</td>' fi/
+if p(v45) then '<tr><td width=20% valign=top><b>Hora de renovação</b></td><td valign=top>'v45+|; |,'</td>' fi/
+if p(v50) then '<tr><td width=20% valign=top><b>Data de devolução (programada)</b></td><td valign=top>'v50+|; |,'</td>' fi/
+if p(v55) then '<tr><td width=20% valign=top><b>Hora de devolução (programada)</b></td><td valign=top>'v55+|; |,'</td>' fi/
+if p(v60) then '<tr><td width=20% valign=top><b>Data de devolução (real)</b></td><td valign=top>'v60+|; |,'</td>' fi/
+if p(v65) then '<tr><td width=20% valign=top><b>Hora de devolução (real)</b></td><td valign=top>'v65+|; |,'</td>' fi/
+if p(v70) then '<tr><td width=20% valign=top><b>Tipo de usuário</b></td><td valign=top>'v70+|; |,'</td>' fi/
+if p(v80) then '<tr><td width=20% valign=top><b>Tipo de Objeto</b></td><td valign=top>'v80+|; |,'</td>' fi/
+if p(v90) then '<tr><td width=20% valign=top><b>Classificação</b></td><td valign=top>'v90+|; |,'</td>' fi/
+if p(v95) then '<tr><td width=20% valign=top><b>Número de Controle</b></td><td valign=top>'v95+|; |,'</td>' fi/
+if p(v100) then '<tr><td width=20% valign=top><b>Referência</b></td><td valign=top>'v100+|; |,'</td>' fi/
+if p(v120) then '<tr><td width=20% valign=top><b>Operador empréstimo</b></td><td valign=top>'v120^a,' - ',v120^b+|; |,'</td>' fi/
+if p(v130) then '<tr><td width=20% valign=top><b>Operador devolução</b></td><td valign=top>'v130^a,' - ',v130^b+|; |,'</td>' fi/
+if p(v200) then '<tr><td width=20% valign=top><b>Renovação</b></td><td valign=top>'v200+|; |,'</td>' fi/
+
+if p(v400) then '<tr><td width=20% valign=top><b>Política de empréstimo</b></td><td valign=top>'v400+|; |,'</td>' fi/
+
+if p(v500) then '<tr><td width=20% valign=top><b>Data de devolução</b></td><td valign=top>'v500+|; |,'</td>' fi/
 '<tr><td colspan=2><hr></td>'/
 '</table>'
 
