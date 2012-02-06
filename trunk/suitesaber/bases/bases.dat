@@ -1,9 +1,12 @@
-arquivo|Formato ARQUIVO
-marc|Base bibliográfica (MARC)
-autoridades|Base de autoridades (MARC)
-copies|Regitro patrimonial
-providers|Fornecedores
-suggestions|Sugestões de compra
-purchaseorder|Ordens de compra
-users|Leitores
+marc|Formato MARC|Y
+autoridades|Autoridades
+a|-----
+copies|Cópias
 loanobjects|Objetos para empréstimo
+providers|Fornecedores
+suggestions|Sugestões
+purchaseorder|Purchase Orders
+trans|Transações
+suspml|Suspensão e Multas
+users|Usuários de empréstimo
+acces|Usuários do sistema

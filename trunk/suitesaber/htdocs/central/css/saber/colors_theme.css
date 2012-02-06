@@ -4,12 +4,21 @@
 		background: #3A89AF;
 		color: #ffffff; 
 	}
-#botoes_top {
+#botoes_top, .botoes_top {
 		background: #1A6B91;
 		color: #ffffff; 
 	}	
+.toolbar_entry {
+	border: solid 1px #cccccc;	
+	background-color: #dddddd;
+	}
+.toolbar_entry:hover {
+	border: solid 1px #cccccc;	
+	background-color: #F2EFEF;
+	}	
 	
-	/*#heading classes */
+	
+/*#heading classes */
 	.heading{
 		background: #3A89AF;
 		color: #ffffff; 
