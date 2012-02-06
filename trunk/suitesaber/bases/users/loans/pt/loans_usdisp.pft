@@ -1,11 +1,59 @@
-'<table>
-<td width=150><img width=150  src=../common/show_image.php?image='v620'&base=users></td><td>'
-"<strong>"v30,'</strong><br>'
-'Tipo de usuário: 'v10^*," - "v10^b
-'<br>No.cartão:'v20,
-"<br>No.Identidade:"d35, v34"-",v35,
-"<input type=hidden name=usuario value="v20">"/
-"<br>Local:"v45,
-"<br>Cidade:"v120,
-'<br>E-mail:<br>Telefone: '
-'</td></table>',
+'<head>
+
+<link rel="stylesheet" type="text/css" href="/bases/marc/css/estilo.css" />
+<script language="javascript" type="text/javascript">
+			<!--
+				d = document;
+				window.onload = function (){
+					if (o = d.getElementById("abre")) {
+						o.onclick = function () {
+							d.getElementById("number1").style.display = "block";
+						};
+					}
+					if (o = d.getElementById("fecha")) {
+						o.onclick = function () {
+							d.getElementById("number1").style.display = "block";
+						};
+					}
+				}
+			-->
+</script>
+</head><body>
+<div id="wrap">'
+
+'<p class="cabecalho">'v30, ' (Cód.: ' v20 ')' '</p>'
+
+'<table cellspacing="0" cellpadding="3" class="mrc">'
+if a(v109) then '<tr><td rowspan="100%" valign="top"><img width="100px" src="/bases/users/noimage.jpg"></td><td></td></tr>' fi
+if p(v109) then '<tr><td rowspan="100%" valign="top"><img width="100px" src="/bases/users/'v109'"></td></tr>' fi
+
+if p(v20) then '<tr class="mrc"><th class="mrc">Código do leitor</th><td class="mrc">'v20+|<br />|,'</td></tr>' fi/
+if p(v10) then '<tr class="mrc"><th class="mrc">Tipo de leitor</th><td class="mrc">',v10^b, '</td></tr>' fi/
+if p(v15) then '<tr class="mrc"><th class="mrc">Validade do cartão</th><td class="mrc">'v15+|<br />|,'</td></tr>' fi/
+if p(v101) then '<tr class="mrc"><th class="mrc">Documento de identidade</th><td class="mrc">'v101+|<br />|,'</td></tr>' fi/
+
+if s(v216,v316)<>'' then '<tr class="mrc"><th class="mrc">E-mail</th><td class="mrc">'
+	if p(v216) then ('<a href="mailto:'v216'" title="Enviar e-mail para 'v216'" target="blank">',v216'</a> (Pessoal)<br />'/) fi,
+	if p(v316) then ('<a href="mailto:'v316'" title="Enviar e-mail para 'v316'" target="blank">',v316'</a> (Comercial)<br />'/) fi,
+'</td></tr>' fi/
+
+if s(v214,v314)<>'' then '<tr class="mrc"><th class="mrc">Telefone</th><td class="mrc">'
+	if p(v214) then (v214 ' (Pessoal)<br />'/) fi,
+	if p(v314) then (v314 ' (Comercial)<br />'/) fi,
+'</td></tr>' fi/
+
+if s(v400,v401,v402)<>'' then '<tr><th class="mrc rotulo" colspan="2">Dados profissionais</th></tr>'
+	if p(v400) then '<tr class="mrc"><th class="mrc">Nome da instituição</th><td class="mrc">'v400+|<br />|,'</td></tr>' fi/
+	if p(v401) then '<tr class="mrc"><th class="mrc">Setor</th><td class="mrc">'v401+|<br />|,'</td></tr>' fi/
+	if p(v402) then '<tr class="mrc"><th class="mrc">Cargo</th><td class="mrc">'v402+|<br />|,'</td></tr>' fi/
+
+fi,
+
+if s(v503,v501,v502)<>'' then '<tr><th class="mrc rotulo" colspan="2">Dados de ensino</th></tr>'
+	if p(v503) then '<tr class="mrc"><th class="mrc">Instituição</th><td class="mrc">'V503+|<br />|,'</td></tr>' fi/
+	if p(v501) then '<tr class="mrc"><th class="mrc">Curso</th><td class="mrc">'v501+|<br />|,'</td></tr>' fi/
+	if p(v502) then '<tr class="mrc"><th class="mrc">Período</th><td class="mrc">'v502+|<br />|,'</td></tr>' fi/
+fi,
+
+'</table>'
+
