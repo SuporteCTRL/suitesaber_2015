@@ -1,0 +1,48 @@
+	/*#heading classes */
+.heading,.top, #signin_menu, input, .submit input, .bottom #footNotes, .sectionInfo, .language, .systemInfo,
+ .distributorLogo, #botoes{
+		background: #0067aa;
+		color: #ffffff; 
+	}
+
+#botoes:hover{
+		background: #666666;
+		color: #ffffff; 
+	}
+A.defaultButton SPAN {
+		background: #888888;
+		color: #ffffff; 
+	}	
+A.defaultButton:hover SPAN {
+		background: #999999;
+		color: #ffffff; 
+	}		
+
+ .footer   {
+	border-top-color: #333333;
+	border-top-width: 2px; 	
+	border-top-style: solid;
+ 	
+ 	}
+	
+ .breadcrumb {
+		background: #0b597f;
+		color: #ffffff;
+		border-top-color: #333333;
+		border-top-width: 1px;
+		border-top-style: solid;
+	}
+
+input[type=text],input[type=password], textarea {
+	background-color: #ffffff; 
+	color: #000000;
+
+}
+
+input[type=text]:focus, textarea:focus {
+	border-left-color: #333333;
+	background-color: #eeeeee; 
+
+}
+
+/*-----------FIM DAS CLASS BÁSICAS----------------*/

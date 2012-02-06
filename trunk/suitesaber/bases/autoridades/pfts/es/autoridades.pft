@@ -1,0 +1,116 @@
+'<head>
+<link rel="stylesheet" type="text/css" href="/bases/autoridades/styles/autoridades.css" />
+</head>'
+
+'<table class="marc" cellpadding="3">'
+
+'<tr>
+<th class="marc wide">MFN</th>
+<td class="marc">'mfn,'</td>
+</tr>'
+
+if p(v1) then 
+'<tr>
+<th class="marc wide">Número de controle</th>
+<td class="marc">'v1+|<br />|,'</td>
+</tr>' fi/
+
+if p(v5) then 
+'<tr>
+<th class="marc wide">Data da última alteração</th>
+<td class="marc">'v5*6.2,"/"v5*4.2,"/"v5*0.4,'</td>
+</tr>' fi/
+
+if p(v100) then 
+'<tr>
+<th class="marc wide">Cabeçalho - Nome pessoal</th>
+<td class="marc">'v100^a| |,v100^b| |,v100^c| |,v100^d| |,v100^q,'</td>
+</tr>' fi/
+
+if p(v110) then 
+'<tr>
+<th class="marc wide">Cabeçalho - Entidade</th>
+<td class="marc">'v110^a| |,v110^b| |,v110^e,'</td>
+</tr>' fi/
+
+if p(v111) then 
+'<tr>
+<th class="marc wide">Cabeçalho - Evento</th>
+<td class="marc">'v111^a| |,v111^c| |,v111^d| |,v111^e,'</td>
+</tr>' fi/
+
+if p(v130) then 
+'<tr>
+<th class="marc wide">Cabeçalho - Título uniforme</th>
+<td class="marc">'v130^a| |,v130^c| |,v130^d| |,v130^e, '  ISSN: 'v22^a,'</td>
+</tr>' fi/
+
+if p(v400) then 
+'<tr>
+<th class="marc wide">Remissiva VER - Nome pessoal</th>
+<td class="marc">'(v400^a| |,v400^b| |,v400^c| |,v400^d| |,v400^q,'<br />'/)'</td>
+</tr>' fi/
+
+if p(v410) then 
+'<tr>
+<th class="marc wide">Remissiva VER - Entidade</th>
+<td class="marc">'(v410^a| |,v410^b| |,v410^e,'<br />'/)'</td>
+</tr>' fi/
+
+if p(v411) then 
+'<tr>
+<th class="marc wide">Remissiva VER - Evento</th>
+<td class="marc">'(v411^a| |,v411^c| |,v411^d| |,v411^e,'<br />'/)'</td>
+</tr>' fi/
+
+if p(v430) then 
+'<tr>
+<th class="marc wide">Remissiva VER - Título uniforme</th>
+<td class="marc">'(v430^a| |,v430^c| |,v430^d| |,v430^e,'<br />'/)'</td>
+</tr>' fi/
+
+if p(v500) then 
+'<tr>
+<th class="marc wide">Remissiva VER TAMBÉM - Nome pessoal</th>
+<td class="marc">'(v500^a| |,v500^b| |,v500^c| |,v500^d| |,v500^q,'<br />'/)'</td>
+</tr>' fi/
+
+if p(v510) then 
+'<tr>
+<th class="marc wide">Remissiva VER TAMBÉM - Entidade</th>
+<td class="marc">'(v510^a| |,v510^b| |,v510^e,'<br />'/)'</td>
+</tr>' fi/
+
+if p(v511) then 
+'<tr>
+<th class="marc wide">Remissiva VER TAMBÉM - Evento</th>
+<td class="marc">'(v511^a| |,v511^c| |,v511^d| |,v511^e,'<br />'/)'</td>
+</tr>' fi/
+
+if p(v530) then 
+'<tr>
+<th class="marc wide">Remissiva VER TAMBÉM - Título uniforme</th>
+<td class="marc">'(v530^a| |,v530^c| |,v530^d| |,v530^e,'<br />'/)'</td>
+</tr>' fi/
+
+if p(v665) then 
+'<tr>
+<th class="marc wide">Nota remissiva histórica – Nome</th>
+<td class="marc">'(v665^a,'<br />'/)'</td>
+</tr>' fi/
+
+if p(v670) then 
+'<tr>
+<th class="marc wide">Fonte positiva dos dados</th>
+<td class="marc">'(v670^a| |,v670^b,'<br />'/)'</td>
+</tr>' fi/
+
+if p(v675) then 
+'<tr>
+<th class="marc wide">Fonte negativa dos dados</th>
+<td class="marc">'(v675^a,'<br />'/)'</td>
+</tr>' fi/
+
+'</table>'
+
+

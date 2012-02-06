@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<calls id="45" lang="pt" available="yes">
+  <item id="4" available="yes" href="http://bvsmodelo.bvsalud.org/download/abcd/manuais/Prereq_Installation_ABCD_PT.pdf">Guia de Instalação do ABCD</item>
+  <item id="1" available="yes" href="http://bvsmodelo.bvsalud.org/download/abcd/manuais/ABCD-Site-Manual-4_0_pt.pdf">Adm Site</item>
+  <item id="2" available="yes" href="http://bvsmodelo.bvsalud.org/download/abcd/manuais/ABCD-Site-GraphicInterface.4.0_pt-OfficialVersion.pdf">Guia Gráfico do Site</item>
+  <item id="3" available="yes" href="http://bvsmodelo.bvsalud.org/download/abcd/manuais/ABCD-IAH-3.1.0_pt-BR-OfficialVersion.pdf">Manual iAH</item>
+  <item id="5" available="yes" href="http://bvsmodelo.bvsalud.org/download/abcd/manuais/ABCofABCD_atualizado.pdf">Abc do ABCD</item>
+  <item id="6" available="yes" href="http://abcdbrasil.org">Fórum ABCDBrasil</item>
+</calls>

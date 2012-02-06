@@ -1,0 +1,102 @@
+/***** Geral *****/
+
+body {
+	font-family:"Arial", sans-serif;
+	font-size:13px;
+	color:#000000; }
+
+/* Div com tudo */
+#wrap {
+	width:80%;
+	margin:0 auto;}
+
+/* Div antes table */
+#supDir { 
+	text-align:right; }
+
+/*table.mrc { 
+	width:80%; }*/
+
+th.mrc {
+	width:140px;}
+
+table.mrc,
+th.mrc,
+td.mrc {
+	vertical-align:top;
+	border-collapse:collapse;
+	padding:5px; 
+	font-size:13px;}
+
+th.mrc {
+	color:#0E5188;
+	vertical-align:top;
+	text-align:right; 
+	background-color:#D9EDFF;
+	padding-right:10px; }
+
+/* Limpa a borda do programa */
+tr:hover { 
+	border:0; }
+
+tr.mrc:hover { 
+	border:0; 
+	background-color:#D9EDFF; }
+
+/* Capa */
+td.capa {
+	width:120px; }
+tr.capa:hover {
+	background-color:#FFFFFF;}
+
+/* Destaque para títulos que não são <th> */
+.destaque {
+	font-weight:bold;
+	color:#0E5188; }
+
+/* Links */
+a.pftLink:link, 
+a.pftLink:visited, 
+a.pftLink:hover, 
+a.pftLink:active { 
+	text-decoration:underline;
+	display:block;
+	color:#0E5188; }
+
+/***** Ficha *****/
+
+#ficha {
+	font-family: "Courier New", "Lucida console", monospace; }
+#ficha p {
+	text-indent:20px;
+	line-height:12px; }
+
+
+/****** Analíticas *****/
+
+/* Ajeita alinhamento da lista de suporte e entrevistas */
+ul { padding: 0px; margin: 0px; }
+th.listaAn,
+td.listaAn { width:auto; padding-right:15px;}
+
+/***** Dados de controle *****/
+
+dl.ctrl dt, 
+dl.ctrl dd { 
+	display:inline; }
+
+dl.ctrl dd {
+	margin:0px; 
+	padding:0 10px 0 10px; }
+
+
+/***** Dublin Core *****/
+
+textarea.mrc {
+	width:600px;
+	height:400px; 
+	font-family: "Courier New", "Lucida console", monospace; 
+	font-size:13px;
+	padding:5px;
+	border:1px solid #CCCCCC; }
+

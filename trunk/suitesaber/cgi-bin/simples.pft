@@ -1,0 +1,7 @@
+[pft]
+'<td><a href="http://local:3030/central/dataentry/fmt.php?Opcion=ver&base=fahmcs&cipar=fahmcs.par&Mfn='mfn'&ver=S&Formato=fahmcs" target="_blank" class="pftLink">'mfn,'</a></td>'
+'<td>'mhl,v16,'</td>'
+'<td>'if p(v21) then v21,fi,'</td>'
+'<td>'if p(v22) then v22,fi,'</td>'
+'<td>'v5001'</td>'
+[/pft]

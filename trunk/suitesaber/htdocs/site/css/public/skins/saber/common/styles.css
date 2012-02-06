@@ -1,0 +1,230 @@
+/*
+    This file describes general styles all over the site,
+    like "top banner", "footer", and general styles about the component boxes.
+*/
+
+/* Page Body Styles */
+
+.top {
+    /* background: #4A586D ;*/
+    -moz-border-radius-topleft: 9px;
+	 -moz-border-radius-topright: 9px;
+	 -webkit-border-top-left-radius: 9px;
+	 -webkit-border-top-right-radius: 9px;
+	 margin-bottom: 20px;
+}
+
+.top #parent {
+    text-align: right;
+}
+
+.top #identification {
+
+}
+
+.top #identification H1 {
+    color: white;
+    font-size: 160%;
+    padding-top: 20px;
+    vertical-align: middle;   
+}
+
+.top #institutionList {
+    text-align: right;
+}
+
+.top #institutionList LI {
+    list-style: none;
+    font-size: 90%;
+}
+
+HTML>BODY .top #institutionList LI {
+    font-size: 85%;
+}
+
+.top #institutionList LI A {
+    text-decoration: none;
+    color: #FFF;
+}
+
+
+.bar {
+    text-align: right;
+    font-weight: bold;
+    font-size: 75%;
+}
+
+.bar, .bar A {
+    color: white;
+}
+
+.bar #contact A {
+    background: url(../../../../../image/public/skins/classic/common/bt_contact.gif) no-repeat;
+}
+
+.bottom #footNotes {
+/*    background: #4A586D; */
+    -moz-border-radius-bottomleft: 9px;
+	 -moz-border-radius-bottomright: 9px;
+	 -webkit-border-bottom-left-radius: 9px;
+	 -webkit-border-bottom-right-radius: 9px;
+}
+
+.bottom #footNotes {
+	 text-align: center;
+    font-size: 85%;
+}
+
+.bottom #footNotes, .bottom #footNotes A {
+    color: #DFEBF2;
+}
+
+
+/* Cascading definitions #Start */
+.firstColumn DIV, .secondColumn .centerLeftColumn DIV, .secondColumn .centerRightColumn DIV, .thirdColumn DIV, #search, #searchConcepts, .level2 .middle DIV {
+    background: #ffffff;
+}
+
+.firstColumn DIV H3, .secondColumn DIV H3, .thirdColumn DIV H3, #search H3, #searchConcepts H3, .level2 .middle DIV H3 {
+    border-top: 0px solid #B1C1C1;
+    background: #FCFCFC;
+}
+
+.firstColumn DIV H3 SPAN, .secondColumn DIV H3 SPAN, .thirdColumn DIV H3 SPAN, #search H3 SPAN, #searchConcepts H3 SPAN, .level2 .middle DIV H3 SPAN {
+    border-left: 1px solid #ffffff;
+    font-size: 80%;
+}
+
+.firstColumn DIV H3 SPAN A, .secondColumn DIV H3 SPAN A, .thirdColumn DIV H3 SPAN A, #search H3 SPAN A, #searchConcepts H3 SPAN A, .level2 .middle DIV H3 SPAN A {
+    text-decoration: none;
+}
+
+.firstColumn DIV H3 SPAN A:hover, .secondColumn DIV H3 SPAN A:hover, .thirdColumn DIV H3 SPAN A:hover, #search H3 SPAN A:hover, #searchConcepts H3 SPAN A:hover, .level2 .middle DIV H3 SPAN A:hover {
+    text-decoration: underline;
+}
+
+html>body .firstColumn DIV H3 SPAN, html>body .secondColumn DIV H3 SPAN, html>body .thirdColumn DIV H3 SPAN, html>body #search H3 SPAN, html>body #searchConcepts H3 SPAN, html>body .level2 .middle DIV H3 SPAN {
+    font-size: 105%;
+}
+
+/* Cascading definitions #End */
+
+
+/* Second pages Styles */
+.level2 .middle #contact A {
+    background: none;
+}
+
+.level2 H4 {
+    border-bottom: 1px solid #B6CDCD;
+}
+
+.level2 #search UL LI {
+    list-style: none;
+}
+
+.level2 #search LI {
+    font-weight: bold;
+    list-style: none;
+}
+
+.level2 #search LI LI {
+    font-weight: normal;
+}
+
+/* MetaIAH Pop-up styles */
+#popUp {
+    background: #EEF1F1;
+}
+
+#popUp TD {
+    font-size: 80%;
+}
+
+#popUp .bottom {
+    border-top: 1px solid #CCC;
+}
+
+.copyright {
+    font-size: 8pt;
+    text-align: center;
+}
+
+/* General Styles */
+.info {
+    border: 0px;
+    height: 17px;
+    width: 18px;
+    background: url(../../../../../image/public/skins/classic/common/buttonInfo.gif) top left no-repeat;
+}
+
+.expand-retract {
+
+}
+
+/* selection area decs */
+.selectionArea TABLE{
+    border:1px solid #888c8f;
+}
+
+.evenLine{
+    background: #f7f7f7;
+}
+.oddLine{
+    background: #e8e8e8;
+}
+.termList LI {
+    list-style: none;
+}
+
+.evenLine A, .oddLine A {
+    color:#b7535f;
+    font-weight:bold;
+    text-decoration: none;
+}
+
+
+.actions A img {
+    opacity: 0.7;
+    filter: alpha(opacity=70);
+}
+
+.actions A:hover img {
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+
+.resultados {
+	margin-left: 10px;
+	width: 80px;	
+	display: inline;
+	padding: 0px 5px 0px 5px;
+	background: #4a586d;
+	border: 0;
+	font-size: 12px;
+	color: #FFFFFF;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+	-moz-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+	-webkit-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+}
+.resultados:hover {
+	margin-left: 10px;
+	width: 80px;	
+	display: inline;
+	padding: 0px 5px 0px 5px;
+	background:#788599;
+	border: 0;
+	font-size: 12px;
+	color: #FFFFFF;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+	-moz-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+	-webkit-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+}
+.rotulo_center a {
+	text-decoration: none;
+	font-size: 16px;
+	}
