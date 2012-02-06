@@ -139,15 +139,18 @@ echo "</div>
 	if (!file_exists($archivo)) $archivo=$db_path."circulation/def/".$lang_db."/items.tab" ;
 	if (file_exists($archivo))	{
 		$fp=file($archivo);
-	}else{		$fp=array();
+	}else{
+		$fp=array();
 		for ($i=0;$i<20;$i++){
 			$fp[$i]='|';
 		}
-		$tope=20;	}
+		$tope=20;
+	}
 	$nfilas=0;
 	$i=-1;
 	$t=array();
-	foreach ($fp as $value){		$value=trim($value);
+	foreach ($fp as $value){
+		$value=trim($value);
 		if (!empty($value)) {
 	    	$nfilas=$nfilas+1;
 			echo "\n<tr onmouseover=\"this.className = 'rowOver';\" onmouseout=\"this.className = '';\">\n";

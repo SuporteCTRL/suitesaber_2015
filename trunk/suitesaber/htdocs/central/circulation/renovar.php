@@ -52,12 +52,12 @@ document.onkeypress =
     return true;
   };
 
-function EnviarForma(){	if (Trim(document.inventorysearch.searchExpr.value)==""){		alert('<?php echo $msgstr["missinventory"]?>')
-		return	}
+function EnviarForma(){	if (Trim(document.inventorysearch.searchExpr.value)==""){		alert('<?php echo $msgstr["missinventory"]?>')
+		return	}
 	document.inventorysearch.submit();
 }
 
-function AbrirIndiceAlfabetico(){	db="trans"
+function AbrirIndiceAlfabetico(){	db="trans"
 	cipar="trans.par"
 	postings=1
 	tag="10"
@@ -115,7 +115,7 @@ echo "&nbsp; &nbsp; Script: renovar.php</font>\n";
         <input type=hidden name=base value=trans>
         <?php if (isset($arrHttp["usuario"])) echo "<input type=hidden name=usuario value=".$arrHttp["usuario"].">"?>
 		<input type="submit" name="list" value="<?php echo $msgstr["list"]?>" class="submit" onclick="javascript:AbrirIndiceAlfabetico();return false"/>
-		<input type="submit" name="renovar" value="<?php echo $msgstr["renew"]?>" xclass="submitAdvanced" onclick="javascript:EnviarForma()"/>
+		<input  id="botoes"  type="submit" name="renovar" value="<?php echo $msgstr["renew"]?>" xclass="submitAdvanced" onclick="javascript:EnviarForma()"/>
 		</td></table>
 		<?php echo $msgstr["clic_en"]." <i>[".$msgstr["renew"]."]</i> ".$msgstr["para_c"]?>
 	</form>
@@ -127,9 +127,9 @@ echo "&nbsp; &nbsp; Script: renovar.php</font>\n";
 </form>
 <?php include("../common/footer.php");
 echo "</body></html>" ;
-if (isset($arrHttp["error"])){	echo "<script>
+if (isset($arrHttp["error"])){	echo "<script>
 			alert('".$arrHttp["error"]."')
 			</script>
-	";}
+	";}
 
 ?>

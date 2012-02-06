@@ -11,8 +11,8 @@
 .defaultbutton {
 	margin:1px;
 	cursor:pointer;
-	width: 26px;
-	height: 26px;
+	width: 30px;
+	height: 30px;
 	border: 0;
 	font-size: 150%;
 	color: #FFFFFF;
@@ -39,8 +39,8 @@
 .defaultbuttondown {
 	margin:1px;
 	cursor:pointer;
-	width: 26px;
-	height: 26px;
+	width: 30px;
+	height: 30px;
 	border: 0;
 	font-size: 150%;
 	color: #FFFFFF;
@@ -60,8 +60,8 @@
   /* CSS3 standard */
   opacity:1.0;
 	cursor : pointer;
-	height: 26px;
-	width: 26px;
+	height: 30px;
+	width: 30px;
 	left: 0px;
 	top: 0px;
 	right: 0px;
@@ -71,8 +71,8 @@
 .defaultbuttonover {
 	margin:1px;
 	cursor:pointer;
-	width: 26px;
-	height: 26px;
+	width: 30px;
+	height: 30px;
 	border: 0;
 	font-size: 150%;
 	color: #FFFFFF;
@@ -92,8 +92,8 @@
   /* CSS3 standard */
   opacity:0.5;
 	cursor : pointer;
-	height: 26px;
-	width: 26px;
+	height: 30px;
+	width: 30px;
 	padding: 0px;
 	left: 0px;
 	top: 0px;

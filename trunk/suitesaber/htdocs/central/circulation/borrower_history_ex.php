@@ -115,7 +115,8 @@ global $locales,$config_date_format;;
 	include("../common/wxis_llamar.php");
 	$prestamos=array();
 	foreach ($contenido as $linea){
-//		echo "$linea<br>";		$prestamos[]=$linea;
+		//echo "$linea<br>";
+		$prestamos[]=$linea;
 	}
 	$nv=0;   //número de préstamos vencidos
 	$np=0;   //Total libros en poder del usuario
@@ -123,9 +124,10 @@ global $locales,$config_date_format;;
 	if (count($prestamos)>0) {
 		$ec_output.= "<strong>".$msgstr["loans"]."</strong>
 		<table width=95% bgcolor=#cccccc>
-		<td> </td><th>".$msgstr["inventory"]."</th><th>".$msgstr["volume"]."</th><th>".$msgstr["tome"]."</th><th>".$msgstr["control_n"]."</th><th>".$msgstr["signature"]."</th><th>".$msgstr["reference"]."</th><th>".$msgstr["typeofitems"]."</th><th>".$msgstr["loandate"]."</th><th>".$msgstr["devdate"]."</th><th>".$msgstr["overdue"]."</th><th>".$msgstr["renewed"]."</th>";
+		<td> </td><th>".$msgstr["inventory"]."</th><th>".$msgstr["control_n"]."</th><th>".$msgstr["signature"]."</th><th>".$msgstr["reference"]."</th><th>".$msgstr["typeofitems"]."</th><th>".$msgstr["loandate"]."</th><th>".$msgstr["devdate"]."</th><th>".$msgstr["actual_dev"]."</th><th>".$msgstr["renewals"]."</th>";
 
-		foreach ($prestamos as $linea) {			if (!empty($linea)) {
+		foreach ($prestamos as $linea) {
+			if (!empty($linea)) {
 				$p=explode("^",$linea);
 
 				$np=$np+1;
@@ -141,18 +143,16 @@ global $locales,$config_date_format;;
 				    	$fuente="<font color=red>";
 					}
 				}
-				$ec_output.= "<tr><td  bgcolor=white>";
+				$ec_output.= "<tr><td  bgcolor=white valign=top>";
 				if ($p[16]=="P")
-					$ec_output.=$msgstr["loan"];
+					$ec_output.=$msgstr["loaned"];
 				else
-					$ec_output.=$msgstr["return"];
+					$ec_output.=$msgstr["returned"];
 				$ec_output.= "<input type=hidden name=politica value=".$politica[$p[3]][$p[6]]."> \n";
 				$ec_output.="</td>
 
 					<td bgcolor=white nowrap align=center valign=top>".$p[0]."</td>".
-					"<td bgcolor=white nowrap align=center valign=top>".$p[14]."</td>".
-					"<td bgcolor=white nowrap align=center valign=top>".$p[15]."</td>".
-					"</td><td bgcolor=white nowrap align=center valign=top>".$p[12]."(".$p[13].")</td><td bgcolor=white nowrap align=center valign=top>".$p[1]."<td bgcolor=white valign=top>".$p[2]."</td><td bgcolor=white align=center valign=top>". $p[3]. "</td><td bgcolor=white nowrap align=center valign=top>".$p[4]."</td><td nowrap bgcolor=white align=center valign=top>$fuente".$p[5]."</td><td align=center bgcolor=white valign=top>".$mora."</td><td align=center bgcolor=white valign=top>". $p[11]."</td></tr>";
+					"<td bgcolor=white nowrap align=center valign=top>".$p[12]."(".$p[13].")</td><td bgcolor=white nowrap align=center valign=top>".$p[1]."<td bgcolor=white valign=top>".$p[2]."</td><td bgcolor=white align=center valign=top>". $p[3]. "</td><td bgcolor=white nowrap align=center valign=top>".$p[4]."</td><td nowrap bgcolor=white align=center valign=top>$fuente".$p[5]."</td><td align=center bgcolor=white valign=top>".$p[17]."</td><td align=center bgcolor=white valign=top>". $p[11]."</td></tr>";
         	}
 		}
 		$ec_output.= "</table></dd>";

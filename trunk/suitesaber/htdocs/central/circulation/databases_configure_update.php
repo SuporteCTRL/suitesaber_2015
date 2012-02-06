@@ -38,20 +38,28 @@ include("../lang/prestamo.php");
 include("../common/get_post.php");
 //foreach ($arrHttp as $var=>$value) echo "$var = $value<br>";
 
-function GuardarPft($Pft,$base){global $msgstr,$db_path,$arrHttp;
+function GuardarPft($Pft,$base){
+global $msgstr,$db_path,$arrHttp;
 	$dir=$db_path.$arrHttp["base"]."/loans";
-	if (!file_exists($dir)){		$res=mkdir($dir);
-		if (!$res) {			echo $dir." ".$msgstr["foldernotc"];
-			die;		}
+	if (!file_exists($dir)){
+		$res=mkdir($dir);
+		if (!$res) {
+			echo $dir." ".$msgstr["foldernotc"];
+			die;
+		}
 		$dir.="/".$_SESSION["lang"];
 		if (!file_exists($dir)){
 			$res=mkdir($dir);
-			if (!$res) {				echo $dir." ".$msgstr["foldernotc"];
-				die;			}
+			if (!$res) {
+				echo $dir." ".$msgstr["foldernotc"];
+				die;
+			}
 		}
 	}
 	$fp=fopen($base,"w");
-	fwrite($fp,$Pft);	echo "<xmp>".$Pft."</xmp><p>$base <strong>". $msgstr["saved"]."</strong><hr>";
+	fwrite($fp,$Pft);
+	echo "<xmp>".$Pft."</xmp><p>$base <strong>". $msgstr["saved"]."</strong><hr>";
+
 }
 
 include("../common/header.php");
@@ -75,14 +83,14 @@ echo "
 			<div class=\"formContent\">\n";
 
 $object_db=$arrHttp["base"];
-$presta_db="presta";
 $Pft="";
 if (isset($arrHttp["invkey"])){
 	echo "<h5><font color=darkred>". $msgstr["invkey"]." - ".$msgstr["nckey"]."</font></H5>";
 	$Pft="IN ".$arrHttp["invkey"];
 }
 
-if (isset($arrHttp["nckey"])and trim($arrHttp["nckey"])!=""){	$Pft.="\n NC ".$arrHttp["nckey"];
+if (isset($arrHttp["nckey"])and trim($arrHttp["nckey"])!=""){
+	$Pft.="\nNC ".$arrHttp["nckey"];
 }
 
 GuardarPft($Pft,$db_path.$arrHttp["base"]."/loans/".$_SESSION["lang"]."/loans_conf.tab");

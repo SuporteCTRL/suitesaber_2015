@@ -267,7 +267,7 @@ echo "&nbsp; &nbsp; Script: reports_menu_recsel.php";
 ?>
 </font>
 	</div>
-<form name=forma1 method=post action=../dataentry/imprimir_g.php onsubmit="Javascript:return false" target=VistaPrevia>
+<form name=forma1 method=get action=../dataentry/imprimir_g.php onsubmit="Javascript:return false" target=VistaPrevia>
 <input type=hidden name=base value=<?php echo $arrHttp["base"]?>>
 <input type=hidden name=cipar value=<?php echo $arrHttp["base"]?>.par>
 <input type=hidden name=Dir value=pfts/es>

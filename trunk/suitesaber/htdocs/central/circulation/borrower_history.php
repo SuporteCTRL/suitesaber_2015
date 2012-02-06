@@ -51,8 +51,11 @@ document.onkeypress =
     return true;
   }
 
-function EnviarForma(Proceso){	if (Trim(document.usersearch.code.value)=="" ){		alert("<?php echo $msgstr["falta"]." ".$msgstr["usercode"]?>")
-		return	}
+function EnviarForma(Proceso){
+	if (Trim(document.usersearch.code.value)=="" ){
+		alert("<?php echo $msgstr["falta"]." ".$msgstr["usercode"]?>")
+		return
+	}
 	document.EnviarFrm.usuario.value=document.usersearch.usercode.value
 	document.EnviarFrm.action="borrower_history_ex.php"
 	document.EnviarFrm.submit()
@@ -132,9 +135,11 @@ echo "&nbsp; &nbsp; Script: borrower_history.php</font>\n";
 </form>
 <?php include("../common/footer.php");
 echo "</body></html>" ;
-if (isset($arrHttp["error"]) and $arrHttp["inventory"]!=""){	echo "
+if (isset($arrHttp["error"]) and $arrHttp["inventory"]!=""){
+	echo "
 	<script>
 	alert('".$arrHttp["inventory"].": ".$msgstr["inventory"]." ".$msgstr["noloan"]."')
 	</script>
-	";}
+	";
+}
 ?>

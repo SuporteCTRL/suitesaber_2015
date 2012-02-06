@@ -47,8 +47,10 @@ global $msgstr,$db_path;
 echo $base;
 
 	$fp=fopen($base,"w");
-	if (!$fp){		echo "$base ".$msgstr["notsaved"]."<hr>";
-		die;	}
+	if (!$fp){
+		echo "$base ".$msgstr["notsaved"]."<hr>";
+		die;
+	}
 	fwrite($fp,$Pft);
 	echo "<xmp>".$Pft."</xmp><p>$base <strong>". $msgstr["saved"]." </strong><hr>";
 

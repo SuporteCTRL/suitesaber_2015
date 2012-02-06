@@ -88,7 +88,8 @@ global $db_path,$Wxis,$xWxis,$arrHttp,$pft_totalitems,$pft_in,$pft_nc,$pft_typeo
 	return $copies_title;
 }
 
-?>
+
+?>
 <html>
 <head>
 	<title>Reserva</title>
@@ -110,8 +111,10 @@ global $db_path,$Wxis,$xWxis,$arrHttp,$pft_totalitems,$pft_in,$pft_nc,$pft_typeo
     <script src=../dataentry/js/lr_trim.js></script>
     <script>top.resizeTo(900,500);</script>
     <script>
-    	function AnularReserva(Mfn){    		document.anular.Mfn.value=Mfn
-    		document.anular.submit()    	}
+    	function AnularReserva(Mfn){
+    		document.anular.Mfn.value=Mfn
+    		document.anular.submit()
+    	}
 	</script>
 </head>
 <body>
@@ -139,30 +142,44 @@ if ($nv>0){
 echo $ec_output;
 $ec_output="";
 $reservas_vencidas="";
-if ($nv >0) {	echo "<br>";
+if ($nv >0) {
+	echo "<br>";
 	echo $reserva_output;
-	die;}
-if ($reservas_vencidas=="S"){	echo "<br>" ;
+	die;
+}
+if ($reservas_vencidas=="S"){
+	echo "<br>" ;
 	echo "<font color=red><h3>Tiene reservas vencidas. No puede reservar</h3></font>";
 	echo $reserva_output;
-	die;}
-if ($sanctions_output!=""){	echo "<br>";
+	die;
+}
+if ($sanctions_output!=""){
+	echo "<br>";
 	echo $reserva_output;
-	die;}
+	die;
+}
 
 //SE LEE EL OBJETO PARA LOCALIZAR TODAS SUS COPIAS
 $copies_title=LocalizarInventario();
 //SE DETERMINA SI EL USUARIO NO TIENE YA PRESTADO OTRO EJEMPLAR DEL MISMO TÍTULO
 $yaprestado="";
-foreach ($copies_title as $value){	if (trim($value)!=""){		$c=explode('|',$value);
+foreach ($copies_title as $value){
+	if (trim($value)!=""){
+		$c=explode('|',$value);
 		$inv_c=trim($c[0]);
 		foreach ($prestamos as $prest){
-			if (trim($prest)!=""){				$p=explode('^',$prest);
+			if (trim($prest)!=""){
+				$p=explode('^',$prest);
 				if ($inv_c==trim($p[12])){
 					$yaprestado="S";
-					break;				}			}		}
-	}}
-if ($yaprestado=="S"){	echo "<br><font color=red><strong>Ya tiene prestado un ejemplar de ese título. No puede reservar</strong></font>";
+					break;
+				}
+			}
+		}
+	}
+}
+if ($yaprestado=="S"){
+	echo "<br><font color=red><strong>Ya tiene prestado un ejemplar de ese título. No puede reservar</strong></font>";
 	"<p><a href=javascript:self.close>Cerrar</a>";
 	echo "<br>";
 	echo $reserva_output;
@@ -268,13 +285,16 @@ $ValorCapturado="0010".$arrHttp["usuario"]."\n0020".$arrHttp["ctrl_num"]."\n0030
 $IsisScript=$xWxis."actualizar.xis";
 $query = "&base=reserve&cipar=$db_path"."par/reserve.par&login=abcd&Mfn=New&Opcion=crear&ValorCapturado=".$ValorCapturado;
 include("../common/wxis_llamar.php");
-foreach ($contenido as $linea){	if (substr($linea,0,4)=="MFN:") {
+foreach ($contenido as $linea){
+	if (substr($linea,0,4)=="MFN:") {
     	$arrHttp["Mfn"]=trim(substr($linea,4));
 	}else{
 		if (trim($linea!="")) $salida.= $linea."\n";
 	}
 }
-if (isset ($arrHttp["Mfn"])) {	print "<span class=titulo1><strong>Reserva realizada</strong></span>";}
+if (isset ($arrHttp["Mfn"])) {
+	print "<span class=titulo1><strong>Reserva realizada</strong></span>";
+}
 echo "<br>";
 include("opac_reservas.php");
 echo $reserva_output;

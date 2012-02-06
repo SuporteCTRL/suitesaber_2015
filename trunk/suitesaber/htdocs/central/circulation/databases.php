@@ -46,8 +46,12 @@ include("../common/header.php");
 <script>
 function Continuar(){
 	ix=document.forma1.base.selectedIndex
-	if (ix<1){		alert("<?php echo $msgstr["seldb"]?>")
-		return	}    document.forma1.submit()}
+	if (ix<1){
+		alert("<?php echo $msgstr["seldb"]?>")
+		return
+	}
+    document.forma1.submit()
+}
 </script>
 <?php
 $encabezado="";
@@ -85,15 +89,18 @@ $fp=file($db_path."bases.dat");
 $bases_p=array();
 foreach ($fp as $value){
 	$value=trim($value);
-	if ($value!=""){		$b=explode('|',$value);
+	if ($value!=""){
+		$b=explode('|',$value);
 		$archivo="";
-		if (file_exists($db_path.$b[0]."/loans/".$_SESSION["lang"]."/loans_conf.tab"))			$archivo=$db_path.$b[0]."/loans/".$_SESSION["lang"]."/loans_conf.tab";
+		if (file_exists($db_path.$b[0]."/loans/".$_SESSION["lang"]."/loans_conf.tab"))
+			$archivo=$db_path.$b[0]."/loans/".$_SESSION["lang"]."/loans_conf.tab";
 		else
 		    if (file_exists($db_path.$b[0]."/loans/".$lang_db."/loans_conf.tab"))
 		    	$archivo=$db_path.$b[0]."/loans/".$lang_db."/loans_conf.tab";
 		if ($archivo!="") $bases_p[]=$b[1]." (".$b[0].")";
 		echo "<option value=".$b[0].">".$b[1]."\n";
-	}}
+	}
+}
 echo "</select></td>";
 echo "<td valign=top>".$msgstr["alreadysel"].": ";
 foreach ($bases_p as $value) echo $value."<br>";

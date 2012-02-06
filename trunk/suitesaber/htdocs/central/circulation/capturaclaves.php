@@ -50,30 +50,24 @@ include("../common/get_post.php");
 	if (!isset($arrHttp["Tag"]))$arrHttp["Tag"]="";
 	if (!isset($arrHttp["Repetible"]))$arrHttp["Repetible"]="";
 	$arrHttp["Formato"]=stripslashes($arrHttp["Formato"]);
-	if (substr($arrHttp["Formato"],0,1)=="@"){		$Formato=$db_path.$arrHttp["base"]."/pfts/".$_SESSION["lang"]."/".substr($arrHttp["Formato"],1);
+	if (substr($arrHttp["Formato"],0,1)=="@"){
+		$Formato=$db_path.$arrHttp["base"]."/pfts/".$_SESSION["lang"]."/".substr($arrHttp["Formato"],1);
 		if (!file_exists($Formato)) $Formato=$db_path.$arrHttp["base"]."/pfts/".$lang_db."/".substr($arrHttp["Formato"],1);
-		$Formato="@".$Formato;	}else{		$Formato=$arrHttp["Formato"];	}
+		$Formato="@".$Formato;
+	}else{
+		$Formato=$arrHttp["Formato"];
+	}
   	$query = "&base=".$arrHttp["base"] ."&cipar=$db_path"."par/".$arrHttp["base"].".par&Opcion=autoridades"."&tagfst=".substr($arrHttp["tagfst"],3)."&prefijo=".strtoupper($arrHttp["prefijo"])."&pref=".strtoupper($arrHttp["pref"])."&postings=".$arrHttp["postings"]."&formato_e=".$Formato;
-   $IsisScript=$xWxis."ifp.xis";
-    include("../common/wxis_llamar.php");
-//    foreach ($contenido as $value) echo "$value<br>";
+  $IsisScript=$xWxis."ifp.xis";
+   include("../common/wxis_llamar.php");
+   //foreach ($contenido as $value) echo "$value<br>";
 	$contenido = array_unique ($contenido);
 	echo "<HTML>
 	<head>
 		<META HTTP-EQUIV=\"Pragma\" CONTENT=\"no-cache\">
 		<META HTTP-EQUIV=\"Cache-Control\" CONTENT=\"no-cache\">
 		<title>".$msgstr["listterm"]."</title>
-		<script languaje=Javascript>
-		document.onkeypress =
-  function (evt) {
-    var c = document.layers ? evt.which
-            : document.all ? event.keyCode
-            : evt.keyCode;
-    return true;
-  }
-  function closeit(){
-top.closeit()
-}\n";
+		<script languaje=Javascript>\n";
   	echo "subC=\"".$arrHttp["subc"]."\"\n";
 	echo "Repetible=\"".$arrHttp["Repetible"]."\"\n";
 	echo "Tag=\"".$arrHttp["Tag"]."\"\n";
@@ -137,6 +131,7 @@ echo "function AbrirIndice(Termino){
 	<td width=95% valign=top>
 	<Select name=autoridades multiple size=20 style="width:460px" onchange=javascript:ObtenerTerminos()>
 <?php
+
 	foreach ($contenido as $linea){
 
 		$f=explode('$$$',$linea);
@@ -148,6 +143,7 @@ echo "function AbrirIndice(Termino){
         echo $f[0];
 
 	}
+
 ?>
 	</select></td>
 

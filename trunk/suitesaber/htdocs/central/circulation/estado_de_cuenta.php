@@ -50,8 +50,11 @@ document.onkeypress =
     return true;
   }
 
-function EnviarForma(Proceso){	if (Trim(document.usersearch.code.value)=="" && Trim(document.inventorysearch.inventory.value)==""){		alert("<?php echo $msgstr["falta"]." ".$msgstr["usercode"]."/".$msgstr["inventory"]?>")
-		return	}
+function EnviarForma(Proceso){
+	if (Trim(document.usersearch.code.value)=="" && Trim(document.inventorysearch.inventory.value)==""){
+		alert("<?php echo $msgstr["falta"]." ".$msgstr["usercode"]."/".$msgstr["inventory"]?>")
+		return
+	}
 	if (Proceso==""){
 		if (Trim(document.usersearch.code.value)!=""){
 			document.EnviarFrm.usuario.value=document.usersearch.usercode.value
@@ -63,7 +66,8 @@ function EnviarForma(Proceso){	if (Trim(document.usersearch.code.value)=="" && 
 			}
 		}
 	}else{
-		switch (Proceso){			case "U":
+		switch (Proceso){
+			case "U":
 				document.EnviarFrm.usuario.value=document.usersearch.usercode.value
 				document.EnviarFrm.action="usuario_prestamos_presentar.php"
 				break
@@ -71,7 +75,8 @@ function EnviarForma(Proceso){	if (Trim(document.usersearch.code.value)=="" && 
 				document.EnviarFrm.inventory.value=document.inventorysearch.inventory.value
 				document.EnviarFrm.action="numero_inventario.php"
 				document.EnviarFrm.submit()
-				break		}
+				break
+		}
 	}
 	document.EnviarFrm.submit()
 }
@@ -140,7 +145,7 @@ echo "&nbsp; &nbsp; Script: estado_de_cuenta.php</font>\n";
 		<input type="text" name="usercode" id="code" value="<?php if (isset($arrHttp["usuario"])) echo $arrHttp["usuario"]?>" class="textEntry" onfocus="this.className = 'textEntry textEntryFocus';"  onblur="this.className = 'textEntry';" />
 
 		<input type="button" name="index" value="<?php echo $msgstr["list"]?>" class="submit" onClick="javascript:AbrirIndice('U',document.usersearch.usercode)" />
-		<input type="button" name="buscar" value="<?php echo $msgstr["search"]?>" xclass="submitAdvanced" onclick="javascript:EnviarForma('U')"/>
+		<input   id="botoes" type="button" name="buscar" value="<?php echo $msgstr["search"]?>" xclass="submitAdvanced" onclick="javascript:EnviarForma('U')"/>
 		</td></table>
 	</form>
 	</div>
@@ -157,7 +162,7 @@ echo "&nbsp; &nbsp; Script: estado_de_cuenta.php</font>\n";
 		<input type="text" name="inventory" id="searchExpr" value="" class="textEntry" onfocus="this.className = 'textEntry';"  onblur="this.className = 'textEntry';" />
 
 		<input type="button" name="list" value="<?php echo $msgstr["list"]?>" class="submit" onclick="javascript:AbrirIndice('I',document.inventorysearch.inventory)"/>
-		<input type="button" name="buscar" value="<?php echo $msgstr["search"]?>" xclass="submitAdvanced" onclick="javascript:EnviarForma('I')"/>
+		<input   id="botoes"  type="button" name="buscar" value="<?php echo $msgstr["search"]?>" xclass="submitAdvanced" onclick="javascript:EnviarForma('I')"/>
 		</td></table>
 	</form>
 	</div>
@@ -171,9 +176,11 @@ echo "&nbsp; &nbsp; Script: estado_de_cuenta.php</font>\n";
 </form>
 <?php include("../common/footer.php");
 echo "</body></html>" ;
-if (isset($arrHttp["error"]) and $arrHttp["inventory"]!=""){	echo "
+if (isset($arrHttp["error"]) and $arrHttp["inventory"]!=""){
+	echo "
 	<script>
 	alert('".$arrHttp["inventory"].": ".$msgstr["inventory"]." ".$msgstr["noloan"]."')
 	</script>
-	";}
+	";
+}
 ?>

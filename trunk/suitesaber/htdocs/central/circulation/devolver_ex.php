@@ -36,9 +36,47 @@ include("../lang/prestamo.php");
 include("../common/get_post.php");
 date_default_timezone_set('UTC');
 //foreach ($arrHttp as $var=>$value) echo "$var=$value<br>";
+//die;
+$archivo="";
+$pr_loan="";
+$pr_return="";
+$pr_fine="";
+$pr_statment="";
+$pr_solvency="";
+if (file_exists($db_path."trans/pfts/".$_SESSION["lang"]."/receipts.lst")){
+	$archivo=$db_path."trans/pfts/".$_SESSION["lang"]."/receipts.lst";
+}else{
+	if (file_exists($db_path."trans/pfts/".$lang_db."/receipts.lst"))
+		$archivo=$db_path."trans/pfts/".$lang_db."/receipts.lst";
+}
+if ($archivo!=""){
+	$fp=file($archivo);
+	foreach ($fp as $value){
+		$value=trim($value);
+		$v=explode('|',$value);
+		switch($v[0]){
+			case "pr_loan":
+				$pr_loan=$v[1];
+				break;
+			case "pr_return":
+				$pr_return=$v[1];
+				break;
+			case "pr_fine":
+				$pr_fine=$v[1];
+				break;
+			case "pr_statment":
+				$pr_statment=$v[1];
+				break;
+			case "pr_solvency":
+				$pr_solvency=$v[1];
+				break;
+		}
+	}
+}
 
 //función para calcular la diferencia de tiempo entre dos fecha
-function compareDate ($FechaP){	$dia=substr($FechaP,6,2);
+function compareDate ($FechaP){
+	$dia=substr($FechaP,6,2);
 	$mes=substr($FechaP,4,2);
 	$year=substr($FechaP,0,4);
 	$exp_date=$year."-".$mes."-".$dia;
@@ -56,7 +94,7 @@ include("sanctions_inc.php");
 //Se ubica el ejemplar prestado en la base de datos de transacciones
 $inventario="TR_P_".trim($arrHttp["searchExpr"]);
 if (!isset($arrHttp["base"])) $arrHttp["base"]="trans";
-$Formato="v10'|$'v20'|$'v30'|$'v35'|$'v40'|$'v45'|$'v70'|$'v80'|$'v100,'|$',v40,'|$'v400/";
+$Formato="v10'|$'v20'|$'v30'|$'v35'|$'v40'|$'v45'|$'v70'|$'v80'|$'v100,'|$',v40,'|$'v400,'|$'v500/";
 $query = "&base=".$arrHttp["base"] ."&cipar=$db_path"."par/".$arrHttp["base"].".par&count=1&Expresion=".$inventario."&Pft=$Formato";
 $contenido="";
 $IsisScript=$xWxis."buscar_ingreso.xis";
@@ -66,7 +104,14 @@ foreach ($contenido as $linea){
 	$linea=trim($linea);
 	if ($linea!="") {
 		$l=explode('|$',$linea);
-		if (substr($linea,0,6)=="[MFN:]"){			$Mfn=trim(substr($linea,6));		}else{			if (substr($linea,0,8)=="[TOTAL:]"){				$Total=trim(substr($linea,8));			}else{				$prestamo=$linea;			}
+		if (substr($linea,0,6)=="[MFN:]"){
+			$Mfn=trim(substr($linea,6));
+		}else{
+			if (substr($linea,0,8)=="[TOTAL:]"){
+				$Total=trim(substr($linea,8));
+			}else{
+				$prestamo=$linea;
+			}
 		}
 	}
 }
@@ -96,7 +141,8 @@ if ($Total>0){
 	include("locales_read.php");
 
 	//se determina la política a aplicar
-	if ($ppres==""){		$ppres=$politica[$tipo_objeto][$tipo_usuario];   //read the policy
+	if ($ppres==""){
+		$ppres=$politica[$tipo_objeto][$tipo_usuario];   //read the policy
 		if (empty($ppres)) {
 			$ppres=$politica[strtoupper($tipo_objeto)][trim(strtoupper($tipo_usuario))];
 		}
@@ -111,18 +157,33 @@ if ($Total>0){
 	$u_multa_r= $p[8];    //unidades de multa si el libro está reservado
 	$u_suspension=$p[9];  //unidades de suspensión
 	$u_suspension=$p[10];  //unidades de suspensión si el libro está reservado
-
-	$ValorCapturado="0001X\n";
+    $devolucion=date("Ymd");
+	$ValorCapturado="0001X\n0500$devolucion\n";
+	$ValorCapturado.="0130^a".$_SESSION["login"]."^b".date("Ymd H:i:s");
 	$ValorCapturado=urlencode($ValorCapturado);
 	$IsisScript=$xWxis."actualizar_registro.xis";
 	$Formato="";
-	$query = "&base=trans&cipar=$db_path"."par/trans.par&login=".$_SESSION["login"]."&Mfn=".$Mfn."&ValorCapturado=".$ValorCapturado;
+	$recibo="";
+	if ($pr_return!=""){
+		if (file_exists($db_path."trans/pfts/".$_SESSION["lang"]."/".$pr_return.".pft")){
+			$Formato=$db_path."trans/pfts/".$_SESSION["lang"]."/".$pr_return;
+		}else{
+			if (file_exists($db_path."trans/pfts/".$lang_db."/".$pr_return.".pft")){
+				$Formato=$db_path."trans/pfts/".$lang_db."/".$pr_return;
+			}
+		}
+		if ($Formato!="") $Formato="&Formato=$Formato";
+	}
+	$query = "&base=trans&cipar=$db_path"."par/trans.par&login=".$_SESSION["login"]."&Mfn=".$Mfn."&ValorCapturado=".$ValorCapturado.$Formato;
 	include("../common/wxis_llamar.php");
+	$recibo=implode(" ",$contenido);
 }
 
 // si está atrasado se procesan las multas y suspensiones
 $atraso=compareDate ($fecha_d);
-if ($politica==""){	$error="&error=".$msgstr["nopolicy"]." $tipo_usuario / $tipo_objeto";}else{
+if ($politica==""){
+	$error="&error=".$msgstr["nopolicy"]." $tipo_usuario / $tipo_objeto";
+}else{
 	$error="";
 	if ($atraso<0){
 		$atraso=abs($atraso);
@@ -134,8 +195,10 @@ if (isset($arrHttp["usuario"]))
 	$cu="&usuario=".$arrHttp["usuario"];
 else
 	$cu="&usuario=$cod_usuario";
-if (isset($arrHttp["vienede"])){	header("Location: usuario_prestamos_presentar.php?encabezado=s$error$cu");}else{
-	header("Location: devolver.php?encabezado=s$error$cu");
+if (isset($arrHttp["vienede"])){
+	header("Location: usuario_prestamos_presentar.php?encabezado=s$error$cu"."&recibo=$recibo");
+}else{
+	header("Location: devolver.php?encabezado=s$error$cu"."&recibo=$recibo");
 }
 die;
 

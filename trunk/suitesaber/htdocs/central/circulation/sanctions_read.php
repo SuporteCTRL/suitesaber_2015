@@ -46,7 +46,8 @@ global $locales,$config_date_format;;
 			break;
 	}
 	$year=substr($FechaP,0,4);
-	return $dia."-".$mes."-".$year;}
+	return $dia."-".$mes."-".$year;
+}
 
 function CalculaVencimiento ($FechaP){
 global $locales;
@@ -91,12 +92,16 @@ global $locales;
 			$fecha1=PrepararFecha($p[3]);
 			$fecha2=PrepararFecha($p[6]);
 			$sanctions_output.=  "<tr>";
-			if (isset($_SESSION["permiso"]["CENTRAL_ALL"]) or isset($_SESSION["permiso"]["CIRC_CIRCALL"])  or isset($_SESSION["permiso"]["CIRC_DELSUS"])){				$sanctions_output.= "<td bgcolor=white><input type=checkbox name=susp value=".$p[8]."></td>";			}
+			if (isset($_SESSION["permiso"]["CENTRAL_ALL"]) or isset($_SESSION["permiso"]["CIRC_CIRCALL"])  or isset($_SESSION["permiso"]["CIRC_DELSUS"])){
+				$sanctions_output.= "<td bgcolor=white><input type=checkbox name=susp value=".$p[8]."></td>";
+			}
 			$sanctions_output.= "<td bgcolor=white nowrap align=center>".$fecha1."</td><td bgcolor=white nowrap align=center>".$p[4]."</td><td bgcolor=white nowrap align=center>".$fecha2."<td bgcolor=white>".$p[7]."</td>";
 
 		}
 		$sanctions_output.=  "</table>";
-		if (isset($_SESSION["permiso"]["CENTRAL_ALL"]) or isset($_SESSION["permiso"]["CIRC_CIRCALL"])  or isset($_SESSION["permiso"]["CIRC_DELSUS"])){			$sanctions_output.="<a href=javascript:DeleteSuspentions()>".$msgstr["update"].'</a><br>';		}
+		if (isset($_SESSION["permiso"]["CENTRAL_ALL"]) or isset($_SESSION["permiso"]["CIRC_CIRCALL"])  or isset($_SESSION["permiso"]["CIRC_DELSUS"])){
+			$sanctions_output.="<a href=javascript:DeleteSuspentions()>".$msgstr["update"].'</a><br>';
+		}
 
 		$sanctions_output.="</dd>";
 		$sanctions_output.= "\n<script>nSusp=".$nsusp."</script>";

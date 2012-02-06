@@ -12,11 +12,11 @@ DIRECTORY=/site/
 ; Full path to folder 'htdocs' in BVS-Site
 ; installation. Windows users must NOT put
 ; letter unit in path
-SITE_PATH=/var/www/suitesaber/saber-linux/htdocs/site/
+SITE_PATH=/var/www/suitesaber/suitesaber/htdocs/site/
 
 ; Full path to folder 'site' in folder bases.
 ; Windows users must NOT put letter unit in path
-DATABASE_PATH=/var/www/suitesaber/saber-linux/bases/site/
+DATABASE_PATH=/var/www/suitesaber/suitesaber/bases/site/
 
 ; Servername
 SERVERNAME=localhost

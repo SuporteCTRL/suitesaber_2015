@@ -7,7 +7,8 @@
 	nv=0
 	document.onkeypress =
 
- 		function (evt) { 			alert("entro")
+ 		function (evt) {
+ 			alert("entro")
    			var c = document.layers ? evt.which
            		: document.all ? event.keyCode
            		: evt.keyCode;
@@ -47,7 +48,8 @@
 				ixpre=0
 				ixpsel=0
 			}
-		}else{			for (i=0;i<=np;i++){
+		}else{
+			for (i=0;i<=np;i++){
 
 				if (document.ecta.chkPr[i].checked){
 					ixpsel=i

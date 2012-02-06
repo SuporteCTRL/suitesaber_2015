@@ -58,22 +58,28 @@ document.onkeypress =
     return true;
   };
 
-function ColocarFecha(){// si es una suspensión, se coloca la fecha a partir del vencimiento de la última suspensión
+function ColocarFecha(){
+// si es una suspensión, se coloca la fecha a partir del vencimiento de la última suspensión
 // si es una multa, se coloca la fecha del día
 	ix=document.sanctions.type.selectedIndex
-	if (ix<1){		alert("<?php echo $msgstr["missst"]?>")
-		return	}
+	if (ix<1){
+		alert("<?php echo $msgstr["missst"]?>")
+		return
+	}
 	type=document.sanctions.type.options[ix].value
-	switch(type){		case "S":
+	switch(type){
+		case "S":
 			document.sanctions.date.value=fecha_susp
 			break
 		case "M":
 			document.sanctions.date.value=fecha_dia
-			break	}
+			break
+	}
 	document.sanctions.units.focus()
 }
 
-function EnviarForma(){	ix=document.sanctions.type.selectedIndex
+function EnviarForma(){
+	ix=document.sanctions.type.selectedIndex
 	if (ix<1){
 		alert("<?php echo $msgstr["missst"]?>")
 		return
@@ -81,11 +87,17 @@ function EnviarForma(){	ix=document.sanctions.type.selectedIndex
 	if (Trim(document.sanctions.date.value=="")){
 		alert("<?php echo $msgstr["missdt"]?>")
 		return
-	}	if (Trim(document.sanctions.units.value)==""){		alert("<?php echo $msgstr["missper"]?>")
-		return	}
-	if (Trim(document.sanctions.reason.value)==""){		alert("<?php echo $msgstr["missreason"]?>")
-		return	}
-	document.sanctions.submit();}
+	}
+	if (Trim(document.sanctions.units.value)==""){
+		alert("<?php echo $msgstr["missper"]?>")
+		return
+	}
+	if (Trim(document.sanctions.reason.value)==""){
+		alert("<?php echo $msgstr["missreason"]?>")
+		return
+	}
+	document.sanctions.submit();
+}
 
 </script>
 <?
@@ -104,7 +116,8 @@ echo "<body>";
 </div>
 <div class="helper">
 <?php echo "<a href=../documentacion/ayuda.php?help=". $_SESSION["lang"]."/circulation/sanctions.html target=_blank>". $msgstr["help"]."</a>&nbsp &nbsp;";
-if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))	echo "<a href=../documentacion/edit.php?archivo=". $_SESSION["lang"]."/circulation/sanctions.html target=_blank>".$msgstr["edhlp"]."</a>";
+if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
+	echo "<a href=../documentacion/edit.php?archivo=". $_SESSION["lang"]."/circulation/sanctions.html target=_blank>".$msgstr["edhlp"]."</a>";
 echo  "&nbsp; &nbsp; Script: sanctions_ex.php </font>";
 ?>
 	</div>
@@ -125,7 +138,8 @@ echo  "&nbsp; &nbsp; Script: sanctions_ex.php </font>";
 	$fecha_exp="";
 	$fecha_dia=PrepararFecha(date("Ymd"));
 	$fecha_exp=$fecha_dia;
-	if (count($susp)>0){          // se determina el vencimiento de la última sanción		$sancion=$susp[count($susp)-1];
+	if (count($susp)>0){          // se determina el vencimiento de la última sanción
+		$sancion=$susp[count($susp)-1];
 		$p=explode("|",$sancion);
 		if ($p[6]>$fecha_dia){
 			$exp_date=mktime(0,0,0,substr($p[6],4,2),substr($p[6],6,2)+1,substr($p[6],0,4));
@@ -151,8 +165,10 @@ echo  "&nbsp; &nbsp; Script: sanctions_ex.php </font>";
 $file=$db_path."suspml/def/".$_SESSION["lang"]."/sanctions.tab";
 if (!file_exists($file)) $file=$db_path."suspml/def/".$lang_db."/sanctions.tab";
 $fp=file($file);
-foreach ($fp as $value) {	$val=explode('|',$value);
-	echo "<option value='".$val[0]."'>".$val[1]."\n";}
+foreach ($fp as $value) {
+	$val=explode('|',$value);
+	echo "<option value='".$val[0]."'>".$val[1]."\n";
+}
 ?>
 			</select>
         </td>

@@ -38,6 +38,18 @@ include("../common/get_post.php");
 $arrHttp["base"]="users";
 //foreach ($arrHttp as $var=>$value) echo "$var = $value<br>";
 include("../common/header.php");
+
+function ImprimirRecibo($Recibo){
+?>
+<script>
+	msgwin=window.open("","recibo","width=400, height=300, scrollbars, resizable")
+	msgwin.document.write("<?php echo $Recibo?>")
+	msgwin.focus()
+	msgwin.print()
+	msgwin.close()
+</script>
+<?php
+}
 ?>
 <script src=../dataentry/js/lr_trim.js></script>
 <script>
@@ -52,12 +64,16 @@ document.onkeypress =
     return true;
   };
 
-function EnviarForma(){	if (Trim(document.inventorysearch.searchExpr.value)==""){		alert("<?php echo $msgstr["missinventory"]?>")
-		return	}
+function EnviarForma(){
+	if (Trim(document.inventorysearch.searchExpr.value)==""){
+		alert("<?php echo $msgstr["missinventory"]?>")
+		return
+	}
 	document.inventorysearch.submit()
 }
 
-function AbrirIndiceAlfabetico(){	db="trans"
+function AbrirIndiceAlfabetico(){
+	db="trans"
 	cipar="trans.par"
 	postings=1
 	tag="10"
@@ -112,13 +128,14 @@ echo "&nbsp; &nbsp; Script: devolver.php </font>
 		<input type="text" name="searchExpr" id="searchExpr" value="" class="textEntry" onfocus="this.className = 'textEntry';"  onblur="this.className = 'textEntry';" />
         <input type=hidden name=base value=trans>
 		<input type="button" name="list" value="<?php echo $msgstr["list"]?>" class="submit" onclick="javascript:AbrirIndiceAlfabetico();return false"/>
-		<input type="submit" name="reservar" value="<?php echo $msgstr["return"]?>" xclass="submitAdvanced" onclick="javascript:EnviarForma()"/>
+		<input  id="botoes"  type="submit" name="reservar" value="<?php echo $msgstr["return"]?>" xclass="submitAdvanced" onclick="javascript:EnviarForma()"/>
 		</td></table>
 		<?php echo $msgstr["clic_en"]." <i>[".$msgstr["return"]."]</i> ".$msgstr["para_c"]?>
 	</form>
 	</div>
 <?php
-if (isset($arrHttp["usuario"])){    include("ec_include.php");
+if (isset($arrHttp["usuario"])){
+    include("ec_include.php");
     echo "<div class=formContent>$ec_output</div>";
 }
 ?>
@@ -126,9 +143,14 @@ if (isset($arrHttp["usuario"])){    include("ec_include.php");
 </div>
 <?php include("../common/footer.php");
 echo "</body></html>" ;
-if (isset($arrHttp["error"])){	echo "<script>
+if (isset($arrHttp["recibo"])) {
+	ImprimirRecibo($arrHttp["recibo"]);
+}
+if (isset($arrHttp["error"])){
+	echo "<script>
 			alert('".$arrHttp["error"]."')
 			</script>
-	";}
+	";
+}
 
 ?>

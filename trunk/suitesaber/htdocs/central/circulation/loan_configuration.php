@@ -72,8 +72,8 @@ function LeerArchivosConfiguracion($Base){
 				case "NC": $prefix_nc=substr($value,$ix);
 			}
 		}
-	}
-    $pft_totalitems="@".$db_path.$base."/def/loans_totalitems.pft";  //Total items
+	}	
+   $pft_totalitems="@".$db_path.$base."/def/loans_totalitems.pft";  //Total items
 	$pft_in="@".$db_path.$base."/def/loans_inventorynumber.pft";     //Número de inventario
 	$pft_nc="@".$db_path.$base."/def/loans_cn.pft");                 //Número de clasificación
 	$pft_dispobj="@".$db_path.$base."/def/loans_display.pft";        //Visualizar el registro
