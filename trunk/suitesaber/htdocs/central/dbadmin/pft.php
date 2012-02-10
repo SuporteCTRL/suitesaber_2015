@@ -619,12 +619,7 @@ if (isset($arrHttp["encabezado"])){
 	$encabezado="&encabezado=s";
 }
 ?>
-<div class="sectionInfo">
-	<div class="breadcrumb">
-<?php echo $msgstr["pft"].": ".$arrHttp["base"]?>
-	</div>
-
-	<div class="actions">
+<div class="sectionInfo"><div class="language">
 <?php
 if ($arrHttp["Opcion"]=="new"){
 	$ayuda="pft_create.html";
@@ -656,10 +651,17 @@ if ($arrHttp["Opcion"]=="new"){
 	}
 }
 ?>
+</div></div>
+	<div class="breadcrumb"><h3>
+<?php echo $msgstr["pft"].": ".$arrHttp["base"]?>
+	</h3></div>
+
+	<div class="actions">
+
 
 </div>
 
-<div class="spacer">&#160;</div>
+
 </div>
 <div class="helper">
 <a href=../documentacion/ayuda.php?help=<?php echo $_SESSION["lang"]?>/<?php echo $ayuda?> target=_blank><?php echo $msgstr["help"]?></a>&nbsp &nbsp;

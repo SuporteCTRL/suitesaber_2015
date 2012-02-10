@@ -148,24 +148,20 @@ if (isset($arrHttp["encabezado"])) {
 	include("../common/institutional_info.php");
 	$encabezado="&encabezado=s";
 }
-echo "
-	<div class=\"sectionInfo\">
-			<div class=\"breadcrumb\">".
-				$msgstr["updbdef"]. ": " . $arrHttp["base"]."
-			</div>
-			<div class=\"actions\">
-
-	";
+echo "<div class=\"sectionInfo\"><div class=\"language\">";
+	
 if (isset($arrHttp["encabezado"])){
 	echo "<a href=\"../common/inicio.php?reinicio=s&base=".$arrHttp["base"]."\" class=\"defaultButton backButton\">";
-echo "
-					
-					<span><strong>". $msgstr["back"]."</strong></span>
-				</a>";
-}
-echo "			</div>
-			<div class=\"spacer\">&#160;</div>
-	</div>";
+echo "<span><strong>". $msgstr["back"]."</strong></span></a>";
+}	
+	
+echo "</div></div>
+		<div class=\"breadcrumb\">";
+		echo	"<h3>$msgstr[updbdef]:$arrHttp[base]</h3>";
+echo		"</div><div class=\"actions\">";
+		
+
+echo	"</div>";
 
 // para verificar si en la FDT tiene el campo LDR Definido y ver si se presenta el tipo de registro MARC
 if (file_exists($db_path.$arrHttp["base"]."/def/".$_SESSION["lang"]."/".$arrHttp["base"].".fdt"))
@@ -199,9 +195,9 @@ echo "<font color=white>&nbsp; &nbsp; Script: menu_modificardb.php";
  <div class="middle form">
 			<div class="formContent">
 </center>
-<table width=400 align=center>
+<table  align=center>
 	<tr>
-		<td>
+		<td align="center">
 			<form name=update_base onSubmit="return false">
 			<input type=hidden name=Opcion value=update>
 			<input type=hidden name=type value="">
@@ -209,34 +205,34 @@ echo "<font color=white>&nbsp; &nbsp; Script: menu_modificardb.php";
 			<?php if (isset($arrHttp["encabezado"])) echo "<input type=hidden name=encabezado value=s>";?>
             <br>
             <ul>
-			<li><a href='javascript:Update("fdt")'><?php echo $msgstr["fdt"]?></a></li>
-			<li><a href='javascript:Update("fdt_new")'><font color=red><?php echo $msgstr["fdt_compressed"]?></font></a></li>
+			<li><a id="conf" href='javascript:Update("fdt")'><?php echo $msgstr["fdt"]?></a></li>
+			<li><a id="conf" href='javascript:Update("fdt_new")'><font color=red><?php echo $msgstr["fdt_compressed"]?></font></a></li>
 			<?php
 // SI ES UN REGISTRO MARC SE INCLUYE LA OPCION PARA MANEJO DE LOS TIPOS DE REGISTRO DE ACUERDO AL LEADER
 			if ($ldr=="s" ){
-				echo "<li><a href=javascript:Update(\"leader\")>". $msgstr["ft_ldr"]."</a></li>";
-				echo "<li><a href=javascript:Update(\"fixedmarc\")>".$msgstr["typeofrecord_ff"]."</a></li>";
-				echo "<li><a href=javascript:Update(\"fixedfield\")>". $msgstr["typeofrecord_aw"]."</a></li>";
+				echo "<li><a id=\"conf\"  href=javascript:Update(\"leader\")>". $msgstr["ft_ldr"]."</a></li>";
+				echo "<li><a id=\"conf\"  href=javascript:Update(\"fixedmarc\")>".$msgstr["typeofrecord_ff"]."</a></li>";
+				echo "<li><a id=\"conf\"  href=javascript:Update(\"fixedfield\")>". $msgstr["typeofrecord_aw"]."</a></li>";
 			}
 			?>
-			<li><a href=javascript:Update("fst")><?php echo $msgstr["fst"]?></a></li>
-			<li><a href=javascript:Update("fmt")><?php echo $msgstr["fmt"]?></a></li>
-			<li><a href=javascript:Update("pft")><?php echo $msgstr["pft"]?></a></li>
+			<li><a id=conf href=javascript:Update("fst")><?php echo $msgstr["fst"]?></a></li>
+			<li><a  id=conf href=javascript:Update("fmt")><?php echo $msgstr["fmt"]?></a></li>
+			<li><a id=conf  href=javascript:Update("pft")><?php echo $msgstr["pft"]?></a></li>
 			<?php
 			if (!isset($ldr) or $ldr!="s" )
 // SI NO ES UN REGISTRO MARC SE INCLUYE EL MANEJO DE LOS TIPOS DE REGISTRO NO MARC
-			    echo "<li><a href=javascript:Update(\"typeofrecs\")>".$msgstr["typeofrecords"]."</a></li>";
+			    echo "<li><a  id=conf href=javascript:Update(\"typeofrecs\")>".$msgstr["typeofrecords"]."</a></li>";
 			?>
 
-			<li><a href=javascript:Update("recval")><?php echo $msgstr["recval"]?></a></li>
-			<li><a href=javascript:Update("delval")><?php echo $msgstr["delval"]?></a></li>
-			<li><a href=javascript:Update("search")><?php echo $msgstr["advsearch"]?></a></li>
-			<li><a href=javascript:Update("bases")><?php echo $msgstr["dblist"]?></a></li>
-			<li><a href=javascript:Update("par")><?php echo $msgstr["dbnpar"]?></a>
-            <li><a href=javascript:Update("help")><?php echo $msgstr["helpdatabasefields"]?></a></li>
-            <li><a href=javascript:Update("IAH")><?php echo $msgstr["iah-conf"]?></a></li>
-            <li><a href=javascript:Update("stats_var")><?php echo $msgstr["estadisticas"]." - ".$msgstr["var_list"]?></a></li>
-            <li><a href=javascript:Update("stats_tab")><?php echo $msgstr["estadisticas"]." - ".$msgstr["tab_list"]?></a></li>
+			<li><a id="conf"  href=javascript:Update("recval")><?php echo $msgstr["recval"]?></a></li>
+			<li><a id="conf"  href=javascript:Update("delval")><?php echo $msgstr["delval"]?></a></li>
+			<li><a id="conf"  href=javascript:Update("search")><?php echo $msgstr["advsearch"]?></a></li>
+			<li><a  id="conf" href=javascript:Update("bases")><?php echo $msgstr["dblist"]?></a></li>
+			<li><a  id="conf" href=javascript:Update("par")><?php echo $msgstr["dbnpar"]?></a>
+            <li><a id="conf"  href=javascript:Update("help")><?php echo $msgstr["helpdatabasefields"]?></a></li>
+            <li><a  id="conf" href=javascript:Update("IAH")><?php echo $msgstr["iah-conf"]?></a></li>
+            <li><a  id="conf" href=javascript:Update("stats_var")><?php echo $msgstr["estadisticas"]." - ".$msgstr["var_list"]?></a></li>
+            <li><a  id="conf" href=javascript:Update("stats_tab")><?php echo $msgstr["estadisticas"]." - ".$msgstr["tab_list"]?></a></li>
             </ol>
 			</form>
 		</td>

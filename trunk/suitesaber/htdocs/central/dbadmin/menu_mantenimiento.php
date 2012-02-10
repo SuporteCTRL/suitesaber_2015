@@ -120,22 +120,25 @@ if (isset($arrHttp["encabezado"])) {
 	include("../common/institutional_info.php");
 	$encabezado="&encabezado=s";
 }
-echo "
-	<div class=\"sectionInfo\">
-			<div class=\"breadcrumb\">".
-				$msgstr["maintenance"]. ": " . $arrHttp["base"]."
-			</div>
-			<div class=\"actions\">
 
-	";
+
+echo "<div class=\"sectionInfo\"><div class=\"language\">";
+	
 if (isset($arrHttp["encabezado"])){
 	echo "<a href=\"../common/inicio.php?reinicio=s&base=".$arrHttp["base"]."\" class=\"defaultButton backButton\">";
-echo "
-	<span><strong>". $msgstr["back"]."</strong></span></a>";
-}
-echo "</div>
-	<div class=\"spacer\">&#160;</div>
-	</div>";
+echo "<span><strong>". $msgstr["back"]."</strong></span></a>";
+}	
+	
+echo "</div></div>
+		<div class=\"breadcrumb\">";
+		echo	"<h3>$msgstr[maintenance]:$arrHttp[base]</h3>";
+echo		"</div><div class=\"actions\">";
+		
+
+echo	"</div>";
+
+
+
 ?>
 <div class="helper">
 	<a href=../documentacion/ayuda.php?help=<?php echo $_SESSION["lang"]?>/menu_mantenimiento.html target=_blank><?php echo $msgstr["help"]?></a>&nbsp &nbsp;
@@ -156,13 +159,13 @@ echo "<font color=white>&nbsp; &nbsp; Script: menu_mantenimiento.php";
 		<input type=hidden name=base value=<?php echo $arrHttp["base"]?>>
              <br>
 			<ul>
-			<li><a href='javascript:EnviarForma("inicializar","<?php echo $msgstr["mnt_ibd"]?>")'><?php echo $msgstr["mnt_ibd"]?></a></li>
-			<li><a href='javascript:EnviarForma("eliminarbd","<?php echo $msgstr["mnt_ebd"]?>")'><?php echo $msgstr["mnt_ebd"]?></a></li>
-			<li><a href='javascript:EnviarForma("lock","<?php echo $msgstr["mnt_lock"]?>")'><?php echo $msgstr["mnt_lock"]?></a></li>
-			<li><a href='javascript:EnviarForma("unlock","<?php echo $msgstr["mnt_unlock"]?>")'><?php echo $msgstr["mnt_unlock"]?></a></li>
-			<li><a href='javascript:EnviarForma("cn","<?php echo $msgstr["assigncn"]?>")'><?php echo $msgstr["assigncn"]?></a></li>
-			<li><a href='javascript:EnviarForma("linkcopies","<?php echo $msgstr["linkcopies"]?>")'><?php echo $msgstr["linkcopies"]?></a></li>
-			<li><a href='Javascript:EnviarForma("resetcn","<?php echo $msgstr["resetcn"]?>")'><?php echo $msgstr["resetcn"]?></a></li>
+			<li><a id="conf"  href='javascript:EnviarForma("inicializar","<?php echo $msgstr["mnt_ibd"]?>")'><?php echo $msgstr["mnt_ibd"]?></a></li>
+			<li><a id="conf"   href='javascript:EnviarForma("eliminarbd","<?php echo $msgstr["mnt_ebd"]?>")'><?php echo $msgstr["mnt_ebd"]?></a></li>
+			<li><a id="conf"   href='javascript:EnviarForma("lock","<?php echo $msgstr["mnt_lock"]?>")'><?php echo $msgstr["mnt_lock"]?></a></li>
+			<li><a id="conf"   href='javascript:EnviarForma("unlock","<?php echo $msgstr["mnt_unlock"]?>")'><?php echo $msgstr["mnt_unlock"]?></a></li>
+			<li><a id="conf"   href='javascript:EnviarForma("cn","<?php echo $msgstr["assigncn"]?>")'><?php echo $msgstr["assigncn"]?></a></li>
+			<li><a id="conf"   href='javascript:EnviarForma("linkcopies","<?php echo $msgstr["linkcopies"]?>")'><?php echo $msgstr["linkcopies"]?></a></li>
+			<li><a id="conf"   href='Javascript:EnviarForma("resetcn","<?php echo $msgstr["resetcn"]?>")'><?php echo $msgstr["resetcn"]?></a></li>
 			</ul>
 
 		</td>

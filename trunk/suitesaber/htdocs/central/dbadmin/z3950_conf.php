@@ -72,22 +72,24 @@ if (isset($arrHttp["encabezado"])){
 }else{
 	$encabezado="";
 }
-?>
-<div class="sectionInfo">
-	<div class="breadcrumb">
-<?php echo $msgstr["z3950"]." (".$db.")" ?>
-	</div>
 
-	<div class="actions">
-<?php
-	if ($encabezado!="") echo "<a href=../common/inicio.php?reinicio=s&base=$db class=\"defaultButton backButton\">";
+echo "<div class=\"sectionInfo\"><div class=\"language\">";
+	
+if (isset($arrHttp["encabezado"])){
+	echo "<a href=\"../common/inicio.php?reinicio=s&base=".$arrHttp["base"]."\" class=\"defaultButton backButton\">";
+echo "<span><strong>". $msgstr["back"]."</strong></span></a>";
+}	
+	
+echo "</div></div>
+		<div class=\"breadcrumb\">";
+		echo	"<h3>$msgstr[z3950]:$db</h3>";
+echo		"</div><div class=\"actions\">";
+		
+
+echo	"</div>";
+
+
 ?>
-<img src="../images/defaultButton_iconBorder.gif" alt="" title="" />
-<span><strong><?php echo $msgstr["back"]?></strong></span>
-</a>
-			</div>
-			<div class="spacer">&#160;</div>
-</div>
 <div class="helper">
 <a href=../documentacion/ayuda.php?help=<?php echo $_SESSION["lang"]?>/z3950_conf.html target=_blank><?php echo $msgstr["help"]?></a>&nbsp &nbsp;
 <?php

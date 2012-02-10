@@ -232,18 +232,14 @@ $encabezado="&encabezado=s";
 ?>
 <form name=forma1 onsubmit="javascript:return false">
 <div class="sectionInfo">
-	<div class="breadcrumb">
-		<?php echo $msgstr["admin"]." (".$arrHttp["base"],")"?>
-		    <span><input type=checkbox name=showdeleted value=show
-                <?php if (isset($arrHttp["showdeleted"])) echo " ";
-                	echo ">".$msgstr["showdelrec"]?></span>
-	</div>
+	<div class="language">
+
 <?php
 if (file_exists($db_path."/menu.dat")){
 	MenuBrowse();
 }else{
 
-	echo "<div class=\"actions\">";
+
 
 		if (!isset($arrHttp["return"])){
 			$ret="../common/inicio.php?reinicio=s$encabezado";
@@ -253,18 +249,34 @@ if (file_exists($db_path."/menu.dat")){
 			$ret=str_replace("|","?",$arrHttp["return"])."$encabezado=".$arrHttp["encabezado"];
 		}
 	?>
-		<a href=<?php echo $ret?> class="defaultButton backButton">
+		
+		<a href="<?php echo $ret?>" class="defaultButton"><span><strong><?php echo $msgstr["back"]?></strong></span></a>
+		
+		
+		<a href="javascript:Crear()" class="defaultButton"><span><strong><?php echo $msgstr["crear"]?></strong></span></a>
+		
 
-		<span><strong><?php echo $msgstr["back"]?></strong></span>
-		</a>
-		<a href="javascript:Crear()" class="defaultButton  newButton">
 
-		<span><strong><?php echo $msgstr["crear"]?></strong> </span>
-		</a>
+<?php }?>
+	<div class="actions">
 
 	</div>
-<?php }?>
-	<div class="spacer">&#160;</div>
+</div>
+
+<div class="breadcrumb">
+		<?php echo $msgstr["admin"]." (".$arrHttp["base"],")"?>
+		    <span><input type=checkbox name=showdeleted value=show
+                <?php if (isset($arrHttp["showdeleted"])) echo " ";
+                	echo ">".$msgstr["showdelrec"]?></span>
+</div>
+
+
+
+<?php
+if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
+	echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/admin.html target=_blank>".$msgstr["edhlp"]."</a>";
+echo "<font color=white>&nbsp; &nbsp; Script: browse.php</font>";
+?>
 </div>
 		<div class="middle list">
 <?php

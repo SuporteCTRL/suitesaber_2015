@@ -102,25 +102,23 @@ if (isset($arrHttp["encabezado"])){
 }else{
 	$encabezado="";
 }
-?>
-	<div class="sectionInfo">
 
-		<div class="breadcrumb">
-				<?php echo $msgstr["createdb"]?>
-		</div>
+echo "<div class=\"sectionInfo\"><div class=\"language\">";
+	
+if (isset($arrHttp["encabezado"])){
+	echo "<a href=\"../common/inicio.php?reinicio=s&base=".$arrHttp["base"]."\" class=\"defaultButton backButton\">";
+echo "<span><strong>". $msgstr["back"]."</strong></span></a>";
+}	
+	
+echo "</div></div>
+		<div class=\"breadcrumb\">";
+		echo	"<h3>$msgstr[createdb]</h3>";
+echo		"</div><div class=\"actions\">";
+		
 
-		<div class="actions">
-<?php if (isset($arrHttp["encabezado"])){
-	echo "<a href=\"../common/inicio.php?reinicio=s\" class=\"defaultButton cancelButton\">
-					<img src=\"../images/defaultButton_iconBorder.gif\" alt=\"\" title=\"\" />
-					<span><strong>". $msgstr["cancel"]."</strong></span>
-				</a>
-	";
-}
+echo	"</div>";
+
 ?>
-		</div>
-		<div class="spacer">&#160;</div>
-	</div>
 
 	<div class="helper">
 <a href=../documentacion/ayuda.php?help=<?php echo $_SESSION["lang"]?>/admin.html target=_blank><?php echo $msgstr["help"]?></a>&nbsp &nbsp;
