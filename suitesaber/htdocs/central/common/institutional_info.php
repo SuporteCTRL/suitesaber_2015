@@ -4,7 +4,7 @@ Linha: 7
 
 <div class="heading">
 	<div class="institutionalInfo">
-	<img alt="<?php  echo utf8_decode($institution_name); ?>" title="<?php  echo utf8_decode($institution_name); ?>"  src=..<?php echo $logo ?> width="<?php echo $sizelogo  ?>" />
+		<img title="<?php  echo $institution_name ?>" alt="<?php  echo $institution_name ?>" src=..<?php echo $logo ?> width="<?php echo $sizelogo  ?>" />
 	</div>
 	<div class="userInfo">
 		<span><?php echo $_SESSION["nombre"]?></span>,
