@@ -52,7 +52,7 @@ $wxisUrl="";
 //$wxisUrl="http://localhost:9090/cgi-bin/wxis.exe";
 
 //Name of the institution
-$institution_name="Su√≠te Saber";
+$institution_name="SuÌ≠te Saber";
 
 //Ruta hacia el archivo con la configuraci√≥n del FCKeditor
 $FCKConfigurationsPath="/".$app_path."/dataentry/fckconfig.js";

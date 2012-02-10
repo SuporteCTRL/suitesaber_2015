@@ -183,7 +183,7 @@ function CambiarLenguaje(){
 <input type=hidden name=nreg value="">
 <div class="heading">
 	<div class="institutionalInfo heading">
-				<img src=..<?php echo $logo ?> width="<?php echo $sizelogo  ?>" /><h1><?php  echo utf8_decode($institution_name); ?></h1>
+				<img title="<?php  echo $institution_name ?>" alt="<?php  echo $institution_name ?>" src=..<?php echo $logo ?> width="<?php echo $sizelogo  ?>" />
 	</div>
 	<div class="userInfo">
 		<span><?php echo $_SESSION["nombre"]?></span>,
