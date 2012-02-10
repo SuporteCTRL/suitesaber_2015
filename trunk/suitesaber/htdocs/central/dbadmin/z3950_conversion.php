@@ -64,24 +64,29 @@ if (isset($arrHttp["encabezado"])){
 }
 ?>
 <div class="sectionInfo">
-	<div class="breadcrumb">
-<?php echo $msgstr["z3950"].": ".$msgstr["z3950_cnv"]." (".$arrHttp["base"].")" ?>
-	</div>
-
-	<div class="actions">
+	
+<div class="language">
 <?php
 	echo "<a href=z3950_conf.php?base=^a".$arrHttp["base"]."$encabezado class=\"defaultButton backButton\">
-		<img src=\"../images/defaultButton_iconBorder.gif\" alt=\"\" title=\"\" />
+
 		<span><strong>".$msgstr["back"]."</strong></span>
 		</a>\n";
 	echo "<a href=javascript:Enviar() class=\"defaultButton saveButton\">
-		<img src=\"../images/defaultButton_iconBorder.gif\" alt=\"\" title=\"\" />
+	
 		<span><strong>".$msgstr["save"]."</strong></span>
 		</a>\n";
 ?>
-			</div>
-			<div class="spacer">&#160;</div>
+
 </div>
+</div>
+<div class="breadcrumb"><h3>
+<?php echo $msgstr["z3950"].": ".$msgstr["z3950_cnv"]." (".$arrHttp["base"].")" ?>
+	</h3></div>
+
+	<div class="actions">
+			</div>
+
+
 <div class="helper">
 <a href=../documentacion/ayuda.php?help=<?php echo $_SESSION["lang"]?>/z3950_conf.html target=_blank><?php echo $msgstr["help"]?></a>&nbsp &nbsp;
 <?php
