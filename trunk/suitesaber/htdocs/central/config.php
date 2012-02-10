@@ -1,12 +1,12 @@
 <?
 //Caminho físico no servidor
-$localserver = "/var/www/suitesaber/suitesaber";
+$localserver = "/var/www/suitesaber";
 
 //Nome do arquivo CSS principal do tema
 $theme ="saber";
 
 //Nome do Arquivo de Logotipo
-$imglogo ="saber.png";
+$imglogo ="logoabcd.png";
 
 // Open the Central module in a new window for avoiding the use of the browse buttons
 $open_new_window="N";
@@ -16,7 +16,7 @@ $context_menu="Y";
 $logo ="/css/$theme/images/$imglogo";
 
 //Tamanho do logotipo em Largura
-$sizelogo="60";
+$sizelogo="160";
 
 //USED FOR ALL THE DATE FUNCTIONS. DD=DAYS, MM=MONTH, AA=YEAR. USE / AS SEPARATOR
 $config_date_format="DD/MM/YY";
