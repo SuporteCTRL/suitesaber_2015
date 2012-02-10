@@ -38,11 +38,13 @@ th.th_tit {
 	}
 A.defaultButton SPAN {
 		background: #888888;
-		color: #ffffff; 
+		color: #ffffff;
+		border: 1px solid #666666; 
 	}	
 A.defaultButton:hover SPAN {
 		background: #999999;
 		color: #ffffff; 
+		
 	}		
 
  .footer   {

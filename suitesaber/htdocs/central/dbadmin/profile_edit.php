@@ -169,21 +169,40 @@ function SendForm(){
 }
 </script>
 
-<div class="sectionInfo">
-	<div class="breadcrumb">
-<?php echo $msgstr["PROFILES"]?>
-	</div>
-	<div class="actions">
-<?php echo "<a href=\"users_adm.php?xx=s"."$encabezado\" class=\"defaultButton backButton\">";?>
-		<img src="../images/defaultButton_iconBorder.gif" alt="" title="" /></a>
+
+<?php
+
+echo "<div class=\"sectionInfo\"><div class=\"language\">";
+	
+if (isset($arrHttp["encabezado"])){
+echo "<a href=\"users_adm.php?xx=s"."$encabezado\" class=\"defaultButton backButton\">";
+echo "<span><strong>". $msgstr["back"]."</strong></span></a>";
+}	
+?>	
 <?php if (isset($arrHttp["Opcion"])and $arrHttp["Opcion"]!="delete"){
 	  echo "<a href=\"javascript:SendForm()\" class=\"defaultButton saveButton\">";?>
 
-		<img src="../images/defaultButton_iconBorder.gif" alt="" title="" />
+
 		<span><strong><?php echo $msgstr["SAVE"]?></strong></span></a>
-<?php } ?>
+<?php } ?>	
+	
+<?php	
+echo "</div></div>
+		<div class=\"breadcrumb\">";
+		echo	"<h3>$msgstr[PROFILES]</h3>";
+echo		"</div><div class=\"actions\">";
+		
+
+echo	"</div>";
+
+
+?>
+
+
+</a>
+
 	</div>
-	<div class="spacer">&#160;</div>
+
 </div>
 <div class="helper">
 	<a href=../documentacion/ayuda.php?help=<?php echo $_SESSION["lang"]?>/profiles.html target=_blank><?php echo $msgstr["help"]?></a>&nbsp; &nbsp;
@@ -235,13 +254,13 @@ global $db_path,$msgstr,$encabezado;
 		if ($val!=""){
 			$p=explode('|',$val);
 			if ($p[0]!="adm"){
-				echo "<tr><td>".$p[1]." (".$p[0].")</td><td><a href=profile_edit.php?profile=".$p[0]."$encabezado&Opcion=edit>".$msgstr["EDIT"]."</A> | ";
-				echo "<a href=javascript:DeleteProfile(\"".$p[0]."\")>".$msgstr["delete"]."</A></td>";
+				echo "<tr><td><li>".$p[1]." (".$p[0].")</td><td><a id=botoes href=profile_edit.php?profile=".$p[0]."$encabezado&Opcion=edit>".$msgstr["EDIT"]."</a> ";
+				echo "<a id=botoes href=javascript:DeleteProfile(\"".$p[0]."\")>".$msgstr["delete"]."</A></td>";
 			}
 		}
 	}
 	echo "</table>\n";
-	echo "<a href=profile_edit.php?Opcion=new&encabezado=s>".$msgstr["new"]."</a>";
+	echo "<a id=botoes href=profile_edit.php?Opcion=new&encabezado=s>".$msgstr["new"]."</a>";
 }
 
 function DeleteProfile(){

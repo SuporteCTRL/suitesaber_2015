@@ -65,32 +65,35 @@ if (isset($arrHttp["encabezado"]))include("../common/institutional_info.php");
 
 ?>
 <div class="sectionInfo">
-
-			<div class="breadcrumb">
-				<?php echo "<h5>".$msgstr["traducir"].": ".$rotulo."</h5>"?>
-			</div>
-
-			<div class="actions">
+<div class="language">
 				<a href="javascript:Enviar()" class="defaultButton saveButton">
-					<img src="../images/defaultButton_iconBorder.gif" alt="" title="" />
+
 					<span><strong><?php echo $msgstr["m_guardar"]?></strong></span></a>
 <?php if (isset($arrHttp["encabezado"])){
 ?>
  				<a href="menu_traducir.php?encabezado=s" class="defaultButton backButton">
-					<img src="../images/defaultButton_iconBorder.gif" alt="" title="" />
+
 					<span><strong><?php echo $msgstr["back"]?></strong></span>
 				</a>
 
 <?php }?>
+</div>
+			<div class="breadcrumb">
+				<?php echo "<h3>".$msgstr["traducir"].": ".$rotulo."</h3>"?>
 			</div>
-			<div class="spacer">&#160;</div>
+
+			<div class="actions">
+
+			</div>
+
 </div>
 <?php
+echo "<div class\"helper\"><font size=1> &nbsp; &nbsp; Script: translate.php</font></div><br>";
 echo "
 <div class=\"middle form\">
 			<div class=\"formContent\">
 ";
-echo "<font size=1> &nbsp; &nbsp; Script: translate.php</font><br>";
+
 //error_reporting (0);
 $componente=$arrHttp["componente"];
 

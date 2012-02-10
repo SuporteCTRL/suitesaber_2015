@@ -39,7 +39,7 @@ FORM {
 
 
 	A.defaultButton IMG {
-
+		
 		width: 32px;
 
 		height: 32px;
@@ -57,14 +57,14 @@ FORM {
 	A.defaultButton SPAN {
 
 		display: -moz-inline-block;
-
+		
 		display: inline-block;
 
-		vertical-align: middle;
+		vertical-align: top;
 
 		width: 150px;
 
-		padding: 0px 0px 0px 0px;
+		padding: 0px;
 
 		float: left;
 
@@ -328,7 +328,7 @@ A.menuButton {
 
 	/* #heading classes */
 	.heading {
-		height: 78px;
+		height: 90px;
 
 	}
 
@@ -363,10 +363,11 @@ A.menuButton {
 		font-size: 10px;
 }
 .language {
+		margin-top: -9px;
 		position: relative;
 		float: right;
 		top: -35px;		
-		width: 400px;
+		width: auto;
 		text-align: right;
 		white-space: nowrap;
 		padding: 0px 27px 5px 0px;
@@ -398,8 +399,8 @@ display: inline;
 	}
 
 	.breadcrumb {
-	position: relative;
-/*	  float: left;
+		position: relative;
+		/*	  float: left;
 		width: 100%;
 		vertical-align: top; */
 
@@ -410,6 +411,7 @@ display: inline;
 	}
 
 	.actions {
+
 		float: right;
 		width: 70%;
 		text-align: right;
@@ -1427,3 +1429,28 @@ display: inline;
 	border: solid 1px #cccccc;	
 	background-color: #F2EFEF;
 	}	
+#conf {
+	font-size: 15px;
+	color: #000000;
+	text-decoration: none;
+
+	}		
+li {
+	list-style-type: none;
+	font-size: 15px;
+	color: #000000;
+	text-decoration: none;
+	padding: 5px;
+	border-top: solid #cccccc 1px;
+	border-bottom: solid #999999 1px;
+	}	
+li:hover, a.conf:hover {
+	background-color: #dddddd;
+	list-style-type: none;
+	font-size: 15px;
+	color: #000000;
+	text-decoration: none;
+	padding: 5px;
+	border-top: solid #000000 1px;
+	}		
+	

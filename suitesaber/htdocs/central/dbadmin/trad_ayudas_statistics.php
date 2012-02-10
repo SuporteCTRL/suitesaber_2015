@@ -59,21 +59,23 @@ if (isset($arrHttp["encabezado"])) {
 }
 
 	echo " <body>
-	<div class=\"sectionInfo\">
-			<div class=\"breadcrumb\">"."<h5>".
-				$msgstr["tradyudas"]."</h5>
+	<div class=\"sectionInfo\"><div class=\"language\">";
+	
+echo "<a href=\"menu_traducir.php?$encabezado\" class=\"defaultButton backButton\">";
+echo "
+	
+					<span><strong>". $msgstr["back"]."</strong></span>
+				</a>	
+	
+	
+			</div><div class=\"breadcrumb\">"."<h3>".
+				$msgstr["tradyudas"]."</h3>
 			</div>
 			<div class=\"actions\">
 
 	";
-echo "<a href=\"menu_traducir.php?$encabezado\" class=\"defaultButton backButton\">";
-echo "
-					<img src=\"../images/defaultButton_iconBorder.gif\" alt=\"\" title=\"\" />
-					<span><strong>". $msgstr["back"]."</strong></span>
-				</a>";
-echo "			</div>
-			<div class=\"spacer\">&#160;</div>
-	</div>";
+
+echo "</div></div>";
 
  ?>
 <div class="helper">

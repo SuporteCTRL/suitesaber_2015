@@ -44,21 +44,23 @@ if (isset($arrHttp["encabezado"])){
 }else{
 	$encabezado="";
 }
+
+echo "<div class=\"sectionInfo\"><div class=\"language\">";
+	
+if (isset($arrHttp["encabezado"])){
+	echo "<a href=\"../common/inicio.php?reinicio=s&base=".$arrHttp["base"]."\" class=\"defaultButton backButton\">";
+echo "<span><strong>". $msgstr["back"]."</strong></span></a>";
+}	
+	
+echo "</div></div>
+		<div class=\"breadcrumb\">";
+		echo	"<h3>$msgstr[usuarios]</h3>";
+echo		"</div><div class=\"actions\">";
+		
+
+echo	"</div>";
+
 ?>
-
-<div class="sectionInfo">
-	<div class="breadcrumb">
-<?php echo $msgstr["usuarios"]?>
-	</div>
-
-	<div class="actions">
-<?php echo "<a href=\"../common/inicio.php?reinicio=s$encabezado\" class=\"defaultButton backButton\">";?>
-
-		<span><strong><?php echo $msgstr["BACK"]?></strong></span></a>
-	</div>
-	<div class="spacer">&#160;</div>
-</div>
-
 <div class="helper">
 	<a href=../documentacion/ayuda.php?help=<?php echo $_SESSION["lang"]?>/profiles.html target=_blank><?php echo $msgstr["help"]?></a>&nbsp &nbsp;
 <?php
@@ -70,8 +72,8 @@ echo "<font color=white>&nbsp; &nbsp; Script: users_adm.php" ?></font>
 	<div class="formContent">
 	<ul>
 <?php
-echo "<li><a href=../dataentry/browse.php?showdeleted=Y&encabezado=s&base=acces&cipar=acces.par&return=../dbadmin/users_adm.php|>".$msgstr["usuarios"] ."</a><p>";
-echo "<li><a href=profile_edit.php?encabezado=s>".$msgstr["profiles"]."</a>";
+echo "<li><a id=conf href=../dataentry/browse.php?showdeleted=Y&encabezado=s&base=acces&cipar=acces.par&return=../dbadmin/users_adm.php|>".$msgstr["usuarios"] ."</a><p>";
+echo "<li><a id=conf href=profile_edit.php?encabezado=s>".$msgstr["profiles"]."</a>";
 
 ?>
 	</ul>
