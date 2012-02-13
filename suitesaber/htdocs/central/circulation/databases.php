@@ -58,18 +58,19 @@ $encabezado="";
 include("../common/institutional_info.php");
 echo "
 		<div class=\"sectionInfo\">
-			<div class=\"breadcrumb\">".
-				$msgstr["sourcedb"]."
-			</div>
-			<div class=\"actions\">\n";
-
-				echo "<a href=\"configure_menu.php?encabezado=s\" class=\"defaultButton backButton\">
-
-					<span><strong>". $msgstr["back"]."</strong></span>
-				</a>
-			</div>
-			<div class=\"spacer\">&#160;</div>
+		<div class=\"language\">";
+echo "<a href=\"configure_menu.php?encabezado=s\" class=\"defaultButton backButton\">
+		<span><strong>". $msgstr["back"]."</strong></span>
+		</a>
 		</div>
+		</div>
+			<div class=\"breadcrumb\"><h3>".
+				$msgstr["sourcedb"]."
+			</h3></div>
+			<div class=\"actions\">\n
+
+
+			</div>
 		<div class=\"helper\">
 	<a href=../documentacion/ayuda.php?help=".$_SESSION["lang"]."/circulation/loans_databases.html target=_blank>".$msgstr["help"]."</a>&nbsp &nbsp;";
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))

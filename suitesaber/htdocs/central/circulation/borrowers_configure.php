@@ -108,10 +108,7 @@ $encabezado="";
 include("../common/institutional_info.php");
 echo "
 		<div class=\"sectionInfo\">
-			<div class=\"breadcrumb\">".$msgstr["bconf"]." (".$arrHttp["base"].")
-			</div>
-			<div class=\"actions\">\n";
-
+		<div class=\"language\">";
 				echo "<a href=\"configure_menu.php?encabezado=s\" class=\"defaultButton backButton\">
 
 					<span><strong>". $msgstr["back"]."</strong></span>
@@ -119,10 +116,18 @@ echo "
 				<a href=javascript:Guardar() class=\"defaultButton saveButton\">
 
 					<span><strong>".$msgstr["update"]."</strong></span>
-				</a>
+				</a>		
+		
+		</div>		
+		
+		
+		</div>		
+			<div class=\"breadcrumb\"><h3>".$msgstr["bconf"]." (".$arrHttp["base"].")
+			</h3></div>
+			<div class=\"actions\">
+
+
 			</div>
-			<div class=\"spacer\">&#160;</div>
-		</div>
 		<div class=\"helper\">
 	<a href=../documentacion/ayuda.php?help=".$_SESSION["lang"]."/circulation/loans_borrowers_configure.html target=_blank>".$msgstr["help"]."</a>&nbsp &nbsp;";
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"])) echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/circulation/loans_borrowers_configure.html target=_blank>".$msgstr["edhlp"]."</a>";

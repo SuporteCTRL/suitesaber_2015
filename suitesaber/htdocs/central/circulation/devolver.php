@@ -97,14 +97,18 @@ echo "<body onload='javascript:document.inventorysearch.searchExpr.focus()'>\n";
 include("../common/institutional_info.php");
 ?>
 <div class="sectionInfo">
-	<div class="breadcrumb">
+<div class="language">
+		<?php include("submenu_prestamo.php");?>
+</div>
+
+</div>
+	<div class="breadcrumb"><h3>
 		<?php echo $msgstr["return"]?>
 	</div>
 	<div class="actions">
-		<?php include("submenu_prestamo.php");?>
+
 	</div>
-	<div class="spacer">&#160;</div>
-</div>
+
 <div class="helper">
 <a href=../documentacion/ayuda.php?help=<?php echo $_SESSION["lang"]?>/devolver.html target=_blank><?php echo $msgstr["help"]?></a>&nbsp &nbsp;
 <?php echo "

@@ -165,16 +165,20 @@ $link_u="";
 if (isset($arrHttp["usuario"]) and $arrHttp["usuario"]!="") $link_u="&usuario=".$arrHttp["usuario"];
 ?>
 <div class="sectionInfo">
-	<div class="breadcrumb">
+<div class="language">
+		<?php include("submenu_prestamo.php");?>
+</div>
+
+</div>
+	<div class="breadcrumb"><h3>
 		<?php echo $msgstr["loan"];
 		  if (isset($arrHttp["usuario"]) and $arrHttp["usuario"]!="") echo " - ".$msgstr["users"].": ".$arrHttp["usuario"];
 		?>
-	</div>
+	</h3></div>
 	<div class="actions">
-		<?php include("submenu_prestamo.php");?>
+
 	</div>
-	<div class="spacer">&#160;</div>
-</div>
+
 <div class="helper">
 <?php echo "
 <a href=../documentacion/ayuda.php?help=". $_SESSION["lang"]."/circulation/loan.html target=_blank>". $msgstr["help"]."</a>&nbsp &nbsp;";

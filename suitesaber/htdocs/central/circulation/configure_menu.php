@@ -43,19 +43,20 @@ $encabezado="";
 echo "<body>\n";
 $encabezado="&encabezado=s";
 include("../common/institutional_info.php");
-echo "<div class=\"sectionInfo\">
-	<div class=\"breadcrumb\">".
-		$msgstr["configure"]."
-	</div>
-	<div class=\"actions\">\n";
 
+echo "<div class=\"sectionInfo\">
+<div class=\"language\">";
 		echo "<a href=\"../common/inicio.php?reinicio=s&modulo=loan\" class=\"defaultButton backButton\">
 
 			<span><strong>". $msgstr["back"]."</strong></span>
 		</a>
-	</div>
-	<div class=\"spacer\">&#160;</div>
-</div>";
+		
+</div>		
+		</div>	
+	<div class=\"breadcrumb\"><h3>".
+		$msgstr["configure"]."
+	</h3></div>
+	<div class=\"actions\"></div>";
 ?>
 
 	<script>
@@ -140,10 +141,10 @@ echo "&nbsp; &nbsp; Script: configure_menu.php" ?></font>
 					<span><?php echo $msgstr["calendar"]?></span>
 				</a>
 
-                <a href="../reservas/inicio.php" class="menuButton tooltip importButton">
+            <!--    <a href="../reservas/inicio.php" class="menuButton tooltip importButton">
 
 					<span><?php echo $msgstr["reserves_conf"]?></span>
-				</a>
+				</a> -->
 
 			</div>
 			<div class="spacer">&#160;</div>
