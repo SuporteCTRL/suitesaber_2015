@@ -1,0 +1,16 @@
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style>
+.inst {
+	font-size: 10px;
+	text-align: left;
+	}
+.endereco {
+	font-size: 8px;
+   text-align: left;
+}	
+</style>
+<tr><td colspan="100%">Fundacao de Economia e Estatistica <br>COMPROVANTE DE DEVOLUÇÃO<br>Av. Praia de Belas, 1595<br>Porto Alegre CEP 90.110-001<br>Fone (51) 3231-2888
+</td></tr>
+
+
+<tr><td></td></tr>

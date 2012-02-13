@@ -1,0 +1,79 @@
+'<body onload="self.print();self.close();">
+
+<style>
+body {
+margin: 0px;	
+}
+
+table {
+width: 80mm;
+border-left-width: 0.5mm;
+border-left-style: dashed;
+border-color: #000;
+border-right-width: 0.5mm;
+border-right-style: dashed;
+border-bottom: none;
+border-top-width: 0.5mm;
+border-top-style: solid;
+padding: 0 3mm 0 3mm;
+}
+h1 {
+	font-size: 12px;
+	text-align: center;
+	padding:0px;
+}
+td.titulo {
+border-bottom-width: 0.5mm;
+border-bottom-style: dashed;
+border-color: #000;
+color: #000000;
+text-align: center;
+text-transform: uppercase;
+}
+
+td.rel {
+border-left-width: 0.5mm;
+border-left-style: dotted;
+border-color: #000;
+color: #000000;
+text-align: left;
+}
+
+td.ref{
+text-align: left;
+{
+
+tr, th {
+	
+	border: none;
+}
+td {
+	border: none;
+}
+.inst {
+	font-size: 10px;
+	text-align: left;
+	}
+.endereco {
+	font-size: 8px;
+   text-align: left;
+}
+li {
+list-style-type: decimal;
+
+}
+	
+</style>'
+
+
+if v1 = 'P' then
+'<tr>'
+'<td  class="ref">'v20'</td>'
+'<td  class="rel ref">'v10+|; | if a(v20) then '&nbsp;' fi,'</td>'/
+'<td class="ref rel">'(if p(v100) then | |v100^z.20,' ('v80')' fi,)'</td>'/
+'<td class="rel">'v30*6.2|/|v30*4.2|/|v30.4 if a(v30) then '&nbsp;' fi,'</td>'/
+'<td class="rel"><strong>'v40*6.2|/|v40*4.2|/|v40.4 if a(v40) then '&nbsp;' fi,'</strong></td>'/
+
+
+'</tr>'
+fi,

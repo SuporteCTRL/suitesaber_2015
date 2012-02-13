@@ -1,0 +1,6 @@
+'<tr>','<td valign=top>'(if p(v100) then | |v100, if iocc<>nocc(v100) then '<br>' fi fi/) if a(v100) then '&nbsp;' fi,'</td>'/
+'<td valign=top>'v120^b+|; | if a(v30) then '&nbsp;' fi,'</td>'/
+'<td valign=top>'v130^b+|; | if a(v60) then '&nbsp;' fi,'</td>'/
+'<td valign=top>'v20+|; | if a(v20) then '&nbsp;' fi,'</td>'/
+'<td valign=top>'v10+|; | if a(v10) then '&nbsp;' fi,'</td>'/
+'<td valign=top>'(if p(v90) then | |v90, if iocc<>nocc(v100) then '<br>' fi fi/) if a(v100) then '&nbsp;' fi,'</td>'/
