@@ -101,7 +101,7 @@ include ("../../meta.php");
 			case "crear":
 			case "reintentar":
 				if ($OpcionDeEntrada!="captura_bd"){
-				   	echo "  <a href='javascript:top.Menu(\"cancelar\")' title=\"".$msgstr["m_cancelar"]."\"><img src=img/toolbarCancelEdit.png alt='".$msgstr["m_cancelar"]."' border=1><a>  \n";
+				   	echo " <a href='javascript:top.Menu(\"cancelar\")' title=\"".$msgstr["m_cancelar"]."\"><img src=img/toolbarCancelEdit.png alt='".$msgstr["m_cancelar"]."' border=1><a>  \n";
 					echo "<a href='javascript:EnviarForma()' title=\"".$msgstr["m_guardar"]."\"><img src=img/toolbarSave.png alt=\"".$msgstr["m_guardar"]."\"><a>  \n";
 				}
 	//          echo "<input type=button name=capturar value=\"".$msgstr["m_capturar"]."\">\n";

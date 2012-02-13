@@ -467,24 +467,20 @@ if (isset($arrHttp["encabezado"])){
 
 			include("../common/institutional_info.php");
 			echo "<div class=\"sectionInfo\">
-				<div class=\"breadcrumb\">
-					";
-
-				if ($arrHttp["Mfn"]=="New") echo "<h3>". $msgstr["newoper"]."</h3>\n";
-				echo "</div>
-				<div class=\"actions\">
+					<div class=\"language\">
 					<a href=javascript:EnviarForma() class=\"defaultButton saveButton\">
-	
 						<span><strong>".$msgstr["m_guardar"]."</strong></span>
 					</a>
 					<a href=\"$retorno$return\" class=\"defaultButton cancelButton\">
-	
 						<span><strong>".$msgstr["cancelar"]."</strong></span>
 					</a>
-				</div>
-				<div class=\"spacer\">&#160;</div>
-			</div>
-			";
+					</div>
+					</div>		
+				<div class=\"breadcrumb\">";
+
+				if ($arrHttp["Mfn"]=="New") echo "<h3>". $msgstr["newoper"]."</h3>\n";
+				echo "</div>
+				<div class=\"actions\"></div>";
 		}
 	}
 }
