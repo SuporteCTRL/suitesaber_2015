@@ -110,10 +110,15 @@ if (isset($arrHttp["encabezado"])){
 
 ?>
 <div class="sectionInfo">
-	<div class="breadcrumb">
+<div class="language">
+
+
+</div>
+</div>
+	<div class="breadcrumb"><h3>
 		<?php echo $msgstr["admin"]." (".$arrHttp["base"],")"?>
-	</div>
-	<div class="actions">
+	</h3></div>
+	<div class="actions"><br><br>
 		<?php
 		if (!isset($arrHttp["return"])){
 			$ret="../common/inicio.php?reinicio=s$encabezado";
@@ -130,8 +135,7 @@ if (isset($arrHttp["encabezado"])){
 		</a>
 
 	</div>
-	<div class="spacer">&#160;</div>
-</div>
+
 <div class="helper">
 <a href=../documentacion/ayuda.php?help=<?php echo $_SESSION["lang"]?>/copies/copies_edit_browse.html target=_blank><?php echo $msgstr["help"]?></a>&nbsp &nbsp;
 <?php
@@ -139,6 +143,10 @@ if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 	echo "<a href=../documentacion/edit.php?archivo=". $_SESSION["lang"]."/copies/copies_edit_browse.html target=_blank>".$msgstr["edhlp"]."</a>";
 echo "<font color=white>&nbsp; &nbsp; Script: copies_edit_browse.php</font>\n";
 ?>
+
+
+
+
 	</div>
 
 		<div class="middle form">
@@ -177,11 +185,10 @@ foreach ($inventary as $value){
 		echo "</td>";
 		for ($ix=4;$ix<count($u);$ix++) echo "<td>" .$u[$ix]."</td>";
 		echo "<td class=\"action\">
-			<a href=javascript:Editar($Mfn,$Status)>
-			<img src=\"../images/edit.png\" alt=\"".$msgstr["m_editar"]."\" title=\"".$msgstr["m_editar"]."\" /></a>
-			<a href=../dataentry/show.php?base=".$arrHttp["base"]."&cipar=".$arrHttp["base"].".par&Mfn=$Mfn".$encabezado."&Opcion=editar  target=_blank><img src=\"../images/zoom.png\"/></a>";
+			<a id=botoes href=javascript:Editar($Mfn,$Status)>$msgstr[m_editar]</a>
+			<a id=botoes href=../dataentry/show.php?base=".$arrHttp["base"]."&cipar=".$arrHttp["base"].".par&Mfn=$Mfn".$encabezado."&Opcion=editar  target=_blank>$msgstr[see]</a>";
 		if ($Status==0) echo "
-			<a href=\"javascript:Eliminar($Mfn)\"><img src=\"../images/delete.png\" alt=\"".$msgstr["eliminar"]."\" title=\"".$msgstr["eliminar"]."\" /></a>";
+			<a id=botoes href=\"javascript:Eliminar($Mfn)\">$msgstr[eliminar]</a>";
 		else {			switch ($Status){				case -2:
 					echo $msgstr["recblock"];
 					break;
