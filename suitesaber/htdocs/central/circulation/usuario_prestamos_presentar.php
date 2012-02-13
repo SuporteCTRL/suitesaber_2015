@@ -629,14 +629,17 @@ function DeleteSuspentions(){
 </script>
 <body>
 <div class="sectionInfo">
+<div class="language">
+		<?php include("submenu_prestamo.php");?>
+</div>
+</div>
 	<div class="breadcrumb">
 		<?php echo $msgstr["statment"]?>
 	</div>
 	<div class="actions">
-		<?php include("submenu_prestamo.php");?>
+
 	</div>
-	<div class="spacer">&#160;</div>
-</div>
+	
 <div class="helper">
 
 <?php
