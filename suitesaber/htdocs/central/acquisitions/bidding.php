@@ -133,25 +133,25 @@ echo "<font color=white>&nbsp; &nbsp; Script: bidding.php</font>\n";
 	<div class="formContent">
 		<?php echo $msgstr["approved_rec"]." ".$msgstr["sorted"]?>
 		<div class="pagination">
-			<a href=javascript:Enviar("TI") class="singleButton singleButtonSelected">
-						<span class="sb_lb">&#160;</span>
-						[  <?php echo $msgstr["title"]?> ]
-						<span class=sb_rb>&#160;</span>
+			<a id=botoes href=javascript:Enviar("TI") class="singleButton singleButtonSelected">
+
+						 <?php echo $msgstr["title"]?> 
+	
 					</a>
-			<a href=javascript:Enviar("RB") class="singleButton singleButtonSelected">
-						<span class="sb_lb">&#160;</span>
-						[  <?php echo $msgstr["recomby"]?> ]
-						<span class=sb_rb>&#160;</span>
+			<a id=botoes  href=javascript:Enviar("RB") class="singleButton singleButtonSelected">
+
+						 <?php echo $msgstr["recomby"]?> 
+	
 					</a>
-			<a href=javascript:Enviar("DA") class="singleButton singleButtonSelected">
-						<span class="sb_lb">&#160;</span>
-						[ <?php echo $msgstr["date_app"]?> ]
-						<span class=sb_rb>&#160;</span>
+			<a id=botoes  href=javascript:Enviar("DA") class="singleButton singleButtonSelected">
+
+						<?php echo $msgstr["date_app"]?> 
+	
 					</a>
-			<a href=javascript:Enviar("OP") class="singleButton singleButtonSelected">
-						<span class="sb_lb">&#160;</span>
-						[ <?php echo $msgstr["operator"]?> ]
-						<span class=sb_rb>&#160;</span>
+			<a  id=botoes href=javascript:Enviar("OP") class="singleButton singleButtonSelected">
+
+						<?php echo $msgstr["operator"]?> 
+	
 					</a>
 			<p align=right><input type=checkbox name=see_all
 			<?php if (isset($arrHttp["see_all"])) echo " value=Y checked"?>><?php echo $msgstr["all_oper"]?>
