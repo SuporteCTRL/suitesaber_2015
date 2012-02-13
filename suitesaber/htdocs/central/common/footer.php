@@ -9,7 +9,7 @@
 
 				<strong><?php echo $def["LEGEND1"]; ?> | versão <?php echo $def["VERSION"] ?></strong><br />
 				<a href="<?php echo $def["URL1"]; ?>" target=_blank><span><?php echo $def["LEGEND2"]; ?></span></a> -
-				<a href="<?php echo $def["URL2"]; ?>" target=_blank><span><?php  echo utf8_decode($institution_name); ?></span></a><br />
+				<a href="<?php echo $def["URL2"]; ?>" target=_blank><span><?php  echo $institution_name; ?></span></a><br />
 
 
 		</div>
