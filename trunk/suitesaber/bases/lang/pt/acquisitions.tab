@@ -127,4 +127,4 @@ orderexist=Ordem de compra duplicada
 closeorder=Fechar ordem
 orderclosed=Ordem fechado
 loanobjadd=Selecione o tipo de objeto para cada item e clique em atualizar para adicionar as cópias para o base de dados de objetos de empréstimo
-
+operator=Operador
