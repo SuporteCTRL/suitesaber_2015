@@ -30,14 +30,16 @@ echo "<body>\n";
 include("../common/institutional_info.php");
 ?>
 <div class="sectionInfo">
-	<div class="breadcrumb">
-		<?php echo $msgstr["suggestions"]?>
-	</div>
-	<div class=actions>
-		<?php include("suggestions_menu.php");?>
-	</div>
-	<div class="spacer">&#160;</div>
+<div class="language">		
+<?php include("suggestions_menu.php");?>
 </div>
+</div>
+	<div class="breadcrumb"><h3>
+		<?php echo $msgstr["suggestions"]?>
+	</h3></div>
+	<div class=actions>
+
+	</div>
 <div class="helper">
 <a href=../documentacion/ayuda.php?help=<?php echo $_SESSION["lang"]?>/suggestions.html target=_blank><?php echo $msgstr["help"]?></a>&nbsp &nbsp;
 <?php

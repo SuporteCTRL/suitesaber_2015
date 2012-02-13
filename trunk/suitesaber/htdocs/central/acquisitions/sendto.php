@@ -26,9 +26,9 @@
  * == END LICENSE ==
 */
 if (isset($index)){?>
-<strong><?php echo $msgstr["sendto"]?>:&nbsp; &nbsp;
-		<a href='javascript:SendTo("D")'><?php echo $msgstr["doc"]?></a> &nbsp; | &nbsp;
-		<a href='javascript:SendTo("W")'><?php echo $msgstr["xls"]?></a></strong> &nbsp;  &nbsp;  &nbsp;
+<strong><?php echo $msgstr["sendto"]?>:&nbsp; 
+		<a id="botoes_top" href='javascript:SendTo("D")'><?php echo $msgstr["doc"]?></a>
+		<a id="botoes_top" href='javascript:SendTo("W")'><?php echo $msgstr["xls"]?></a></strong>  &nbsp; | &nbsp;
 
 <script>
 

@@ -121,14 +121,17 @@ function EnviarForma(){	sel="N"
 
 ?>
 <div class="sectionInfo">
-	<div class="breadcrumb">
-		<?php echo $msgstr["purchase"].": ".$msgstr["createorder"]?>
-	</div>
-	<div class="actions">
+	<div class="language">
 		<?php include("order_menu.php");?>
 	</div>
-	<div class="spacer">&#160;</div>
 </div>
+	<div class="breadcrumb"><h3>
+		<?php echo $msgstr["purchase"].": ".$msgstr["createorder"]?>
+	</h3></div>
+	<div class="actions">
+
+	</div>
+
 <div class="helper">
 <a href=../documentacion/ayuda.php?help=<?php echo $_SESSION["lang"]?>/acquisitions/order.html target=_blank><?php echo $msgstr["help"]?></a>&nbsp &nbsp;
 <?php
@@ -144,32 +147,32 @@ echo "<font color=white>&nbsp; &nbsp; Script: order.php</font>\n";
 		<input type=hidden name=sort value=<?php echo $arrHttp["sort"]?>>
 		<?php echo $msgstr["approvacq"]." ".$msgstr["sorted"]?>
 		<div class="pagination">
-			<a href=javascript:Enviar("PV") class="singleButton singleButtonSelected">
-				<span class="sb_lb">&#160;</span>
-				[ <?php echo $msgstr["provider"]?> ]
-				<span class=sb_rb>&#160;</span>
+			<a  id="botoes" href=javascript:Enviar("PV") class="singleButton singleButtonSelected">
+
+				<?php echo $msgstr["provider"]?> 
+
 			</a>
-			<a href=javascript:Enviar("TI") class="singleButton singleButtonSelected">
-				<span class="sb_lb">&#160;</span>
-				[  <?php echo $msgstr["title"]?> ]
-				<span class=sb_rb>&#160;</span>
+			<a id="botoes" href=javascript:Enviar("TI") class="singleButton singleButtonSelected">
+
+				<?php echo $msgstr["title"]?> 
+
 			</a>
-			<a href=javascript:Enviar("DA") class="singleButton singleButtonSelected">
-				<span class="sb_lb">&#160;</span>
-				[ <?php echo $msgstr["date_app"]?> ]
-				<span class=sb_rb>&#160;</span>
+			<a id="botoes"  href=javascript:Enviar("DA") class="singleButton singleButtonSelected">
+
+				 <?php echo $msgstr["date_app"]?> 
+
 			</a>
-			<a href=javascript:Enviar("SN") class="singleButton singleButtonSelected">
-				<span class="sb_lb">&#160;</span>
-				[ <?php echo $msgstr["suggestno"]?> ]
-				<span class=sb_rb>&#160;</span>
+			<a  id="botoes" href=javascript:Enviar("SN") class="singleButton singleButtonSelected">
+
+				<?php echo $msgstr["suggestno"]?>
+
 			</a>
-			<a href=javascript:Enviar("OP") class="singleButton singleButtonSelected">
-				<span class="sb_lb">&#160;</span>
-				[ <?php echo $msgstr["operator"]?> ]
-				<span class=sb_rb>&#160;</span>
+			<a  id="botoes" href=javascript:Enviar("OP") class="singleButton singleButtonSelected">
+
+				<?php echo $msgstr["operator"]?>
+
 			</a>
-			<p align=right><input type=checkbox name=see_all
+			<p align=right><input  id="botoes" type=checkbox name=see_all
 			<?php if (isset($arrHttp["see_all"])) echo " checked"?>><?php echo $msgstr["all_oper"]?>
 		</div>
 
@@ -204,7 +207,7 @@ echo "<font color=white>&nbsp; &nbsp; Script: order.php</font>\n";
 	}
 ?>
 </table>
-&nbsp; &nbsp;<input type=submit name=send value=<?php echo $msgstr["order"]?> onclick=EnviarForma()>
+&nbsp; &nbsp;<input  id="botoes" type=submit name=send value=<?php echo $msgstr["order"]?> onclick=EnviarForma()>
 </form>
 </div>
 	</div>

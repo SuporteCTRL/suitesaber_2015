@@ -64,24 +64,27 @@ include("../common/institutional_info.php");
 
 ?>
 <div class="sectionInfo">
-	<div class="breadcrumb">
-		<?php echo $msgstr["resetctl"].": $base"?>
-	</div>
-	<div class="actions">
-<?php echo "<a href=\"../common/inicio.php?reinicio=s&base=".$base."$encabezado\" class=\"defaultButton cancelButton\">";
+<div class="language">
+				<?php echo "<a href=\"../common/inicio.php?reinicio=s&base=".$base."$encabezado\" class=\"defaultButton cancelButton\">";
 ?>
-					<img src="../images/defaultButton_iconBorder.gif" alt="" title="" />
+
 					<span><strong><?php echo $msgstr["cancel"]?></strong></span>
 				</a>
-	</div>
-	<div class="spacer">&#160;</div>
+
 </div>
+</div>
+	<div class="breadcrumb"><h3>
+		<?php echo $msgstr["resetctl"].": $base"?>
+	</h3></div>
+	<div class="actions">
+
+	</div>
 <div class="helper">
 <a href=../documentacion/ayuda.php?help=<?php echo $_SESSION["lang"]?>/copies_configuration.html target=_blank><?php echo $msgstr["help"]?></a>&nbsp &nbsp;
 <?php
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 	echo "<a href=../documentacion/edit.php?archivo=". $_SESSION["lang"]."/copies_configuration.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "<font color=white>&nbsp; &nbsp; Script: resetautoinc.php</font>\n";
+echo "&nbsp; &nbsp; Script: resetautoinc.php\n";
 echo "
 	</div>
 <div class=\"middle form\">
@@ -92,7 +95,7 @@ echo "
 		<td>".$msgstr["lastcn"]."</td><td><input type=textbox name=control_n value=$cn_val></td>";
 	echo "<tr><td colspan=2>&nbsp;</td>";
 	echo "<table>";
-	echo "<p><input type=submit name=send value=".$msgstr["update"]." onclick=Enviar()>";
+	echo "<p><input id=botoes type=submit name=send value=".$msgstr["update"]." onclick=Enviar()>";
 
 echo "<form></div></div></body></html>";
 ?>
