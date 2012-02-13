@@ -328,7 +328,8 @@ A.menuButton {
 
 	/* #heading classes */
 	.heading {
-		height: 90px;
+	/*	height: 90px;*/
+	height: 70px;
 
 	}
 
@@ -349,7 +350,7 @@ A.menuButton {
 		width: 30%;
 		text-align: right;
 		white-space: nowrap;
-		padding: 15px 15px 0px 0px;
+		padding: 5px 15px 0px 0px;
 	}
 
 .opt_catalog {
