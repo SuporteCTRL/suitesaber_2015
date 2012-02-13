@@ -101,7 +101,7 @@ if (isset($arrHttp["base"])){
 	$stat=explode("\|",$llave);
 	$llave=substr($stat[2],7);
 	echo "<HTML><title>";
-	echo utf8_decode($institution_name);
+	echo $institution_name;
 	echo "</title>
 				<head>
 				<script language=javascript src=js/lr_trim.js></script>
