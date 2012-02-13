@@ -35,7 +35,6 @@ include("../common/header.php");
 $lang=$_SESSION["lang"];
 
 include("../lang/dbadmin.php");
-
 include("../lang/admin.php");
 include("../common/get_post.php");
 
