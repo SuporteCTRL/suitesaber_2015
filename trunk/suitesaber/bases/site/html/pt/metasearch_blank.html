@@ -1,0 +1,25 @@
+<div class="userInfo" id=" search">
+<!-- <h3><span>Pesquisa no Saber ABCD</span> </h3>-->
+
+
+<form style="padding-top:-3px;" name="searchForm" action="#" method="post" target="_blank" onsubmit="return(executeSearch());">
+
+<input type="hidden" name="lang" value="pt"/>
+<input type="hidden" name="engine" value="metaiah"/>
+<input type="hidden" name="group" value="<?= $_REQUEST['id'] ?>"/>
+<input type="hidden" name="view" value="<?= $def['RESULT'] ?>"/>
+
+<div class="-searchItens">
+
+
+<input style=" width:320px; height:10px; font-size:15px;" type="text" name="expression"  class="expression" />
+
+<!-- <p class="submit"> -->
+<input  type="submit" value="Pesquisar" name="submit" id="botoes_top" />
+<!-- </p> -->
+
+</div>
+</form>
+<span class="advancedSearch">
+<!--<a href="/site/metaiah/search.php?lang=pt&amp;form=advanced">filtro de pesquisa</a></span>-->
+</div>
