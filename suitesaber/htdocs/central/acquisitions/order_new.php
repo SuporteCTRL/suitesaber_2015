@@ -178,11 +178,11 @@ include("../common/institutional_info.php");
 	</div>
 	<div class="actions">
 		<a href=order_new_menu.php class="defaultButton cancelButton">
-			<img src=../images/defaultButton_iconBorder.gif alt="" title="" />
+
 			<span><strong><?php echo $msgstr["cancel"]?></strong></span>
 		</a>
 		<a href=javascript:EnviarForma() class="defaultButton saveButton">
-			<img src=../images/defaultButton_iconBorder.gif alt="" title="" />
+
 			<span><strong><?php echo $msgstr["actualizar"]?></strong></span>
 		</a>
 	</div>
@@ -194,7 +194,7 @@ include("../common/institutional_info.php");
 <?php
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 	echo "<a href=../documentacion/edit.php?archivo=". $_SESSION["lang"]."/acquisitions/suggestions_new.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "<font color=white>&nbsp; &nbsp; Script: order_new.php</font>\n";
+echo "&nbsp; &nbsp; Script: order_new.php\n";
 ?>
 	</div>
 <div class="middle form">

@@ -127,14 +127,17 @@ function Enviar(sort){
 
 ?>
 <div class="sectionInfo">
-	<div class="breadcrumb">
-		<?php echo $msgstr["suggestions"].": ".$msgstr["approve"]."/".$msgstr["reject"]?>
-	</div>
-	<div class="actions">
-		<?php include("suggestions_menu.php")?>
-	</div>
-	<div class="spacer">&#160;</div>
+<div class="language">		
+<?php include("suggestions_menu.php");?>
 </div>
+</div>
+
+	<div class="breadcrumb"><h3>
+		<?php echo $msgstr["suggestions"].": ".$msgstr["approve"]."/".$msgstr["reject"]?>
+	</h3></div>
+	<div class="actions">
+	</div>
+
 <div class="helper">
 <a href=../documentacion/ayuda.php?help=<?php echo $_SESSION["lang"]?>/acquisitions/approval_rejection.html target=_blank><?php echo $msgstr["help"]?></a>&nbsp &nbsp;
 <?php
@@ -148,25 +151,25 @@ echo "<font color=white>&nbsp; &nbsp; Script: suggestions_status.php</font>\n";
 	<div class="formContent">
          <?php echo $msgstr["pending_sort"]?>
 		<div class="pagination">
-			<a href=javascript:Enviar("TI") class="singleButton singleButtonSelected">
-						<span class="sb_lb">&#160;</span>
-						[ <?php echo $msgstr["title"]?> ]
-						<span class=sb_rb>&#160;</span>
+			<a id="botoes"  href=javascript:Enviar("TI") class="singleButton singleButtonSelected">
+
+						<?php echo $msgstr["title"]?>
+	
 					</a>
-			<a href=javascript:Enviar("RB") class="singleButton singleButtonSelected">
-						<span class="sb_lb">&#160;</span>
-						[ <?php echo $msgstr["recomby"]?> ]
-						<span class=sb_rb>&#160;</span>
+			<a id="botoes" href=javascript:Enviar("RB") class="singleButton singleButtonSelected">
+					
+						<?php echo $msgstr["recomby"]?>
+
 					</a>
-			<a href=javascript:Enviar("DR") class="singleButton singleButtonSelected">
-						<span class="sb_lb">&#160;</span>
-						[ <?php echo $msgstr["date_sug"]?> ]
-						<span class=sb_rb>&#160;</span>
+			<a id="botoes" href=javascript:Enviar("DR") class="singleButton singleButtonSelected">
+
+						<?php echo $msgstr["date_sug"]?>
+		
 					</a>
-			<a href=javascript:Enviar("OP") class="singleButton singleButtonSelected">
-						<span class="sb_lb">&#160;</span>
-						[ <?php echo $msgstr["operator"]?> ]
-						<span class=sb_rb>&#160;</span>
+			<a id="botoes" href=javascript:Enviar("OP") class="singleButton singleButtonSelected">
+	
+						<?php echo $msgstr["operator"]?>
+		
 					</a>
 			<p align=right><input type=checkbox name=see_all
 			<?php if (isset($arrHttp["see_all"])) echo " value=Y checked"?>><?php echo $msgstr["all_oper"]?>
