@@ -106,11 +106,11 @@ if (isset($arrHttp["encabezado"]) and $arrHttp["encabezado"]=="s"){
 if (isset($arrHttp["encabezado"])){
 			echo "<a href=\"../common/inicio.php?reinicio=s\" class=\"defaultButton cancelButton\">
 
-					<span><strong>". $msgstr["cancel"]."</strong></span>
+					<span><strong><h3>". $msgstr["cancel"]."</h3></strong></span>
 				</a>";
 }
 echo "	</div>
-		<div class=\"spacer\">&#160;</div>
+
 	</div>";
 ?>
 <div class="helper">
