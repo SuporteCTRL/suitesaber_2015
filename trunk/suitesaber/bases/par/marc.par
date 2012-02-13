@@ -15,5 +15,5 @@ loan.pft=%path_database%loanobjects/pfts/es/loan.pft
 trans.*=%path_database%trans/data/trans.*
 doc-principal.pft=%path_database%marc/pfts/pt/doc-principal.pft
 server.pft=%path_database%marc/pfts/pt/server.pft
-GIZMO.*=/var/www/suitesaber/saber-linux/bases/gizmo/pt/qlf850.*
-MARC.*=/var/www/suitesaber/saber-linux/bases/marc/data/marc.*
+GIZMO.*=/var/www/suitesaber/bases/gizmo/pt/qlf850.*
+MARC.*=/var/www/suitesaber/bases/marc/data/marc.*
