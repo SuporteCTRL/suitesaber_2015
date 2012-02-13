@@ -1,0 +1,79 @@
+'<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">	'
+'<style>
+.inst {
+	font-size: 10px;
+	text-align: left;
+	}
+.endereco {
+	font-size: 8px;
+   text-align: left;
+}	
+</style>'
+
+'<table width=290 border=1><tr><td>'
+'<p align=center>COMPROVANTE DE DEVOLUÇÃO </p>
+
+
+
+<p class="endereco">Av. Praia de Belas, 1595<br> 
+Porto Alegre CEP 90.110-001<br>
+Fone (51) 3231-2888</p>'
+'<hr>'
+
+if p(v20) then 'Cód. do Leitor: 'v20+|; |,'<br>', fi/
+
+if p(v10) then 'Tombo: 'v10+|; |,'<br>', fi/
+
+if p(v100) then 'Id: '(if p(v100) then |  |v100^i,'<br>Título devolvido: ',| |v100, if iocc<>nocc(v100) then '<br>' fi fi/), fi/
+'<br><br>'
+if p(v60) then 'Data de devolução: 'mid(v60,7,2),'/',mid(v60,5,2),'/',v60.4,' ',v65+|; |, else , '<b>NÃO DEVOLVIDO</b>' ,fi,'<br>'/
+
+'</td></tr></table><br>'
+'pegou - 'v30*6.2,'-',v30*4.2,'-',v30.4," "v35,  '<br>' 
+'devolver - 'v40*6.2,'-',v40*4.2,'-',v40.4," "v45'<br>'
+
+'n leitor -' v20 '<br>'
+
+'cn_obra - 'v95 '<br>'
+
+'base de dados - 'v98 '<br>'
+
+mid(v30,instr(v30*6.2,'key'),size(v30*6.2))/,
+'------------------<br>'
+
+if l(v30*6.2,'-',v30*4.2,'-',v30.4)<> 19-01-2012 then |Termo: |v40*6.2,'-',v40*4.2,'-',v40.4, fi, '<br>'
+
+if l(v30*6.2,'-',v30*4.2,'-',v30.4)<> 19-01-2012 then |Termo: |v40*6.2,'-',v40*4.2,'-',v40.4, fi, '<br>'
+
+v20/'In: 'ref->trans(l->trans(date(dateonly)),v100), '<br>'
+
+v20/'In: 'ref->trans(l->trans(date(dateonly)),v100[2]),'<br>'
+
+v20/'In: 'ref->trans(l->trans(v20),v100), '<br>'
+
+v20/'In: 'ref->trans(l->trans(v20[LAST]),v100), '<br>'
+
+(if iocc > 0 then ref->trans(l->trans(v20[LAST]),v100),break, fi),'<br>'
+
+'Há ',f(npost(v20),3,0),' chaves para ',v20,'. <br>'/, 
+
+
+
+(ref(l(v20),v20,mfn))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
