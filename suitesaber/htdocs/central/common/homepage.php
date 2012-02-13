@@ -188,8 +188,12 @@ switch ($arrHttp["modulo"]){	case "catalog":
 		die;
 	}
 ?>
+
 <div class="sectionInfo">
-<div class="language"><form name=cambiolang><?php echo $msgstr["lang"]?>:
+
+<div class="language">
+<iframe style="vertical-align:middle; width:450px;height:30px; "  frameborder="0" scrolling="no" src="/site/php/search.php"></iframe>
+<form name=cambiolang><?php echo $msgstr["lang"]?>:
 	<select name=lenguaje onchange=CambiarLenguaje() >
 		<option value=""></option>
 		 <?php
@@ -213,6 +217,7 @@ switch ($arrHttp["modulo"]){	case "catalog":
 ?>
 	</select> 
 	</form>
+
 			<?php include("modules.php")?>
 </div>
 </div>
@@ -221,6 +226,7 @@ switch ($arrHttp["modulo"]){	case "catalog":
 		<h3><?php echo $msgstr["inicio"]." - $module_name"?></h3>
 	</div>
 	<div class="actions">
+
 </div>
 <div class="helper" >
 	<a href=../documentacion/ayuda.php?help=<?php echo $_SESSION["lang"]."/$ayuda"?> target=_blank><?php echo $msgstr["help"]?></a>
