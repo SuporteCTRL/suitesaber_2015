@@ -16,7 +16,7 @@ $context_menu="Y";
 $logo ="/css/$theme/images/$imglogo";
 
 //Tamanho do logotipo em Largura
-$sizelogo="130";
+$sizelogo="200";
 
 //USED FOR ALL THE DATE FUNCTIONS. DD=DAYS, MM=MONTH, AA=YEAR. USE / AS SEPARATOR
 $config_date_format="DD/MM/YY";
