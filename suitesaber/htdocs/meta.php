@@ -4,7 +4,7 @@
 
 	<head>
 
-		<title>Suíte Saber |  <?php  echo utf8_decode($institution_name); ?></title>
+		<title>Suíte Saber |  <?php  echo $institution_name; ?></title>
 
 		<meta http-equiv="Expires" content="-1" />
 
