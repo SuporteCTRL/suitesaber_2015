@@ -633,9 +633,9 @@ function DeleteSuspentions(){
 		<?php include("submenu_prestamo.php");?>
 </div>
 </div>
-	<div class="breadcrumb">
+	<div class="breadcrumb"><h3>
 		<?php echo $msgstr["statment"]?>
-	</div>
+	</h3></div>
 	<div class="actions">
 
 	</div>
