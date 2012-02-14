@@ -95,12 +95,14 @@
                     <input type="button" class="defaultButton submit" value="Imprimir seleção" name="yselect" onclick="javascript:void(AnySelected())" />
                     <input type="submit" class="defaultButton submit" name="list.x" value="Enviar resultado" />
                     <input type="submit" class="defaultButton submit" name="new search.x" value="Nova pesquisa" />
-                    <input type="submit" class="defaultButton submit" name="config.x" value="Configurar" />
+                    <!--<input type="submit" class="defaultButton submit" name="config.x" value="Configurar" />-->
                     <input type="button" class="defaultButton submit" onclick=window.location="#bottom" value="Fim da página" />
-
-            [pft]fi[/pft]            
+               [pft]fi[/pft] 
+			<a href="http://suitesaber.org/" target="_blank" class="instituicao" title="Visite a página da Suíte Saber">Suíte Saber</a>
         </div>
-
+            [pft]if val(v1002) = 0 then[/pft]
+                <br />
+            [pft]fi[/pft] 
         <div class="rowResult">
             <div class="columnA">Base de dados:</div>
             <div class="columnB"><b>[pft]v5003^*[/pft]</b></div>
@@ -144,6 +146,7 @@
         </div>
 
                 [pft]if val(v1002) > 0 then[/pft]
+
         <div class="rowResult">
             <div class="columnA">Mostrando:</div>
             <div class="columnB">
@@ -157,7 +160,7 @@
                             proc('d5005',('a5005!',replace(v5005,s('^'v9022[1]),'^L'),'!')),
                         [/pft]
 
-                        no formato [pft]'[<b>'(if  v5009[1] = v5005^n then v5005^L fi)'</b>]'[/pft]
+                        <!-- no formato [pft]'[<b>'(if  v5009[1] = v5005^n then v5005^L fi)'</b>]'[/pft] -->
             </div>
         </div>
                 [pft]fi[/pft]

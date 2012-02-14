@@ -27,7 +27,7 @@ if p(v5030) or p(v5040) then
 
     '<div class="top">
         <h1><a href="',v9031^L,'"><img src="',v5002,v5030,'" border="0" alt="logo" /></a></h1>
-        <h2><a title="Pesquisa em bases de dados" href="',v9041^L,'"><span>Pesquisa em bases de dados</span></a></h2>
+        <h2><a title="Pesquisa em bases de dados" href="',v5000^d,'"><span>Pesquisa em bases de dados</span></a></h2>
             <div class="spacer"> </div>
             <a name="top"></a>
     </div>'

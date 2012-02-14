@@ -1,19 +1,14 @@
 
 '   <div class="footer">
         <div class="copyright">
-        <p>'
-        if v5001^s : 'LIST' and v6212 = 'print' then
-           
-           '<br /><br /><br /><br /><br />[<a href="javascript:history.go('
-           if v5001^s <> 'LIST_ONE' and v5001^s <> 'LIST_YOUR_SELECTION' then '-2' else '-1' fi')">Voltar para pesquisa</a>'
-           ']'
-        fi,
-'        </p>
+        '
+
+'        
         <p>Search engine: <a href="http://bvsmodelo.bvsalud.org/php/level.php?lang=pt&component=28&item=3"><b>iAH</b></a> v',v5000^v,' powered by <a href="http://bvsmodelo.bvsalud.org/php/level.php?lang=pt&component=28&item=2">WWWISIS</a>
         </p>
         <br />
-        <p>SaberABCD &ndash; <a href="http://www.saberabcd.com" target="_blank" title="Site do SabeABCD">www.saberabcd.com</a></p>
-		<p>Recomendamos o uso do <a href="http://br.mozdev.org/download/" target="_blank" title="Firefox" alt="Firefox"><img src="http://abcd.caxias.rs.gov.br/iah/image/common/firefox.png" border="0" alt="Firefox." /></a></p>
+        <p>Suíte Saber &ndash; <a href="http://www.saberabcd.com" target="_blank" title="Site do Suíte Saber">www.suitesaber.org</a></p>
+		<p>Recomendamos o uso do <a href="http://br.mozdev.org/download/" target="_blank" title="Firefox" alt="Firefox"><img src="http://suitesaber.org/iah/image/common/firefox.png" border="0" alt="Firefox." /></a></p>
         </div>
     </div>
 '
