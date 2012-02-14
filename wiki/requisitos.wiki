@@ -3,9 +3,11 @@
 
 = Pré-requisitos =
 
-O Suíte saber necessita de um servidor Apache 2.x e PHP5.x
+A Suíte Saber funciona exclusivamente no Sistema Operacional Linux. Nossos testes e desenvolvimento são feitos no [http://www.ubuntu-br.org/ Ubuntu].
 
-Extensões essenciais PHP:
+Também é necessária a instalação de servidor [http://www.apache.org/ Apache] 2.x e [http://www.php.net/ PHP5.x]
+
+Mais as extensões:
 
   *php5-curl
   *php5-gd
