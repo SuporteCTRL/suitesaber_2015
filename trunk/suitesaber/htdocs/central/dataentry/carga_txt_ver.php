@@ -48,7 +48,7 @@ include("../common/header.php");
 	<div class="actions">
 <?php echo "<a href=javascript:self.close()  class=\"defaultButton cancelButton\">";
 ?>
-
+		<img src="../images/defaultButton_iconBorder.gif" alt="" title="" />
 		<span><strong><?php echo $msgstr["cerrar"]?></strong></span></a>
 	</div>
 	<div class="spacer">&#160;</div>
@@ -59,7 +59,7 @@ echo "
 	<a href=../documentacion/ayuda.php?help=". $_SESSION["lang"]."/carga_txt_ver.html target=_blank>".$msgstr["help"]."</a>&nbsp &nbsp";
 	if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 		echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/carga_txt_ver.html target=_blank>".$msgstr["edhlp"]."</a>";
-	echo "&nbsp; &nbsp; Script: carga_txt_ver.php</font>";
+	echo "<font color=white>&nbsp; &nbsp; Script: carga_txt_ver.php</font>";
 	echo "
 
 	</div>

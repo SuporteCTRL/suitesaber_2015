@@ -126,24 +126,24 @@ function AbrirVentana(){
 
 </script>
 <div class="sectionInfo">
-	<div class="breadcrumb">
+</div>
+	<div class="breadcrumb"><h3>
 <?php echo $msgstr["cnv_".$arrHttp["accion"]]." ".$msgstr["cnv_".$arrHttp["tipo"]]?>
-	</div>
+	</h3></div>
 	<div class="actions">
-<?php echo "<a href=\"administrar.php?base=".$arrHttp["base"]."\"  class=\"defaultButton backButton\">";
+<?php echo "<br><a href=\"administrar.php?base=".$arrHttp["base"]."\"  class=\"defaultButton\">";
 ?>
 
 		<span><strong><?php echo $msgstr["regresar"]?></strong></span></a>
 	</div>
-	<div class="spacer">&#160;</div>
-</div>
+
 <?php
 echo "
 	<div class=\"helper\">
 	<a href=../documentacion/ayuda.php?help=". $_SESSION["lang"]."/txt2isis.html target=_blank>".$msgstr["help"]."</a>&nbsp &nbsp";
 	if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 		echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/txt2isis.html target=_blank>".$msgstr["edhlp"]."</a>";
-	echo "&nbsp; &nbsp; Script: carga_txt_cnv.php</font>";
+	echo "&nbsp; &nbsp; Script: carga_txt_cnv.php";
 	echo "
 
 	</div>

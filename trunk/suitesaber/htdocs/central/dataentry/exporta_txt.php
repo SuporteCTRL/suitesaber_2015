@@ -221,16 +221,16 @@ function Buscar(){
 </script>
 <body>
 <div class="sectionInfo">
-	<div class="breadcrumb">
+	<div class="breadcrumb"><h3>
 <?php echo $msgstr["cnv_export"]." ".$msgstr["cnv_".$arrHttp["tipo"]]?>
-	</div>
+	</h3></div>
 	<div class="actions">
-<?php echo "<a href=\"administrar.php?base=".$arrHttp["base"]."\"  class=\"defaultButton backButton\">";
+<?php echo "<a href=\"administrar.php?base=".$arrHttp["base"]."\"  class=\"defaultButton\">";
 ?>
-
+<br>
 		<span><strong><?php echo $msgstr["regresar"]?></strong></span></a>
 	</div>
-	<div class="spacer">&#160;</div>
+
 </div>
 <?php
 echo "
@@ -238,7 +238,7 @@ echo "
 	<a href=../documentacion/ayuda.php?help=". $_SESSION["lang"]."/exportiso.html target=_blank>".$msgstr["help"]."</a>&nbsp &nbsp";
 	if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 		echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/exportiso.html target=_blank>".$msgstr["edhlp"]."</a>
-		&nbsp; &nbsp; Script: exporta_txt.php</font>";
+		<font color=white>&nbsp; &nbsp; Script: exporta_txt.php</font>";
 	echo "
 
 	</div>
@@ -257,13 +257,13 @@ echo "
 <input type=hidden name=Accion>
 
 <center><br>
-<table cellpading=5 cellspacing=5 border=0 background=img/fondo0.jpg width=600>
+<table cellpading=5 cellspacing=5 border=0  width=auto>
 	<tr>
-		<td colspan=2 align=center height=1 bgcolor=#cccccc><?php echo $msgstr["r_recsel"]?></td>
+		<td colspan=2 align=center class="showSTitle"><?php echo $msgstr["r_recsel"]?></td>
 	<tr>
 		<td  align=center colspan=2><?php echo $msgstr["r_mfnr"]?><br></td>
 	<tr>
-		<td width=50% align=right><?php echo $msgstr["r_desde"]?>: <input type=text name=Mfn size=10 >&nbsp; &nbsp; </td>
+		<td width=50% align=right><?php echo $msgstr["r_desde"]?>: <input type="text" name="Mfn" size="10" >&nbsp; &nbsp; </td>
 		<td width=50%><?php echo $msgstr["r_hasta"]?>:<input type=text name=to size=10 >
 		<script>document.write(" (<?php echo $msgstr["maxmfn"]?>: "+top.maxmfn+")")</script> <a href=javascript:BorrarRango() class=boton><?php echo $msgstr["borrar"]?></a></td>
 	<tr>
@@ -273,11 +273,11 @@ echo "
 		<td align=center colspan=2><?php echo $msgstr["r_busqueda"]?><br></td>
 	<tr>
 
-		<td colspan=2 class=subtitlebody>
+		<td colspan=2>
 			<table>
 				<td><a href=javascript:Buscar()><img src=img/barSearch.png height=24 align=middle border=0 alt="<?php echo $msgstr["m_indice"]?>"></a></td>
-				<td><textarea rows=4 cols=90 name=Expresion ><?php if ($Expresion!="") echo $Expresion?></textarea>
-				<a href=javascript:BorrarExpresion()><?php echo $msgstr["borrar"]?></a></td>
+				<td  align=center><textarea rows=4 cols=90 name=Expresion ><?php if ($Expresion!="") echo $Expresion?></textarea>
+				<br><br><a id=botoes href=javascript:BorrarExpresion()><?php echo $msgstr["borrar"]?></a></td>
 			</table>
 		</td>
 </table>

@@ -105,24 +105,25 @@ if (isset($arrHttp["encabezado"])){	include("../common/institutional_info.php")
 }
 ?>
 <div class="sectionInfo">
-	<div class="breadcrumb">
+</div>
+	<div class="breadcrumb"><h3>
 <?php
 if ($arrHttp["Opcion"]=="listar")
 	echo $msgstr["mnt_rlb"];
 else
 	echo $msgstr["mnt_dr"];
 echo ": ".$arrHttp["base"]?>
-	</div>
+	</h3></div>
 
 	<div class="actions">
 <?php
 	$ayuda="";
 	if (isset($_SESSION["permiso"]["CENTRAL_ALL"]) or isset($_SESSION["permiso"]["CENTRAL_MODIFYDEF"])){
-		echo "<a href=\"administrar.php?base=".$arrHttp["base"]."\" class=\"defaultButton cancelButton\">
+		echo "<br><br><a href=\"administrar.php?base=".$arrHttp["base"]."\" class=\"defaultButton\">
 	
-	<span><strong>".$msgstr["cancel"]."</strong></span></a>
+	<span><strong>". $msgstr["cancel"]."</strong></span></a>
 		";
-	}else{		echo "<a href=\"../common/inicio.php?reinicio=s&base=".$arrHttp["base"]."$encabezado\" class=\"defaultButton cancelButton\">
+	}else{		echo "<br><br><a href=\"../common/inicio.php?reinicio=s&base=".$arrHttp["base"]."$encabezado\" class=\"defaultButton\">
 	
 	<span><strong>".$msgstr["cancel"]."</strong></span></a>
 		";	}
@@ -130,8 +131,7 @@ echo ": ".$arrHttp["base"]?>
 
 </div>
 
-<div class="spacer">&#160;</div>
-</div>
+
 <div class="helper">
 <a href=../documentacion/ayuda.php?help=<?php echo $_SESSION["lang"]?>/<?php echo $ayuda?> target=_blank><?php echo $msgstr["help"]?></a>&nbsp &nbsp;
 <?php
@@ -177,7 +177,7 @@ echo "&nbsp; &nbsp; Script: mfn_ask_range.php";
 		&nbsp; &nbsp; &nbsp; <a href=javascript:BorrarRango() class=boton><?php echo $msgstr["borrar"]?></a>
 	</td>
 	<tr>
-		<td colspan=2 align=center><input type=submit name=enviar value="<?php echo $msgstr["cg_execute"]?>" onClick=javascript:EnviarForma()></td>
+		<td colspan=2 align=center><input id=botoes type=submit name=enviar value="<?php echo $msgstr["cg_execute"]?>" onClick=javascript:EnviarForma()></td>
 </table>
 </center>
 </div>

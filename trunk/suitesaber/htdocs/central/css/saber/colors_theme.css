@@ -63,8 +63,9 @@ A.defaultButton:hover SPAN {
 	}
 
 input[type=text],input[type=password], textarea {
-	background-color: #ffffff; 
+	background-color: #f9f9f9; 
 	color: #000000;
+	border-color: #cccccc
 
 }
 
