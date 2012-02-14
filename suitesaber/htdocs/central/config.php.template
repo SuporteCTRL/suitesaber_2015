@@ -1,33 +1,49 @@
-<?php
+<?
+//Caminho fÃ­sico no servidor
+$localserver = "/var/www/suitesaber";
+
+//Nome do arquivo CSS principal do tema
+$theme ="saber";
+
+//Nome do Arquivo de Logotipo
+$imglogo ="logoabcd.png";
+
 // Open the Central module in a new window for avoiding the use of the browse buttons
-$open_new_window="Y";
+$open_new_window="N";
 $context_menu="Y";
 
-//USED FOR ALL THE DATE FUNCTIONS. DD=DAYS, MM=MONTH, YY=YEAR. USE / AS SEPARATOR
+//Caminho do arquivo logotipo
+$logo ="/css/$theme/images/$imglogo";
+
+//Tamanho do logotipo em Largura
+$sizelogo="200";
+
+//USED FOR ALL THE DATE FUNCTIONS. DD=DAYS, MM=MONTH, AA=YEAR. USE / AS SEPARATOR
 $config_date_format="DD/MM/YY";
 
-//Folder with the administration module
+//Folder with the administration modulo
 $app_path="central";
 
 //Path to the databases
-$db_path="/ABCD/www/bases/";
+$db_path="$localserver/bases/";
 
 //Path to the folder where the uploaded images are to be stored (the database name will be added to this path)
-$img_path="/abcd/www/htdocs/bases/";
+$img_path="$localserver/htdocs/bases/";
 
 //Path to the wwwisis executable (include the name of the program)
-$Wxis="/ABCD/www/cgi-bin/wxis.exe";
+//$Wxis="$localserver/cgi-bin/wxis.exe";
+$Wxis="$localserver/cgi-bin/wxis.exe";
 
 //Path to the wxis scripts
-$xWxis="/ABCD/www/htdocs/$app_path/dataentry/wxis/";
+$xWxis="$localserver/htdocs/$app_path/dataentry/wxis/";
 
 //default language
-$lang="en";
+$lang="pt";
 
 //Default langue for the databases definition
-$lang_db="en";
+$lang_db="pt";
 
-// use este lenguaje para seguir desplegando los registros con un código de página específico aunque cambie el lenguaje de diálogo
+// use este lenguaje para seguir desplegando los registros con un cÃ³digo de pÃ¡gina especÃ­fico aunque cambie el lenguaje de diÃ¡logo
 //$display_lang="";
 
 //Url for the execution of WXis, when using GGI in place of exec
@@ -36,9 +52,9 @@ $wxisUrl="";
 //$wxisUrl="http://localhost:9090/cgi-bin/wxis.exe";
 
 //Name of the institution
-$institution_name="BIREME - Centro Latino Americano e do Caribe de Informação em Ciências da Saúde";
+$institution_name="Suí­te Saber";
 
-//Ruta hacia el archivo con la configuración del FCKeditor
+//Ruta hacia el archivo con la configuraciÃ³n del FCKeditor
 $FCKConfigurationsPath="/".$app_path."/dataentry/fckconfig.js";
 
 //Ruta hacia el FCKEditor
@@ -48,7 +64,7 @@ $FCKEditorPath="/site/bvs-mod/FCKeditor/";
 $adm_login="";
 $adm_password="";
 
-//Ruta hacia el archivo con la configuración del FCKeditor
+//Ruta hacia el archivo con la configuraciÃ³n del FCKeditor
 $FCKConfigurationsPath="/$app_path/dataentry/fckconfig.js";
 
 //USE THIS PARAMETER TO SHOW THE ICON THAT ALLOWS THE BASES FOLDER EXPLORATION   (0=don't show, 1=show)
