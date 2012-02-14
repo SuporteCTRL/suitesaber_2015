@@ -1,0 +1,166 @@
+#summary One-sentence summary of this page.
+#labels Phase-Implementation
+
+= Instalação da Suíte Saber =
+
+O exemplo de instalação que daremos é igual ao executado pela [http://control.com.br Control] a partir do [http://www.ubuntu-br.org/ Ubuntu].
+
+==Apache==
+No terminal do Ubuntu instale o Apache com o seguinte comando:
+{{{
+$sudo apt-get install apache2
+}}}
+
+
+Confirme todas as solicitações e em seguida instale o PHP5 com o comando:
+
+{{{
+$sudo apt-get install php5
+}}}
+
+Em seguida instale as extenções:
+
+{{{
+$sudo apt-get install php5-curl php5-gd php5-gmp php5-mcrypt php5-tidy php5-xsl ya
+}}}
+
+Pronto, agora seu servidor já está pronto para receber a Suíte Saber.
+
+=Instalação da Suíte Saber=
+
+Com o terminal do seu Ubuntu aberto vá em /var/www
+
+{{{
+$ cd /var/www
+}}}
+
+Em seguida digite:
+
+{{{
+$svn checkout http://suitesaber.googlecode.com/svn/trunk/suitesaber
+}}}
+
+Desta forma você já obterá a suíte em sua estrutura original.
+
+No caso de preferir o download do pacote de instalação. Após o download, descompacte o diretório /suitesaber em /var/www/
+
+{{{
+$sudo tar -xzvf suitesaber.tar.gz
+}}}
+
+Os diretórios devem ficar dispostos como na estrutura abaixo:
+
+* /
+  * var
+   * www
+     * suitesaber
+      * htdocs
+      * bases
+      * cgi-bin
+      * temp
+
+Certifique-se que os diretórios htdocs e cgi-bin estão com permissão 755 e os diretórios bases e temp 777, aplicando recursivamente os seguintes comandos:
+
+{{{
+$sudo chmod 777 -R /var/www/suitesaber/bases /var/www/suitesaber/temp
+}}}
+
+{{{
+$sudo chmod 755 -R /var/www/suitesaber/htdocs /var/www/suitesaber/cgi-bin
+}}}
+
+==Configuração da Suíte Saber==
+
+Caso você faça uma instalação com uma estrutura diferente a deste tutorial você precisará editar os arquivos:
+
+ * /htdocs/central/config.php
+ * /htdocs/iah/scripts/iah.def.php
+ * /htdocs/site/bvs-site-config.php
+
+==Criando o Virtualhost==
+
+No seu terminal digite:
+
+{{{
+$sudo vi /etc/apache2/sites-available/suitesaber
+}}}
+
+cole o conteúdo abaixo:
+
+{{{
+
+<VirtualHost *:9090>
+        ServerAdmin webmaster@suitesaber.org
+        ServerName localhost
+        DocumentRoot /var/www/suitesaber/htdocs
+        <Directory />
+                Options FollowSymLinks
+                AllowOverride None
+        </Directory>
+        <Directory /var/www/suitesaber/htdocs/>
+                Options -Indexes FollowSymLinks -MultiViews
+                AllowOverride None
+                Order allow,deny
+                allow from all
+        </Directory>
+
+        ScriptAlias /cgi-bin/ /var/www/suitesaber/cgi-bin/
+        <Directory "/var/www/suitesaber/cgi-bin">
+                AllowOverride None
+                Options +ExecCGI -MultiViews +SymLinksIfOwnerMatch
+                Order allow,deny
+                Allow from all
+        </Directory>
+
+
+        ErrorLog /var/log/apache2/error.log
+
+        # Possible values include: debug, info, notice, warn, error, crit,
+        # alert, emerg.
+        LogLevel warn
+
+        CustomLog /var/log/apache2/access.log combined
+
+    Alias /doc/ "/usr/share/doc/"
+    <Directory "/usr/share/doc/">
+        Options Indexes MultiViews FollowSymLinks
+        AllowOverride None
+        Order deny,allow
+        Deny from all
+        Allow from 127.0.0.0/255.0.0.0 ::1/128
+    </Directory>
+
+</VirtualHost>
+
+}}}
+
+Salve com o comando :w e saia :q em seguida edite o arquivo /etc/apache2/ports.conf
+
+{{{
+$sudo vi /etc/apache2/ports.conf
+}}}
+
+Acrescente:
+
+{{{
+Listen 9090
+}}}
+
+Salve novamente com :w e saia com :q. Instale o virtualhost com o comando:
+
+{{{
+$sudo a2ensite suitesaber
+}}}
+
+Reinicie o Apache:
+
+{{{
+$sudo /etc/init.d/apache2 restart
+}}}
+
+Pronto agora é só abrir o Mozilla Firefox ou o Google Chrome e utilizar o programa.
+
+Lembre-se, você colocou a porta 9090, logo, para acessar sua Suíte você precisará digitar [http://localhost:9090] no seu navegador.
+
+ O Login é: saber
+ A Senha é: adm
