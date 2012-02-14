@@ -6,10 +6,10 @@ O Suíte saber necessita de um servidor Apache 2.x e PHP5.x
 
 Extensões essenciais PHP:
 
-php5-curl
-php5-gd
-php5-gmp
-php5-mcrypt
-php5-tidy
-php5-xsl
-yaz
+  *php5-curl
+  *php5-gd
+  *php5-gmp
+  *php5-mcrypt
+  *php5-tidy
+  *php5-xsl
+  *yaz
