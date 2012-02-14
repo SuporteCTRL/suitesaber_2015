@@ -4,8 +4,8 @@
     * [download Download]
     * [install Instalação]
   * Arquivos
-    * [Release]
-    * [Download de pacotes]
+    * [release Release]
+    * [pacotes Download de pacotes]
   * Documentação Técnica
-    * [Estrutura do layout em HTML]
-    * [Campos das bases]
+    * [estutura Estrutura do layout em HTML]
+    * [campos Campos das bases]
