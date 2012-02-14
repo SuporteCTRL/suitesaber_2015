@@ -5,20 +5,30 @@ body {
 	font-size:13px;
 	color:#000000; }
 
+/* Erros de preenchimento */
+.erro {
+	color:#EE0000;
+	font-weight:bold;}
+.erro:before {
+	content:"!";
+	padding:1px 6px;
+	background-color:#EE0000;
+	color:#FFFFFF;
+	font-weight:bold;
+	font-size:15px; }
+
 /* Div com tudo */
 #wrap {
-	width:80%;
+	width:100%;
 	margin:0 auto;}
 
 /* Div antes table */
 #supDir { 
 	text-align:right; }
 
-/*table.mrc { 
-	width:80%; }*/
-
-th.mrc {
-	width:140px;}
+/* Tabela */
+table.mrc { 
+	width:100%; }
 
 table.mrc,
 th.mrc,
@@ -29,11 +39,14 @@ td.mrc {
 	font-size:13px;}
 
 th.mrc {
+	width:15%;
 	color:#0E5188;
 	vertical-align:top;
 	text-align:right; 
 	background-color:#D9EDFF;
 	padding-right:10px; }
+td.mrc { 
+	width:80%; }
 
 /* Limpa a borda do programa */
 tr:hover { 
@@ -74,7 +87,7 @@ a.pftLink:active {
 
 /****** Analíticas *****/
 
-/* Ajeita alinhamento da lista de suporte e entrevistas */
+/* Ajeita alinhamento da lista de registros filho */
 ul { padding: 0px; margin: 0px; }
 th.listaAn,
 td.listaAn { width:auto; padding-right:15px;}
@@ -89,6 +102,71 @@ dl.ctrl dd {
 	margin:0px; 
 	padding:0 10px 0 10px; }
 
+/****** Autoridades *****/
+
+p.cabecalho {
+	font-size:16px;
+	font-weight:bold;
+	font-variant:small-caps;
+	color:#0E5188;
+	border-bottom:1px solid #0E5188; }
+p.infoAdicional {
+	margin-left:10%;
+	padding-left:5px;
+	border-left:1px solid #0E5188;
+	font-size:13px;
+	color:#000000; }
+
+ul.atr li {
+	list-style-type:none;
+	padding-left:10px;
+    vertical-align:top;
+	font-size:13px; }
+
+ul.atr li a.pftLink {
+	display:inline; }
+
+ul.atr li.positivo:before {
+	content:url("positivo.png");
+	vertical-align:middle; }
+/*	content:"\2714 \00A0 \00A0 ";  ✓ \2713    ✔ \2714 
+	font-size:17px;
+	color:#00A300; */
+
+ul.atr li.negativo:before {
+	content:url("negativo.png");
+	vertical-align:middle; }
+/*	content:"\2716 \00A0  \00A0 ";  × \00D7    ✖  \2716  
+	font-size:16px;
+	color:#B00000; */
+
+ul.atr li.verTambem:before {
+	content:url("vertambem.png");
+	vertical-align:middle; }
+/*	content:"\2192 \00A0 \00A0 ";  ⇥ \21E5    ⇢  \21E2    → \2192 
+	font-size:16px;
+	color:#0000A3; */
+
+ul.atr li.nota:before {
+	content:url("notas.png");
+	vertical-align:middle; }
+/*	content:"\2263 \00A0 \00A0 ";  ✚ \271A    ≡ \2261    ≣ \2263 
+	font-size:16px;
+	color:#0000A3; */
+
+ul.atr li.positivo:hover {
+	background-color:#E6FAE6; }
+ul.atr li.negativo:hover {
+	background-color:#FAE6E6; }
+ul.atr li.verTambem:hover,
+ul.atr li.nota:hover {
+	background-color:#E6E6FA; }
+
+
+/***** Leitores *****/
+
+th.rotulo {
+	text-align:center;}
 
 /***** Dublin Core *****/
 
