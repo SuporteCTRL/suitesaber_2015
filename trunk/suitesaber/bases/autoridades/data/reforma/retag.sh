@@ -1,1 +1,0 @@
-../../../../cgi-local/retag autoridades conv2.tab
