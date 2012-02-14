@@ -1,0 +1,1 @@
+../../../cgi-bin/mx trans fst=@trans.fst uctab=../../isisuc actab=../../isisac fullinv=trans -all now tell=1
