@@ -112,7 +112,7 @@ function Actualizar(){
 	<div class="actions">
 <?php echo "<a href=\"administrar.php?base=".$arrHttp["base"]."\"  class=\"defaultButton backButton\">";
 ?>
-
+		<img src="../images/defaultButton_iconBorder.gif" alt="" title="" />
 		<span><strong><?php echo $msgstr["regresar"]?></strong></span></a>
 	</div>
 	<div class="spacer">&#160;</div>
@@ -123,7 +123,7 @@ echo "
 	<a href=../documentacion/ayuda.php?help=". $_SESSION["lang"]."/txt2isis.html target=_blank>".$msgstr["help"]."</a>&nbsp &nbsp";
 	if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 		echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/txt2isis.html target=_blank>".$msgstr["edhlp"]."</a>";
-	echo "&nbsp; &nbsp; Script: carga_txt.php</font>";
+	echo "<font color=white>&nbsp; &nbsp; Script: carga_txt.php</font>";
 	echo "
 
 	</div>

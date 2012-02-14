@@ -60,7 +60,8 @@ include("../common/get_post.php");
 include("../common/header.php");
 echo "<body>
 <div class=\"sectionInfo\">
-	<div class=\"breadcrumb\">
+</div>
+	<div class=\"breadcrumb\"><h3>
 	";
 switch ($arrHttp["Opcion"]){	case "fullinv":
 		echo $msgstr["mnt_gli"];
@@ -77,7 +78,7 @@ switch ($arrHttp["Opcion"]){	case "fullinv":
 		echo $msgstr["mnt_rlb"];
 		break;}
 echo ": ".$arrHttp["base"];
-echo "</div>
+echo "</h3></div>
 	<div class=\"actions\">
 ";
 if ($arrHttp["Opcion"]!="fullinv"){	echo "<a href=\"administrar.php?base=".$arrHttp["base"]."\"  class=\"defaultButton backButton\">";    echo "
@@ -86,8 +87,7 @@ if ($arrHttp["Opcion"]!="fullinv"){	echo "<a href=\"administrar.php?base=".$arr
 }
 echo "
 	</div>
-	<div class=\"spacer\">&#160;</div>
-	</div>
+
 	<div class=\"helper\">
 	<a href=../documentacion/ayuda.php?help=". $_SESSION["lang"]."/mantenimiento.html target=_blank>".$msgstr["help"]."</a>&nbsp &nbsp";
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))

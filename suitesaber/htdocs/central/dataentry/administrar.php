@@ -51,8 +51,8 @@ function EnviarForma(Opcion,Mensaje){
 	//	if (confirm(Mensaje)==true){
 			switch (Opcion){
 				case "fullinv":
-					msgwin=window.open("","fullinv","menu=no,status,resizable,scrollbars")
-					msgwin.document.writeln("<html><title><?php echo $msgstr["mnt_gli"]?></title><body><font color=red face=verdana><?php echo $msgstr["mnt_lig"].". ".$msgstr["mnt_espere"]?> ...")
+					msgwin=window.open("","fullinv","menu=no,status,resizable=0,width=300,height=300,left=200,top=200,scrollbars=no")
+					msgwin.document.writeln("<html><title><?php echo $msgstr["mnt_gli"]?></title><body><img src=../css/saber/images/loading.gif><br><font color=red face=verdana><?php echo $msgstr["mnt_lig"].". ".$msgstr["mnt_espere"]?> ...")
 					msgwin.document.writeln("</body></html>")
 					msgwin.focus()
 					document.admin.target="fullinv"
@@ -99,9 +99,9 @@ if (isset($arrHttp["encabezado"]) and $arrHttp["encabezado"]=="s"){
 }
  echo "
 	<div class=\"sectionInfo\">
-		<div class=\"breadcrumb\">".
+		<div class=\"breadcrumb\"><h3>".
 			 $msgstr["mantenimiento"]."
-		</div>
+		</h3></div>
 		<div class=\"actions\">\n";
 if (isset($arrHttp["encabezado"])){
 			echo "<a href=\"../common/inicio.php?reinicio=s\" class=\"defaultButton cancelButton\">
@@ -114,101 +114,87 @@ echo "	</div>
 	</div>";
 ?>
 <div class="helper">
-	<a href=../documentacion/ayuda.php?help=<?php echo $_SESSION["lang"]?>/administrar.html target=_blank><?php echo $msgstr["help"]?></a>&nbsp &nbsp;
+	<a href=../documentacion/ayuda.php?help=<?php echo $_SESSION["lang"]?>/administrar.html target=_blank><?php echo $msgstr["help"]?></a> &nbsp;
 <?php
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"])) echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/administrar.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "&nbsp; &nbsp; Script: administrar.php" ?></font>
+echo "&nbsp; &nbsp; Script: administrar.php" ?>
 	</div>
 
 	<div class="middle homepage">
 <?php if (isset($_SESSION["permiso"]["CENTRAL_IMPEXP"]) or isset($_SESSION["permiso"]["CENTRAL_DBUTILS"]) or isset($_SESSION["permiso"]["CENTRAL_ALL"])){?>
-		<div class="mainBox" onmouseover="this.className = 'mainBox mainBoxHighlighted';" onmouseout="this.className = 'mainBox';">
-			<div class="boxTop">
-				<div class="btLeft">&#160;</div>
-				<div class="btRight">&#160;</div>
-			</div>
+		<div class="mainBox">
+
 			<div class="boxContent titleSection">
 				<div class="sectionTitle">
 					<h4><strong><?php echo $msgstr["cnv_import"]?></strong></h4>
 				</div>
 				<div class="sectionButtons">
-					<a href=javascript:Activar("impiso") class=""">
+					<a id=botoes href=javascript:Activar("impiso") class=""">
 						<span><strong><?php echo $msgstr["cnv_iso"]?></strong></span></a>
 						<a href=../documentacion/ayuda.php?help=<?php echo $lang?>/importiso.html target=_blank><img src=img/barHelp.png border=0 align=absmiddle></a>&nbsp &nbsp;
-       	<?PHP if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"])) echo "<a href=../documentacion/edit.php?archivo=". $_SESSION["lang"]."/importiso.html target=_blank>edit help file</a>"?>
-                           <br>
-        					<a href=javascript:Activar("imptxt") class="">
+       	<?PHP if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"])) echo "<a href=../documentacion/edit.php?archivo=". $_SESSION["lang"]."/importiso.html target=_blank>".$msgstr["edhlp"]."</a>"?>
+     
+        					<a id=botoes  href=javascript:Activar("imptxt") class="">
 
 						<span><strong><?php echo $msgstr["cnv_txt"]?></strong></span>
 					</a>
                        <a href=../documentacion/ayuda.php?help=<?php echo $lang?>/txt2isis.html target=_blank><img src=img/barHelp.png border=0 align=absmiddle></a>&nbsp &nbsp;
-       	<?PHP if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"])) echo "<a href=../documentacion/edit.php?archivo=". $_SESSION["lang"]."/txt2isis.html target=_blank>edit help file</a>"?>
+       	<?PHP if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"])) echo "<a href=../documentacion/edit.php?archivo=". $_SESSION["lang"]."/txt2isis.html target=_blank>".$msgstr["edhlp"]."</a>"?>
 		<br>
 				</div>
-				<div class="spacer">&#160;</div>
+	
 			</div>
-			<div class="boxBottom">
-				<div class="bbLeft">&#160;</div>
-				<div class="bbRight">&#160;</div>
-			</div>
+
 		</div>
 <?php }
 if (isset($_SESSION["permiso"]["CENTRAL_GLOBC"]) or isset($_SESSION["permiso"]["CENTRAL_DBUTILS"]) or isset($_SESSION["permiso"]["CENTRAL_ALL"])){
 ?>
-		<div class="mainBox" onmouseover="this.className = 'mainBox mainBoxHighlighted';" onmouseout="this.className = 'mainBox';">
+		<div class="mainBox">
 			<div class="boxTop">
-				<div class="btLeft">&#160;</div>
-				<div class="btRight">&#160;</div>
+
 			</div>
 			<div class="boxContent toolSection">
 				<div class="sectionTitle">
 					<h4>&#160;<strong><?php echo $msgstr["cnv_export"]?></strong></h4>
 				</div>
 				<div class="sectionButtons">
-					<a href=javascript:Activar("expiso")><?php echo $msgstr["cnv_iso"]?></a>
+					<a id=botoes  href=javascript:Activar("expiso")><?php echo $msgstr["cnv_iso"]?></a>
 					<a href=../documentacion/ayuda.php?help=<?php echo $lang?>/exportiso.html target=_blank><img src=img/barHelp.png border=0 align=absmiddle></a>&nbsp &nbsp;
-       				<?php if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"])) echo "<a href=../documentacion/edit.php?archivo=". $_SESSION["lang"]."/exportiso.html target=_blank>edit help file</a>"?>
-					<br><a href=javascript:Activar("exptxt")><?php echo $msgstr["cnv_txt"]?></a>
+       				<?php if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"])) echo "<a href=../documentacion/edit.php?archivo=". $_SESSION["lang"]."/exportiso.html target=_blank>".$msgstr["edhlp"]."</a>"?>
+					<a id=botoes  href=javascript:Activar("exptxt")><?php echo $msgstr["cnv_txt"]?></a>
 					<a href=../documentacion/ayuda.php?help=<?php echo $lang?>/exporttxt.html target=_blank><img src=img/barHelp.png border=0 align=absmiddle></a>&nbsp &nbsp;
-       				<?php if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"])) echo "<a href=../documentacion/edit.php?archivo=". $_SESSION["lang"]."/exporttxt.html target=_blank>edit help file</a>"?>
+       				<?php if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"])) echo "<a href=../documentacion/edit.php?archivo=". $_SESSION["lang"]."/exporttxt.html target=_blank>".$msgstr["edhlp"]."</a>"?>
 				</div>
-				<div class="spacer">&#160;</div>
+	
 			</div>
 			<div class="boxBottom">
-				<div class="bbLeft">&#160;</div>
-				<div class="bbRight">&#160;</div>
+
 			</div>
 		</div>
-		<div class="mainBox" onmouseover="this.className = 'mainBox mainBoxHighlighted';" onmouseout="this.className = 'mainBox';">
-			<div class="boxTop">
-				<div class="btLeft">&#160;</div>
-				<div class="btRight">&#160;</div>
-			</div>
+		<div class="mainBox">
+	
 			<div class="boxContent toolSection">
 				<div class="sectionTitle">
 					<h4>&#160;<strong><?php echo $msgstr["mantenimiento"]?></strong></h4>
 				</div>
 				<div class="sectionButtons">
-					<a href='javascript:EnviarForma("dbcp","<?php echo $msgstr["db_cp"]?>")'><?php echo $msgstr["db_cp"]?></a><br>
-					<a href='javascript:EnviarForma("unlockbd","<?php echo $msgstr["mnt_desb"]?>")'><?php echo $msgstr["mnt_desb"]?></a><br>
-					<a href='javascript:EnviarForma("listar","<?php echo $msgstr["mnt_rlb"]?>")'><?php echo $msgstr["mnt_rlb"]?></a><br>
-					<a href='javascript:EnviarForma("unlock","<?php echo $msgstr["mnt_dr"]?>")'><?php echo $msgstr["mnt_dr"]?></a><br>
-					<a href='javascript:EnviarForma("fullinv","<?php echo $msgstr["mnt_gli"]?>")'><?php echo $msgstr["mnt_gli"]?></a><br>
+					<a id=botoes  href='javascript:EnviarForma("dbcp","<?php echo $msgstr["db_cp"]?>")'><?php echo $msgstr["db_cp"]?></a>
+					<a  id=botoes href='javascript:EnviarForma("unlockbd","<?php echo $msgstr["mnt_desb"]?>")'><?php echo $msgstr["mnt_desb"]?></a>
+					<a  id=botoes href='javascript:EnviarForma("listar","<?php echo $msgstr["mnt_rlb"]?>")'><?php echo $msgstr["mnt_rlb"]?></a>
+					<a  id=botoes href='javascript:EnviarForma("unlock","<?php echo $msgstr["mnt_dr"]?>")'><?php echo $msgstr["mnt_dr"]?></a>
+					<a  id=botoes href='javascript:EnviarForma("fullinv","<?php echo $msgstr["mnt_gli"]?>")'><?php echo $msgstr["mnt_gli"]?></a>
 <?php
 
 if (isset($_SESSION["permiso"]["CENTRAL_GLOBALC"]) or isset($_SESSION["permiso"]["CENTRAL_DBUTILS"]) or isset($_SESSION["permiso"]["CENTRAL_ALL"])){					echo "
-					<a href='javascript:EnviarForma(\"globalc\",\"Global changes\")'>". $msgstr["mnt_globalc"]."</a><br>";
+					<a id=botoes  href='javascript:EnviarForma(\"globalc\",\"Global changes\")'>". $msgstr["mnt_globalc"]."</a><br>";
 }
 ?>
            			<a href=../documentacion/ayuda.php?help=<?php echo $lang?>/mantenimiento.html target=_blank><img src=img/barHelp.png border=0 align=absmiddle></a>&nbsp &nbsp;
-       				<?php if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"])) echo "<a href=../documentacion/edit.php?archivo=". $_SESSION["lang"]."/mantenimiento.html target=_blank>edit help file</a>"?>
+       				<?php if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"])) echo "<a href=../documentacion/edit.php?archivo=". $_SESSION["lang"]."/mantenimiento.html target=_blank>".$msgstr["edhlp"]."</a>"?>
 				</div>
-				<div class="spacer">&#160;</div>
+	
 			</div>
-			<div class="boxBottom">
-				<div class="bbLeft">&#160;</div>
-				<div class="bbRight">&#160;</div>
-			</div>
+
 		</div>
 <?php }?>
 	</div>
@@ -220,6 +206,8 @@ if (isset($_SESSION["permiso"]["CENTRAL_GLOBALC"]) or isset($_SESSION["permiso"]
 
 </form>
 </div>
+<div class="footer">
 <?php include("../common/footer.php"); ?>
+</div>
 </body>
 </html>

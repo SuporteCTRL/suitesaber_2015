@@ -308,17 +308,17 @@ function Buscar(){
 </script>
 <body>
 <div class="sectionInfo">
-	<div class="breadcrumb">
+	<div class="breadcrumb"><h3>
+	
 <?php echo $msgstr["cg_titulo"].": ".$arrHttp["base"]?>
-	</div>
+	</h3></div></div>
 	<div class="actions">
-<?php echo "<a href=\"administrar.php?base=".$arrHttp["base"]."\"  class=\"defaultButton backButton\">";
+<?php echo "<br><br><a href=\"administrar.php?base=".$arrHttp["base"]."\"  class=\"defaultButton backButton\">";
 ?>
 
 		<span><strong><?php echo $msgstr["regresar"]?></strong></span></a>
 	</div>
-	<div class="spacer">&#160;</div>
-</div>
+
 <?php
 echo "
 	<div class=\"helper\">

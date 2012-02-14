@@ -1,7 +1,7 @@
 /* #general styles */
 body, input, select, textarea {
 	font-family: "lucida grande",tahoma,verdana,arial,sans-serif;
-	font-size: 10pt;
+
 }
 
 A IMG {
@@ -460,10 +460,9 @@ td {
 	border-bottom-width: thin;*/
 }
 
-input[type=text], textarea {
-	border-width: 2px;
-	border-style: groove;
-	-moz-border-radius: 1px;
+input[type=text],input[type=password], textarea {
+	border-width: 1px;
+	border-style: solid;
 }
 
 input[type=text]:focus, textarea:focus {
