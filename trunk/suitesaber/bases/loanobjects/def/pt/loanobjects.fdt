@@ -1,9 +1,10 @@
 F|1|Número de controle|0|0|||X||10|||||||0||
 F|10|Base de dados|0|0|||X|||||||||0||
-T|959|Cópias|0|1|abcefg||X|||||||||0||
-S||Número de inventário|0|0|||S|||||||||0||
-S||Biblioteca|0|0|||X|||||||||0||
-S||Biblioteca Setorial|0|0|||X|||||||||0||
-S||Tipo of Objeto|0|0|||R|||P|%path_database%acquisitions.dat|||||0||
-S||Volume|0|0|||X|||||||||0||
-S||Tomo|0|0|||X|||||||||0||
+F|200|Status|0|0|ab||R||2|P|status_copy.tab|||||0||
+T|959|Cópias|0|1|ilbovt||X|||||||||0||
+S||Número de inventário|0|0|i||S|||||||||0||
+S||Biblioteca|0|0|l||X|||||||||0||
+S||Biblioteca Setorial|0|0|b||X|||||||||0||
+S||Tipo de Objeto|0|0|o||R|||P|%path_database%acquisitions.dat|||||0||
+S||Volume|0|0|v||X|||||||||0||
+S||Tomo|0|0|t||X|||||||||0||
