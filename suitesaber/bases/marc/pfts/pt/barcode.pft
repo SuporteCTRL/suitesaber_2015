@@ -1,22 +1,23 @@
 '<head>
-
-<link rel="stylesheet" type="text/css" href="/bases/barcode/estilo.css" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link rel="stylesheet" type="text/css" href="/bases/barcode/estilo.css" media="all" />
 </head><body>'
 
-if p(v949^a) then ('
+'<div class="tudo">'
+if p(v949^a) then (
 
-<div class="barbox">'
+'<dl class="barcodebox">
+    <dt>Biblioteca</dt>
+        <dd>'v245[1]^a*0.24'</dd>
+        <dd class="barcode">*'v949^a'*</dd>
+        <dd class="barcodenumber">'v949^a'</dd>
+</dl>'
 
-'Nome da Biblioteca<br />'
-'<span class="barcode">'v949^a'</span><br />'
-v949^a
+/) 
 
-'</div>
-
-'/) 
-
-else 'Verifique o preenchimento do campo de registro'
+else 'Verifique o preenchimento do campo de registro. Falta o campo 949^a.'
 
 fi,
-'<br /><br /></body>'
+'</div></body>'
+
 
