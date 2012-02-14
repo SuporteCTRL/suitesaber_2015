@@ -26,7 +26,7 @@ $sudo apt-get install php5-curl php5-gd php5-gmp php5-mcrypt php5-tidy php5-xsl 
 
 Pronto, agora seu servidor já está pronto para receber a Suíte Saber.
 
-=Instalação da Suíte Saber=
+=Download=
 
 Com o terminal do seu Ubuntu aberto vá em /var/www
 
