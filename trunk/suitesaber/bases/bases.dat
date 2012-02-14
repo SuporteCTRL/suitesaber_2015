@@ -1,4 +1,4 @@
-marc|Formato MARC|Y
+marc|Bibliográfica|Y
 autoridades|Autoridades
 a|-----
 copies|Cópias
@@ -8,5 +8,5 @@ suggestions|Sugestões
 purchaseorder|Purchase Orders
 trans|Transações
 suspml|Suspensão e Multas
-users|Usuários de empréstimo
+users|Leitores
 acces|Usuários do sistema
