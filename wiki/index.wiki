@@ -1,11 +1,11 @@
   * Início
-    * [Introdução|Inicio]
-    * [Pré-requisitos]
-    * [Download]
-    * [Instalação]
+    * [Inicio Introdução]
+    * [requisitos Pré-requisitos]
+    * [download Download]
+    * [install Instalação]
   * Arquivos
     * [Release]
-    * [Downloads]
+    * [Download de pacotes]
   * Documentação Técnica
     * [Estrutura do layout em HTML]
     * [Campos das bases]
