@@ -5,7 +5,8 @@
 	<display>
 	<html>
 	<head>
-		<title>Resultado da Pesquisa</title>
+	<link rel="stylesheet" type="text/css" href="/bases/marc/css/estilo.css" />
+		<title></title>
 
 	</head>
 	<body>
@@ -59,7 +60,7 @@
 
 
 	<do task="search"> 
-		<parm name="db">ACERVO</parm>
+		<parm name="db">MARC</parm>
 		<parm name="gizmo">GIZMO</parm>
 		<parm name="expression">
 		<pft>v5010</pft>
@@ -74,16 +75,14 @@
 		<loop>
 			<list action="load" type="list">
 				<pft>
-					mhu,'^k',mfn, '^m'mfn,
+					''mhu,'^k',mfn, '^m'mfn,
 				</pft>
 			</list>  		
 		</loop>
 	</do>
 
 
-<!-- AGPOA - INICIO DA VISUALIZACAO DOS RESULTADOS-->
-<!--<display><pft>'from: 'v2004'<br>count: 'v2003'<br>'</pft></display-->
-<!--display><pft>'<h4>expressão: 'v5010'</h4>'</pft></display-->
+
 
 <display>
 	<form name="resultado" action="wxis.exe" method="get" onSubmit="return verifica()"> 
@@ -98,32 +97,32 @@
 <display>
 <pft>
 	if v2002:'simples' then 
-		'<td>MFN</td>'
-		'<td>Tipo de suporte</td>'
-		'<td>Característica</td>'
+		'<th class="">Autor</th>'
+		'<th class="">Título</th>'
+        '<th class="">Publicação</th></tr>' 
 	fi
 </pft>
 </display>	
 
 
 <display>
-	<td>Dimensão</td>
-	<td>Local</td>
-	</tr>
+	
+ 
+
 </display>
 
 	<do task="list">
 <field action="define" tag="1001">Isis_Current</field>
 		<field action="define" tag="199">Isis_Item</field>
 		<parm name="sort"><pft>v199^k</pft></parm>
-		<parm name="count"><pft>v2003</pft></parm>  	  	
+		<parm name="count"><pft>v2003</pft></parm>
 		<parm name="from"><pft>v2004</pft></parm>
 
 		<loop>
 		
 			<field action="import" tag="list">1002/2999</field>
 			<do task="mfnrange">
-				<parm name="db">ACERVO</parm>
+				<parm name="db">MARC</parm>
 				<parm name="from"><pft>v199^m</pft></parm>
 				<parm name="count">1</parm>
 				
@@ -135,7 +134,7 @@
 				
 				'<tr><td>'
 				
-				'[pft]V1001[/pft]'	
+			'<span class="destaque">'	'[pft]V1001[/pft]'	'. </span>'
 				if v2002:'simples' then 
 					cat('simples.pft')
             fi,
@@ -170,86 +169,14 @@
 	<display><pft>	
 
 
-	'Recuperados: 'v1002' registros.<br>'
-	'<!--<a href="'v5000,
-	if v2051:'FORM' then 
-		'JanelaPesquisa.htm'
-	else
-		'indexflo.htm'
-	fi,
-	'"><img src="'v5000'img/find.png" alt="Pesquisar" border="0">Nova Pesquisa</a>-->' 
+	'<span class="etiqueta">Total: </span><span class="destaque">'v1002' </span>' if v1002='1' then 'registro.' else 'registros.' fi,'<br/>'
+
+
 	</pft>
 </display>	
 
 
-<flow action="jump">FIM</flow>	
 
-<label>ERRO</label>
-	<display>Selecione ao menos uma das bases listadas.</display>
-	<flow action="jump">FIM</flow>		
-	
-<label>ERRO1</label>
-	<display>O registro final é menor do que o registro inicial.</display>
-	<flow action="jump">FIM</flow>	
-
-<label>ERRO2</label>
-	<display>
-	Informe a expressão de pesquisa<br>ou<br>Selecione ao menos um item para exibição.<br><br>
-	<input class="botao" type="button" value="Voltar" onclick="history.go(-1)">
-	</display>
-	<flow action="jump">FIM</flow>	
-
-<label>FIM</label>	
-	<!-- Para a execução e sai -->
-	<display>
-	<script language="JavaScript" src="http://teste.isishome.net//bibagflo/rodape.htm"></script>
-	</td></tr></table></display>
-
-
-<display>
- <pft>
- 
- if val(v1002)>0 then 
- if val(v1001)<val(v1002) then  
-	'<hr color="#660000" width="90%">
-	<table>
-        <tr>
-          <td>
-          	<a href="javascript:history.back();">
-		  	</td>
-
-		  <td>
-			<form action="http://cgi-bin/wxis.exe" method="post">
-			<input type="hidden" name="IsisScript" value="ref_link.xis">
-			<input type="hidden" name="expressao" value="
-			   'replace(v2001,' ','*'),v2000,
-				if p(v2004) then v2002,replace(v2004,' ','*'),v2003, fi,
-				if p(v2007) then v2005,replace(v2007,' ','*'),v2006, fi
-				'">
-			<input type="hidden" name="campo1" value="'v2000'">
-			<input type="hidden" name="expressao1" value="'v3001'">
-			<input type="hidden" name="operador1" value="'v3011'">
-			<input type="hidden" name="campo2" value="'v2003'">
-			<input type="hidden" name="expressao2" value="'v2004'">
-			<input type="hidden" name="operador2" value="'v3012'">
-			<input type="hidden" name="campo3" value="'v2006'">
-			<input type="hidden" name="expressao3" value="'v3003'">
-			<input type="hidden" name="controle" value="AN="'v900'">
-			<input type="hidden" name="quantidade" value="'v2009'">
-			<input type="hidden" name="lista" value="AN='v2010'"> 
-			<input type="hidden" name="proximo" value="'f(val(v2004)+25,0,0)'">
-		 	<input type="image" src="http://teste.isishome.net/img/avancar.png" value="Avançar" alt="Avançar">
-		 </td>
-        </tr>
-      </table>
-
-</body>'
-else
-if  val(v1001)=val(v1002) then 
-
-   fi fi fi 
- </pft>
-</display>
 
 	<flow action="exit">fim</flow>
 
