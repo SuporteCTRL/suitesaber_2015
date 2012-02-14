@@ -1,4 +1,4 @@
-#summary Inicio ufficiale sul Framework
+#summary Inicio
 #sidebar index
 
 <h1>Visão Geral</h1>
