@@ -1,7 +1,6 @@
 [pft]
-'<td><a href="http://local:3030/central/dataentry/fmt.php?Opcion=ver&base=fahmcs&cipar=fahmcs.par&Mfn='mfn'&ver=S&Formato=fahmcs" target="_blank" class="pftLink">'mfn,'</a></td>'
-'<td>'mhl,v16,'</td>'
-'<td>'if p(v21) then v21,fi,'</td>'
-'<td>'if p(v22) then v22,fi,'</td>'
-'<td>'v5001'</td>'
+'<td class="mrc"><a href="../central/dataentry/fmt.php?Opcion=ver&base=marc&cipar=marc.par&Mfn='mfn'&ver=S&Formato=marc" target="_blank" class="pftLink" title="(abre nova aba)">'mfn,'</a></td>'
+'<td class="mrc listaAn">'mhl,v100,'</td>'
+'<td class="mrc listaAn">'mhl,v245,'</td>'
+'<td class="mrc listaAn">'mhl,v260,'</td>'
 [/pft]
