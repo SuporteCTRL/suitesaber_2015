@@ -1,19 +1,22 @@
 .bar {
 	text-align: right;
-    background-color: #ffffff;
-}
+	}
 
 .top h2 A {
 	color: #333;
 	text-decoration: none;
+
 }
 
 .top h2 A:hover {
 	border-bottom: 1px dotted #333;
+
 }
+.top { margin-bottom: -40px; z-index:100;}
 
 .middle .formHead {
-	background: #ccdbe5;
+	background: #1A6B91; /*#ccdbe5;*/
+	color:#FFFFFF;
 }
 
 .middle .formHead A {
@@ -31,11 +34,11 @@
 
 .middle .formHead .changeForm {
 	background: url(../image/common/form.gif) no-repeat;
-    background-color: #ffffff;
+/*    background-color: #ffffff;*/
 }
 
 .formFields INPUT.fullSizeFocus {
-	border: 2px solid #036;
+	border: 2px solid #1A6B91;
 }
 
 .middle .buttonSection {
@@ -43,31 +46,86 @@
 }
 
 .defaultButton {
-	color: #036;
+	color: #FFFFFF;
 	text-decoration: none;
-	border: 1px solid #1e5991;
-	background: #CCDBE5;
+	border: 1px solid #6CB3D4;
+	background-color:#3989AE;
 	font-weight: bold;
+	font-size: 12px;
+	-moz-border-radius:7px;
+	-webkit-border-radius:7px;
+	 border-radius:7px;
 }
 
 .defaultButton:hover {
-	background: #e5f1f9;
+	background: #6CB3D4;
 }
 
 .formFields LABEL {
 	font-size: 90%;
 }
-
-.formNotes {
-	border-top: 1px solid #666;
-    border-bottom: 1px solid #666;
-	font-size: 90%;
-}
-
-.formNotes H4 {
-	border-bottom: 1px solid #666;
-}
-
 .footer {
 	font-size: 85%;
+}
+
+
+/*** help_form.htm ***/
+
+#dicas  {
+	font-size:14px;
+	line-height:25px;
+	margin:0 auto;
+	width:80%;
+}
+#dicas ul {
+	list-style-type:none;
+	padding-left:15px;
+}
+#dicas ul li:before {
+	content:  "\00bb   ";
+}
+#dicas li li {
+	padding-left:50px;
+}
+#dicas h1,
+#dicas h2,
+#dicas .destaque {
+	font-weight:bold;
+	color:#1A6B91;
+}
+#dicas h1,
+#dicas h2 {
+	padding:10px 0;
+}
+#dicas p {
+	text-indent:50px;
+	padding-bottom:10px;
+}
+kbd {
+	background-color:#F9F9F9;
+	border-style:solid;
+	border-width: 1px 2px 3px 1px;
+	border-color: #DDD9D9 #DDD9D9 #BBBBBB #DDD9D9;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	padding:2px 3px;
+}
+
+table.dicas {
+	width:auto;
+	margin-left:10%;
+}
+table.dicas td {
+	padding:2px 10px;
+}
+table.dicasOper th,
+table.dicasOper td {
+	padding:5px;
+}
+table.dicasOper,
+table.dicasOper th, 
+table.dicasOper td {
+	border:1px solid #444;
+	border-collapse:collapse;
 }
