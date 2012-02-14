@@ -21,7 +21,7 @@ $sudo apt-get install php5
 Em seguida instale as extenções:
 
 {{{
-$sudo apt-get install php5-curl php5-gd php5-gmp php5-mcrypt php5-tidy php5-xsl ya
+$sudo apt-get install php5-curl php5-gd php5-gmp php5-mcrypt php5-tidy php5-xsl yaz
 }}}
 
 Pronto, agora seu servidor já está pronto para receber a Suíte Saber.
