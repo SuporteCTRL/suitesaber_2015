@@ -9,3 +9,7 @@
   * Documentação Técnica
     * [estutura Estrutura do layout em HTML]
     * [campos Campos das bases]
+     * [acces Usuários do sistema]
+     * [marc Base Bibliográfica]
+     * [autoridades Autoridades]
+     * [loanobjects Base de materiais disponível para empréstimo]
