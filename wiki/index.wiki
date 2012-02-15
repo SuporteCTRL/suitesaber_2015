@@ -6,10 +6,9 @@
   * Arquivos
     * [release Release]
     * [pacotes Download de pacotes]
-    * [estrutura Estrutura]
-     * [layout Layout(CSS)]
   * Documentação Técnica
     * [estutura Estrutura do layout em HTML]
+     * [layout Layout(CSS)]
     * [campos Campos das bases]
      * [acces Usuários do sistema]
      * [marc Base Bibliográfica]
