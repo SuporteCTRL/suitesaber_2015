@@ -34,7 +34,7 @@
                 </div>
             </div>
             <div class="copyright">
-          <a href="http://www.saberabcd.com" target="_blank">Saber ABCD</a>
+          <a href="http://www.suitesaber.org" target="_blank">Suíte Saber</a>
             </div>
         </div>
         <? include($DirNameLocal. "./foot.php");  ?>
