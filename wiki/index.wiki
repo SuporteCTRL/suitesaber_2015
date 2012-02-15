@@ -6,6 +6,8 @@
   * Arquivos
     * [release Release]
     * [pacotes Download de pacotes]
+    * [estrutura Estrutura]
+     * [layout Layout(CSS)]
   * Documentação Técnica
     * [estutura Estrutura do layout em HTML]
     * [campos Campos das bases]
