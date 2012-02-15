@@ -1,21 +1,21 @@
 <?
-//Caminho fÃ­sico no servidor
+//Caminho fí­sico no servidor
 $localserver = "/var/www/suitesaber";
 
 //Nome do arquivo CSS principal do tema
 $theme ="saber";
 
-//Nome do Arquivo de Logotipo
+//Nome do arquivo de logotipo
 $imglogo ="logoabcd.png";
 
 // Open the Central module in a new window for avoiding the use of the browse buttons
 $open_new_window="N";
 $context_menu="Y";
 
-//Caminho do arquivo logotipo
+//Caminho do arquivo de logotipo
 $logo ="/css/$theme/images/$imglogo";
 
-//Tamanho do logotipo em Largura
+//Tamanho do logotipo em largura
 $sizelogo="200";
 
 //USED FOR ALL THE DATE FUNCTIONS. DD=DAYS, MM=MONTH, AA=YEAR. USE / AS SEPARATOR
@@ -43,7 +43,7 @@ $lang="pt";
 //Default langue for the databases definition
 $lang_db="pt";
 
-// use este lenguaje para seguir desplegando los registros con un cÃ³digo de pÃ¡gina especÃ­fico aunque cambie el lenguaje de diÃ¡logo
+// use este lenguaje para seguir desplegando los registros con un código de página específico aunque cambie el lenguaje de diálogo
 //$display_lang="";
 
 //Url for the execution of WXis, when using GGI in place of exec
@@ -54,7 +54,10 @@ $wxisUrl="";
 //Name of the institution
 $institution_name="Suí­te Saber";
 
-//Ruta hacia el archivo con la configuraciÃ³n del FCKeditor
+//URL of the institution
+$institution_url="http://suitesaber.org";
+
+//Ruta hacia el archivo con la configuración del FCKeditor
 $FCKConfigurationsPath="/".$app_path."/dataentry/fckconfig.js";
 
 //Ruta hacia el FCKEditor
@@ -64,7 +67,7 @@ $FCKEditorPath="/site/bvs-mod/FCKeditor/";
 $adm_login="";
 $adm_password="";
 
-//Ruta hacia el archivo con la configuraciÃ³n del FCKeditor
+//Ruta hacia el archivo con la configuración del FCKeditor
 $FCKConfigurationsPath="/$app_path/dataentry/fckconfig.js";
 
 //USE THIS PARAMETER TO SHOW THE ICON THAT ALLOWS THE BASES FOLDER EXPLORATION   (0=don't show, 1=show)
