@@ -130,7 +130,8 @@ inprocess('','end');        // close progress window
                </div> 
         </div>
         <div class="copyright">
-          <a href="http://www.saberabcd.com" target="_blank">Saber ABCD</a>
+            <a href="http://bvsmodelo.bvsalud.org/php/level.php?lang=pt&component=27&item=10" target="_blank">&copy; BVS Site <?= VERSION ?> </a>
+    <p>Recomendamos o uso do <a href="http://br.mozdev.org/download/" target="_blank" title="Firefox" alt="Firefox"><img src="http://biblioteca.santacasa.tche.br/central/css/saber/images/firefox.png" border="0" alt="Firefox." /></a></p>
         </div>
     </body>
 </html>
