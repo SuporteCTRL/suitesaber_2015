@@ -7,7 +7,7 @@
 
 <meta name="robots" content="all" />
 <meta name="MSSmartTagsPreventParsing" content="true" />
-<meta name="generator" content="Bluefish 2.0.2" />
+<meta name="generator" content="BVS-Site <?= VERSION ?>" />
 
 <script type="text/javascript">var lang = '<?=$checked['lang']?>';</script>
 <script type="text/javascript" src="<?=$def['DIRECTORY']?>js/functions.js"></script>
