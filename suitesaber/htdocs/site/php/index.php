@@ -59,9 +59,8 @@
             </div>
         </div>
         <div class="copyright">
-            <a href="http://bvsmodelo.bvsalud.org/php/level.php?lang=pt&component=27&item=10" target="_blank">&copy;BVS Site <?= VERSION ?> </a>
-            <a href="http://validator.w3.org/check?uri=http://<?=$def["SERVERNAME"].$def["DIRECTORY"].$_SERVER["PHP_SELF"]?>" target="w3c"><img src="../image/common/valid-xhtml10.png" alt="Valid XHTML 1.0 Transitional" border="0"/></a>
-            <a href="http://jigsaw.w3.org/css-validator/validator?uri=http://<?=$def["SERVERNAME"].$def["DIRECTORY"].$_SERVER["PHP_SELF"]?>" target="w3c"><img src="../image/common/valid-css.png" alt="Valid CSS" border="0"/></a>
+            <a href="http://bvsmodelo.bvsalud.org/php/level.php?lang=pt&component=27&item=10" target="_blank">&copy; BVS Site <?= VERSION ?> </a>
+    <p>Recomendamos o uso do <a href="http://br.mozdev.org/download/" target="_blank" title="Firefox" alt="Firefox"><img src="/central/css/saber/images/firefox.png" border="0" alt="Firefox." /></a></p>
         </div>
         <? include($DirNameLocal. "./foot.php");  ?>
     </body>
