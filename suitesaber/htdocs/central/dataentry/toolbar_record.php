@@ -1,5 +1,5 @@
 <?php
-include ("/meta.php");
+include ("../../meta.php");
 echo "<div class=\"helper\" style=\"height:23px\">\n" ;
 if (!isset($fmt_test)){
 	if (isset($default_values)){
