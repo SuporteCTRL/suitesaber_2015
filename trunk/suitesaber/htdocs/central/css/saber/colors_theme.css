@@ -7,7 +7,38 @@
 #botoes_top, .botoes_top {
 		background: #1A6B91;
 		color: #ffffff; 
+		border-top: solid 2px #f2f2f2;	
+		border-bottom: solid 2px #0C445E;	
+		border-left: solid 1px #95B8C9;
+		border-right: solid 1px #B3DEF2;	
 	}	
+table.toolbar {
+	color:#282828;
+	background-color: #f5f5f5;	
+	border-top: 2px #E5E5E5 solid;
+	border-bottom: 2px #E5E5E5 solid;
+	text-shadow:0px 1px 0 #fff;
+	}
+	
+.styled-select select {
+   background: transparent;
+   width: 268px;
+   padding: 2px;
+   font-size: 12px;
+   border: 1px solid #ccc;
+   height: 27px;
+}
+
+.styled-select {
+		display: inline-block;
+   width: 240px;
+   height: 27px;
+   overflow: hidden;
+   background: url(images/listTable_th_desc.gif) no-repeat right #ddd;
+}	
+
+
+
 .toolbar_entry {
 	border: solid 1px #cccccc;	
 	background-color: #dddddd;
@@ -35,6 +66,7 @@ th.th_tit {
 #botoes:hover, #botoes_top:hover{
 		background: #666666;
 		color: #ffffff; 
+		
 	}
 A.defaultButton SPAN {
 		background: #888888;
