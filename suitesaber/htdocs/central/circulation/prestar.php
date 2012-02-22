@@ -268,7 +268,8 @@ if (isset($arrHttp["usuario"]) and $arrHttp["usuario"]!="")
 </div>
 
 </form>
+<div class="footer">		
 <?php include("../common/footer.php");
-echo "</body></html>" ;
+echo "</div></body></html>" ;
 
 ?>
