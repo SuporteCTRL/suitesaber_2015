@@ -81,9 +81,9 @@ function CambiarBase(){
 	}
 	ix=abd.indexOf("^b");
 	if (ix>0){		base=abd.substr(2,ix-2)
-	}else{		base=abd.substr(2)	}
+	}else{		base=abd.substr(2)}
 	top.base=base
-	if (document.OpcionesMenu.baseSel.options[i].text==""){
+		if (document.OpcionesMenu.baseSel.options[i].text==""){
 		return
 	}
 	abd=abd.substr(ix+2)
@@ -193,7 +193,8 @@ if (isset($_SESSION["newindow"]) or isset($arrHttp["newindow"])){
 	echo "<a href='javascript:top.location.href=\"../dataentry/logout.php\";top.close()' xclass=\"button_logout\"><span><img alt=\"$msgstr[logout]\" src=\"../css/$theme/images/logout.png\"></span></a>";}else{	echo "<a href=\"../dataentry/logout.php\" xclass=\"button_logout\"><span><img alt=\"$msgstr[logout]\" src=\"../css/$theme/images/logout.png\"></span></a>";}
 ?>
 
-<div class="opt_catalog">
+<div class="opt_catalog" >
+<div class="styled-select">
 <?php
 $central="";
 $circulation="";
@@ -205,7 +206,7 @@ foreach ($_SESSION["permiso"] as $key=>$value){
 
 }
 if ($circulation=="Y" or $acquisitions=="Y"){
-		echo $msgstr["modulo"].":";
+		echo "<!--<label>$msgstr[modulo]<label>:-->";
          ?>
   			<select name=modulo onclick=VerificarEdicion() onchange=Modulo()>
   				<option value=catalog><?php echo $msgstr["catalogacion"]?>
@@ -214,34 +215,10 @@ if ($circulation=="Y" or $acquisitions=="Y"){
   				<option value=acquisitions><?php echo $msgstr["acquisitions"]?>
   			</select>
           <?php } ?>
+</div>
 
-  	<?php //echo $msgstr["lang"]?></td><td>
-  	<!--	<select name=lenguaje style="width:140;font-size:8pt;font-family:arial narrow"  onclick=VerificarEdicion() onchange=CambiarLenguaje()> -->
- <?php
-// 	$a=$db_path."lang.tab";
-// 	if (file_exists($a)){
-//		$fp=file($a);
-//		$selected="";
-//		foreach ($fp as $value){
-//
-//			$value=trim($value);
-//			if ($value!=""){				$l=explode('=',$value);
-//				if ($l[0]!="lang"){
-//					if ($l[0]==$_SESSION["lang"]) $selected=" selected";
-//					echo "<option value=$l[0] $selected>".$msgstr[$l[0]]."</option>";
-//					$selected="";
-//				}
-//			}
-//		}
-//	}else{
-//		echo $msgstr["flang"].$db_path."lang/".$_SESSION["lang"]."/lang.tab";
-//		die;
-//	}
-?>
-		</select>
-		
-		
-<?php echo $msgstr["bd"]?>:
+<div class="styled-select">		
+<!--<label><?php echo $msgstr["bd"]?></label>:-->
 		<select name=baseSel onchange=CambiarBase() onclick=VerificarEdicion()>
 		<option value=""></option>
 <?
@@ -257,12 +234,13 @@ foreach ($lista_bases as $key => $value) {
 
 		}
 		if (!isset($t[1])) $t[1]="";
-		echo "<option value=\"^a$key^badm^c".$t[1]."\" $xselected>".$t[0]."\n";
+		echo "<option value=\" ^a$key^badm^c".$t[1]."\" $xselected>".$msgstr["bd"]." ".$t[0]."\n";
 	}
 }
 echo "</select>" ;
 if ($hascopies=="Y" and (isset($_SESSION["permiso"]["CENTRAL_ADDCO"]) or isset($_SESSION["permiso"]["CENTRAL_ALL"]))){	echo "\n<script>top.db_copies='Y'\n</script>\n";}
 ?>
+</div>
 </form>
 
 

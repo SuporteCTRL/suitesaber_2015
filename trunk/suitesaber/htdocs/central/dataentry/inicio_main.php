@@ -612,7 +612,7 @@ function Unload(){
 
 </head>
 
-<frameset rows=88,45,* cols=* border=0>
+<frameset rows=70,65,* cols=* border=0>
 <?php
 if (isset($arrHttp["base"])){
     echo "<frame name=encabezado src=menubases.php?inicio=s&Opcion=Menu_o&base=$bd&cipar=$bd.par&Mfn=".$arrHttp["Mfn"]."&base_activa=$bd&per=$bdright MARGINWIDTH=0 MARGINHEIGHT=0 SCROLLING=no FRAMEBORDER=NO>\n";	echo "<frame name=menu  src=\"\" scrolling=no frameborder=NO  marginheight=0   MARGINWIDTH=0 >";
