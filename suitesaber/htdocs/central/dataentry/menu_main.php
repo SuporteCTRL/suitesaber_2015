@@ -81,24 +81,29 @@ function GenerarWks(){
 <script language="JavaScript" src="js/dhtmlXProtobar.js"></script>
 <script language="JavaScript" src="js/dhtmlXToolbar.js"></script>
 <script language="JavaScript" src="js/dhtmlXCommon.js"></script>
-<table width="100%" class="sectionInfo" >
+<table width="100%" class="toolbar secti-onInfo" >
 	<td align=center valign=top ><?php echo $msgstr["m_ir"]?>:<br>
-		<input type=text  name=ir_a size=15 value='' onClick="javascript:this.value=''">
+		<input type=text  name=ir_a size=10 value='' onClick="javascript:this.value=''">
   	</td>
-	<td ><div id="toolbarBox" style="height:30;position:relative"></div></td>
+	<td ><div id="toolbarBox" style="height:28;position:relative"></div></td>
 
 	</td>
 <td>
-<div>
-       	<?php echo $msgstr["displaypft"]?>:
+<div class="styled-select">
+
+        <!-- 	<label><?php echo $msgstr["displaypft"]?>:</label>-->
 			<select name=formato onChange=Javascript:GenerarDespliegue()>
 				<option></option>
 				</select>
-<br />
-	  	 <?php echo $msgstr["fmt"]?>:&nbsp; 
+				
+</div>				
+<div class="styled-select">
+	  	 <!-- <label><?php echo $msgstr["fmt"]?>:</label> -->
 				<select name=wks onChange=Javascript:GenerarWks()>
-					<option></option>
+				<option value="" selected=""><strong><?php echo $msgstr["fmt"]?></strong></option>
+				<option></option>
 				</select>
+			
 </div>
 </td>
 	<td width=3>&nbsp;</td>
@@ -286,12 +291,15 @@ if (isset($_SESSION["permiso"]["CENTRAL_ALL"]) or isset($_SESSION["permiso"]["CE
 unset($fp);
 if (isset($arrHttp["base"])){
 	if (file_exists($db_path.$arrHttp["base"]."/pfts/".$_SESSION["lang"]."/formatos.dat")){
+
 		$fp = file($db_path.$arrHttp["base"]."/pfts/".$_SESSION["lang"]."/formatos.dat");
 	}else{
 		if (file_exists($db_path.$arrHttp["base"]."/pfts/".$lang_db."/formatos.dat")){
+
 			$fp = file($db_path.$arrHttp["base"]."/pfts/".$lang_db."/formatos.dat");
 		}
 	}
+					
 	$i=-1;
 	if (isset($fp)) {
 		foreach($fp as $linea){
@@ -303,12 +311,15 @@ if (isset($arrHttp["base"])){
 				if (isset($_SESSION["permiso"][$arrHttp["base"]."_pft_ALL"]) or isset($_SESSION["permiso"][$arrHttp["base"]."_pft_".$ll[0]])
 						or isset($_SESSION["permiso"]["CENTRAL_ALL"])){
 					$i=$i+1;
+
 					echo "if (top.ModuloActivo==\"catalog\") top.menu.document.forma1.formato.options[$i]=new Option('$nom','$cod')\n";
+
 				}
 			}
 		}
 
-	}else{		echo "document.forma1.formato.options.length=0\n";	}
+	}else{
+		echo "document.forma1.formato.options.length=0\n";	}
 	$i=$i+1;
 	if (isset($_SESSION["permiso"][$arrHttp["base"]."_pft_ALL"]) or isset($_SESSION["permiso"]["CENTRAL_ALL"])){
 		echo "document.forma1.formato.options[$i]=new Option('".$msgstr["noformat"]."','')\n";
