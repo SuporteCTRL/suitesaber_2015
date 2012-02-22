@@ -138,6 +138,7 @@ echo "&nbsp; &nbsp; Script: sanctions.php</font>\n";
 <input type=hidden name=usuario value="">
 <input type=hidden name=inventory>
 </form>
+<div class="footer">		
 <?php include("../common/footer.php");
-echo "</body></html>" ;
+echo "</div></body></html>" ;
 ?>

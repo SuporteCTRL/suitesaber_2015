@@ -145,8 +145,9 @@ if (isset($arrHttp["usuario"])){
 ?>
 
 </div>
+<div class="footer">		
 <?php include("../common/footer.php");
-echo "</body></html>" ;
+echo "</div></body></html>" ;
 if (isset($arrHttp["recibo"])) {
 	ImprimirRecibo($arrHttp["recibo"]);
 }

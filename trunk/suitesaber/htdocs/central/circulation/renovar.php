@@ -130,8 +130,9 @@ echo "&nbsp; &nbsp; Script: renovar.php</font>\n";
 <input type=hidden name=base value="<?php echo $arrHttp["base"]?>">
 <input type=hidden name=usuario value="">
 </form>
+<div class="footer">		
 <?php include("../common/footer.php");
-echo "</body></html>" ;
+echo "</div></body></html>" ;
 if (isset($arrHttp["error"])){	echo "<script>
 			alert('".$arrHttp["error"]."')
 			</script>
