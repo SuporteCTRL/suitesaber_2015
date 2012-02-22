@@ -267,7 +267,7 @@
 }
 
  this.topNod=0;this.action=0;this.persAction=0;this.id=id||0;
- this.className=className||"defaultbutton botoes_top";
+ this.className=className||"defaultbutton";
  this.src=src;this.disableImage=disableImage;
  this.tooltip=tooltip||"";
 
