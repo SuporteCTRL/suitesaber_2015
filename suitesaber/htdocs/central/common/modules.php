@@ -9,10 +9,11 @@ foreach ($_SESSION["permiso"] as $key=>$value){	if (substr($key,0,8)=="CENTRAL_
 	}
 	if (substr($key,0,5)=="CIRC_")  $circulation="Y";
 	if (substr($key,0,4)=="ACQ_")  $acquisitions="Y";}
+echo "<label>";
 if ($central=="Y" and $ixcentral>1 and ($circulation=="Y" or $acquisitions=="Y")){
 	echo $msgstr["modulo"];
 ?>
-	<select name=modulo  onchange=CambiarModulo()>
+	</label><select name=modulo  onchange=CambiarModulo()>
 		<option value=""></option>
 		<option value=catalog><?php echo $msgstr["catalogacion"]?>
 <?php

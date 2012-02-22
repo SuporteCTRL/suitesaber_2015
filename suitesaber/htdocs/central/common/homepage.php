@@ -192,33 +192,11 @@ switch ($arrHttp["modulo"]){	case "catalog":
 <div class="sectionInfo">
 
 <div class="language">
-<iframe style="vertical-align:middle; width:450px;height:30px; "  frameborder="0" scrolling="no" src="/site/php/search.php"></iframe>
-<form name=cambiolang><?php echo $msgstr["lang"]?>:
-	<select name=lenguaje onchange=CambiarLenguaje() >
-		<option value=""></option>
-		 <?php
+<iframe style="vertical-align:middle; width:480px;height:60px; margin-top: -25px; "  frameborder="0" scrolling="no" src="/site/php/search.php"></iframe>
 
- 	if (file_exists($a)){
-		$fp=file($a);
-		$selected="";
-		foreach ($fp as $value){
-			$value=trim($value);
-			if ($value!=""){
-				$l=explode('=',$value);
-				if ($l[0]==$_SESSION["lang"]) $selected=" selected";
-				echo "<option data-html-text=$l[1] value=$l[0] $selected>".$l[1]."</option>";
-				$selected="";
-			}
-		}
-	}else{
-		echo $msgstr["flang"].$db_path."lang/".$_SESSION["lang"]."/lang.tab";
-		die;
-	}
-?>
-	</select> 
-	</form>
-
+<div class="styled-select">
 			<?php include("modules.php")?>
+</div>
 </div>
 </div>
 
@@ -266,10 +244,6 @@ global $msgstr,$db_path,$arrHttp,$lista_bases,$Permiso,$dirtree;
 	
 	include("../config.php");
 ?>
-
-
-
-
 		<div id="tabs">
 			<ul>
 				<li><a href="#tabs-1"><?php echo $msgstr["database"]?></a></li>
@@ -306,17 +280,19 @@ if (isset($_SESSION["permiso"]))
 
 			</div>
 			<div class="sectionButtons">
-            	<div class="searchTitles">
+  
 					<form name="admin" action="dataentry/inicio_main.php" method="post">
 					<input type=hidden name=encabezado value=s>
 					<input type=hidden name=retorno value="../common/inicio.php">
 					<input type=hidden name=modulo value=catalog>
 					<?php if (isset($arrHttp["newindow"]))
 					echo "<input type=hidden name=newindow value=Y>\n";?>
-					<div class="stInput">
-						<label for="searchExpr"><?php echo $msgstr["seleccionar"]?>:</label>
-						<select name=base >
-				<option value=""></option>
+
+						<label for="searchExpr"><?php echo $msgstr["seleccionar"]?></label>
+						<div class="styled-select ">
+						<select name="base" >
+						<option value=""></option>
+						</div>
 <?php
 $i=-1;
 foreach ($lista_bases as $key => $value) {
@@ -332,7 +308,7 @@ foreach ($lista_bases as $key => $value) {
 
 	<!--	<option value=""></option> -->
 						</select>
-					</div>
+
 					</form></div>
 
 				<div class="boxTop">
@@ -345,10 +321,6 @@ foreach ($lista_bases as $key => $value) {
 <a href="javascript:CambiarBaseAdministrador('toolbar')" class="menuButton tooltip catal ">
 						
 						<span><?php echo $msgstr["dataentry"] ?></span></a>
-
-
-
-				
 
 <?php
 if (isset($Permiso["CENTRAL_STATGEN"]) or isset($Permiso["CENTRAL_ALL"])){
@@ -401,9 +373,6 @@ if (isset($Permiso["CENTRAL_Z3950CONF"])  or isset($Permiso["CENTRAL_ALL"])){
 			<div class="bbRight">&#160;</div>
 		</div>
 	</div>
-
-
-
 
 </div>
 <?php
@@ -494,7 +463,6 @@ if ($dirtree==1){
 					</div>
 
 					<div class="sectionButtons">
-
 		
 				<a href="http://www.oraculo.inf.br" target="_blank"  class="menuButton tooltip wiki">
 
@@ -507,24 +475,15 @@ if ($dirtree==1){
 					<span>Help</span>
 				</a> 
          			</div>
-         			
-   			
-         			
-         			
-         			
+         					
 			<div class="spacer">&#160;</div>
 			
- 		
-			
-			
+
 			</div>
 			<div class="boxBottom">
 			<div class="bbLeft">&#160;</div>
 			<div class="bbRight">&#160;</div>
-			
-			
- 
-			
+		
 		</div>
 	</div>
 	
@@ -533,14 +492,10 @@ if ($dirtree==1){
 </div>
 </div>
 
-
-
 <?php
 	}
 }
 // end function Administrador
-
-
 
 function MenuAcquisitionsAdministrator(){
 	include("menuacquisitions.php");
@@ -550,13 +505,37 @@ function MenuLoanAdministrator(){
    include("menucirculation.php");
 }
 
-
-
 ?>
-
 		<!--[if IE]>
 <?php include ("../css/saber/iesucks/index.php"); ?>
-
 		<![endif]-->
 		
-		<?php include ("footer.php"); ?>
+		
+<div class="footer">		
+		<?php include ("footer.php"); ?>		
+	<div style="float: right; margin-bottom: 0px;margin-top: -20px;z-index:598599;">		
+		<form name=cambiolang><?php echo $msgstr["lang"]?>:
+		<select name=lenguaje onchange=CambiarLenguaje() >
+		<option value=""></option>
+		 <?php
+ 	if (file_exists($a)){
+		$fp=file($a);
+		$selected="";
+		foreach ($fp as $value){
+			$value=trim($value);
+			if ($value!=""){
+				$l=explode('=',$value);
+				if ($l[0]==$_SESSION["lang"]) $selected=" selected";
+				echo "<option data-html-text=$l[1] value=$l[0] $selected>".$l[1]."</option>";
+				$selected="";
+			}
+		}
+	}else{
+		echo $msgstr["flang"].$db_path."lang/".$_SESSION["lang"]."/lang.tab";
+		die;
+	}
+?>
+	</select> 
+	</form>		
+	</div>
+</div>
