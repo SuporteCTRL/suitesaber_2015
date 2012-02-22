@@ -1,7 +1,7 @@
-marc|Detalhado
-todos|Todos
-ficha|Ficha
-mrclte|Detalhado (iah)
-todos_iah|Formato MARC (iah)
+marc|Estilo Padrão
+todos|Estilo Todos os Campos
+ficha|Estilo Ficha AACR2
+mrclte|Estilo Detalhado (iah)
+todos_iah|Estilo Formato MARC (iah)
 barcode|Cod. de barras
 dublin|Dublin Core
