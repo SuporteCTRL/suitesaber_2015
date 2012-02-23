@@ -347,8 +347,8 @@ TD.showSTitle .collectionMode A.selected {
 	border: 0;
 	font-size: 120%;
 	font-weight: bold;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
 	padding: 9px;
 	text-decoration: none;
 }
@@ -359,11 +359,11 @@ TD.showSTitle .collectionMode A.selected {
 	text-align: center;
 	cursor:pointer;
 	border: 0;
-	font-size: 120%;
+	font-size: 110%;
 	font-weight: bold;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	padding: 9px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	padding: 5px;
 	text-decoration: none;
 }
 

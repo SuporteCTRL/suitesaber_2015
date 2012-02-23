@@ -329,7 +329,7 @@ A.menuButton {
 	/* #heading classes */
 	.heading {
 	/*	height: 90px;*/
-	height: 70px;
+	height: 75px;
 
 	}
 
@@ -364,7 +364,7 @@ A.menuButton {
 		font-size: 10px;
 }
 .language {
-		margin-top: -9px;
+		margin-top: -5px;
 		position: relative;
 		float: right;
 		top: -35px;		
@@ -451,8 +451,6 @@ display: inline;
 	width: 100%;
 	text-align: center;
 	bottom: 0px;
-
-
 	}
 
 
@@ -1405,6 +1403,9 @@ display: inline;
 	z-index: 1;
 
 }
+
+
+
 .toolbar_entry {
 	margin:1px;
 	cursor:pointer;
