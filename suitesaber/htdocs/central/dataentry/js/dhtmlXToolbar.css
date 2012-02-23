@@ -2,45 +2,57 @@
 	font: 11px Arial;
 	cursor:pointer;
 }
-
-
 .buttonTextDisabled {
 	color: gray;
 	font: 11px Arial;
 }
-
+/* botão normal */
 .defaultbutton {
-	width: 27px;
-	height: 27px;
-	background-color: #f5f5f5;
-	border-width: 1px;
-	border-style: solid;
-	border-color: #d9d9d9; 
-	border-radius: 5px; 
-
+	width:27px;
+	height:27px;
+	border: 1px solid #DDDDDD;
+	border-radius: 3px;
+	text-shadow: 0 1px 1px white;
+	-webkit-box-shadow: 0 1px 1px #FFFFFF;
+	-moz-box-shadow:    0 1px 1px #FFFFFF;
+	box-shadow:         0 1px 1px #FFFFFF;
+	font: bold 11px Sans-Serif;
+/*	padding: 6px 10px;*/
+	white-space: nowrap;
+	vertical-align: middle;
+	color: #666666;
+	background: transparent;
+	cursor: pointer;
 }
-
+/* botão pressionado = :active*/
 .defaultbuttondown {
-	width: 27px;
-	height: 27px;
-	background-color: #cccccc;
-	border-width: 2px 1px 2px 1px ;
-	border-style: solid;
-	border-color: #888  #ccc #f8f8f8  #666; 
-	border-radius: 5px; 
+	width:27px;
+	height:27px;
+	border: 1px solid #AAAAAA;
+	border-bottom-color: #CCCCCC;
+	border-top-color: #999999;
+	-webkit-box-shadow: inset 0 1px 2px #AAAAAA;
+	-moz-box-shadow:    inset 0 1px 2px #AAAAAA;
+	box-shadow:         inset 0 1px 2px #AAAAAA;
+	background: -webkit-linear-gradient(top, #E6E6E6, gainsboro);
+	background:    -moz-linear-gradient(top, #E6E6E6, gainsboro);
+	background:     -ms-linear-gradient(top, #E6E6E6, gainsboro);
+	background:      -o-linear-gradient(top, #E6E6E6, gainsboro);
+	cursor: pointer;
 }
-
+/* mouse passando por cima = :hover*/
 .defaultbuttonover {
-	width: 27px;
-	height: 27px;
-	background-color: #ffffff;
-	border-width: 1px 1px 1px 1px ;
-	border-style: solid;
-	border-color: #C6C6C6 ; 
-	border-radius: 5px; 
-	box-shadow: rgba(0,0,0, 0.3) 0px 3px 3px;
-	-moz-box-shadow: rgba(0,0,0, 0.3) 0px 3px 3px;
-	-webkit-box-shadow: rgba(0,0,0, 0.3) 0px 3px 3px;
+	width:27px;
+	height:27px;
+	border-color: #999999;
+	background: -webkit-linear-gradient(top, white, #E0E0E0);
+	background:    -moz-linear-gradient(top, white, #E0E0E0);
+	background:     -ms-linear-gradient(top, white, #E0E0E0);
+	background:      -o-linear-gradient(top, white, #E0E0E0);
+	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.25), inset 0 0 3px #FFFFFF;
+	-moz-box-shadow:    0 1px 2px rgba(0,0,0,0.25), inset 0 0 3px #FFFFFF;
+	box-shadow:         0 1px 2px rgba(0,0,0,0.25), inset 0 0 3px #FFFFFF;
+	cursor: pointer;
 }
 
 .icongray {
@@ -82,7 +94,7 @@
 	width : 3px;
 }
 
-.toolbarname{
+.toolbarname {
 	color : #43537B;
 	font : 11px 'Arial Black',Arial,sans-serif;
 	letter-spacing : 3px;
@@ -90,7 +102,7 @@
 	padding-right : 10px;
 }
 
-.toolbartable{
+.toolbartable {
 	margin : 0px;
 	border: none;
 	-moz-user-select : none;
@@ -108,9 +120,12 @@
 	height : 3px;
 }
 
-input 		{BORDER-TOP-COLOR: #000000; BORDER-L????????º??EFT-COLOR: #000000; BORDER-RIGHT-COLOR: #000000; BORDER-BOTTOM-COLOR: #000000; BORDER-TOP-WIDTH: 1px; BORDER-LEFT-WIDTH: 1px; FONT-SIZE: 8pt; BORDER-BOTTOM-WIDTH: 1px; FONT-FAMILY: Verdana,Helvetica; BORDER-RIGHT-WIDTH: 1px}
-select 		{BORDER-TOP-COLOR: #000000; BORDER-LEFT-COLOR: #000000; BORDER-RIGHT-COLOR: #000000; BORDER-BOTTOM-COLOR: #000000; BORDER-TOP-WIDTH: 1px; BORDER-LEFT-WIDTH: 1px; FONT-SIZE: 8pt; BORDER-BOTTOM-WIDTH: 1px; FONT-FAMILY: Verdana,Helvetica; BORDER-RIGHT-WIDTH: 1px}
-textarea	{BORDER-TOP-COLOR: #000000; BORDER-LEFT-COLOR: #000000; BORDER-RIGHT-COLOR: #000000; BORDER-BOTTOM-COLOR: #000000; BORDER-TOP-WIDTH: 1px; BORDER-LEFT-WIDTH: 1px; FONT-SIZE: 8pt; BORDER-BOTTOM-WIDTH: 1px; FONT-FAMILY: Verdana,Helvetica; BORDER-RIGHT-WIDTH: 1px}
-text	{BORDER-TOP-COLOR: #000000; BORDER-LEFT-COLOR: #000000; BORDER-RIGHT-COLOR: #000000; BORDER-BOTTOM-COLOR: #000000; BORDER-TOP-WIDTH: 1px; BORDER-LEFT-WIDTH: 1px; FONT-SIZE: 8pt; BORDER-BOTTOM-WIDTH: 1px; FONT-FAMILY: Verdana,Helvetica; BORDER-RIGHT-WIDTH: 1px}
-
-checkbox	{BORDER-TOP-COLOR: #000000; BORDER-LEFT-COLOR: #000000; BORDER-RIGHT-COLOR: #000000; BORDER-BOTTOM-COLOR: #000000; BORDER-TOP-WIDTH: 1px; BORDER-LEFT-WIDTH: 1px; FONT-SIZE: 8pt; BORDER-BOTTOM-WIDTH: 1px; FONT-FAMILY: Verdana,Helvetica; BORDER-RIGHT-WIDTH: 1px}
+input,
+select,
+textarea,
+text,
+checkbox {
+	border:1px solid #000000;
+	font-size: 8pt;
+	font-family: Verdana,Helvetica;
+}
