@@ -44,6 +44,7 @@
 .defaultbuttonover {
 	width:27px;
 	height:27px;
+	border: 1px solid #AAAAAA;
 	border-color: #999999;
 	background: -webkit-linear-gradient(top, white, #E0E0E0);
 	background:    -moz-linear-gradient(top, white, #E0E0E0);
