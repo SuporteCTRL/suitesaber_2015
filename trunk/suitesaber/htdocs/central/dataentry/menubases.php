@@ -234,7 +234,7 @@ foreach ($lista_bases as $key => $value) {
 
 		}
 		if (!isset($t[1])) $t[1]="";
-		echo "<option value=\" ^a$key^badm^c".$t[1]."\" $xselected>".$msgstr["bd"]." ".$t[0]."\n";
+		echo "<option value=\"^a$key^badm^c".$t[1]."\" $xselected>".$msgstr["bd"]." ".$t[0]."\n";
 	}
 }
 echo "</select>" ;
