@@ -9,7 +9,7 @@
 if p(v90) then
 	'<div id="supDir">
 		<span class="destaque">Localização:</span>
-			'(v90^a'&nbsp;&nbsp;&nbsp;',v90^b'&nbsp;&nbsp;&nbsp;',v90^c'&nbsp;&nbsp;&nbsp;',v90^g'&nbsp;&nbsp;&nbsp;',v90^d,'<br/>'/)'
+			'(v90^f'&nbsp;&nbsp;&nbsp;',v90^a'&nbsp;&nbsp;&nbsp;',v90^b'&nbsp;&nbsp;&nbsp;',v90^c'&nbsp;&nbsp;&nbsp;',v90^g'&nbsp;&nbsp;&nbsp;',v90^d,'<br/>'/)'
 	</div>'
 fi,
 
@@ -37,15 +37,7 @@ if s(v100^a,v110^a,v111^a)<>'' then '<tr class="mrc">
     fi,
 	if p(v110) then '<span class="destaque">' v110^a, " "v110^b,'</span><br />' fi,
 
-	if p(v111) then '<span class="destaque">' v111^a" ", 
-		if s(v111^n,v111^d,v111^c,)<>'' then
-			'(' v111^n,
-					if p(v111^n) and p(v111^d) then ' : ' fi,
-				v111^d,
-					if s(v111^n,v111^d)<>'' and p(v111^c) then ' : ' fi,
-				v111^c, ')'
-		fi,
-	'</span>' fi,
+	if p(v111) then '<span class="destaque">' v111^a, " "v111^n, v111^d, v111^c'</span>' fi,
 
 fi,
 
@@ -200,6 +192,7 @@ if p(v310^a) then '<tr class="mrc"><th class="mrc">Periodicidade</th><td class="
 
 ,if s(v600^a,v610^a,v611^a,v630^a,v650^a,v651^a,v653^a)<>'' then '<tr class="mrc"><th class="mrc">Assuntos</th><td class="mrc">'
 
+
 if v600*4<>'' then (v600^a, | |v600^d,  | |v600^t, | |v600^u,|  :  |v600^x,  |  :  |v600^z, |  :  |v600^y,  |  :  |v600^v,,'<br />'/)fi,
 if v610*4<>'' then (v610^a, | |v610^b,  | |v610^e,  | |v610^t,  | |v610^u,|  :  |v610^x,  |  :  |v610^z,  |  :  |v610^y,   |  :  |v610^v,,'<br />'/)fi,
 if v611*4<>'' then (v611^a, | |v611^n,   | |v611^d,  | |v611^c,  | |v611^e,   |  :  |v611^x,  |  :  |v611^z, |  :  |v611^y,   |  :  |v611^v,,'<br />'/)fi,
@@ -238,5 +231,3 @@ if p(v773^w) then '<tr class="mrc"><th class="mrc">Fonte</th><td class="mrc">' v
 '<div class="fechaUnico">Ver estrutura: <a class="pftLink" href="/cgi-bin/wxis.exe/iah/scripts/?IsisScript=unico.xis&lang=pt&base='v5003'&nextAction=lnk&exprSearch='v1'&indexSearch=MF&format=todos_iah.pft">MARC</a> <a class="pftLink" href="/cgi-bin/wxis.exe/iah/scripts/?IsisScript=unico.xis&lang=pt&base='v5003'&nextAction=lnk&exprSearch='v1'&indexSearch=MF&format=dublin.pft">Dublin Core</a></div>'
 
 '</div></body>'
-
-
