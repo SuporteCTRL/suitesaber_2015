@@ -6,9 +6,11 @@ FILE cabecalho.pft=%path_database%marc/pfts/%lang%/cabecalho.pft
 FILE standard.pft=%path_database%marc/pfts/%lang%/lista.pft
 FILE dublin.pft=%path_database%marc/pfts/%lang%/dublin.pft
 FILE detailed.pft=%path_database%marc/pfts/%lang%/mrclte.pft
+FILE imprime.pft=%path_database%marc/pfts/%lang%/imprime.pft
 FILE todos_iah.pft=%path_database%marc/pfts/%lang%/todos_iah.pft
 FILE descritores.pft=%path_database%marc/pfts/%lang%/descritores.pft
 FILE doc-principal.pft=%path_database%marc/pfts/%lang%/doc-principal.pft
+FILE doc-principal-iah.pft=%path_database%marc/pfts/%lang%/doc-principal-iah.pft
 FILE server.pft=%path_database%marc/pfts/%lang%/server.pft
 FILE BOOKMARK.PFT=%path_database%marc/pfts/%lang%/bookmark.pft
 FILE DBLIL_LINK.PFT=%path_database%marc/pfts/%lang%/dblil_link.pft
@@ -31,7 +33,7 @@ FILE call_statment.pft=%path_database%marc/pfts/%lang%/call_statment.pft
 [INDEX_DEFINITION]
 
 INDEX Uu=^1Autor^2Autor^3Autor^4Autor^xUU ^uUU_^yDATABASE^mUU_
-INDEX Ti=^1TÃ­tulo^2TÃ­tulo^3TÃ­tulo^4TÃ­tulo^xTI ^uTI_^yDATABASE^mTI_
+INDEX Ti=^1Título^2Título^3Título^4Título^xTI ^uTI_^yDATABASE^mTI_
 INDEX Aa=^1Assunto^2Assunto^3Assunto^4Assunto^xAA ^uAA_^yDATABASE^mAA_
 INDEX Da=^1Data^2Data^3Data^4Data^xDA ^uDA_^yDATABASE^mDA_
 INDEX Ms=^1Série^2Série^3Série^4Série^xMS ^uMS_^yDATABASE^mMS_
@@ -45,13 +47,15 @@ INDEX Mf=^1MFN^2MFN^3MFN^4MFN^xMFN ^uMFN_^yDATABASE^mMFN_^thidden
 
 [FORMAT_NAME]
 
+FORMAT imprime.pft=^1Detalhado^2Detalhado^3Detalhado^4Detalhado
+FORMAT todos_iah.pft=^1Formato MARC^2Formato MARC^3Formato MARC^3Formato MARC
+FORMAT detailed.pft=^1Detalhado^2Detalhado^3Detalhado^4Detalhado
 FORMAT standard.pft=^1Lista^2Lista^3Lista^4Lista
 FORMAT DEFAULT=standard.pft
 
 [HELP_FORM]
 
-HELP FORM=help_form_lilacs.htm
-NOTE FORM F=note_form_lilacs.htm
+HELP FORM=help_form.htm
 
 [PREFERENCES]
 
