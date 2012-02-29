@@ -1,6 +1,9 @@
 #summary One-sentence summary of this page.
 #labels Phase-Implementation
 
+O presente tutorial foi organizado a partir de instalações feitas no Ubuntu 11.04.
+
+
 = Instalação da Suíte Saber =
 
 O exemplo de instalação que daremos é igual ao executado pela [http://control.com.br Control] a partir do [http://www.ubuntu-br.org/ Ubuntu].
@@ -18,15 +21,24 @@ Confirme todas as solicitações e em seguida instale o PHP5 com o comando:
 $sudo apt-get install php5
 }}}
 
+
 Em seguida instale as extenções:
 
 {{{
 $sudo apt-get install php5-curl php5-gd php5-gmp php5-mcrypt php5-tidy php5-xsl yaz
 }}}
 
+
 Pronto, agora seu servidor já está pronto para receber a Suíte Saber.
 
 ==Download==
+
+Para instalar a partir de nosso SVN instale o Subversion.
+
+{{{
+$sudo apt-get install subversion
+}}}
+
 
 Com o terminal do seu Ubuntu aberto vá em /var/www
 
