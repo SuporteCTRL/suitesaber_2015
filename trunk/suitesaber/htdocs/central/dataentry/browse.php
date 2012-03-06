@@ -222,8 +222,10 @@ function Eliminar(Mfn){
 	document.eliminar.submit()
 }
 
-function Mostrar(Mfn){	msgwin=window.open("show.php?base=<?php echo $arrHttp["base"]?>&cipar=<?php echo $arrHttp["base"]?>.par&Mfn="+Mfn+"&encabezado=s&Opcion=editar","show","width=600,height=400,scrollbars, resizable")
-	msgwin.focus()}
+function Mostrar(Mfn){
+	msgwin=window.open("show.php?base=<?php echo $arrHttp["base"]?>&cipar=<?php echo $arrHttp["base"]?>.par&Mfn="+Mfn+"&encabezado=s&Opcion=editar","show","width=600,height=400,scrollbars, resizable")
+	msgwin.focus()
+}
 </script>
 <?php
 echo "<body>";
@@ -407,7 +409,7 @@ echo "			</table>";
 					</a>
 					<a id="botoes_top" href="javascript:EjecutarBusqueda('last')" class="singleButton eraseButton">
 						<span>&#160;</span>
-						&#171; <?php echo $msgstr["last"]?>
+						&#187; <?php echo $msgstr["last"]?>
 						<span>&#160;</span>
 					</a>
 					<div class="spacer">&#160;</div>
