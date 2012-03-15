@@ -1,3 +1,8 @@
+<br>
+<div style="text-align:right;padding-right:3mm;">Assinatura:__________________________________<br>
+Renove pelo fone xxxx-xxxx</div>
+
+<br><br>
 <table><tr><td class=titulo colspan=100%>Confira sempre o prazo de devolução.</td></tr>
 <tr><td colspan=50%>suitesaber.org-v1.1b2</td><td style="text-align:right;" colspan=50%>@ctrlconsultoria</td></tr>
 </table>
