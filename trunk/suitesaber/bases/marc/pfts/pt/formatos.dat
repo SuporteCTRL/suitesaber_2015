@@ -4,4 +4,5 @@ ficha|Estilo Ficha AACR2
 mrclte|Estilo Detalhado (iah)
 todos_iah|Estilo Formato MARC (iah)
 barcode|Cod. de barras
+php-barcode|Cod. de barras (PHP)
 dublin|Dublin Core
