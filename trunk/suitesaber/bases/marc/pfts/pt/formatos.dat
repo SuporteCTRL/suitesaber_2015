@@ -3,6 +3,7 @@ todos|Estilo Todos os Campos
 ficha|Estilo Ficha AACR2
 mrclte|Estilo Detalhado (iah)
 todos_iah|Estilo Formato MARC (iah)
+dublin|Dublin Core
 barcode|Cod. de barras
 php-barcode|Cod. de barras (PHP)
-dublin|Dublin Core
+lombada|Lombada
