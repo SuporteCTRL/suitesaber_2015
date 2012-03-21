@@ -239,12 +239,9 @@ if (isset($arrHttp["encabezado"])){	include("../common/institutional_info.php")
 	$encabezado="&encabezado=s";
 }
 ?>
-<div class="sectionInfo">
-	<div class="breadcrumb">
-<?php echo $parm[1]?>
-	</div>
 
-	<div class="actions">
+<div class="sectionInfo">
+<div class="language">
 <?php
 	$ayuda="pft.html";
 	if (isset($arrHttp["encabezado"])){			echo "<a href=\"reports_menu.php?$encabezado\" class=\"defaultButton backButton\">
@@ -253,11 +250,16 @@ if (isset($arrHttp["encabezado"])){	include("../common/institutional_info.php")
 			";
 	}
 ?>
-
 </div>
-
-<div class="spacer">&#160;</div>
 </div>
+	<div class="breadcrumb"><h3>
+<?php echo $parm[1]?>
+	</h3></div>
+	<div class="actions">
+
+	</div>
+
+
 <div class="helper">
 <a href=../documentacion/ayuda.php?help=<?php echo $_SESSION["lang"]?>/circulation/reports.html target=_blank><?php echo $msgstr["help"]?></a>&nbsp &nbsp;
 <?php
