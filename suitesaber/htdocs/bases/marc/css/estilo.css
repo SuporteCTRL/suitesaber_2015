@@ -5,7 +5,7 @@ body {
 	font-size:13px;
 	color:#000000; }
 
-/* Erros de preenchimento */
+/* Erros de preenchimento e alertas */
 .erro {
 	color:#EE0000;
 	font-weight:bold;}
@@ -163,11 +163,6 @@ ul.atr li.nota:hover {
 	background-color:#E6E6FA; }
 
 
-/***** Leitores *****/
-
-th.rotulo {
-	text-align:center;}
-
 /***** Dublin Core *****/
 
 textarea.mrc {
@@ -177,4 +172,22 @@ textarea.mrc {
 	font-size:13px;
 	padding:5px;
 	border:1px solid #CCCCCC; }
+
+/***** Leitores *****/
+
+td.direita {
+	width:100px;
+	vertical-align:top; }
+
+td.esquerda,
+td.centro {
+	width:45%;
+	vertical-align:top; }
+
+dt.rotulo {
+	font-weight:bold;
+	color:#0E5188;}
+
+dt.alerta {
+	color:#BB0000;}
 
