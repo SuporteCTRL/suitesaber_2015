@@ -19,7 +19,7 @@ SITE_PATH=/var/www/suitesaber/htdocs/site/
 DATABASE_PATH=/var/www/suitesaber/bases/site/
 
 ; Servername
-SERVERNAME=localhost
+SERVERNAME=localhost:9090
 
 ;Letter unit for Windows only
 LETTER_UNIT=D:
