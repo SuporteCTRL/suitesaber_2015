@@ -10,7 +10,7 @@ if p(v5030) or p(v5040) then
         if v5006^m = 'ON' then
                         ,(
                             if v9021 <> v5021[1] then,
-                                '<a href="'getenv('SCRIPT_NAME')v5000^d[1],'scripts/?IsisScript=',v5000^s[1],'&base=',v5003[1],'&lang=',v9021,'&form=',v6000[1],|&pathLibrary=|v5050[1],|&restriction1=|v7001[1],'">'
+                                '<a href="'getenv('SCRIPT_NAME')v5000^d[1],'scripts/?IsisScript=',v5000^s[1],'&base=',v5003[1],'&lang=',v9021,'&form=',v6000[1],'">'
                                     if v9021 = 'pt' then 'português' fi,
                                     if v9021 = 'es' then 'español' fi,
                                     if v9021 = 'en' then 'english' fi,
@@ -26,8 +26,12 @@ if p(v5030) or p(v5040) then
       '</div>'
 
     '<div class="top">
-        <h1><a href="',v9031^L,'"><img src="',v5002,v5030,'" border="0" alt="logo" /></a></h1>
-        <h2><a title="Pesquisa em bases de dados" href="',v5000^d,'"><span>Pesquisa em bases de dados</span></a></h2>
+		<div id="barrasuperior">
+			<a href="/"><img src="/central/css/saber/images/logoabcd.png" style="padding: 20px 50px 0px 0px;" /></a> 
+				
+		</div>
+		
+
             <div class="spacer"> </div>
             <a name="top"></a>
     </div>'

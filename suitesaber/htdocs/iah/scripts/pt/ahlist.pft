@@ -5,7 +5,15 @@ if v1001 = '1' then 'Content-type: ', if v6212:'export' then 'bireme/application
 if v1001 = '1'  then
 '<html>
 <head>
-<title>',v5003^*,' - Lista</title>
+<title>PESQUISA NO ACERVO- Resultados da pesquisa por ',if p(v6102) then
+                         v6102 ' [',v6100^p,']'
+                    ,else,
+                        ,if v6000='F' then,
+                             replace(v6002,' ',s('&nbsp;'mpu,v6001,mpl'&nbsp;'))
+                        ,else,
+                            ,(if p(v6002) then if iocc > 1 then '&nbsp;'v6001'&nbsp;'fi,v6002,' [',v6003^p,']' fi),
+                        ,fi,
+                    ,fi,'</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <link rel="stylesheet" href="/iah/css/stylesheet.css" type="text/css" />
 
@@ -23,7 +31,7 @@ if v6212 = 'print' then '<body style="background: #FFFFFF !important" onLoad="ja
 '<div id="contentList">
     <div class="contain">
     <div class="copyright">
-		Suíte Saber
+        SuíteSAber.org
         <hr class="ruler" />
         </div>
 
