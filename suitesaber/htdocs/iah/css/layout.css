@@ -15,8 +15,11 @@
 }
 
 .top H1 A {
-	display: block;
-	float: left;
+/*	display: block;*/
+	width: 100%;
+    height: 135px;
+    margin-top: 0px;
+    color: #fff ;
 }
 
 .top H1 SPAN {
@@ -24,8 +27,8 @@
 }
 
 .top h2 {
-	float: left;
-	padding: 20px;
+	float: right;
+	padding: 16px;
 }
 
 .middle {
@@ -43,6 +46,7 @@
 .middle .formHead H3 {
 	float: left;
 	margin-top: 0px;
+
 }
 
 .middle .formHead .help, .middle .formHead .changeForm {
@@ -220,7 +224,7 @@ div.barNavTop {
 	clear: both;
 	background: #1A6B91; /*#ccdbe5;*/
 	padding: 0.2em;
-	/*margin-top: 13px; 36px; 1.2em;*/
+	margin-top: 13px;/* 36px; 1.2em;*/
 	margin-bottom: 0.3em;
 	min-height: 1.2em;
 	z-index:150;
@@ -330,7 +334,7 @@ div.barNavTop input, select, textarea, a {
 .ExprFree input.buttonSearch  {
 	width: 15%;
 	padding-left: 3px;
-	background-image:url('../../central/css/saber/images/lupa.png');
+	background-image:url('http://abcd.fee.tche.br/central/css/saber/images/lupa.png');
 	background-repeat:no-repeat;
 	background-position:center center;
 	cursor:pointer;
@@ -542,6 +546,31 @@ div.rowJnlDetl {
 	text-align: center;
 }
 
+/* FEE */
+
+/* Cabeçalho */
+#barrasuperior {
+	background-color: #3a89af;
+ 	position:relative;
+	margin-top:0px;/*-8px;*/
+	width:100%;
+
+	height:114px; /*120*/
+	z-index:100;
+}
+body#unico { /* ahhead.pft - retirar bg-img do pop-up */
+	background-image: none;
+}
+body {
+
+/*	background-image: url('http://abcd.fee.tche.br/central/css/saber/images/bg-html.png');*/
+	background-repeat: no-repeat;
+	background-position: center top;
+	}
+
+
+/* FIM cabeçalho */
+
 /* Caixa de busca */ 
 .ExprFree input {
 	height:30px;
@@ -549,7 +578,7 @@ div.rowJnlDetl {
 	float: left;
 	text-align: left;
 	width: 515px;
-	border: 1px solid #005AA3;
+	border: 1px solid #1A6B91;
 	-moz-border-radius:7px;
 	-webkit-border-radius:7px;
 	 border-radius:7px;
@@ -569,12 +598,12 @@ div.rowJnlDetl {
 
 /* FIM Caixa de busca */
 
-/* ImpressÃ£o resultados */
+/* Impressão resultados */
 
 .copyright a {
 	font-size:12px;
 }
-/* FIM ImpressÃ£o resultados */
+/* FIM Impressão resultados */
 
 /* Link para site - ahbtop */
 .instituicao {
