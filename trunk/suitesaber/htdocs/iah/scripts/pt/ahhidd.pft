@@ -13,11 +13,6 @@
  '<!--input type="hidden" name="headerImage" value="',v5040,'"-->'/
  '<!--input type="hidden" name="headerURL" value="',v5041,'"-->'/
  '<input type="hidden" name="form" value="',v6000,'">'/
- |<input type="hidden" name="restriction1" value="|v7001|">|
- |<input type="hidden" name="restriction2" value="|v7002|">|
- |<input type="hidden" name="restriction3" value="|v7003|">|
- |<input type="hidden" name="restriction4" value="|v7004|">|
- |<input type="hidden" name="restriction4" value="|v7005|">|
 
 
 ,if v5001^s <> 'CONFIG' then,
@@ -34,6 +29,11 @@
     (|<input type="hidden" name="conectSearch" value="|v6001|">|/),
     (`<input type="hidden" name="exprSearch"   value="`replace(v6002,'"','&quot;')`">`/),
     (|<input type="hidden" name="indexSearch"  value="|v6003|">|/),
+     |<input type="hidden" name="restriction1" value="|v7001|">|
+     |<input type="hidden" name="restriction2" value="|v7002|">|
+     |<input type="hidden" name="restriction3" value="|v7003|">|
+     |<input type="hidden" name="restriction4" value="|v7004|">|
+     |<input type="hidden" name="restriction4" value="|v7005|">|
 ,fi,
 
 ,if v5001^s.5 = 'INDEX' then,
