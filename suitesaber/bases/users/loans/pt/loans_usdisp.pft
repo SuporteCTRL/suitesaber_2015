@@ -1,59 +1,85 @@
 '<head>
 
 <link rel="stylesheet" type="text/css" href="/bases/marc/css/estilo.css" />
-<script language="javascript" type="text/javascript">
-			<!--
-				d = document;
-				window.onload = function (){
-					if (o = d.getElementById("abre")) {
-						o.onclick = function () {
-							d.getElementById("number1").style.display = "block";
-						};
-					}
-					if (o = d.getElementById("fecha")) {
-						o.onclick = function () {
-							d.getElementById("number1").style.display = "block";
-						};
-					}
-				}
-			-->
-</script>
+
+<style type="text/css">
+
+#wrap { margin-top:-60px;}
+
+</style>
+
 </head><body>
 <div id="wrap">'
 
-'<p class="cabecalho">'v30, ' (Cód.: ' v20 ')' '</p>'
-
 '<table cellspacing="0" cellpadding="3" class="mrc">'
-if a(v109) then '<tr><td rowspan="100%" valign="top"><img width="100px" src="/bases/users/noimage.jpg"></td><td></td></tr>' fi
-if p(v109) then '<tr><td rowspan="100%" valign="top"><img width="100px" src="/bases/users/'v109'"></td></tr>' fi
+'<tr>
+	<td colspan="100%"><p class="cabecalho">'v30, ' (Cód.: ' v20 ')' '</p></td>
 
-if p(v20) then '<tr class="mrc"><th class="mrc">Código do leitor</th><td class="mrc">'v20+|<br />|,'</td></tr>' fi/
-if p(v10) then '<tr class="mrc"><th class="mrc">Tipo de leitor</th><td class="mrc">',v10^b, '</td></tr>' fi/
-if p(v15) then '<tr class="mrc"><th class="mrc">Validade do cartão</th><td class="mrc">'v15+|<br />|,'</td></tr>' fi/
-if p(v101) then '<tr class="mrc"><th class="mrc">Documento de identidade</th><td class="mrc">'v101+|<br />|,'</td></tr>' fi/
+</tr>'
+'<tr>
+	<td class="direita">'
+		if a(v109) then '<img width="100px" src="/bases/users/noimage.jpg" />' fi,
+		if p(v109) then '<img width="100px" src="/bases/users/'v109'" />' fi,
+	'</td>
 
-if s(v216,v316)<>'' then '<tr class="mrc"><th class="mrc">E-mail</th><td class="mrc">'
-	if p(v216) then ('<a href="mailto:'v216'" title="Enviar e-mail para 'v216'" target="blank">',v216'</a> (Pessoal)<br />'/) fi,
-	if p(v316) then ('<a href="mailto:'v316'" title="Enviar e-mail para 'v316'" target="blank">',v316'</a> (Comercial)<br />'/) fi,
-'</td></tr>' fi/
-
-if s(v214,v314)<>'' then '<tr class="mrc"><th class="mrc">Telefone</th><td class="mrc">'
-	if p(v214) then (v214 ' (Pessoal)<br />'/) fi,
-	if p(v314) then (v314 ' (Comercial)<br />'/) fi,
-'</td></tr>' fi/
-
-if s(v400,v401,v402)<>'' then '<tr><th class="mrc rotulo" colspan="2">Dados profissionais</th></tr>'
-	if p(v400) then '<tr class="mrc"><th class="mrc">Nome da instituição</th><td class="mrc">'v400+|<br />|,'</td></tr>' fi/
-	if p(v401) then '<tr class="mrc"><th class="mrc">Setor</th><td class="mrc">'v401+|<br />|,'</td></tr>' fi/
-	if p(v402) then '<tr class="mrc"><th class="mrc">Cargo</th><td class="mrc">'v402+|<br />|,'</td></tr>' fi/
-
+	<td class="centro">'
+if s(v10,v15,v103)<>'' then
+		'<dl>
+			<dt class="rotulo">Dados pessoais</dt>
+			<dd>' if p(v10) then 'Tipo: 'v10^b, fi/ '</dd>
+			<dd>' if p(v15) then 'Expira em: 'v15, fi/ '</dd>
+			<dd>' if p(v103) then 'Data de nascimento: 'v103, fi/ '</dd>
+		</dl>'
+fi,
+if s(v101,v104)<>'' then
+		'<dl>
+			<dt class="rotulo">Documentos</dt>
+			<dd>' if p(v101) then 'RG: 'v101+|<br />|, fi/ '</dd>
+			<dd>' if p(v104) then 'CPF: 'v104+|<br />|, fi/ '</dd>
+		</dl>'
+fi,
+if s(v216,v316)<>'' then
+		'<dl>
+			<dt class="rotulo">E-mail</dt>
+			<dd>' if p(v216) then ('<a href="mailto:'v216'" title="Enviar e-mail para 'v216'" target="blank">',v216,'</a> (Pessoal)<br />'/) fi, '</dd>
+			<dd>' if p(v316) then ('<a href="mailto:'v316'" title="Enviar e-mail para 'v316'" target="blank">',v316,'</a> (Comercial)<br />'/) fi, '</dd>
+		</dl>'
+fi,
+if s(v214,v314)<>'' then
+		'<dl>
+			<dt class="rotulo">Telefone</dt>
+			<dd>' if p(v214) then (v214 ' (Pessoal)<br />'/) fi, '</dd>
+			<dd>' if p(v314) then (v314 ' (Comercial)<br />'/) fi, '</dd>
+		</dl>'
+fi,
+if p(v29) then 
+		'<dl>
+			<dt class="rotulo alerta">Observação</dt>
+			<dd>' if p(v29) then (v29 '<br />'/) fi, '</dd>
+		</dl>'
 fi,
 
-if s(v503,v501,v502)<>'' then '<tr><th class="mrc rotulo" colspan="2">Dados de ensino</th></tr>'
-	if p(v503) then '<tr class="mrc"><th class="mrc">Instituição</th><td class="mrc">'V503+|<br />|,'</td></tr>' fi/
-	if p(v501) then '<tr class="mrc"><th class="mrc">Curso</th><td class="mrc">'v501+|<br />|,'</td></tr>' fi/
-	if p(v502) then '<tr class="mrc"><th class="mrc">Período</th><td class="mrc">'v502+|<br />|,'</td></tr>' fi/
+	'</td>
+	<td class="esquerda">'
+if s(v400,v401,v402)<>'' then
+		'<dl>
+			<dt class="rotulo">Dados profissionais</dt>
+			<dd>' if p(v400) then 'Nome da instituição: 'v400+|<br />|, fi/ '</dd>
+			<dd>' if p(v401) then 'Setor: 'v401+|<br />|, fi/ '</dd>
+			<dd>' if p(v402) then 'Cargo: 'v402+|<br />|, fi/ '</dd>
+		</dl>'
 fi,
+if s(v503,v501,v502)<>'' then
+
+		'<dl>
+			<dt class="rotulo">Dados de ensino</dt>
+			<dd>' if p(v503) then 'Instituição: 'v503+|<br />|, fi/ '</dd>
+			<dd>' if p(v501) then 'Curso: 'v501+|<br />|, fi/ '</dd>
+			<dd>' if p(v502) then 'Período: 'v502+|<br />|, fi/ '</dd>
+		</dl>'
+fi,
+	'</td>
+</tr>'
 
 '</table>'
 
