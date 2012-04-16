@@ -220,6 +220,7 @@ global $db_path,$Wxis,$xWxis,$arrHttp,$msgstr,$tr_prestamos;
 	$prestamos=array();
 	foreach ($contenido as $linea){
 		$tr_prestamos[]=$linea;
+
 	}
 }
 
@@ -652,11 +653,15 @@ echo "&nbsp; &nbsp; Script: usuarios_prestamos_presentar.php </font>
 // prestar, reservar o renovar
 ?>
 <div class="middle form">
-	<div class="formContent">
+
+	<div class="formContent" style="width:60%;float:left;">
+
 <form name=ecta>
+
 <?php
 
 echo $ec_output;
+
 if ($reservas !=""){
 	echo "<P><font color=red><strong>".$msgstr["total_copies"].": ".count($copies_title).". ".$msgstr["item_reserved"]."</strong></font><br>";
 	echo $reservas ;
@@ -670,9 +675,11 @@ echo "<a id=botoes  href=\"javascript: void(0)\"
 
 </div></div>
 
- 
+
+<div style="position:relative;width:35%;float:right;"><iframe scrolling="no" src="prestar2.php?&base=users&usuario=<?php echo $arrHttp['usuario'];?>" height="100" width="100%" frameborder="0"></div>
 
 <?php include("../common/footer.php");?>
+
 </body>
 </html>
 
