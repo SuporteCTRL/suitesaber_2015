@@ -614,7 +614,7 @@ switch ($arrHttp["Opcion"]) {
         $resultado=EjecutarBusqueda();
          include("scripts_dataentry.php");
         if ($resultado=="0"){        	$arrHttp["Opcion"]=="ninguna";
-        	echo "	aaaaaaaaaaaaaaaaaaaaa<div class=\"middle form\">
+        	echo "<div class=\"middle form\">
 						<div class=\"formContent\">\n";
 			echo "<font face=arial style=font-size:10px>".$msgstr["expresion"].": ".stripslashes($arrHttp["Expresion"])."</font>";
 			echo "<h4>".$msgstr["registros"].": ".$resultado."</h4></div></div>\n";
