@@ -93,7 +93,7 @@ echo "</script>\n";
 
 function EnviarForma(){
 	if (Trim(document.inventorysearch.inventory.value)=="" || Trim(document.inventorysearch.usuario.value)=="" ){
-		alert("<?php echo $msgstr["falta"]." ".$msgstr["inventory"]." / ".$msgstr["usercode"]?>")
+		//alert("<?php echo $msgstr["falta"]." ".$msgstr["inventory"]." / ".$msgstr["usercode"]?>")
 		return
 	}
     document.inventorysearch.submit()
@@ -118,7 +118,7 @@ function AbrirIndice(Tipo,xI){
 		case "S":
 			bd_sel=document.inventorysearch.db.selectedIndex
 			if (bd_sel<=0){
-				alert("debe seleccionar una base de datos")
+				//alert("debe seleccionar una base de datos")
 				return
 			}
 			bd_a=document.inventorysearch.db.options[bd_sel].value
@@ -160,37 +160,17 @@ function AbrirIndice(Tipo,xI){
 <?php
 $encabezado="";
 echo "<body onLoad=javascript:document.inventorysearch.inventory.focus()>\n";
-include("../common/institutional_info.php");
+//include("../common/institutional_info.php");
 $link_u="";
 if (isset($arrHttp["usuario"]) and $arrHttp["usuario"]!="") $link_u="&usuario=".$arrHttp["usuario"];
 ?>
-<div class="sectionInfo">
-<div class="language">
-		<?php include("submenu_prestamo.php");?>
-</div>
-
-</div>
-	<div class="breadcrumb"><h3>
-		<?php echo $msgstr["loan"];
-		  if (isset($arrHttp["usuario"]) and $arrHttp["usuario"]!="") echo " - ".$msgstr["users"].": ".$arrHttp["usuario"];
-		?>
-	</h3></div>
-	<div class="actions">
-
-	</div>
-
-<div class="helper">
-<?php echo "
-<a href=../documentacion/ayuda.php?help=". $_SESSION["lang"]."/circulation/loan.html target=_blank>". $msgstr["help"]."</a>&nbsp &nbsp;";
-if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
-	echo "<a href=../documentacion/edit.php?archivo=". $_SESSION["lang"]."/circulation/loan.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "&nbsp; &nbsp; Script: prestar.php </font>
-	</div>";
-// prestar, reservar o renovar
-?>
 
 
-<form name=inventorysearch action=usuario_prestamos_presentar.php method=GET onsubmit="javascript:return false">
+
+<div>
+
+
+<form name=inventorysearch target="self" action=usuario_prestamos_presentar.php method=post onsubmit="javascript:return false">
 <input id=#botoes type=hidden name=Opcion value=prestar>
 <div class="middle list">
 	<div class="searchBox">
@@ -244,24 +224,23 @@ if (file_exists($db_path."loans.dat")){
 	</div>
 	<div class="searchBox">
 		<table width=100% border=0>
-		<td width=150>
+		<td>
 		<label for="searchExpr">
 			<strong><?php echo $msgstr["usercode"]?></strong>
 		</label>
 		</td>
 		<td>
-		<input type="text" name="usuario" id="usuario" class="textEntry" onfocus="this.className = 'textEntry';"  onblur="this.className = 'textEntry'; "
+		<input style="border: none; background: #fff;width:80px;" type="text" readonly="yes" name="usuario" id="usuario" value="<?php echo $arrHttp['usuario'];?>"  "
 <?php
 if (isset($arrHttp["usuario"]) and $arrHttp["usuario"]!="")
 	echo "value=\"".$arrHttp["usuario"]."\"";
 ?>/>
 
 
-		<input type="button" name="list" value="<?php echo $msgstr["list"]?>" class="submit" onclick="javascript:AbrirIndice('U',document.inventorysearch.usuario)"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	
 		<input id="botoes"  type="submit" name="prestar" value="<?php echo $msgstr["loan"]?>" xclass="submitAdvanced" onclick="javascript:EnviarForma()"/>
 
 		</td></table>
-        <?php echo $msgstr["clic_en"]." <i>[".$msgstr["loan"]."]</i> ".$msgstr["para_c"]?>
+        <?php //echo $msgstr["clic_en"]." <i>[".$msgstr["loan"]."]</i> ".$msgstr["para_c"]?>
 
 	</div>
 	</div>
