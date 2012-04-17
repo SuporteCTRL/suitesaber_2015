@@ -676,7 +676,7 @@ echo "<a id=botoes  href=\"javascript: void(0)\"
 </div></div>
 
 
-<div style="position:relative;width:35%;float:right;"><iframe scrolling="no" src="prestar2.php?&base=users&usuario=<?php echo $arrHttp['usuario'];?>" height="100" width="100%" frameborder="0"></div>
+<div style="position:relative;width:35%;float:right;"><iframe scrolling="no" src="prestar2.php?&base=users&usuario=<?php echo $arrHttp['usuario'];?>" height="200" width="100%" frameborder="0"></div>
 
 <?php include("../common/footer.php");?>
 
