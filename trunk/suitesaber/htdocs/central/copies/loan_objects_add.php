@@ -166,6 +166,7 @@ foreach ($contenido as $value){
 	}
 	echo "</select></td>";
 }
+
 echo "</table>
 <input type=hidden name=status>
 <input type=hidden name=duplicated>
@@ -209,7 +210,7 @@ function Send(){
 	document.forma1.submit()
 }
 </script>
-<?
+<?php
 	echo "<body>
 	<form name=forma1 action=loan_objects_update.php onsubmit='return false'>\n";
 	if (isset($arrHttp["encabezado"])){
@@ -217,9 +218,23 @@ function Send(){
 		$encabezado="&encabezado=s";
 	}
 ?>
+
+<div class="helper">
+<a href=../documentacion/ayuda.php?help=<?php echo $_SESSION["lang"]?>/copies/loan_objects.html target=_blank><?php echo $msgstr["help"]?></a>
+<?php
+if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
+	echo "<a href=../documentacion/edit.php?archivo=". $_SESSION["lang"]."/copies/loan_objects.html target=_blank>".$msgstr["edhlp"]."</a>";
+echo " Script: loan_objects_add.php</font>";
+
+
+echo "</div>";
+
+?>
+
+	<h3><?php echo $msgstr["loanobjects"]?></h3>
 <div class="sectionInfo">
 	<div class="breadcrumb">
-		<?php echo $msgstr["loanobjects"]?>
+	
 	</div>
 	<div class="actions">
 		<?php
@@ -230,11 +245,16 @@ function Send(){
 		}
 
 		?>
-		<a href='javascript:top.toolbarEnabled="";top.Menu("same")' class="defaultButton backButton">
+		
+		<a  id="botoes"  href="../dataentry/browse2.php?base=loanobjects&modulo=loan">
+			<?php echo $msgstr["objectsloan"]?>
+		</a>
+		
+		<a  id="botoes" href='javascript:top.toolbarEnabled="";top.Menu("same")'>
 <?php echo $msgstr["back"]?></a>
 		<?php if ($error==""){
 		?>
-		<a href=javascript:Send() class="defaultButton copiesdbaddButton">
+		<a id="botoes" href=javascript:Send() >
 
 		<?php echo $msgstr["update"]?>
 		</a>
@@ -243,20 +263,13 @@ function Send(){
 		?>
 
 	</div>
-	<div class="spacer">&#160;</div>
-</div>
-<div class="helper">
-<a href=../documentacion/ayuda.php?help=<?php echo $_SESSION["lang"]?>/copies/loan_objects.html target=_blank><?php echo $msgstr["help"]?></a>&nbsp &nbsp;
-<?php
-if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
-	echo "<a href=../documentacion/edit.php?archivo=". $_SESSION["lang"]."/copies/loan_objects.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "<font color=white>&nbsp; &nbsp; Script: loan_objects_add.php</font>";
-echo "
-</div>
-<div class=\"middle form\">
-		<div class=\"formContent\">
 
-";
+</div>
+
+
+<?php
+
+echo "<div class=\"middle form\"><div class=\"formContent\">";
 if ($error!=""){
 	echo "<h4>".$msgstr[$error]."</h4>";
 }
