@@ -173,7 +173,6 @@ echo "
 	</div>
 	<div class=\"actions\">";
 if ($arrHttp["Accion"]!="P"){	echo "<a href=\"administrar.php?base=".$arrHttp["base"]."\"  class=\"defaultButton backButton\">
-	<img src=\"../images/defaultButton_iconBorder.gif\" alt=\"\" title=\"\" />
 		<span><strong>".$msgstr["regresar"]."</strong></span></a>";}
 ?>
 
