@@ -124,7 +124,8 @@ global $locales,$config_date_format;;
 	if (count($prestamos)>0) {
 		$ec_output.= "<strong>".$msgstr["loans"]."</strong>
 		<table width=95% bgcolor=#cccccc>
-		<td> </td><th>".$msgstr["inventory"]."</th><th>".$msgstr["control_n"]."</th><th>".$msgstr["signature"]."</th><th>".$msgstr["reference"]."</th><th>".$msgstr["typeofitems"]."</th><th>".$msgstr["loandate"]."</th><th>".$msgstr["devdate"]."</th><th>".$msgstr["actual_dev"]."</th><th>".$msgstr["renewals"]."</th>";
+		<td> </td><th>".$msgstr["inventory"]."</th><th>".$msgstr["control_n"]."</th><th>".$msgstr["signature"]."</th><th>".$msgstr["reference"]."</th><th>".$msgstr["typeofitems"]."</th><th>".$msgstr["loandate"]."</th><th>".$msgstr["devdate"]."</th>
+		<th>Devolução real</th><th>Renovado</th>";
 
 		foreach ($prestamos as $linea) {
 			if (!empty($linea)) {
