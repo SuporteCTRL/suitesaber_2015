@@ -170,13 +170,12 @@ if (isset($arrHttp["encabezado"])){
 	$arrHttp["encabezado"]="s";
 	if (isset($arrHttp["encabezado"])){
 		if (isset($_SESSION["permiso"]["CENTRAL_ALL"]) or isset($_SESSION["permiso"]["CENTRAL_MODIFYDEF"])){
-			echo "<a href=\"menu_mantenimiento.php?base=".$arrHttp["base"]."$encabezado\" class=\"defaultButton cancelButton\">
-			<img src=\"../images/defaultButton_iconBorder.gif\" alt=\"\" title=\"\" />
+			echo "<a href=\"menu_mantenimiento.php?base=".$arrHttp["base"]."$encabezado\" class=\"defaultButton\">
+
 		<span><strong>".$msgstr["cancel"]."</strong></span></a>
 			";
 		}else{
 			echo "<a href=\"../common/inicio.php?reinicio=s&base=".$arrHttp["base"]."$encabezado\" class=\"defaultButton cancelButton\">
-			<img src=\"../images/defaultButton_iconBorder.gif\" alt=\"\" title=\"\" />
 		<span><strong>".$msgstr["cancel"]."</strong></span></a>
 			";
 		}
@@ -188,11 +187,11 @@ if (isset($arrHttp["encabezado"])){
 <div class="spacer">&#160;</div>
 </div>
 <div class="helper">
-<a href=../documentacion/ayuda.php?help=<?php echo $_SESSION["lang"]?>/<?php echo $ayuda?> target=_blank><?php echo $msgstr["help"]?></a>&nbsp &nbsp;
+<a href=../documentacion/ayuda.php?help=<?php echo $_SESSION["lang"]?>/<?php echo $ayuda?> target=_blank><?php echo $msgstr["help"]?></a>
 <?php
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 	echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/".$ayuda." target=_blank>".$msgstr["edhlp"]."</a>";
-echo "<font color=white>&nbsp; &nbsp; Script: assign_control_number.php";
+echo "Script: assign_control_number.php";
 ?>
 </font>
 	</div>
@@ -215,7 +214,7 @@ echo "<font color=white>&nbsp; &nbsp; Script: assign_control_number.php";
 			echo $arrHttp["to"];
 		else
 			echo "1";
-		echo ">&nbsp; &nbsp; &nbsp; &nbsp;";
+		echo ">";
 		echo $msgstr["r_hasta"].": <input type=text name=to size=10 value=";
 		if (isset($arrHttp[to])){
 			$count=$arrHttp["to"]-$arrHttp["from"]-1;
@@ -228,12 +227,12 @@ echo "<font color=white>&nbsp; &nbsp; Script: assign_control_number.php";
 		echo ">";
 		echo $msgstr["maxmfn"].": ".$tag["MAXMFN"]
 		?>
-		&nbsp; &nbsp; &nbsp; <a href=javascript:BorrarRango() class=boton><?php echo $msgstr["borrar"]?></a>
+		<a id="botoes" href=javascript:BorrarRango() class=boton><?php echo $msgstr["borrar"]?></a>
 	</td>
 	<tr>
 		<td colspan=2 align=center>
 		<?php
-		echo "Last control number: ".$last_cn." <a href=Javascript:Reset()>".$msgstr["resetcn"]."</a>";?><p><input type=submit name=enviar value="<?php echo $msgstr["send"]?>" onClick=javascript:EnviarForma()></td>
+		echo "Last control number: ".$last_cn." <a id=botoes href=Javascript:Reset()>".$msgstr["resetcn"]."</a>";?><p><input type=submit id=botoes name=enviar value="<?php echo $msgstr["send"]?>" onClick=javascript:EnviarForma()></td>
 </table>
 </form>
 </center>
