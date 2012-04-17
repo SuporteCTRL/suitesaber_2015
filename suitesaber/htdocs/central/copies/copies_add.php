@@ -81,21 +81,26 @@ function Validar(){
 }
 </script>
 <body>
+<div class="sectionInfo">
+<div class="language">
+
+</div>
+</div>
+<div class="bradcrumb">
+<h2><?php 	echo "$msgstr[m_addcopies]"; ?></h2>
+</div>
+<div class="actions">
+
 <?php
 if (isset($arrHttp["encabezado"]) and $arrHttp["encabezado"]=="s"){
-	include("../common/institutional_info.php");
+	//include("../common/institutional_info.php");
 }
 $urlcopies="";
 if (isset($arrHttp["db_copies"])) $urlcopies="&db_copies=Y";
- echo "
-	<div class=\"sectionInfo\">
-		<div class=\"breadcrumb\">".
-			 $msgstr["m_addcopies"]."
-		</div>
-		<div class=\"actions\">\n";
+// echo "<div class=\"sectionInfo\"><div class=\"language\">\n";
 if ($err_copies!="Y" and $error==""){
 	if (isset($arrHttp["encabezado"])){
-				echo "<a href=\"../common/inicio.php?reinicio=s\" class=\"defaultButton cancelButton\">
+				echo "<a href=\"../common/inicio.php?reinicio=s\" class=\"defaultButton\">
 
 						<span><strong>". $msgstr["cancel"]."</strong></span>
 					</a>";
@@ -116,11 +121,9 @@ if ($err_copies!="Y" and $error==""){
 <?php echo $msgstr["back"]?></a>
 <?php
 }
-echo "	</div>
-		<div class=\"spacer\">&#160;</div>
-	</div>";
 ?>
-<div class="helper">
+</div>
+<div style="margin-top:50px;">
 	<a href=../documentacion/ayuda.php?help=<?php echo $_SESSION["lang"]?>/copies/copies_add.html target=_blank><?php echo $msgstr["help"]?></a>&nbsp &nbsp;
 <?php
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
