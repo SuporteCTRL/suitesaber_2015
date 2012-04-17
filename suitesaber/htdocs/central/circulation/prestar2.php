@@ -170,7 +170,7 @@ if (isset($arrHttp["usuario"]) and $arrHttp["usuario"]!="") $link_u="&usuario=".
 <div>
 
 
-<form name=inventorysearch target="self" action=usuario_prestamos_presentar.php method=post onsubmit="javascript:return false">
+<form name=inventorysearch target="_top" action=usuario_prestamos_presentar.php method=post onsubmit="javascript:return false">
 <input id=#botoes type=hidden name=Opcion value=prestar>
 <div class="middle list">
 	<div class="searchBox">
