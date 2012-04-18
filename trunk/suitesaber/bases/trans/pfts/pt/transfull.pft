@@ -20,9 +20,13 @@ tr:hover.result {
 '<tr class="result">',
 '<td valign=top>'(if v1 = 'P' THEN '<span style="color:red">Emprestado</span>' fi),(if v1 = 'X' THEN '<span style="color:green">Devolvido</span>' fi) if a(v1) then '&nbsp;' fi,'</td>'/
 '<td valign=top>'v10+|; | if a(v10) then '&nbsp;' fi,'</td>'/
-'<td valign=top  style="text-align:left;width:180px;"> 'v20,' - ',
+'<td valign=top  style="text-align:left;width:180px;">
 
-ref(['/var/www/suitesaber/bases/users/data/users'] l(['/var/www/suitesaber/bases/users/data/users'],'CO_'v20),v30)
+<a href=# onClick=javascript:window.open("/central/dataentry/show.php?base=users&cipar=users.par&Mfn='v20'&encabezado=s&Opcion=editar","","location=0,status=0,scrollbars=1,width=650,height=600");>
+
+ 'v20,' - ',
+
+ref(['/var/www/suitesaber/bases/users/data/users'] l(['/var/www/suitesaber/bases/users/data/users'],'CO_'v20),v30),'</a>' 
 
  if a(v20) then '&nbsp;' fi,'</td>'/
 '<td valign=top>'v30*6.2,'/',v30*4.2,'/',v30.4+|; | if a(v30) then '&nbsp;' fi,'</td>'/
