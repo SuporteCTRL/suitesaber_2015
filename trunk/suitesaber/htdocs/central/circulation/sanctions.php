@@ -1,29 +1,29 @@
 <?php
 /**
- * @program:   ABCD - ABCD-Central - http://reddes.bvsaude.org/projects/abcd
- * @copyright:  Copyright (C) 2009 BIREME/PAHO/WHO - VLIR/UOS
- * @file:      sanctions.php
- * @desc:      Asks for the borrower number to be sanctiones
- * @author:    Guilda Ascencio
- * @since:     20091203
- * @version:   1.0
- *
- * == BEGIN LICENSE ==
- *
- *    This program is free software: you can redistribute it and/or modify
- *    it under the terms of the GNU Lesser General Public License as
- *    published by the Free Software Foundation, either version 3 of the
- *    License, or (at your option) any later version.
- *
- *    This program is distributed in the hope that it will be useful,
- *    but WITHOUT ANY WARRANTY; without even the implied warranty of
- *    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *    GNU Lesser General Public License for more details.
- *
- *    You should have received a copy of the GNU Lesser General Public License
- *    along with this program.  If not, see <http://www.gnu.org/licenses/>.
- *
- * == END LICENSE ==
+ * @program:   ABCD - ABCD-Central - http://reddes.bvsaude.org/projects/abcd
+ * @copyright:  Copyright (C) 2009 BIREME/PAHO/WHO - VLIR/UOS
+ * @file:      sanctions.php
+ * @desc:      Sanctions
+ * @author:    Guilda Ascencio
+ * @since:     20091203
+ * @version:   1.0
+ *
+ * == BEGIN LICENSE ==
+ *
+ *    This program is free software: you can redistribute it and/or modify
+ *    it under the terms of the GNU Lesser General Public License as
+ *    published by the Free Software Foundation, either version 3 of the
+ *    License, or (at your option) any later version.
+ *
+ *    This program is distributed in the hope that it will be useful,
+ *    but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *    GNU Lesser General Public License for more details.
+ *   
+ *    You should have received a copy of the GNU Lesser General Public License
+ *    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *   
+ * == END LICENSE ==
 */
 session_start();
 if (!isset($_SESSION["permiso"])){
@@ -51,10 +51,8 @@ document.onkeypress =
   }
 
 function EnviarForma(){
-	if (Trim(document.usersearch.usuario.value)=="" ){
-		alert("<?php echo $msgstr["falta"]." ".$msgstr["usercode"]?>")
-		return
-	}
+	if (Trim(document.usersearch.usuario.value)=="" ){		alert("<?echo $msgstr["falta"]." ".$msgstr["usercode"]?>")
+		return	}
 	document.usersearch.action="sanctions_ex.php"
 	document.usersearch.submit()
 }
@@ -89,25 +87,20 @@ $link_u="";
 if (isset($arrHttp["usuario"]) and $arrHttp["usuario"]!="") $link_u="&usuario=".$arrHttp["usuario"];
 ?>
 <div class="sectionInfo">
-<div class="language">
-		<?php include("submenu_prestamo.php");?>
-</div>
-
-</div>
-	<div class="breadcrumb"><h3>
+	<div class="breadcrumb">
 		<?php echo $msgstr["statment"]?>
-	</h3></div>
-	<div class="actions">
-
 	</div>
-
-
+	<div class="actions">
+		<?php include("submenu_prestamo.php");?>
+	</div>
+	<div class="spacer">&#160;</div>
+</div>
 <div class="helper">
 <a href=../documentacion/ayuda.php?help=<?php echo $_SESSION["lang"]?>/circulation/sanctions.html target=_blank><?php echo $msgstr["help"]?></a>&nbsp &nbsp;
 <?php
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 	echo "<a href=../documentacion/edit.php?archivo=". $_SESSION["lang"]."/circulation/sanctions.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "&nbsp; &nbsp; Script: sanctions.php</font>\n";
+echo "<font color=white>&nbsp; &nbsp; Script: sanctions.php</font>\n";
 ?>
 	</div>
 <div class="middle list">
@@ -123,7 +116,7 @@ echo "&nbsp; &nbsp; Script: sanctions.php</font>\n";
 		<input type="text" name="usuario" id="code" value="<?php if (isset($arrHttp["usuario"])) echo $arrHttp["usuario"]?>" class="textEntry" onfocus="this.className = 'textEntry textEntryFocus';"  onblur="this.className = 'textEntry';" />
 
 		<input type="button" name="index" value="<?php echo $msgstr["list"]?>" class="submit" onClick="AbrirIndice('U',document.usersearch.usuario)" />
-		<input type="submit"  id="botoes"  name="buscar" value="<?php echo $msgstr["search"]?>" xclass="submitAdvanced" onclick="EnviarForma()"/>
+		<input type="submit" name="buscar" value="<?php echo $msgstr["search"]?>" xclass="submitAdvanced" onclick="EnviarForma()"/>
 		</td>
 	</table>
 	</form>
@@ -138,7 +131,6 @@ echo "&nbsp; &nbsp; Script: sanctions.php</font>\n";
 <input type=hidden name=usuario value="">
 <input type=hidden name=inventory>
 </form>
-<div class="footer">		
 <?php include("../common/footer.php");
-echo "</div></body></html>" ;
+echo "</body></html>" ;
 ?>
