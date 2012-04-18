@@ -14,10 +14,8 @@ v95,'^'
 v98,'^'
 '<img width=100 src=/bases/marc/'v100^y,'>^'
 v1,'^'
-v1,'^'
-v400'^' 
+v400'^'
 v500*6.2,'-',v500*4.2,'-',v500.4/
-
 /* 0  Número de inventário
    1  Número de classificação
    2  Descrição do objeto
