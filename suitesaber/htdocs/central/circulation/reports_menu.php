@@ -46,13 +46,13 @@ function DoList($database){global $db_path,$msgstr,$encabezado,$lang_db; 	unse
 			$fp = file($db_path."$database/pfts/".$lang_db."/formatos.dat");
 
 	if ($fp){
-		echo "<strong>".$msgstr["reports_$database"].": $database</strong>";
+		echo "<h3><strong>".$msgstr["reports_$database"].": $database</strong></h3>";
 		echo "<ul>";
 		foreach ($fp as $value){
 			$value=trim($value);
 			if (!empty($value)) {
 				$pp=explode('|',$value);
-				echo "<li><a href=reports_menu_recsel.php?base=$database&list=".urlencode($value)."$encabezado>".$pp[1]."</a>";
+				echo "<li><a target=statist href=reports_menu_recsel2.php?base=$database&list=".urlencode($value)."$encabezado>".$pp[1]."</a>";
 			}
 		}
 		echo "</ul>";
@@ -331,7 +331,7 @@ if (isset($arrHttp["encabezado"])){	include("../common/institutional_info.php")
 <?php
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 	echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/circulation/reports.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "&nbsp; &nbsp; Script: reports_menu.php";
+echo "Script: reports_menu.php";
 ?>
 </font>
 	</div>
@@ -347,24 +347,27 @@ echo "&nbsp; &nbsp; Script: reports_menu.php";
 
 <?php if (isset($arrHttp["encabezado"])) echo "<input type=hidden name=encabezado value=s>\n";
 ?><center>
-<div class="middle form">
+<div class="middle form" style="position:relative; width:20%;background:#fff;float:left;">
 			<div class="formContent">
 <!-- USE AN EXISTING FORMAT -->
 <?php
-	echo "<center><table>
+	echo "<table>
 			<tr>
-			<td align=left   valign=center>";
+			<td align=left>";
 	DoList("trans");
 	DoList("users");
 	DoList("suspml");
 
-?>
+?></h4>
 </td>
 
 </table>
 <p>
 </center>
 </div>
+</div>
+<div style="position:relative;width:80%;background:#fff;float:right;height:580px;">
+<iframe style="width:100%;height:100%;" src="#" id="statist" name="statist" frameborder="0" >
 </div>
 </center>
 <?php

@@ -1,30 +1,33 @@
 <?php
 /**
- * @program:   ABCD - ABCD-Central - http://reddes.bvsaude.org/projects/abcd
- * @copyright:  Copyright (C) 2009 BIREME/PAHO/WHO - VLIR/UOS
- * @file:      sanctions_ex.php
- * @desc:      Register suspensions and fines to a user
- * @author:    Guilda Ascencio
- * @since:     20091203
- * @version:   1.0
- *
- * == BEGIN LICENSE ==
- *
- *    This program is free software: you can redistribute it and/or modify
- *    it under the terms of the GNU Lesser General Public License as
- *    published by the Free Software Foundation, either version 3 of the
- *    License, or (at your option) any later version.
- *
- *    This program is distributed in the hope that it will be useful,
- *    but WITHOUT ANY WARRANTY; without even the implied warranty of
- *    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *    GNU Lesser General Public License for more details.
- *
- *    You should have received a copy of the GNU Lesser General Public License
- *    along with this program.  If not, see <http://www.gnu.org/licenses/>.
- *
- * == END LICENSE ==
+ * @program:   ABCD - ABCD-Central - http://reddes.bvsaude.org/projects/abcd
+ * @copyright:  Copyright (C) 2009 BIREME/PAHO/WHO - VLIR/UOS
+ * @file:      sanctions_ex.php
+ * @desc:      Sanctions EX
+ * @author:    Guilda Ascencio
+ * @since:     20091203
+ * @version:   1.0
+ *
+ * == BEGIN LICENSE ==
+ *
+ *    This program is free software: you can redistribute it and/or modify
+ *    it under the terms of the GNU Lesser General Public License as
+ *    published by the Free Software Foundation, either version 3 of the
+ *    License, or (at your option) any later version.
+ *
+ *    This program is distributed in the hope that it will be useful,
+ *    but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *    GNU Lesser General Public License for more details.
+ *   
+ *    You should have received a copy of the GNU Lesser General Public License
+ *    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *   
+ * == END LICENSE ==
 */
+////////////////////////////////////////////////////////////////////////////////////
+//  Register suspensions and fines to a user
+///////////////////////////////////////////////////////////////////////////////////
 session_start();
 if (!isset($_SESSION["permiso"])){
 	header("Location: ../common/error_page.php") ;
@@ -35,6 +38,10 @@ include("../config_loans.php");
 $lang=$_SESSION["lang"];
 include("../lang/prestamo.php");
 include("fecha_de_devolucion.php");
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+
 
 
 $valortag = Array();
@@ -58,46 +65,30 @@ document.onkeypress =
     return true;
   };
 
-function ColocarFecha(){
-// si es una suspensión, se coloca la fecha a partir del vencimiento de la última suspensión
+function ColocarFecha(){// si es una suspensión, se coloca la fecha a partir del vencimiento de la última suspensión
 // si es una multa, se coloca la fecha del día
 	ix=document.sanctions.type.selectedIndex
-	if (ix<1){
-		alert("<?php echo $msgstr["missst"]?>")
-		return
-	}
+	if (ix<1){		alert('<?php echo $msgstr["falta"]." ".$msgstr["sanctiontype"]?>')
+		return	}
 	type=document.sanctions.type.options[ix].value
-	switch(type){
-		case "S":
+	switch(type){		case "S":
 			document.sanctions.date.value=fecha_susp
 			break
 		case "M":
 			document.sanctions.date.value=fecha_dia
-			break
-	}
+			break	}
 	document.sanctions.units.focus()
 }
 
-function EnviarForma(){
-	ix=document.sanctions.type.selectedIndex
-	if (ix<1){
-		alert("<?php echo $msgstr["missst"]?>")
+function EnviarForma(){	ix=document.sanctions.type.selectedIndex
+	if (ix<1 || Trim(document.sanctions.date.value=="")){
+		alert('<?php echo $msgstr["falta"]." ".$msgstr["sanctiontype"]?>')
 		return
-	}
-	if (Trim(document.sanctions.date.value=="")){
-		alert("<?php echo $msgstr["missdt"]?>")
-		return
-	}
-	if (Trim(document.sanctions.units.value)==""){
-		alert("<?php echo $msgstr["missper"]?>")
-		return
-	}
-	if (Trim(document.sanctions.reason.value)==""){
-		alert("<?php echo $msgstr["missreason"]?>")
-		return
-	}
-	document.sanctions.submit();
-}
+	}	if (Trim(document.sanctions.units.value)==""){		alert('<?php echo $msgstr["enterval"]." ".$msgstr["fines_days"]?>')
+		return	}
+	if (Trim(document.sanctions.reason.value)==""){		alert('<?php echo $msgstr["falta"]." ".$msgstr["reason"]?>')
+		return	}
+	document.sanctions.submit();}
 
 </script>
 <?
@@ -116,9 +107,8 @@ echo "<body>";
 </div>
 <div class="helper">
 <?php echo "<a href=../documentacion/ayuda.php?help=". $_SESSION["lang"]."/circulation/sanctions.html target=_blank>". $msgstr["help"]."</a>&nbsp &nbsp;";
-if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
-	echo "<a href=../documentacion/edit.php?archivo=". $_SESSION["lang"]."/circulation/sanctions.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo  "&nbsp; &nbsp; Script: sanctions_ex.php </font>";
+if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))	echo "<a href=../documentacion/edit.php?archivo=". $_SESSION["lang"]."/circulation/sanctions.html target=_blank>".$msgstr["edhlp"]."</a>";
+echo  "<font color=white>&nbsp; &nbsp; Script: sanctions_ex.php </font>";
 ?>
 	</div>
 <div class="middle form">
@@ -138,8 +128,7 @@ echo  "&nbsp; &nbsp; Script: sanctions_ex.php </font>";
 	$fecha_exp="";
 	$fecha_dia=PrepararFecha(date("Ymd"));
 	$fecha_exp=$fecha_dia;
-	if (count($susp)>0){          // se determina el vencimiento de la última sanción
-		$sancion=$susp[count($susp)-1];
+	if (count($susp)>0){          // se determina el vencimiento de la última sanción		$sancion=$susp[count($susp)-1];
 		$p=explode("|",$sancion);
 		if ($p[6]>$fecha_dia){
 			$exp_date=mktime(0,0,0,substr($p[6],4,2),substr($p[6],6,2)+1,substr($p[6],0,4));
@@ -165,10 +154,8 @@ echo  "&nbsp; &nbsp; Script: sanctions_ex.php </font>";
 $file=$db_path."suspml/def/".$_SESSION["lang"]."/sanctions.tab";
 if (!file_exists($file)) $file=$db_path."suspml/def/".$lang_db."/sanctions.tab";
 $fp=file($file);
-foreach ($fp as $value) {
-	$val=explode('|',$value);
-	echo "<option value='".$val[0]."'>".$val[1]."\n";
-}
+foreach ($fp as $value) {	$val=explode('|',$value);
+	echo "<option value='".$val[0]."'>".$val[1]."\n";}
 ?>
 			</select>
         </td>
