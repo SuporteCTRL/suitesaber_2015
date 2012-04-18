@@ -83,13 +83,12 @@ if s(v240^a,v730^a,v740^a)<>'' then  '</td></tr>'/ fi,
     if v246*1.1='8' then '<tr class="mrc"><th class="mrc">Título de lombada</th><td class="mrc">',fi, 	
 	if v246*1.1='#' then '<tr class="mrc"><th class="mrc">Forma variante do título</th><td class="mrc">' fi,	
 
-  v246^a, if p(v246^b) then v246^b fi, '<br />'/fi/) 
+  v246^a, if p(v246^b) then ' : 'v246^b fi, if p(v246^c) then ' / 'v246^c fi,'<br />'/fi/) 
 
 if p(v246^a) then '</td></tr>' fi,
 
 if p(v242^a) then '<tr class="mrc"><th class="mrc">Título traduzido</th><td class="mrc">',
     v242^a,fi,
-
 if p(v242^a) then '</td></tr>'/fi/
 
 if p(v767) then '<tr class="mrc"><th class="mrc">Traduzido como</th><td class="mrc">',
@@ -222,7 +221,7 @@ if s(v700^a,v710^a,v711^a)<>'' then '<tr class="mrc"><th class="mrc">Autores adi
 
 
 		if p(v700^a) then (v700^a if p(v700^d) then ' (' v700^d ')' fi,'<br />'/)fi,
-		if p(v710^a) then (v710^a v710^b '<br />'/)fi,
+		if p(v710^a) then (v710^a if p(v710^b) then '. 'v710^b fi, '<br />'/)fi,
 		if p(v711^a) then (v711^a, if s(v711^d,v711^c)<>'' then ' ('v711^d,| : |v711^c')'fi,  '<br />'/)fi,
 
 
@@ -235,6 +234,13 @@ if s(v700^a,v710^a,v711^a)<>'' then '<tr class="mrc"><th class="mrc">Autores adi
 if p(v773^w) then '<tr class="mrc"><th class="mrc">Fonte</th><td class="mrc">' v773^a ". &ndash; " v773^t ". &ndash; " v773^d ". &ndash; " v773^g  ". &ndash; ISSN " v773^x "." '<br />',@doc-principal.pft,'</td></tr>' fi,
 
 '<!-- FIM Analíticas 773 -->'
+
+'<!-- Itens na copies -->'
+
+if ref(['/var/www/suitesaber/bases/copies/data/copies'] l(['/var/www/suitesaber/bases/copies/data/copies'],"CN_MARC_"v1),V30,)<>'' then '<tr class="mrc"><th class="mrc">Itens</th><td class="mrc">'ref(['/var/www/suitesaber/bases/copies/data/copies'] l(['/var/www/suitesaber/bases/copies/data/copies'],"CN_MARC_"v1),V30+|; |,)
+'</td></tr>' fi,
+
+'<!-- FIM Itens na copies -->'
 
 '</table>'
 
@@ -260,7 +266,6 @@ if s(v1,v8,v980)<>'' then
 	fi,
 '</dl>'
 fi,
-
 
 '<!-- FIM Dados de controle -->'
 
