@@ -71,8 +71,10 @@ include("../common/header.php");
 <script language="javascript1.2" src="../dataentry/js/lr_trim.js"></script>
 <style type=text/css>
 
-td{	font-size:12px;
-	font-family:Arial;}
+td{
+	font-size:12px;
+	font-family:Arial;
+}
 
 div#useextable{
 
@@ -83,7 +85,8 @@ div#useextable{
 	color: #000000;
 }
 
-div#createtable{<?php if ($arrHttp["Opcion"]!="new") echo "display: none;\n"?>
+div#createtable{
+<?php if ($arrHttp["Opcion"]!="new") echo "display: none;\n"?>
 
 	margin: 0px 20px 0px 20px;
 	font-family: Arial, Helvetica, sans-serif;
@@ -128,7 +131,8 @@ function AbrirVentana(Archivo){
 	msgwin.focus()
 }
 
-function EsconderVentana( whichLayer ){var elem, vis;
+function EsconderVentana( whichLayer ){
+var elem, vis;
 	if( document.getElementById ) // this is the way the standards work
 		elem = document.getElementById( whichLayer );
 	else if( document.all ) // this is the way old msie versions work
@@ -145,8 +149,10 @@ function EsconderVentana( whichLayer ){var elem, vis;
 function toggleLayer( whichLayer ){
 	var elem, vis;
 
-	switch (whichLayer){		case "createtable":
-<?php		echo '
+	switch (whichLayer){
+		case "createtable":
+<?php
+		echo '
 			EsconderVentana("useextable")
 			break
 			';
@@ -218,8 +224,11 @@ function EnviarForma(){
 		alert("<?php echo $msgstr["selreg"]?>")
 		return
 	}
-	if (document.forma1.tables.selectedIndex>0 ){		if (document.forma1.rows.selectedIndex>0 || document.forma1.cols.selectedIndex>0){			alert("<?php echo $msgstr["seltab"]?>")
-			return		}
+	if (document.forma1.tables.selectedIndex>0 ){
+		if (document.forma1.rows.selectedIndex>0 || document.forma1.cols.selectedIndex>0){
+			alert("<?php echo $msgstr["seltab"]?>")
+			return
+		}
 	}
 	if (document.forma1.tables.selectedIndex || document.forma1.rows.selectedIndex>0 || document.forma1.cols.selectedIndex>0){
 	  	document.forma1.submit()
@@ -254,27 +263,28 @@ function Configure(Option){
 </script>
 <body>
 <?php
-if (isset($arrHttp["encabezado"])){	include("../common/institutional_info.php");
+if (isset($arrHttp["encabezado"])){
+	include("../common/institutional_info.php");
 	$encabezado="&encabezado=s";
 }
+?>
+<div class="sectionInfo">
+	<div class="breadcrumb">
+<?php echo $msgstr["stats"].": ".$arrHttp["base"]?>
+	</div>
 
-
-echo "<div class=\"sectionInfo\"><div class=\"language\">";
-	
-if (isset($arrHttp["encabezado"])){
-	echo "<a href=\"../common/inicio.php?reinicio=s&base=".$arrHttp["base"]."\" class=\"defaultButton backButton\">";
-echo "<span><strong>". $msgstr["back"]."</strong></span></a>";
-}	
-	
-echo "</div></div>
-		<div class=\"breadcrumb\">";
-		echo	"<h3>$msgstr[stats]:$arrHttp[base]</h3>";
-echo		"</div><div class=\"actions\">";
-		
-
-echo	"</div>";
+	<div style="margin-bottom:5px;" class="actions">
+<?php
+if (isset($arrHttp["encabezado"]))
+	echo "<a href=\"../common/inicio.php?reinicio=S&base=".$arrHttp["base"]."$encabezado\" class=\"defaultButton backButton\">
+<span><strong>".$msgstr["back"]."</strong></span></a>
+	";
 ?>
 
+</div>
+
+<div class="spacer">&#160;</div>
+</div>
 <div class="helper">
 <a href=../documentacion/ayuda.php?help=<?php echo $_SESSION["lang"]?>/stats/stats_tables_generate.html target=_blank><?php echo $msgstr["help"]?></a>&nbsp &nbsp;
 <?php
@@ -314,7 +324,7 @@ if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 			$value=trim($value);
 			if ($value!=""){
 				$t=explode('|',$value);
-				echo "<option value=".urlencode($value).">".trim($t[0])."</option>";
+				echo "<option value=\"".$value."\">".trim($t[0])."</option>";
 			}
 		}
 	}
@@ -352,7 +362,7 @@ if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 			$value=trim($value);
 			if ($value!=""){
 				$t=explode('|',$value);
-				echo "<option value=".urlencode($value).">".trim($t[0])."</option>";
+				echo "<option value=\"".$value."\">".trim($t[0])."</option>";
 			}
 		}
 	}
@@ -420,7 +430,8 @@ if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 </div>
 </td>
 <?php
-if (isset($_SESSION["permiso"]["CENTRAL_STATCONF"]) or isset($_SESSION["permiso"]["CENTRAL_ALL"])){?>
+if (isset($_SESSION["permiso"]["CENTRAL_STATCONF"]) or isset($_SESSION["permiso"]["CENTRAL_ALL"])){
+?>
 <tr>
 	<td align=left   valign=center bgcolor=#ffffff><p>
     	&nbsp; <A HREF="javascript:toggleLayer('configure')"> <u><strong><?echo $msgstr["stats_conf"]?></strong></u></a>
