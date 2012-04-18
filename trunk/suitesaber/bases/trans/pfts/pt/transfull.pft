@@ -1,0 +1,31 @@
+'<style>
+table, td, tr, th {
+		border: 1px #3A89AF solid;
+		border-collapse: collapse;
+		text-align: center;
+	}
+tr:first-child  {
+	background: #3A89AF;
+	color: #fff;
+	font-size: 12px;
+}
+
+tr:last-child {
+	background: #3A89AF;
+}
+tr:hover.result {
+	background: #eee;
+}
+</style>'
+'<tr class="result">',
+'<td valign=top>'(if v1 = 'P' THEN '<span style="color:red">Emprestado</span>' fi),(if v1 = 'X' THEN '<span style="color:green">Devolvido</span>' fi) if a(v1) then '&nbsp;' fi,'</td>'/
+'<td valign=top>'v10+|; | if a(v10) then '&nbsp;' fi,'</td>'/
+'<td valign=top  style="text-align:left;width:180px;"> 'v20,' - ',
+
+ref(['/var/www/suitesaber/bases/users/data/users'] l(['/var/www/suitesaber/bases/users/data/users'],'CO_'v20),v30)
+
+ if a(v20) then '&nbsp;' fi,'</td>'/
+'<td valign=top>'v30*6.2,'/',v30*4.2,'/',v30.4+|; | if a(v30) then '&nbsp;' fi,'</td>'/
+'<td valign=top>'v40*6.2,'/',v40*4.2,'/'v40.4+|; | if a(v40) then '&nbsp;' fi,'</td>'/
+'<td valign=top>'if p(v500) then v500*6.2,'/',v500*4.2,'/'v500.4+|; |fi  if a(v60) then '&nbsp;' fi,'</td>'/
+'<td valign=top style="text-align:left;">'v100^a,' - ',v100^z|; | if a(v100) then '&nbsp;' fi,'</td>'/

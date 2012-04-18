@@ -1,0 +1,8 @@
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"><th colspan="100%" style="text-align:left;"><strong>Relatório Suíte Saber</strong></th><tr><td colspan="100%"></td></tr>
+Status
+Número de patrimônio
+Leitor
+Emprestado em
+Devolução prevista para
+Devolução efetuada em
+Dados do item
