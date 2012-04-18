@@ -35,7 +35,7 @@ include ("../lang/statistics.php");
 //VALORES QUE VIENEN DE LA PÁGINA
 include("../common/get_post.php");
 //foreach ($arrHttp as $key => $value) echo "$key = $value <br>";
-$arrHttp["rows"]=urldecode($arrHttp["rows"]);
+
 // SELECCION DE LOS REGISTROS
 if (isset($arrHttp["Expresion"]))
 	$Opcion="search";
@@ -141,7 +141,6 @@ if (isset($arrHttp["encabezado"])){
 <?php
 if (isset($arrHttp["encabezado"]))
 	echo "<a href=\"tables_generate.php?base=".$arrHttp["base"]."$encabezado\" class=\"defaultButton backButton\">
-
 <span><strong>".$msgstr["back"]."</strong></span></a>
 	";
 ?>
