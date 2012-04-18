@@ -157,9 +157,12 @@ if (isset($_SESSION["permiso"]["CENTRAL_ALL"]) or isset($_SESSION["permiso"]["CI
 							<span><?php echo $msgstr["users"]?></span>
 						</a>
 						<a href="../dataentry/browse.php?base=trans&modulo=loan" class="menuButton tooltip userButton">
-
 							<span><?php echo $msgstr["trans"]?></span>
 						</a>
+						<a href="../dataentry/browse2.php?base=loanobjects&modulo=loan" class="menuButton tooltip userButton">
+							<span><?php echo $msgstr["objectsloan"]?></span>
+						</a>
+						
 						<a href="../dataentry/browse.php?base=suspml&modulo=loan" class="menuButton tooltip userButton">
 
 							<span><?php echo $msgstr["suspen"]."/".$msgstr["multas"]?></span>
