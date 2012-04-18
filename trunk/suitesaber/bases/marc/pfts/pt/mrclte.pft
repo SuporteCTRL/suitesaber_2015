@@ -5,26 +5,26 @@
 <div id="wrap">'
 
 '<!-- Localização -->'
-
+/*
 if p(v90) then
 	'<div id="supDir">
 		<span class="destaque">Localização:</span>
-			'(v90^f'&nbsp;&nbsp;&nbsp;',v90^a'&nbsp;&nbsp;&nbsp;',v90^b'&nbsp;&nbsp;&nbsp;',v90^c'&nbsp;&nbsp;&nbsp;',v90^g'&nbsp;&nbsp;&nbsp;',v90^d,'<br/>'/)'
+			'(v90^a'&nbsp;&nbsp;&nbsp;',v90^b'&nbsp;&nbsp;&nbsp;',v90^c'&nbsp;&nbsp;&nbsp;',v90^g'&nbsp;&nbsp;&nbsp;',v90^d,'<br/>'/)'
 	</div>'
 fi,
-
+*/
 '<!-- FIM Localização -->'
 
 '<table cellspacing="0" cellpadding="3" class="mrc">'
 
 '<!-- Capa -->'
-
+/*
 if p(v9) then 
 '<tr class="mrc capa">
 <td class="mrc" colspan=2></td>
 <td class="mrc capa" rowspan="100%" valign="top">'('<a href="/bases/marc/'v9'" target="_blank"><img src="/bases/marc/'v9'" title="'v9'" width="120"></a><br />')'</td>
 </tr>'fi/
-
+*/
 '<!-- FIM Capa -->'
 
 '<!-- Autores principais 1xx -->'
@@ -83,7 +83,7 @@ if s(v240^a,v730^a,v740^a)<>'' then  '</td></tr>'/ fi,
     if v246*1.1='8' then '<tr class="mrc"><th class="mrc">Título de lombada</th><td class="mrc">',fi, 	
 	if v246*1.1='#' then '<tr class="mrc"><th class="mrc">Forma variante do título</th><td class="mrc">' fi,	
 
-  v246^a, if p(v246^b) then v246^b fi, '<br />'/fi/) 
+  v246^a, if p(v246^b) then ' : 'v246^b fi, if p(v246^c) then ' / 'v246^c fi,'<br />'/fi/) 
 
 if p(v246^a) then '</td></tr>' fi,
 
@@ -200,7 +200,6 @@ if p(v310^a) then '<tr class="mrc"><th class="mrc">Periodicidade</th><td class="
 
 ,if s(v600^a,v610^a,v611^a,v630^a,v650^a,v651^a,v653^a)<>'' then '<tr class="mrc"><th class="mrc">Assuntos</th><td class="mrc">'
 
-
 if v600*4<>'' then (v600^a, | |v600^d,  | |v600^t, | |v600^u,|  :  |v600^x,  |  :  |v600^z, |  :  |v600^y,  |  :  |v600^v,,'<br />'/)fi,
 if v610*4<>'' then (v610^a, | |v610^b,  | |v610^e,  | |v610^t,  | |v610^u,|  :  |v610^x,  |  :  |v610^z,  |  :  |v610^y,   |  :  |v610^v,,'<br />'/)fi,
 if v611*4<>'' then (v611^a, | |v611^n,   | |v611^d,  | |v611^c,  | |v611^e,   |  :  |v611^x,  |  :  |v611^z, |  :  |v611^y,   |  :  |v611^v,,'<br />'/)fi,
@@ -234,9 +233,16 @@ if p(v773^w) then '<tr class="mrc"><th class="mrc">Fonte</th><td class="mrc">' v
 
 '<!-- FIM Analíticas 773 -->'
 
-'</table>'
+'<!-- Itens na copies -->'
 
-'<div class="fechaUnico">Ver estrutura: <a class="pftLink" href="/cgi-bin/wxis.exe/iah/scripts/?IsisScript=unico.xis&lang=pt&base='v5003'&nextAction=lnk&exprSearch='v1'&indexSearch=MF&format=todos_iah.pft">MARC</a> <a class="pftLink" href="/cgi-bin/wxis.exe/iah/scripts/?IsisScript=unico.xis&lang=pt&base='v5003'&nextAction=lnk&exprSearch='v1'&indexSearch=MF&format=dublin.pft">Dublin Core</a></div>'
+if ref(['/var/www/suitesaber/bases/copies/data/copies'] l(['/var/www/suitesaber/bases/copies/data/copies'],"CN_MARC_"v1),V30,)<>'' then '<tr class="mrc"><th class="mrc">Itens</th><td class="mrc">'ref(['/var/www/suitesaber/bases/copies/data/copies'] l(['/var/www/suitesaber/bases/copies/data/copies'],"CN_MARC_"v1),V30+|; |,)
+'</td></tr>' fi,
+
+'<!-- FIM Itens na copies -->'
+
+'</table>'
+/*
+'<div class="fechaUnico">Ver estrutura: <a class="pftLink" href="/cgi-bin/wxis.exe/iah/scripts/?IsisScript=unico.xis&lang=pt&base='v5003'&nextAction=lnk&exprSearch='v1'&indexSearch=MF&format=todos_iah.pft">MARC</a> <a class="pftLink" href="/cgi-bin/wxis.exe/iah/scripts/?IsisScript=unico.xis&lang=pt&base='v5003'&nextAction=lnk&exprSearch='v1'&indexSearch=MF&format=dublin.pft">Dublin Core</a></div>'*/
 
 '</div></body>'
 
