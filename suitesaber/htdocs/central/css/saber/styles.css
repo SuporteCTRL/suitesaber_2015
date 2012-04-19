@@ -283,62 +283,81 @@ TD.showSTitle .collectionMode A.selected {
 	}
 
 /* Styles do dibujarhojadeentrada.php */
-#indice {
+
+ #tag {
+	padding:7px;
+	border: 1px solid #DDDDDD;
+	display: inline-block;
+	margin:1px;
+	text-shadow: 0 1px 1px white;
+	-webkit-box-shadow: 0 1px 1px #FFFFFF;
+	-moz-box-shadow:    0 1px 1px #FFFFFF;
+	box-shadow:         0 1px 1px #FFFFFF;
+	font: 9px Sans-Serif;
+	white-space: nowrap;
+	vertical-align: middle;
+	color: #666666;
+	background: -webkit-linear-gradient(top, #cccccc, #E0E0E0);
+	background:    -moz-linear-gradient(top, #cccccc, #E0E0E0);
+	background:     -ms-linear-gradient(top, #cccccc, #E0E0E0);
+	background:      -o-linear-gradient(top, #cccccc, #E0E0E0);
+	text-decoration: none;
+}
+
+#ajuda, #assist, #indice {
+	width:27px;
+	height:27px;
+	border: 1px solid #DDDDDD;
 	display: inline-block;
 	margin:1px;
 	text-align: center;
 	cursor:pointer;
-	width: 20px;
-	height: 20px;
-	border: 0;
+	text-shadow: 0 1px 1px white;
+	-webkit-box-shadow: 0 1px 1px #FFFFFF;
+	-moz-box-shadow:    0 1px 1px #FFFFFF;
+	box-shadow:         0 1px 1px #FFFFFF;
+	font: bold 11px Sans-Serif;
+	white-space: nowrap;
+	vertical-align: middle;
+	color: #666666;
+	background: -webkit-linear-gradient(top, white, #E0E0E0);
+	background:    -moz-linear-gradient(top, white, #E0E0E0);
+	background:     -ms-linear-gradient(top, white, #E0E0E0);
+	background:      -o-linear-gradient(top, white, #E0E0E0);
 	font-size: 150%;
 	font-weight: bold;
-	text-shadow: -0.1em -0.1em #536072;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-	text-decoration: none;
-}
-#assist{
-	display: inline-block;
-	margin:1px;
-	text-align: center;
-	cursor:pointer;
-	width: 20px;
-	height: 20px;
-	border: 0;
-	font-size: 150%;
-	font-weight: bold;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-	text-decoration: none;
-}
-#ajuda {
-	display: inline-block;
-	margin:1px;
-	text-align: center;
-	cursor:pointer;
-	width: 20px;
-	height: 20px;
-	border: 0;
-	font-size: 150%;
-	font-weight: bold;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
 	text-decoration: none;
 }
 
-#tag {
-	display: inline-block;
-	margin:1px;
-	text-align: center;
-	width: 25px;
-	height: 20px;
-	border: 0;
-	font-size: 14px;
-	font-weight: bold;
-
+#ajuda:hover,  #assist:hover, #indice:hover {
+	width:27px;
+	height:27px;
+	border: 1px solid #AAAAAA;
+	border-color: #999999;
+	background: -webkit-linear-gradient(top, white, #E0E0E0);
+	background:    -moz-linear-gradient(top, white, #E0E0E0);
+	background:     -ms-linear-gradient(top, white, #E0E0E0);
+	background:      -o-linear-gradient(top, white, #E0E0E0);
+	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.25), inset 0 0 3px #FFFFFF;
+	-moz-box-shadow:    0 1px 2px rgba(0,0,0,0.25), inset 0 0 3px #FFFFFF;
+	box-shadow:         0 1px 2px rgba(0,0,0,0.25), inset 0 0 3px #FFFFFF;
+	cursor: pointer;
+}	
+#ajuda:focus,  #assist:focus, #indice:focus {
+	width:27px;
+	height:27px;
+	border: 1px solid #AAAAAA;
+	border-bottom-color: #CCCCCC;
+	border-top-color: #999999;
+	-webkit-box-shadow: inset 0 1px 2px #AAAAAA;
+	-moz-box-shadow:    inset 0 1px 2px #AAAAAA;
+	box-shadow:         inset 0 1px 2px #AAAAAA;
+	background: -webkit-linear-gradient(top, #E6E6E6, gainsboro);
+	background:    -moz-linear-gradient(top, #E6E6E6, gainsboro);
+	background:     -ms-linear-gradient(top, #E6E6E6, gainsboro);
+	background:      -o-linear-gradient(top, #E6E6E6, gainsboro);
+	cursor: pointer;
 }
-
 #botoes {
 	display: inline-block;
 	margin:1px;
