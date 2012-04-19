@@ -313,7 +313,7 @@ echo "<td colspan=$cant_cols><strong>".$t[2]."</strong></td><tr>";
    			}
   		}
  	}
- 	echo "</TD></table>\n</td></td>";
+ 	echo "</td></table>\n</td></td>";
  	//if (substr($linea,37,1)!=1) echo "<td bgcolor=$fondocelda> </td>";
 }
 
@@ -343,7 +343,7 @@ function DecodificaSubCampos($campo,$numsubc,$subc,$delimsc){
 function DibujarCheck($filas,$fondocelda,$valor,$tag,$opciones,$tope,$tipo,$subc){
 global $ver,$base,$arrHttp,$Path,$db_path,$lang_db;
 
-echo "<td class=textbody03 align=left valign=top>";
+echo "<td class=textbody03 align=left valign=top>ff";
 if (!$ver){
 	if ($tope>1) {
     	echo "<table>\n";
@@ -694,7 +694,7 @@ Function PrepararFormato() {
    							if ($t[4]==1) $Repetible="R";
    							$postings=1;
    							if (!$ver){
-   								echo "<td valign=top width=101>";
+   								echo "<td valign=top width=auto>";
 	     						if ($a!="" and $t[3]==0)
 	     							if ($t[7]!="I") echo "<a id='indice' href='javascript:AbrirIndiceAlfabetico(document.forma1.tag$tag,\"$a\",\"$c\",\"$separa\",\"$autoridades\",\"$autoridades.par\",\"tag$tag\",\"$postings\",\"$Repetible\",\"".urlencode($fe)."\")'>i</a>";
 	     						else
