@@ -291,26 +291,26 @@ if (isset($arrHttp["encabezado"]))
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 	echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/stats/stats_tables_generate.html target=_blank>".$msgstr["edhlp"]."</a>";
 ?>
-<font color=white>&nbsp; &nbsp; Script: tables_generate.php</font>
+Script: tables_generate.php
 </div>
-<form name=forma1 method=post action=tables_generate_ex.php onsubmit="Javascript:return false">
+<form name=forma1 method=post action=tables_generate_ex2.php onsubmit="Javascript:return false" target="statist">
 <input type=hidden name=base value=<?php echo $arrHttp["base"]?>>
 <input type=hidden name=cipar value=<?php echo $arrHttp["base"]?>.par>
 <input type=hidden name=Opcion>
 
 <?php if (isset($arrHttp["encabezado"])) echo "<input type=hidden name=encabezado value=s>\n";
 ?>
-<div class="middle form">
+<div class="middle form" style="position:relative; width:40%;background:#fff;float:left;">
 	<div class="formContent">
 
 <?php
 //USAR UNA TABLA YA EXISTENTE
-	echo "<table width=600 border=0  class=listTable>
+	echo "<table>
 			<tr>
-			<td align=left   valign=center bgcolor=#ffffff>
-    		&nbsp; <A HREF=\"javascript:toggleLayer('useextable')\"> <u><strong>". $msgstr["exist_tb"]."</strong></u></a>
+			<td>
+    		 <a style=\"width:500px;\" class=\"areas1\" href=\"javascript:toggleLayer('useextable')\"><strong>". $msgstr["exist_tb"]."</strong></a>
     		<div id=useextable>
-    		<br>".$msgstr["tab_list"].": <select name=tables  style=\"width:300\">
+    		<br>".$msgstr["tab_list"].": <select name=tables  style=\"width:150\">
     		<option value=''>";
     unset($fp);
 	$file=$db_path.$arrHttp["base"]."/def/".$_SESSION["lang"]."/tabs.cfg";
@@ -330,24 +330,24 @@ if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 	}
 ?>
 			</select>
-			<p>
+
 		</div>
 	</td>
 </table>
-<br>
+
 
 <!-- CONSTRUIR UNA TABLA SELECCIONANDO FILAS Y COLUMNAS  -->
-<table border=0 width=600 class=listTable>
+<table border=0 >
 	<tr>
-		<td valign=top width=600 align=left bgcolor=#ffffff>
-		&nbsp; <A HREF="javascript:toggleLayer('createtable')"><u><strong><?php echo $msgstr["create_tb"]?></strong></u></a>
+		<td>
+		<a class="areas1" style="width:500px;" href="javascript:toggleLayer('createtable')"><strong><?php echo $msgstr["create_tb"]?></strong></a>
     	<div id=createtable>
-    	<table width=600>
+    	<table>
     		<td>
     		<P><strong><?php echo $msgstr["row"]?></strong><br>
-			<table width=300 border=0 >
-				<td align=right width=250>
-				<Select name=rows style="width:250px">
+			<table  border=0 >
+				<td>
+				<Select name=rows style="width:150px">
 				<option value=""></option>
 
  <?php
@@ -394,20 +394,19 @@ if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
  </div>
 </td>
 </table>
-<p>
 
 <!-- SELECCION DE LOS REGISTROS  -->
-<table width=600 class=listTable>
+<table>
 	<tr>
-		<td bgcolor=white>
-			&nbsp; <A HREF="javascript:toggleLayer('generate')"><u><strong><?php echo $msgstr["gen_output"]?></strong></u></a>
+		<td>
+			 <a style="width:500px;" class="areas1" href="javascript:toggleLayer('generate')"><strong><?php echo $msgstr["gen_output"]?></strong></a>
     		<div id=generate><p>
     		<table>
     <tr>
 		<td  align=center colspan=2 bgcolor=#eeeeee><strong><?php echo $msgstr["bymfn"]?></strong></td>
 	<tr>
-		<td width=50% align=right><?php echo $msgstr["from"]?>: <input type=text name=Mfn size=10 value=1>&nbsp; &nbsp; </td>
-		<td width=50%><?php echo $msgstr["to"]?>: <input type=text name=to size=10 value=<?php echo $tag["MAXMFN"]?>>
+		<td align=right><?php echo $msgstr["from"]?>: <input type=text name=Mfn size=10 value=1></td>
+		<td><?php echo $msgstr["to"]?>: <input type=text name=to size=10 value=<?php echo $tag["MAXMFN"]?>>
 		 <a href=javascript:BorrarRango() class=boton><?php echo $msgstr["clear"]?></a> (
 		<?php echo $msgstr["maxmfn"].": ".$tag["MAXMFN"]?>)</td>
 	<tr>
@@ -417,14 +416,14 @@ if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 		<td colspan=2 >
 			<table>
 				<td><a href=javascript:Buscar()><img src=../dataentry/img/toolbarSearch.png height=24 align=middle border=0 alt=""></a></td>
-				<td><textarea rows=3 cols=100 name=Expresion><?php if (isset($Expresion )) echo $Expresion?></textarea>
+				<td><textarea rows=2 cols=30 name=Expresion><?php if (isset($Expresion )) echo $Expresion?></textarea>
 
 					<a href=javascript:BorrarExpresion() class=boton><?php echo $msgstr["clear"]?></a></td>
 			</table>
 		</td>
 	<tr>
-		<td colspan=2 width=100% align=center>
-			<input type=submit value="<?php echo $msgstr["send"]?>" onclick=EnviarForma()>
+		<td colspan=2 align=center>
+			<input id="botoes" type=submit value="<?php echo $msgstr["send"]?>" onclick=EnviarForma()>
 		</td>
 </table>
 </div>
@@ -433,8 +432,8 @@ if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 if (isset($_SESSION["permiso"]["CENTRAL_STATCONF"]) or isset($_SESSION["permiso"]["CENTRAL_ALL"])){
 ?>
 <tr>
-	<td align=left   valign=center bgcolor=#ffffff><p>
-    	&nbsp; <A HREF="javascript:toggleLayer('configure')"> <u><strong><?echo $msgstr["stats_conf"]?></strong></u></a>
+	<td align=left   valign=center ><p>
+    	<a style="width:500px;" class="areas1"  href="javascript:toggleLayer('configure')"><strong><?echo $msgstr["stats_conf"]?></strong></a>	
     	<div id=configure>
     	<ul>
     		<li><a href=javascript:Configure("stats_var")><?php echo $msgstr["var_list"]?></a></li>
@@ -446,6 +445,9 @@ if (isset($_SESSION["permiso"]["CENTRAL_STATCONF"]) or isset($_SESSION["permiso"
 </table>
 
 </div>
+</div>
+<div style="position:relative;width:60%;background:#fff;float:right;height:580px;">
+<iframe style="width:100%;height:100%;" src="#" id="statist" name="statist" frameborder="0" >
 </div>
 </center>
 </form>
