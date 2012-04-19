@@ -382,7 +382,7 @@ if (isset($_SESSION["permiso"]["CENTRAL_ALL"]) or isset($_SESSION["permiso"]["CE
 	<input type=hidden name=Expresion value="">
 	<input type=hidden name=Descripcion value="">
 </form>	<p>
-<form name=sortkey method=post action=../dataentry/sortkey_edit.php target=sortkey>
+<form name=sortkey method=post action=../dbadmin/sortkey_edit.php target=sortkey>
 	<input type=hidden name=base value=<?php echo $arrHttp["base"]?>>
 	<input type=hidden name=encabezado value=s>
 </form>

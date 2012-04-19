@@ -52,7 +52,7 @@ function DoList($database){global $db_path,$msgstr,$encabezado,$lang_db; 	unse
 			$value=trim($value);
 			if (!empty($value)) {
 				$pp=explode('|',$value);
-				echo "<li><a target=statist href=reports_menu_recsel2.php?base=$database&list=".urlencode($value)."$encabezado>".$pp[1]."</a>";
+				echo "<li style=margin-left:-40px; class=areas1 ><a style=text-decoration:none; target=statist href=reports_menu_recsel2.php?base=$database&list=".urlencode($value)."$encabezado>".$pp[1]."</a>";
 			}
 		}
 		echo "</ul>";
