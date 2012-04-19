@@ -73,7 +73,7 @@ input[type=text],input[type=password], textarea {
 }
 
 input[type=text]:focus, textarea:focus {
-	border-left-color: #333333;
+	border-left-color: #3A89AF;
 	background-color: #eeeeee;
 
 }

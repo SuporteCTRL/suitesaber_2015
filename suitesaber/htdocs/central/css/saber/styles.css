@@ -392,34 +392,9 @@ a:hover {
 } 
 	/* background-color e necessario para o IE6 */
 
-/*a.tooltip span {
-	margin-top: 70px;
-	text-shadow:0px 1px 4px #000000;
-	color: #000000;	
-	font-family: verdana,
-	font-weight: normal;
-	font-size: 10px;
-	position:fixed; 
-	margin-left: -120px;
-	width:100px;
-	height: auto;
-	
-/*	position:relative; 
-	display:none; 
-	padding:0px; 
-	margin-top: 0px;
-	margin-left:-20px;  
-	width:auto;
-	height: auto; 
-}
-a.tooltip:hover span {
-	display:block; 	
-	position:absolute; 
-}
-*/
+
 
 .tag {
-	width: 20px;
 	vertical-align:top;
 	text-decoration: none;
 }
@@ -429,7 +404,7 @@ a.tooltip:hover span {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 14px;
 	font-weight: bold;
-	border-left-width: 5px;
+	border-left-width: 0px;
 	text-decoration: none;
 
 }
@@ -463,21 +438,9 @@ a.tooltip:hover span {
        -moz-border-radius: 0px 0px 10px 10px;
 
 }
-#rotuloIng {
-	width: 150px;
-		
-}
+#rotuloIng {width: 150px;}
 
-
-td {
-/*	border-bottom-width: thin;
-	border-bottom-style: groove;  */
-}
-
-/*tr:hover {
-	border-bottom-style: groove;
-	border-bottom-width: thin;*/
-}
+textarea #form {	} 
 
 input[type=text],input[type=password], textarea {
 	border-width: 1px;
@@ -485,12 +448,15 @@ input[type=text],input[type=password], textarea {
 }
 
 input[type=text]:focus, textarea:focus {
-	border-width: 2px;
+	border-width: 1px;
 	border-left-width: 5px;
+	border-left-style: outset;
+	-webkit-box-shadow: inset 1px 1px 1px #ddd;
+	-moz-box-shadow: inset 1px 1px 1px #ddd;
+	box-shadow: inset 1px 1px 1px #ddd;
 }
 div #wrapper {
 	padding: 0px;
 	margin-top: -10px;
 	margin-bottom: -20px;
-	
 }
