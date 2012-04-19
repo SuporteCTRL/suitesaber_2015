@@ -162,13 +162,15 @@ if (isset($arrHttp["encabezado"])){
 
 	<div class="actions">
 <?php
-	if ($encabezado!="") echo "<a href=javascript:self.close() class=\"defaultButton cancelButton\">";
+	if ($encabezado!="") echo "<a href=javascript:self.close() class=\"defaultButton\">";
 ?>
-<img src="../images/defaultButton_iconBorder.gif" alt="" title="" />
+
 <span><strong><?php echo $msgstr["close"]?></strong></span>
 </a>
 			</div>
 			<div class="spacer">&#160;</div>
+				<div class="spacer">&#160;</div>
+				<div class="spacer">&#160;</div>
 </div>
 <div class="helper">
 <a href=../documentacion/ayuda.php?help=<?php echo $_SESSION["lang"]?>/sortkey.html target=_blank><?php echo $msgstr["help"]?></a>&nbsp &nbsp;
@@ -219,7 +221,7 @@ if (isset($arrHttp["encabezado"]))
 	echo "<input type=hidden name=encabezado value=s>\n";
 ?>
 <input type=hidden name=base value=<?php echo $arrHttp["base"]?>>
-<p><br><input type=submit value=<?php echo $msgstr["update"]?> onclick=javascript:Enviar()>
+<p><br><input id="botoes" type=submit value=<?php echo $msgstr["update"]?> onclick=javascript:Enviar()>
 <input type=hidden name=ValorCapturado>
 </form>
 
