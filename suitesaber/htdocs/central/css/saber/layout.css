@@ -33,6 +33,7 @@ FORM {
 		margin-right: 1px;
 
 		text-align: left;
+		margin: 5px;
 
 	}
 
@@ -1436,8 +1437,9 @@ display: inline;
 	color: #000000;
 	text-decoration: none;
 
-	}		
-li {
+	}	
+		
+li.listsub {
 	list-style-type: none;
 	font-size: 15px;
 	color: #000000;
@@ -1446,7 +1448,7 @@ li {
 	border-top: solid #cccccc 1px;
 	border-bottom: solid #999999 1px;
 	}	
-li:hover, a.conf:hover {
+li.listsub:hover, a.conf:hover {
 	background-color: #dddddd;
 	list-style-type: none;
 	font-size: 15px;

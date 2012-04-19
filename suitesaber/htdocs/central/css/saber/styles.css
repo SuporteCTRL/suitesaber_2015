@@ -1,7 +1,7 @@
 /* #general styles */
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans);
 body, input, select, textarea {
 	font-family: "lucida grande",tahoma,verdana,arial,sans-serif;
-
 }
 
 A IMG {
@@ -295,6 +295,7 @@ TD.showSTitle .collectionMode A.selected {
 	box-shadow:         0 1px 1px #FFFFFF;
 	font: 9px Sans-Serif;
 	white-space: nowrap;
+	text-align: center
 	vertical-align: middle;
 	color: #666666;
 	background: -webkit-linear-gradient(top, #cccccc, #E0E0E0);
@@ -397,45 +398,57 @@ a:hover {
 .tag {
 	vertical-align:top;
 	text-decoration: none;
+	width: 15px;
 }
 
 
 .rotuloIng,textbody03 {
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: 'Droid Sans', sans-serif;
 	font-size: 14px;
 	font-weight: bold;
 	border-left-width: 0px;
 	text-decoration: none;
 
+
 }
 
 .areas1{
+	margin-top: 6px;
+	vertical-align: middle;
 	display: inline-block;
 	text-decoration: none;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: 'Droid Sans', sans-serif;
 	font-size: 14px;
 	font-weight: bold;
-	height: 25px;
-	width: 90%;
-	padding-left: 20px;
-   border-radius-topright: 10px;
-   border-radius-topleft: 10px;
-  -moz-border-radius: 10px 10px 0px 0px;
+	width: 95%;
+	padding: 5px 5px 5px 5px;  
+   border-radius-topright: 7px;
+   border-radius-topleft: 7px;
+  -moz-border-radius: 7px 7px 0px 0px;
+  	-webkit-box-shadow: 0 1px 1px #aaa;
+	-moz-box-shadow:    0 1px 1px #aaa;
+	box-shadow:         0 2px 2px #aaa;
+	text-decoration: none;
 
 		
 }
 .areas2{
+	margin-bottom: 15px;
 	text-decoration: none;
 	display: inline-block;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: 'Droid Sans', sans-serif;
 	font-size: 9px;
 	font-weight: bold;
 	height: 15px;
 	padding-left: 20px;
-	width: 90%;
-        border-radius-bottomright: 10px;
-        border-radius-bottomleft: 10px;
-       -moz-border-radius: 0px 0px 10px 10px;
+	width: 95%;
+	-webkit-box-shadow: 0 1px 1px #aaa;
+	-moz-box-shadow:    0 1px 1px #aaa;
+	box-shadow:         0 2px 2px #aaa;
+	text-decoration: none;
+   border-radius-bottomright: 7px;
+   border-radius-bottomleft: 7px;
+   -moz-border-radius: 0px 0px 7px 7px;
 
 }
 #rotuloIng {width: 150px;}
