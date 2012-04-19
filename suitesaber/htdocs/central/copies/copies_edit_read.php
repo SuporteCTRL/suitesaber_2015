@@ -67,17 +67,31 @@ function EnviarForma(){
 }
 </script>
 <body>
+
+<div class="helper">
+	<a href=../documentacion/ayuda.php?help=<?php echo $_SESSION["lang"]?>/acquisitions/copies_add.html target=_blank><?php echo $msgstr["help"]?></a>
+<?php
+if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
+ 	echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/acquisitions/copies_add.html target=_blank>".$msgstr["edhlp"]."</a>";
+echo " Script: copies_edit_read.php";
+?>
+</font>
+	</div>
 <?php
 if (isset($arrHttp["encabezado"]) and $arrHttp["encabezado"]=="s"){
 	include("../common/institutional_info.php");
 }
-echo "
-	<div class=\"sectionInfo\">
-		<div class=\"breadcrumb\">".
-			 $msgstr["m_editcopy"]."
-		</div>
-		<div class=\"actions\">\n";
 ?>
+	<div class="sectionInfo">
+		</div>
+		
+		<div class="breadcrumb">
+				
+		<h3><?php echo "$msgstr[m_editcopy]"; ?></h3>
+		</div>
+		
+		<div class="actions" >
+	
 			<a href=<?php echo $arrHttp["retorno"]?> class="defaultButton cancelButton">
 
 				<span><strong><?php echo $msgstr["cancelar"]?></strong></span>
@@ -86,20 +100,11 @@ echo "
 
 				<span><strong><?php echo $msgstr["actualizar"]?></strong></span>
 			</a>
-<?php
-echo "	</div>
-		<div class=\"spacer\">&#160;</div>
-	</div>";
-?>
-<div class="helper">
-	<a href=../documentacion/ayuda.php?help=<?php echo $_SESSION["lang"]?>/acquisitions/copies_add.html target=_blank><?php echo $msgstr["help"]?></a>&nbsp &nbsp;
-<?php
-if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
- 	echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/acquisitions/copies_add.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "<font color=white>&nbsp; &nbsp; Script: copies_edit_read.php";
-?>
-</font>
-	</div>
+		</div>
+
+	
+
+
 
 <form method=post name=forma1 action=copies_update.php onSubmit="javascript:return false">
 <input type=hidden name=base value=<?php echo $arrHttp["base"]?>>
@@ -111,7 +116,7 @@ echo "<font color=white>&nbsp; &nbsp; Script: copies_edit_read.php";
 <input type=hidden name=valor value="">
 <input type=hidden name=retorno value=<?php echo $arrHttp["retorno"]?>>
 
-<div class="middle form">
+<div class="middle form" style="margin-top:100px;">
 <?php
 $fmt_test="S";
 $arrHttp["wks"]="new.fmt";

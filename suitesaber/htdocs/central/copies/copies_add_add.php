@@ -42,6 +42,14 @@ include("../common/header.php");
 echo "<body>\n";
 
 ?>
+<div class="helper">
+<a href=../documentacion/ayuda.php?help=<?php echo $_SESSION["lang"]?>/acquisitions/copies_create.html target=_blank><?php echo $msgstr["help"]?></a>&nbsp &nbsp;
+<?php
+if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
+	echo "<a href=../documentacion/edit.php?archivo=". $_SESSION["lang"]."/acquisitions/copies_create.html target=_blank>".$msgstr["edhlp"]."</a>";
+echo "Script: copies_add_add.php</font>\n";
+?>
+	</div>
 <div class="sectionInfo">
 	<div class="breadcrumb">
 		<?php echo $arrHttp["base"].": ".$msgstr["createcopies"]?>
@@ -52,16 +60,9 @@ echo "<body>\n";
 				<span><strong><?php echo $msgstr["back"]?></strong></span>
 			</a>
 	</div>
-	<div class="spacer">&#160;</div>
+
 </div>
-<div class="helper">
-<a href=../documentacion/ayuda.php?help=<?php echo $_SESSION["lang"]?>/acquisitions/copies_create.html target=_blank><?php echo $msgstr["help"]?></a>&nbsp &nbsp;
-<?php
-if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
-	echo "<a href=../documentacion/edit.php?archivo=". $_SESSION["lang"]."/acquisitions/copies_create.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "<font color=white>&nbsp; &nbsp; Script: copies_add_add.php</font>\n";
-?>
-	</div>
+
 <div class="middle form">
 			<div class="formContent">
 <?php
