@@ -1,1 +1,0 @@
-mx users fst=@users.fst uctab=ansi actab=ansi fullinv=users -all now tell=1
