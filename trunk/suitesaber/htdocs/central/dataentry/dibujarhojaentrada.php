@@ -343,7 +343,7 @@ function DecodificaSubCampos($campo,$numsubc,$subc,$delimsc){
 function DibujarCheck($filas,$fondocelda,$valor,$tag,$opciones,$tope,$tipo,$subc){
 global $ver,$base,$arrHttp,$Path,$db_path,$lang_db;
 
-echo "<td class=textbody03 align=left valign=top>ff";
+echo "<td class=textbody03 align=left valign=top>";
 if (!$ver){
 	if ($tope>1) {
     	echo "<table>\n";
