@@ -166,6 +166,36 @@ if (isset($arrHttp["login"]) and $arrHttp["login"]=="N"){
         <label for="password">Senha</label><br />
         <input type="password" class="pwd" name="password" id="pwd" value="" onClick="this.value='';" />
       </p>
+      
+    		<div style="display:hidden;" id="formRow3" class="formRow formRowFocus">
+			<label ><?php echo $msgstr["lang"]?></label> <select name=lang class="textEntry singleTextEntry">
+<?php
+
+ 	$a=$db_path."lang.tab";
+ 	if (file_exists($a)){
+		$fp=file($a);
+		$selected="";
+		foreach ($fp as $value){
+			$value=trim($value);
+			if ($value!=""){
+				$l=explode('=',$value);
+				if ($l[0]!="lang"){
+					if ($l[0]==$_SESSION["lang"]) $selected=" selected";
+					echo "<option value=$l[0] $selected>".$msgstr[$l[0]]."</option>";
+					$selected="";
+				}
+			}
+		}
+	}else{
+		echo $msgstr["flang"].$db_path."lang/".$_SESSION["lang"]."/lang.tab";
+		die;
+	}
+?>
+			</select>
+		</div>  
+      
+      
+      
       <p class="remember">
       			<input type="hidden" name="newindow" value= 
 <?php
