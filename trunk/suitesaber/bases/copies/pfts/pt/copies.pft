@@ -36,8 +36,7 @@ then '<tr class="mrc"><th class="mrc">Status</th><td class="mrc">'
 '</td>' fi/
 
 if p(v63) then '<tr class="mrc"><th class="mrc">Número da cópia</th><td class="mrc">'v63+|<br />|,'</td></tr>' fi/
-if p(v68) then '<tr class="mrc"><th class="mrc">Tipo de aquisição</th><td class="mrc">'
-if v68='pr' then 'Compra' fi, if v68='do' then 'Doação' fi, if v68='ex' then 'Permuta' fi,
+if p(v68) then '<tr class="mrc"><th class="mrc">Tipo de aquisição</th><td class="mrc">'v68^b
 
 if s(v70,v90,v95,v100,v110,v300,v400)<>'' then
 	'<br />'
