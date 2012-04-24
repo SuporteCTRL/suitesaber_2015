@@ -10,7 +10,7 @@
     <dd>'ref(['/var/www/suitesaber/bases/marc/data/marc'] l(['/var/www/suitesaber/bases/marc/data/marc'],"CN_MARC_"v1),v90^c)
 		if ref(['/var/www/suitesaber/bases/marc/data/marc'] l(['/var/www/suitesaber/bases/marc/data/marc'],"CN_MARC_"v1),v90^c)<>'' and ref(['/var/www/suitesaber/bases/marc/data/marc'] l(['/var/www/suitesaber/bases/marc/data/marc'],"CN_MARC_"v1),v90^g)<>'' then ' / ' ref(['/var/www/suitesaber/bases/marc/data/marc'] l(['/var/www/suitesaber/bases/marc/data/marc'],"CN_MARC_"v1),v90^g)  fi,
 		ref(['/var/www/suitesaber/bases/marc/data/marc'] l(['/var/www/suitesaber/bases/marc/data/marc'],"CN_MARC_"v1),v90^g)'</dd>
-    <dd>''</dd>
+    <dd>'v63'</dd>
     <dd>'ref(['/var/www/suitesaber/bases/marc/data/marc'] l(['/var/www/suitesaber/bases/marc/data/marc'],"CN_MARC_"v1),v90^f)'</dd>
 
 </dl>'
