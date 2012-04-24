@@ -6,7 +6,7 @@
 '<div class="tudo">'
 ('<dl class="barcodebox">
     <dt>Biblioteca</dt>
-        <dd>'v245[1]^a*0.25'</dd>
+        <dd>'ref(['/var/www/suitesaber/bases/marc/data/marc'] l(['/var/www/suitesaber/bases/marc/data/marc'],"CN_MARC_"v1),v245[1]^a*0.25)'</dd>
         <dd class="barcode"><img src="/bases/php-barcode/barcode.php?code='v30'&mode=png&size=1&scale=1.5" /></dd>
 </dl>'/) 
 
