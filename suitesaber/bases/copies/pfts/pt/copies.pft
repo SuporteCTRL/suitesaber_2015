@@ -65,7 +65,7 @@ fi,
 
 '</td></tr>' fi/
 
-if p(v80) then '<tr class="mrc"><th class="mrc">Data de chegada</th><td class="mrc">' v80*4.2"/",v80*2.2"/",v80*0.4,'</td></tr>' fi/
+if p(v80) then '<tr class="mrc"><th class="mrc">Data de chegada</th><td class="mrc">' v80'</td></tr>' fi/
 
 /*if p(v85) then '<tr class="mrc"><th class="mrc">Data de chegada ISO</th><td class="mrc">'v85+|<br />|,'</td></tr>' fi/*/
 
