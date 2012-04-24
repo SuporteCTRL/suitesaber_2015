@@ -43,7 +43,7 @@ if s(v70,v90,v95,v100,v110,v300,v400)<>'' then
 	/* Compra */
 		if p(v90) then '<span class="destaque">Preço: </span>R$ 'v90+|<br />|, fi/
 		if s(v70,v90)<>'' then '<span class="destaque">Fornecedor: </span>'
-			if v68='pr' then
+			if v68^a='pr' then
 					if v70=v95 then v95, fi,
 					if v70<>v95 then 
 						if p(v95) and p(v70) then v95, "; "v70,  fi,
@@ -56,10 +56,10 @@ if s(v70,v90,v95,v100,v110,v300,v400)<>'' then
 		if p(v110) then '<span class="destaque">Número da sugestão: </span>'v110+|<br />|, fi/
 	/* Doação */
 		if p(v300) then '<span class="destaque">Condições: </span>'v300+|<br />|, fi/
-		if v68='do' then if p(v70) then '<span class="destaque">Doador/Instituição: </span>'v70+|<br />|, fi,fi,/
+		if v68^a='D' then if p(v70) then '<span class="destaque">Doador/Instituição: </span>'v70+|<br />|, fi,fi,/
 	/* Permuta */
 		if p(v400) then '<span class="destaque">Em troca de: </span>'v400+|<br />|, fi/
-		if v68='ex' then if p(v70) then '<span class="destaque">Instituição: </span>'v70+|<br />|, fi,fi,/
+		if v68^a='ex' then if p(v70) then '<span class="destaque">Instituição: </span>'v70+|<br />|, fi,fi,/
 fi,
 
 '</td></tr>' fi/
