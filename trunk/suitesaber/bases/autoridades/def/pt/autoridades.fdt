@@ -1,6 +1,6 @@
 LDR||Líder|0|1||||||||||||1
 H||0XX: Controle|0|0||||||||||||0
-AI|1|Número de controle|0|0|||X||20|||CN_|v1|v1||1
+AI|1|Número de controle|1|0|||X||20|||CN_|v1|v1||1
 F|3|Identificador de número de controle|0|0|||X||20|||||||1
 M5|5|Data da última modificação|0|0|||X||20|||||||1
 M|8|Campos fixos|0|0|||X||45|||||||1
@@ -191,7 +191,7 @@ S||Subdivisão cronológica|0|1|y||X|||||||||0
 S||Subdivisão geográfica|0|1|z||X|||||||||0
 S||Fonte do cabeçalho|0|0|2||X|||||||||0
 S||Ligação|0|0|6||X|||||||||0
-T|151|Cabeçalho – Assunto nome geográfico|0|0|12avxyz26||X|2|103|||||||1
+T|151|Cabeçalho - Assunto nome geográfico|0|0|12avxyz26||X|2|103|||||||1
 S||Indicador 1|0|0|1||X||1|||||||0
 S||Indicador 2|0|0|2||X||1|||||||0
 S||Nome geográfico|0|0|a||X|||||||||0
@@ -400,8 +400,8 @@ S||Indicador 2|0|0|2||X||1|||||||0
 S||Chave para música|0|0|a||X|||||||||0
 S||Fonte do termo|0|0|2||X|||||||||0
 S||Ligação|0|0|6||X|||||||||0
-H||260, 360: Nota remissiva explicativa – Assunto|0|1||||||||||||0
-T|260|Nota remissiva explicativa VER – Assunto|0|1|12ai026||X|2|103|||||||1
+H||260, 360: Nota remissiva explicativa - Assunto|0|1||||||||||||0
+T|260|Nota remissiva explicativa VER - Assunto|0|1|12ai026||X|2|103|||||||1
 S||Indicador 1|0|0|1||X||1|||||||0
 S||Indicador 2|0|0|2||X||1|||||||0
 S||Cabeçalho referente a|0|1|a||X|||||||||0
@@ -409,7 +409,7 @@ S||Texto explicativo|0|1|i||X|||||||||0
 S||Número de controle do registro da autoridade|0|1|0||X|||||||||0
 S||Fonte|0|0|2||X|||||||||0
 S||Ligação|0|0|6||X|||||||||0
-T|360|Nota remissiva explicativa VER TAMBÉM – Assunto|0|1|12ai026||X|2|103|||||||1
+T|360|Nota remissiva explicativa VER TAMBÉM - Assunto|0|1|12ai026||X|2|103|||||||1
 S||Indicador 1|0|0|1||X||1|||||||0
 S||Indicador 2|0|0|2||X||1|||||||0
 S||Cabeçalho referente a|0|1|a||X|||||||||0
@@ -932,27 +932,27 @@ S||Prática de classificação da série|0|0|a||X|1||||||||0
 S||Volumes/datas aos quais a prática de classificação se aplicam|0|0|d||X|1||||||||0
 S||Instituição/cópia à qual o campo se aplica|0|1|5||X|||||||||0
 S||Ligação|0|0|6||X|1||||||||0
-H||663-666: Nota remissiva explicativa – Nome |0|1||||||||||||0
-T|663|Nota remissiva explicativa VER TAMBÉM – Nome|0|0|12abt6||X||100|||||||1
+H||663-666: Nota remissiva explicativa - Nome |0|1||||||||||||0
+T|663|Nota remissiva explicativa VER TAMBÉM - Nome|0|0|12abt6||X||100|||||||1
 S||Indicador 1|0|0|1||X|1|1|||||||0
 S||Indicador 2|0|0|2||X|1|1|||||||0
 S||Texto explicativo|0|1|a||X|1||||||||0
 S||Cabeçalho referente a|0|1|b||X|1||||||||0
 S||Título referente a|0|1|t||X|1||||||||0
 S||Ligação|0|0|6||X|1||||||||0
-T|664|Nota remissiva explicativa VER – Nome|0|0|12abt6||X||100|||||||1
+T|664|Nota remissiva explicativa VER - Nome|0|0|12abt6||X||100|||||||1
 S||Indicador 1|0|0|1||X|1|1|||||||0
 S||Indicador 2|0|0|2||X|1|1|||||||0
 S||Texto explicativo|0|1|a||X|1||||||||0
 S||Cabeçalho referente a|0|1|b||X|1||||||||0
 S||Título referente a|0|1|t||X|1||||||||0
 S||Ligação|0|0|6||X|1||||||||0
-T|665|Nota remissiva histórica – Nome|0|0|12a6||X||100|||||||1
+T|665|Nota remissiva histórica - Nome|0|0|12a6||X||100|||||||1
 S||Indicador 1|0|0|1||X|1|1|||||||0
 S||Indicador 2|0|0|2||X|1|1|||||||0
 S||Referência histórica|0|1|a||X|1||||||||0
 S||Ligação|0|0|6||X|1||||||||0
-T|666|Nota remissiva explicativa geral – Nome|0|0|12a6||X||100|||||||1
+T|666|Nota remissiva explicativa geral - Nome|0|0|12a6||X||100|||||||1
 S||Indicador 1|0|0|1||X|1|1|||||||0
 S||Indicador 2|0|0|2||X|1|1|||||||0
 S||Referência de explicação geral|0|1|a||X|1||||||||0
