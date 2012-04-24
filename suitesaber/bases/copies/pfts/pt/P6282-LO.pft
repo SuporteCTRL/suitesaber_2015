@@ -5,13 +5,13 @@
 
 '<div class="tudo">'
 '<dl class="barcodebox">
-    <dd>'ref(['/var/www/suitesaber/bases/marc/data/marc'] l(['/var/www/suitesaber/bases/marc/data/marc'],"CN_MARC_"v1),v90^a)'</dd>
-    <dd>'ref(['/var/www/suitesaber/bases/marc/data/marc'] l(['/var/www/suitesaber/bases/marc/data/marc'],"CN_MARC_"v1),v90^b)'</dd>
-    <dd>'ref(['/var/www/suitesaber/bases/marc/data/marc'] l(['/var/www/suitesaber/bases/marc/data/marc'],"CN_MARC_"v1),v90^c)
-		if ref(['/var/www/suitesaber/bases/marc/data/marc'] l(['/var/www/suitesaber/bases/marc/data/marc'],"CN_MARC_"v1),v90^c)<>'' and ref(['/var/www/suitesaber/bases/marc/data/marc'] l(['/var/www/suitesaber/bases/marc/data/marc'],"CN_MARC_"v1),v90^g)<>'' then ' / ' ref(['/var/www/suitesaber/bases/marc/data/marc'] l(['/var/www/suitesaber/bases/marc/data/marc'],"CN_MARC_"v1),v90^g)  fi,
-		ref(['/var/www/suitesaber/bases/marc/data/marc'] l(['/var/www/suitesaber/bases/marc/data/marc'],"CN_MARC_"v1),v90^g)'</dd>
+    <dd>'ref(['/var/www/suitesaber/bases/marc/data/marc'] l(['/var/www/suitesaber/bases/marc/data/marc'],"CN_MARC_"v1),v90[1]^a)'</dd>
+    <dd>'ref(['/var/www/suitesaber/bases/marc/data/marc'] l(['/var/www/suitesaber/bases/marc/data/marc'],"CN_MARC_"v1),v90[1]^b)'</dd>
+    <dd>'ref(['/var/www/suitesaber/bases/marc/data/marc'] l(['/var/www/suitesaber/bases/marc/data/marc'],"CN_MARC_"v1),v90[1]^c)
+		if ref(['/var/www/suitesaber/bases/marc/data/marc'] l(['/var/www/suitesaber/bases/marc/data/marc'],"CN_MARC_"v1),v90^c)<>'' and ref(['/var/www/suitesaber/bases/marc/data/marc'] l(['/var/www/suitesaber/bases/marc/data/marc'],"CN_MARC_"v1),v90^g)<>'' then ' / ' ref(['/var/www/suitesaber/bases/marc/data/marc'] l(['/var/www/suitesaber/bases/marc/data/marc'],"CN_MARC_"v1),v90[1]^g)  fi,
+		ref(['/var/www/suitesaber/bases/marc/data/marc'] l(['/var/www/suitesaber/bases/marc/data/marc'],"CN_MARC_"v1),v90[1]^g)'</dd>
     <dd>'v63'</dd>
-    <dd>'ref(['/var/www/suitesaber/bases/marc/data/marc'] l(['/var/www/suitesaber/bases/marc/data/marc'],"CN_MARC_"v1),v90^f)'</dd>
+    <dd>'ref(['/var/www/suitesaber/bases/marc/data/marc'] l(['/var/www/suitesaber/bases/marc/data/marc'],"CN_MARC_"v1),v90[1]^f)'</dd>
 
 </dl>'
 '</div>'
