@@ -164,8 +164,7 @@ switch ($arrHttp["modulo"]){	case "catalog":
 	<style>
 	#draggable { width: 60px; height: 60px; padding: 0.5em; }
 	</style>
-
-
+ 
 </head>
 <body>
 <?php include("institutional_info.php");
@@ -192,7 +191,7 @@ switch ($arrHttp["modulo"]){	case "catalog":
 <div class="sectionInfo">
 
 <div class="language">
-<iframe style="vertical-align:middle; width:480px;height:60px; margin-top: -25px; "  frameborder="0" scrolling="no" src="/site/php/search.php"></iframe>
+<iframe style="vertical-align:top; width:410px;height:28px; margin-bottom: 10px; "  frameborder="0" scrolling="no" src="/site/php/search.php"></iframe>
 
 <div class="styled-select">
 			<?php include("modules.php")?>
@@ -267,14 +266,11 @@ if (isset($_SESSION["permiso"]))
 			</ul>
 
 <div id="tabs-1">
-	<div class="mainBox" onmouseover="this.className = 'mainBox mainBoxHighlighted';" onmouseout="this.className = 'mainBox';">
-		<div class="boxTop">
-			<div class="btLeft">&#160;</div>
-			<div class="btRight">&#160;</div>
-		</div>
+	<div class="mainBox">
+
 		<div class="boxContent toolSection ">
 			<div class="sectionIcon">
-				&#160;
+
 			</div>
 			<div class="sectionTitle">
 
@@ -312,8 +308,7 @@ foreach ($lista_bases as $key => $value) {
 					</form></div>
 
 				<div class="boxTop">
-					<div class="btLeft">&#160;</div>
-					<div class="btRight">&#160;</div>
+
 				</div><br />
 					
 
