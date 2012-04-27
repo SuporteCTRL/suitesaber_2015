@@ -164,10 +164,10 @@ if (isset($arrHttp["login"]) and $arrHttp["login"]=="N"){
       </p>
     <p>
         <label for="password">Senha</label><br />
-        <input type="password" class="pwd" name="password" id="pwd" value="" onClick="this.value='';" />
+        <input type="password"  name="password" id="pwd" value="" onClick="this.value='';" />
       </p>
       
-    		<div style="display:hidden;" id="formRow3" class="formRow formRowFocus">
+    		<div style="display:hidden;" class="formRow formRowFocus">
 			<label ><?php echo $msgstr["lang"]?></label> <select name=lang class="textEntry singleTextEntry">
 <?php
 
