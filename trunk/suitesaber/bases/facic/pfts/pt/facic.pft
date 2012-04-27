@@ -1,4 +1,4 @@
-	ref(['/var/www/bases/title/data/title'] l(['/var/www/bases/title/data/title'],'ID_'v30),'<h2>',v30,' - <strong>'v100'</strong></h2>'),
+	ref(['title'] l(['title'],'ID_'v30),'<h2>',v30,' - <strong>'v100'</strong></h2>'),
 	'<br />'
 		if npost->facic(v30)>0 then
 
