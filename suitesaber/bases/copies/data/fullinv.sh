@@ -1,0 +1,1 @@
+../../../cgi-bin/mx copies fst=@copies.fst uctab=ansi actab=isisac.tab fullinv=copies -all now tell=100
