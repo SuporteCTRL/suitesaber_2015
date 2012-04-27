@@ -235,7 +235,7 @@ if p(v773^w) then '<tr class="mrc"><th class="mrc">Fonte</th><td class="mrc">' v
 
 '<!-- Itens na copies -->'
 
-if ref(['/var/www/suitesaber/bases/copies/data/copies'] l(['/var/www/suitesaber/bases/copies/data/copies'],"CN_MARC_"v1),V30,)<>'' then '<tr class="mrc"><th class="mrc">Itens</th><td class="mrc">'ref(['/var/www/suitesaber/bases/copies/data/copies'] l(['/var/www/suitesaber/bases/copies/data/copies'],"CN_MARC_"v1),V30+|; |,)
+if ref(['copies'] l(['copies'],"CN_MARC_"v1),V30,)<>'' then '<tr class="mrc"><th class="mrc">Itens</th><td class="mrc">'ref(['copies'] l(['copies'],"CN_MARC_"v1),V30+|; |,)
 '</td></tr>' fi,
 
 '<!-- FIM Itens na copies -->'
