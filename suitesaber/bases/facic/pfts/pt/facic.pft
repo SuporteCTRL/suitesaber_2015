@@ -1,0 +1,12 @@
+	ref(['/var/www/bases/title/data/title'] l(['/var/www/bases/title/data/title'],'ID_'v30),'<h2>',v30,' - <strong>'v100'</strong></h2>'),
+	'<br />'
+		if npost->facic(v30)>0 then
+
+
+
+				'<a target="_blank" href="/cgi-bin/wxis.exe/iah/scripts/?IsisScript=unico.xis&lang=pt&base=TITLE&nextAction=lnk&exprSearch='v30'&indexSearch=ID&format=title.pft">',
+				'VER</a> ',
+		'<i>Coleção detalhada('f(npost->facic(v30),1,0)')</i>'
+
+
+	fi,
