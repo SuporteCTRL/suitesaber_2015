@@ -1,0 +1,1 @@
+../../../cgi-bin/mx facic fst=@facic.fst uctab=../../isisuc actab=../../isisac fullinv=facic -all now tell=1
