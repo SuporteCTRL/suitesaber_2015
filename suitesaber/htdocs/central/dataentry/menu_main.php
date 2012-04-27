@@ -85,7 +85,7 @@ function GenerarWks(){
 	<td align=center valign=top ><?php echo $msgstr["m_ir"]?>:<br>
 		<input type=text  name=ir_a size=10 value='' onClick="javascript:this.value=''">
   	</td>
-	<td ><div id="toolbarBox" style="height:28;position:relative"></div></td>
+	<td width="500"<div id="toolbarBox" style="height:28;position:relative"></div></td>
 
 	</td>
 <td>
@@ -106,10 +106,10 @@ function GenerarWks(){
 			
 </div>
 </td>
-	<td width=3>&nbsp;</td>
+
 </table>
 <script>
-	//horisontal toolbar
+	//horizontal toolbar
 	toolbar=new dhtmlXToolbarObject("toolbarBox","400","24","ABCD");
 	toolbar.setOnClickHandler(onButtonClick);
 	toolbar.addItem(new dhtmlXImageButtonObject('/central/css/<? echo $theme?>/images/barArrowLeft2.png',18,24,1,'0_primero','<?php echo $msgstr["m_primero"]?>'))
