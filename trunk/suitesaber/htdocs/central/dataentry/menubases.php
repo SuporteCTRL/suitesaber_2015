@@ -183,18 +183,22 @@ function CambiarLenguaje(){
 <input type=hidden name=nreg value="">
 <div class="heading">
 	<div class="institutionalInfo heading">
-				<img title="<?php  echo $institution_name ?>" alt="<?php  echo $institution_name ?>" src=..<?php echo $logo ?> width="<?php echo $sizelogo  ?>" />
+				<img title="<?php  echo $institution_name ?>" alt="<?php  echo $institution_name ?>" src=..<?php echo $logo ?> width="120" />
 	</div>
-	<div class="userInfo">
+	
+		<div class="userInfo" style="width: 190px;float:right;">
+	
+	
 		<span><?php echo $_SESSION["nombre"]?></span>,
 		<?php echo $_SESSION["profile"]?> |
 <?php
 if (isset($_SESSION["newindow"]) or isset($arrHttp["newindow"])){
 	echo "<a href='javascript:top.location.href=\"../dataentry/logout.php\";top.close()' xclass=\"button_logout\"><span><img alt=\"$msgstr[logout]\" src=\"../css/$theme/images/logout.png\"></span></a>";}else{	echo "<a href=\"../dataentry/logout.php\" xclass=\"button_logout\"><span><img alt=\"$msgstr[logout]\" src=\"../css/$theme/images/logout.png\"></span></a>";}
 ?>
-
-<div class="opt_catalog" >
-<div class="styled-select">
+</div>
+	
+	<div style="float:right;">
+	<div class="styled-select" >
 <?php
 $central="";
 $circulation="";
@@ -217,7 +221,7 @@ if ($circulation=="Y" or $acquisitions=="Y"){
           <?php } ?>
 </div>
 
-<div class="styled-select">		
+<div class="styled-select" >		
 <!--<label><?php echo $msgstr["bd"]?></label>:-->
 		<select name=baseSel onchange=CambiarBase() onclick=VerificarEdicion()>
 		<option value=""></option>
@@ -241,6 +245,12 @@ echo "</select>" ;
 if ($hascopies=="Y" and (isset($_SESSION["permiso"]["CENTRAL_ADDCO"]) or isset($_SESSION["permiso"]["CENTRAL_ALL"]))){	echo "\n<script>top.db_copies='Y'\n</script>\n";}
 ?>
 </div>
+</div>	
+
+
+
+<div class="opt_catalog" >
+
 </form>
 
 
