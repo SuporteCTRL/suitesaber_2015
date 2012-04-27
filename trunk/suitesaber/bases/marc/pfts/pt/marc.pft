@@ -22,7 +22,7 @@ fi,
 if p(v9) then 
 '<tr class="mrc capa">
 <td class="mrc" colspan=2></td>
-<td class="mrc capa" rowspan="100%" valign="top">'('<a href="',@server.pft,'bases/marc/'v9'" target="_blank"><img src="',@server.pft,'/bases/marc/'v9'" title="'v9'" width="120"></a><br />')'</td>
+<td class="mrc capa" rowspan="100%" valign="top">'('<a href="/bases/marc/'v9'" target="_blank"><img src="/bases/marc/'v9'" title="'v9'" width="120"></a><br />')'</td>
 </tr>'fi/
 
 '<!-- FIM Capa -->'
@@ -237,7 +237,7 @@ if p(v773^w) then '<tr class="mrc"><th class="mrc">Fonte</th><td class="mrc">' v
 
 '<!-- Itens na copies -->'
 
-if ref(['/var/www/suitesaber/bases/copies/data/copies'] l(['/var/www/suitesaber/bases/copies/data/copies'],"CN_MARC_"v1),V30,)<>'' then '<tr class="mrc"><th class="mrc">Itens</th><td class="mrc">'ref(['/var/www/suitesaber/bases/copies/data/copies'] l(['/var/www/suitesaber/bases/copies/data/copies'],"CN_MARC_"v1),V30+|; |,)
+if ref(['copies'] l(['copies'],"CN_MARC_"v1),V30,)<>'' then '<tr class="mrc"><th class="mrc">Itens</th><td class="mrc">'ref(['copies'] l(['copies'],"CN_MARC_"v1),V30+|; |,)
 '</td></tr>' fi,
 
 '<!-- FIM Itens na copies -->'
