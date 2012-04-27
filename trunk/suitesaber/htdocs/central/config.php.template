@@ -6,7 +6,7 @@ $localserver = "/var/www/suitesaber";
 $theme ="saber";
 
 //Nome do arquivo de logotipo
-$imglogo ="logoabcd.png";
+$imglogo ="logosaber.png";
 
 // Open the Central module in a new window for avoiding the use of the browse buttons
 $open_new_window="N";
