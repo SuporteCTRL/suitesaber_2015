@@ -14,13 +14,8 @@
         <? include($DirNameLocal."./head.php"); ?>
          <link rel="stylesheet" href="/iah/css/stylesheet.css" type="text/css" media="screen" />
     </head>
-    <body class="heading">
-        <div>
-
-
-            <div class="searchwidget">
-
-
+    <body id="search_int">
+        <div >   
                 <div class="searchwidget">
                     <? include($localPath['html'] . "/metasearch_blank.html"); ?>
                     <div class="centerLeftColumn">
@@ -29,7 +24,7 @@
                 </div>
 
 
-            </div>
+         
    
         </div>
 	
