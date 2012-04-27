@@ -208,12 +208,12 @@ else
 	echo "N";
 ?> />
 
-	<input type="submit" onclick="javascript:Enviar()" value="Conectar">
+	<input class="conectar" type="submit" onclick="javascript:Enviar()" value="Conectar">
 		
-        <input id="remember" name="remember_me" value="1" tabindex="7" type="checkbox">
+   <!--        <input id="remember" name="remember_me" value="1" tabindex="7" type="checkbox">
         <label for="remember">Lembrar de mim</label>
       </p>
-  <!-- <p class="forgot"> <a href="#" id="resend_password_link">Perdeu sua senha?</a> </p>
+<p class="forgot"> <a href="#" id="resend_password_link">Perdeu sua senha?</a> </p>
        <p class="forgot-username"> <a id=forgot_username_link title="If you remember your password, try logging in with your email" href="#">Perdeu seu login?</a> </p> -->
     </form>
   </fieldset>
