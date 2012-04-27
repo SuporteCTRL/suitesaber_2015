@@ -269,22 +269,27 @@ if (isset($arrHttp["encabezado"])){
 }
 ?>
 <div class="sectionInfo">
+<div class="language">
+<?php
+if (isset($arrHttp["encabezado"]))
+	echo "<a href=\"../common/inicio.php?reinicio=S&base=".$arrHttp["base"]."$encabezado\" class=\"defaultButton\">
+<span><strong>".$msgstr["back"]."</strong></span></a>
+	";
+?>
+</div>
+</div>
+
 	<div class="breadcrumb">
 <?php echo $msgstr["stats"].": ".$arrHttp["base"]?>
 	</div>
 
+
 	<div style="margin-bottom:5px;" class="actions">
-<?php
-if (isset($arrHttp["encabezado"]))
-	echo "<a href=\"../common/inicio.php?reinicio=S&base=".$arrHttp["base"]."$encabezado\" class=\"defaultButton backButton\">
-<span><strong>".$msgstr["back"]."</strong></span></a>
-	";
-?>
+
 
 </div>
 
-<div class="spacer">&#160;</div>
-</div>
+
 <div class="helper">
 <a href=../documentacion/ayuda.php?help=<?php echo $_SESSION["lang"]?>/stats/stats_tables_generate.html target=_blank><?php echo $msgstr["help"]?></a>&nbsp &nbsp;
 <?php
