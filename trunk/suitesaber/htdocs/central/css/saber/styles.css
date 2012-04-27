@@ -19,12 +19,14 @@ LABEL {
  	/* #defaultButton classes */
 A.defaultButton {
 		text-decoration: none;
+		margin: 5px;
 	}
 
 A.defaultButton SPAN {
 	font-size: 12px;
 	display: inline-block;
-	margin:1px;
+	margin-top: -9px;
+	margin-bottom:5px;
 	text-align: center;
 	cursor:pointer;
 	border: 0;
@@ -400,7 +402,10 @@ a:hover {
 	text-decoration: none;
 	width: 15px;
 }
-
+td.textbody03 {
+ width: auto;
+	
+	}
 
 .rotuloIng,textbody03 {
 	font-family: 'Droid Sans', sans-serif;
@@ -408,6 +413,7 @@ a:hover {
 	font-weight: bold;
 	border-left-width: 0px;
 	text-decoration: none;
+
 
 
 }
@@ -430,6 +436,7 @@ a:hover {
 	box-shadow:         0 2px 2px #aaa;
 	text-decoration: none;
 
+
 		
 }
 .areas2{
@@ -451,13 +458,17 @@ a:hover {
    -moz-border-radius: 0px 0px 7px 7px;
 
 }
-#rotuloIng {width: 150px;}
+#rotuloIng {
+	width: 150px;
+
+	}
 
 textarea #form {	} 
 
 input[type=text],input[type=password], textarea {
 	border-width: 1px;
 	border-style: solid;
+
 }
 
 input[type=text]:focus, textarea:focus {
@@ -467,9 +478,12 @@ input[type=text]:focus, textarea:focus {
 	-webkit-box-shadow: inset 1px 1px 1px #ddd;
 	-moz-box-shadow: inset 1px 1px 1px #ddd;
 	box-shadow: inset 1px 1px 1px #ddd;
+	text-align: left;
 }
-div #wrapper {
+div#wrapper {
+	left: 0px;
 	padding: 0px;
 	margin-top: -10px;
 	margin-bottom: -20px;
+	text-align: left;
 }
