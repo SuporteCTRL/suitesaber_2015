@@ -11,6 +11,6 @@
 
 	fi,
 '<br />'	
-'<div style="margin-top:50px; width: 80%; height: 900px;">
+'<div style="margin-top:50px; width: 80%; height: 990px;">
 <iframe frameborder="0" width="100%" height="100%" name="revista" id="revista" src="/cgi-bin/wxis.exe/iah/scripts/?IsisScript=unico.xis&lang=pt&base=TITLE&nextAction=lnk&exprSearch='v30'&indexSearch=ID&format=title.pft">
 </div>'
