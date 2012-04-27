@@ -70,7 +70,7 @@ a img {
 
 a.signin {
 	position:relative;
-	margin-left:50%
+	margin-left:50%;
 }
 a.signin span {
 	background-image:url("images/toggle_down_light.png");
@@ -96,10 +96,10 @@ a.signin.menu-open span {
 }
 
 #signin_menu {
-	-moz-border-radius-topleft:5px;
+	-moz-border-radius-topleft:2px;
 	-moz-border-radius-bottomleft:5px;
 	-moz-border-radius-bottomright:5px;
-	-webkit-border-top-left-radius:5px;
+	-webkit-border-top-left-radius:2px;
 	-webkit-border-bottom-left-radius:5px;
 	-webkit-border-bottom-right-radius:5px;
 	display:none;
@@ -120,7 +120,7 @@ a.signin.menu-open span {
 	/* for IE */
   filter:alpha(opacity=80);
   /* CSS3 standard */
-  opacity:0.9;
+  opacity:1.0;
 	box-shadow: 0 0 .25em #000000; /* Implementação W3C */
 	-moz-box-shadow: 0 0 .25em #000000;  /* Implementação Mozilla */
 	-webkit-box-shadow: 0 0 .25em #000000; /* Implementação para browsers que renderizam via webkit */
@@ -186,8 +186,60 @@ input#user, input#pwd {
 	-webkit-box-shadow: rgba(0,0,0, 0.5) 0px 0px 8px;	
 	
 	}
-
- 
+input.conectar {
+	float: right;
+	height:27px;
+	border: 1px solid #DDDDDD;
+	display: inline-block;
+	margin:1px;
+	text-align: center;
+	cursor:pointer;
+	text-shadow: 0 1px 1px white;
+	-webkit-box-shadow: 0 1px 1px #FFFFFF;
+	-moz-box-shadow:    0 1px 1px #FFFFFF;
+	box-shadow:         0 1px 1px #FFFFFF;
+	font: bold 11px Sans-Serif;
+	white-space: nowrap;
+	vertical-align: middle;
+	color: #666666;
+	background: -webkit-linear-gradient(top, white, #E0E0E0);
+	background:    -moz-linear-gradient(top, white, #E0E0E0);
+	background:     -ms-linear-gradient(top, white, #E0E0E0);
+	background:      -o-linear-gradient(top, white, #E0E0E0);
+	font-size: 14px;
+	font-weight: bold;
+	text-decoration: none;	
+	
+	
+	}
+input.conectar:hover {
+	height:27px;
+	border: 1px solid #AAAAAA;
+	background: -webkit-linear-gradient(top, white, #f6f6f6);
+	background:    -moz-linear-gradient(top, white, #f6f6f6);
+	background:     -ms-linear-gradient(top, white, #f6f6f6);
+	background:      -o-linear-gradient(top, white, #f6f6f6);
+	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.25), inset 0 0 3px #FFFFFF;
+	-moz-box-shadow:    0 1px 2px rgba(0,0,0,0.25), inset 0 0 3px #FFFFFF;
+	box-shadow:         0 1px 2px rgba(0,0,0,0.25), inset 0 0 3px #FFFFFF;
+	cursor: pointer;
+	}
+	
+input.conectar:focus {	
+	height:27px;
+	border: 1px solid #AAAAAA;
+	border-bottom-color: #CCCCCC;
+	border-top-color: #999999;
+	-webkit-box-shadow: inset 0 1px 2px #AAAAAA;
+	-moz-box-shadow:    inset 0 1px 2px #AAAAAA;
+	box-shadow:         inset 0 1px 2px #AAAAAA;
+	background: -webkit-linear-gradient(top, #E6E6E6, gainsboro);
+	background:    -moz-linear-gradient(top, #E6E6E6, gainsboro);
+	background:     -ms-linear-gradient(top, #E6E6E6, gainsboro);
+	background:      -o-linear-gradient(top, #E6E6E6, gainsboro);
+	cursor: pointer;
+}	
+	
 /* deletar?? 
 .tipsy-inner {
 	padding:10px 15px;
