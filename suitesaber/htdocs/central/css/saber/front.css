@@ -176,21 +176,18 @@ border:0;
 	cursor:pointer;
 }
 
-#user, #pwd {
-	background: #FFFFFF url('bg_form.png') left top repeat-x;
-
+input#user, input#pwd {
+	background-color: #ffffff;
+	background: #ffffff url('bg_form.png') left top repeat-x;
 	background: -webkit-gradient(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #cccccc), to(#FFFFFF));
-
 	background: -moz-linear-gradient(top, #FFFFFF, #cccccc 1px, #FFFFFF 25px);
-
 	box-shadow: rgba(0,0,0, 0.5) 0px 0px 8px;
-
 	-moz-box-shadow: rgba(0,0,0, 0.5) 0px 0px 8px;
-
 	-webkit-box-shadow: rgba(0,0,0, 0.5) 0px 0px 8px;	
 	
 	}
 
+ 
 /* deletar?? 
 .tipsy-inner {
 	padding:10px 15px;
