@@ -208,9 +208,8 @@ else
 	echo "N";
 ?> />
 
-			<a href="javascript:Enviar()"><div><br>
-<img src="central/css/<? echo $theme  ?>/images/conectar.png" style="float: right; " />
-			</div></a>
+	<input type="submit" onclick="javascript:Enviar()" value="Conectar">
+		
         <input id="remember" name="remember_me" value="1" tabindex="7" type="checkbox">
         <label for="remember">Lembrar de mim</label>
       </p>
