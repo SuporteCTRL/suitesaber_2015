@@ -358,11 +358,11 @@ function Diccionario(jx){
 	echo "<td colspan=3 align=center><p><br>\n";
 	?>
 	<div class="sectionButtons"><center>
-		<a href="javascript:PrepararExpresion()" class="defaultButton multiLine listButton">
+		<a href="javascript:PrepararExpresion()" class="defaultButton">
 
 							<span><?php echo $msgstr["m_buscar"]?></strong></span>
 						</a>
-		<a href="javascript:LimpiarBusqueda(this,1)" class="defaultButton multiLine cancelButton">
+		<a href="javascript:LimpiarBusqueda(this,1)" class="defaultButton">
 
 							<span><?php echo $msgstr["borrar"]?></strong></span>
 						</a>
