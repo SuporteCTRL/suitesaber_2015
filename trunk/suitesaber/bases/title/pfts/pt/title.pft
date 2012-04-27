@@ -21,8 +21,20 @@ if v30<>v20 then       '<tr><td align="left"  valign="top" ><strong>Código SeCS 
 <td></td></tr>',   fi,  
  if p(v50) then       '<tr><td align="left"  valign="top" ><strong>Situação da publicação </td>'	  ,'<td  valign="top" align="left"  >'v50(25,25)+|<br>|'</td></tr>',   fi,   
   
- if p(v130) then       '<tr><td align="left"  valign="top" ><strong>Tít. seção-parte </td>'	  ,'<td  valign="top" align="left"  >'v130(25,25)+|<br>|'</td></tr>',   fi,   
- if p(v140) then       '<tr><td align="left"  valign="top" ><strong>Menção reponsabilidade </td>'	  ,'<td  valign="top" align="left"  >'v140(25,25)+|<br>|'</td></tr>',   fi,   if p(v149) then       '<tr><td align="left"  valign="top" ><strong>Título chave por extenso </td>'	  ,'<td  valign="top" align="left"  >'v149(25,25)+|<br>|'</td></tr>',   fi,   
+ if p(v130) then       '<tr><td align="left"  valign="top" ><strong>Tít. seção-parte </td>'	  ,'<td  valign="top" align="left"  >'v130(25,25)+|<br>|'</td></tr>',   
+ fi,   
+ 
+if p(v140) then
+'<tr><td align="left"  valign="top" ><strong>Menção reponsabilidade </td>'	  
+,'<td  valign="top" align="left"  >'v140+|<br>|'</td></tr>',
+fi,   if p(v149) then
+'<tr><td align="left"  valign="top" ><strong>Título chave por extenso </td>'
+,'<td  valign="top" align="left"  >'v149+|<br>|'</td></tr>',
+fi,   
+
+
+
+
  if p(v150) then       '<tr><td align="left"  valign="top" ><strong>Título abreviado </td>'	  ,'<td  valign="top" align="left"  >'v150(25,25)+|<br>|'</td></tr>',   fi,   if p(v230) then       '<tr><td align="left"  valign="top" ><strong>Título paralelo </td>'	  ,'<td  valign="top" align="left"  >'v230(25,25)+|<br>|'</td></tr>',   fi,  
   if p(v240) then       '<tr><td align="left"  valign="top" ><strong>Outras variações </td>'	  ,'<td  valign="top" align="left"  >'v240(25,25)+|<br>|'</td></tr>',   fi,   
  if p(v301) then       '<tr><td align="left"  valign="top" ><strong>Data de início </td>'	  ,'<td  valign="top" align="left"  >'v301(25,25)+|<br>|'</td></tr>',   fi,   if p(v302) then       '<tr><td align="left"  valign="top" ><strong>Volume de início </td>'	  ,'<td  valign="top" align="left"  >'v302(25,25)+|<br>|'</td></tr>',   fi,   
