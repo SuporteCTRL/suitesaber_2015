@@ -4,9 +4,13 @@
 
 
 
-				'<a target="_blank" href="/cgi-bin/wxis.exe/iah/scripts/?IsisScript=unico.xis&lang=pt&base=TITLE&nextAction=lnk&exprSearch='v30'&indexSearch=ID&format=title.pft">',
+				'<a target="revista" href="/cgi-bin/wxis.exe/iah/scripts/?IsisScript=unico.xis&lang=pt&base=TITLE&nextAction=lnk&exprSearch='v30'&indexSearch=ID&format=title.pft">',
 				'VER</a> ',
 		'<i>Coleção detalhada('f(npost->facic(v30),1,0)')</i>'
 
 
 	fi,
+'<br />'	
+'<div style="margin-top:50px; width: 80%; height: 900px;">
+<iframe frameborder="0" width="100%" height="100%" name="revista" id="revista" src="/cgi-bin/wxis.exe/iah/scripts/?IsisScript=unico.xis&lang=pt&base=TITLE&nextAction=lnk&exprSearch='v30'&indexSearch=ID&format=title.pft">
+</div>'
