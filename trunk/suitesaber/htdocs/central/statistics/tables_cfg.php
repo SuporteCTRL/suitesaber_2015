@@ -255,24 +255,32 @@ if (isset($arrHttp["encabezado"])){
 }
 echo "<form name=stats method=post>";
 echo "<div class=\"sectionInfo\">
-	<div class=\"breadcrumb\">".$msgstr["stats_conf"]." - ".$msgstr["tab_list"].": ".$arrHttp["base"]."</div>
-	<div class=\"actions\">";
+	<div class=\"language\">";
 if (isset($arrHttp["from"]) and $arrHttp["from"]=="statistics"){
 	$script="tables_generate.php";
 }else{
 	$script="../dbadmin/menu_modificardb.php";
 }
-	echo "<a href=\"$script?base=".$arrHttp["base"]."$encabezado\" class=\"defaultButton backButton\">";
+	echo "<a href=\"$script?base=".$arrHttp["base"]."$encabezado\" class=\"defaultButton\">";
 echo "
 	<span><strong>".$msgstr["back"]."</strong></span></a>";
 if ($error==""){
 	echo "
-	<a href=\"javascript:Guardar()\" class=\"defaultButton saveButton\">
+	<a href=\"javascript:Guardar()\" class=\"defaultButton\">
 
 	<span><strong>".$msgstr["save"]."</strong></span></a>";
 }
 ?>
-</div><div class="spacer">&#160;</div></div>
+</div>
+
+<?php 
+echo "<div class=\"breadcrumb\">".$msgstr["stats_conf"]." - ".$msgstr["tab_list"].": ".$arrHttp["base"]."</div>";
+?>
+<div class="actions">
+
+</div>
+
+</div>
 <div class="helper">
 <a href=../documentacion/ayuda.php?help=<?php echo $_SESSION["lang"]?>/stats/stats_config_tabs.html target=_blank><?php echo $msgstr["help"]?></a>&nbsp &nbsp;
 <?php
