@@ -115,10 +115,10 @@ function getElement(psID) {
 }
 
 function DrawElement(ixEl,Title,ixRow,ixCol){
-	nuevo="<table width=800 bgcolor=#cccccc border=0>"
+	nuevo="<table bgcolor=#cccccc border=0>"
 	nuevo+="<td rowspan=3 bgcolor=white valign=top><a href=javascript:DeleteElement("+ixEl+")><img src=../dataentry/img/toolbarDelete.png alt=\"<?php echo $msgstr["delete"]?>\" text=\"<?php echo $msgstr["delete"]?>\"></a></td>\n";
-	nuevo+="<td width=300 bgcolor=white><?php echo $msgstr["title"]?></td>"
-	nuevo+="<td bgcolor=white><input type=text name=tit size=120 value='"+Title+"'></td>"
+	nuevo+="<td width=200 bgcolor=white><?php echo $msgstr["title"]?></td>"
+	nuevo+="<td bgcolor=white><input type=text name=tit size=20 value='"+Title+"'></td>"
     nuevo+="<tr><td bgcolor=white><?php echo $msgstr["row"]?></td><td bgcolor=white><select name=rows><option></option>"
     f=fields.split('||')
     ix0=0
@@ -286,7 +286,7 @@ echo "<div class=\"breadcrumb\">".$msgstr["stats_conf"]." - ".$msgstr["tab_list"
 <?php
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 	echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/stats/stats_config_tabs.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "<font color=white>&nbsp; &nbsp; Script: tables_cfg.php";
+echo "Script: tables_cfg.php";
 ?>
 </font>
 	</div>
@@ -313,10 +313,10 @@ foreach ($fp as $value) {
 	if ($value!=""){
 		$total++;
 		$t=explode('|',$value);
-		echo "<table  width=800 bgcolor=#cccccc border=0>";
+		echo "<table bgcolor=#cccccc border=0>";
 		echo "<td rowspan=3 bgcolor=white valign=top><a href=javascript:DeleteElement(".$total.")><img src=../dataentry/img/toolbarDelete.png alt=\"".$msgstr["delete"]."\" text=\"".$msgstr["delete"]."\"></a></td>\n";
-		echo "<td width=300 bgcolor=white>".$msgstr["title"]."</td>";
-		echo "<td bgcolor=white><input type=text name=tit size=120 value=\"".$t[0]."\"></td>";
+		echo "<td width=200 bgcolor=white>".$msgstr["title"]."</td>";
+		echo "<td bgcolor=white><input type=text name=tit size=60 value=\"".$t[0]."\"></td>";
    		echo "<tr><td bgcolor=white>".$msgstr["row"]."</td><td bgcolor=white><select name=rows><option></option>";
    		$f=explode('||',$fields);
    		foreach ($f as $opt) {
@@ -371,9 +371,7 @@ if (isset($arrHttp["encabezado"])) echo "<input type=hidden name=encabezado valu
 if (isset($arrHttp["from"])) echo "<input type=hidden name=from value=".$arrHttp["from"].">\n";
 ?>
 </form>
-<?php
-include("../common/footer.php");
-?>
+
 </body>
 </html>
 <script>
