@@ -292,7 +292,7 @@ if (isset($arrHttp["encabezado"]))
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 	echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/stats/stats_tables_generate.html target=_blank>".$msgstr["edhlp"]."</a>";
 ?>
-<font color=white>&nbsp; &nbsp; Script: tables_generate.php</font>
+&nbsp; &nbsp; Script: tables_generate.php
 </div>
 <form name="forma1" method="post" action="tables_generate_ex.php" onsubmit="Javascript:return false" target="statist">
 <input type=hidden name=base value=<?php echo $arrHttp["base"]?>>
@@ -430,7 +430,7 @@ if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 		</td>
 	<tr>
 		<td colspan=2 width=100% align=center>
-			<input type=submit value="<?php echo $msgstr["send"]?>" onclick=EnviarForma()>
+			<input id=botoes type=submit value="<?php echo $msgstr["send"]?>" onclick=EnviarForma()>
 			</form>
 		</td>
 </table>
