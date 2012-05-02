@@ -623,10 +623,10 @@ if (isset($arrHttp["encabezado"])){
 <?php
 if ($arrHttp["Opcion"]=="new"){
 	$ayuda="pft_create.html";
-	echo "<a href=fst.php?Opcion=new&base=".$arrHttp["base"]."$encabezado class=\"defaultButton backButton\">
+	echo "<a href=fst.php?Opcion=new&base=".$arrHttp["base"]."$encabezado class=\"defaultButton\">
 
 	<span><strong>".$msgstr["back"]."</strong></span></a>";
-	echo "<a href=\"menu_creardb.php?$encabezado\"$encabezado class=\"defaultButton cancelButton\">
+	echo "<a href=\"menu_creardb.php?$encabezado\"$encabezado class=\"defaultButton\">
 
 <span><strong>".$msgstr["cancel"]."</strong></span></a>
 	";
@@ -638,12 +638,12 @@ if ($arrHttp["Opcion"]=="new"){
 				$retorno=$arrHttp["retorno"];
 			else
 				$retorno="menu_modificardb.php";
-			echo "<a href=\"$retorno"."?base=".$arrHttp["base"]."$encabezado\" class=\"defaultButton cancelButton\">
+			echo "<a href=\"$retorno"."?base=".$arrHttp["base"]."$encabezado\" class=\"defaultButton\">
 
 		<span><strong>".$msgstr["cancel"]."</strong></span></a>
 			";
 		}else{
-			echo "<a href=\"../common/inicio.php?reinicio=s&base=".$arrHttp["base"]."$encabezado\" class=\"defaultButton cancelButton\">
+			echo "<a href=\"../common/inicio.php?reinicio=s&base=".$arrHttp["base"]."$encabezado\" class=\"defaultButton\">
 
 		<span><strong>".$msgstr["cancel"]."</strong></span></a>
 			";
