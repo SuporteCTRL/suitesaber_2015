@@ -269,7 +269,7 @@ echo "<div class=\"breadcrumb\">".$msgstr["stats_conf"]." - ".$msgstr["var_list"
 <?php
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 	echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/stats/stats_config_vars.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "<font color=white>&nbsp; &nbsp; Script: config_vars.php";
+echo " Script: config_vars.php";
 ?>
 </font>
 	</div>
@@ -345,7 +345,7 @@ if (isset($arrHttp["from"])) echo "<input type=hidden name=from value=".$arrHttp
 ?>
 </form>
 <?php
-include("../common/footer.php");
+//include("../common/footer.php");
 echo "<script>total=$total</script>\n";
 ?>
 </body>
