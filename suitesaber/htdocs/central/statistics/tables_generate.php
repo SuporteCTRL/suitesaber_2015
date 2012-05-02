@@ -71,10 +71,8 @@ include("../common/header.php");
 <script language="javascript1.2" src="../dataentry/js/lr_trim.js"></script>
 <style type=text/css>
 
-td{
-	font-size:12px;
-	font-family:Arial;
-}
+td{	font-size:12px;
+	font-family:Arial;}
 
 div#useextable{
 
@@ -85,8 +83,7 @@ div#useextable{
 	color: #000000;
 }
 
-div#createtable{
-<?php if ($arrHttp["Opcion"]!="new") echo "display: none;\n"?>
+div#createtable{<?php if ($arrHttp["Opcion"]!="new") echo "display: none;\n"?>
 
 	margin: 0px 20px 0px 20px;
 	font-family: Arial, Helvetica, sans-serif;
@@ -131,8 +128,7 @@ function AbrirVentana(Archivo){
 	msgwin.focus()
 }
 
-function EsconderVentana( whichLayer ){
-var elem, vis;
+function EsconderVentana( whichLayer ){var elem, vis;
 	if( document.getElementById ) // this is the way the standards work
 		elem = document.getElementById( whichLayer );
 	else if( document.all ) // this is the way old msie versions work
@@ -149,10 +145,8 @@ var elem, vis;
 function toggleLayer( whichLayer ){
 	var elem, vis;
 
-	switch (whichLayer){
-		case "createtable":
-<?php
-		echo '
+	switch (whichLayer){		case "createtable":
+<?php		echo '
 			EsconderVentana("useextable")
 			break
 			';
@@ -224,11 +218,8 @@ function EnviarForma(){
 		alert("<?php echo $msgstr["selreg"]?>")
 		return
 	}
-	if (document.forma1.tables.selectedIndex>0 ){
-		if (document.forma1.rows.selectedIndex>0 || document.forma1.cols.selectedIndex>0){
-			alert("<?php echo $msgstr["seltab"]?>")
-			return
-		}
+	if (document.forma1.tables.selectedIndex>0 ){		if (document.forma1.rows.selectedIndex>0 || document.forma1.cols.selectedIndex>0){			alert("<?php echo $msgstr["seltab"]?>")
+			return		}
 	}
 	if (document.forma1.tables.selectedIndex || document.forma1.rows.selectedIndex>0 || document.forma1.cols.selectedIndex>0){
 	  	document.forma1.submit()
@@ -252,9 +243,11 @@ function Configure(Option){
 	}
 	switch (Option){
 		case "stats_var":
+			document.configure.target="statist"
 			document.configure.action="config_vars.php"
 			break
 		case "stats_tab":
+			document.configure.target="statist"
 			document.configure.action="tables_cfg.php"
 			break
 	}
@@ -263,31 +256,34 @@ function Configure(Option){
 </script>
 <body>
 <?php
-if (isset($arrHttp["encabezado"])){
-	include("../common/institutional_info.php");
+if (isset($arrHttp["encabezado"])){	include("../common/institutional_info.php");
 	$encabezado="&encabezado=s";
 }
 ?>
 <div class="sectionInfo">
-<div class="language">
+
+		<div class="language">
 <?php
 if (isset($arrHttp["encabezado"]))
 	echo "<a href=\"../common/inicio.php?reinicio=S&base=".$arrHttp["base"]."$encabezado\" class=\"defaultButton\">
+
 <span><strong>".$msgstr["back"]."</strong></span></a>
 	";
 ?>
+
 </div>
+
+
 </div>
 
 	<div class="breadcrumb">
 <?php echo $msgstr["stats"].": ".$arrHttp["base"]?>
 	</div>
-
-
-	<div style="margin-bottom:5px;" class="actions">
-
-
+	
+		<div class="actions">
 </div>
+	
+	
 
 
 <div class="helper">
@@ -296,26 +292,28 @@ if (isset($arrHttp["encabezado"]))
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 	echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/stats/stats_tables_generate.html target=_blank>".$msgstr["edhlp"]."</a>";
 ?>
-Script: tables_generate.php
+<font color=white>&nbsp; &nbsp; Script: tables_generate.php</font>
 </div>
-<form name=forma1 method=post action=tables_generate_ex2.php onsubmit="Javascript:return false" target="statist">
+<form name="forma1" method="post" action="tables_generate_ex.php" onsubmit="Javascript:return false" target="statist">
 <input type=hidden name=base value=<?php echo $arrHttp["base"]?>>
 <input type=hidden name=cipar value=<?php echo $arrHttp["base"]?>.par>
 <input type=hidden name=Opcion>
 
 <?php if (isset($arrHttp["encabezado"])) echo "<input type=hidden name=encabezado value=s>\n";
 ?>
+
 <div class="middle form" style="position:relative; width:40%;background:#fff;float:left;">
+<div class="middle form">
 	<div class="formContent">
 
 <?php
 //USAR UNA TABLA YA EXISTENTE
 	echo "<table>
 			<tr>
-			<td>
-    		 <a style=\"width:500px;\" class=\"areas1\" href=\"javascript:toggleLayer('useextable')\"><strong>". $msgstr["exist_tb"]."</strong></a>
+			<td align=left   valign=center bgcolor=#ffffff>
+    		<a style=\"width:500px;\" class=\"areas1\" href=\"javascript:toggleLayer('useextable')\"><strong>". $msgstr["exist_tb"]."</strong></a>
     		<div id=useextable>
-    		<br>".$msgstr["tab_list"].": <select name=tables  style=\"width:150\">
+    		<br>".$msgstr["tab_list"].": <select name=tables  style=\"width:300\">
     		<option value=''>";
     unset($fp);
 	$file=$db_path.$arrHttp["base"]."/def/".$_SESSION["lang"]."/tabs.cfg";
@@ -329,30 +327,31 @@ Script: tables_generate.php
 			$value=trim($value);
 			if ($value!=""){
 				$t=explode('|',$value);
-				echo "<option value=\"".$value."\">".trim($t[0])."</option>";
+				echo "<option value=".urlencode($value).">".trim($t[0])."</option>";
 			}
 		}
 	}
 ?>
 			</select>
-
+			<p>
 		</div>
 	</td>
 </table>
-
+<br>
 
 <!-- CONSTRUIR UNA TABLA SELECCIONANDO FILAS Y COLUMNAS  -->
-<table border=0 >
+<table>
 	<tr>
-		<td>
-		<a class="areas1" style="width:500px;" href="javascript:toggleLayer('createtable')"><strong><?php echo $msgstr["create_tb"]?></strong></a>
+		<td valign=top  align=left bgcolor=#ffffff>
+		&nbsp; <a style="width:500px;" class="areas1" href="javascript:toggleLayer('createtable')"><strong><?php echo $msgstr["create_tb"]?></strong></a>
     	<div id=createtable>
     	<table>
     		<td>
     		<P><strong><?php echo $msgstr["row"]?></strong><br>
-			<table  border=0 >
-				<td>
-				<Select name=rows style="width:150px">
+			<table width=150 border=0 >
+				<td align=right width=250>
+				<div class="styled-select">
+				<Select  name="rows" >
 				<option value=""></option>
 
  <?php
@@ -367,19 +366,21 @@ Script: tables_generate.php
 			$value=trim($value);
 			if ($value!=""){
 				$t=explode('|',$value);
-				echo "<option value=\"".$value."\">".trim($t[0])."</option>";
+				echo "<option value=".urlencode($value).">".trim($t[0])."</option>";
 			}
 		}
 	}
 ?>
-				</select></td>
+				</select>
+				</div></td>
 			</table>
 			</td>
 			<td bgcolor=#ffffff>
 			<P><strong><?php echo $msgstr["column"]?></strong><br>
-			<table width=300 border=0 >
+			<table width=150 border=0 >
 				<td align=right width=250>
-				<Select name=cols style="width:250px">
+				<div class="styled-select">
+				<Select class="styled-select" name="cols">
 				<option value=""></option>
 
  <?php
@@ -391,7 +392,7 @@ Script: tables_generate.php
 			}
 		}
 ?>
-				</select>
+				</div></select>
 				</td>
 			</table>
 		</td>
@@ -399,20 +400,21 @@ Script: tables_generate.php
  </div>
 </td>
 </table>
+<p>
 
 <!-- SELECCION DE LOS REGISTROS  -->
 <table>
 	<tr>
-		<td>
-			 <a style="width:500px;" class="areas1" href="javascript:toggleLayer('generate')"><strong><?php echo $msgstr["gen_output"]?></strong></a>
+		<td bgcolor=white>
+			&nbsp; <a class="areas1" style="width:500px;" href="javascript:toggleLayer('generate')"><strong><?php echo $msgstr["gen_output"]?></strong></a>
     		<div id=generate><p>
     		<table>
     <tr>
 		<td  align=center colspan=2 bgcolor=#eeeeee><strong><?php echo $msgstr["bymfn"]?></strong></td>
 	<tr>
-		<td align=right><?php echo $msgstr["from"]?>: <input type=text name=Mfn size=10 value=1></td>
-		<td><?php echo $msgstr["to"]?>: <input type=text name=to size=10 value=<?php echo $tag["MAXMFN"]?>>
-		 <a href=javascript:BorrarRango() class=boton><?php echo $msgstr["clear"]?></a> (
+		<td width=10% align=right><?php echo $msgstr["from"]?>: <input type=text name=Mfn size=10 value=1>&nbsp;  </td>
+		<td width=10%><?php echo $msgstr["to"]?>: <input type=text name=to size=10 value=<?php echo $tag["MAXMFN"]?>>
+		 <a id="botoes" href=javascript:BorrarRango() class=boton><?php echo $msgstr["clear"]?></a> (
 		<?php echo $msgstr["maxmfn"].": ".$tag["MAXMFN"]?>)</td>
 	<tr>
 		<td  align=center colspan=2 bgcolor=#eeeeee><strong><?php echo $msgstr["bysearch"]?></strong></td>
@@ -421,29 +423,29 @@ Script: tables_generate.php
 		<td colspan=2 >
 			<table>
 				<td><a href=javascript:Buscar()><img src=../dataentry/img/toolbarSearch.png height=24 align=middle border=0 alt=""></a></td>
-				<td><textarea rows=2 cols=30 name=Expresion><?php if (isset($Expresion )) echo $Expresion?></textarea>
+				<td><textarea rows=3 cols=40 name=Expresion><?php if (isset($Expresion )) echo $Expresion?></textarea>
 
-					<a href=javascript:BorrarExpresion() class=boton><?php echo $msgstr["clear"]?></a></td>
+					<a id="botoes" href=javascript:BorrarExpresion() class=boton><?php echo $msgstr["clear"]?></a></td>
 			</table>
 		</td>
 	<tr>
-		<td colspan=2 align=center>
-			<input id="botoes" type=submit value="<?php echo $msgstr["send"]?>" onclick=EnviarForma()>
+		<td colspan=2 width=100% align=center>
+			<input type=submit value="<?php echo $msgstr["send"]?>" onclick=EnviarForma()>
+			</form>
 		</td>
 </table>
 </div>
 </td>
 <?php
-if (isset($_SESSION["permiso"]["CENTRAL_STATCONF"]) or isset($_SESSION["permiso"]["CENTRAL_ALL"])){
-?>
+if (isset($_SESSION["permiso"]["CENTRAL_STATCONF"]) or isset($_SESSION["permiso"]["CENTRAL_ALL"])){?>
 <tr>
-	<td align=left   valign=center ><p>
-    	<a style="width:500px;" class="areas1"  href="javascript:toggleLayer('configure')"><strong><?echo $msgstr["stats_conf"]?></strong></a>	
+	<td align=left   valign=center bgcolor=#ffffff><p>
+    	&nbsp; <a class="areas1" href="javascript:toggleLayer('configure')"><strong><?echo $msgstr["stats_conf"]?></strong></a>
     	<div id=configure>
-    	<ul>
-    		<li><a href=javascript:Configure("stats_var")><?php echo $msgstr["var_list"]?></a></li>
-            <li><a href=javascript:Configure("stats_tab")><?php echo $msgstr["tab_list"]?></a></li>
-    	</ul>
+  
+    	<a id=botoes href=javascript:Configure("stats_var")><?php echo $msgstr["var_list"]?></a>
+      <a id=botoes  href=javascript:Configure("stats_tab")><?php echo $msgstr["tab_list"]?></a>
+
     	</div>
     </td>
 <?php } ?>
@@ -451,19 +453,24 @@ if (isset($_SESSION["permiso"]["CENTRAL_STATCONF"]) or isset($_SESSION["permiso"
 
 </div>
 </div>
-<div style="position:relative;width:60%;background:#fff;float:right;height:580px;">
-<iframe style="width:100%;height:100%;" src="#" id="statist" name="statist" frameborder="0" >
 </div>
-</center>
-</form>
+
+
 <form name=configure onSubmit="return false">
 	<input type=hidden name=Opcion value=update>
 	<input type=hidden name=from value="statistics">
 	<input type=hidden name=base value=<?php echo $arrHttp["base"]?>>
 	<?php if (isset($arrHttp["encabezado"])) echo "<input type=hidden name=encabezado value=s>";?>
 </form>
+
+
+<div style="position:relative;width:60%;background:#fff;float:right;height:580px;">
+<iframe style="width:100%;height:100%;" src="#" id="statist" name="statist" frameborder="0" >
+</div>
+
+
 <?php
 include("../common/footer.php");
 ?>
 </body>
-</html>
+</html>to

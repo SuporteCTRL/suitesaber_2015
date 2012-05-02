@@ -233,7 +233,7 @@ function Guardar(){
 <?php
 // VERIFICA SI VIENE DEL TOOLBAR O NO PARA COLOCAR EL ENCABEZAMIENTO
 if (isset($arrHttp["encabezado"])){
-	include("../common/institutional_info.php");
+//	include("../common/institutional_info.php");
 	$encabezado="&encabezado=s";
 }else{
 	$encabezado="";
@@ -325,11 +325,18 @@ echo "<font color=white>&nbsp; &nbsp; Script: config_vars.php";
  ?>
         </div>
 
-		<a href="javascript:AddElement('rows')"><?php echo $msgstr["add"]?></a>
+		<a id="botoes" href="javascript:AddElement('rows')"><?php echo $msgstr["add"]?></a>
+		<?php
+	echo "<a href=\"javascript:Guardar()\" class=\"defaultButton\">
+
+	<span><strong>".$msgstr["save"]."</strong></span></a>";		
+		
+		
+		?>
 	</div>
 </div>
 </form>
-<form name=enviar method=post action=config_vars_update.php>
+<form name=enviar method=post action=config_vars_update2.php>
 <input type=hidden name=base>
 <input type=hidden name=ValorCapturado>
 <?php

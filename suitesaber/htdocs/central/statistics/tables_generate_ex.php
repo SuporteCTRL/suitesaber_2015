@@ -35,7 +35,7 @@ include ("../lang/statistics.php");
 //VALORES QUE VIENEN DE LA PÁGINA
 include("../common/get_post.php");
 //foreach ($arrHttp as $key => $value) echo "$key = $value <br>";
-
+$arrHttp["rows"]=urldecode($arrHttp["rows"]);
 // SELECCION DE LOS REGISTROS
 if (isset($arrHttp["Expresion"]))
 	$Opcion="search";
@@ -128,36 +128,21 @@ function SendTo(Opcion){
 <body>
 <?php
 if (isset($arrHttp["encabezado"])){
-	include("../common/institutional_info.php");
+//	include("../common/institutional_info.php");
 	$encabezado="&encabezado=s";
 }
 ?>
 <div class="sectionInfo">
-	<div class="breadcrumb">
-<?php echo $msgstr["stats"].": ".$arrHttp["base"]?>
-	</div>
+
 
 	<div class="actions">
-<?php
-if (isset($arrHttp["encabezado"]))
-	echo "<a href=\"tables_generate.php?base=".$arrHttp["base"]."$encabezado\" class=\"defaultButton backButton\">
-<span><strong>".$msgstr["back"]."</strong></span></a>
-	";
-?>
+
 
 </div>
 
-<div class="spacer">&#160;</div>
+
 </div>
-<div class="helper">
-<a href=../documentacion/ayuda.php?help=<?php echo $_SESSION["lang"]?>/stats/stats_tables_generate.html#TABLE target=_blank><?php echo $msgstr["help"]?></a>&nbsp &nbsp;
-<?php
-if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
-	echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/stats/stats_tables_generate.html#TABLE target=_blank>".$msgstr["edhlp"]."</a>";
-echo "<font color=white>&nbsp; &nbsp; Script: tables_generate_ex.php";
-?>
-</font>
-</div>
+
 <form name=forma1 method=post onsubmit="Javascript:return false">
 <input type=hidden name=base value=<?php echo $arrHttp["base"]?>>
 <input type=hidden name=cipar value=<?php echo $arrHttp["base"]?>.par>
