@@ -487,3 +487,6 @@ div#wrapper {
 	margin-bottom: -20px;
 	text-align: left;
 }
+input#form {
+	height: 28px;	
+	}
