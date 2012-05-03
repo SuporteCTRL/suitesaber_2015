@@ -474,9 +474,10 @@ function BorrarExpresion(){
 
 function EnviarForma(vp){
 	if (vp=="P") {
+
 		document.forma1.vp.value="S"
-		document.forma1.target="VistaPrevia"
-		msgwin=window.open("","VistaPrevia","resizable, status, scrollbars")
+		document.forma1.target="relat"
+	//	msgwin=window.open("","VistaPrevia","resizable, status, scrollbars")
 	}else{
 		document.forma1.vp.value=vp
 		document.forma1.target=""
@@ -667,7 +668,7 @@ if ($arrHttp["Opcion"]=="new"){
 <a href=../documentacion/ayuda.php?help=<?php echo $_SESSION["lang"]?>/<?php echo $ayuda?> target=_blank><?php echo $msgstr["help"]?></a>&nbsp &nbsp;
 <?php if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 	echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/".$ayuda." target=_blank>".$msgstr["edhlp"]."</a>";
-echo "<font color=white>&nbsp; &nbsp; Script: pft.php";
+echo " Script: pft.php";
 ?></font>
 	</div>
 <form name=forma1 method=post action=../dataentry/imprimir_g.php onsubmit="Javascript:return false">
@@ -682,24 +683,24 @@ echo "<font color=white>&nbsp; &nbsp; Script: pft.php";
 
 <?php if (isset($arrHttp["encabezado"])) echo "<input type=hidden name=encabezado value=s>\n";
 ?>
-<div class="middle form">
-			<div class="formContent">
-<table border=0 width=600 class=listTable>
+<div class="middle form" style="position:relative; width:40%;background:#fff;float:left;">
+			<div class="formContent" >
+<table border=0 >
 	<td  align=center>
 		<?php echo "<strong>".$msgstr["r_fgent"]."</strong>";?>
-        &nbsp; &nbsp; <a href=http://bvsmodelo.bvsalud.org/download/cisis/CISIS-LinguagemFormato4-<?php echo $_SESSION["lang"]?>.pdf target=_blank><font size=1><?php echo $msgstr["cisis"]?>
+        &nbsp;  <a href=http://bvsmodelo.bvsalud.org/download/cisis/CISIS-LinguagemFormato4-<?php echo $_SESSION["lang"]?>.pdf target=_blank><?php echo $msgstr["cisis"]?>
         </a>
 .   </td>
 <?php
 echo "</table>\n";
 //USE AN EXISTING FORMAT
  if ($arrHttp["Opcion"]!="new"){
-	echo "<table width=600  class=listTable>
+	echo "<table  >
 			<tr>
 			<td align=left   valign=center>
-    		&nbsp; <A HREF=\"javascript:toggleLayer('useexformat');\"> <u><strong>". $msgstr["useexformat"]."</strong></u></a>
-    		<div id=useexformat>
-    		<br>".$msgstr["r_formatos"].": <select name=fgen onclick=javascript:BorrarFormato(\"todos\")>
+    		<a style=\"width:500px;\" class=\"areas1\" href=\"javascript:toggleLayer('useexformat');\"><strong>". $msgstr["useexformat"]."</strong></a>
+    		<div id=useexformat >
+    		<br />".$msgstr["r_formatos"].": <div class=styled-select><select  name=fgen onclick=javascript:BorrarFormato(\"todos\")></div>
     		<option value=''>";
     unset($fp);
     $archivo=$db_path.$base."/pfts/".$_SESSION["lang"]."/formatos.dat";
@@ -720,7 +721,8 @@ echo "</table>\n";
 ?>
 	</select>
 
-	<a href=javascript:LeerArchivo("")><?php echo $msgstr["edit"]?></a> | <a href=javascript:EliminarFormato()><?php echo $msgstr["delete"]?></a>
+	<a id="botoes" href="javascript:LeerArchivo()"><?php echo $msgstr["edit"]?></a> 
+	<a id="botoes" href="javascript:EliminarFormato()"><?php echo $msgstr["delete"]?></a>
 </div>
 </td>
 
@@ -732,14 +734,14 @@ echo "</table>\n";
 if (isset($_SESSION["permiso"]["CENTRAL_ALL"]) or isset($_SESSION["permiso"]["CENTRAL_EDPFT"]) or isset($_SESSION["permiso"]["CENTRAL_MODIFYDB"])){
 ?>
 <!-- CREATE A FORMAT -->
-<table bgcolor=#FFFFFF width=600 class=listTable border=0>
+<table border=0>
 	<tr>
-		<td valign=top width=600>
-		&nbsp; <A HREF="javascript:EsconderVentana('pftedit');toggleLayer('createformat');toggleLayer('pftedit')"><u><strong><?php echo $msgstr["r_creaf"]?></strong></u></a>
+		<td valign=top>
+		<a class="areas1" style="width:500px;"  href="javascript:EsconderVentana('pftedit');toggleLayer('createformat');toggleLayer('pftedit')"><strong><?php echo $msgstr["r_creaf"]?></strong></a>
     	<div id=createformat>
     	<P><?php echo $msgstr["r_incluirc"]?><br>
-			<table width=600 border=0>
-				<td align=right width=250><Select name=list11 style="width:250px" multiple size=10 onDblClick="moveSelectedOptions(this.form['list11'],this.form['list21'],false)">
+			<table border=0>
+				<td align=right width=100><Select name=list11 style="width:180px;font-size:10px;" multiple size=10 onDblClick="moveSelectedOptions(this.form['list11'],this.form['list21'],false)">
 
  <?
  	$t=array();
@@ -749,79 +751,91 @@ if (isset($_SESSION["permiso"]["CENTRAL_ALL"]) or isset($_SESSION["permiso"]["CE
   	}
 ?>
 				</select></td>
-				<TD ALIGN=CENTER width=50><center>
-					<A HREF="#" onClick="moveSelectedOptions(document.forms[0]['list11'],document.forms[0]['list21'],false);return false;"><img src=../dataentry/img/barArrowRight.png border=0></A><BR><BR>
-					<A HREF="#" onClick="moveAllOptions(document.forms[0]['list11'],document.forms[0]['list21'],false); return false;"><img src=../dataentry/img/barArrowRight.png border=0><img src=../dataentry/img/barArrowRight.png border=0></A><BR><BR>
-					<A HREF="#" onClick="moveAllOptions(document.forms[0]['list21'],document.forms[0]['list11'],false); return false;"><img src=../dataentry/img/barArrowLeft.png border=0><img src=../dataentry/img/barArrowLeft.png border=0></A><BR><BR>
-					<A HREF="#" onClick="moveSelectedOptions(document.forms[0]['list21'],document.forms[0]['list11'],false); return false;"><img src=../dataentry/img/barArrowLeft.png border=0></A>
+				<td align="center"><center>
+					<a id="ajuda" href="#" onClick="moveSelectedOptions(document.forms[0]['list11'],document.forms[0]['list21'],false);return false;">
+					&#9656;</A>
+					<a id="ajuda"  href="#" onClick="moveAllOptions(document.forms[0]['list11'],document.forms[0]['list21'],false); return false;">
+					&#9656;&#9656;</A>
+					<a id="ajuda"  href="#" onClick="moveAllOptions(document.forms[0]['list21'],document.forms[0]['list11'],false); return false;">
+					&#9666;&#9666;</A>
+					<a id="ajuda"  href="#" onClick="moveSelectedOptions(document.forms[0]['list21'],document.forms[0]['list11'],false); return false;">
+					&#9666;</A>
 
-				</TD>
-				<TD width=250>
-					<SELECT NAME="list21" MULTIPLE SIZE=10 style="width:250px" onDblClick="moveSelectedOptions(this.form['list21'],this.form['list11'],false)">
+				</td>
+				<td>
+					<select name="list21" multiple size="10" style="width:180px;font-size:10px;" onDblClick="moveSelectedOptions(this.form['list21'],this.form['list11'],false)">
 
-					</SELECT>
-				</TD>
-				<TD ALIGN="left" VALIGN="MIDDLE" width=50>
-					<a href=# onClick="moveOptionUp(document.forms[0]['list21'])" class=boton><?php echo $msgstr["r_subir"]?></a>
-					<BR><BR>
-					<a href="javascript:moveOptionDown(document.forms[0]['list21'])" class=boton><?php echo $msgstr["r_bajar"]?></a>
-				</TD>
+					</select>
+				</td>
+				<td align="left" valign="middle" width=50>
+					<a id="ajuda"  href="#" onClick="moveOptionUp(document.forms[0]['list21'])" title="<?php echo $msgstr["r_subir"]?>" >&#9652;</a>
+					
+					<a id="ajuda"  href="javascript:moveOptionDown(document.forms[0]['list21'])" title="<?php echo $msgstr["r_bajar"]?>">&#9662;</a>
+				</td>
 
 
 			</table>
-		</div>
-		</td>
-		<tr>
-		<td>
-		<div id=pftedit>
+			<hr>
 			<table>
 				<tr>
-				<td valign=top colspan=4  align=center><?php echo $msgstr["r_fgent"]?> &nbsp;&nbsp;
+				<td><p><?php echo $msgstr["r_fgent"]?></p>
 					       <input type=radio name=tipof value=T onclick=GenerarFormato('T') ><?php echo $msgstr["r_tabla"]?>
-					&nbsp; <input type=radio name=tipof value=P onclick=GenerarFormato('P')><?php echo $msgstr["r_parrafo"]?>
-					&nbsp; <input type=radio name=tipof value=PL onclick=GenerarFormato('PL')><?php echo $msgstr["r_parrafo"]?>(with Labels)
-					&nbsp; <input type=radio name=tipof value=CT onclick=GenerarFormato('CT')><?php echo $msgstr["r_colstab"]?>
-					&nbsp; <input type=radio name=tipof value=CD onclick=GenerarFormato('CD')><?php echo $msgstr["r_colsdelim"]?>
+					<br /><input type=radio name=tipof value=P onclick=GenerarFormato('P')><?php echo $msgstr["r_parrafo"]?>
+					<br /><input type=radio name=tipof value=PL onclick=GenerarFormato('PL')><?php echo $msgstr["r_parrafo"]?>(com legendas)
+					<br /> <input type=radio name=tipof value=CT onclick=GenerarFormato('CT')><?php echo $msgstr["r_colstab"]?>
+					<br /><input type=radio name=tipof value=CD onclick=GenerarFormato('CD')><?php echo $msgstr["r_colsdelim"]?>
 
 				</td>
 				<tr>
-				<td align=center colspan=4>
+				<td>
 					<table>
-					<td>
-						<textarea name=pft cols=80 rows=10 style="font-family:courier new;"></textarea>
-						<br><input type=button name=borrar value=<?php echo $msgstr["borrar"]?> onClick='javascript:BorrarFormato("pft")'>
+					<td valign="top">
+					
+					<?php echo $msgstr["pftex"]?>
+						<textarea name=pft cols=30 rows=10 style="font-family:courier new;"></textarea>
+						<input id=botoes type=button name=borrar value=<?php echo $msgstr["borrar"]?> onClick='javascript:BorrarFormato("pft")'>
 	    			</td>
-    				<td><?php echo $msgstr["r_heading"]?><br>
-    					<textarea name=headings cols=30 rows=9 style="font-family:courier new;" onfocus=CheckType()></textarea><td>
+    				<td valign="top"><?php echo $msgstr["r_heading"]?><br>
+    				<textarea name=headings cols=10 rows=10 style="font-family:courier new;" onfocus=CheckType()></textarea><td>
 			</table>
           </div>
 		</td>
 		</td>
-	</table>
+	</table>			
+			
+			
+		</div>
+		</td>
+
+		<td>
+		<div id=pftedit>
+
 </table>
 
 
 <!-- GENERATE OUTPUT -->
 <?php
 }else{
-	echo "<div id=createformat></div>";
+	echo "<div id=\"createformat\"></div>";
 }
 if ($arrHttp["Opcion"]!="new"){?>
-<table width=600 cellpadding=5 class=listTable>
+<table>
 	<tr>
 		<td>
-			&nbsp; <A HREF="javascript:toggleLayer('testformat')"><u><strong><?php echo $msgstr["generateoutput"]?></strong></u></a>
-    		<div id=testformat><p>
+		<a class="areas1" style="width:500px;" HREF="javascript:toggleLayer('testformat')"><strong><?php echo $msgstr["generateoutput"]?></strong></a>
+    		<div id="testformat"><br />
     		<table>
-		<td colspan=2 align=center height=1 bgcolor=#eeeeee><?php echo $msgstr["r_recsel"]?></td>
+		<td bgcolor="#dddddd"><?php echo $msgstr["r_recsel"]?></td>
 	<tr>
-		<td  align=center colspan=2><strong><?php echo $msgstr["r_mfnr"]?></strong>: &nbsp; &nbsp; &nbsp;
-		<?php echo $msgstr["r_desde"]?>: <input type=text name=Mfn size=10>&nbsp; &nbsp; &nbsp; &nbsp;<?php echo $msgstr["r_hasta"]?>:<input type=text name=to size=10>
-		 &nbsp; &nbsp; &nbsp; <a href=javascript:BorrarRango() class=boton><?php echo $msgstr["borrar"]?></a>
+		<td  align="center"><strong><?php echo $msgstr["r_mfnr"]?></strong>: &nbsp; &nbsp; 
+		<?php echo $msgstr["r_desde"]?>: <input id="form" type="text" name="Mfn" size="5"><?php echo $msgstr["r_hasta"]?>:<input type="text"  id="form" name="to" size="5">
+	
+		 <a id="tag" href="javascript:BorrarRango()"><?php echo $msgstr["borrar"]?></a>
+		 	<hr>
 		<script> if (top.window.frames.length>0)
 			document.writeln(" &nbsp; &nbsp; &nbsp; (<?php echo $msgstr["maxmfn"]?>: "+top.maxmfn+")")</script></td>
 	<tr>
-		<td  align=center colspan=2><strong><?php echo $msgstr["r_busqueda"]?></strong>: &nbsp;
+		<td><strong><?php echo $msgstr["r_busqueda"]?></strong>: &nbsp;
 <?php
 unset($fp);
 if (file_exists($db_path.$arrHttp["base"]."/pfts/".$_SESSION["lang"]."/search_expr.tab"))
@@ -830,7 +844,7 @@ else
 	if (file_exists($db_path.$arrHttp["base"]."/pfts/".$lang_db."/search_expr.tab"))
 		$fp = file($db_path.$arrHttp["base"]."/pfts/".$lang_db."/search_expr.tab");
 if ($fp){
-	echo "&nbsp; &nbsp; &nbsp; &nbsp;".$msgstr["copysearch"].":";
+	echo "".$msgstr["copysearch"].":";
 	echo "<select name=Expr  onChange=CopiarExpresion()>
     		<option value=''>
     ";
@@ -844,23 +858,24 @@ if ($fp){
 
 }
 ?>
-			</select>&nbsp; &nbsp;
-			<a href=javascript:Buscar()><?php echo $msgstr["new"]?></a>
-			<br>
-			<textarea rows=2 cols=100 name=Expresion><?php if ($Expresion!="") echo $Expresion?></textarea>
-			<a href=javascript:BorrarExpresion() class=boton><?php echo $msgstr["borrar"]?></a>
+			</select>
+			<a id="botoes" href="javascript:Buscar()"><?php echo $msgstr["advsearch"]?></a>
+			<br />
+			<textarea rows="2" cols="45" name="Expresion"><?php if ($Expresion!="") echo $Expresion?></textarea>
+			<br /><a id="botoes" href="javascript:BorrarExpresion()"><?php echo $msgstr["borrar"]?></a>
 <?php
 if (isset($_SESSION["permiso"]["CENTRAL_ALL"]) or isset($_SESSION["permiso"]["CENTRAL_SAVEXPR"])){
-	echo "&nbsp; <A HREF=\"javascript:toggleLayer('savesearch')\"> <u><strong>". $msgstr["savesearch"]."</strong></u></a>";
+	echo "&nbsp; <a id=\"botoes\" href=\"javascript:toggleLayer('savesearch')\"><strong>". $msgstr["savesearch"]."</strong></a>";
 	echo "<div id=savesearch>".$msgstr["r_desc"].": <input type=text name=Descripcion size=40>
-     	&nbsp &nbsp <input type=button value=\"". $msgstr["savesearch"]."\" onclick=GuardarBusqueda()>
+     	&nbsp &nbsp <input type=button value=\"". $msgstr["savesearch"]."\" onclick=GuardarBusqueda()><hr>
 		</div>\n";
 }
 ?>
+<hr>
 		</td>
 	<tr>
 		<td colspan=2><strong><?php echo $msgstr["sortkey"]?></strong>: &nbsp;
-		<input type=text name=sortkey size=70> &nbsp; &nbsp; &nbsp; <?php echo $msgstr["sortkeycopy"]?>
+		<input type=text name=sortkey size=30> <br /> <?php echo $msgstr["sortkeycopy"]?>
 		&nbsp; &nbsp;
     		<select name=sort  onChange=CopySortKey()>
     		<option value=''>
@@ -883,21 +898,24 @@ if ($fp){
 
 echo "			</select>";
 if (isset($_SESSION["permiso"]["CENTRAL_ALL"]) or isset($_SESSION["permiso"]["CENTRAL_EDSORT"])){
- echo "&nbsp; &nbsp;<a href=javascript:CreateSortKey()>".$msgstr["sortkeycreate"]."</a>";
+ echo "&nbsp;<a id=botoes href=javascript:CreateSortKey()>".$msgstr["sortkeycreate"]."</a>";
  }
 ?>
 		</td>
 
 	<tr>
-		<td colspan=2 width=100%>
+		<td align="center">
+		<br /><hr><br />
 			<strong><?php echo $msgstr["sendto"]?></strong>:
-			<a href=javascript:EnviarForma('WP')><?php echo $msgstr["word"]?></a>
-			&nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp;
-			<a href=javascript:EnviarForma('TB')><?php echo $msgstr["wsproc"]?></a>
-			&nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp;
-			<a href=javascript:EnviarForma('P')><?php echo $msgstr["vistap"]?></a>
-			&nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp;
-			<a href=javascript:EnviarForma('TXT') value=T>TXT</a>
+			<a id="botoes" href="javascript:EnviarForma('WP')"><?php echo $msgstr["word"]?></a>
+			
+			<a id="botoes" href="javascript:EnviarForma('TB')"><?php echo $msgstr["wsproc"]?></a>
+			
+			<a id="botoes" href="javascript:EnviarForma('TXT')" value="T">TXT</a>			
+			
+			<a id="botoes" href="javascript:EnviarForma('P')"><?php echo $msgstr["vistap"]?></a>
+			
+
 		</td>
 </table>
 </div>
@@ -908,19 +926,19 @@ if (isset($_SESSION["permiso"]["CENTRAL_ALL"]) or isset($_SESSION["permiso"]["CE
 if (isset($_SESSION["permiso"]["CENTRAL_ALL"]) or isset($_SESSION["permiso"]["CENTRAL_EDPFT"])){
 $save="Y";
 ?>
-<table width=600 cellpadding=5 class=listTable>
+<table>
 	<tr>
 		<td>
-			&nbsp; <A HREF="javascript:toggleLayer('saveformat')"><u><strong><?php echo $msgstr["r_guardar"]?></strong></u></a>
+			<a class="areas1" style="width:500px;"  href="javascript:toggleLayer('saveformat')"><strong><?php echo $msgstr["r_guardar"]?></strong></a>
     		<div id=saveformat><p>
-			<table width=600 border=0 cellpadding=0>
-				<td  align=right bgcolor=#dddddd>
-				<font face=arial size=1><?php echo $msgstr["r_guardar"]." ".$db_path.$arrHttp["base"]."/". $arrHttp["Dir"]?>/ </td>
-				<td><input type=text name=nombre size=20 maxlength=30></td>
-				<tr><td align=right valign=top><font face=arial size=1>
-					<?php echo $msgstr["r_desc"]?></td><td valign=top><input type=text name=descripcion maxlength=50 size=50>
-
-					<a href=javascript:GuardarFormato()><img src=../dataentry/img/toolbarSave.png border=0></a>
+			<table border=0 cellpadding=0>
+				<td bgcolor="#dddddd">
+			<?php echo $msgstr["r_guardar"]."<br /> ".$arrHttp["base"]."/". $arrHttp["Dir"]?>/ </td>
+				<td><input type=text name=nombre size=30 maxlength=30></td>
+				<tr><td align=right valign=top>
+					<?php echo $msgstr["r_desc"]?></td><td valign=top><input type=text name=descripcion maxlength=10 size=30>
+					<br />
+					<a id="botoes" href="javascript:GuardarFormato()"><?php echo $msgstr["save"]; ?></a>
 				</td>
 			</table>
 			</div>
@@ -969,7 +987,17 @@ if (!isset($arrHttp["Modulo"]))
 </center>
 </div>
 </div>
-</center>
+
+<div style="position:relative;width:55%;background:#fff;float:right;height:580px;">
+<iframe style="width:100%;height:100%;" src="#" id="relat" name="relat" frameborder="0" >
+</div>
+
+
+
+
+
+
+
 <?php
 include("../common/footer.php");
 ?>
