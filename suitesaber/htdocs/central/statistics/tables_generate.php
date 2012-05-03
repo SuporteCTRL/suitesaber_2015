@@ -1,32 +1,4 @@
 <?php
-/**
- * @program:   ABCD - ABCD-Central - http://reddes.bvsaude.org/projects/abcd
- * @copyright:  Copyright (C) 2009 BIREME/PAHO/WHO - VLIR/UOS
- * @file:      tables_generate.php
- * @desc:      GENERATES THE OUTPUT OF THE STATISTICAL TABLES
- *             The process allows to select a range of records to be included in the
- *             output of the statistical table.
- * @author:    Guilda Ascencio
- * @since:     20091203
- * @version:   1.0
- *
- * == BEGIN LICENSE ==
- *
- *    This program is free software: you can redistribute it and/or modify
- *    it under the terms of the GNU Lesser General Public License as
- *    published by the Free Software Foundation, either version 3 of the
- *    License, or (at your option) any later version.
- *
- *    This program is distributed in the hope that it will be useful,
- *    but WITHOUT ANY WARRANTY; without even the implied warranty of
- *    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *    GNU Lesser General Public License for more details.
- *
- *    You should have received a copy of the GNU Lesser General Public License
- *    along with this program.  If not, see <http://www.gnu.org/licenses/>.
- *
- * == END LICENSE ==
-*/
 session_start();
 include ("../config.php");
 include ("../lang/statistics.php");
@@ -57,8 +29,8 @@ $ix=-1;
 foreach($contenido as $linea) {
 	$ix++;
 	if ($ix>1) {
-		if (!empty($linea)) {
-	   		$a=explode(":",$linea);
+		if (trim($linea)!=""){
+	   		$a=split(":",$linea);
 	   		$tag[$a[0]]=$a[1];
 	  	}
 	}
@@ -261,29 +233,21 @@ if (isset($arrHttp["encabezado"])){	include("../common/institutional_info.php")
 }
 ?>
 <div class="sectionInfo">
-
-		<div class="language">
+	<div class="language">
 <?php
 if (isset($arrHttp["encabezado"]))
 	echo "<a href=\"../common/inicio.php?reinicio=S&base=".$arrHttp["base"]."$encabezado\" class=\"defaultButton\">
 
-<span><strong>".$msgstr["back"]."</strong></span></a>
-	";
-?>
-
-</div>
-
-
-</div>
-
-	<div class="breadcrumb">
-<?php echo $msgstr["stats"].": ".$arrHttp["base"]?>
+<span><strong>".$msgstr["back"]."</strong></span></a>"; ?>
 	</div>
-	
-		<div class="actions">
 </div>
-	
-	
+<div class="breadcrumb">
+
+	<h3><?php echo $msgstr["stats"].": ".$arrHttp["base"]?></h3>
+</div>
+	<div class="actions">
+</div>
+
 
 
 <div class="helper">
@@ -294,17 +258,15 @@ if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 ?>
 &nbsp; &nbsp; Script: tables_generate.php
 </div>
-<form name="forma1" method="post" action="tables_generate_ex.php" onsubmit="Javascript:return false" target="statist">
+<form name=forma1 method=post action=tables_generate_ex.php onsubmit="Javascript:return false" target="statist">
 <input type=hidden name=base value=<?php echo $arrHttp["base"]?>>
 <input type=hidden name=cipar value=<?php echo $arrHttp["base"]?>.par>
 <input type=hidden name=Opcion>
 
-<?php if (isset($arrHttp["encabezado"])) echo "<input type=hidden name=encabezado value=s>\n";
-?>
+<?php if (isset($arrHttp["encabezado"])) echo "<input type=hidden name=encabezado value=s>\n";?>
 
 <div class="middle form" style="position:relative; width:40%;background:#fff;float:left;">
-<div class="middle form">
-	<div class="formContent">
+<div class="formContent">
 
 <?php
 //USAR UNA TABLA YA EXISTENTE
@@ -327,7 +289,7 @@ if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 			$value=trim($value);
 			if ($value!=""){
 				$t=explode('|',$value);
-				echo "<option value=".urlencode($value).">".trim($t[0])."</option>";
+				echo "<option value=\"".$value."\">".trim($t[0])."</option>";
 			}
 		}
 	}
@@ -436,11 +398,12 @@ if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 </table>
 </div>
 </td>
+
 <?php
 if (isset($_SESSION["permiso"]["CENTRAL_STATCONF"]) or isset($_SESSION["permiso"]["CENTRAL_ALL"])){?>
 <tr>
 	<td align=left   valign=center bgcolor=#ffffff><p>
-    	&nbsp; <a class="areas1" href="javascript:toggleLayer('configure')"><strong><?echo $msgstr["stats_conf"]?></strong></a>
+    	<a class="areas1" href="javascript:toggleLayer('configure')"><strong><?echo $msgstr["stats_conf"]?></strong></a>
     	<div id=configure>
   
     	<a id=botoes href=javascript:Configure("stats_var")><?php echo $msgstr["var_list"]?></a>
@@ -448,13 +411,11 @@ if (isset($_SESSION["permiso"]["CENTRAL_STATCONF"]) or isset($_SESSION["permiso"
 
     	</div>
     </td>
+    
 <?php } ?>
 </table>
-
 </div>
 </div>
-</div>
-
 
 <form name=configure onSubmit="return false">
 	<input type=hidden name=Opcion value=update>
@@ -463,14 +424,10 @@ if (isset($_SESSION["permiso"]["CENTRAL_STATCONF"]) or isset($_SESSION["permiso"
 	<?php if (isset($arrHttp["encabezado"])) echo "<input type=hidden name=encabezado value=s>";?>
 </form>
 
-
 <div style="position:relative;width:60%;background:#fff;float:right;height:580px;">
 <iframe style="width:100%;height:100%;" src="#" id="statist" name="statist" frameborder="0" >
 </div>
 
-
-<?php
-include("../common/footer.php");
-?>
+<?php include("../common/footer.php"); ?>
 </body>
-</html>to
+</html>
