@@ -1,30 +1,4 @@
 <?php
-/**
- * @program:   ABCD - ABCD-Central - http://reddes.bvsaude.org/projects/abcd
- * @copyright:  Copyright (C) 2009 BIREME/PAHO/WHO - VLIR/UOS
- * @file:      ec_include.php
- * @desc:      Display the user statment
- * @author:    Guilda Ascencio
- * @since:     20091203
- * @version:   1.0
- *
- * == BEGIN LICENSE ==
- *
- *    This program is free software: you can redistribute it and/or modify
- *    it under the terms of the GNU Lesser General Public License as
- *    published by the Free Software Foundation, either version 3 of the
- *    License, or (at your option) any later version.
- *
- *    This program is distributed in the hope that it will be useful,
- *    but WITHOUT ANY WARRANTY; without even the implied warranty of
- *    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *    GNU Lesser General Public License for more details.
- *
- *    You should have received a copy of the GNU Lesser General Public License
- *    along with this program.  If not, see <http://www.gnu.org/licenses/>.
- *
- * == END LICENSE ==
-*/
 // se determina si el préstamo está vencido
 function compareDate ($FechaP){
 global $locales,$config_date_format;
@@ -48,14 +22,7 @@ global $locales,$config_date_format;
 	}
 	$year=substr($FechaP,6,4);
 	$exp_date=$year."-".$mes."-".$dia;
-
-	$ixTime=strpos($FechaP," ");
-	if ($ixTime>0) {
-		$exp_date.=substr($FechaP,$ixTime);
-		$todays_date = date("Y-m-d h:i A");
-	}else{
-		$todays_date = date("Y-m-d");
-	}
+	$todays_date = date("Y-m-d");
 	$today = strtotime($todays_date);
 	$expiration_date = strtotime($exp_date);
 	$diff=$expiration_date-$today;
@@ -86,10 +53,11 @@ global $locales,$config_date_format;
 	include("../common/wxis_llamar.php");
 	$prestamos=array();
 	foreach ($contenido as $linea){
-		$prestamos[]=$linea;
+//		echo "$linea<br>";		$prestamos[]=$linea;
 	}
 	$nv=0;   //número de préstamos vencidos
 	$np=0;   //Total libros en poder del usuario
+
 	if (count($prestamos)>0) {
 		$ec_output.= "<strong>".$msgstr["loans"]."</strong>
 		<table width=100% bgcolor=#3A89AF>
@@ -106,44 +74,28 @@ global $locales,$config_date_format;
 		<th class=th_tit><h6>".$msgstr["overdue"]."</h6></th>
 		<th class=th_tit><h6>".$msgstr["renewed"]."</h6></th>\n";
 
-		foreach ($prestamos as $linea) {
-			if (!empty($linea)) {
+			foreach ($prestamos as $linea) {			if (trim($linea)!=""){
 				$p=explode("^",$linea);
-				//SI LA POLITICA SE GRABÓ CON EL REGISTRO DE LA TRANSACCION, ENTONCE SE APLICA ESA
-				// DE OTRA FORMA SE UBICA LA POLÍTICA LEÍDA DE LA TABLA
-				if (isset($p[17]) and trim($p[17])!=""){
-					$politica_este=explode('|',$p[17]);
-				}else{
-					$politica_este=explode('|',$politica[$p[3]][$p[6]]);
-				}
-                $lapso_p=$politica_este[5];
-                #if ($lapso_p=="") $lapso_p="D";
-				$np=$np+1;
+
+				$np++;
 				$dif= compareDate ($p[5]);
 				$fuente="";
 				$mora="0";
 				if ($dif<0) {
-					if ($politica_este[12]!="Y") $nv=$nv+1;
-					if ($lapso_p=="D"){
-						$mora=floor(abs($dif)/(60*60*24));    //cuenta de préstamos vencidos
-					}else{
-						$fulldays=floor(abs($dif)/(60*60*24));
-						$fullhours=floor((abs($dif)-($fulldays*60*60*24))/(60*60));
-						$fullminutes=floor((abs($dif)-($fulldays*60*60*24)-($fullhours*60*60))/60);
-						$mora=$fulldays*24+$fullhours;
-						//echo "<br>** $fulldays, $fullhours , $fullminutes";
-					}
+					$nv++;
+					$mora=abs($dif/(60*60*24));    //cuenta de préstamos vencidos
 				    $fuente="<font color=red>";
 				}
+	//		v800^c,'^',v800^q,'^',v800^n," Ej."v800^l,'^',v800^t,'^',v800^p,'^',v800^h,'^',v800^o,'^',f(mfn,1,0),/
 				$ec_output.= "<tr><td  bgcolor=white valign=top>";
-				$ec_output.="<input type=radio name=chkPr value=$mora  id='".$p[0]."'>";
+				$ec_output.="<input type=radio name=chkPr value=$mora  id=".$p[0].">";
 				$ec_output.= "<input type=hidden name=politica value=".$politica[$p[3]][$p[6]]."> \n";
 				$ec_output.="</td>
 
 					<td bgcolor=white nowrap align=center valign=top>".$p[0]."</td>".
 					"<td bgcolor=white nowrap align=center valign=top>".$p[14]."</td>".
 					"<td bgcolor=white nowrap align=center valign=top>".$p[15]."</td>".
-					"</td><td bgcolor=white nowrap align=center valign=top>".$p[12]."(".$p[13].")</td><td bgcolor=white nowrap align=center valign=top>".$p[1]."<td bgcolor=white valign=top>".$p[2]."</td><td bgcolor=white align=center valign=top>". $p[3]. "</td><td bgcolor=white nowrap align=center valign=top>".$p[4]."</td><td nowrap bgcolor=white align=center valign=top>$fuente".$p[5]."</td><td align=center bgcolor=white valign=top>".$mora." ".$lapso_p."</td><td align=center bgcolor=white valign=top>". $p[11]."</td></tr>\n";
+					"</td><td bgcolor=white nowrap align=center valign=top>".$p[12]."(".$p[13].")</td><td bgcolor=white nowrap align=center valign=top>".$p[1]."<td bgcolor=white valign=top>".$p[2]."</td><td bgcolor=white align=center valign=top>". $p[3]. "</td><td bgcolor=white nowrap align=center valign=top>".$p[4]."</td><td nowrap bgcolor=white align=center valign=top>$fuente".$p[5]."</td><td align=center bgcolor=white valign=top>".$mora."</td><td align=center bgcolor=white valign=top>". $p[11]."</td></tr>";
         	}
 		}
 		$ec_output.= "</table></dd>";
@@ -152,6 +104,5 @@ global $locales,$config_date_format;
 		nv=$nv
 		</script>\n";
 	}
-
 
 ?>
