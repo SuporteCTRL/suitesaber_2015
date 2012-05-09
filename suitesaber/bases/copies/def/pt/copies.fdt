@@ -8,7 +8,7 @@ S||Ano|0|1|g||X|||||||||0||
 S||Informação de coleção|0|1|d||X|||||||||0||
 S||Documento da empresa|0|1|e||X|||||||||0||
 S||Qualificador de localização codificada|0|1|f||X|||||||||0||
-F|30|Número de patrimônio|1|1|||X||20|||||||0||
+AI|30|Número de patrimônio|0|1|||X||20|||||||0||
 F|200|Status|0|0|ab||R||2|P|status_copy.tab|||||0||
 F|35|Biblioteca Central|0|0|||S||60|P|libraries.tab|||||0||
 F|40|Biblioteca Setorial|0|0|||X||60|||||||0||
