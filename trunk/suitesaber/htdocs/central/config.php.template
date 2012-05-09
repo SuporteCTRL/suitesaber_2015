@@ -52,7 +52,7 @@ $wxisUrl="";
 //$wxisUrl="http://localhost:9090/cgi-bin/wxis.exe";
 
 //Name of the institution
-$institution_name="Suí­te Saber";
+$institution_name="Suíte Saber";
 
 //URL of the institution
 $institution_url="http://suitesaber.org";
