@@ -26,7 +26,7 @@ tr:hover.result {
 
  'v20,' - ',
 
-ref(['/var/www/suitesaber/bases/users/data/users'] l(['/var/www/suitesaber/bases/users/data/users'],'CO_'v20),v30),'</a>' 
+ref(['users'] l(['users'],'CO_'v20),v30),'</a>' 
 
  if a(v20) then '&nbsp;' fi,'</td>'/
 '<td valign=top>'v30*6.2,'/',v30*4.2,'/',v30.4+|; | if a(v30) then '&nbsp;' fi,'</td>'/
