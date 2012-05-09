@@ -694,11 +694,11 @@ Function PrepararFormato() {
    							if ($t[4]==1) $Repetible="R";
    							$postings=1;
    							if (!$ver){
-   								echo "<td valign=top width=auto>";
+   								echo "<td valign=top width=27>";
 	     						if ($a!="" and $t[3]==0)
 	     							if ($t[7]!="I") echo "<a id='indice' href='javascript:AbrirIndiceAlfabetico(document.forma1.tag$tag,\"$a\",\"$c\",\"$separa\",\"$autoridades\",\"$autoridades.par\",\"tag$tag\",\"$postings\",\"$Repetible\",\"".urlencode($fe)."\")'>i</a>";
 	     						else
-	     							if ($t[7]!="I") echo "<img src=../dataentry/img/spacer.gif width=16>";
+	     							if ($t[7]!="I") echo "";
 
 								if ($tipo=="T"  and $tipo_e!="TB") {
 
@@ -717,7 +717,7 @@ Function PrepararFormato() {
 
 					 					if ($t[7]!="I") echo "<a id='assist' href='javascript:CampoFijo(document.forma1.tag$tag,$ixicampo,\"$fe\",\"$base\",\"\",\"$help_url\")'>+</a>";
 									}else{
-										if ($t[7]!="I") echo "<img src=../dataentry/img/spacer.gif width=16>";
+										if ($t[7]!="I") echo "";
 									}
 									if ($tipo=="LDR") {
 										if (isset($arrHttp["wks"]))
@@ -735,9 +735,9 @@ Function PrepararFormato() {
 						 				if ($help_url=="")
 						 					if ($t[7]!="I") echo "<a id='ajuda' href=javascript:Ayuda($tag)>?</a>";
 										else
-											if ($t[7]!="I") echo "<a href=$help_url target=_blank><img src=../dataentry/img/question.gif border=0 align=top width=80></a>";
+											if ($t[7]!="I") echo "<a href=$help_url target=_blank></a>";
 						 			}else{
-						 				if ($t[7]!="I") echo "<img src=../dataentry/img/spacer.gif width=16>";
+						 				if ($t[7]!="I") echo "";
 									}
 							//	}
 		     					echo "</td>\n";
