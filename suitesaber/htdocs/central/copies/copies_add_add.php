@@ -47,7 +47,7 @@ echo "<body>\n";
 <div class="language">
     	<a href="javascript:top.Menu('addcopies')" class="defaultButton">
 
-				<span><strong><?php echo $msgstr["back"]?></strong></span>
+				<span><strong><?php echo $msgstr["back"]?></strong></span>			</a>
 </div>
 </div>
 
@@ -56,7 +56,7 @@ echo "<body>\n";
 	</div>
 	<div class="actions">
 
-			</a>
+
 	</div>
 
 <div class="helper">
