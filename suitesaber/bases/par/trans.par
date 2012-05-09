@@ -1,4 +1,5 @@
 trans.*=%path_database%trans/data/trans.*
+users.*=%path_database%users/data/users.*
 isisac.tab=%path_database%trans/data/isisac.tab
 isisuc.tab=%path_database%trans/data/isisuc.tab
 prologoact.pft=%path_database%www/prologoact.pft
