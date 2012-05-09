@@ -45,7 +45,9 @@ echo "<body>\n";
 
 <div class="sectionInfo">
 <div class="language">
+    	<a href="javascript:top.Menu('addcopies')" class="defaultButton">
 
+				<span><strong><?php echo $msgstr["back"]?></strong></span>
 </div>
 </div>
 
@@ -53,9 +55,7 @@ echo "<body>\n";
 		<h2><?php echo $arrHttp["base"].": ".$msgstr["createcopies"]?><h2>
 	</div>
 	<div class="actions">
-    	<a href="javascript:top.Menu('addcopies')" class="defaultButton">
 
-				<span><strong><?php echo $msgstr["back"]?></strong></span>
 			</a>
 	</div>
 
