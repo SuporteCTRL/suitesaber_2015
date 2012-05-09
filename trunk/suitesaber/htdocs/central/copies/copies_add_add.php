@@ -51,8 +51,13 @@ echo "Script: copies_add_add.php</font>\n";
 ?>
 	</div>
 <div class="sectionInfo">
+<div class="language">
+
+</div>
+</div>
+
 	<div class="breadcrumb">
-		<?php echo $arrHttp["base"].": ".$msgstr["createcopies"]?>
+		<h2><?php echo $arrHttp["base"].": ".$msgstr["createcopies"]?><h2>
 	</div>
 	<div class="actions">
     	<a href="javascript:top.Menu('addcopies')" class="defaultButton backButton">
@@ -61,7 +66,7 @@ echo "Script: copies_add_add.php</font>\n";
 			</a>
 	</div>
 
-</div>
+
 
 <div class="middle form">
 			<div class="formContent">
