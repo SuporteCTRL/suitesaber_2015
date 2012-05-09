@@ -42,14 +42,7 @@ include("../common/header.php");
 echo "<body>\n";
 
 ?>
-<div class="helper">
-<a href=../documentacion/ayuda.php?help=<?php echo $_SESSION["lang"]?>/acquisitions/copies_create.html target=_blank><?php echo $msgstr["help"]?></a>&nbsp &nbsp;
-<?php
-if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
-	echo "<a href=../documentacion/edit.php?archivo=". $_SESSION["lang"]."/acquisitions/copies_create.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "Script: copies_add_add.php</font>\n";
-?>
-	</div>
+
 <div class="sectionInfo">
 <div class="language">
 
@@ -60,13 +53,20 @@ echo "Script: copies_add_add.php</font>\n";
 		<h2><?php echo $arrHttp["base"].": ".$msgstr["createcopies"]?><h2>
 	</div>
 	<div class="actions">
-    	<a href="javascript:top.Menu('addcopies')" class="defaultButton backButton">
+    	<a href="javascript:top.Menu('addcopies')" class="defaultButton">
 
 				<span><strong><?php echo $msgstr["back"]?></strong></span>
 			</a>
 	</div>
 
-
+<div class="helper">
+<a href=../documentacion/ayuda.php?help=<?php echo $_SESSION["lang"]?>/acquisitions/copies_create.html target=_blank><?php echo $msgstr["help"]?></a>&nbsp &nbsp;
+<?php
+if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
+	echo "<a href=../documentacion/edit.php?archivo=". $_SESSION["lang"]."/acquisitions/copies_create.html target=_blank>".$msgstr["edhlp"]."</a>";
+echo "Script: copies_add_add.php</font>\n";
+?>
+	</div>
 
 <div class="middle form">
 			<div class="formContent">
