@@ -6,7 +6,7 @@ include("../lang/admin.php");
 
 ?>
 <head>
-<meta http-equiv="REFRESH" content="0;url=/">
+<meta http-equiv="REFRESH" content="0;URL=/">
 </head>
 <body>
 <div class="middle form">

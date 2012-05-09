@@ -106,7 +106,7 @@ if ($err_copies!="Y" and $error==""){
 					</a>";
 	}
 	?>
-			<a href=../dataentry/fmt.php?base=<?php echo $db_addto."&cipar=$db_addto.par&Opcion=ver&ver=S&Mfn=".$arrHttp["Mfn"]."&Formato=".$arrHttp["Formato"].$urlcopies?> class="defaultButton cancelButton">
+			<a href=../dataentry/fmt.php?base=<?php echo $db_addto."&cipar=$db_addto.par&Opcion=ver&ver=S&Mfn=".$arrHttp["Mfn"]."&Formato=".$arrHttp["Formato"].$urlcopies?> class="defaultButton">
 
 				<span><strong><?php echo $msgstr["cancelar"]?></strong></span>
 			</a>
