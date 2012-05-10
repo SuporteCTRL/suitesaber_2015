@@ -1,6 +1,0 @@
-facic.*=%path_database%facic/data/facic.*
-title.*=%path_database%title/data/title.*
-prologoact.pft=%path_database%www/prologoact.pft
-epilogoact.pft=%path_database%www/epilogoact.pft
-isisac.tab=%path_database%facic/data/isisac.tab
-isisuc.tab=%path_database%facic/data/isisuc.tab
