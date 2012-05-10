@@ -1,6 +1,7 @@
 [FILE_LOCATION]
 
 FILE DATABASE.*=%path_database%marc/data/marc.*
+FILE copies.*=%path_database%copies/data/copies.*
 FILE DATABASE.XML=%path_database%marc/pfts/lilXML.pft
 FILE cabecalho.pft=%path_database%marc/pfts/%lang%/cabecalho.pft
 FILE standard.pft=%path_database%marc/pfts/%lang%/lista.pft
@@ -62,4 +63,4 @@ HELP FORM=help_form.htm
 AVAILABLE FORMS=F,A
 SEND RESULT BY EMAIL=OFF
 NAVIGATION BAR=ON
-DOCUMENTS PER PAGE=20
+DOCUMENTS PER PAGE=30
