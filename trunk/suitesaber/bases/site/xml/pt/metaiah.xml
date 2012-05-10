@@ -3,13 +3,10 @@
   <sourceList>
     <group label="Bases de dados da Instituição">
       <item id="40-1" label="MARC" href="/iah/?base=MARC&amp;lang=pt" base-search-url="http://localhost:9090/cgi-bin/wxis.exe/iah/scripts/?IsisScript=iah.xis&amp;lang=pt&amp;base=MARC&amp;nextAction=xml&amp;count=1" base-browse-url="http://localhost:9090/cgi-bin/wxis.exe/iah/scripts/?IsisScript=iah.xis&amp;lang=pt&amp;base=MARC&amp;nextAction=lnk"/>
-
-      <item id="40-6" label="Biblioteca Pública do Estado do Rio Grande do Sul" href="http://buscabpe.saberabcd.com" base-search-url="http://bpe.saberabcd.com/cgi-local/wxis.exe/iah/scripts/?IsisScript=iah.xis&amp;lang=en&amp;base=BPE&amp;nextAction=xml&amp;count=1" base-browse-url="http://bpe.saberabcd.com/cgi-local/wxis.exe/iah/scripts/?IsisScript=iah.xis&amp;lang=en&amp;base=BPE&amp;nextAction=lnk"/>
     </group>
-    
+    <group label="Revistas científicas de accesso livre"/>
   </sourceList>
   <search>
     <item source="40-1" search-parameters="exprSearch="/>
-    <item source="40-6" search-parameters="exprSearch="/>
   </search>
 </define>
