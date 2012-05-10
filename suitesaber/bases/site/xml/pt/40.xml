@@ -3,5 +3,5 @@
   <item id="5" available="yes">Bases de dados da Instituição<description></description>
   <portal></portal>
   <meta-search/><item id="1" available="yes" href="/iah/?base=MARC&amp;lang=pt">MARC<description>Catálogo da biblioteca em formato MARC</description>
-  <portal></portal><meta-search base-search-url="http://%HOST%/cgi-bin/wxis.exe/iah/scripts/?IsisScript=iah.xis&amp;lang=pt&amp;base=MARC&amp;nextAction=xml&amp;count=1" search-parameters="exprSearch=" base-browse-url="http://%HOST%/cgi-bin/wxis.exe/iah/scripts/?IsisScript=iah.xis&amp;lang=pt&amp;base=MARC&amp;nextAction=lnk"/></item></item>
+  <portal></portal><meta-search base-search-url="/cgi-bin/wxis.exe/iah/scripts/?IsisScript=iah.xis&amp;lang=pt&amp;base=MARC&amp;nextAction=xml&amp;count=1" search-parameters="exprSearch=" base-browse-url="/cgi-bin/wxis.exe/iah/scripts/?IsisScript=iah.xis&amp;lang=pt&amp;base=MARC&amp;nextAction=lnk"/></item></item>
 </collection>
