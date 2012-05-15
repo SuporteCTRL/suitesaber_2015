@@ -17,7 +17,7 @@ mx iso=dbnwinisis.iso create=dbnabcd convert=ansi -all now tell=1
 3. Windows: gerar ISO 
 
 {{{
-mx dbnabcd iso=dbnancd.iso -all now tell=1
+mx dbnabcd iso=dbnabcd.iso -all now tell=1
 }}}
 
 4. Na Suíte Saber ABCD instalada em Linux: importar o ISO para a base de dados.
