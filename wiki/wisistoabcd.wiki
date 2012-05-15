@@ -51,6 +51,6 @@ mx iso=dbnwinisis.iso create=dbnabcd convert=ansi -all now tell=1
 
 5. Windows: gerar ISO 
 {{{
-mx dbnabcd iso=dbnancd.iso -all now tell=1
+mx dbnabcd iso=dbnabcd.iso -all now tell=1
 }}}
 6. Linux: importar o ISO na base
