@@ -39,6 +39,19 @@ Menu Utilitários->Substituir global no Winisis
 retag dbn conv1.tab
 }}}
 
+Sendo conv1.tab um arquivo de texto com os campos separados por espaço, na estrutura: _'tagatual' 'tagnova'_. Exemplo:
+{{{
+3004 904
+3005 905
+3006 906
+3007 907
+3008 908
+3009 909
+3017 917
+3018 918
+3019 919
+}}}
+
 3. Windows: gerar ISO 
 {{{
 mx dbn iso=dbnwinisis.iso -all now tell=1
@@ -54,3 +67,23 @@ mx iso=dbnwinisis.iso create=dbnabcd convert=ansi -all now tell=1
 mx dbnabcd iso=dbnabcd.iso -all now tell=1
 }}}
 6. Linux: importar o ISO na base
+
+Colocar arquivo .iso na pasta /bases/wrk e importar pela interface.
+
+7. Linux: converter 9xx para 3xxx
+{{{
+retag dbn conv2.tab
+}}}
+
+Sendo conv2.tab:
+{{{
+904 3004
+905 3005
+906 3006
+907 3007
+908 3008
+909 3009
+917 3017
+918 3018
+919 3019
+}}}
