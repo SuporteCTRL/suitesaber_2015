@@ -168,11 +168,11 @@ function switchMenu(obj) {
 <div class="sectionInfo">
 <div class="language">		
 
-		<a href=overview.php?encabezado=s&base=<?php echo $arrHttp["base"]?> class="defaultButton cancelButton">
+		<a href=overview.php?encabezado=s&base=<?php echo $arrHttp["base"]?> class="defaultButton">
 
 			<span><strong><?php echo $msgstr["cancel"]?></strong></span>
 		</a>
-		<a href=javascript:EnviarForma() class="defaultButton saveButton">
+		<a href=javascript:EnviarForma() class="defaultButton">
 
 			<span><strong><?php echo $msgstr["actualizar"]?></strong></span>
 		</a>
