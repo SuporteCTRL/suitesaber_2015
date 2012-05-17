@@ -24,10 +24,10 @@ if p(v200) then '<tr><td width=20% valign=top><font face=arial size=2>Pessoa/Dep
 if p(v210) then '<tr><td width=20% valign=top><font face=arial size=2>Data</td><td valign=top><font face=arial size=2>'v210+|; |,'</td>' fi/
 if p(v211) then '<tr><td width=20% valign=top><font face=arial size=2>Data ISO</td><td valign=top><font face=arial size=2>'v211+|; |,'</td>' fi/
 if p(v220) then '<tr><td width=20% valign=top><font face=arial size=2>No. de cópias</td><td valign=top><font face=arial size=2>'v220+|; |,'</td>' fi/
-'<tr><td colspan=2 valign=top><font face=arial size=2 color=darkred><br>Aproção / Rejeição</td>'/
+'<tr><td colspan=2 valign=top><font face=arial size=2 color=darkred><br>Aprovação/Rejeição</td>'/
 if p(v230) then '<tr><td width=20% valign=top><font face=arial size=2>Data de aprovação ou rejeição</td><td valign=top><font face=arial size=2>'v230+|; |,'</td>' fi/
 if p(v231) then '<tr><td width=20% valign=top><font face=arial size=2>Data de aprovação ou rejeição ISO</td><td valign=top><font face=arial size=2>'v231+|; |,'</td>' fi/
-if p(v240) then '<tr><td width=20% valign=top><font face=arial size=2>Number of copies approved</td><td valign=top><font face=arial size=2>'v240+|; |,'</td>' fi/
+if p(v240) then '<tr><td width=20% valign=top><font face=arial size=2>Número de cópias aprovadas</td><td valign=top><font face=arial size=2>'v240+|; |,'</td>' fi/
 if p(v250) then '<tr><td width=20% valign=top><font face=arial size=2>Razão da rejeição</td><td valign=top><font face=arial size=2>'v250+|; |,'</td>' fi/
 '<tr><td colspan=2 valign=top><font face=arial size=2 color=darkred><br>Licitação</td>'/
 if p(v300) then '<tr><td width=20% valign=top><font face=arial size=2>Fornecedor</td><td valign=top><font face=arial size=2>'v300+|; |,'</td>' fi/
