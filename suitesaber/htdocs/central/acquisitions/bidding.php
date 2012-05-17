@@ -13,7 +13,7 @@ session_start();
 if (!isset($_SESSION["permiso"])){
 	header("Location: ../common/error_page.php") ;
 }
-if (!isset($_SESSION["lang"]))  $_SESSION["lang"]="en";
+if (!isset($_SESSION["lang"]))  $_SESSION["lang"]="pt";
 include("../config.php");
 $lang=$_SESSION["lang"];
 include("../lang/admin.php");
@@ -125,7 +125,7 @@ function Enviar(sort){
 <?php
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 	echo "<a href=../documentacion/edit.php?archivo=". $_SESSION["lang"]."/acquisitions/bidding.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "<font color=white>&nbsp; &nbsp; Script: bidding.php</font>\n";
+echo "&nbsp; &nbsp; Script: bidding.php</font>\n";
 ?>
 	</div>
 <form name=sort>
@@ -133,22 +133,22 @@ echo "<font color=white>&nbsp; &nbsp; Script: bidding.php</font>\n";
 	<div class="formContent">
 		<?php echo $msgstr["approved_rec"]." ".$msgstr["sorted"]?>
 		<div class="pagination">
-			<a id=botoes href=javascript:Enviar("TI") class="singleButton singleButtonSelected">
+			<a id=botoes href=javascript:Enviar("TI") class="singleButton">
 
 						 <?php echo $msgstr["title"]?> 
 	
 					</a>
-			<a id=botoes  href=javascript:Enviar("RB") class="singleButton singleButtonSelected">
+			<a id=botoes  href=javascript:Enviar("RB") class="singleButton">
 
 						 <?php echo $msgstr["recomby"]?> 
 	
 					</a>
-			<a id=botoes  href=javascript:Enviar("DA") class="singleButton singleButtonSelected">
+			<a id=botoes  href=javascript:Enviar("DA") class="singleButton">
 
 						<?php echo $msgstr["date_app"]?> 
 	
 					</a>
-			<a  id=botoes href=javascript:Enviar("OP") class="singleButton singleButtonSelected">
+			<a  id=botoes href=javascript:Enviar("OP") class="singleButton">
 
 						<?php echo $msgstr["operator"]?> 
 	
@@ -172,8 +172,8 @@ echo "<font color=white>&nbsp; &nbsp; Script: bidding.php</font>\n";
 		foreach ($r as $cell){			if ($ix1=="")
 				$ix1=1;
 			else
-				if ($ix1==1){					echo "<td nowrap><a href=javascript:Editar($cell)><img src=\"../images/edit.png\"></a>&nbsp;
-					<a href=javascript:Mostrar($cell)><img src=\"../images/zoom.png\"></a>
+				if ($ix1==1){					echo "<td nowrap><a id=botoes href=javascript:Editar($cell)>$msgstr[editar]</a>&nbsp;
+					<a id=botoes href=javascript:Mostrar($cell)>$msgstr[ver]</a>
 					</td>";
 					$ix1=2;				}else
 	 				echo "<td>$cell</td>";		}
