@@ -71,7 +71,7 @@ if (!file_exists($tit_pft)){
 $fp=file($tit_pft);
 $tit_tab=implode("",$fp);
 $Formato="@$Formato,/";
-$Expresion="(STA_1 or STA_3)";        //recomendaciones aprobadas o en proceso de selección de proveedores
+$Expresion="(STA_0 or STA_1 or STA_2 or STA_3 or STA_4 or STA_5 or STA_6 or STA_7)";        //recomendaciones aprobadas o en proceso de selección de proveedores
 if (!isset($arrHttp["see_all"])) $Expresion.=" and OPERADOR_".$_SESSION["login"];
 $query = "&base=".$arrHttp["base"]."&cipar=$db_path"."par/".$arrHttp["base"].".par"."&Expresion=$Expresion&Formato=$Formato&Opcion=buscar";
 $IsisScript=$xWxis."imprime.xis";
