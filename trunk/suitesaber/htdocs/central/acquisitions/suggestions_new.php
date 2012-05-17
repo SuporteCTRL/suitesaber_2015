@@ -47,9 +47,9 @@ include("javascript.php");
 <script>
 function Validar(){	err=""
 	res=""	for (i=0;i<document.forma1.tag2.length;i++){		if (document.forma1.tag2[i].checked) res="Y"	}
-	if (res==""){		alert ("<?php echo $msgstr["err2"]?>")
-		return "N"	}
-	res=""
+//	if (res==""){//		alert ("<?php echo $msgstr["err2"]?>")
+//		return "N"//	}
+//	res=""
 //SE VERIFICA SI ES UN OBJETO NUEVO O UNA COPIA
 /*	for (i=0;i<document.forma1.tag3.length;i++){
 		if (document.forma1.tag3[i].checked) res="Y"
