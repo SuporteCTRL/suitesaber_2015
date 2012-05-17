@@ -79,16 +79,17 @@ function Eliminar(Archivo){
 
 <div class="sectionInfo">
 	<div class="breadcrumb">
-<?php echo $msgstr["cnv_import"]." ".$msgstr["cnv_iso"]?>
+<h3><?php echo $msgstr["cnv_import"]." ".$msgstr["cnv_iso"]?></h3>
+	</div>
 	</div>
 	<div class="actions">
-<?php echo "<a href=\"administrar.php?base=".$arrHttp["base"]."\"  class=\"defaultButton backButton\">";
+<?php echo "<a href=\"administrar.php?base=".$arrHttp["base"]."\"  class=\"defaultButton\">";
 ?>
 
 		<span><strong><?php echo $msgstr["regresar"]?></strong></span></a>
 	</div>
-	<div class="spacer">&#160;</div>
-</div>
+	
+
 <?php
 echo "
 	<div class=\"helper\">
