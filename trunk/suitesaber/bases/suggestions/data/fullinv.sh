@@ -1,0 +1,1 @@
+../../../cgi-bin/mx suggestions fst=@suggestions.fst uctab=../../isisuc actab=../../isisac fullinv=suggestions -all now tell=1
