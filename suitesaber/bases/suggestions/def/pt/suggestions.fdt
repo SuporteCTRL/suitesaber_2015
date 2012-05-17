@@ -1,6 +1,6 @@
 H||Identificação do objeto|0|0||||||||||||0||
 AI|1|Sugestão No.|0|0|||X|||||CN_|V1|v1||0||
-F|2|Status|0|0|||R||4|P|status.tab|||||0||
+F|2|Status|0|0|||S||4|P|status.tab|||||0||
 L|||0|0||||||||||||0||
 F|3|Tipo de aquisição|0|0|||R||1|P|typeacquisition.tab|||||0||
 F|4|Tipo de objeto|0|0|||X|||||||||0||
