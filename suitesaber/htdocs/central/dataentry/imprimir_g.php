@@ -117,7 +117,7 @@ switch ($arrHttp["tipof"]){              //TYPE OF FORMAT
 	case "P":  //PARRAGRAPH
 		break;
 	case "CT": //COLUMNS (TABLE)
-		$data="<table>";
+		$data="<table border=1>";
 		if (isset($arrHttp["headings"])){			$h=explode("\r",$arrHttp["headings"]);
 			foreach ($h as $value){				$data.="<th>$value</th>";
 			}
@@ -153,7 +153,6 @@ foreach ($contenido as $linea){
 		}
 
 }
-
 switch ($arrHttp["vp"]){	case "WP":
     	$filename=$arrHttp["base"].".doc";
 		header('Content-Type: application/msword; charset=windows-1252');
@@ -189,13 +188,11 @@ switch ($arrHttp["vp"]){	case "WP":
    echo $data;
 switch ($arrHttp["tipof"]){              //TYPE OF FORMAT
 	case "T":  //TABLE
-	
 		echo "</body></html>";
 		break;
 	case "P":  //PARRAGRAPH
 		echo "</body></html>";
 		break;
-		
 	case "CT": //COLUMNS (TABLE)
 			include("../circulation/registro_rec.php");			
 		echo "</table>";
