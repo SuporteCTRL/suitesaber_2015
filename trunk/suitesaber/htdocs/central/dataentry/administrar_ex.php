@@ -81,7 +81,7 @@ echo ": ".$arrHttp["base"];
 echo "</h3></div>
 	<div class=\"actions\">
 ";
-if ($arrHttp["Opcion"]!="fullinv"){	echo "<a href=\"administrar.php?base=".$arrHttp["base"]."\"  class=\"defaultButton backButton\">";    echo "
+if ($arrHttp["Opcion"]!="fullinv"){	echo "<a href=\"administrar.php?base=".$arrHttp["base"]."\"  class=\"defaultButton\">";    echo "
 
 		<span><strong>".$msgstr["back"]."</strong></span></a>";
 }
