@@ -455,7 +455,7 @@ if (isset($arrHttp["encabezado"])){
 				<div class=\"breadcrumb\">
 				</div>";
 		echo "<div class=\"actions\">
-			<a href=\"$retorno$return\" class=\"defaultButton backButton\">
+			<a href=\"$retorno$return\" class=\"defaultButton\">
 			
 				<span><strong>".$msgstr["back"]."</strong></span>
 			</a>
@@ -468,10 +468,10 @@ if (isset($arrHttp["encabezado"])){
 			include("../common/institutional_info.php");
 			echo "<div class=\"sectionInfo\">
 					<div class=\"language\">
-					<a href=javascript:EnviarForma() class=\"defaultButton saveButton\">
+					<a href=javascript:EnviarForma() class=\"defaultButton\">
 						<span><strong>".$msgstr["m_guardar"]."</strong></span>
 					</a>
-					<a href=\"$retorno$return\" class=\"defaultButton cancelButton\">
+					<a href=\"$retorno$return\" class=\"defaultButton\">
 						<span><strong>".$msgstr["cancelar"]."</strong></span>
 					</a>
 					</div>
