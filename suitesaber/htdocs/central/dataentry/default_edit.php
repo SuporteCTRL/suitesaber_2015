@@ -51,7 +51,7 @@ if (isset($arrHttp["encabezado"])){
 				if ($arrHttp["Mfn"]=="New") echo "<h3>". $msgstr["newoper"]."</h3>\n";
 				echo "</div>
 				<div class=\"actions\">
-					<a href=\"../$retorno/browse.php?encabezado=s\" class=\"defaultButton backButton\">
+					<a href=\"../$retorno/browse.php?encabezado=s\" class=\"defaultButton\">
 
 						<span><strong>".$msgstr["back"]."</strong></span>
 					</a>
