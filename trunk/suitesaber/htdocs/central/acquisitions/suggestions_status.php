@@ -1,37 +1,22 @@
 <?php
-/**
- * @program:   ABCD - ABCD-Central - http://reddes.bvsaude.org/projects/abcd
- * @copyright:  Copyright (C) 2009 BIREME/PAHO/WHO - VLIR/UOS
- * @file:      suggestions_status.php
- * @desc:      Suggestions status
- * @author:    Guilda Ascencio
- * @since:     20091203
- * @version:   1.0
- *
- * == BEGIN LICENSE ==
- *
- *    This program is free software: you can redistribute it and/or modify
- *    it under the terms of the GNU Lesser General Public License as
- *    published by the Free Software Foundation, either version 3 of the
- *    License, or (at your option) any later version.
- *
- *    This program is distributed in the hope that it will be useful,
- *    but WITHOUT ANY WARRANTY; without even the implied warranty of
- *    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *    GNU Lesser General Public License for more details.
- *  
- *    You should have received a copy of the GNU Lesser General Public License
- *    along with this program.  If not, see <http://www.gnu.org/licenses/>.
- *  
- * == END LICENSE ==
-*/
+//
+//Presenta la lista de sugerencias aprobadas
+//SHOW THE LIST OF APPROVED SUGGESTIONS
+//APPLIES THE SEARCH EXPRESSION "STA_1+or+STA_3" ON THE SUGGESTIONS DATABASE
+// USES THE DISPLAY FORMATS
+// BY TITLE: ti_bidding.pft,ti_bidding_tit.tab
+// BY PROVIDER : rb_bidding.pft, rb_bidding_tit.tab
+// BY DATE OF APPROVAL: da_bidding.pft, da_bidding_tit.tab
+//
+
 session_start();
 if (!isset($_SESSION["permiso"])){
 	header("Location: ../common/error_page.php") ;
 }
-if (!isset($_SESSION["lang"]))  $_SESSION["lang"]="en";
+if (!isset($_SESSION["lang"]))  $_SESSION["lang"]="pt";
 include("../config.php");
 $lang=$_SESSION["lang"];
+include("../lang/admin.php");
 include("../lang/acquisitions.php");
 
 include("../common/get_post.php");
@@ -74,21 +59,20 @@ switch($arrHttp["sort"]){	case "TI":
 		$tit="op_tit.tab";
 		break;}
 $Formato=$db_path.$arrHttp["base"]."/pfts/".$_SESSION["lang"]."/$index" ;
+$tit_pft=$db_path.$arrHttp["base"]."/pfts/".$_SESSION["lang"]."/$tit";
 if (!file_exists($Formato)) $Formato=$db_path.$arrHttp["base"]."/pfts/".$lang_db."/$index" ;
-$tit_tab=$db_path.$arrHttp["base"]."/pfts/".$_SESSION["lang"]."/$tit";
-if (!file_exists($tit_tab)) $tit_tab=$db_path.$arrHttp["base"]."/pfts/".$lang_db."/$tit";
-if (!file_exists($Formato)){	echo $msgstr["missing"] ." $index";
+if (!file_exists($Formato)){	echo $msgstr["missing"] ." $Formato";
 	die;}
-if (!file_exists($tit_tab)){
-	echo $msgstr["missing"] ." $tit";
+if (!file_exists($tit_pft)) $tit_pft=$db_path.$arrHttp["base"]."/pfts/".$lang_db."/$tit" ;
+if (!file_exists($tit_pft)){
+	echo $msgstr["missing"] ." $tit_pft";
 
 }
-$fp=file($tit_tab);
+$fp=file($tit_pft);
 $tit_tab=implode("",$fp);
 $Formato="@$Formato,/";
-$Expresion="STA_0 ";
-if (!isset($arrHttp["see_all"])) $Expresion.="and OPERADOR_".$_SESSION["login"];
-
+$Expresion="(STA_1 or STA_3)";        //recomendaciones aprobadas o en proceso de selección de proveedores
+if (!isset($arrHttp["see_all"])) $Expresion.=" and OPERADOR_".$_SESSION["login"];
 $query = "&base=".$arrHttp["base"]."&cipar=$db_path"."par/".$arrHttp["base"].".par"."&Expresion=$Expresion&Formato=$Formato&Opcion=buscar";
 $IsisScript=$xWxis."imprime.xis";
 include("../common/wxis_llamar.php");
@@ -98,7 +82,6 @@ foreach ($contenido as $value){
 	$value=trim($value);
 	if ($value!="")	{		$ix=$ix+1;
 		$s=explode('|',$value);
-		while (strlen($ix)<4) $ix="0".$ix;
 		$key=$s[0].$ix;
 		$recom[$key]=$value;	}
 
@@ -108,7 +91,6 @@ ksort($recom);
 ?>
 <script src=../dataentry/js/lr_trim.js></script>
 <script>
-
 document.onkeypress =
   function (evt) {
     var c = document.layers ? evt.which
@@ -131,19 +113,17 @@ function Enviar(sort){
 <?php include("suggestions_menu.php");?>
 </div>
 </div>
-
 	<div class="breadcrumb"><h3>
 		<?php echo $msgstr["suggestions"].": ".$msgstr["approve"]."/".$msgstr["reject"]?>
 	</h3></div>
-	<div class="actions">
-	</div>
+	<div class="actions">	</div>
 
 <div class="helper">
 <a href=../documentacion/ayuda.php?help=<?php echo $_SESSION["lang"]?>/acquisitions/approval_rejection.html target=_blank><?php echo $msgstr["help"]?></a>&nbsp &nbsp;
 <?php
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 	echo "<a href=../documentacion/edit.php?archivo=". $_SESSION["lang"]."/acquisitions/approval_rejection.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "<font color=white>&nbsp; &nbsp; Script: suggestions_status.php</font>\n";
+echo "&nbsp; &nbsp; Script: suggestions_status.php</font>\n";
 ?>
 	</div>
 <form name=sort>
@@ -151,25 +131,24 @@ echo "<font color=white>&nbsp; &nbsp; Script: suggestions_status.php</font>\n";
 	<div class="formContent">
          <?php echo $msgstr["pending_sort"]?>
 		<div class="pagination">
-			<a id="botoes"  href=javascript:Enviar("TI") class="singleButton singleButtonSelected">
+			<a id=botoes  href=javascript:Enviar("TI") class="singleButton">
 
 						<?php echo $msgstr["title"]?>
 	
 					</a>
-			<a id="botoes" href=javascript:Enviar("RB") class="singleButton singleButtonSelected">
-					
+			<a id=botoes href=javascript:Enviar("RB") class="singleButton">
 						<?php echo $msgstr["recomby"]?>
 
 					</a>
-			<a id="botoes" href=javascript:Enviar("DR") class="singleButton singleButtonSelected">
+			<a id=botoes href=javascript:Enviar("DR") class="singleButton">
 
 						<?php echo $msgstr["date_sug"]?>
-		
-					</a>
-			<a id="botoes" href=javascript:Enviar("OP") class="singleButton singleButtonSelected">
 	
+					</a>
+			<a id=botoes href=javascript:Enviar("OP") class="singleButton">
+
 						<?php echo $msgstr["operator"]?>
-		
+	
 					</a>
 			<p align=right><input type=checkbox name=see_all
 			<?php if (isset($arrHttp["see_all"])) echo " value=Y checked"?>><?php echo $msgstr["all_oper"]?>
@@ -183,14 +162,13 @@ echo "<font color=white>&nbsp; &nbsp; Script: suggestions_status.php</font>\n";
 	echo "<th>&nbsp;</th>";
 	$t=explode('|',$tit_tab);
 	foreach ($t as $v)  echo "<th>".$v."</th>";
-
-	foreach ($recom as $value){		echo "\n<tr>";		$r=explode('|',$value);
+	foreach ($recom as $value){		echo "<tr>";		$r=explode('|',$value);
 		$ix1="";
 		foreach ($r as $cell){			if ($ix1=="")
 				$ix1=1;
 			else
-				if ($ix1==1){					echo "<td nowrap><a href=javascript:Editar($cell)><img src=\"../images/edit.png\"></a>&nbsp;
-					<a href=javascript:Mostrar($cell)><img src=\"../images/zoom.png\"></a>
+				if ($ix1==1){					echo "<td nowrap><a id=botoes href=javascript:Editar($cell)>$msgstr[editar]</a>&nbsp;
+					<a id=botoes href=javascript:Mostrar($cell)>$msgstr[ver]</a>
 					</td>";
 					$ix1=2;				}else
 	 				echo "<td>$cell</td>";		}
