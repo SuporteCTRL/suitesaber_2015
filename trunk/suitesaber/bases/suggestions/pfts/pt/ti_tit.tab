@@ -1,1 +1,7 @@
-No.Controle|Título|Autor|Recomendado por|Data|Cópias|Situação
+<a href="#">Status</a>|
+<a href="#">No.Controle</a>|
+<a href=javascript:Enviar("TI")>&#9660;Título</a>|
+<a href="#" >Autor</a>|
+<a href=javascript:Enviar("RB")">Sugerido por</a>|
+<a href=javascript:Enviar("DR")>Data</a>|
+<a href="#">Cópias</a>
