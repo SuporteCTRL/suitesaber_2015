@@ -46,10 +46,10 @@ include("javascript.php");
 <script>
 function Validar(){	res=""
 	if (document.forma1.tag2[1].checked || document.forma1.tag2[2].checked) res="Y"
-	if (res==""){
-		alert ("<?php echo $msgstr["err2_1"]?>")
-		return "N"
-	}
+//if (res==""){
+//		alert ("<?php echo $msgstr["err2_1"]?>")
+//		return "N"
+//	}
 	if (Trim(document.forma1.tag230.value)=="" ){
 		alert ("<?php echo $msgstr["err230"]?>")
 		return "N"
