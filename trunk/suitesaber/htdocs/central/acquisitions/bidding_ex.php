@@ -99,21 +99,25 @@ $see_all="";
 if (isset($arrHttp["see_all"])) $see_all="&see_all=Y"
 ?>
 <div class="sectionInfo">
-	<div class="breadcrumb">
-		<?php echo $msgstr["suggestions"].": ".$msgstr["bidding"]?>
-	</div>
-	<div class="actions">
-		<a href=bidding.php?encabezado=s&base=<?php echo $arrHttp["base"]."&sort=".$arrHttp["sort"].$see_all?> class="defaultButton cancelButton">
-			<img src=../images/defaultButton_iconBorder.gif alt="" title="" />
+<div class="language">
+		<a href=bidding.php?encabezado=s&base=<?php echo $arrHttp["base"]."&sort=".$arrHttp["sort"].$see_all?> class="defaultButton">
+
 			<span><strong><?php echo $msgstr["cancel"]?></strong></span>
 		</a>
-		<a href=javascript:EnviarForma() class="defaultButton saveButton">
-			<img src=../images/defaultButton_iconBorder.gif alt="" title="" />
+		<a href=javascript:EnviarForma() class="defaultButton">
+
 			<span><strong><?php echo $msgstr["actualizar"]?></strong></span>
 		</a>
-	</div>
-	<div class="spacer">&#160;</div>
 </div>
+</div>
+	<div class="breadcrumb">
+		<h3><?php echo $msgstr["suggestions"].": ".$msgstr["bidding"]?></h3>
+	</div>
+	<div class="actions">
+
+	</div>
+
+
 <div class="helper">
 <a href=../documentacion/ayuda.php?help=<?php echo $_SESSION["lang"]?>/acquisitions/bidding_ex.html target=_blank><?php echo $msgstr["help"]?></a>&nbsp &nbsp;
 <?php
