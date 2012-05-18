@@ -1,5 +1,22 @@
-mpu,v18,mpl,"---"N18 '|',f(mfn,1,0),'|',v1,'|',v18,'|',v16," "v17,'|',v200,'|',v210,'|'v220,'|' 
-if v2='1' then '<h2 style="color: #5FB529;text-align: center;">Aprovada</h2>' else 
-if v2='2' then '<h2 style="color: #E04941;text-align: center;">Rejeitada</h2>' else 
-'<h2 style="color: #00f;text-align: center;">Pendente</h2>' fi 
-fi/
+mpu,v18,mpl,"---"N18,'|'
+f(mfn,1,0),'|'
+if v2='0' then '<h2 style="width:100px;color: #ccc;text-align: center;">&#10004;</h2>' fi
+if v2='1' then '<h2 style="width:100px;color: #5FB529;text-align: center;">&#10004;</h2>' fi
+if v2='2' then '<h2 style="width:100px;color: #E04941;text-align: center;">&#10006;</h2>' fi
+if v2='3' then '<h2 style="width:100px;color: #E04941;text-align: center;">&#36;</h2>' fi
+if v2='4' then '<h2 style="width:100px;color: #5FB529;text-align: center;">&#10004;&#10004;</h2>' fi
+if v2='5' then '<p style="width:100px;color: #E04941;text-align: center;">Ordem emitida</p>' fi
+if v2='6' then '<p style="width:100px;color: #E04941;text-align: center;">Itens recebidos</p>' fi
+if v2='7' then '<h2 style="width:100px;color: #5FB529;text-align: center;">&#10004;&#10004;&#10004;</h2>' fi
+'|'
+v1
+'|'
+v18
+'|'
+v16," "v17
+'|'
+v200
+'|'
+v210
+'|'
+v220
