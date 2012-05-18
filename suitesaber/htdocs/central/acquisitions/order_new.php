@@ -177,11 +177,11 @@ include("../common/institutional_info.php");
 		echo $m[1].": ".$msgstr["new"]?>
 	</div>
 	<div class="actions">
-		<a href=order_new_menu.php class="defaultButton cancelButton">
+		<a href=order_new_menu.php class="defaultButton">
 
 			<span><strong><?php echo $msgstr["cancel"]?></strong></span>
 		</a>
-		<a href=javascript:EnviarForma() class="defaultButton saveButton">
+		<a href=javascript:EnviarForma() class="defaultButton">
 
 			<span><strong><?php echo $msgstr["actualizar"]?></strong></span>
 		</a>
