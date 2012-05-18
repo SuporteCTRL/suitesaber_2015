@@ -11,6 +11,7 @@ if (!isset($_SESSION["permiso"])){
 }
 if (!isset($_SESSION["lang"]))  $_SESSION["lang"]="en";
 include("../config.php");
+include("../lang/admin.php");
 $lang=$_SESSION["lang"];
 include("../lang/acquisitions.php");
 
@@ -168,8 +169,8 @@ echo "&nbsp; &nbsp; Script: decision.php\n";
 		foreach ($r as $cell){			if ($ix1=="")
 				$ix1=1;
 			else
-				if ($ix1==1){					echo "<td nowrap><a href=javascript:Editar($cell)><img src=\"../images/edit.png\"></a>&nbsp;
-					<a href=javascript:Mostrar($cell)><img src=\"../images/zoom.png\"></a>
+				if ($ix1==1){					echo "<td nowrap><a id=botoes href=javascript:Editar($cell)>$msgstr[editar]</a>&nbsp;
+					<a id=botoes href=javascript:Mostrar($cell)>$msgstr[ver]</a>
 					</td>";
 					$ix1=2;				}else
 	 				echo "<td>$cell</td>";		}
