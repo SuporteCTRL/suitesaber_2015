@@ -157,24 +157,36 @@ echo "&nbsp; &nbsp; Script: suggestions_status.php</font>\n";
 	<table class=listTable cellspacing=0 border=1>
 		<tr>
 
+<style type="text/css">
+ th a { 
+ font-size:14px;
+ text-decoration:none;
+ color:#fff;
+ text-transform: uppercase;
+}
+</style>
+
 <?php
 // se imprime la lista de recomendaciones pendientes
-	echo "<th>&nbsp;</th>";
 	$t=explode('|',$tit_tab);
-	foreach ($t as $v)  echo "<th>".$v."</th>";
+	echo "<th>&nbsp;</th>";
+	foreach ($t as $v)  echo "<th>$v</th>";
 	foreach ($recom as $value){		echo "<tr>";		$r=explode('|',$value);
 		$ix1="";
 		foreach ($r as $cell){			if ($ix1=="")
-				$ix1=1;
+				$ix1=1;	
 			else
-				if ($ix1==1){					echo "<td nowrap><a id=botoes href=javascript:Editar($cell)>$msgstr[editar]</a>&nbsp;
-					<a id=botoes href=javascript:Mostrar($cell)>$msgstr[ver]</a>
-					</td>";
-					$ix1=2;				}else
-	 				echo "<td>$cell</td>";		}
+			
+			if ($ix1==1){
+				echo "<td style=\"height:30px;\"><a id=botoes href=javascript:Editar($cell)>$msgstr[editar]</a>&nbsp;
+				     	<a id=botoes href=javascript:Mostrar($cell)>$msgstr[ver]</a></td>";		
+			$ix1=2;				}
+			else
+				echo "<td style=\"height:30px;\">$cell</td>";					}
 
 	}
 ?>
+<tr><td></td></tr>
 </table>
 
 </div>
