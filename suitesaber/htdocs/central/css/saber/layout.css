@@ -789,41 +789,40 @@ display: inline;
 
 	}
 
-
-
 	.listTable TD,
-
 	.listTable TH {
-
-		padding: 5px 5px;
+	padding: 2px 2px;
 
 	}
 
 
-
 	.listTable TD {
-
-		vertical-align: top;
-
+		vertical-align: middle;
 		text-align: left;
 
 	}
 
-
-
-	.listTable TH {
-
+	.listTable TH:nth-child(2) {
 		text-align: center;
-
+		width: 150px;
 	}
 
+	.listTable TH:nth-child(3) {
+		text-align: center;
+		width: 10px;
+	}
+
+	.listTable TH:nth-child(4) {
+		text-align: center;
+		width: 10px;
+	}
 
 
 	.listTable TH.asc,
 
 	.listTable TH.desc {
 
-		padding-right: 22px;
+		padding-right: 15px;
 
 	}
 
@@ -831,7 +830,7 @@ display: inline;
 
 	.listTable .checkboxes {
 
-		padding-left: 15px;
+		padding-left:5px;
 
 	}
 
