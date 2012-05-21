@@ -1,5 +1,4 @@
 marc.*=%path_database%marc/data/marc.*
-copies.*=%path_database%copies/data/copies.*
 prologoact.pft=%path_database%www/prologoact.pft
 prologo.pft=%path_database%www/prologo.pft
 epilogoact.pft=%path_database%www/epilogoact.pft
@@ -10,7 +9,8 @@ isisuc.tab=%path_database%marc/data/isisuc.tab
 STW=%path_database%marc/data/marc.stw
 copies.pft=%path_database%marc/pfts/pt/copies.pft
 inven.pft=%path_database%copies/pfts/pt/inven.pft
-loanobject.*=%path_database%loanobjects/data/loanobjects.*
+loanobjects.*=%path_database%loanobjects/data/loanobjects.*
+copies.*=%path_database%copies/data/copies.*
 loan.pft=%path_database%loanobjects/pfts/pt/loan.pft
 trans.*=%path_database%trans/data/trans.*
 doc-principal.pft=%path_database%marc/pfts/pt/doc-principal.pft
