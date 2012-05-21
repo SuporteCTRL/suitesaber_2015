@@ -33,7 +33,7 @@ if s(v100^a,v110^a,v111^a)<>'' then '<tr class="mrc">
 <th class="mrc">Autor</th>
 <td class="mrc">',, 
     if p(v100) then '<span class="destaque">' v100^a,'</span>' 
-        if p(v100^d) then '(' v100^d ')' fi, '<br />' 
+        if p(v100^d) then ' (' v100^d ')' fi, '<br />' 
     fi,
 	if p(v110) then '<span class="destaque">' v110^a, " "v110^b,'</span><br />' fi,
 
@@ -80,8 +80,8 @@ if s(v240^a,v730^a,v740^a)<>'' then  '</td></tr>'/ fi,
     if v246*1.1='5' then '<tr class="mrc"><th class="mrc">Título secundário na página de rosto</th><td class="mrc">',fi, 
     if v246*1.1='6' then '<tr class="mrc"><th class="mrc">Título explicativo</th><td class="mrc">',fi, 
     if v246*1.1='7' then '<tr class="mrc"><th class="mrc">Título corrente</th><td class="mrc">',fi, 
-    if v246*1.1='8' then '<tr class="mrc"><th class="mrc">Título de lombada</th><td class="mrc">',fi, 	
-	if v246*1.1='#' then '<tr class="mrc"><th class="mrc">Forma variante do título</th><td class="mrc">' fi,	
+    if v246*1.1='8' then '<tr class="mrc"><th class="mrc">Título de lombada</th><td class="mrc">',fi, 
+	if v246*1.1='#' then '<tr class="mrc"><th class="mrc">Forma variante do título</th><td class="mrc">' fi,
 
   v246^a, if p(v246^b) then ' : 'v246^b fi, if p(v246^c) then ' / 'v246^c fi,'<br />'/fi/) 
 
@@ -202,6 +202,7 @@ if p(v310^a) then '<tr class="mrc"><th class="mrc">Periodicidade</th><td class="
 
 ,if s(v600^a,v610^a,v611^a,v630^a,v650^a,v651^a,v653^a)<>'' then '<tr class="mrc"><th class="mrc">Assuntos</th><td class="mrc">'
 
+
 if v600*4<>'' then (v600^a, | |v600^d,  | |v600^t, | |v600^u,|  :  |v600^x,  |  :  |v600^z, |  :  |v600^y,  |  :  |v600^v,,'<br />'/)fi,
 if v610*4<>'' then (v610^a, | |v610^b,  | |v610^e,  | |v610^t,  | |v610^u,|  :  |v610^x,  |  :  |v610^z,  |  :  |v610^y,   |  :  |v610^v,,'<br />'/)fi,
 if v611*4<>'' then (v611^a, | |v611^n,   | |v611^d,  | |v611^c,  | |v611^e,   |  :  |v611^x,  |  :  |v611^z, |  :  |v611^y,   |  :  |v611^v,,'<br />'/)fi,
@@ -235,12 +236,12 @@ if p(v773^w) then '<tr class="mrc"><th class="mrc">Fonte</th><td class="mrc">' v
 
 '<!-- FIM Analíticas 773 -->'
 
-'<!-- Itens na copies -->'
+'<!-- Itens na loanobjects -->'
 
-if ref(['copies'] l(['copies'],"CN_MARC_"v1),V30,)<>'' then '<tr class="mrc"><th class="mrc">Itens</th><td class="mrc">'ref(['copies'] l(['copies'],"CN_MARC_"v1),V30+|; |,)
+if ref(['loanobjects'] l(['loanobjects'],"CN_MARC_"v1),v959^i,)<>'' then '<tr class="mrc"><th class="mrc">Itens</th><td class="mrc">'ref(['loanobjects'] l(['loanobjects'],"CN_MARC_"v1),v959^i+|; |,)
 '</td></tr>' fi,
 
-'<!-- FIM Itens na copies -->'
+'<!-- FIM Itens na loanobjects -->'
 
 '</table>'
 
