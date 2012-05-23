@@ -62,13 +62,10 @@ $ sudo tar -xzvf suitesaber.tar.gz
 
 Os diretórios devem ficar dispostos como na estrutura abaixo:
 
-/var/www/suitesaber/htdocs
-
-/var/www/suitesaber/bases
-
-/var/www/suitesaber/cgi-bin
-
-/var/www/suitesaber/temp
+  * /var/www/suitesaber/htdocs
+  * /var/www/suitesaber/bases
+  * /var/www/suitesaber/cgi-bin
+  * /var/www/suitesaber/temp
 
 Certifique-se que os diretórios /htdocs e /cgi-bin estão com permissão 755 e os diretórios /htdocs/bases (pasta dos uploads) /bases e /temp 777, aplicando recursivamente os seguintes comandos:
 
