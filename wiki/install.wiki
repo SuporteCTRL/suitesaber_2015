@@ -81,6 +81,29 @@ $sudo chmod 777 -R /var/www/suitesaber/bases /var/www/suitesaber/temp
 $sudo chmod 755 -R /var/www/suitesaber/htdocs /var/www/suitesaber/cgi-bin
 }}}
 
+==Pacote para geração de códigos de barras==
+
+A geração de códigos de barras é feita a partir do script de [http://www.ashberg.de/php-barcode/ PHP-Barcode], criado e mantido por [Folke Ashberg http://www.ashberg.de/].
+
+1. Instalar dependência: [http://www.gnu.org/software/barcode/ GNU Barcode]
+{{{
+$sudo apt-get install barcode
+}}}
+
+2. Instalar PHP-Barcode
+
+{{{
+$sudo cd /opt
+
+$sudo wget http://www.ashberg.de/php-barcode/download/files/php-barcode-0.4.tar.gz
+
+$sudo tar -xvf genbarcode-0.4.tar.gz
+
+$sudo cd genbarcode-0.4/
+
+$sudo make install
+}}}
+
 ==Configuração da Suíte Saber==
 
 Caso você faça uma instalação com uma estrutura diferente a deste tutorial você precisará editar os arquivos:
