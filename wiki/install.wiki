@@ -40,7 +40,7 @@ $sudo apt-get install subversion
 }}}
 
 
-Com o terminal do seu Ubuntu aberto vá em /var/www
+Com o terminal do seu Ubuntu aberto vá em /var/www/
 
 {{{
 $ cd /var/www
@@ -74,16 +74,16 @@ Os diretórios devem ficar dispostos como na estrutura abaixo:
 Certifique-se que os diretórios htdocs e cgi-bin estão com permissão 755 e os diretórios bases e temp 777, aplicando recursivamente os seguintes comandos:
 
 {{{
-$sudo chmod 777 -R /var/www/suitesaber/bases /var/www/suitesaber/temp
+$sudo chmod 777 -R /var/www/suitesaber/bases /var/www/suitesaber/temp/
 }}}
 
 {{{
-$sudo chmod 755 -R /var/www/suitesaber/htdocs /var/www/suitesaber/cgi-bin
+$sudo chmod 755 -R /var/www/suitesaber/htdocs /var/www/suitesaber/cgi-bin/
 }}}
 
 ==Pacote para geração de códigos de barras==
 
-A geração de códigos de barras é feita a partir do script de [http://www.ashberg.de/php-barcode/ PHP-Barcode], criado e mantido por [Folke Ashberg http://www.ashberg.de/].
+A geração de códigos de barras é feita a partir do script de [http://www.ashberg.de/php-barcode/ PHP-Barcode], criado e mantido por [http://www.ashberg.de/ Folke Ashberg].
 
 1. Instalar dependência: [http://www.gnu.org/software/barcode/ GNU Barcode]
 {{{
