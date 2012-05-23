@@ -1,18 +1,18 @@
-#summary Requisitos
+#summary Pré-requisitos
 #sidebar index
 
 = Pré-requisitos =
 
 A Suíte Saber funciona exclusivamente no Sistema Operacional Linux. Nossos testes e desenvolvimento são feitos no [http://www.ubuntu-br.org/ Ubuntu].
 
-Também é necessária a instalação de servidor [http://www.apache.org/ Apache] 2.x e [http://www.php.net/ PHP5.x]
+Também é necessária a instalação de servidor [http://www.apache.org/ Apache] 2.x e [http://www.php.net/ PHP 5.x]
 
 Mais as extensões:
 
-  *php5-curl
-  *php5-gd
-  *php5-gmp
-  *php5-mcrypt
-  *php5-tidy
-  *php5-xsl
-  *yaz
+  * php5-curl
+  * php5-gd
+  * php5-gmp
+  * php5-mcrypt
+  * php5-tidy
+  * php5-xsl
+  * yaz
