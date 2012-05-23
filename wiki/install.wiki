@@ -62,23 +62,20 @@ $ sudo tar -xzvf suitesaber.tar.gz
 
 Os diretórios devem ficar dispostos como na estrutura abaixo:
 
-* /
-  * var
-   * www
-     * suitesaber
-      * htdocs
-      * bases
-      * cgi-bin
-      * temp
+/var/www/suitesaber/htdocs
+/var/www/suitesaber/bases
+/var/www/suitesaber/cgi-bin
+/var/www/suitesaber/temp
 
-Certifique-se que os diretórios htdocs e cgi-bin estão com permissão 755 e os diretórios bases e temp 777, aplicando recursivamente os seguintes comandos:
+Certifique-se que os diretórios /htdocs e /cgi-bin estão com permissão 755 e os diretórios /htdocs/bases (pasta dos uploads) /bases e /temp 777, aplicando recursivamente os seguintes comandos:
+
 
 {{{
-$ sudo chmod 777 -R /var/www/suitesaber/bases /var/www/suitesaber/temp/
+$ sudo chmod 755 -R /var/www/suitesaber/htdocs/ /var/www/suitesaber/cgi-bin/
 }}}
 
 {{{
-$ sudo chmod 755 -R /var/www/suitesaber/htdocs /var/www/suitesaber/cgi-bin/
+$ sudo chmod 777 -R /var/www/suitesaber/htdocs/bases/ /var/www/suitesaber/bases/ /var/www/suitesaber/temp/ 
 }}}
 
 ==Pacote para geração de códigos de barras==
@@ -198,4 +195,5 @@ Pronto agora é só abrir o Mozilla Firefox ou o Google Chrome e utilizar o prog
 Lembre-se, você colocou a porta 9090, logo, para acessar sua Suíte você precisará digitar [http://localhost:9090] no seu navegador.
 
 Login: saber
+
 Senha: adm
