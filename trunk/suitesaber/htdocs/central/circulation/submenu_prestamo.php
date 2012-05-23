@@ -9,11 +9,11 @@ if (isset($_SESSION["permiso"]["CIRC_CIRCALL"]) or isset($_SESSION["permiso"]["C
 ?>
 		<a id=botoes_top href="renovar.php?encabezado=s<?php echo $link_u?>" ><strong>
 			<?php echo $msgstr["renew"]?></strong></a> 
-<?php }
+<!--<?php }
 if (isset($_SESSION["permiso"]["CIRC_CIRCALL"]) or isset($_SESSION["permiso"]["CIRC_RESERVE"])){
 ?>
 		<a id=botoes_top href="reservar.php?encabezado=s<?php echo $link_u?>" ><strong>
-			<?php echo $msgstr["reserve"]?></strong></a> 
+			<?php echo $msgstr["reserve"]?></strong></a> -->
 <?php }
 if (isset($_SESSION["permiso"]["CIRC_CIRCALL"]) or isset($_SESSION["permiso"]["CIRC_RETURN"])){
 ?>

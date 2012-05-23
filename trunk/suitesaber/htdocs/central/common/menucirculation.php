@@ -73,12 +73,12 @@ if (isset($_SESSION["permiso"]["CENTRAL_ALL"]) or isset($_SESSION["permiso"]["CI
 }
 if (isset($_SESSION["permiso"]["CENTRAL_ALL"]) or isset($_SESSION["permiso"]["CIRC_CIRCALL"]) or isset($_SESSION["permiso"]["CIRC_RESERVE"])){
 ?>
-						<a href="../circulation/reservar.php?encabezado=s" class="menuButton tooltip newButton" >
+					<!--	<a href="../circulation/reservar.php?encabezado=s" class="menuButton tooltip newButton" > 
 				
 						
 							<span><?php echo $msgstr["reserve"]?></span>							
 							
-						</a> 	
+						</a> 	-->
 <?php
 }
 if (isset($_SESSION["permiso"]["CENTRAL_ALL"]) or isset($_SESSION["permiso"]["CIRC_CIRCALL"]) or isset($_SESSION["permiso"]["CIRC_RETURN"])){
