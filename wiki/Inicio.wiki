@@ -1,7 +1,7 @@
 #summary Inicio
 #sidebar index
 
-=Visão Geral<=
+=Visão Geral=
 A Suíte Saber é um conjunto de soluções para gestão e organização de bibliotecas e acervos. É uma variante do software ABCD criado pela [http://.bireme.br BIREME] em 2008.
 
 A Suíte é desenvolvida em PHP utilizando HTML5, CSS3 e JQuery com objetivo de oferecer suavidade e praticidade de uso da ferramenta.
