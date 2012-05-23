@@ -46,6 +46,8 @@ Extensões essenciais PHP:
 <h1>Download a partir do SVN</h1>
 Baixe o Suíte Saber para o seu host utilizando o seguinte comando:
 
- <pre>$svn checkout http://suitesaber.googlecode.com/svn/trunk/suitesaber</pre>
+{{{
+$ sudo svn checkout http://suitesaber.googlecode.com/svn/trunk/suitesaber
+}}}
 
 O login/senha padrão é: saber/adm
