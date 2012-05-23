@@ -11,10 +11,10 @@ A Suíte é desenvolvida em PHP utilizando HTML5, CSS3 e JQuery com objetivo de 
 =Módulos=
 A Suíte Saber possui um agrupamento de soluções que formam os seguintes módulos:
 
-* Controle de aquisição
-* Catalogação
-* Empréstimo
-* Site da instituição/pesquisa
+  * Controle de aquisição
+  * Catalogação
+  * Empréstimo
+  * Site da instituição/pesquisa
 
 =Dados técnicos=
 
@@ -30,19 +30,22 @@ O Suíte saber necessita de um servidor Apache 2.x e PHP 5.x.
 
 Extensões essenciais PHP:
 
-* php5-curl
-* php5-gd
-* php5-gmp
-* php5-mcrypt
-* php5-tidy
-* php5-xsl
-* yaz
+  * php5-curl
+  * php5-gd
+  * php5-gmp
+  * php5-mcrypt
+  * php5-tidy
+  * php5-xsl
+  * yaz
 
 
 = Links =
-* [https://docs.google.com/document/pub?id=1QrRvqc8g6uE0NNVLv2xTAP4HWE7PojeXYSA12Xh9vmw" Esqueleto básico em HTML do Suíte Saber]
-* [https://docs.google.com/spreadsheet/pub?key=0AkPvjw8N5ATwdE5vZkxNVjJXODN0OGhtbG1yU2g3OXc&single=true&gid=0&output=html Relação de campos automáticos]
-* [https://docs.google.com/document/pub?id=1FPdC-NHesRPfZm_7Z5G1ZFKuuzbRnVJ_LJxA0pEiNZ0 Ligação entre registros da mesma base de dados (comando REF)]
+
+  * [https://docs.google.com/document/pub?id=1QrRvqc8g6uE0NNVLv2xTAP4HWE7PojeXYSA12Xh9vmw" Esqueleto básico em HTML do Suíte Saber]
+
+  * [https://docs.google.com/spreadsheet/pub?key=0AkPvjw8N5ATwdE5vZkxNVjJXODN0OGhtbG1yU2g3OXc&single=true&gid=0&output=html Relação de campos automáticos]
+
+  * [https://docs.google.com/document/pub?id=1FPdC-NHesRPfZm_7Z5G1ZFKuuzbRnVJ_LJxA0pEiNZ0 Ligação entre registros da mesma base de dados (comando REF)]
 
 = Download a partir do SVN =
 
