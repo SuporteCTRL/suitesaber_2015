@@ -43,13 +43,13 @@ $ sudo apt-get install subversion
 Com o terminal do seu Ubuntu aberto vá em /var/www/
 
 {{{
-$ cd /var/www
+$ cd /var/www/
 }}}
 
 Em seguida digite:
 
 {{{
-$ svn checkout http://suitesaber.googlecode.com/svn/trunk/suitesaber
+$ sudo svn checkout http://suitesaber.googlecode.com/svn/trunk/suitesaber
 }}}
 
 Desta forma você já obterá a suíte em sua estrutura original.
@@ -197,6 +197,5 @@ Pronto agora é só abrir o Mozilla Firefox ou o Google Chrome e utilizar o prog
 
 Lembre-se, você colocou a porta 9090, logo, para acessar sua Suíte você precisará digitar [http://localhost:9090] no seu navegador.
 
- O Login é: saber
-
- A Senha é: adm
+Login: saber
+Senha: adm
