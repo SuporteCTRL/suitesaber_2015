@@ -1,53 +1,56 @@
 #summary Inicio
 #sidebar index
 
-<h1>Visão Geral</h1>
-A Suíte Saber é um conjunto de soluções para gestão e organização de bibliotecas e acervos. É uma variante do software ABCD criado pela <a href="http://.bireme.br" target="_blank">BIREME</a> em 2008.
+=Visão Geral<=
+A Suíte Saber é um conjunto de soluções para gestão e organização de bibliotecas e acervos. É uma variante do software ABCD criado pela [http://.bireme.br BIREME] em 2008.
 
 A Suíte é desenvolvida em PHP utilizando HTML5, CSS3 e JQuery com objetivo de oferecer suavidade e praticidade de uso da ferramenta.
-<hr>
-<h1>Módulos</h1>
-A Suíte Saber possui um agrupamento de soluções que formam os seguintes módulos:
-<ul>
-<li>Controle de aquisição</li>
-<li>Catalogação</li>
-<li>Empréstimo</li>
-<li>Site da instituição/pesquisa</li>
-</ul>
 
-<h1>Dados técnicos</h1>
-O aplicativo utiliza a estrutura de banco de dados <a href="http://oraculo.inf.br/index.php?title=CDS/ISIS" target="_blank">CDS/ISIS</a> desenvolvida pela UNESCO. O CDS/ISIS é um banco de dados textual que trabalha nativamente com formatos bibliográficos que fazem uso de campos e subcampos.
+----
+
+=Módulos=
+A Suíte Saber possui um agrupamento de soluções que formam os seguintes módulos:
+
+* Controle de aquisição
+* Catalogação
+* Empréstimo
+* Site da instituição/pesquisa
+
+=Dados técnicos=
+
+O aplicativo utiliza a estrutura de banco de dados [http://oraculo.inf.br/index.php?title=CDS/ISIS CDS/ISIS] desenvolvida pela UNESCO. O CDS/ISIS é um banco de dados textual que trabalha nativamente com formatos bibliográficos que fazem uso de campos e subcampos.
 
 É possível fazer importação de registros com a utilização do protocolo Z3950 e do ISO2709.
 
 O sistema exporta relatórios em Word, Excel, TXT e HTML. 
 
-<h2>Tecnologia</h2>
+==Tecnologia==
 
-O Suíte saber necessita de um servidor Apache 2.x e PHP5.x
+O Suíte saber necessita de um servidor Apache 2.x e PHP 5.x.
 
 Extensões essenciais PHP:
-<ul>
-<li>php5-curl</li>
-<li>php5-gd</li>
-<li>php5-gmp</li>
-<li>php5-mcrypt</li>
-<li>php5-tidy</li>
-<li>php5-xsl</li>
-<li>yaz</li>
-</ul>
+
+* php5-curl
+* php5-gd
+* php5-gmp
+* php5-mcrypt
+* php5-tidy
+* php5-xsl
+* yaz
 
 
-<h1>Links</h1>
-<li><a href="https://docs.google.com/document/pub?id=1QrRvqc8g6uE0NNVLv2xTAP4HWE7PojeXYSA12Xh9vmw" target="_blank">Esqueleto básico em HTML do Suíte Saber</a></li>
-<li><a href="https://docs.google.com/spreadsheet/pub?key=0AkPvjw8N5ATwdE5vZkxNVjJXODN0OGhtbG1yU2g3OXc&single=true&gid=0&output=html" target="_blank">Relação de campos automáticos</a></li>
-<li><a href="https://docs.google.com/document/pub?id=1FPdC-NHesRPfZm_7Z5G1ZFKuuzbRnVJ_LJxA0pEiNZ0" target="blank">Ligação entre registros da mesma base de dados (comando REF) </a>
+= Links =
+* [https://docs.google.com/document/pub?id=1QrRvqc8g6uE0NNVLv2xTAP4HWE7PojeXYSA12Xh9vmw" Esqueleto básico em HTML do Suíte Saber]
+* [https://docs.google.com/spreadsheet/pub?key=0AkPvjw8N5ATwdE5vZkxNVjJXODN0OGhtbG1yU2g3OXc&single=true&gid=0&output=html Relação de campos automáticos]
+* [https://docs.google.com/document/pub?id=1FPdC-NHesRPfZm_7Z5G1ZFKuuzbRnVJ_LJxA0pEiNZ0 Ligação entre registros da mesma base de dados (comando REF)]
 
-<h1>Download a partir do SVN</h1>
+= Download a partir do SVN =
+
 Baixe o Suíte Saber para o seu host utilizando o seguinte comando:
 
 {{{
 $ sudo svn checkout http://suitesaber.googlecode.com/svn/trunk/suitesaber
 }}}
 
-O login/senha padrão é: saber/adm
+Login: saber 
+Senha: adm 
