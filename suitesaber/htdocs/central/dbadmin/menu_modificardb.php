@@ -152,7 +152,7 @@ echo "<div class=\"sectionInfo\"><div class=\"language\">";
 	
 if (isset($arrHttp["encabezado"])){
 	echo "<a href=\"../common/inicio.php?reinicio=s&base=".$arrHttp["base"]."\" class=\"defaultButton backButton\">";
-echo "<span><strong>". $msgstr["back"]."</strong></span></a>";
+echo "<span><strong>". $msgstr["back"]."</strong></span></a> <br />";
 }	
 	
 echo "</div></div>
@@ -184,10 +184,10 @@ foreach ($fp as $value){
 // OPCIONES DEL MENU
  ?>
 <div class="helper">
-<a href=../documentacion/ayuda.php?help=<?php echo $_SESSION["lang"]?>/admin.html target=_blank><?php echo $msgstr["help"]?></a>&nbsp &nbsp;
+<a href=../documentacion/ayuda.php?help=<?php echo $_SESSION["lang"]?>/admin.html target=_blank><?php echo $msgstr["help"]?></a> <br />&nbsp &nbsp;
 <?php
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
-	echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/admin.html target=_blank>".$msgstr["edhlp"]."</a>";
+	echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/admin.html target=_blank>".$msgstr["edhlp"]."</a> <br />";
 echo "<font color=white>&nbsp; &nbsp; Script: menu_modificardb.php";
 ?>
 </font>
@@ -203,37 +203,36 @@ echo "<font color=white>&nbsp; &nbsp; Script: menu_modificardb.php";
 			<input type=hidden name=type value="">
 			<input type=hidden name=base value=<?php echo $arrHttp["base"]?>>
 			<?php if (isset($arrHttp["encabezado"])) echo "<input type=hidden name=encabezado value=s>";?>
-            <br>
-            <ul>
-			<li><a id="conf" href='javascript:Update("fdt")'><?php echo $msgstr["fdt"]?></a></li>
-			<li><a id="conf" href='javascript:Update("fdt_new")'><font color=red><?php echo $msgstr["fdt_compressed"]?></font></a></li>
+
+			<a id="botoes" style="width: 300px;" href='javascript:Update("fdt")'><?php echo $msgstr["fdt"]?></a> <br />
+			<a id="botoes" style="width: 300px;"  href='javascript:Update("fdt_new")'><?php echo $msgstr["fdt_compressed"]?></a> <br />
 			<?php
 // SI ES UN REGISTRO MARC SE INCLUYE LA OPCION PARA MANEJO DE LOS TIPOS DE REGISTRO DE ACUERDO AL LEADER
 			if ($ldr=="s" ){
-				echo "<li><a id=\"conf\"  href=javascript:Update(\"leader\")>". $msgstr["ft_ldr"]."</a></li>";
-				echo "<li><a id=\"conf\"  href=javascript:Update(\"fixedmarc\")>".$msgstr["typeofrecord_ff"]."</a></li>";
-				echo "<li><a id=\"conf\"  href=javascript:Update(\"fixedfield\")>". $msgstr["typeofrecord_aw"]."</a></li>";
+				echo "<a id=\"botoes\" style=\"width: 300px;\"  href=javascript:Update(\"leader\")>". $msgstr["ft_ldr"]."</a> <br />";
+				echo "<a id=\"botoes\" style=\"width: 300px;\"  href=javascript:Update(\"fixedmarc\")>".$msgstr["typeofrecord_ff"]."</a> <br />";
+				echo "<a id=\"botoes\" style=\"width: 300px;\"  href=javascript:Update(\"fixedfield\")>". $msgstr["typeofrecord_aw"]."</a> <br />";
 			}
 			?>
-			<li><a id=conf href=javascript:Update("fst")><?php echo $msgstr["fst"]?></a></li>
-			<li><a  id=conf href=javascript:Update("fmt")><?php echo $msgstr["fmt"]?></a></li>
-			<li><a id=conf  href=javascript:Update("pft")><?php echo $msgstr["pft"]?></a></li>
+			<a id=botoes style="width: 300px;"  href=javascript:Update("fst")><?php echo $msgstr["fst"]?></a> <br />
+			<a  id=botoes style="width: 300px;"  href=javascript:Update("fmt")><?php echo $msgstr["fmt"]?></a> <br />
+			<a id=botoes style="width: 300px;"  href=javascript:Update("pft")><?php echo $msgstr["pft"]?></a> <br />
 			<?php
 			if (!isset($ldr) or $ldr!="s" )
 // SI NO ES UN REGISTRO MARC SE INCLUYE EL MANEJO DE LOS TIPOS DE REGISTRO NO MARC
-			    echo "<li><a  id=conf href=javascript:Update(\"typeofrecs\")>".$msgstr["typeofrecords"]."</a></li>";
+			    echo "<a style=\"width: 300px;\"  id=botoes href=javascript:Update(\"typeofrecs\")>".$msgstr["typeofrecords"]."</a> <br />";
 			?>
 
-			<li><a id="conf"  href=javascript:Update("recval")><?php echo $msgstr["recval"]?></a></li>
-			<li><a id="conf"  href=javascript:Update("delval")><?php echo $msgstr["delval"]?></a></li>
-			<li><a id="conf"  href=javascript:Update("search")><?php echo $msgstr["advsearch"]?></a></li>
-			<li><a  id="conf" href=javascript:Update("bases")><?php echo $msgstr["dblist"]?></a></li>
-			<li><a  id="conf" href=javascript:Update("par")><?php echo $msgstr["dbnpar"]?></a>
-            <li><a id="conf"  href=javascript:Update("help")><?php echo $msgstr["helpdatabasefields"]?></a></li>
-            <li><a  id="conf" href=javascript:Update("IAH")><?php echo $msgstr["iah-conf"]?></a></li>
-            <li><a  id="conf" href=javascript:Update("stats_var")><?php echo $msgstr["estadisticas"]." - ".$msgstr["var_list"]?></a></li>
-            <li><a  id="conf" href=javascript:Update("stats_tab")><?php echo $msgstr["estadisticas"]." - ".$msgstr["tab_list"]?></a></li>
-            </ol>
+			<a id="botoes" style="width: 300px;  href=javascript:Update("recval")><?php echo $msgstr["recval"]?></a> <br />
+		<!--	<a id="botoes" style="width: 300px; href=javascript:Update("delval")><?php echo $msgstr["delval"]?></a> <br /> -->
+			<a id="botoes" style="width: 300px;  href=javascript:Update("search")><?php echo $msgstr["advsearch"]?></a> <br />
+			<a  id="botoes" style="width: 300px; href=javascript:Update("bases")><?php echo $msgstr["dblist"]?></a> <br />
+			<a  id="botoes" style="width: 300px; href=javascript:Update("par")><?php echo $msgstr["dbnpar"]?></a> <br />
+         <a id="botoes" style="width: 300px;  href=javascript:Update("help")><?php echo $msgstr["helpdatabasefields"]?></a> <br />
+         <a  id="botoes" style="width: 300px;  href=javascript:Update("IAH")><?php echo $msgstr["iah-conf"]?></a> <br />
+         <a  id="botoes" style="width: 300px;  href=javascript:Update("stats_var")><?php echo $msgstr["estadisticas"]." - ".$msgstr["var_list"]?></a> <br />
+         <a  id="botoes" style="width: 300px;  href=javascript:Update("stats_tab")><?php echo $msgstr["estadisticas"]." - ".$msgstr["tab_list"]?></a> <br />
+            
 			</form>
 		</td>
 </table>
