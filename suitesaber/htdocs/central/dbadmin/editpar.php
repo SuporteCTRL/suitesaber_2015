@@ -45,25 +45,30 @@ if (isset($arrHttp["encabezado"])){
 }
 ?>
 <div class="sectionInfo">
-	<div class="breadcrumb">
-<?php echo $msgstr["dbnpar"].": ".$arrHttp["base"]?>
-	</div>
-	<div class="actions">
-<?php echo "<a href=\"menu_modificardb.php?base=".$arrHttp["base"]."$encabezado\" class=\"defaultButton cancelButton\">";
+<div class="language">
+<?php echo "<a href=\"menu_modificardb.php?base=".$arrHttp["base"]."$encabezado\" class=\"defaultButton\">";
 ?>
 		
 		<span><strong><?php echo $msgstr["cancel"]?></strong></span></a>
-	</div>
-	<div class="spacer">&#160;</div>
+
 </div>
+</div>
+	<div class="breadcrumb">
+<h3><?php echo $msgstr["dbnpar"].": ".$arrHttp["base"]?></h3>
+	</div>
+	<div class="actions">
+
+	</div>
+
+
 <div class="helper">
 	<a href=../documentacion/ayuda.php?help=<?php echo $_SESSION["lang"]?>/editpar.html target=_blank><?php echo $msgstr["help"]?></a>&nbsp &nbsp;
 <?php
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 	echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/editpar.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "<font color=white>&nbsp; &nbsp; Script: editpar.php";
+echo " &nbsp; Script: editpar.php";
 ?>
-</font>
+
 	</div>
 <div class="middle form">
 			<div class="formContent">
@@ -74,8 +79,8 @@ foreach ($fp as $value) $par.=trim($value)."\n";
 echo "<form name=db action=editpar_update.php method=post>";
 echo "<input type=hidden name=base value=".$arrHttp["base"].">\n";
 if (isset($arrHttp["encabezado"]))  echo "<input type=hidden name=encabezado value=s>\n";
-echo "<center><b>".$arrHttp["base"].".par</b><br><textarea cols=100 rows=20 name=par>".$par."</textarea>
-<br><input type=submit value=\"". $msgstr["update"]."\">
+echo "<center><h4>".$arrHttp["base"].".par</h4><br><textarea cols=90 rows=20 name=par>".$par."</textarea>
+<br><input id=botoes type=submit value=\"". $msgstr["update"]."\">
 </form>
 </div>
 </div>
