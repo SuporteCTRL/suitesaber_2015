@@ -315,17 +315,18 @@ if (isset($arrHttp["wks"])){
 }
 echo "
 	<div class=\"sectionInfo\">
-	<div class=\"breadcrumb\">".
-	$msgstr[$arrHttp['format']].": ".$arrHttp["base"]." (".$w[0]." ".$w[3].")
-	</div>
-	<div class=\"actions\">\n";
-echo "<a href=\"typeofrecs.php?Opcion=update&type=&base=".$arrHttp["base"]."$encabezado\" class=\"defaultButton cancelButton\">
-	<img src=\"../images/defaultButton_iconBorder.gif\" alt=\"\" title=\"\" />
+	<div class=\"language\">";
+	echo "<a href=\"typeofrecs.php?Opcion=update&type=&base=".$arrHttp["base"]."$encabezado\" class=\"defaultButton\">
+
 	<span><strong>". $msgstr["cancel"]."</strong></span>
 	</a>
+	
 	</div>
-	<div class=\"spacer\">&#160;</div>
-	</div>";
+	</div>
+	<div class=\"breadcrumb\"><h3>".
+	$msgstr[$arrHttp['format']].": ".$arrHttp["base"]." (".$w[0]." ".$w[3].")
+	</h3></div>
+	<div class=\"actions\"></div>";
 
 ?>
 <div class="helper">
@@ -333,9 +334,9 @@ echo "<a href=\"typeofrecs.php?Opcion=update&type=&base=".$arrHttp["base"]."$enc
 <?php
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 	echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/recval.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "<font color=white>&nbsp; &nbsp; Script: recval.php";
+echo "&nbsp; Script: recval.php";
 ?>
-</font>
+
 </div>
  <div class="middle form">
 	<div class="formContent">
@@ -440,7 +441,7 @@ if (isset($pft)){
 			echo "<td bgcolor=white><textarea cols=80 rows=1 name=format>";
 			echo $y[0];
 			echo "</textarea></td><td bgcolor=white><a href=\"javascript:EditarFormato($ix)\"><img src=../images/edit.png border=0></a>&nbsp; &nbsp;
-			&nbsp;<a href=javascript:DeleteElement(".$ix.")><img src=../dataentry/img/toolbarDelete.png alt=\"".$msgstr["delete"]."\" text=\"".$msgstr["delete"]."\"></a>";
+			&nbsp;<a id=botoes href=javascript:DeleteElement(".$ix.")><img src=../dataentry/img/toolbarDelete.png alt=\"".$msgstr["delete"]."\" text=\"".$msgstr["delete"]."\"></a>";
 			if ($arrHttp["format"]=="recval"){
 				echo "<div><input type=checkbox name=check";
 				if (isset($y[1]) and trim($y[1])=="true") echo " checked";
@@ -460,7 +461,7 @@ echo $msgstr["testmfn"];
 echo "&nbsp; <input type=text size=5 name=Mfn> <a href=javascript:Test()>".$msgstr["test"]."</a>  &nbsp; &nbsp;";
 echo "</td><td colspan=3  bgcolor=white><img src=../dataentry/img/toolbarSave.png> &nbsp;";
 
-echo "<a href=javascript:Enviar()>".$msgstr["save"]."&nbsp;</a> ($pref".$arrHttp["base"]."$ext)  &nbsp; &nbsp ";
+echo "<a id=botoes href=javascript:Enviar()>".$msgstr["save"]."&nbsp;</a> ($pref".$arrHttp["base"]."$ext)  &nbsp; &nbsp ";
 echo "<input type=hidden name=fn value=$pref".$arrHttp["base"]."$ext>";
 
 $tr=$db_path.$arrHttp["base"]."/def/".$_SESSION["lang"]."/typeofrecord.tab";
@@ -493,9 +494,9 @@ if (file_exists($tr)){
 		}
 	}
 	echo "</select>\n";
-	echo "<a href=javascript:SaveAs()>".$msgstr["save"]."</a>  &nbsp; &nbsp";
+	echo "<a id=botoes href=javascript:SaveAs()>".$msgstr["save"]."</a> &nbsp";
 }
-if (isset($arrHttp["encabezado"])) echo "&nbsp; &nbsp; | &nbsp; &nbsp; <a href=typeofrecs.php?Opcion=update&base=".$arrHttp["base"]."$encabezado>".$msgstr["cancelar"]."</a>";
+if (isset($arrHttp["encabezado"])) echo "&nbsp;<a id=botoes href=typeofrecs.php?Opcion=update&base=".$arrHttp["base"]."$encabezado>".$msgstr["cancelar"]."</a>";
 echo "</td></table>";
 echo "<input type=hidden name=ValorCapturado>";
 echo "</center></form>";
