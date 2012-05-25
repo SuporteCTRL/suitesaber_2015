@@ -223,15 +223,15 @@ echo "<font color=white>&nbsp; &nbsp; Script: menu_modificardb.php";
 			    echo "<a style=\"width: 300px;\"  id=botoes href=javascript:Update(\"typeofrecs\")>".$msgstr["typeofrecords"]."</a> <br />";
 			?>
 
-			<a id="botoes" style="width: 300px;  href=javascript:Update("recval")><?php echo $msgstr["recval"]?></a> <br />
-		<!--	<a id="botoes" style="width: 300px; href=javascript:Update("delval")><?php echo $msgstr["delval"]?></a> <br /> -->
-			<a id="botoes" style="width: 300px;  href=javascript:Update("search")><?php echo $msgstr["advsearch"]?></a> <br />
-			<a  id="botoes" style="width: 300px; href=javascript:Update("bases")><?php echo $msgstr["dblist"]?></a> <br />
-			<a  id="botoes" style="width: 300px; href=javascript:Update("par")><?php echo $msgstr["dbnpar"]?></a> <br />
-         <a id="botoes" style="width: 300px;  href=javascript:Update("help")><?php echo $msgstr["helpdatabasefields"]?></a> <br />
-         <a  id="botoes" style="width: 300px;  href=javascript:Update("IAH")><?php echo $msgstr["iah-conf"]?></a> <br />
-         <a  id="botoes" style="width: 300px;  href=javascript:Update("stats_var")><?php echo $msgstr["estadisticas"]." - ".$msgstr["var_list"]?></a> <br />
-         <a  id="botoes" style="width: 300px;  href=javascript:Update("stats_tab")><?php echo $msgstr["estadisticas"]." - ".$msgstr["tab_list"]?></a> <br />
+			<a id="botoes" style="width: 300px;"  href=javascript:Update("recval")><?php echo $msgstr["recval"]?></a> <br />
+		<!--	<a id="botoes" style="width: 300px;" href=javascript:Update("delval")><?php echo $msgstr["delval"]?></a> <br /> -->
+			<a id="botoes" style="width: 300px;"  href=javascript:Update("search")><?php echo $msgstr["advsearch"]?></a> <br />
+			<a  id="botoes" style="width: 300px;" href=javascript:Update("bases")><?php echo $msgstr["dblist"]?></a> <br />
+			<a  id="botoes" style="width: 300px;" href=javascript:Update("par")><?php echo $msgstr["dbnpar"]?></a> <br />
+         <a id="botoes" style="width: 300px;"  href=javascript:Update("help")><?php echo $msgstr["helpdatabasefields"]?></a> <br />
+         <a  id="botoes" style="width: 300px;"  href=javascript:Update("IAH")><?php echo $msgstr["iah-conf"]?></a> <br />
+         <a  id="botoes" style="width: 300px;"  href=javascript:Update("stats_var")><?php echo $msgstr["estadisticas"]." - ".$msgstr["var_list"]?></a> <br />
+         <a  id="botoes" style="width: 300px;"  href=javascript:Update("stats_tab")><?php echo $msgstr["estadisticas"]." - ".$msgstr["tab_list"]?></a> <br />
             
 			</form>
 		</td>
