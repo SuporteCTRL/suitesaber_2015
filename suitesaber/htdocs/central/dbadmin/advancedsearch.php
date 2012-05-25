@@ -115,26 +115,31 @@ if (isset($arrHttp["encabezado"])){
 }
 ?>
 <div class="sectionInfo">
-	<div class="breadcrumb">
-<?php echo $msgstr["advsearch"].": ".$arrHttp["base"]?>
-	</div>
-	<div class="actions">
-<?php echo "<a href=\"menu_modificardb.php?base=".$arrHttp["base"]."$encabezado\" class=\"defaultButton cancelButton\">";
+<div class="language">
+<?php echo "<a href=\"menu_modificardb.php?base=".$arrHttp["base"]."$encabezado\" class=\"defaultButton\">";
 ?>
 
 <span><strong><?php echo $msgstr["cancel"]?></strong></span>
 </a>
+
 </div>
-<div class="spacer">&#160;</div>
 </div>
+	<div class="breadcrumb">
+<h3><?php echo $msgstr["advsearch"].": ".$arrHttp["base"]?></h3>
+	</div>
+	<div class="actions">
+
+</div>
+
+
 <div class="helper">
 <a href=../documentacion/ayuda.php?help=<?php echo $_SESSION["lang"]?>/asearch_schema.html target=_blank><?php echo $msgstr["help"]?></a>&nbsp; &nbsp;
 <?php
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 	echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/asearch_schema.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "<font color=white>&nbsp; &nbsp; Script: advancedsearch.php";
+echo "&nbsp; Script: advancedsearch.php";
 ?>
-</font>
+
 	</div>
 <div class="middle form">
 			<div class="formContent">
@@ -146,8 +151,8 @@ echo "<font color=white>&nbsp; &nbsp; Script: advancedsearch.php";
    		<table width=100%>
 	        <tr>
 			<td>
-				<a href="javascript:void(0)" onclick="mygrid.addRow((new Date()).valueOf(),['','',''],mygrid.getRowIndex(mygrid.getSelectedId()))"><?php echo $msgstr["addrowbef"]?></a>
-				&nbsp; &nbsp; &nbsp;<a href="javascript:void(0)" onclick="mygrid.deleteSelectedItem()"><?php echo $msgstr["remselrow"]?></a>
+				<a id="tag" href="javascript:void(0)" onclick="mygrid.addRow((new Date()).valueOf(),['','',''],mygrid.getRowIndex(mygrid.getSelectedId()))"><?php echo $msgstr["addrowbef"]?></a>
+				<a id="tag" href="javascript:void(0)" onclick="mygrid.deleteSelectedItem()"><?php echo $msgstr["remselrow"]?></a>
 			<!--	&nbsp; &nbsp; &nbsp;<a href="javascript:void(0)" onclick=Organize()>Organize FST</a><br> -->
 			</td>
 			<td></td>
@@ -159,7 +164,7 @@ echo "<font color=white>&nbsp; &nbsp; Script: advancedsearch.php";
 			</tr>
 			<tr>
 				<td>
-					&nbsp; &nbsp; <a href=javascript:Enviar()><?php echo $msgstr["update"]?></a>  &nbsp; &nbsp;
+					&nbsp; &nbsp; <a id="botoes" href=javascript:Enviar()><?php echo $msgstr["update"]?></a>  &nbsp; &nbsp;
 					<?php if (!isset($arrHttp["encabezado"]))
 						echo "<a href=menu_modificardb.php?base=".$arrHttp["base"].$msgstr["cancel"]."</a>\n";
 						?>

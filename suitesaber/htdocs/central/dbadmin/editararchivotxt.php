@@ -49,13 +49,13 @@ if (isset($arrHttp["encabezado"])){
 		<?php echo "<h5>"." " .$msgstr["database"].": ".$arrHttp["base"]."</h5>"?>
 	</div>
 	<div class="actions">
-<?php echo "<a href=\"menu_modificardb.php?base=".$arrHttp["base"]."&encabezado=s\" class=\"defaultButton backButton\">";
+<?php echo "<a href=\"menu_modificardb.php?base=".$arrHttp["base"]."&encabezado=s\" class=\"defaultButton\">";
 ?>
-		<img src="../images/defaultButton_iconBorder.gif" alt="" title="" />
+
 		<span><strong><?php echo $msgstr["back"]?></strong></span>
 		</a>
 	</div>
-	<div class="spacer">&#160;</div>
+
 </div>
 <?php }?>
 <div class="middle form">
@@ -71,10 +71,10 @@ echo "
 <input type=hidden name=archivo value='".$arrHttp["archivo"]."'>
 <font face=arial><h4>".$file." &nbsp; <a href=javascript:self.close()>".$msgstr["close"]."</a>
 </h4>
-<textarea name=txt rows=20 cols=100 style=\"font-family:courier\";>";
+<textarea name=txt rows=20 cols=70 style=\"font-family:courier\";>";
 foreach ($fp as $value) echo $value;
 echo "</textarea>
-<br><input type=submit value=".$msgstr["update"].">
+<br><input id=botoes type=submit value=".$msgstr["update"].">
 </form>
 </div></div>";
 include("../common/footer.php");

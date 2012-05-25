@@ -43,7 +43,7 @@ include("../common/header.php");
 <script language=Javascript src=../dataentry/js/lr_trim.js></script>
 <script>
 function Editar(){
-	msgwin=window.open("editararchivotxt.php?archivo=bases.dat&desde=menu$encabezado&desde=menu","editpar","width=600, height=500, resizable, scrollbars")
+	msgwin=window.open("editararchivotxt.php?archivo=bases.dat&desde=menu$encabezado&desde=menu","editpar","width=700, height=600, resizable, scrollbars")
 	msgwin.focus()
 
 }
@@ -73,25 +73,29 @@ if (isset($arrHttp["encabezado"])){
 }
 ?>
 <div class="sectionInfo">
-	<div class="breadcrumb">
-<?php echo $msgstr["dblist"].": ".$arrHttp["base"]?>
-	</div>
-	<div class="actions">
-<?php echo "<a href=\"menu_modificardb.php?base=".$arrHttp["base"]."$encabezado\" class=\"defaultButton cancelButton\">";
+<div class="language">
+<?php echo "<a href=\"menu_modificardb.php?base=".$arrHttp["base"]."$encabezado\" class=\"defaultButton\">";
 ?>
 		
 		<span><strong><?php echo $msgstr["cancel"]?></strong></span></a>
-	</div>
-	<div class="spacer">&#160;</div>
 </div>
+</div>
+	<div class="breadcrumb">
+<h3><?php echo $msgstr["dblist"].": ".$arrHttp["base"]?></h3>
+	</div>
+	<div class="actions">
+
+	</div>
+
+
 <div class="helper">
 	<a href=../documentacion/ayuda.php?help=<?php echo $_SESSION["lang"]?>/databases_list.html target=_blank><?php echo $msgstr["help"]?></a>&nbsp &nbsp;
 <?php
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
  	echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/databases_list.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "<font color=white>&nbsp; &nbsp; Script: databases_list.php";
+echo "&nbsp; Script: databases_list.php";
 ?>
-</font>
+
 	</div>
 <div class="middle form">
 	<div class="formContent">
@@ -106,9 +110,9 @@ echo "<font color=white>&nbsp; &nbsp; Script: databases_list.php";
 <table border=0>
 	<tr>
 		<td valign=center>
-   			<img src=../dataentry/img/up.gif border=0><INPUT TYPE="button" VALUE="up" onClick="moveOptionUp(this.form['lista'])">
+   			<INPUT id="ajuda" TYPE="button" VALUE="&#9652;" onClick="moveOptionUp(this.form['lista'])">
 			<BR><BR>
-			<img src=../dataentry/img/down.gif border=0><INPUT TYPE="button" VALUE="down" onClick="moveOptionDown(this.form['lista'])">
+			<INPUT id="ajuda" TYPE="button" VALUE="&#9662;" onClick="moveOptionDown(this.form['lista'])">
    		</td>
 		<td>
 			<select name=lista size=20>
@@ -127,9 +131,9 @@ foreach ($fp as $value){
 			</select>
 		</td>
 </table>
-<input type=submit value=<?php echo $msgstr["update"]?> onClick=javascript:Enviar()> &nbsp; &nbsp;
-<input type=submit value=<?php echo $msgstr["edit"]?> onClick=javascript:Editar()>
-&nbsp; &nbsp;<input type=submit value="<?php echo $msgstr["cancel"]?>" onClick="document.cancelar.submit();return false">
+<input id=botoes type=submit value=<?php echo $msgstr["update"]?> onClick=javascript:Enviar()> &nbsp; &nbsp;
+<input id=botoes type=submit value=<?php echo $msgstr["edit"]?> onClick=javascript:Editar()>
+&nbsp; <input id=botoes type=submit value="<?php echo $msgstr["cancel"]?>" onClick="document.cancelar.submit();return false">
 </form>
 <form name=cancelar method=post action=menu_modificardb.php>
 <input type=hidden name=base value="<?php echo $arrHttp["base"]?>">
