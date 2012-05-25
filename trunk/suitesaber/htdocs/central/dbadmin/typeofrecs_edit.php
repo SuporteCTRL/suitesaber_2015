@@ -113,26 +113,26 @@ function Enviar(rows){
 }
 echo "
 	<div class=\"sectionInfo\">
-		<div class=\"breadcrumb\">".
-				$msgstr["typeofrecords"].": ".$arrHttp["base"]."
-		</div>
-		<div class=\"actions\">\n";
-		echo "<a href=menu_modificardb.php?base=". $arrHttp["base"].$encabezado." class=\"defaultButton cancelButton\">
-			<img src=\"../images/defaultButton_iconBorder.gif\" alt=\"\" title=\"\" />
-			<span><strong>". $msgstr["cancel"]."</strong></span>
+	<div class=\"language\">";
+	echo "<a href=menu_modificardb.php?base=". $arrHttp["base"].$encabezado." class=\"defaultButton\">
+
+	<span><strong>". $msgstr["cancel"]."</strong></span>
 			</a>
-		</div>
-			<div class=\"spacer\">&#160;</div>
-		</div>";
+	</div>
+	</div>
+		<div class=\"breadcrumb\"><h3>".
+				$msgstr["typeofrecords"].": ".$arrHttp["base"]."
+		</h3></div>
+		<div class=\"actions\"></div>";
 ?>
 <div class="helper">
 <a href=../documentacion/ayuda.php?help=<?php echo $_SESSION["lang"]?>/typeofrecs.html target=_blank><?php echo $msgstr["help"]?></a>&nbsp &nbsp;
 <?php
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 	echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/typeofrecs.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "<font color=white>&nbsp; &nbsp; Script: typeofrecs_edit.php";
+echo " &nbsp; Script: typeofrecs_edit.php";
 ?>
-</font>
+
 	</div>
 <div class="middle form">
 			<div class="formContent">
