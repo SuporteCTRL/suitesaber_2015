@@ -1,30 +1,4 @@
 <?php
-/**
- * @program:   ABCD - ABCD-Central - http://reddes.bvsaude.org/projects/abcd
- * @copyright:  Copyright (C) 2009 BIREME/PAHO/WHO - VLIR/UOS
- * @file:      fmt.php
- * @desc:      
- * @author:    Guilda Ascencio
- * @since:     20091203
- * @version:   1.0
- *
- * == BEGIN LICENSE ==
- *
- *    This program is free software: you can redistribute it and/or modify
- *    it under the terms of the GNU Lesser General Public License as
- *    published by the Free Software Foundation, either version 3 of the
- *    License, or (at your option) any later version.
- *
- *    This program is distributed in the hope that it will be useful,
- *    but WITHOUT ANY WARRANTY; without even the implied warranty of
- *    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *    GNU Lesser General Public License for more details.
- *  
- *    You should have received a copy of the GNU Lesser General Public License
- *    along with this program.  If not, see <http://www.gnu.org/licenses/>.
- *  
- * == END LICENSE ==
-*/
 global  $arrHttp;
 session_start();
 // ==================================================================================================
@@ -183,23 +157,27 @@ if (isset($arrHttp["encabezado"])){
 }
 ?>
 <div class="sectionInfo">
+<div class="language">
+<?php if ($arrHttp["Opcion"]=="new"){
+				echo "<a href=\"../common/inicio.php?reinicio=s\" class=\"defaultButton\">";
+	}else{
+		       echo "<a href=\"menu_modificardb.php?base=".$arrHttp["base"]."$encabezado\" class=\"defaultButton\">";
+	}
+?>
+
+					<span><strong><?php echo $msgstr["cancel"]?></strong></span>
+				</a>
+</div>
+</div>
 			<div class="breadcrumb">
-				<?php echo $msgstr["credfmt"].": ".$arrHttp["base"]?>
+				<h3><?php echo $msgstr["credfmt"].": ".$arrHttp["base"]?></h3>
 			</div>
 
 			<div class="actions">
-<?php if ($arrHttp["Opcion"]=="new"){
-				echo "<a href=\"../common/inicio.php?reinicio=s\" class=\"defaultButton cancelButton\">";
-	}else{
-		       echo "<a href=\"menu_modificardb.php?base=".$arrHttp["base"]."$encabezado\" class=\"defaultButton cancelButton\">";
-	}
-?>
-					<img src="../images/defaultButton_iconBorder.gif" alt="" title="" />
-					<span><strong><?php echo $msgstr["cancel"]?></strong></span>
-				</a>
+
 			</div>
-			<div class="spacer">&#160;</div>
-</div>
+
+
 <form name=forma1 method=post action=fmt_update.php onsubmit="Javascript:return false" >
 <input type=hidden name=base value=<?php echo $arrHttp["base"]?>>
 <input type=hidden name=cipar value=<?php echo $arrHttp["cipar"]?>>
@@ -221,14 +199,14 @@ if (isset($arrHttp["encabezado"])){
 <?php
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 	echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/fmt.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "<font color=white>&nbsp; &nbsp; Script: fmt.php";
-?></font>
+echo " &nbsp; Script: fmt.php";
+?>
 	</div>
 <div class="middle form">
 			<div class="formContent">
 <center>
 
-<table border=0 >
+<table border="0" cellpadding="0" cellspacing="0" >
     <td valign=top>
     <?php echo $msgstr["selfmt"]?></td>
     <td><select name=fmt>
@@ -268,7 +246,7 @@ $size=count($contenido);
 ?>
 </table>
 <p>
-<table border=1>
+<table border=0>
     <tr>
     <td valign=top colspan=4>
     	<div id=generateformat>
@@ -302,10 +280,10 @@ $size=count($contenido);
 				</select>
 			</td>
 			<TD VALIGN=MIDDLE ALIGN=CENTER>
-				<A HREF="#" onClick="moveSelectedOptions(document.forms[0]['list11'],document.forms[0]['list21'],false);return false;"><img src=../dataentry/img/barArrowRight.png border=0></A><BR><BR>
-				<A HREF="#" onClick="moveAllOptions(document.forms[0]['list11'],document.forms[0]['list21'],false); return false;"><img src=../dataentry/img/barArrowRight.png border=0><img src=../dataentry/img/barArrowRight.png border=0></A><BR><BR>
-				<A HREF="#" onClick="moveAllOptions(document.forms[0]['list21'],document.forms[0]['list11'],false); return false;"><img src=../dataentry/img/barArrowLeft.png border=0><img src=../dataentry/img/barArrowLeft.png border=0></A><BR><BR>
-				<A HREF="#" onClick="moveSelectedOptions(document.forms[0]['list21'],document.forms[0]['list11'],false); return false;"><img src=../dataentry/img/barArrowLeft.png border=0></A>
+				<A id="ajuda" HREF="#" onClick="moveSelectedOptions(document.forms[0]['list11'],document.forms[0]['list21'],false);return false;">&#9656;</A><BR>
+				<A id="ajuda" HREF="#" onClick="moveAllOptions(document.forms[0]['list11'],document.forms[0]['list21'],false); return false;">&#9656;&#9656;</A><BR>
+				<A id="ajuda" HREF="#" onClick="moveAllOptions(document.forms[0]['list21'],document.forms[0]['list11'],false); return false;">&#9666;&#9666;</A><BR>
+				<A id="ajuda" HREF="#" onClick="moveSelectedOptions(document.forms[0]['list21'],document.forms[0]['list11'],false); return false;">&#9666;</A>
 
 
 			</TD>
@@ -328,9 +306,9 @@ $size=count($contenido);
 				</SELECT>
 			</TD>
 			<TD ALIGN="CENTER" VALIGN="MIDDLE">
-				<INPUT TYPE="button" VALUE="<?php echo $msgstr["up"]?>" onClick="moveOptionUp(this.form['list21'])">
-				<BR><BR>
-				<INPUT TYPE="button" VALUE="<?php echo $msgstr["down"]?>" onClick="moveOptionDown(this.form['list21'])">
+				<INPUT  id="ajuda" TYPE="button" VALUE="&#9652;" onClick="moveOptionUp(this.form['list21'])">
+				<BR>
+				<INPUT id="ajuda" TYPE="button" VALUE="&#9662;" onClick="moveOptionDown(this.form['list21'])">
 				<br><br><a href=javascript:Preview()><img src=../dataentry/img/preview.gif border=0 alt="preview"></a>
 				<br><br>
 			</TD>
