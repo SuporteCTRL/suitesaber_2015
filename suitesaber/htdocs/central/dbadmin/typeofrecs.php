@@ -59,17 +59,22 @@ if (isset($arrHttp["encabezado"])){
 </script>
 <body>
 <div class="sectionInfo">
-	<div class="breadcrumb">
-<?php echo $msgstr["recval"].": ".$arrHttp["base"]?>
-	</div>
-	<div class="actions">
-<?php echo "<a href=\"menu_modificardb.php?base=".$arrHttp["base"]."$encabezado\" class=\"defaultButton cancelButton\">";
+<div class="language">
+<?php echo "<a href=\"menu_modificardb.php?base=".$arrHttp["base"]."$encabezado\" class=\"defaultButton\">";
 ?>
 		
 		<span><strong><?php echo $msgstr["cancel"]?></strong></span></a>
-	</div>
-	<div class="spacer">&#160;</div>
+
 </div>
+</div>
+	<div class="breadcrumb">
+<h3><?php echo $msgstr["recval"].": ".$arrHttp["base"]?></h3>
+	</div>
+	<div class="actions">
+
+	</div>
+
+
 <div class="helper">
 	<a href=../documentacion/ayuda.php?help=<?php echo $_SESSION["lang"]?>/recval.html target=_blank><?php echo $msgstr["help"]?></a>&nbsp &nbsp;
  	<a href=../documentacion/edit.php?archivo=<?php echo $_SESSION["lang"]?>/recval.html target=_blank><?php echo $msgstr["edhlp"]?></a>
