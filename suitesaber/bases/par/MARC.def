@@ -3,6 +3,7 @@
 FILE DATABASE.*=%path_database%marc/data/marc.*
 FILE copies.*=%path_database%copies/data/copies.*
 FILE DATABASE.XML=%path_database%marc/pfts/lilXML.pft
+FILE loanobjects.*=%path_database%loanobjects/data/loanobjects.*
 FILE cabecalho.pft=%path_database%marc/pfts/%lang%/cabecalho.pft
 FILE standard.pft=%path_database%marc/pfts/%lang%/lista.pft
 FILE dublin.pft=%path_database%marc/pfts/%lang%/dublin.pft
