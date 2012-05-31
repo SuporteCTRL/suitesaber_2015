@@ -1,24 +1,4 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
-
 <collection id="40" lang="pt" available="">
-
-  <item id="1" available="yes" href="/iah/?base=MARC&amp;lang=pt">
-  Base bibliográfica
-  
-  <description>Bases de dados disponíveis</description>
-  
-  
-  <portal></portal>
-  
-  
-  
-  <meta-search base-search-url="http://localhost:9090/cgi-bin/wxis.exe/iah/scripts/?IsisScript=iah.xis&amp;lang=pt&amp;base=MARC&amp;nextAction=xml&amp;count=1" search-parameters="exprSearch=" base-browse-url="http://localhost:9090/cgi-bin/wxis.exe/iah/scripts/?IsisScript=iah.xis&amp;lang=pt&amp;base=MARC&amp;nextAction=lnk"/>
-  
-  
-  </item>
-  
-  
-  
-  
-  
+  <item id="1" available="yes">Base bibliográfica<description>Bases de dados disponíveis     </description><portal>     </portal><meta-search/><item id="2" available="yes" href="/iah/?base=MARC&amp;lang=pt">MARC<description>   </description><portal>   </portal><meta-search base-search-url="http://localhost:9090/cgi-bin/wxis.exe/iah/scripts/?IsisScript=iah.xis&amp;lang=pt&amp;base=MARC&amp;nextAction=xml&amp;count=1" search-parameters="exprSearch=" base-browse-url="http://localhost:9090/cgi-bin/wxis.exe/iah/scripts/?IsisScript=iah.xis&amp;lang=pt&amp;base=MARC&amp;nextAction=lnk"/></item></item>
 </collection>

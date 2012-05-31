@@ -578,20 +578,20 @@
 				<option value="no">Indisponível</option>
 			</flag>
 			<item href="javascript:opener.addItem('name')">Adiciona</item>
-			<item align="right" href="javascript:opener.close_and_focus();">Sai</item>
+			<item align="right" href="javascript:opener.close_and_focus();">Sair</item>
 		</bar>
 		<change>
 			<item edit="hidden" name="id" value="New"/>
 			<item edit="text" name="name">Nome</item>
 			<item edit="text" name="img">Imagem</item>
-			<item edit="text" name="href">Link</item>
+			<item edit="text" name="href">Link - Exemplo: /iah/?base=MARC&amp;lang=pt</item>
 			<item edit="htmlarea" name="description" label-edit="clique aqui para usar o editor XHTML" label-modify=" modificar " label-cancel=" cancelar ">Descrição (XHTML)</item>
 			<item edit="htmlarea" name="portal" label-edit="clique aqui para usar o editor XHTML" label-modify=" modificar " label-cancel=" cancelar ">Página do Portal (XHTML)</item>
 			<item edit="group">
 				Meta pesquisa
-				<item edit="text" name="base-search-url">Parte fixa do link da pesquisa</item>
-				<item edit="text" name="search-parameters">Parâmetros para pesquisa livre</item>
-				<item edit="text" name="base-browse-url">Parte fixa do link para mostrar o resultado</item>
+				<item edit="text" name="base-search-url">Parte fixa do link da pesquisa - Exemplo: http://%HOST%/cgi-bin/wxis.exe/iah/scripts/?IsisScript=iah.xis&amp;lang=pt&amp;base=MARC&amp;nextAction=xml&amp;count=1</item>
+				<item edit="text" name="search-parameters">Parâmetros para pesquisa livre - Exemplo: exprSearch=</item>
+				<item edit="text" name="base-browse-url">Parte fixa do link para mostrar o resultado - Exemplo: http://%HOST%/cgi-bin/wxis.exe/iah/scripts/?IsisScript=iah.xis&amp;lang=pt&amp;base=MARC&amp;nextAction=lnk</item>
 			</item>
 		</change>
 	</page>
@@ -609,14 +609,14 @@
 			<item edit="hidden" name="id"/>
 			<item edit="text" name="name">Nome</item>
 			<item edit="text" name="img">Imagem</item>
-			<item edit="text" name="href">Link</item>
+			<item edit="text" name="href">Link - Exemplo: /iah/?base=MARC&amp;lang=pt</item>
 			<item edit="htmlarea" name="description" label-edit="clique aqui para usar o editor XHTML" label-modify=" modificar " label-cancel=" cancelar ">Descrição (XHTML)</item>
 			<item edit="htmlarea" name="portal" label-edit="clique aqui para usar o editor XHTML" label-modify=" modificar " label-cancel=" cancelar ">Página do Portal (XHTML)</item>
 			<item edit="group">
 				Meta pesquisa
-				<item edit="text" name="base-search-url">Parte fixa do link da pesquisa</item>
-				<item edit="text" name="search-parameters">Parâmetros para pesquisa livre</item>
-				<item edit="text" name="base-browse-url">Parte fixa do link para mostrar o resultado</item>
+				<item edit="text" name="base-search-url">Parte fixa do link da pesquisa - Exemplo: http://%HOST%/cgi-bin/wxis.exe/iah/scripts/?IsisScript=iah.xis&amp;lang=pt&amp;base=MARC&amp;nextAction=xml&amp;count=1</item>
+				<item edit="text" name="search-parameters">Parâmetros para pesquisa livre - Exemplo: exprSearch=</item>
+				<item edit="text" name="base-browse-url">Parte fixa do link para mostrar o resultado - Exemplo: http://%HOST%/cgi-bin/wxis.exe/iah/scripts/?IsisScript=iah.xis&amp;lang=pt&amp;base=MARC&amp;nextAction=lnk</item>
 			</item>
 		</change>
 	</page>
@@ -624,8 +624,8 @@
 		<identification title="Administração: "/>
 		<bar>
 			<item>Espaços</item>
-			<item href="javascript:save('item-community')">Grava</item>
-			<item align="right" href="javascript:history.back();">Sai</item>
+			<item href="javascript:save('item-community')">Salvar</item>
+			<item align="right" href="javascript:history.back();">Sair</item>
 		</bar>
 		<edit>
 			<buttons>

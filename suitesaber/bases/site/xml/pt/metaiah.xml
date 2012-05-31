@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <define>
   <sourceList>
-    <group label="Bases de dados da Instituição">
-      <item id="40-1" label="MARC" href="/iah/?base=MARC&amp;lang=pt" base-search-url="http://localhost:9090/cgi-bin/wxis.exe/iah/scripts/?IsisScript=iah.xis&amp;lang=pt&amp;base=MARC&amp;nextAction=xml&amp;count=1" base-browse-url="http://localhost:9090/cgi-bin/wxis.exe/iah/scripts/?IsisScript=iah.xis&amp;lang=pt&amp;base=MARC&amp;nextAction=lnk"/>
+    <group label="Base bibliográfica">
+      <item id="40-2" label="MARC" href="/iah/?base=MARC&amp;lang=pt" base-search-url="http://localhost:9090/cgi-bin/wxis.exe/iah/scripts/?IsisScript=iah.xis&amp;lang=pt&amp;base=MARC&amp;nextAction=xml&amp;count=1" base-browse-url="http://localhost:9090/cgi-bin/wxis.exe/iah/scripts/?IsisScript=iah.xis&amp;lang=pt&amp;base=MARC&amp;nextAction=lnk"/>
     </group>
-    <group label="Revistas científicas de accesso livre"/>
+    <group label="Revistas científicas de acesso livre"/>
   </sourceList>
   <search>
-    <item source="40-1" search-parameters="exprSearch="/>
+    <item source="40-2" search-parameters="exprSearch="/>
   </search>
 </define>
