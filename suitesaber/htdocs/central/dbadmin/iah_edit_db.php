@@ -860,7 +860,9 @@ echo "&nbsp; &nbsp;<font color=white>&nbsp; &nbsp; Script: iah_edit_db.php";
 	}else{         //CONFIGURE A NEW DATABASE
 		$msg="<font color=red><strong>".$msgstr["newfile"]." bases/par/".$arrHttp["base"].".def. ".$msgstr["reminder"]."</strong></font><p>";
 		$db_def["FILE_LOCATION"]["FILE DATABASE.*"]="%path_database%".$arrHttp["base"]."/data/".$arrHttp["base"].".*";
-		$db_def["FILE_LOCATION"]["FILE standard.pft"]="%path_database%".$arrHttp["base"].'/pfts/%lang%/'.$arrHttp["base"].'.pft';
+		$db_def["FILE_LOCATION"]["FILE detailed.pft"]="%path_database%".$arrHttp["base"].'/pfts/%lang%/'.$arrHttp["base"].'.pft';
+		$db_def["FILE_LOCATION"]["FILE cabecalho.pft"]="%path_database%".$arrHttp["base"].'/pfts/%lang%/cabecalho.pft.pft';
+		$db_def["FILE_LOCATION"]["FILE standard.pft"]="%path_database%".$arrHttp["base"].'/pfts/%lang%/lista.pft';
 		$db_def["FILE_LOCATION"]["FILE SHORTCUT.IAH"]="%path_database%".$arrHttp["base"].'/pfts/%lang%/shortcut.pft';
 		$db_def["FILE_LOCATION"]["FILE GXML"]="%path_database%gizmo/gXML.*";
 		$desc="";
@@ -884,6 +886,7 @@ echo "&nbsp; &nbsp;<font color=white>&nbsp; &nbsp; Script: iah_edit_db.php";
 		}
 		$db_def["APPLY_GIZMO"][0]="";
 		$db_def["APPLY_GIZMO"][1]="";
+		$db_def["FORMAT_NAME"]["FORMAT detailed.pft"]=$desc;
 		$db_def["FORMAT_NAME"]["FORMAT standard.pft"]=$desc;
 		//$db_def["FORMAT_NAME"]["FORMAT detailed.pft"]=str_replace('%desc%',"name",$desc);
 		$db_def["FORMAT_NAME"]["FORMAT DEFAULT"]="standard.pft";
