@@ -95,30 +95,30 @@ function EliminarArchivo(){
 </script>
 <?php
 echo "
-	<div class=\"sectionInfo\">
-			<div class=\"breadcrumb\">".
+	<div class=\"sectionInfo\"><div class=\"\">";
+	
+
+	
+	echo "</div></div>
+			<div class=\"breadcrumb\"><h3>".
 				$msgstr["picklist"]. ": " . $arrHttp["base"]."
-			</div>
-			<div class=\"actions\">
+			</h3></div>
+			<div class=\"actions\">";
 
-	";
+	echo "<br /><br /><br /><a href=\"javascript:self.close()\" class=\"defaultButton\">";
+	echo "<span><strong>". $msgstr["close"]."</strong></span></a>";
 
-echo "<a href=\"javascript:self.close()\" class=\"defaultButton cancelButton\">";
-echo "
-					<img src=\"../images/defaultButton_iconBorder.gif\" alt=\"\" title=\"\" />
-					<span><strong>". $msgstr["cancel"]."</strong></span>
-				</a>";
-echo "			</div>
-			<div class=\"spacer\">&#160;</div>
-	</div>
+	echo "</div>
+
+
 
 <div class=\"helper\">
 <a href=../documentacion/ayuda.php?help=".$_SESSION["lang"]."/picklist_tab.html target=_blank>".$msgstr["help"]."</a>&nbsp &nbsp;";
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 	echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/picklist_tab.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "<font color=white>&nbsp; &nbsp; Script: picklist.php" ;
+echo "&nbsp; Script: picklist.php" ;
 ?>
-</font>
+
 	</div>
  <div class="middle form">
 			<div class="formContent">
@@ -129,12 +129,12 @@ echo "<font color=white>&nbsp; &nbsp; Script: picklist.php" ;
 <font face=arial size=1><?php echo $msgstr["editcreatepl"]?> <font color=darkred><?php echo $msgstr["updfdt"]?><font color=black><p>
 
 <p><?php echo $msgstr["picklistname"]?>:<input type=text name=picklist value="<?php if (isset($arrHttp["picklist"]))echo $arrHttp["picklist"]?>">
-&nbsp; &nbsp; <a href=javascript:EditCreate()><?php echo $msgstr["editcreate"]?></a>
-&nbsp; | &nbsp;
-<a href=javascript:EliminarArchivo()><?php echo $msgstr["delete"]?></a>
-&nbsp; | &nbsp;
-<a href=javascript:PickList_update()><?php echo $msgstr["updfdt"]?></a>
-&nbsp; | &nbsp;
+&nbsp; &nbsp; <a id=botoes href=javascript:EditCreate()><?php echo $msgstr["editcreate"]?></a>
+&nbsp; 
+<a id=botoes href=javascript:EliminarArchivo()><?php echo $msgstr["delete"]?></a>
+&nbsp;
+<a id=botoes href=javascript:PickList_update()><?php echo $msgstr["updfdt"]?></a>
+&nbsp; 
 </form>
 <form name=explora>
 <input type=hidden name=base value=<?php echo $arrHttp["base"]?>>
