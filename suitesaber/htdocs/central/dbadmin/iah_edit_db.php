@@ -802,26 +802,26 @@ if (isset($arrHttp["encabezado"])){
 	$encabezado="";
 }
 ?>
-<div class="sectionInfo">
-	<div class="breadcrumb">
+<div class="sectionInfo"></div>
+	<div class="breadcrumb"><h3>
 <?php echo $msgstr["iah-conf"].": ".strtoupper($arrHttp["base"]).".def"?>
-	</div>
-	<div class="actions">
+	</h3></div>
+	<div class="actions"><br /><br /><br />
 <?php
-	echo "<a href=\"menu_modificardb.php?base=".$arrHttp["base"]."$encabezado\" class=\"defaultButton backButton\">";
+	echo "<a href=\"menu_modificardb.php?base=".$arrHttp["base"]."$encabezado\" class=\"defaultButton\">";
 ?>
-		<img src="../images/defaultButton_iconBorder.gif" alt="" title="" />
+
 		<span><strong><?php echo $msgstr["back"]?></strong></span></a>
 <?php if (isset($fst)){
 ?>
 
-		<a href="javascript:Guardar()" class="defaultButton saveButton">
-		<img src="../images/defaultButton_iconBorder.gif" alt="" title="" />
+		<a href="javascript:Guardar()" class="defaultButton">
+
 		<span><strong><?php echo $msgstr["save"]?></strong></span></a>
 <?php }?>
 	</div>
-	<div class="spacer">&#160;</div>
-</div>
+
+
 <div class="helper">
 	<a href=../documentacion/ayuda.php?help=<?php echo $_SESSION["lang"]?>/iah_edit_db.html target=_blank><?php echo $msgstr["help"]?></a>&nbsp &nbsp;
 <?php

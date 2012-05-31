@@ -179,23 +179,24 @@ foreach ($fp as $linea){
 						</select>
 <!--						<p>
 						<input type=checkbox value=ok> Create copies database  -->
+<br /><br /><br />
+				<a id="botoes" href="javascript:Validar()" class="singleButton">
+
+						<?php echo $msgstr["continuar"]?>
+
+					</a>						
+						
 					</div>
-					<div class="spacer">&#160;</div>
+
 				</div>
 
 			</div>
 		</div>
-		<div class="formFoot">
-			<div class="pagination">
-				<a href="javascript:Validar()" class="singleButton singleButtonSelected">
-						<span class="sb_lb">&#160;</span>
-						[<?php echo $msgstr["continuar"]?>]
-						<span class="sb_rb">&#160;</span>
-					</a>
-				<div class="spacer">&#160;</div>
-			</div>
-			<div class="spacer">&#160;</div>
-		</div>
+
+
+
+
+
 	</div>
 	</form>
 <? include("../common/footer.php");?>
