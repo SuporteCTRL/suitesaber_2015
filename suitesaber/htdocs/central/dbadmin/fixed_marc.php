@@ -50,17 +50,16 @@ include("../common/header.php");
 <?php if (isset($arrHttp["encabezado"])){
     	include("../common/institutional_info.php");
 }
-echo "<div class=\"sectionInfo\"><div class=\"breadcrumb\">".$msgstr["typeofrecords"].": ". $arrHttp["base"]."</div><div class=\"actions\">\n";
+echo "<div class=\"sectionInfo\"></div>
+<div class=\"breadcrumb\"><h3>".$msgstr["typeofrecords"].": ". $arrHttp["base"]."</h3></div><div class=\"actions\"><br /><br /><br />\n";
 if (isset($arrHttp["encabezado"]))
 	$encabezado="&encabezado=s";
 else
 	$encabezado="";
-echo "<a href=menu_modificardb.php?base=". $arrHttp["base"].$encabezado." class=\"defaultButton cancelButton\">
+echo "<a href=menu_modificardb.php?base=". $arrHttp["base"].$encabezado." class=\"defaultButton\">
 	
 	<span><strong>". $msgstr["cancel"]."</strong></span>
 	</a>
-	</div>
-	<div class=\"spacer\">&#160;</div>
 	</div>";
 ?>
 <div class="helper">
@@ -68,9 +67,9 @@ echo "<a href=menu_modificardb.php?base=". $arrHttp["base"].$encabezado." class=
 <?php
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 	echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/typeofrecs_marc.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "<font color=white>&nbsp; &nbsp; Script: fixed_marc.php";
+echo " &nbsp; Script: fixed_marc.php";
 ?>
-</font>
+
 	</div>
 <div class="middle form">
 			<div class="formContent"> <xcenter>
@@ -90,13 +89,13 @@ if (!$ldr_06){
 	die;
 }
 echo "<div style=position:relative;margin-left:100px>";
-echo "<strong>File: ldr_06.fdt (<a href=picklist_edit.php?base=".$arrHttp["base"]."&picklist=ldr_06.tab&desde=fixed_marc$encabezado>".$msgstr["edit"]."</a>)</strong><p>" ;
+echo "<h2><strong>File: ldr_06.fdt (<a href=picklist_edit.php?base=".$arrHttp["base"]."&picklist=ldr_06.tab&desde=fixed_marc$encabezado>".$msgstr["edit"]."</a>)</strong></h2><h3>" ;
 foreach ($ldr_06 as $value){
 	$value=trim($value);
 	$t=explode('|',$value);
-	echo $t[0]." - ".$t[1].": <a href=\"fdt.php?base=". $arrHttp["base"]."$encabezado&Fixed_field=y&fdt_name=".$t[2]."\">".$t[2]."</a><br>";
+	echo $t[0]." - ".$t[1].": <a  href=\"fdt.php?base=". $arrHttp["base"]."$encabezado&Fixed_field=y&fdt_name=".$t[2]."\">".$t[2]."</a><br>";
 }
-echo "</div><p>";
+echo "</h3></div>";
 echo "</div></div>";
 include("../common/footer.php");?>
 </body>
