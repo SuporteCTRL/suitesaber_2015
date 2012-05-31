@@ -110,7 +110,7 @@ inprocess('','end');        // close progress window
     </head>
     <body>
         <div class="container">
-           <div class="level2"> 
+            <div class="level2">
                 <? include( $localPath['html'] . "/bvs.html"); ?>
                 <div class="middle">
                     <?php
@@ -127,11 +127,11 @@ inprocess('','end');        // close progress window
 
                     ?>
                 </div>
-               </div> 
+            </div>
         </div>
         <div class="copyright">
             <a href="http://bvsmodelo.bvsalud.org/php/level.php?lang=pt&component=27&item=10" target="_blank">&copy; BVS Site <?= VERSION ?> </a>
-    <p>Recomendamos o uso do <a href="http://br.mozdev.org/download/" target="_blank" title="Firefox" alt="Firefox"><img src="http://biblioteca.santacasa.tche.br/central/css/saber/images/firefox.png" border="0" alt="Firefox." /></a></p>
+    <p>Recomendamos o uso do <a href="http://br.mozdev.org/download/" target="_blank" title="Firefox" alt="Firefox"><img src="http://abcd.fee.tche.br/central/css/saber/images/firefox.png" border="0" alt="Firefox." /></a></p>
         </div>
     </body>
 </html>
