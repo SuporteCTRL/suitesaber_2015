@@ -59,20 +59,20 @@ if (isset($arrHttp["encabezado"])){
 	$encabezado="";
 }
 ?>
-<div class="sectionInfo">
-	<div class="breadcrumb">
+<div class="sectionInfo"></div>
+	<div class="breadcrumb"><h3>
 <?php echo $msgstr["iah-conf"].": ".$arrHttp["base"].".def"?>
-	</div>
-	<div class="actions">
+	</h3></div>
+	<div class="actions"><br /><br /><br />
 <?php
 if (isset($arrHttp["encabezado"]))
-	echo "<a href=\"menu_modificardb.php?base=".$arrHttp["base"]."$encabezado\" class=\"defaultButton backButton\">";
+	echo "<a href=\"menu_modificardb.php?base=".$arrHttp["base"]."$encabezado\" class=\"defaultButton\">";
 ?>
-		<img src="../images/defaultButton_iconBorder.gif" alt="" title="" />
+
 		<span><strong><?php echo $msgstr["back"]?></strong></span></a>
 	</div>
-	<div class="spacer">&#160;</div>
-</div>
+
+
 <div class="helper">
 	<a href=../documentacion/ayuda.php?help=<?php echo $_SESSION["lang"]?>/iah_edit_db.html target=_blank><?php echo $msgstr["help"]?></a>&nbsp &nbsp;
 <?php
@@ -92,7 +92,7 @@ echo "<xmp>".$arrHttp["ValorCapturado"]."</xmp>";
 $fp=fopen($db_path."par/".strtoupper($arrHttp["base"]).".def","w");
 $res=fwrite($fp,$arrHttp["ValorCapturado"]);
 fclose($fp);
-echo "<h2>".$msgstr["saved"]."</h2>";
+echo "<h1 style=\"text-transform: uppercase;width:100px;color: #5FB529;text-align: center;\">&#10004;".$msgstr["saved"]."</h1>";
 ?>
 </form>
 </div></div>
