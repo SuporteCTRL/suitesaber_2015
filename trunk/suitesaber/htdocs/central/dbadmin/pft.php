@@ -952,7 +952,7 @@ if (!isset($arrHttp["Modulo"]))
 	if (!isset($arrHttp["encabezado"]))
 		echo "&nbsp; &nbsp;<a href=menu_modificardb.php?Opcion=".$arrHttp["Opcion"]."&base=".$arrHttp["base"].">".$msgstr["cancel"]. "</a><p>";
 }else{
-	echo "<p><a href=javascript:ValidarFormato()>".$msgstr["createdb"] ."</a>";
+	echo "<a style=\"float:right;width:200px;margin-bottom:150px;\" id=botoes href=javascript:ValidarFormato()>".$msgstr["createdb"] ."</a>";
 }
 ?>
 <!--a href=menu_modificardb.php?base=<?php echo $arrHttp["base"]?>><?php echo $msgstr["cancel"]?></a>-->

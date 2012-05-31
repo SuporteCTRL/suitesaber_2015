@@ -147,35 +147,35 @@ echo "
 if (isset($arrHttp["encabezado"]))
 	include("../common/institutional_info.php");
 echo "
-	<div class=\"sectionInfo\">
+	<div class=\"sectionInfo\"></div>
 
-			<div class=\"breadcrumb\"><h5>".
-				$msgstr["fdt"]." " .$msgstr["database"]. ": " . $arrHttp["base"]."</h5>
+			<div class=\"breadcrumb\"><h3>".
+				$msgstr["fdt"]." " .$msgstr["database"]. ": " . $arrHttp["base"]."</h3>
 			</div>
 
-			<div class=\"actions\">
+			<div class=\"actions\"><br /><br /><br />
 	";
 $arrHttp["Opcion"]="new";
 if ($arrHttp["Opcion"]=="new"){
 	if (isset($arrHttp["encabezado"]) ){
-		echo "<a href=\"../common/inicio.php?reinicio=s\" class=\"defaultButton backButton\">";
+		echo "<a href=\"../common/inicio.php?reinicio=s\" class=\"defaultButton\">";
 	}else{
-		 echo "<a href=menu_creardb.php class=\"defaultButton backButton\">";
+		 echo "<a href=menu_creardb.php class=\"defaultButton\">";
 	}
 }else{
 	if (isset($arrHttp["encabezado"]))
 		$encabezado="&encabezado=s";
 	else
 		$encabezado="";
-	echo "<a href=menu_modificardb.php?base=". $arrHttp["base"].$encabezado." class=\"defaultButton backButton\">";
+	echo "<a href=menu_modificardb.php?base=". $arrHttp["base"].$encabezado." class=\"defaultButton\">";
 }
 echo "
-					<img src=\"../images/defaultButton_iconBorder.gif\" alt=\"\" title=\"\" />
+			
 					<span><strong>". $msgstr["back"]."</strong></span>
 				</a>
 			</div>
-			<div class=\"spacer\">&#160;</div>
-	</div>";
+
+	";
 
 echo "
 	<div class=\"helper\">
@@ -215,7 +215,7 @@ if ($arrHttp["accion"]!="cont"){
             	if ($file==$bd) {
                 	echo "<center><br><br><h4>".$bd." ".$msgstr["bdexiste"]."</h4>";
               //  	echo "<p><center><a href=javascript:history.back()>".$msgstr["back"]."</a>";
-                	echo "&nbsp;&nbsp;<a href=javascript:Continuar()>".$msgstr["continuar"]."</a>";
+                	echo "&nbsp;&nbsp;<a id=botoes href=javascript:Continuar()>".$msgstr["continuar"]."</a>";
 					die;
 				}
             }
@@ -325,11 +325,13 @@ if (!isset($arrHttp["encabezado"])){
 echo "<p>";
 if (!isset($arrHttp["encabezado"]))echo "<a href=../dataentry/inicio_base.php?base=".$arrHttp["base"]."&cipar=".$arrHttp["base"].".par&nueva=s>".$msgstr["continuar"]."</a><p>";
 echo "<h4>".$msgstr["assusdb"]."</h4>";
+echo "<a id=botoes href=iah_edit_db.php?encabezado=s&base=".$arrHttp["base"].">".$msgstr["iah-conf"]."?</a><br />";
+
 echo "
 
 	<a href=../documentacion/ayuda.php?help=".$_SESSION["lang"]."/assign_operators.html target=_blank>".$msgstr["assop"]."</a>&nbsp &nbsp;
     <a href=../documentacion/edit.php?archivo=". $_SESSION["lang"]."/assign_operators.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "<p><a href=iah_edit_db.php?encabezado=s&base=".$arrHttp["base"].">".$msgstr["iah-conf"]."</a>";
+
 
 echo "</div></div>";
 include("../common/footer.php");
