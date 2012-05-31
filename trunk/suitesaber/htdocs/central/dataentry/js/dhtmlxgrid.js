@@ -110,7 +110,7 @@ function dhtmlXGridObject(id){
 
 	/*MAIN OBJECTS*/
 
-	this.entBox.className+=" gridbox";
+	this.entBox.className+="gridbox";
 
 	this.entBox.style.width=this.entBox.getAttribute("width")
 		||(window.getComputedStyle
