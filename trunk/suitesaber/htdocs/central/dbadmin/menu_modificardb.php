@@ -205,7 +205,7 @@ echo "<font color=white>&nbsp; &nbsp; Script: menu_modificardb.php";
 			<?php if (isset($arrHttp["encabezado"])) echo "<input type=hidden name=encabezado value=s>";?>
 
 			<a id="botoes" style="width: 300px;" href='javascript:Update("fdt")'><?php echo $msgstr["fdt"]?></a> <br />
-			<a id="botoes" style="width: 300px;"  href='javascript:Update("fdt_new")'><?php echo $msgstr["fdt_compressed"]?></a> <br />
+	<!--<a id="botoes" style="width: 300px;"  href='javascript:Update("fdt_new")'><?php echo $msgstr["fdt_compressed"]?></a> <br />-->
 			<?php
 // SI ES UN REGISTRO MARC SE INCLUYE LA OPCION PARA MANEJO DE LOS TIPOS DE REGISTRO DE ACUERDO AL LEADER
 			if ($ldr=="s" ){
