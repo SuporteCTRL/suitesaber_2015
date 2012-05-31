@@ -20,15 +20,16 @@ else
 	$encabezado="";
 include("../common/header.php");
 ?>
-<link rel="STYLESHEET" type="text/css" href="../css/dhtmlXGrid.css">
-<link rel="STYLESHEET" type="text/css" href="../css/dhtmlXGrid_skins.css">
+<link rel="stylesheet" type="text/css" href="../css/dhtmlXGrid.css">
+<link rel="stylesheet" type="text/css" href="../css/dhtmlXGrid_skins.css">
 <script  src="../dataentry/js/dhtml_grid/dhtmlXCommon.js"></script>
 <script  src="../dataentry/js/dhtml_grid/dhtmlXGrid.js"></script>
 <script  src="../dataentry/js/dhtml_grid/dhtmlXGridCell.js"></script>
 <script  src="../dataentry/js/dhtml_grid/dhtmlXGrid_drag.js"></script>
 <script  src="../dataentry/js/dhtml_grid/dhtmlXGrid_excell_link.js"></script>
 <script  src="../dataentry/js/lr_trim.js"></script>
-<script languaje=javascript>
+<script type="text/javascript" >
+
 		pl_type=""
 		Opcion="<?php echo $arrHttp["Opcion"]?>"
 		valor=""
@@ -99,23 +100,23 @@ if (isset($arrHttp["encabezado"])){
 	$encabezado="";
 }
 echo "<form name=fst method=post>";
-echo "<div class=\"sectionInfo\">
-	<div class=\"breadcrumb\">".$msgstr["fst"].": ".$arrHttp["base"]."</div>
-	<div class=\"actions\">";
+echo "<div class=\"sectionInfo\"></div>
+	<div class=\"breadcrumb\"><h3>".$msgstr["fst"].": ".$arrHttp["base"]."</h3></div>
+	<div class=\"actions\"><br /><br /><br />";
 if ($arrHttp["Opcion"]=="new"){
 	if (isset($arrHttp["encabezado"])){
-		echo "<a href=\"../common/inicio.php?reinicio=s\" class=\"defaultButton cancelButton\">";
+		echo "<a href=\"../common/inicio.php?reinicio=s\" class=\"defaultButton\">";
 	}else{
-		echo "<a href=menu_creardb.php class=\"defaultButton cancelButton\">";
+		echo "<a href=menu_creardb.php class=\"defaultButton\">";
 	}
 
 }else{
-	echo "<a href=\"menu_modificardb.php?base=".$arrHttp["base"]."$encabezado\" class=\"defaultButton cancelButton\">";
+	echo "<a href=\"menu_modificardb.php?base=".$arrHttp["base"]."$encabezado\" class=\"defaultButton\">";
 }
 echo "
 	<span><strong>".$msgstr["cancel"]."</strong></span></a>";
 if ($arrHttp["Opcion"]=="new"){
-	echo "<a href=fdt.php?Opcion=new&base=".$arrHttp["base"]."$encabezado class=\"defaultButton backButton\">
+	echo "<a href=fdt.php?Opcion=new&base=".$arrHttp["base"]."$encabezado class=\"defaultButton\">
 	
 	<span><strong>".$msgstr["back"]."</strong></span></a>";
 }
@@ -123,7 +124,7 @@ if ($arrHttp["Opcion"]=="new"){
 //	
 //	<strong>".$msgstr["update"]."</strong></a>";
 ?>
-</div><div class="spacer">&#160;</div></div>
+</div>
 <div class="helper">
 <a href=../documentacion/ayuda.php?help=<?php echo $_SESSION["lang"]?>/fst.html target=_blank><?php echo $msgstr["help"]?></a>&nbsp &nbsp;
 <?php
@@ -140,8 +141,8 @@ echo "<font color=white>&nbsp; &nbsp; Script: fst.php";
    		<table>
 	        <tr>
 			<td>
-				<a href="javascript:void(0)" onclick="mygrid.addRow((new Date()).valueOf(),['','',''],mygrid.getRowIndex(mygrid.getSelectedId()))"><?php echo $msgstr["addrowbef"]?></a>
-				&nbsp; &nbsp; &nbsp;<a href="javascript:void(0)" onclick="mygrid.deleteSelectedItem()"><?php echo $msgstr["remselrow"]?></a>
+				<a id="botoes" href="javascript:void(0)" onclick="mygrid.addRow((new Date()).valueOf(),['','',''],mygrid.getRowIndex(mygrid.getSelectedId()))"><?php echo $msgstr["addrowbef"]?></a>
+				&nbsp; &nbsp; &nbsp;<a id="botoes" href="javascript:void(0)" onclick="mygrid.deleteSelectedItem()"><?php echo $msgstr["remselrow"]?></a>
 			<!--	&nbsp; &nbsp; &nbsp;<a href="javascript:void(0)" onclick=Organize()>Organize FST</a>--><br>
 			</td>
 			<tr>
@@ -158,7 +159,7 @@ echo "<font color=white>&nbsp; &nbsp; Script: fst.php";
 						}
 
 					?>
-						 <a href=javascript:Enviar()><?php echo $msgstr["update"]?></a>  &nbsp; &nbsp;
+						 <a id=botoes href=javascript:Enviar()><?php echo $msgstr["update"]?></a>  &nbsp; 
 					<?
 					if ($encabezado=""){
 						if ($arrHttp["Opcion"]!="new")
@@ -171,7 +172,7 @@ echo "<font color=white>&nbsp; &nbsp; Script: fst.php";
 			</tr>
 		</table>
 	</td>
-	<td valign=top><iframe id="cframe" src="fdt_leer.php?Opcion=<?php echo $arrHttp["Opcion"]?>&base=<?php echo $arrHttp["base"]?>" width=100% height=400 scrolling=yes name=fdt></iframe>
+	<td valign=top><iframe id="cframe"  src="fdt_leer.php?Opcion=<?php echo $arrHttp["Opcion"]?>&base=<?php echo $arrHttp["base"]?>" width=100% height=800 frameborder="0" scrolling=auto name=fdt></iframe>
 	</td>
 		</table>
 	</td>
@@ -198,7 +199,7 @@ echo "<font color=white>&nbsp; &nbsp; Script: fst.php";
 	mygrid.getCombo(1).put("7","<?php echo $msgstr["fst_7"]?>");
 	mygrid.getCombo(1).put("8","<?php echo $msgstr["fst_8"]?>");
 	mygrid.setColSorting("int,int")
-    mygrid.enableAutoHeigth(true,300);
+    mygrid.enableAutoHeigth(true,800);
     mygrid.setOnBeforeRowDeletedHandler(doBeforeRowDeleted);
 
     mygrid.enableDragAndDrop(true);
