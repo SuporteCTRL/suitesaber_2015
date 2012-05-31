@@ -246,7 +246,7 @@ function EditIndex(Id){
     msgwin.document.writeln("</style>")
     msgwin.document.writeln("<body>")
 	msgwin.document.writeln("<H1>"+Tit+"</h1>")
-	msgwin.document.writeln("<FONT class=td><?php echo $msgstr["see"]?>: <a href=\"javascript:window.opener.Ver('fdt')\">FDT</a> | <a href=javascript:window.opener.Ver('fst')>FST</a><p>")
+	msgwin.document.writeln("<FONT class=td><?php echo $msgstr["see"]?>: <a id=botoes href=\"javascript:window.opener.Ver('fdt')\">FDT</a> | <a id=botoes href=javascript:window.opener.Ver('fst')>FST</a><p>")
 	msgwin.document.writeln("<form name=index>\n<table width=100% bgcolor=#eeeeff>");
 	msgwin.document.writeln("<tr><td colspan=2 bgcolor=white><?php echo $msgstr["iah_lang"]?></td>")
 	ele=new Array()
@@ -335,8 +335,8 @@ function EditIndex(Id){
 	}
    msgwin.document.writeln("</table>")
 
-   msgwin.document.write("<h1><a href='javascript:window.opener.AceptarIndice()'><?php echo $msgstr["accept"]?></a> | ")
-   msgwin.document.writeln("<a href='javascript:self.close()'><?php echo $msgstr["close"]?></a></h1>")
+   msgwin.document.write("<h1><a id=botoes href='javascript:window.opener.AceptarIndice()'><?php echo $msgstr["accept"]?></a> | ")
+   msgwin.document.writeln("<a id=botoes href='javascript:self.close()'><?php echo $msgstr["close"]?></a></h1>")
    msgwin.document.writeln("</form></body></html>")
    msgwin.document.close()
 }
@@ -404,12 +404,12 @@ function DrawElement(Val_1,Val_2,ixE,ixSec,Name){
 	xhtml ="<br><input type=text name=\""+Name+"_tag\"  value=\""+Val_1+"\" id="+Name+"_tag_"+ixE+">: "
     xhtml+="<input type=text name=\""+Name+"_cont\" value=\""+Val_2+"\" size=90 id="+Name+"_cont_"+ixE+"> "
     if (ixSec==2){
-    	xhtml+="<a href='javascript:EditIndex("+ixE+")'><?php echo$msgstr["edit"]?></a>&nbsp;|";
+    	xhtml+="<a id=botoes href='javascript:EditIndex("+ixE+")'><?php echo$msgstr["edit"]?></a>&nbsp;|";
     }
     if (ixSec==1 && ixE==0){
 
     }else{
-    	xhtml+=" <a href=javascript:DeleteElement("+ixE+","+ixSec+")><?php echo $msgstr["delete"]?></a>\n";
+    	xhtml+=" <a id=botoes href=javascript:DeleteElement("+ixE+","+ixSec+")><?php echo $msgstr["delete"]?></a>\n";
     }
 
     return xhtml
@@ -437,7 +437,7 @@ function DrawElementHelp(Val_1,Val_2,Val_3,ixE,ixSec,Name){
 	xhtml+="</select>";
 	xhtml+="<input type=text name=\"lang_form\"  value=\""+Val_2+"\" id="+Name+"_tag_"+ixE+" size=2>= "
     xhtml+="<input type=text name=\""+Name+"_cont\" value=\""+Val_3+"\" size=90 id="+Name+"_cont_"+ixE+"> "
-    xhtml+=" <a href=javascript:DeleteElementHelp("+ixE+","+ixSec+")><?php echo $msgstr["delete"]?></a>\n";
+    xhtml+=" <a id=botoes href=javascript:DeleteElementHelp("+ixE+","+ixSec+")><?php echo $msgstr["delete"]?></a>\n";
     return xhtml
 }
 
@@ -701,10 +701,10 @@ function Validar(){
 
 			if (name_pft.indexOf('.pft')!=-1){
         		val_res=CheckNames(def_pft)
-        		if (!val_res) {
-        			alert("<?php echo $msgstr["misslang"]?> "+name_pft)
-        			return false
-        		}
+        	//	if (!val_res) {
+        	//		alert("<?php echo $msgstr["misslang"]?> "+name_pft)
+        	//		return false
+        	//	}
         	}
 		}
 	}
@@ -791,6 +791,16 @@ function SubirOpcion(){
 	document.iah_edit.preferences.selectedIndex=ix-1
 }
 </script>
+<style type="text/css">
+#tag {
+		padding: 1px 4px 1px 4px;	
+	}
+#botoes {
+		padding: 1px 4px 1px 4px;	
+	}
+	
+	
+</style>
 </head>
 <body>
 <A NAME=INICIO>
@@ -884,15 +894,17 @@ echo "&nbsp; &nbsp;<font color=white>&nbsp; &nbsp; Script: iah_edit_db.php";
 	echo "<A NAME=INICIO>";
 //    echo "<a href=iah_def_edit_txt.php?base=".$arrHttp["base"].$encabezado.">".$msgstr["edit_txt"]."</a> | ";
 
-	echo $msg."<div class=\"pagination\">
-	<a href=#FILE_LOCATION>[FILE LOCATION]</A>&nbsp;&nbsp;<a href=#INDEX_DEFINITION>[INDEX DEFINITION]</A>&nbsp;&nbsp;
-	<a href=#APPLY_GIZMO>[APPLY GIZMO]</A>&nbsp;&nbsp;<a href=#FORMAT_NAME>[FORMAT NAME]</A>&nbsp;&nbsp;<A HREF=#HELP_FORM>[HELP FORM]</A>
-	&nbsp;&nbsp;<A HREF=#PREFERENCES>[PREFERENCES]</A>
-	</DIV>";
-	echo "<a href=javascript:ValidateForm()>".$msgstr["validate"]."</a>";
+	echo $msg."<div class=\"pagination\" style=\"display:inline;width:500px;\">
+	<a id=tag href=#FILE_LOCATION>FILE LOCATION</a>
+	<a id=tag href=#INDEX_DEFINITION>INDEX DEFINITION</a>
+	<a id=tag href=#APPLY_GIZMO>APPLY GIZMO</a><a id=tag href=#FORMAT_NAME>FORMAT NAME</a>
+	<a id=tag HREF=#HELP_FORM>HELP FORM</a>
+	<a id=tag HREF=#PREFERENCES>PREFERENCES</a>
+	</div>";
+	echo "<a id=botoes href=javascript:ValidateForm()>".$msgstr["validate"]."</a>";
 	foreach ($db_def as $var=>$value){
         $var=trim($var);
-		echo "<br><A NAME=$var><p><strong>[$var]</strong>&nbsp;&nbsp;&nbsp;<A href=#INICIO>".$msgstr["top"]."</a>";
+		echo "<br><a NAME=$var><p><strong>$var</strong>&nbsp;&nbsp;&nbsp;<a href=#INICIO id=tag>&#11014;".$msgstr["top"]."</a>";
 		switch ($var){
 			case "FILE_LOCATION":
 				$id=-1;
@@ -900,22 +912,22 @@ echo "&nbsp; &nbsp;<font color=white>&nbsp; &nbsp; Script: iah_edit_db.php";
 				foreach ($value as $v1=>$v2){
 					$id++;
 			    	echo "<br><input type=text name=\"file_tag\"  value=\"$v1\" id=file_tag_$id>=<input type=text name=\"file_cont\" value=\"$v2\" size=90 id=file_cont_$id>";
-			    	if ($id!=0) echo "&nbsp;<a href=javascript:DeleteElement($id,1)>".$msgstr["delete"]."</a>\n";
+			    	if ($id!=0) echo "&nbsp;<a id=botoes href=javascript:DeleteElement($id,1)>".$msgstr["delete"]."</a>\n";
 
 //			    	if ($v1=="FILE SHORTCUT.IAH") echo "edit";
 			    }
 			    if ($id==-1){ // si se creó solo una casilla de ingreso, se fuerza un arreglo agregando otra casilla
                 	$id++;
 			    	echo "<br><input type=text name=\"file_tag\"  value=\"\" id=file_tag_$id>=<input type=text name=\"file_cont\" value=\"\" size=90 id=file_cont_$id>";
-			    	if ($id!=0) echo "&nbsp;<a href=javascript:DeleteElement($id,1)>".$msgstr["delete"]."</a>\n";
+			    	if ($id!=0) echo "&nbsp;<a id=botoes href=javascript:DeleteElement($id,1)>".$msgstr["delete"]."</a>\n";
 				}
 			    if ($id==0){ // si se creó solo una casilla de ingreso, se fuerza un arreglo agregando otra casilla
                 	$id++;
 			    	echo "<br><input type=text name=\"file_tag\"  value=\"\" id=file_tag_$id>=<input type=text name=\"file_cont\" value=\"\" size=90 id=file_cont_$id>";
-			    	if ($id!=0) echo "&nbsp;<a href=javascript:DeleteElement($id,1)>".$msgstr["delete"]."</a>\n";
+			    	if ($id!=0) echo "&nbsp;<a id=botoes href=javascript:DeleteElement($id,1)>".$msgstr["delete"]."</a>\n";
 				}
 			    echo "</div>\n";
-			    echo "<a href=javascript:AddElement(1)>".$msgstr["add"]."</a>\n<br>";
+			    echo "<a id=botoes href=javascript:AddElement(1)>".$msgstr["add"]."</a>\n<br>";
 			    break;
 			case "INDEX_DEFINITION":
 				$id=-1;
@@ -928,19 +940,19 @@ echo "&nbsp; &nbsp;<font color=white>&nbsp; &nbsp; Script: iah_edit_db.php";
 				}
 				foreach ($value as $v1=>$v2){
 					$id++;
-			   		echo "<br><input type=text name=\"index_tag\" value=\"$v1\" id=index_tag_$id>= <input type=text name=\"index_cont\" value=\"$v2\" size=90 id=index_cont_$id> <a href='javascript:EditIndex($id)'>".$msgstr["edit"]."</a> | <a href=javascript:DeleteElement($id,2)>".$msgstr["delete"]."</a>\n";
-			   		echo "&nbsp;<a href=\"javascript:seeElement('$v2')\">".$msgstr["see"]."</a>\n";
+			   		echo "<br><input type=text name=\"index_tag\" value=\"$v1\" id=index_tag_$id>= <input type=text name=\"index_cont\" value=\"$v2\" size=90 id=index_cont_$id> <a id=botoes href='javascript:EditIndex($id)'>".$msgstr["edit"]."</a> | <a id=botoes href=javascript:DeleteElement($id,2)>".$msgstr["delete"]."</a>\n";
+			   		echo "&nbsp;<a id=botoes href=\"javascript:seeElement('$v2')\">".$msgstr["see"]."</a>\n";
 			    }
 			    if ($id==-1){
 			    	$id++;
-			    	echo "<br><input type=text name=\"index_tag\" value=\"$v1\" id=index_tag_$id>= <input type=text name=\"index_cont\" value=\"$v2\" size=90 id=index_cont_$id> <a href='javascript:EditIndex($id)'>".$msgstr["edit"]."</a> | <a href=javascript:DeleteElement($id,2)>".$msgstr["delete"]."</a>\n";
+			    	echo "<br><input type=text name=\"index_tag\" value=\"$v1\" id=index_tag_$id>= <input type=text name=\"index_cont\" value=\"$v2\" size=90 id=index_cont_$id> <a id=botoes href='javascript:EditIndex($id)'>".$msgstr["edit"]."</a> | <a id=botoes href=javascript:DeleteElement($id,2)>".$msgstr["delete"]."</a>\n";
 			    }
 			    if ($id==0){
 			    	$id++;
-			    	echo "<br><input type=text name=\"index_tag\" value=\"$v1\" id=index_tag_$id>= <input type=text name=\"index_cont\" value=\"$v2\" size=90 id=index_cont_$id> <a href='javascript:EditIndex($id)'>".$msgstr["edit"]."</a> | <a href=javascript:DeleteElement($id,2)>".$msgstr["delete"]."</a>\n";
+			    	echo "<br><input type=text name=\"index_tag\" value=\"$v1\" id=index_tag_$id>= <input type=text name=\"index_cont\" value=\"$v2\" size=90 id=index_cont_$id> <a id=botoes href='javascript:EditIndex($id)'>".$msgstr["edit"]."</a> | <a id=botoes href=javascript:DeleteElement($id,2)>".$msgstr["delete"]."</a>\n";
 			    }
 			    echo "</div>\n";
-			    echo "<a href=javascript:AddElement(2)>".$msgstr["add"]."</a>\n<br>";
+			    echo "<a id=botoes href=javascript:AddElement(2)>".$msgstr["add"]."</a>\n<br>";
 			    break;
 			case "APPLY_GIZMO":
 				$id=-1;
@@ -948,18 +960,18 @@ echo "&nbsp; &nbsp;<font color=white>&nbsp; &nbsp; Script: iah_edit_db.php";
 				foreach ($value as $v1=>$v2){
 					if ($v1=="0" or $v1=="1") $v1="";
 					$id++;
-			    	echo "<br><input type=text name=\"gizmo_tag\" value=\"$v1\" id=gizmo_tag_$id>= <input type=text name=\"gizmo_cont\" value=\"$v2\" id=gizmo_cont_$id size=90> &nbsp;<a href=javascript:DeleteElement($id,3)>".$msgstr["delete"]."</a>\n";
+			    	echo "<br><input type=text name=\"gizmo_tag\" value=\"$v1\" id=gizmo_tag_$id>= <input type=text name=\"gizmo_cont\" value=\"$v2\" id=gizmo_cont_$id size=90> &nbsp;<a id=botoes href=javascript:DeleteElement($id,3)>".$msgstr["delete"]."</a>\n";
 			    }
 			    if ($id==-1){
 			    	$id++;
-			    	echo "<br><input type=text name=\"gizmo_tag\" value=\"\" id=gizmo_tag_$id>= <input type=text name=\"gizmo_cont\" value=\"\" id=gizmo_cont_$id size=90> &nbsp;<a href=javascript:DeleteElement($id,3)>".$msgstr["delete"]."</a>\n";
+			    	echo "<br><input type=text name=\"gizmo_tag\" value=\"\" id=gizmo_tag_$id>= <input type=text name=\"gizmo_cont\" value=\"\" id=gizmo_cont_$id size=90> &nbsp;<a id=botoes href=javascript:DeleteElement($id,3)>".$msgstr["delete"]."</a>\n";
 			    }
 			    if ($id==0){
 			    	$id++;
-			    	echo "<br><input type=text name=\"gizmo_tag\" value=\"\" id=gizmo_tag_$id>= <input type=text name=\"gizmo_cont\" value=\"\" id=gizmo_cont_$id size=90>&nbsp;<a href=javascript:DeleteElement($id,3)>".$msgstr["delete"]."</a>\n";
+			    	echo "<br><input type=text name=\"gizmo_tag\" value=\"\" id=gizmo_tag_$id>= <input type=text name=\"gizmo_cont\" value=\"\" id=gizmo_cont_$id size=90>&nbsp;<a id=botoes href=javascript:DeleteElement($id,3)>".$msgstr["delete"]."</a>\n";
 			    }
 			    echo "</div>";
-			    echo "<a href=javascript:AddElement(3)>".$msgstr["add"]."</a>\n<br>";
+			    echo "<a id=botoes href=javascript:AddElement(3)>".$msgstr["add"]."</a>\n<br>";
 			    break;
 			case "FORMAT_NAME":
 				$id=-1;
@@ -974,18 +986,18 @@ echo "&nbsp; &nbsp;<font color=white>&nbsp; &nbsp; Script: iah_edit_db.php";
 				foreach ($value as $v1=>$v2){
                     if ($v1=="0" or $v1=="1") $v1="";
                     $id++;
-			    	echo "<br><input type=text name=\"format_tag\" value=\"$v1\" id=format_tag_$id>= <input type=text name=\"format_cont\" value=\"$v2\" size=90 id=format_cont_$id> &nbsp;<a href=javascript:DeleteElement($id,4)>".$msgstr["delete"]."</a>\n";
+			    	echo "<br><input type=text name=\"format_tag\" value=\"$v1\" id=format_tag_$id>= <input type=text name=\"format_cont\" value=\"$v2\" size=90 id=format_cont_$id> &nbsp;<a id=botoes href=javascript:DeleteElement($id,4)>".$msgstr["delete"]."</a>\n";
 			    }
                 if ($id==-1){
                 	$id++;
-			    	echo "<br><input type=text name=\"format_tag\" value=\"\" id=format_tag_$id>: <input type=text name=\"format_cont\" value=\"\" size=90 id=format_cont_$id> &nbsp;<a href=javascript:DeleteElement($id,4)>".$msgstr["delete"]."</a>\n";
+			    	echo "<br><input type=text name=\"format_tag\" value=\"\" id=format_tag_$id>: <input type=text name=\"format_cont\" value=\"\" size=90 id=format_cont_$id> &nbsp;<a id=botoes href=javascript:DeleteElement($id,4)>".$msgstr["delete"]."</a>\n";
                 }
                 if ($id==0){
                 	$id++;
-			    	echo "<br><input type=text name=\"format_tag\" value=\"\" id=format_tag_$id>: <input type=text name=\"format_cont\" value=\"\" size=90 id=format_cont_$id> &nbsp;<a href=javascript:DeleteElement($id,4)>".$msgstr["delete"]."</a>\n";
+			    	echo "<br><input type=text name=\"format_tag\" value=\"\" id=format_tag_$id>: <input type=text name=\"format_cont\" value=\"\" size=90 id=format_cont_$id> &nbsp;<a id=botoes href=javascript:DeleteElement($id,4)>".$msgstr["delete"]."</a>\n";
                 }
 			    echo "</div>";
-			    echo "<a href=javascript:AddElement(4)>".$msgstr["add"]."</a>\n<br>";
+			    echo "<a id=botoes href=javascript:AddElement(4)>".$msgstr["add"]."</a>\n<br>";
 			    break;
 			case "HELP_FORM":
 				echo "<div id=5>\n";
@@ -1021,7 +1033,7 @@ echo "&nbsp; &nbsp;<font color=white>&nbsp; &nbsp; Script: iah_edit_db.php";
 					}
 					echo ">NOTE INDEX</OPTION>";
 					echo "</select>";
-			    	echo "<input type=text name=\"lang_form\" value=\"$lang_form\" id=lan_form_$id size=2>= <input type=text name=\"help_cont\" value=\"$v2\" size=90 id=help_cont_$id> &nbsp;<a href=javascript:DeleteElement($id,5)>".$msgstr["delete"]."</a>\n";
+			    	echo "<input type=text name=\"lang_form\" value=\"$lang_form\" id=lan_form_$id size=2>= <input type=text name=\"help_cont\" value=\"$v2\" size=90 id=help_cont_$id> &nbsp;<a id=botoes href=javascript:DeleteElement($id,5)>".$msgstr["delete"]."</a>\n";
 			    }
 			    if ($id==-1){
 			    	$id++;
@@ -1032,7 +1044,7 @@ echo "&nbsp; &nbsp;<font color=white>&nbsp; &nbsp; Script: iah_edit_db.php";
 					echo "<option value='HELP INDEX'>HELP INDEX</OPTION>";
 					echo "<option value='NOTE INDEX'>NOTE INDEX</OPTION>";
 					echo "</select>";
-			    	echo "<input type=text name=\"lang_form\" value=\"\" id=lang_form_$id size=2>= <input type=text name=\"help_cont\" value=\"\" size=90 id=help_cont_$id> &nbsp;<a href=javascript:DeleteElement($id,5)>".$msgstr["delete"]."</a>\n";
+			    	echo "<input type=text name=\"lang_form\" value=\"\" id=lang_form_$id size=2>= <input type=text name=\"help_cont\" value=\"\" size=90 id=help_cont_$id> &nbsp;<a id=botoes href=javascript:DeleteElement($id,5)>".$msgstr["delete"]."</a>\n";
 			    }
 			    if ($id==0){
 			    	$id++;
@@ -1043,10 +1055,10 @@ echo "&nbsp; &nbsp;<font color=white>&nbsp; &nbsp; Script: iah_edit_db.php";
 					echo "<option value='HELP INDEX'>HELP INDEX</OPTION>";
 					echo "<option value='NOTE INDEX'>NOTE INDEX</OPTION>";
 					echo "</select>";
-			    	echo "<input type=text name=\"lang_form\" value=\"\" id=lang_form_$id size=2>= <input type=text name=\"help_cont\" value=\"\" size=90 id=help_cont_$id> &nbsp;<a href=javascript:DeleteElement($id,5,)>".$msgstr["delete"]."</a>\n";
+			    	echo "<input type=text name=\"lang_form\" value=\"\" id=lang_form_$id size=2>= <input type=text name=\"help_cont\" value=\"\" size=90 id=help_cont_$id> &nbsp;<a id=botoes href=javascript:DeleteElement($id,5,)>".$msgstr["delete"]."</a>\n";
 			    }
 				echo "</div>";
-			    echo "<a href=javascript:AddHelp(5)>".$msgstr["add"]."</a>\n<br>";
+			    echo "<a id=botoes href=javascript:AddHelp(5)>".$msgstr["add"]."</a>\n<br>";
 			    break;
 			case "PREFERENCES":
 				$pref_f="";
@@ -1096,7 +1108,8 @@ echo "&nbsp; &nbsp;<font color=white>&nbsp; &nbsp; Script: iah_edit_db.php";
 
 				echo "<table border=0 cellspacing=5>";
 				echo "<tr><td valign=top>Available Forms: </td>";
-				echo "              <td valign=middle><a href=javascript:SubirOpcion()>".$msgstr["up"]."</a>  | <a href=javascript:BajarOpcion()>".$msgstr["down"]."</a><br><select name=preferences size=3 multiple>";
+				echo "<td width=20><a style=\"float:right;text-align:center;padding:3px;width:20px;font-size:20px;\" id=tag href=javascript:SubirOpcion()>&#9652;</a><br><a style=\"float:right;text-align:center;padding:3px;width:20px;font-size:20px;\" id=tag href=javascript:BajarOpcion()>&#9662;</a></td>
+				<td><select style=\"width:200px;float:left;\" name=preferences size=6 multiple>";
 				$pref=array();
 				$sel=array();
 				$pref["F"]="free";
