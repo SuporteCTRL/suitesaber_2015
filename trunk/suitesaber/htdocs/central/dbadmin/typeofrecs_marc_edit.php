@@ -133,21 +133,27 @@ function SelectFixedFormat(Ctrl,i){
 }
 
 </script>
+<style type="text/css">
+#botoes {
+	height: 20px;
+	padding: 3px;		
+	}
+</style>
+
 <body>
 <?php if (isset($arrHttp["encabezado"])){
     	include("../common/institutional_info.php");
 }
-echo "<div class=\"sectionInfo\"><div class=\"breadcrumb\">".$msgstr["typeofrecords"].": ". $arrHttp["base"]."</div><div class=\"actions\">\n";
+echo "<div class=\"sectionInfo\"></div>
+<div class=\"breadcrumb\"><h3>".$msgstr["typeofrecords"].": ". $arrHttp["base"]."</h3></div><div class=\"actions\"><br /><br /><br />\n";
 if (isset($arrHttp["encabezado"]))
 	$encabezado="&encabezado=s";
 else
 	$encabezado="";
-echo "<a href=menu_modificardb.php?base=". $arrHttp["base"].$encabezado." class=\"defaultButton cancelButton\">
+echo "<a href=menu_modificardb.php?base=". $arrHttp["base"].$encabezado." class=\"defaultButton\">
 	
 	<span><strong>". $msgstr["cancel"]."</strong></span>
 	</a>
-	</div>
-	<div class=\"spacer\">&#160;</div>
 	</div>";
 ?>
 <div class="helper">
@@ -155,9 +161,9 @@ echo "<a href=menu_modificardb.php?base=". $arrHttp["base"].$encabezado." class=
 <?php
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 	echo "<a href=../documentacion/php/edit.php?archivo=".$_SESSION["lang"]."/typeofrecs_marc.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "<font color=white>&nbsp; &nbsp; Script: typeofrecs_marc_edit.php";
+echo " &nbsp; Script: typeofrecs_marc_edit.php";
 ?>
-</font>
+
 	</div>
 <div class="middle form">
 			<div class="formContent"> <xcenter>
@@ -285,7 +291,7 @@ if (isset($fpType)) {
 					switch ($i){
 
 						case 1:
-							$link="<a href='javascript:VerFdt(\"cell$j"."_".$i."\")'>edit</a>";
+							$link="<a id=botoes href='javascript:VerFdt(\"cell$j"."_".$i."\")'>$msgstr[edit]</a>";
 							echo "<td>$link <select name=cell$j"."_".$i.">
 								<option value=\"\"></option> ";
 							foreach ($fmt as $f){
@@ -316,7 +322,7 @@ if (isset($fpType)) {
 							$xsize="size=50";
 							break;
 						case 5:
-							$link="<a href='javascript:VerFdt(\"cell$j"."_".$i."\")'>edit</a>";
+							$link="<a id=botoes href='javascript:VerFdt(\"cell$j"."_".$i."\")'>$msgstr[edit]</a>";
 							$xsize="size=20";
 					}
 					if ($i!=1 and $i!=2)echo "<td><input type=text name=cell$j"."_".$i." value=\"$value\" $xsize>$link</td>\n";
@@ -337,7 +343,7 @@ for ($k=$j+1;$k<$j+8;$k++){
 		$link="";
 		switch ($i){
 			case 1:
-				$link="<a href='javascript:VerFdt(\"cell$k"."_".$i."\")'>edit</a>";
+				$link="<a id=botoes href='javascript:VerFdt(\"cell$k"."_".$i."\")'>$msgstr[edit]</a>";
 				echo "<td>$link<select name=cell$k"."_".$i.">
 					<option value=\"\"></option> ";
 				foreach ($fmt as $f){
@@ -376,7 +382,7 @@ for ($k=$j+1;$k<$j+8;$k++){
 }
 echo "</table>
 <p>
-<a href=javascript:Enviar($k)>".$msgstr["update"]."</a> &nbsp; &nbsp;";
+<a id=botoes href=javascript:Enviar($k)>".$msgstr["update"]."</a> &nbsp; &nbsp;";
 if (!isset($arrHttp["encabezado"]))
  echo "<a href=menu_modificardb.php?base=".$arrHttp["base"].">".$msgstr["cancel"]."</a>";
 ?>
