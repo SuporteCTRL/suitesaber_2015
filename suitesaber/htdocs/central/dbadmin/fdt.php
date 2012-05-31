@@ -1,30 +1,4 @@
 <?php
-/**
- * @program:   ABCD - ABCD-Central - http://reddes.bvsaude.org/projects/abcd
- * @copyright:  Copyright (C) 2009 BIREME/PAHO/WHO - VLIR/UOS
- * @file:      fdt.php
- * @desc:      Edit Field Definition Table (FDT)
- * @author:    Guilda Ascencio
- * @since:     20091203
- * @version:   1.0
- *
- * == BEGIN LICENSE ==
- *
- *    This program is free software: you can redistribute it and/or modify
- *    it under the terms of the GNU Lesser General Public License as
- *    published by the Free Software Foundation, either version 3 of the
- *    License, or (at your option) any later version.
- *
- *    This program is distributed in the hope that it will be useful,
- *    but WITHOUT ANY WARRANTY; without even the implied warranty of
- *    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *    GNU Lesser General Public License for more details.
- *  
- *    You should have received a copy of the GNU Lesser General Public License
- *    along with this program.  If not, see <http://www.gnu.org/licenses/>.
- *  
- * == END LICENSE ==
-*/
 session_start();
 if (!isset($_SESSION["permiso"])){
 	header("Location: ../common/error_page.php") ;
@@ -150,7 +124,7 @@ function EditarFila(Fila,id){
    	tagC=mygrid.cells2(Fila,2).getValue()
    	switch (tipoC){
    		case "MF":  //Campo fijo Marc
-   			msgwin=window.open("","WinRow","menu=0,scrollbars=yes,resizable,width=600,status")
+   			msgwin=window.open("","WinRow","menu=0,scrollbars=yes,resizable,width=700,status")
 	    	document.MFedit.tag.value=tagC
 	    	document.MFedit.submit()
 	    	msgwin.focus()
@@ -166,7 +140,7 @@ function EditarFila(Fila,id){
 	    	}
 	    	document.rowedit.ValorCapturado.value=VC
 	    	document.rowedit.row.value=Fila
-	    	msgwin=window.open("","WinRow","menu=0,scrollbars=yes,resizable,width=600,status")
+	    	msgwin=window.open("","WinRow","menu=0,scrollbars=yes,resizable,width=700,status")
 	    	document.rowedit.submit()
 	    	msgwin.focus()
    	}
@@ -245,7 +219,7 @@ function IsNumeric(sText){
 function EncabezarFilas(Rows){
    	msgwin.document.writeln("<tr>")
    	if (Rows!="") msgwin.document.writeln("<td rowspan=2></td>")
-  	msgwin.document.writeln("<td rowspan=2 align=center bgcolor=white><?php echo $msgstr["type"]?></td><td rowspan=2 align=center bgcolor=white><?php echo $msgstr["tag"]?></td><td rowspan=2 align=center bgcolor=white><?php echo $msgstr["title"]?></td><td rowspan=2 align=center bgcolor=white>I</td><td rowspan=2 align=center bgcolor=white>R</td><td rowspan=2 align=center  bgcolor=white><?php echo $msgstr["subfields"]?></td><td rowspan=2 align=center bgcolor=white><?php echo $msgstr["preliteral"]?></td><td rowspan=2 align=center bgcolor=white><?php echo $msgstr["inputtype"]?></td><td rowspan=2 align=center bgcolor=white><?php echo $msgstr["rows"]?></td><td rowspan=2 align=center bgcolor=white><?php echo $msgstr["cols"]?></td><td colspan=5 align=center bgcolor=white><?php echo $msgstr["picklist"]?></td>")
+  	msgwin.document.writeln("<td rowspan=2 align=center bgcolor=white><?php echo $msgstr["type"]?></td><td rowspan=2 align=center style=\"text-align:center;\" bgcolor=white><?php echo $msgstr["tag"]?></td><td width=100 rowspan=2 align=center bgcolor=white><?php echo $msgstr["title"]?></td><td rowspan=2 align=center bgcolor=white>I</td><td rowspan=2 align=center bgcolor=white>R</td><td width=80 rowspan=2 align=center  bgcolor=white><?php echo $msgstr["subfields"]?></td><td rowspan=2 align=center bgcolor=white><?php echo $msgstr["preliteral"]?></td><td rowspan=2 align=center bgcolor=white><?php echo $msgstr["inputtype"]?></td><td rowspan=2 align=center bgcolor=white><?php echo $msgstr["rows"]?></td><td rowspan=2 align=center bgcolor=white><?php echo $msgstr["cols"]?></td><td colspan=5 align=center bgcolor=white><?php echo $msgstr["picklist"]?></td>")
    	msgwin.document.writeln("<td  colspan=3 bgcolor=white></td>")
 	msgwin.document.writeln("<tr><td align=center bgcolor=white><?php echo $msgstr["type"]?></td><td bgcolor=white><?php echo $msgstr["name"]?></td><td bgcolor=white><?php echo $msgstr["prefix"]?></td><td bgcolor=white><?php echo $msgstr["pft"]?></td><td bgcolor=white><?php echo $msgstr["extractas"]?></td><td bgcolor=white></td><td bgcolor=white><?php echo $msgstr["help"]?></td><td bgcolor=white></td>")
 }
@@ -253,8 +227,8 @@ function EncabezarFilas(Rows){
 function Validate(Opcion){
 	msgwin=window.open("","Fdt")
     msgwin.document.writeln("<html>")
-    msgwin.document.writeln("<style>BODY{font-family: 'Trebuchet MS', Arial, Verdana, Helvetica; font-size: 8pt;}")
-    msgwin.document.writeln("TD{font-family:arial; font-size:8pt;}")
+    msgwin.document.writeln("<style>BODY{font-family: 'Trebuchet MS', Arial, Verdana, Helvetica; font-size: 10pt;}")
+    msgwin.document.writeln("TD{font-family:arial; font-size:10pt;}")
     msgwin.document.writeln("</style>")
 	msgwin.document.writeln("<body><table bgcolor=#CCCCCC>")
 	EncabezarFilas("row")
@@ -483,8 +457,8 @@ function List(){
 	msgwin=window.open("","Fdt","")
 	msgwin.document.close()
     msgwin.document.writeln("<html>")
-	msgwin.document.writeln("<style>BODY{font-family: 'Trebuchet MS', Arial, Verdana, Helvetica; font-size: 8pt;}")
-    msgwin.document.writeln("TD{font-family:arial; font-size:8pt;}")
+	msgwin.document.writeln("<style>BODY{font-family: 'Trebuchet MS', Arial, Verdana, Helvetica; font-size: 10pt;}")
+    msgwin.document.writeln("TD{font-family:arial; font-size:10pt;}")
     msgwin.document.writeln("</style>")
     msgwin.document.writeln("<body>")
 	msgwin.document.writeln("<table bgcolor=#CCCCCC>")
@@ -633,8 +607,34 @@ if (isset($arrHttp["encabezado"])){
 		if (file_exists($archivo))	$fp=file($archivo);
  		//echo "tope=20\n";
 	}
-	echo "<div class=\"sectionInfo\">
-		<div class=\"breadcrumb\">";
+	echo "<div class=\"sectionInfo\"><div class=\"language\">";
+		if ($arrHttp["Opcion"]=="new"){
+		if (isset($arrHttp["encabezado"])){
+			echo "<a href=\"../common/inicio.php?reinicio=s\" class=\"defaultButton\">";
+		}else{
+			 echo "<a href=menu_creardb.php class=\"defaultButton\">";
+		}
+	}else{
+		if (isset($arrHttp["encabezado"]))
+			$encabezado="&encabezado=s";
+		else
+			$encabezado="";
+		if (isset($arrHttp["Fixed_field"])){
+			echo "<a href=fixed_marc.php?base=". $arrHttp["base"].$encabezado." class=\"defaultButton\">";
+		}else{
+			if (!isset($arrHttp["ventana"]))
+				echo "<a href=menu_modificardb.php?base=". $arrHttp["base"].$encabezado." class=\"defaultButton\">";
+			else
+				echo "<a href=\"javascript:self.close()\" class=\"defaultButton\">";
+		}
+	}
+	echo "
+					
+					<span><strong>". $msgstr["cancel"]."</strong></span>
+				</a>
+	
+		</div></div>
+		<div class=\"breadcrumb\"><h3>";
   	echo $msgstr["database"].": ".$arrHttp["base"]."&nbsp;&nbsp;";
 	if (isset($arrHttp["fmt_desc"])) {
       	echo $msgstr["fmt"];
@@ -645,34 +645,9 @@ if (isset($arrHttp["encabezado"])){
 	echo ": ".$xarch;
 	if (isset($arrHttp["fmt_desc"])) echo " (".$arrHttp["fmt_desc"].")";
 
-	echo "</div><div class=\"actions\">";
-	if ($arrHttp["Opcion"]=="new"){
-		if (isset($arrHttp["encabezado"])){
-			echo "<a href=\"../common/inicio.php?reinicio=s\" class=\"defaultButton cancelButton\">";
-		}else{
-			 echo "<a href=menu_creardb.php class=\"defaultButton cancelButton\">";
-		}
-	}else{
-		if (isset($arrHttp["encabezado"]))
-			$encabezado="&encabezado=s";
-		else
-			$encabezado="";
-		if (isset($arrHttp["Fixed_field"])){
-			echo "<a href=fixed_marc.php?base=". $arrHttp["base"].$encabezado." class=\"defaultButton cancelButton\">";
-		}else{
-			if (!isset($arrHttp["ventana"]))
-				echo "<a href=menu_modificardb.php?base=". $arrHttp["base"].$encabezado." class=\"defaultButton cancelButton\">";
-			else
-				echo "<a href=\"javascript:self.close()\" class=\"defaultButton cancelButton\">";
-		}
-	}
-	echo "
-					
-					<span><strong>". $msgstr["cancel"]."</strong></span>
-				</a>
-			</div>
-			<div class=\"spacer\">&#160;</div>
-	</div>";
+	echo "</h3></div><div class=\"actions\">";
+
+	echo "</div>";
 
 ?>
 <div class="helper">
@@ -680,16 +655,15 @@ if (isset($arrHttp["encabezado"])){
 <?php
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 	echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/fdt.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "<font color=white>&nbsp; &nbsp; Script: fdt.php";
+echo "<font> &nbsp; Script: fdt.php";
 ?>
-</font>
 	</div>
 	<div class="middle form">
 		<div class="formContent">
-			<a href="javascript:void(0)" onclick="mygrid.addRow((new Date()).valueOf(),['','','','','','','','','','','','','','','','','','',''],mygrid.getRowIndex(mygrid.getSelectedId()))"><?php echo $msgstr["addrowbef"]?></a>
-			&nbsp; &nbsp; &nbsp;<a href="javascript:void(0)" onclick="mygrid.deleteSelectedItem()"><?php echo $msgstr["remselrow"]?></a>
+			<a id="botoes" href="javascript:void(0)" onclick="mygrid.addRow((new Date()).valueOf(),['','','','','','','','','','','','','','','','','','',''],mygrid.getRowIndex(mygrid.getSelectedId()))"><?php echo $msgstr["addrowbef"]?></a>
+			&nbsp; <a id="botoes" href="javascript:void(0)" onclick="mygrid.deleteSelectedItem()"><?php echo $msgstr["remselrow"]?></a>
 
-	<table  style="width:100%; height:200" id=tblToGrid class="dhtmlxGrid">
+	<table id="tblToGrid" class="dhtmlxGrid">
 <?php
 echo "<tr>";
 foreach ($rows_title as $cell) echo "<td>$cell</td>\n";
@@ -712,7 +686,7 @@ echo "</tr>";
 		//		echo "i=$i\n";
 				$i++;
 				$irow=$i+1;
-				$linkr="<a href=javascript:EditarFila(\"".$irow."\",$i)><font size=1>$irow</a>";
+				$linkr="<a id=tag href=javascript:EditarFila(\"".$irow."\",$i)><font size=2>$irow</a>";
 				echo "<td>$linkr</td>";
 				if ($t[0]=="F" or $t[0]=="S"){
 					if (empty($t[7])) $t[7]="X";
@@ -721,12 +695,12 @@ echo "</tr>";
 				for ($ix=0;$ix<20;$ix++) if (!isset($t[$ix])) $t[$ix]="";
 				if (trim($t[0])!="H" and trim($t[0])!="L"){
 					if ($t[10]=="")
-						$pick="<a href=javascript:Picklist(\"".$t[1].".tab\",$i)><font size=1>".$msgstr["browse"]."</a>";
+						$pick="<a href=javascript:Picklist(\"".$t[1].".tab\",$i)><font size=2>".$msgstr["browse"]."</a>";
 					else
-			    		$pick="<a href=javascript:Picklist(\"".$t[10]."\",$i)><font size=1>".$msgstr["browse"]."</a>";
+			    		$pick="<a href=javascript:Picklist(\"".$t[10]."\",$i)><font size=2>".$msgstr["browse"]."</a>";
 				}
 				$irow=$i+1;
-				$linkr="<a href=javascript:EditarFila(\"".$irow."\",$i)><font size=1>$irow</a>";
+				$linkr="<a href=javascript:EditarFila(\"".$irow."\",$i)><font size=2>$irow</a>";
 				if (!isset($t[16])) $t[16]="";
 				$ixt=-1;
 				foreach ($t as $fila) {
@@ -779,10 +753,10 @@ echo "</tr>";
 ?>
 
 	</table>
-	<a href=javascript:Test()><?php echo $msgstr["test"]?></a>&nbsp; &nbsp; &nbsp; &nbsp;
-	<a href=javascript:List()><?php echo $msgstr["list"]?></a>&nbsp; &nbsp; &nbsp; &nbsp;
-	<a href=javascript:Validate()><?php echo $msgstr["validate"]?></a>&nbsp; &nbsp; &nbsp; &nbsp;
-	<a href=javascript:Enviar()><?php echo $msgstr["update"]?></a>&nbsp; &nbsp; &nbsp; &nbsp;
+	<a id=botoes href=javascript:Test()><?php echo $msgstr["test"]?></a>&nbsp;
+	<a id=botoes href=javascript:List()><?php echo $msgstr["list"]?></a>&nbsp; 
+	<a id=botoes href=javascript:Validate()><?php echo $msgstr["validate"]?></a>&nbsp; 
+	<a id=botoes href=javascript:Enviar()><?php echo $msgstr["update"]?></a>&nbsp;
 
 <script>
 
@@ -808,7 +782,7 @@ echo "</tr>";
   	if (!isset($arrHttp["encabezado"]))
     	echo  "mygrid.enableAutoHeigth(true,270)\n";
     else
-        echo  "mygrid.enableAutoHeigth(true,300)\n";
+        echo  "mygrid.enableAutoHeigth(true,500)\n";
 ?>
  	mygrid.setOnBeforeRowDeletedHandler(doBeforeRowDeleted);
  	mygrid.setOnEditCellHandler(doOnCellEdit);
