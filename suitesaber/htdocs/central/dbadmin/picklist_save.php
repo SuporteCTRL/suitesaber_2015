@@ -46,25 +46,25 @@ if (isset($arrHttp["encabezado"])){
 
 
 echo "
-	<div class=\"sectionInfo\">
-			<div class=\"breadcrumb\">".
+	<div class=\"sectionInfo\"></div>
+			<div class=\"breadcrumb\"><h3>".
 				$msgstr["picklist"]. ": " . $arrHttp["base"]." - ".$arrHttp["picklist"]."
-			</div>
-			<div class=\"actions\">
+			</h3></div>
+			<div class=\"actions\"><br /><br /><br />
 
 	";
 if (isset($arrHttp["desde"])){
-	echo "<a href=\"fixed_marc.php?base=". $arrHttp["base"]."$encabezado\" class=\"defaultButton backButton\">";
+	echo "<a href=\"fixed_marc.php?base=". $arrHttp["base"]."$encabezado\" class=\"defaultButton\">";
 }else{
 	echo "<a href=\"picklist.php?base=". $arrHttp["base"]."&row=".$arrHttp["row"]."&picklist=".$arrHttp["picklist"]."\" class=\"defaultButton backButton\">";
 }
 echo "
-					<img src=\"../images/defaultButton_iconBorder.gif\" alt=\"\" title=\"\" />
+	
 					<span><strong>". $msgstr["back"]."</strong></span>
 				</a>";
 echo "			</div>
-			<div class=\"spacer\">&#160;</div>
-	</div>
+
+	
 
 <div class=\"helper\">
 <a href=../documentacion/ayuda.php?help=".$_SESSION["lang"]."/picklist_tab.html target=_blank>".$msgstr["help"]."</a>&nbsp &nbsp;";

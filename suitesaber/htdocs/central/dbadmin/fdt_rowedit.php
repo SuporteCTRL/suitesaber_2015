@@ -204,7 +204,7 @@ if ($Fdt[16]==1)	echo " checked";
 echo "></td>";
 echo "<tr><td bgcolor=white>". $msgstr["url_help"]."</td><td bgcolor=white><input type=text name=c18 value=\"".$Fdt[17]."\" size=100></td>";
 echo "</table>
-<a href=javascript:AsignarFdt()>".$msgstr["update"]."</a>&nbsp; &nbsp; &nbsp;<a href=javascript:self.close()>".$msgstr["cancel"]."</a>
+<a id=botoes href=javascript:AsignarFdt()>".$msgstr["update"]."</a>&nbsp; <a id=botoes href=javascript:self.close()>".$msgstr["cancel"]."</a>
 </form>
 </div>
 </div>

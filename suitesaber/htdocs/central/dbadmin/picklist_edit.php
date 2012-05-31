@@ -1,30 +1,5 @@
 <?php
-/**
- * @program:   ABCD - ABCD-Central - http://reddes.bvsaude.org/projects/abcd
- * @copyright:  Copyright (C) 2009 BIREME/PAHO/WHO - VLIR/UOS 
- * @file:      picklist_edit.php
- * @desc:      
- * @author:    Guilda Ascencio
- * @since:     20091203
- * @version:   1.0
- *
- * == BEGIN LICENSE ==
- *
- *    This program is free software: you can redistribute it and/or modify
- *    it under the terms of the GNU Lesser General Public License as
- *    published by the Free Software Foundation, either version 3 of the
- *    License, or (at your option) any later version.
- *
- *    This program is distributed in the hope that it will be useful,
- *    but WITHOUT ANY WARRANTY; without even the implied warranty of
- *    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *    GNU Lesser General Public License for more details.
- *   
- *    You should have received a copy of the GNU Lesser General Public License
- *    along with this program.  If not, see <http://www.gnu.org/licenses/>.
- *   
- * == END LICENSE ==
-*/
+
 session_start();
 if (!isset($_SESSION["permiso"])){
 	header("Location: ../common/error_page.php") ;
@@ -89,31 +64,28 @@ if (isset($arrHttp["encabezado"])) {
 	<script  src="../dataentry/js/dhtml_grid/dhtmlXGrid_excell_link.js"></script>
 <?php
 echo "
-	<div class=\"sectionInfo\">
-			<div class=\"breadcrumb\">".
+	<div class=\"sectionInfo\"></div>
+			<div class=\"breadcrumb\"><h3>".
 				$msgstr["picklist"]. ": " . $arrHttp["base"]." - ".$arrHttp["picklist"]."
-			</div>
-			<div class=\"actions\">
+			</h3></div>
+			<div class=\"actions\"><br><br><br>
 
 	";
 if (isset($arrHttp["desde"]) and $arrHttp["desde"]=="fixed_marc"){
-	echo "<a href=\"fixed_marc.php?base=".$arrHttp["base"]."$encabezado\" class=\"defaultButton cancelButton\">";
+	echo "<a href=\"fixed_marc.php?base=".$arrHttp["base"]."$encabezado\" class=\"defaultButton\">";
 }else{
-	 echo "<a href=\"picklist.php?base=". $arrHttp["base"]."&row=".$arrHttp["row"]."&picklist=".$arrHttp["picklist"]."\" class=\"defaultButton cancelButton\">";
+	 echo "<a  href=\"picklist.php?base=". $arrHttp["base"]."&row=".$arrHttp["row"]."&picklist=".$arrHttp["picklist"]."\" class=\"defaultButton\">";
 }
 
-echo "
-					<img src=\"../images/defaultButton_iconBorder.gif\" alt=\"\" title=\"\" />
-					<span><strong>". $msgstr["cancel"]."</strong></span>
+	echo "<span><strong>". $msgstr["cancel"]."</strong></span>
 				</a>";
-echo "<a href=\"javascript:Enviar()\" class=\"defaultButton saveButton\">";
-echo "
-					<img src=\"../images/defaultButton_iconBorder.gif\" alt=\"\" title=\"\" />
+	echo "<a href=\"javascript:Enviar()\" class=\"defaultButton\">";
+	echo "
+	
 					<span><strong>". $msgstr["save"]."</strong></span>
 				</a>";
 echo "			</div>
-			<div class=\"spacer\">&#160;</div>
-	</div>
+	
 
 <div class=\"helper\">
 <a href=../documentacion/ayuda.php?help=".$_SESSION["lang"]."/picklist_tab.html target=_blank>".$msgstr["help"]."</a>&nbsp &nbsp;";
@@ -135,8 +107,8 @@ echo "<font color=white>&nbsp; &nbsp; Script: picklist_edit.php" ;
         </td>
         <tr>
 		<td>
-			<a href="javascript:void(0)" onclick="mygrid.addRow((new Date()).valueOf(),['',''],mygrid.getRowIndex(mygrid.getSelectedId()))"><?php echo $msgstr["addrowbef"]?></a>
-			&nbsp; &nbsp; &nbsp;<a href="javascript:void(0)" onclick="mygrid.deleteSelectedItem()"><?php echo $msgstr["remselrow"]?></a>
+			<a id="botoes" href="javascript:void(0)" onclick="mygrid.addRow((new Date()).valueOf(),['',''],mygrid.getRowIndex(mygrid.getSelectedId()))"><?php echo $msgstr["addrowbef"]?></a>
+			&nbsp;<a id="botoes" href="javascript:void(0)" onclick="mygrid.deleteSelectedItem()"><?php echo $msgstr["remselrow"]?></a>
 		<br>
 		</td>
 		<tr>
