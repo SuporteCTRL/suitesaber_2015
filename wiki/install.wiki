@@ -97,9 +97,9 @@ $ sudo apt-get install barcode
 2. Instalar PHP-Barcode
 
 {{{
-$ sudo cd /opt
+$ cd /opt
 
-$ sudo wget http://www.ashberg.de/php-barcode/download/files/php-barcode-0.4.tar.gz
+$ sudo wget http://www.ashberg.de/php-barcode/download/files/genbarcode-0.4.tar.gz
 
 $ sudo tar -xvf genbarcode-0.4.tar.gz
 
