@@ -1,2 +1,7 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-<calls id="24" lang="en" available="no"/>
+<?xml version="1.0" encoding="iso-8859-1"?>
+<calls id="24" available="">
+  <item id="1" available="yes" href="http://twitter.com/bireme" img="http://regional.bvsalud.org/local/Image/en/logotwitter_en.jpg">
+    <description>  </description>
+    <portal>  </portal>
+  </item>
+</calls>

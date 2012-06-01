@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <define>
   <sourceList>
-    <group label="Base bibliográfica">
-      <item id="40-2" label="MARC" href="/iah/?base=MARC&amp;lang=pt" base-search-url="http://localhost:9090/cgi-bin/wxis.exe/iah/scripts/?IsisScript=iah.xis&amp;lang=pt&amp;base=MARC&amp;nextAction=xml&amp;count=1" base-browse-url="http://localhost:9090/cgi-bin/wxis.exe/iah/scripts/?IsisScript=iah.xis&amp;lang=pt&amp;base=MARC&amp;nextAction=lnk"/>
+    <group label="Bases de dados internas">
+      <item id="17-89" label="Base Bibliográfica" href="/iah/?base=MARC&amp;lang=pt" base-search-url="http://localhost:9090/cgi-bin/wxis.exe/iah/scripts/?IsisScript=iah.xis&amp;lang=pt&amp;base=MARC&amp;nextAction=xml&amp;count=1" base-browse-url="http://localhost:9090/cgi-bin/wxis.exe/iah/scripts/?IsisScript=iah.xis&amp;lang=pt&amp;base=MARC&amp;nextAction=lnk"/>
+      <item id="17-109" label="Biblioteca Pública do Rio Grande do Sul" href="http://bpe.saberabcd.com/cgi-local/wxis.exe/iah/scripts/?IsisScript=iah.xis&amp;base=BPE&amp;lang=en&amp;form=F" base-search-url="http://bpe.saberabcd.com/cgi-local/wxis.exe/iah/scripts/?IsisScript=iah.xis&amp;lang=pt&amp;base=BPE&amp;nextAction=xml&amp;count=1" base-browse-url="http://bpe.saberabcd.com/cgi-local/wxis.exe/iah/scripts/?IsisScript=iah.xis&amp;lang=pt&amp;base=BPE&amp;nextAction=lnk"/>
     </group>
-    <group label="Revistas científicas de acesso livre"/>
   </sourceList>
   <search>
-    <item source="40-2" search-parameters="exprSearch="/>
+    <item source="17-89" search-parameters="exprSearch="/>
+    <item source="17-109" search-parameters="exprSearch="/>
   </search>
 </define>

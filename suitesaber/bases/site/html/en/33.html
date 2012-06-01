@@ -1,1 +1,18 @@
-<div class="portal"><h3><span><a href="../php/level.php?lang=en&amp;component=33">Network</a></span></h3><ul><li><a href="www.bireme.br" target="_blank"><img src="http://regional.bvsalud.org/image/common/net/icon_bvs.gif" alt="VHL"/>VHL</a></li><li><a href="http://www.scielo.br" target="_blank"><img src="http://regional.bvsalud.org/image/common/net/icon_scielo.gif" alt="SciELO"/>SciELO</a></li></ul></div>
+<link rel="stylesheet" href="/css/public/skins/classic/common/carousel.css" type="text/css"/><script type="text/javascript" src="/js/jsSlider/unobtrusivelib.js">//</script><script type="text/javascript" src="/js/jsSlider/prettify.js">//</script><script type="text/javascript" src="/js/jsSlider/jquery.carousel.pack.js">//</script><script type="text/javascript">
+        $(function(){
+            $.unobtrusivelib();
+            prettyPrint();
+            $("#ticker33 div.pagination").carousel(
+                {
+                    pagination: true,
+                    effect: "fade",
+                    autoSlide: true,
+                    loop: true,
+                    autoSlideInterval: 5000
+                }
+            );
+        });
+        </script><div class="ticker" id="ticker33"><h3><span>Newsletter VHL</span></h3><div class="carousel pagination"><?
+                $url = "http://srv.bvsalud.org/nlrss/?lang=en";
+                include("./php/show-ticker.php");
+                ?></div></div>

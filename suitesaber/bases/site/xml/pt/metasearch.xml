@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
-<metasearch id="" lang="pt" available="">
-  <text id="search_title" available="yes">Pesquisa no Saber ABCD</text>
+<metasearch id="" available="">
+  <text id="search_title" available="yes">Pesquisa no Acervo</text>
   <text id="search_entryWords" available="yes">Entre com uma ou mais palavras</text>
-  <text id="search_submit" class="submit" available="yes">Pesquisar</text>
+  <text id="search_submit" available="yes">Pesquisar</text>
   <text id="search_howToSearch" available="yes">como pesquisar?</text>
   <text id="search_allWords" available="yes">Todas as palavras</text>
   <text id="search_anyWord" available="yes">Qualquer palavra</text>
