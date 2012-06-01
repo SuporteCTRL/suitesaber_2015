@@ -10,41 +10,36 @@
 	<page id="menu" title="Administração da BVS" css="css/admin/adm.css">
 		<identification title="Administração: "/>
 		<bar>
-			<item href="javascript:preview();">Visualiza</item>			
-			<item align="right" href="../admin/admFrames.php?lang=en">English</item>
-			<item align="right" href="../admin/admFrames.php?lang=es">Español</item>
-                        <item align="right" href="../admin/admFrames.php?lang=fr">Français</item>
-			<item align="right" href="../admin/logout.php">Sair</item>			
+			<item href="../index.php?lang=pt">Visualizar site</item>
+			<item align="right" href="../admin/logout.php">Sair</item>
+			<item align="right" href="?xml=xml/en/adm.xml&amp;xsl=xsl/adm/menu.xsl&amp;lang=en">English</item>
+			<item align="right" href="?xml=xml/es/adm.xml&amp;xsl=xsl/adm/menu.xsl&amp;lang=es">Español</item>
 		</bar>
 		<menu>
 			<block title="Estrutura" level="adm">
-				<item page="parent">ABCD logotipo</item>
+				<item page="parent">BVS logotipo</item>
 				<item page="identification">Identificação</item>		
 				<item page="contact">Contato</item>		
 				<item page="other-versions">Versões</item>	
 				<item page="institution">Instituições</item>
 				<item page="metasearch" xsl="tree-collection.xsl">Meta pesquisa</item>			
-				<line/>
+				<!-- item href="../admin/edit_subportal.php?lang=pt">Subportais</item -->
 				<item page="collectionList">Componentes</item>
-				<line/>
 				<item page="responsable" xsl="tree-collection.xsl">Instituição responsável</item>
 				<item page="metainfo" xsl="tree-collection.xsl">Meta informações do site</item>
 				<item page="texts">Textos</item>
-				<line/>				
-				<item href="javascript:fnow('/site/admin/fnow/index.php?lang=pt')">Gerenciador de arquivos do site</item>				
+				<item href="javascript:fnow('/admin/fnow/index.php?lang=pt')">Gerenciador de arquivos do site</item>				
+				<item page="users" xsl="tree-user.xsl">Usuários</item>
 			</block>
 			<block title="Componentes" level="adm,content">
 				<doc-list element="collectionList"/>
-			</block>
-			<block title="Acesso" level="adm">
-				<item page="users" xsl="tree-user.xsl">Usuários</item>
 			</block>
 		</menu>
 	</page>
 	<page id="menu-standard" title="Administração da BVS" css="css/admin/adm.css">
 		<identification title="Administração: "/>
 		<bar>
-			<item href="javascript:preview();">Visualiza</item>			
+			<item href="../index.php?lang=pt">Visualizar site</item>
 			<item align="right" href="../admin/admFrames.php?xsl=xsl/adm/menu.xsl&amp;lang=en">English</item>
 			<item align="right" href="../admin/admFrames.php?xsl=xsl/adm/menu.xsl&amp;lang=es">Español</item>
 			<item align="right" href="../admin/logout.php">Sair</item>			
@@ -73,17 +68,18 @@
 				<option value="yes">Disponível</option>
 				<option value="no">Indisponível</option>
 			</flag>
-			<item href="javascript:save('item')">Grava</item>
-			<item align="right" href="javascript:history.back();">Sai</item>
+			<item align="right" href="javascript:history.back();">Sair</item>
 		</bar>
 		<edit>
 			<buttons>
 				<separator/>
 				<separator/>
-				<button href="javascript:newItem('new_identification');" img="new.gif" alt=" adiciona "/>
-				<button href="javascript:changeItem(document.formPage.tree,'change_identification');" img="change.gif" alt=" modifica "/>
+				<button href="javascript:newItem('new_identification');" img="new.gif" alt=" Adicionar "/>
+				<button href="javascript:changeItem(document.formPage.tree,'change_identification');" img="change.gif" alt=" Modificar "/>
 				<separator/>
-				<button href="javascript:del(document.formPage.tree);" img="del.gif" alt=" elimina "/>
+				<button href="javascript:del(document.formPage.tree);" img="del.gif" alt=" Eliminar "/>
+				<separator/>
+                                <button href="javascript:save('item')" img="save.png" alt=" Gravar "/>
 			</buttons>
 			<tree-edit element="identification"/>
 			<buttons>
@@ -106,7 +102,7 @@
 				<option value="no">Indisponível</option>
 			</flag>
 			<item href="javascript:opener.addItem('name,img')">Adiciona</item>
-			<item align="right" href="javascript:opener.close_and_focus();">Sai</item>
+			<item align="right" href="javascript:opener.close_and_focus();">Sair</item>
 		</bar>
 		<change>
 			<item edit="hidden" name="id" value="New"/>
@@ -123,7 +119,7 @@
 				<option value="no">Indisponível</option>
 			</flag>
 			<item href="javascript:opener.modifyItem('name,img');">Modifica</item>
-			<item align="right" href="javascript:opener.close_and_focus();">Sai</item>
+			<item align="right" href="javascript:opener.close_and_focus();">Sair</item>
 		</bar>
 		<change>
 			<item edit="hidden" name="id"/>
@@ -140,17 +136,18 @@
 				<option value="yes">Disponível</option>
 				<option value="no">Indisponível</option>
 			</flag>
-			<item href="javascript:save('item')">Grava</item>
-			<item align="right" href="javascript:history.back();">Sai</item>
+			<item align="right" href="javascript:history.back();">Sair</item>
 		</bar>
 		<edit>
 			<buttons>
 				<separator/>
 				<separator/>
-				<button href="javascript:newItem('new_parent');" img="new.gif" alt=" adiciona "/>
-				<button href="javascript:changeItem(document.formPage.tree,'change_parent');" img="change.gif" alt=" modifica "/>
+				<button href="javascript:newItem('new_parent');" img="new.gif" alt=" Adicionar "/>
+				<button href="javascript:changeItem(document.formPage.tree,'change_parent');" img="change.gif" alt=" Modificar "/>
 				<separator/>
-				<button href="javascript:del(document.formPage.tree);" img="del.gif" alt=" elimina "/>
+				<button href="javascript:del(document.formPage.tree);" img="del.gif" alt=" Eliminar "/>
+				<separator/>
+                                <button href="javascript:save('item')" img="save.png" alt=" Gravar "/>
 			</buttons>
 			<tree-edit element="parent"/>
 			<buttons>
@@ -172,7 +169,7 @@
 				<option value="no">Indisponível</option>
 			</flag>
 			<item href="javascript:opener.addItem('name,img')">Adiciona</item>
-			<item align="right" href="javascript:opener.close_and_focus();">Sai</item>
+			<item align="right" href="javascript:opener.close_and_focus();">Sair</item>
 		</bar>
 		<change>
 			<item edit="hidden" name="id" value="New"/>
@@ -189,7 +186,7 @@
 				<option value="no">Indisponível</option>
 			</flag>
 			<item href="javascript:opener.modifyItem('name,img');">Modifica</item>
-			<item align="right" href="javascript:opener.close_and_focus();">Sai</item>
+			<item align="right" href="javascript:opener.close_and_focus();">Sair</item>
 		</bar>
 		<change>
 			<item edit="hidden" name="id"/>
@@ -206,17 +203,18 @@
 				<option value="yes">Disponível</option>
 				<option value="no">Indisponível</option>
 			</flag>
-			<item href="javascript:save('item')">Grava</item>
-			<item align="right" href="javascript:history.back();">Sai</item>
+			<item align="right" href="javascript:history.back();">Sair</item>
 		</bar>
 		<edit>
 			<buttons>
 				<separator/>
 				<separator/>
-				<button href="javascript:newItem('new_institution');" img="new.gif" alt=" adiciona "/>
-				<button href="javascript:changeItem(document.formPage.tree,'change_institution');" img="change.gif" alt=" modifica "/>
+				<button href="javascript:newItem('new_institution');" img="new.gif" alt=" Adicionar "/>
+				<button href="javascript:changeItem(document.formPage.tree,'change_institution');" img="change.gif" alt=" Modificar "/>
 				<separator/>
-				<button href="javascript:del(document.formPage.tree);" img="del.gif" alt=" elimina "/>
+				<button href="javascript:del(document.formPage.tree);" img="del.gif" alt=" Eliminar "/>
+				<separator/>
+                                <button href="javascript:save('item')" img="save.png" alt=" Gravar "/>
 			</buttons>
 			<tree-edit element="institution"/>
 			<buttons>
@@ -238,7 +236,7 @@
 				<option value="no">Indisponível</option>
 			</flag>
 			<item href="javascript:opener.addItem('name,img')">Adiciona</item>
-			<item align="right" href="javascript:opener.close_and_focus();">Sai</item>
+			<item align="right" href="javascript:opener.close_and_focus();">Sair</item>
 		</bar>
 		<change>
 			<item edit="hidden" name="id" value="New"/>
@@ -255,7 +253,7 @@
 				<option value="no">Indisponível</option>
 			</flag>
 			<item href="javascript:opener.modifyItem('name,img');">Modifica</item>
-			<item align="right" href="javascript:opener.close_and_focus();">Sai</item>
+			<item align="right" href="javascript:opener.close_and_focus();">Sair</item>
 		</bar>
 		<change>
 			<item edit="hidden" name="id"/>
@@ -264,25 +262,26 @@
 			<item edit="text" name="href">Link</item>
 		</change>
 	</page>
-	<page id="contact" title="Lista de contactos" css="css/admin/adm.css">
-		<identification title="Administración: "/>
+	<page id="contact" title="Lista de contatos" css="css/admin/adm.css">
+		<identification title="Administração: "/>
 		<bar>
 			<item>Contato</item>
 			<flag element="contact" name="available">
 				<option value="yes">Disponível</option>
 				<option value="no">Indisponível</option>
 			</flag>
-			<item href="javascript:save('item')">Grava</item>
-			<item align="right" href="javascript:history.back();">Sai</item>
+			<item align="right" href="javascript:history.back();">Sair</item>
 		</bar>
 		<edit>
 			<buttons>
 				<separator/>
 				<separator/>
-				<button href="javascript:newItem('new_contact');" img="new.gif" alt=" adiciona "/>
-				<button href="javascript:changeItem(document.formPage.tree,'change_contact');" img="change.gif" alt=" modifica "/>
+				<button href="javascript:newItem('new_contact');" img="new.gif" alt=" Adicionar "/>
+				<button href="javascript:changeItem(document.formPage.tree,'change_contact');" img="change.gif" alt=" Modificar "/>
 				<separator/>
-				<button href="javascript:del(document.formPage.tree);" img="del.gif" alt=" elimina "/>
+				<button href="javascript:del(document.formPage.tree);" img="del.gif" alt=" Eliminar "/>
+				<separator/>
+                                <button href="javascript:save('item')" img="save.png" alt=" Gravar "/>
 			</buttons>
 			<tree-edit element="contact"/>
 			<buttons>
@@ -304,7 +303,7 @@
 				<option value="no">Indisponível</option>
 			</flag>
 			<item href="javascript:opener.addItem('name,img')">Adiciona</item>
-			<item align="right" href="javascript:opener.close_and_focus();">Sai</item>
+			<item align="right" href="javascript:opener.close_and_focus();">Sair</item>
 		</bar>
 		<change>
 			<item edit="hidden" name="id" value="New"/>
@@ -320,7 +319,7 @@
 				<option value="no">Indisponível</option>
 			</flag>
 			<item href="javascript:opener.modifyItem('name,img');">Modifica</item>
-			<item align="right" href="javascript:opener.close_and_focus();">Sai</item>
+			<item align="right" href="javascript:opener.close_and_focus();">Sair</item>
 		</bar>
 		<change>
 			<item edit="hidden" name="id"/>			
@@ -336,17 +335,18 @@
 				<option value="yes">Disponível</option>
 				<option value="no">Indisponível</option>
 			</flag>
-			<item href="javascript:save('item')">Grava</item>
-			<item align="right" href="javascript:history.back();">Sai</item>
+			<item align="right" href="javascript:history.back();">Sair</item>
 		</bar>
 		<edit>
 			<buttons>
 				<separator/>
 				<separator/>
-				<button href="javascript:newItem('new_portal');" img="new.gif" alt=" adiciona "/>
-				<button href="javascript:changeItem(document.formPage.tree,'change_portal');" img="change.gif" alt=" modifica "/>
+				<button href="javascript:newItem('new_portal');" img="new.gif" alt=" Adicionar "/>
+				<button href="javascript:changeItem(document.formPage.tree,'change_portal');" img="change.gif" alt=" Modificar "/>
 				<separator/>
-				<button href="javascript:del(document.formPage.tree);" img="del.gif" alt=" elimina "/>
+				<button href="javascript:del(document.formPage.tree);" img="del.gif" alt=" Eliminar "/>
+				<separator/>
+                                <button href="javascript:save('item')" img="save.png" alt=" Gravar "/>
 			</buttons>
 			<tree-edit element="collectionList"/>
 			<buttons>
@@ -368,7 +368,7 @@
 				<option value="no">Indisponível</option>
 			</flag>
 			<item href="javascript:opener.addItem('name,img')">Adiciona</item>
-			<item align="right" href="javascript:opener.close_and_focus();">Sai</item>
+			<item align="right" href="javascript:opener.close_and_focus();">Sair</item>
 		</bar>
 		<change>
 			<item edit="hidden" name="id" value="New"/>
@@ -385,7 +385,7 @@
 				<option value="no">Indisponível</option>
 			</flag>
 			<item href="javascript:opener.modifyItem('name,img');">Modifica</item>
-			<item align="right" href="javascript:opener.close_and_focus();">Sai</item>
+			<item align="right" href="javascript:opener.close_and_focus();">Sair</item>
 		</bar>
 		<change>
 			<item edit="hidden" name="id"/>
@@ -398,21 +398,18 @@
 		<identification title="Administração: "/>
 		<bar>
 			<item>Informações sobre esta BVS</item>
-			<flag element="about" name="available">
-				<option value="yes">Disponível</option>
-				<option value="no">Indisponível</option>
-			</flag>
-			<item href="javascript:save('item')">Grava</item>
-			<item align="right" href="javascript:history.back();">Sai</item>
+			<item align="right" href="javascript:history.back();">Sair</item>
 		</bar>
 		<edit>
 			<buttons>
 				<separator/>
 				<separator/>
-				<button href="javascript:newItem('new_about');" img="new.gif" alt=" adiciona "/>
-				<button href="javascript:changeItem(document.formPage.tree,'change_about');" img="change.gif" alt=" modifica "/>
+				<button href="javascript:newItem('new_about');" img="new.gif" alt=" Adicionar "/>
+				<button href="javascript:changeItem(document.formPage.tree,'change_about');" img="change.gif" alt=" Modificar "/>
 				<separator/>
-				<button href="javascript:del(document.formPage.tree);" img="del.gif" alt=" elimina "/>
+				<button href="javascript:del(document.formPage.tree);" img="del.gif" alt=" Eliminar "/>
+				<separator/>
+                                <button href="javascript:save('item-collection')" img="save.png" alt=" Gravar "/>
 			</buttons>
 			<tree-edit element="collectionList"/>
 			<buttons>
@@ -434,7 +431,7 @@
 				<option value="no">Indisponível</option>
 			</flag>
 			<item href="javascript:opener.addItem('name,img')">Adiciona</item>
-			<item align="right" href="javascript:opener.close_and_focus();">Sai</item>
+			<item align="right" href="javascript:opener.close_and_focus();">Sair</item>
 		</bar>
 		<change>
 			<item edit="hidden" name="id" value="New"/>
@@ -453,7 +450,7 @@
 				<option value="no">Indisponível</option>
 			</flag>
 			<item href="javascript:opener.modifyItem('name,img');">Modifica</item>
-			<item align="right" href="javascript:opener.close_and_focus();">Sai</item>
+			<item align="right" href="javascript:opener.close_and_focus();">Sair</item>
 		</bar>
 		<change>
 			<item edit="hidden" name="id"/>
@@ -468,21 +465,18 @@
 		<identification title="Administração: "/>
 		<bar>
 			<item>Componentes</item>
-			<flag element="collectionList" name="available">
-				<option value="yes">Disponível</option>
-				<option value="no">Indisponível</option>
-			</flag>
-			<item href="javascript:save('item-component')">Grava</item>
-			<item align="right" href="javascript:history.back();">Sai</item>
+			<item align="right" href="javascript:history.back();">Sair</item>
 		</bar>
 		<edit>
 			<buttons>
 				<separator/>
 				<separator/>
-				<button href="javascript:newItem('new_collectionList');" img="new.gif" alt=" adiciona "/>
-				<button href="javascript:changeItem(document.formPage.tree,'change_collectionList');" img="change.gif" alt=" modifica "/>
+				<button href="javascript:newItem('new_collectionList');" img="new.gif" alt=" Adicionar "/>
+				<button href="javascript:changeItem(document.formPage.tree,'change_collectionList');" img="change.gif" alt=" Modificar "/>
 				<separator/>
-				<button href="javascript:delComponent(document.formPage.tree);" img="del.gif" alt=" elimina "/>
+				<button href="javascript:delComponent(document.formPage.tree);" img="del.gif" alt=" Eliminar "/>
+				<separator/>
+                                <button href="javascript:save('item-component')" img="save.png" alt=" Gravar "/>
 			</buttons>
 			<tree-edit element="collectionList"/>
 			<buttons>
@@ -504,7 +498,7 @@
 				<option value="no">Indisponível</option>
 			</flag>
 			<item href="javascript:opener.addComponent('name')">Adiciona</item>
-			<item align="right" href="javascript:opener.close_and_focus();">Sai</item>
+			<item align="right" href="javascript:opener.close_and_focus();">Sair</item>
 		</bar>
 		<change>
 			<item edit="hidden" name="id" value="New"/>
@@ -521,6 +515,7 @@
 			<option value="about">sobre</option>
 			<option value="topic">temas</option>	
 			<option value="xhtml">HTML</option>
+			<option value="ticker">Ticker (RSS)</option>
 			<option value="rss">RSS</option>
 			</item>
 		</change>
@@ -533,7 +528,7 @@
 				<option value="no">Indisponível</option>
 			</flag>
 			<item href="javascript:opener.modifyItem('name');">Modifica</item>
-			<item align="right" href="javascript:opener.close_and_focus();">Sai</item>
+			<item align="right" href="javascript:opener.close_and_focus();">Sair</item>
 		</bar>
 		<change>
 			<item edit="hidden" name="id"/>
@@ -546,17 +541,18 @@
 		<identification title="Administração: "/>
 		<bar>
 			<item>Fontes de informação</item>
-			<item href="javascript:save('item-collection')">Grava</item>
-			<item align="right" href="javascript:history.back();">Sai</item>
+			<item align="right" href="javascript:history.back();">Sair</item>
 		</bar>
 		<edit>
 			<buttons>
 				<separator/>
 				<separator/>
-				<button href="javascript:newItem('new_collection');" img="new.gif" alt=" adiciona "/>
-				<button href="javascript:changeItem(document.formPage.tree,'change_collection');" img="change.gif" alt=" modifica "/>
+				<button href="javascript:newItem('new_collection');" img="new.gif" alt=" Adicionar "/>
+				<button href="javascript:changeItem(document.formPage.tree,'change_collection');" img="change.gif" alt=" Modificar "/>
 				<separator/>
-				<button href="javascript:del(document.formPage.tree);" img="del.gif" alt=" elimina "/>
+				<button href="javascript:del(document.formPage.tree);" img="del.gif" alt=" Eliminar "/>
+				<separator/>
+                                <button href="javascript:save('item-collection')" img="save.png" alt=" Gravar "/>
 			</buttons>
 			<tree-edit element="collectionList"/>
 			<buttons>
@@ -584,14 +580,14 @@
 			<item edit="hidden" name="id" value="New"/>
 			<item edit="text" name="name">Nome</item>
 			<item edit="text" name="img">Imagem</item>
-			<item edit="text" name="href">Link - Exemplo: /iah/?base=MARC&amp;lang=pt</item>
+			<item edit="text" name="href">Link</item>
 			<item edit="htmlarea" name="description" label-edit="clique aqui para usar o editor XHTML" label-modify=" modificar " label-cancel=" cancelar ">Descrição (XHTML)</item>
 			<item edit="htmlarea" name="portal" label-edit="clique aqui para usar o editor XHTML" label-modify=" modificar " label-cancel=" cancelar ">Página do Portal (XHTML)</item>
 			<item edit="group">
 				Meta pesquisa
-				<item edit="text" name="base-search-url">Parte fixa do link da pesquisa - Exemplo: http://%HOST%/cgi-bin/wxis.exe/iah/scripts/?IsisScript=iah.xis&amp;lang=pt&amp;base=MARC&amp;nextAction=xml&amp;count=1</item>
-				<item edit="text" name="search-parameters">Parâmetros para pesquisa livre - Exemplo: exprSearch=</item>
-				<item edit="text" name="base-browse-url">Parte fixa do link para mostrar o resultado - Exemplo: http://%HOST%/cgi-bin/wxis.exe/iah/scripts/?IsisScript=iah.xis&amp;lang=pt&amp;base=MARC&amp;nextAction=lnk</item>
+				<item edit="text" name="base-search-url">Parte fixa do link da pesquisa</item>
+				<item edit="text" name="search-parameters">Parâmetros para pesquisa livre</item>
+				<item edit="text" name="base-browse-url">Parte fixa do link para mostrar o resultado</item>
 			</item>
 		</change>
 	</page>
@@ -603,20 +599,20 @@
 				<option value="no">Indisponível</option>
 			</flag>
 			<item href="javascript:opener.modifyItem('name');">Modifica</item>
-			<item align="right" href="javascript:opener.close_and_focus();">Sai</item>
+			<item align="right" href="javascript:opener.close_and_focus();">Sair</item>
 		</bar>
 		<change>
 			<item edit="hidden" name="id"/>
 			<item edit="text" name="name">Nome</item>
 			<item edit="text" name="img">Imagem</item>
-			<item edit="text" name="href">Link - Exemplo: /iah/?base=MARC&amp;lang=pt</item>
+			<item edit="text" name="href">Link</item>
 			<item edit="htmlarea" name="description" label-edit="clique aqui para usar o editor XHTML" label-modify=" modificar " label-cancel=" cancelar ">Descrição (XHTML)</item>
 			<item edit="htmlarea" name="portal" label-edit="clique aqui para usar o editor XHTML" label-modify=" modificar " label-cancel=" cancelar ">Página do Portal (XHTML)</item>
 			<item edit="group">
 				Meta pesquisa
-				<item edit="text" name="base-search-url">Parte fixa do link da pesquisa - Exemplo: http://%HOST%/cgi-bin/wxis.exe/iah/scripts/?IsisScript=iah.xis&amp;lang=pt&amp;base=MARC&amp;nextAction=xml&amp;count=1</item>
-				<item edit="text" name="search-parameters">Parâmetros para pesquisa livre - Exemplo: exprSearch=</item>
-				<item edit="text" name="base-browse-url">Parte fixa do link para mostrar o resultado - Exemplo: http://%HOST%/cgi-bin/wxis.exe/iah/scripts/?IsisScript=iah.xis&amp;lang=pt&amp;base=MARC&amp;nextAction=lnk</item>
+				<item edit="text" name="base-search-url">Parte fixa do link da pesquisa</item>
+				<item edit="text" name="search-parameters">Parâmetros para pesquisa livre</item>
+				<item edit="text" name="base-browse-url">Parte fixa do link para mostrar o resultado</item>
 			</item>
 		</change>
 	</page>
@@ -624,17 +620,18 @@
 		<identification title="Administração: "/>
 		<bar>
 			<item>Espaços</item>
-			<item href="javascript:save('item-community')">Salvar</item>
 			<item align="right" href="javascript:history.back();">Sair</item>
 		</bar>
 		<edit>
 			<buttons>
 				<separator/>
 				<separator/>
-				<button href="javascript:newItem('new_community');" img="new.gif" alt=" adiciona "/>
-				<button href="javascript:changeItem(document.formPage.tree,'change_community');" img="change.gif" alt=" modifica "/>
+				<button href="javascript:newItem('new_community');" img="new.gif" alt=" Adicionar "/>
+				<button href="javascript:changeItem(document.formPage.tree,'change_community');" img="change.gif" alt=" Modificar "/>
 				<separator/>
-				<button href="javascript:del(document.formPage.tree);" img="del.gif" alt=" elimina "/>
+				<button href="javascript:del(document.formPage.tree);" img="del.gif" alt=" Eliminar "/>
+				<separator/>
+                                <button href="javascript:save('item-community')" img="save.png" alt=" Gravar "/>
 			</buttons>
 			<tree-edit element="collectionList"/>
 			<buttons>
@@ -656,7 +653,7 @@
 				<option value="no">Indisponível</option>
 			</flag>
 			<item href="javascript:opener.addItem('name,img')">Adiciona</item>
-			<item align="right" href="javascript:opener.close_and_focus();">Sai</item>
+			<item align="right" href="javascript:opener.close_and_focus();">Sair</item>
 		</bar>
 		<change>
 			<item edit="hidden" name="id" value="New"/>
@@ -675,7 +672,7 @@
 				<option value="no">Indisponível</option>
 			</flag>
 			<item href="javascript:opener.modifyItem('name,img');">Modifica</item>
-			<item align="right" href="javascript:opener.close_and_focus();">Sai</item>
+			<item align="right" href="javascript:opener.close_and_focus();">Sair</item>
 		</bar>
 		<change>
 			<item edit="hidden" name="id"/>
@@ -690,17 +687,18 @@
 		<identification title="Administração: "/>
 		<bar>
 			<item>Temas</item>
-			<item href="javascript:save('item-topic')">Grava</item>
-			<item align="right" href="javascript:history.back();">Sai</item>
+			<item align="right" href="javascript:history.back();">Sair</item>
 		</bar>
 		<edit>
 			<buttons>
 				<separator/>
 				<separator/>
-				<button href="javascript:newItem('new_topic');" img="new.gif" alt=" adiciona "/>
-				<button href="javascript:changeItem(document.formPage.tree,'change_topic');" img="change.gif" alt=" modifica "/>
+				<button href="javascript:newItem('new_topic');" img="new.gif" alt=" Adicionar "/>
+				<button href="javascript:changeItem(document.formPage.tree,'change_topic');" img="change.gif" alt=" Modificar "/>
 				<separator/>
-				<button href="javascript:del(document.formPage.tree);" img="del.gif" alt=" elimina "/>
+				<button href="javascript:del(document.formPage.tree);" img="del.gif" alt=" Eliminar "/>
+				<separator/>
+                                <button href="javascript:save('item-topic')" img="save.png" alt=" Gravar "/>
 			</buttons>
 			<tree-edit element="collectionList"/>
 			<buttons>
@@ -722,7 +720,7 @@
 				<option value="no">Indisponível</option>
 			</flag>
 			<item href="javascript:opener.addItem('name')">Adiciona</item>
-			<item align="right" href="javascript:opener.close_and_focus();">Sai</item>
+			<item align="right" href="javascript:opener.close_and_focus();">Sair</item>
 		</bar>
 		<change>
 			<item edit="hidden" name="id" value="New"/>
@@ -742,7 +740,7 @@
 				<option value="no">Indisponível</option>
 			</flag>
 			<item href="javascript:opener.modifyItem('name');">Modifica</item>
-			<item align="right" href="javascript:opener.close_and_focus();">Sai</item>
+			<item align="right" href="javascript:opener.close_and_focus();">Sair</item>
 		</bar>
 		<change>
 			<item edit="hidden" name="id"/>
@@ -760,27 +758,23 @@
 		<identification title="Administração: "/>
 		<bar>
 			<item>Categorias</item>
-			<item href="javascript:save('item-decs')">Grava</item>
-			<item align="right" href="javascript:history.back();">Sai</item>
+			<item align="right" href="javascript:history.back();">Sair</item>
 		</bar>
 		<edit>
 			<buttons>
 				<separator/>
 				<separator/>
-				<button href="javascript:newItem('new_decs');" img="new.gif" alt=" adiciona "/>
-				<button href="javascript:changeItem(document.formPage.tree,'change_decs');" img="change.gif" alt=" modifica "/>
+				<button href="javascript:newItem('new_decs');" img="new.gif" alt=" Adicionar "/>
+				<button href="javascript:changeItem(document.formPage.tree,'change_decs');" img="change.gif" alt=" Modificar "/>
 				<separator/>
-				<button href="javascript:del(document.formPage.tree);" img="del.gif" alt=" elimina "/>
+				<button href="javascript:del(document.formPage.tree);" img="del.gif" alt=" Eliminar "/>
+				<separator/>
+                                <button href="javascript:save('item-decs')" img="save.png" alt=" Gravar "/>
 			</buttons>
 			<tree-edit element="collectionList"/>
 			<buttons>
 				<separator/>
 				<separator/>
-				<!--
-				<button href="javascript:left(document.formPage.tree);" img="left.gif" alt=" retrocede nível hierárquico "/>
-				<button href="javascript:right(document.formPage.tree);" img="right.gif" alt=" avança nível hierárquico "/>
-				<separator/>
-				-->
 				<button href="javascript:up(document.formPage.tree);" img="up.gif" alt=" move para cima "/>
 				<button href="javascript:down(document.formPage.tree);" img="down.gif" alt=" move para baixo "/>
 			</buttons>
@@ -794,7 +788,7 @@
 				<option value="no">Indisponível</option>
 			</flag>
 			<item href="javascript:opener.addItem('name')">Adiciona</item>
-			<item align="right" href="javascript:opener.close_and_focus();">Sai</item>
+			<item align="right" href="javascript:opener.close_and_focus();">Sair</item>
 		</bar>
 		<change>
 			<item edit="text" name="name">Nome</item>
@@ -809,7 +803,7 @@
 				<option value="no">Indisponível</option>
 			</flag>
 			<item href="javascript:opener.modifyItem('name');">Modifica</item>
-			<item align="right" href="javascript:opener.close_and_focus();">Sai</item>
+			<item align="right" href="javascript:opener.close_and_focus();">Sair</item>
 		</bar>
 		<change>
 			<item edit="text" name="name">Nome</item>
@@ -824,17 +818,18 @@
 		<identification title="Administração: "/>
 		<bar>
 			<item>Anexos</item>
-			<item href="javascript:save('attach')">Grava</item>
-			<item align="right" href="javascript:history.back();">Sai</item>
+			<item align="right" href="javascript:history.back();">Sair</item>
 		</bar>
 		<edit>
 			<buttons>
 				<separator/>
 				<separator/>
-				<button href="javascript:newItem('new_attachList');" img="new.gif" alt=" adiciona "/>
-				<button href="javascript:changeItem(document.formPage.tree,'change_attachList');" img="change.gif" alt=" modifica "/>
+				<button href="javascript:newItem('new_attachList');" img="new.gif" alt=" Adicionar "/>
+				<button href="javascript:changeItem(document.formPage.tree,'change_attachList');" img="change.gif" alt=" Modificar "/>
 				<separator/>
-				<button href="javascript:del(document.formPage.tree);" img="del.gif" alt=" elimina "/>
+				<button href="javascript:del(document.formPage.tree);" img="del.gif" alt=" Eliminar "/>
+				<separator/>
+                                <button href="javascript:save('attach')" img="save.png" alt=" Gravar "/>
 			</buttons>
 			<tree-edit element="attachList"/>
 			<buttons>
@@ -856,7 +851,7 @@
 				<option value="no">Indisponível</option>
 			</flag>
 			<item href="javascript:opener.addItem('name,type')">Adiciona</item>
-			<item align="right" href="javascript:opener.close_and_focus();">Sai</item>
+			<item align="right" href="javascript:opener.close_and_focus();">Sair</item>
 		</bar>
 		<change>
 			<item edit="hidden" name="id" value="New"/>
@@ -874,7 +869,7 @@
 				<option value="no">Indisponível</option>
 			</flag>
 			<item href="javascript:opener.modifyItem('name,type');">Modifica</item>
-			<item align="right" href="javascript:opener.close_and_focus();">Sai</item>
+			<item align="right" href="javascript:opener.close_and_focus();">Sair</item>
 		</bar>
 		<change>
 			<item edit="hidden" name="id"/>
@@ -888,21 +883,18 @@
 		<identification title="Administração: "/>
 		<bar>
 			<item>Destaques</item>
-			<flag element="calls" name="available">
-				<option value="yes">Disponível</option>
-				<option value="no">Indisponível</option>
-			</flag>
-			<item align="right" href="javascript:history.back();">Sai</item>
-			<item href="javascript:save('item')">Grava</item>
+			<item align="right" href="javascript:history.back();">Sair</item>
 		</bar>
 		<edit>
 			<buttons>
 				<separator/>
 				<separator/>
-				<button href="javascript:newItem('new_call');" img="new.gif" alt=" adiciona "/>
-				<button href="javascript:changeItem(document.formPage.tree,'change_call');" img="change.gif" alt=" modifica "/>
+				<button href="javascript:newItem('new_call');" img="new.gif" alt=" Adicionar "/>
+				<button href="javascript:changeItem(document.formPage.tree,'change_call');" img="change.gif" alt=" Modificar "/>
 				<separator/>
-				<button href="javascript:del(document.formPage.tree);" img="del.gif" alt=" elimina "/>
+				<button href="javascript:del(document.formPage.tree);" img="del.gif" alt=" Eliminar "/>
+				<separator/>
+                                <button href="javascript:save('item')" img="save.png" alt=" Gravar "/>
 			</buttons>
 			<tree-edit element="collectionList"/>
 			<buttons>
@@ -926,7 +918,7 @@
 				<option value="no">Indisponível</option>
 			</flag>
 			<item href="javascript:opener.addItem('name,img')">Adiciona</item>
-			<item align="right" href="javascript:opener.close_and_focus();">Sai</item>
+			<item align="right" href="javascript:opener.close_and_focus();">Sair</item>
 		</bar>
 		<change>
 			<item edit="hidden" name="id" value="New"/>
@@ -942,8 +934,9 @@
 				<option value="yes">Disponível</option>
 				<option value="no">Indisponível</option>
 			</flag>
+
 			<item href="javascript:opener.modifyItem('name,img');">Modifica</item>
-			<item align="right" href="javascript:opener.close_and_focus();">Sai</item>
+			<item align="right" href="javascript:opener.close_and_focus();">Sair</item>
 		</bar>
 		<change>
 			<item edit="hidden" name="id"/>
@@ -956,21 +949,18 @@
 		<identification title="Administração: "/>
 		<bar>
 			<item>Avisos</item>
-			<flag element="warning" name="available">
-				<option value="yes">Disponível</option>
-				<option value="no">Indisponível</option>
-			</flag>
-			<item href="javascript:save('warning')">Grava</item>
-			<item align="right" href="javascript:history.back();">Sai</item>
+			<item align="right" href="javascript:history.back();">Sair</item>
 		</bar>
 		<edit>
 			<buttons>
 				<separator/>
 				<separator/>
-				<button href="javascript:newItem('new_warning');" img="new.gif" alt=" adiciona "/>
-				<button href="javascript:changeItem(document.formPage.tree,'change_warning');" img="change.gif" alt=" modifica "/>
+				<button href="javascript:newItem('new_warning');" img="new.gif" alt=" Adicionar "/>
+				<button href="javascript:changeItem(document.formPage.tree,'change_warning');" img="change.gif" alt=" Modificar "/>
 				<separator/>
-				<button href="javascript:del(document.formPage.tree);" img="del.gif" alt=" elimina "/>
+				<button href="javascript:del(document.formPage.tree);" img="del.gif" alt=" Eliminar "/>
+				<separator/>
+                                <button href="javascript:save('warning')" img="save.png" alt=" Gravar "/>
 			</buttons>
 			<tree-edit element="collectionList"/>
 			<buttons>				
@@ -994,7 +984,7 @@
 				<option value="no">Indisponível</option>
 			</flag>
 			<item href="javascript:opener.addItem('name')">Adiciona</item>
-			<item align="right" href="javascript:opener.close_and_focus();">Sai</item>
+			<item align="right" href="javascript:opener.close_and_focus();">Sair</item>
 		</bar>
 		<change>
 			<item edit="text" name="name">Nome</item>
@@ -1009,7 +999,7 @@
 				<option value="no">Indisponível</option>
 			</flag>
 			<item href="javascript:opener.modifyItem('name');">Modifica</item>
-			<item align="right" href="javascript:opener.close_and_focus();">Sai</item>
+			<item align="right" href="javascript:opener.close_and_focus();">Sair</item>
 		</bar>
 		<change>
 			<item edit="text" name="name">Nome</item>
@@ -1020,17 +1010,18 @@
 		<identification title="Administração: "/>
 		<bar>
 			<item>Textos</item>
-			<item href="javascript:save('text')">Grava</item>
-			<item align="right" href="javascript:history.back();">Sai</item>
+			<item align="right" href="javascript:history.back();">Sair</item>
 		</bar>
 		<edit>
 			<buttons>
 				<separator/>
 				<separator/>
-				<button href="javascript:newItem('new_text');" img="new.gif" alt=" adiciona "/>
-				<button href="javascript:changeItem(document.formPage.tree,'change_text');" img="change.gif" alt=" modifica "/>
+				<button href="javascript:newItem('new_text');" img="new.gif" alt=" Adicionar "/>
+				<button href="javascript:changeItem(document.formPage.tree,'change_text');" img="change.gif" alt=" Modificar "/>
 				<separator/>
-				<button href="javascript:del(document.formPage.tree);" img="del.gif" alt=" elimina "/>
+				<button href="javascript:del(document.formPage.tree);" img="del.gif" alt=" Eliminar "/>
+				<separator/>
+                                <button href="javascript:save('text')" img="save.png" alt=" Gravar "/>
 			</buttons>
 			<tree-edit element="texts"/>
 			<buttons>
@@ -1052,7 +1043,7 @@
 				<option value="no">Indisponível</option>
 			</flag>
 			<item href="javascript:opener.addItem('id,text_content')">Adiciona</item>
-			<item align="right" href="javascript:opener.close_and_focus();">Sai</item>
+			<item align="right" href="javascript:opener.close_and_focus();">Sair</item>
 		</bar>
 		<change>
 			<item edit="text" name="id">Identificação</item>
@@ -1068,7 +1059,7 @@
 				<option value="no">Indisponível</option>
 			</flag>
 			<item href="javascript:opener.modifyItem('id,text_content');">Modifica</item>
-			<item align="right" href="javascript:opener.close_and_focus();">Sai</item>
+			<item align="right" href="javascript:opener.close_and_focus();">Sair</item>
 		</bar>
 		<change>
 			<item edit="text" name="id">Identificação</item>
@@ -1084,17 +1075,18 @@
 				<option value="yes">Disponível</option>
 				<option value="no">Indisponível</option>
 			</flag>
-			<item href="javascript:save('item')">Grava</item>
-			<item align="right" href="javascript:history.back();">Sai</item>
+			<item align="right" href="javascript:history.back();">Sair</item>
 		</bar>
 		<edit>
 			<buttons>
 				<separator/>
 				<separator/>
-				<button href="javascript:newItem('new_other-version');" img="new.gif" alt=" adiciona "/>
-				<button href="javascript:changeItem(document.formPage.tree,'change_other-version');" img="change.gif" alt=" modifica "/>
+				<button href="javascript:newItem('new_other-version');" img="new.gif" alt=" Adicionar "/>
+				<button href="javascript:changeItem(document.formPage.tree,'change_other-version');" img="change.gif" alt=" Modificar "/>
 				<separator/>
-				<button href="javascript:del(document.formPage.tree);" img="del.gif" alt=" elimina "/>
+				<button href="javascript:del(document.formPage.tree);" img="del.gif" alt=" Eliminar "/>
+				<separator/>
+                                <button href="javascript:save('item')" img="save.png" alt=" Gravar "/>
 			</buttons>
 			<tree-edit element="other-versions"/>
 			<buttons>
@@ -1116,7 +1108,7 @@
 				<option value="no">Indisponível</option>
 			</flag>
 			<item href="javascript:opener.addItem('name,img')">Adiciona</item>
-			<item align="right" href="javascript:opener.close_and_focus();">Sai</item>
+			<item align="right" href="javascript:opener.close_and_focus();">Sair</item>
 		</bar>
 		<change>
 			<item edit="hidden" name="id" value="New"/>
@@ -1132,7 +1124,7 @@
 				<option value="no">Indisponível</option>
 			</flag>
 			<item href="javascript:opener.modifyItem('name,img');">Modifica</item>
-			<item align="right" href="javascript:opener.close_and_focus();">Sai</item>
+			<item align="right" href="javascript:opener.close_and_focus();">Sair</item>
 		</bar>
 		<change>
 			<item edit="hidden" name="id"/>
@@ -1144,33 +1136,33 @@
 	<page id="responsable" title="Instituição responsável" css="css/admin/adm.css">
 		<identification title="Administração: "/>
 		<bar>
-			<item>Instituição</item>
+			<item>Instituição Responsável</item>
 			<flag element="responsable" name="available">
 				<option value="yes">Disponível</option>
 				<option value="no">Indisponível</option>
 			</flag>
 			
-			<item href="javascript:save('item-responsable')">Grava</item>
-			<item align="right" href="javascript:history.back();">Sai</item>
+			<item align="right" href="javascript:history.back();">Sair</item>
 		</bar>
 		<edit>
 			<buttons>				
 				<separator/>				
-				<button href="javascript:changeItem(document.formPage.tree,'change_responsable');" img="change.gif" alt=" modifica "/>
-				<separator/>				
+				<button href="javascript:changeItem(document.formPage.tree,'change_responsable');" img="change.gif" alt=" Modificar "/>
+				<separator/>
+                                <button href="javascript:save('item-responsable')" img="save.png" alt=" Gravar "/>
 			</buttons>
 			<tree-edit element="responsable"/>
 		</edit>
 	</page>
 	<page id="change_responsable" title="Modifica instituição responsável" css="css/admin/adm.css">
 		<bar>
-			<item>Instituição</item>
+			<item>Instituição Responsável</item>
 			<flag element="item" name="available">
 				<option value="yes">Disponível</option>
 				<option value="no">Indisponível</option>
 			</flag>
 			<item href="javascript:opener.modifyItem('name');">Modifica</item>
-			<item align="right" href="javascript:opener.close_and_focus();">Sai</item>
+			<item align="right" href="javascript:opener.close_and_focus();">Sair</item>
 		</bar>
 		<change>
 			<item edit="text" name="name">Nome</item>			
@@ -1181,28 +1173,28 @@
 	<page id="metasearch" title="Meta pesquisa" css="css/admin/adm.css">
 		<identification title="Administração: "/>
 		<bar>
-			<item>Textos</item>
-			<item href="javascript:save('text')">Grava</item>
-			<item align="right" href="javascript:history.back();">Sai</item>
+			<item>Meta Pesquisa</item>
+			<item align="right" href="javascript:history.back();">Sair</item>
 		</bar>
 		<edit>
 			<buttons>				
 				<separator/>				
-				<button href="javascript:changeItem(document.formPage.tree,'change_metasearch');" img="change.gif" alt=" modifica "/>
-				<separator/>				
+				<button href="javascript:changeItem(document.formPage.tree,'change_metasearch');" img="change.gif" alt=" Modificar "/>
+				<separator/>
+                                <button href="javascript:save('text')" img="save.png" alt=" Gravar "/>	
 			</buttons>
 			<tree-edit element="metasearch"/>
 		</edit>
 	</page>
 	<page id="change_metasearch" title="Modifica meta pesquisa" css="css/admin/adm.css">
 		<bar>
-			<item>Textos</item>
+			<item>Meta Pesquisa</item>
 			<flag element="item" name="available">
 				<option value="yes">Disponível</option>
 				<option value="no">Indisponível</option>
 			</flag>
 			<item href="javascript:opener.modifyItem('id');">Modifica</item>
-			<item align="right" href="javascript:opener.close_and_focus();">Sai</item>
+			<item align="right" href="javascript:opener.close_and_focus();">Sair</item>
 		</bar>
 		<change>
 			<item edit="hidden" name="id"/>			
@@ -1213,17 +1205,18 @@
 		<identification title="Administração: "/>
 		<bar>
 			<item>Usuários</item>
-			<item href="javascript:save('user')">Grava</item>
-			<item align="right" href="javascript:history.back();">Sai</item>
+			<item align="right" href="javascript:history.back();">Sair</item>
 		</bar>
 		<edit>
 			<buttons>
 				<separator/>
 				<separator/>
-				<button href="javascript:newItem('new_user');" img="new.gif" alt=" adiciona "/>
-				<button href="javascript:changeItem(document.formPage.tree,'change_user');" img="change.gif" alt=" modifica "/>
+				<button href="javascript:newItem('new_user');" img="new.gif" alt=" Adicionar "/>
+				<button href="javascript:changeItem(document.formPage.tree,'change_user');" img="change.gif" alt=" Modificar "/>
 				<separator/>
-				<button href="javascript:del(document.formPage.tree);" img="del.gif" alt=" elimina "/>
+				<button href="javascript:del(document.formPage.tree);" img="del.gif" alt=" Eliminar "/>
+				<separator/>
+                                <button href="javascript:save('user')" img="save.png" alt=" Gravar "/>
 			</buttons>
 			<tree-edit xml="xml/users.xml" element="users"/>
 			<buttons>
@@ -1245,7 +1238,7 @@
 				<option value="no">Indisponível</option>
 			</flag>
 			<item href="javascript:opener.addItem('name')">Adiciona</item>
-			<item align="right" href="javascript:opener.close_and_focus();">Sai</item>
+			<item align="right" href="javascript:opener.close_and_focus();">Sair</item>
 		</bar>
 		<change>
 			<item edit="text" name="name">Nome</item>
@@ -1265,7 +1258,7 @@
 				<option value="no">Indisponível</option>
 			</flag>
 			<item href="javascript:opener.modifyItem('name');">Modifica</item>
-			<item align="right" href="javascript:opener.close_and_focus();">Sai</item>
+			<item align="right" href="javascript:opener.close_and_focus();">Sair</item>
 		</bar>
 		<change>
 			<item edit="text" name="name">Nome</item>
@@ -1281,17 +1274,18 @@
 		<identification title="Administração: "/>
 		<bar>
 			<item>Meta informação</item>
-			<item href="javascript:save('item-metainfo')">Grava</item>
-			<item align="right" href="javascript:history.back();">Sai</item>
+			<item align="right" href="javascript:history.back();">Sair</item>
 		</bar>
 		<edit>
 			<buttons>
 				<separator/>
 				<separator/>
-				<button href="javascript:newItem('new_metainfo');" img="new.gif" alt=" adiciona "/>
-				<button href="javascript:changeItem(document.formPage.tree,'change_metainfo');" img="change.gif" alt=" modifica "/>
+				<button href="javascript:newItem('new_metainfo');" img="new.gif" alt=" Adicionar "/>
+				<button href="javascript:changeItem(document.formPage.tree,'change_metainfo');" img="change.gif" alt=" Modificar "/>
 				<separator/>
-				<button href="javascript:del(document.formPage.tree);" img="del.gif" alt=" elimina "/>
+				<button href="javascript:del(document.formPage.tree);" img="del.gif" alt=" Eliminar "/>
+				<separator/>
+                                <button href="javascript:save('item-metainfo')" img="save.png" alt=" Gravar "/>
 			</buttons>
 			<tree-edit element="metainfo"/>
 			<buttons>
@@ -1310,7 +1304,7 @@
 				<option value="no">Indisponível</option>
 			</flag>
 			<item href="javascript:opener.addItem('id,tag_content')">Adiciona</item>
-			<item align="right" href="javascript:opener.close_and_focus();">Sai</item>
+			<item align="right" href="javascript:opener.close_and_focus();">Sair</item>
 		</bar>
 		<change>
 			<item edit="text" name="id">Elemento</item>
@@ -1325,7 +1319,7 @@
 				<option value="no">Indisponível</option>
 			</flag>
 			<item href="javascript:opener.modifyItem('id,text_content');">Modifica</item>
-			<item align="right" href="javascript:opener.close_and_focus();">Sai</item>
+			<item align="right" href="javascript:opener.close_and_focus();">Sair</item>
 		</bar>
 		<change>
 			<item edit="text" name="id">Elemento</item>

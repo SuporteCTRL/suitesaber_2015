@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <bvs language="pt" country="**" subject="BVS-Site" version="4">
-  <texts id="" lang="pt" available="">
+  <texts id="" available="">
     <text id="button_moreInformation" available="yes" img="/image/common/info.gif">Mais informações</text>
     <text id="default_print" available="yes">imprimir</text>
     <text id="default_close" available="yes">fechar</text>
@@ -15,26 +15,31 @@
     <text id="contact: response" available="yes">Sua mensagem foi enviada com êxito.</text>
     <text id="topic.expand" available="yes">mostrar subtemas</text>
   </texts>
-  <parent id="" lang="pt" available="yes">
-    <item id="1" available="yes" img="../../central/css/saber/images/logoabcd.png">Saber<description> </description><portal> </portal></item>
+  <parent id="" available="yes">
+    <item id="1" available="yes" href="site/php/index.php?lang=pt" img="../../central/css/saber/images/cabeca3.png">Suíte Saber</item>
   </parent>
-  <identification id="" lang="pt" available="yes">
-    <item id="2" available="yes">Saber - Gestor de Bibliotecas e Arquivos<description>    </description><portal>    </portal></item>
+  <identification id="" available="yes">
+    <item id="2" available="no">Suíte Saber</item>
   </identification>
-  <contact id="" lang="pt" available="yes">
-    <item id="3" available="yes" href="suporte@control.com.br">Contato Saber</item>
-    <item id="4" available="yes" href="suporte@control.com.br">Reclamações Saber</item>
-    <item id="5" available="yes" href="suporte@control.com.br">Sugestões ABCD</item>
+  <contact id="" available="yes">
+    <item id="3" available="yes" href="suitesaber@control.com.br">Suíte Saber</item>
   </contact>
-  <other-versions id="" lang="pt" available="yes">
-    <item id="7" available="yes" href="../php/index.php?lang=es">español<description>     </description><portal>     </portal></item>
-    <item id="8" available="yes" href="../php/index.php?lang=en">english<description>     </description><portal>     </portal></item>
+  <other-versions id="" available="yes">
+    <item id="35" available="yes" href="/site/php/index.php?lang=pt">Português</item>
+    <item id="7" available="yes" href="/site/php/index.php?lang=es">Español</item>
+    <item id="8" available="yes" href="/site/php/index.php?lang=en">English</item>
   </other-versions>
-  <institution id="" lang="pt" available="yes"/>
-  <collectionList id="" lang="pt" available="yes">
-    <item id="14" available="yes">Primeira coluna<item id="32" available="yes" type="portal" file="xml/pt/32.xml">Menu</item><item id="45" available="yes" type="calls" file="xml/pt/45.xml">Manuais Técnicos</item></item>
-    <item id="16" available="yes">Segunda coluna<item id="40" available="yes" type="collection" file="xml/pt/40.xml">Fontes de Informações</item><item id="17" available="yes" type="collection" file="xml/pt/17.xml">Literatura Científica</item><item id="38" available="yes" type="collection" file="xml/pt/38.xml">Serviços</item></item>
-    <item id="23" available="yes">Terceira coluna<item id="44" available="yes" href="http://feeds.feedburner.com/ctrlconsultoria?format=xml" type="rss" file="xml/pt/44.xml">Twitter</item></item>
+  <institution id="" available="no">
+    <item id="9" available="no">Instituições<description>     </description><portal>     </portal></item>
+    <item id="10" available="yes" img="%SKIN_IMAGE_DIR%logoOpas.gif">BIREME | OPAS | OMS logo<description>     </description><portal>     </portal></item>
+    <item id="11" available="yes" href="http://www.bireme.br/">BIREME<description> </description><portal> </portal></item>
+    <item id="12" available="yes" href="http://www.paho.org/">OPAS<description>     </description><portal>     </portal></item>
+    <item id="13" available="yes" href="http://www.who.int/">OMS<description>     </description><portal>     </portal></item>
+  </institution>
+  <collectionList id="" available="">
+    <item id="14" available="yes">Primeira coluna<item id="29" available="yes" type="rss" file="xml/pt/29.xml">Rede</item></item>
+    <item id="16" available="yes">Segunda coluna<item id="17" available="yes" type="collection" file="xml/pt/17.xml">Acervo disponível</item><item id="19" available="yes" type="about" file="xml/pt/19.xml">Sobre a Biblioteca Virtual em Saúde</item></item>
+    <item id="23" available="yes">Terceira coluna<item id="24" available="yes" type="calls" file="xml/pt/24.xml">Destaques</item><item id="34" available="yes" type="ticker" file="xml/pt/34.xml">Newsletter BVS</item></item>
   </collectionList>
   <responsable>
     <item id="26" available="yes" type="responsable" file="xml/pt/responsable.xml"/>

@@ -15,26 +15,32 @@
     <text id="contact: response" available="yes">Your message has been successfully sent</text>
     <text id="topic.expand" available="yes">show subtopics</text>
   </texts>
-  <parent id="" lang="en" available="yes">
-    <item id="1" available="yes" img="../../central/css/saber/images/logoabcd.png">Saber ABCD</item>
+  <parent id="" available="yes">
+    <item id="1" available="yes" href="http://regional.bvsalud.org/php/index.php?lang=en" img="%SKIN_IMAGE_DIR%logobvs.gif">Virtual Health Library</item>
   </parent>
   <identification id="" lang="en" available="yes">
-    <item id="2" available="yes">Libraries and Documentation Centers Automation System<description> </description><portal> </portal></item>
+    <item id="2" available="yes">Virtual Health Library</item>
   </identification>
   <contact id="" lang="en" available="yes">
-    <item id="3" available="yes" href="online@abcd.org">Contact ABCD<description> </description><portal> </portal></item>
-    <item id="4" available="yes" href="online@abcd.org">Claim ABCD<description> </description><portal> </portal></item>
-    <item id="5" available="yes" href="online@abcd.org">Suggestions ABCD<description> </description><portal> </portal></item>
+    <item id="3" available="yes" href="online@bireme.br">Contact Regional-VHL</item>
+    <item id="4" available="yes" href="online@bireme.br">Complaints Regional -VHL</item>
+    <item id="5" available="yes" href="online@bireme.br">Suggestions Regional-VHL</item>
   </contact>
-  <other-versions id="" lang="en" available="yes">
-    <item id="7" available="yes" href="../php/index.php?lang=pt">português<description>  </description><portal>  </portal></item>
-    <item id="8" available="yes" href="../php/index.php?lang=es">español<description>  </description><portal>  </portal></item>
+  <other-versions id="" available="yes">
+    <item id="7" available="yes" href="/?lang=pt">português</item>
+    <item id="8" available="yes" href="/?lang=es">español</item>
   </other-versions>
-  <institution id="" lang="en" available="yes"/>
-  <collectionList id="" lang="en" available="yes">
-    <item id="14" available="yes">First column<item id="33" available="yes" type="portal" file="xml/en/33.xml">Network</item></item>
-    <item id="16" available="yes">Second column<item id="34" available="yes" type="collection" file="xml/en/34.xml">Information Sources</item><item id="37" available="yes" type="collection" file="xml/en/37.xml">Scientific Literature</item><item id="35" available="yes" type="collection" file="xml/en/35.xml">Service</item><item id="31" available="yes" type="collection" file="xml/en/31.xml">Directories, Portals</item></item>
-    <item id="20" available="yes">Third column<item id="39" available="yes" type="calls" file="xml/en/39.xml">Highligths</item></item>
+  <institution id="" available="yes">
+    <item id="9" available="no">Institutions<description> </description><portal> </portal></item>
+    <item id="10" available="yes" img="%SKIN_IMAGE_DIR%logoOpas.gif">BIREME | PAHO | WHO logo<description> </description><portal> </portal></item>
+    <item id="11" available="yes" href="http://regional.bvsalud.org/php/index.php?lang=en">BIREME</item>
+    <item id="12" available="yes" href="http://www.paho.org/">PAHO<description> </description><portal> </portal></item>
+    <item id="13" available="yes" href="http://www.who.int/">WHO<description> </description><portal> </portal></item>
+  </institution>
+  <collectionList id="" available="">
+    <item id="14" available="yes">First column<item id="29" available="yes" type="rss" file="xml/en/29.xml">Network</item></item>
+    <item id="16" available="yes">Second column<item id="32" available="yes" type="topic" file="xml/en/32.xml">Topics</item><item id="17" available="yes" type="collection" file="xml/en/17.xml">Scientific Literature</item><item id="31" available="yes" type="collection" file="xml/en/31.xml">Directories, Portals</item><item id="19" available="yes" type="about" file="xml/en/19.xml">About Virtual Health Library</item></item>
+    <item id="20" available="yes">Third column<item id="24" available="yes" type="calls" file="xml/en/24.xml">Highligths</item><item id="33" available="yes" type="ticker" file="xml/en/33.xml">Newsletter VHL</item></item>
   </collectionList>
   <responsable>
     <item id="26" available="yes" type="responsable" file="xml/en/responsable.xml"/>

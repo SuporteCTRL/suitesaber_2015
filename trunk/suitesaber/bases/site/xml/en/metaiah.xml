@@ -1,29 +1,49 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <define>
   <sourceList>
-    <group label="Database">
-      <item id="34-1" label="MARC" href="/iah/?base=MARC&amp;lang=en" base-search-url="http://localhost:9090/cgi-bin/wxis.exe/iah/scripts/?IsisScript=iah.xis&amp;lang=en&amp;base=MARC&amp;nextAction=xml&amp;count=1" base-browse-url="http://localhost:9090/cgi-bin/wxis.exe/iah/scripts/?IsisScript=iah.xis&amp;lang=en&amp;base=MARC&amp;nextAction=lnk"/>
-      <item id="34-2" label="CEPAL" href="/iah/?base=BIBLO&amp;lang=en" base-search-url="http://localhost:9090/cgi-bin/wxis.exe/iah/scripts/?IsisScript=iah.xis&amp;lang=en&amp;base=BIBLO&amp;nextAction=xml&amp;count=1" base-browse-url="http://localhost:9090/cgi-bin/wxis.exe/iah/scripts/?IsisScript=iah.xis&amp;lang=en&amp;base=BIBLO&amp;nextAction=lnk"/>
-      <item id="34-3" label="SERIALS" href="/cgi-bin/wxis.exe/iah/scripts/?IsisScript=iah.xis&amp;lang=en&amp;base=TITLE&amp;pathLibrary=MAIN" base-search-url="http://localhost:9090/cgi-bin/wxis.exe/iah/scripts/?IsisScript=iah.xis&amp;lang=en&amp;base=TITLE&amp;nextAction=xml&amp;count=1&amp;pathLibrary=MAIN" base-browse-url="http://localhost:9090/cgi-bin/wxis.exe/iah/scripts/?IsisScript=iah.xis&amp;lang=en&amp;base=TITLE&amp;nextAction=lnk&amp;pathLibrary=MAIN"/>
-      <item id="34-5" label="DBLIL" href="/iah/?base=DBLIL&amp;lang=en" base-search-url="http://localhost:9090/cgi-bin/wxis.exe/iah/scripts/?IsisScript=iah.xis&amp;lang=en&amp;base=DBLIL&amp;nextAction=xml&amp;count=1" base-browse-url="http://localhost:9090/cgi-bin/wxis.exe/iah/scripts/?IsisScript=iah.xis&amp;lang=en&amp;base=DBLIL&amp;nextAction=lnk"/>
+    <group label="General Health Sciences">
+      <item id="17-87" label="LILACS - Latin American and Caribbean Health Sciences" href="http://lilacs.bvsalud.org/en/" base-search-url="http://bases.bireme.br/cgi-bin/wxislind.exe/iah/online/?IsisScript=iah/iah.xis&amp;base=LILACS&amp;lang=i&amp;nextAction=xml&amp;count=1" base-browse-url="http://bases.bireme.br/cgi-bin/wxislind.exe/iah/online/?IsisScript=iah/iah.xis&amp;base=LILACS&amp;lang=i&amp;nextAction=lnk"/>
+      <item id="17-88" label="MEDLINE - International Database for Medical Literature" href="http://bases.bireme.br/cgi-bin/wxislind.exe/iah/online/?IsisScript=iah/iah.xis&amp;base=MEDLINE&amp;lang=i" base-search-url="http://bases.bireme.br/cgi-bin/wxislind.exe/iah/online/?IsisScript=iah/iah.xis&amp;base=MEDLINE&amp;lang=i&amp;nextAction=xml&amp;count=1" base-browse-url="http://bases.bireme.br/cgi-bin/wxislind.exe/iah/online/?IsisScript=iah/iah.xis&amp;base=MEDLINE&amp;lang=i&amp;nextAction=lnk"/>
+      <item id="17-89" label="Cochrane Library" href="http://cochrane.bireme.br/portal/php/index.php?lang=en" base-search-url="http://cochrane.bireme.br/webservices/?service=search&amp;count=1" base-browse-url="http://cochrane.bireme.br/webservices/?service=search&amp;output=html&amp;lang=en"/>
+      <item id="17-72" label="SciELO - Scientific Electronic Library Online" href="http://www.scielo.org/php/index.php?lang=en" base-search-url="http://www.scielo.br/cgi-bin/wxis.exe/iah/?IsisScript=iah/iah.xis&amp;nextAction=xml&amp;base=article^dlibrary&amp;count=1&amp;lang=i&amp;fmt=citation" base-browse-url="http://www.scielo.br/cgi-bin/wxis.exe/iah/?IsisScript=iah/iah.xis&amp;nextAction=lnk&amp;base=article^dlibrary&amp;lang=i"/>
     </group>
-    <group label="Open Access Scientific Journals">
-      <item id="37-1" label="SciELO - Scientific Electronic Library Online" href="http://www.scielo.org/index_i.html" base-search-url="http://www.scielo.br/webservices/?service=search&amp;count=1" base-browse-url="http://www.scielo.br/webservices/?service=search&amp;output=html&amp;lang=en"/>
+    <group label="Specialized Areas">
+      <item id="17-99" label="LEYES - Latin American and Caribbean Basic Health Legislation" href="http://bases.bireme.br/cgi-bin/wxislind.exe/iah/online/?IsisScript=iah/iah.xis&amp;base=LEYES&amp;lang=i" base-search-url="http://bases.bireme.br/cgi-bin/wxislind.exe/iah/online/?IsisScript=iah/iah.xis&amp;base=LEYES&amp;lang=i&amp;nextAction=xml&amp;count=1" base-browse-url="http://bases.bireme.br/cgi-bin/wxislind.exe/iah/online/?IsisScript=iah/iah.xis&amp;base=LEYES&amp;lang=i&amp;nextAction=xml&amp;count=1"/>
+      <item id="17-100" label="MEDCARIB - Caribbean Health Sciences Literature" href="http://bases.bireme.br/cgi-bin/wxislind.exe/iah/online/?IsisScript=iah/iah.xis&amp;base=MedCarib&amp;lang=i" base-search-url="http://bases.bireme.br/cgi-bin/wxislind.exe/iah/online/?IsisScript=iah/iah.xis&amp;base=MedCarib&amp;lang=i&amp;nextAction=xml&amp;count=1" base-browse-url="http://bases.bireme.br/cgi-bin/wxislind.exe/iah/online/?IsisScript=iah/iah.xis&amp;base=MedCarib&amp;lang=i&amp;nextAction=lnk"/>
     </group>
-    <group label="Events directory">
-      <item id="31-2" label="Events directory" href="http://diretorios.bvs.br/direve/?lang=en" base-search-url="http://diretorios.bvs.br/webservices/?service=search&amp;count=1" base-browse-url="http://diretorios.bvs.br/webservices/?service=search&amp;lang=en&amp;output=html"/>
+    <group label="International Agencies">
+      <item id="17-102" label="PAHO - PAHO HQ Library Catalog" href="http://bases.bireme.br/cgi-bin/wxislind.exe/iah/online/?IsisScript=iah/iah.xis&amp;base=PAHO&amp;lang=i" base-search-url="http://bases.bireme.br/cgi-bin/wxislind.exe/iah/online/?IsisScript=iah/iah.xis&amp;base=PAHO&amp;lang=i&amp;nextAction=xml&amp;count=1" base-browse-url="http://bases.bireme.br/cgi-bin/wxislind.exe/iah/online/?IsisScript=iah/iah.xis&amp;base=PAHO&amp;lang=i&amp;nextAction=lnk"/>
+      <item id="17-103" label="WHOLIS - World Health Organization Library Information System" href="http://bases.bireme.br/cgi-bin/wxislind.exe/iah/online/?IsisScript=iah/iah.xis&amp;base=WHOLIS&amp;lang=i" base-search-url="http://bases.bireme.br/cgi-bin/wxislind.exe/iah/online/?IsisScript=iah/iah.xis&amp;base=WHOLIS&amp;lang=i&amp;nextAction=xml&amp;count=1" base-browse-url="http://bases.bireme.br/cgi-bin/wxislind.exe/iah/online/?IsisScript=iah/iah.xis&amp;base=WHOLIS&amp;lang=i&amp;nextAction=lnk"/>
     </group>
-    <group label="LIS- Health Information Locator">
-      <item id="31-4" label="LIS- Health Information Locator" href="http://lis.bvs.br/xml2html/xmlListT.php?xml%5B%5D=http://lis.bvs.br/lis-Regional/I/define.xml&amp;xsl=http://lis.bvs.br/lis-Regional/home.xsl" base-search-url="http://lis.bvs.br/webservices/?service=search&amp;count=1" base-browse-url="http://lis.bvs.br/webservices/?service=search&amp;output=html&amp;lang=en"/>
+    <group label="Evidence Portal">
+      <item id="17-117" label="Evidence Portal" href="http://evidences.bvsalud.org/php/index.php?lang=en" base-search-url="http://search.bvsalud.org/evidences/?output=metasearch&amp;lang=en" base-browse-url="http://search.bvsalud.org/evidences/?output=html&amp;lang=en"/>
+    </group>
+    <group label="Virtual Campus of Public Health">
+      <item id="17-116" label="Virtual Campus of Public Health" href="http://portal.campusvirtualsp.org/virtualcampus/drupal/index.php?q=en" base-search-url="http://search.bvsalud.org/cvsp/?output=metasearch&amp;lang=en" base-browse-url="http://search.bvsalud.org/cvsp/?output=html&amp;lang=en"/>
+    </group>
+    <group label="HIL- Health Information Locator">
+      <item id="17-114" label="HIL- Health Information Locator" href="http://lis.bvs.br/lis-Regional/xmlListT.php?x=0&amp;xml[]=@/I/define.xml&amp;xsl=http://lis.bvs.br/lis-Regional/home.xsl" base-search-url="http://lis.bvs.br/webservices/index.php?service=search&amp;count=1" base-browse-url="http://lis.bvs.br/webservices/index.php?service=search&amp;output=html"/>
+    </group>
+    <group label="Document Access">
+      <item id="17-111" label="Portal of Scientific Journals" href="http://portal.revistas.bvs.br/main.php?home=true&amp;lang=en" base-search-url="http://portal.revistas.bvs.br/webservices/?service=search&amp;count=1" base-browse-url="http://portal.revistas.bvs.br/webservices/?service=search&amp;output=html&amp;lang=en"/>
+    </group>
+    <group label="Events Directory">
+      <item id="31-2" label="Events Directory" href="http://diretorios.bvs.br/direve/?lang=en" base-search-url="http://diretorios.bvs.br/webservices/?service=search&amp;count=1" base-browse-url="http://diretorios.bvs.br/webservices/?service=search&amp;lang=en&amp;output=html"/>
     </group>
   </sourceList>
   <search>
-    <item source="34-1" search-parameters="exprSearch="/>
-    <item source="34-2" search-parameters="exprSearch="/>
-    <item source="34-3" search-parameters="exprSearch="/>
-    <item source="34-5" search-parameters="exprSearch="/>
-    <item source="37-1" search-parameters="expression="/>
+    <item source="17-87" search-parameters="exprSearch="/>
+    <item source="17-88" search-parameters="exprSearch="/>
+    <item source="17-89" search-parameters="expression="/>
+    <item source="17-72" search-parameters="exprSearch="/>
+    <item source="17-99" search-parameters="exprSearch="/>
+    <item source="17-100" search-parameters="exprSearch="/>
+    <item source="17-102" search-parameters="exprSearch="/>
+    <item source="17-103" search-parameters="exprSearch="/>
+    <item source="17-117" search-parameters="q="/>
+    <item source="17-116" search-parameters="q="/>
+    <item source="17-114" search-parameters="expression="/>
+    <item source="17-111" search-parameters="expression="/>
     <item source="31-2" search-parameters="expression="/>
-    <item source="31-4" search-parameters="expression="/>
   </search>
 </define>

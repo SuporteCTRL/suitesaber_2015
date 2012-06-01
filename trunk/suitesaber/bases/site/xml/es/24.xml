@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
-<calls id="24" lang="es" available="yes">
-  <item id="1" available="yes" href="http://www.eventos.bvsalud.org/agendas/isis3/?lang=es">III Congreso Mundial de Usuarios del CDS/ISIS<description>     </description><portal>     </portal></item>
+<calls id="24" available="">
+  <item id="1" available="yes" href="http://twitter.com/bireme" img="http://regional.bvsalud.org/local/Image/es/logotwitter_es.jpg">
+    <description> </description>
+    <portal> </portal>
+  </item>
 </calls>

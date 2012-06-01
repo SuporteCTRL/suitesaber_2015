@@ -10,35 +10,43 @@
 	<page id="menu" title="VHL administration" css="css/admin/adm.css">
 		<identification title="Administration: "/>
 		<bar>
-			<item href="javascript:preview();">Preview</item>
-			<item align="right" href="../admin/admFrames.php?lang=es">Español</item>
-			<item align="right" href="../admin/admFrames.php?lang=pt">Português</item>
-                        <item align="right" href="../admin/admFrames.php?lang=fr">Français</item>
+			<item href="../index.php?lang=en">View site</item>
 			<item align="right" href="../admin/logout.php">Exit</item>
+			<item align="right" href="?xml=xml/es/adm.xml&amp;xsl=xsl/adm/menu.xsl&amp;lang=es">Español</item>
+			<item align="right" href="?xml=xml/pt/adm.xml&amp;xsl=xsl/adm/menu.xsl&amp;lang=pt">Português</item>
 		</bar>
-
 		<menu>
 			<block title="Structure" level="adm">
-				<item page="parent">ABCD logo</item>
+				<item page="parent">BVS logo</item>
 				<item page="identification">Identification</item>		
 				<item page="contact">Contact</item>		
 				<item page="other-versions">Versions</item>	
 				<item page="institution">Institutions</item>
-				<item page="metasearch" xsl="tree-collection.xsl">Metasearch</item>			
-				<line/>
+				<item page="metasearch" xsl="tree-collection.xsl">Metasearch</item>
+				<!-- item href="../admin/edit_subportal.php?lang=en">Subportals</item -->
 				<item page="collectionList">Components</item>
-				<line/>
 				<item page="responsable" xsl="tree-collection.xsl">Responsible institution</item>
 				<item page="metainfo" xsl="tree-collection.xsl">Meta information about the site</item>
 				<item page="texts">Texts</item>
-				<line/>				
-				<item href="javascript:fnow('/site/admin/fnow/index.php?lang=en')">File manager</item>				
+				<item href="javascript:fnow('/admin/fnow/index.php?lang=en')">File manager</item>				
+				<item page="users" xsl="tree-user.xsl">Users</item>
 			</block>
 			<block title="Components" level="adm,content">
 				<doc-list element="collectionList"/>
 			</block>
-			<block title="Access" level="adm">
-				<item page="users" xsl="tree-user.xsl">Users</item>
+		</menu>
+	</page>
+	<page id="menu-standard" title="Administração da BVS" css="css/admin/adm.css">
+		<identification title="Administração: "/>
+		<bar>
+			<item href="../index.php?lang=en">View site</item>
+			<item align="right" href="../admin/admFrames.php?xsl=xsl/adm/menu.xsl&amp;lang=en">English</item>
+			<item align="right" href="../admin/admFrames.php?xsl=xsl/adm/menu.xsl&amp;lang=es">Español</item>
+			<item align="right" href="../admin/logout.php">Sair</item>
+		</bar>
+		<menu>
+			<block title="Components">
+				<doc-list element="collectionList"/>
 			</block>
 		</menu>
 	</page>
@@ -60,7 +68,6 @@
 				<option value="yes">Available</option>
 				<option value="no">Unavailable</option>
 			</flag>
-			<item href="javascript:save('item')">Save</item>
 			<item align="right" href="javascript:history.back();">Exit</item>
 		</bar>
 		<edit>
@@ -71,6 +78,8 @@
 				<button href="javascript:changeItem(document.formPage.tree,'change_identification');" img="change.gif" alt=" modify "/>
 				<separator/>
 				<button href="javascript:del(document.formPage.tree);" img="del.gif" alt=" delete "/>
+				<separator/>
+                                <button href="javascript:save('item')" img="save.png" alt=" Save "/>
 			</buttons>
 			<tree-edit element="identification"/>
 			<buttons>
@@ -127,7 +136,6 @@
 				<option value="yes">Available</option>
 				<option value="no">Unavailable</option>
 			</flag>
-			<item href="javascript:save('item')">Save</item>
 			<item align="right" href="javascript:history.back();">Exit</item>
 		</bar>
 		<edit>
@@ -138,6 +146,8 @@
 				<button href="javascript:changeItem(document.formPage.tree,'change_parent');" img="change.gif" alt=" modify "/>
 				<separator/>
 				<button href="javascript:del(document.formPage.tree);" img="del.gif" alt=" delete "/>
+				<separator/>
+                                <button href="javascript:save('item')" img="save.png" alt=" Save "/>
 			</buttons>
 			<tree-edit element="parent"/>
 			<buttons>
@@ -193,7 +203,6 @@
 				<option value="yes">Available</option>
 				<option value="no">Unavailable</option>
 			</flag>
-			<item href="javascript:save('item')">Save</item>
 			<item align="right" href="javascript:history.back();">Exit</item>
 		</bar>
 		<edit>
@@ -204,6 +213,8 @@
 				<button href="javascript:changeItem(document.formPage.tree,'change_institution');" img="change.gif" alt=" modify "/>
 				<separator/>
 				<button href="javascript:del(document.formPage.tree);" img="del.gif" alt=" delete "/>
+				<separator/>
+                                <button href="javascript:save('item')" img="save.png" alt=" Save "/>
 			</buttons>
 			<tree-edit element="institution"/>
 			<buttons>
@@ -219,7 +230,7 @@
 	</page>
 	<page id="new_institution" title="Add institution" css="css/admin/adm.css">
 		<bar>
-			<item>Institution</item>
+			<item>Responsible Institution</item>
 			<flag element="item" name="available">
 				<option value="yes">Available</option>
 				<option value="no">Unavailable</option>
@@ -236,7 +247,7 @@
 	</page>
 	<page id="change_institution" title="Modify institution" css="css/admin/adm.css">
 		<bar>
-			<item>Institution</item>
+			<item>Responsible Institution</item>
 			<flag element="item" name="available">
 				<option value="yes">Available</option>
 				<option value="no">Unavailable</option>
@@ -254,12 +265,11 @@
 	<page id="contact" title="Contact" css="css/admin/adm.css">
 		<identification title="Administration: "/>
 		<bar>
-			<item>Contato</item>
+			<item>Contact</item>
 			<flag element="contact" name="available">
 				<option value="yes">Available</option>
 				<option value="no">Unavailable</option>
 			</flag>
-			<item href="javascript:save('item')">Save</item>
 			<item align="right" href="javascript:history.back();">Exit</item>
 		</bar>
 		<edit>
@@ -270,6 +280,8 @@
 				<button href="javascript:changeItem(document.formPage.tree,'change_contact');" img="change.gif" alt=" modify "/>
 				<separator/>
 				<button href="javascript:del(document.formPage.tree);" img="del.gif" alt=" delete "/>
+				<separator/>
+                                <button href="javascript:save('item')" img="save.png" alt=" Save "/>
 			</buttons>
 			<tree-edit element="contact"/>
 			<buttons>
@@ -323,7 +335,6 @@
 				<option value="yes">Available</option>
 				<option value="no">Unavailable</option>
 			</flag>
-			<item href="javascript:save('item')">Save</item>
 			<item align="right" href="javascript:history.back();">Exit</item>
 		</bar>
 		<edit>
@@ -334,6 +345,8 @@
 				<button href="javascript:changeItem(document.formPage.tree,'change_portal');" img="change.gif" alt=" modify "/>
 				<separator/>
 				<button href="javascript:del(document.formPage.tree);" img="del.gif" alt=" delete "/>
+				<separator/>
+                                <button href="javascript:save('item')" img="save.png" alt=" Save "/>
 			</buttons>
 			<tree-edit element="collectionList"/>
 			<buttons>
@@ -385,11 +398,6 @@
 		<identification title="Administration: "/>
 		<bar>
 			<item>Information about this VHL</item>
-			<flag element="about" name="available">
-				<option value="yes">Available</option>
-				<option value="no">Unavailable</option>
-			</flag>
-			<item href="javascript:save('item')">Save</item>
 			<item align="right" href="javascript:history.back();">Exit</item>
 		</bar>
 		<edit>
@@ -400,6 +408,8 @@
 				<button href="javascript:changeItem(document.formPage.tree,'change_about');" img="change.gif" alt=" modify "/>
 				<separator/>
 				<button href="javascript:del(document.formPage.tree);" img="del.gif" alt=" delete "/>
+				<separator/>
+                                <button href="javascript:save('item')" img="save.png" alt=" Save "/>
 			</buttons>
 			<tree-edit element="collectionList"/>
 			<buttons>
@@ -454,12 +464,7 @@
 	<page id="collectionList" title="Component list" css="css/admin/adm.css">
 		<identification title="Administration: "/>
 		<bar>
-			<item>Component</item>
-			<flag element="collectionList" name="available">
-				<option value="yes">Available</option>
-				<option value="no">Unavailable</option>
-			</flag>
-			<item href="javascript:save('item-component')">Save</item>
+			<item>Components</item>
 			<item align="right" href="javascript:history.back();">Exit</item>
 		</bar>
 		<edit>
@@ -470,6 +475,8 @@
 				<button href="javascript:changeItem(document.formPage.tree,'change_collectionList');" img="change.gif" alt=" modify "/>
 				<separator/>
 				<button href="javascript:delComponent(document.formPage.tree);" img="del.gif" alt=" delete "/>
+				<separator/>
+                                <button href="javascript:save('item-component')" img="save.png" alt=" Save "/>
 			</buttons>
 			<tree-edit element="collectionList"/>
 			<buttons>
@@ -508,6 +515,7 @@
 			<option value="about">about</option>
 			<option value="topic">topic</option>			
 			<option value="xhtml">HTML</option>
+			<option value="ticker">Ticker (RSS)</option>
 			<option value="rss">RSS</option>
 			</item>			
 		</change>
@@ -533,7 +541,6 @@
 		<identification title="Administration: "/>
 		<bar>
 			<item>Information sources</item>
-			<item href="javascript:save('item-collection')">Save</item>
 			<item align="right" href="javascript:history.back();">Exit</item>
 		</bar>
 		<edit>
@@ -544,6 +551,8 @@
 				<button href="javascript:changeItem(document.formPage.tree,'change_collection');" img="change.gif" alt=" modify "/>
 				<separator/>
 				<button href="javascript:del(document.formPage.tree);" img="del.gif" alt=" delete "/>
+				<separator/>
+                                <button href="javascript:save('item-collection')" img="save.png" alt=" Save "/>
 			</buttons>
 			<tree-edit element="collectionList"/>
 			<buttons>
@@ -611,7 +620,6 @@
 		<identification title="Administration: "/>
 		<bar>
 			<item>Espacios</item>
-			<item href="javascript:save('item-community')">Save</item>
 			<item align="right" href="javascript:history.back();">Exit</item>
 		</bar>
 		<edit>
@@ -622,6 +630,8 @@
 				<button href="javascript:changeItem(document.formPage.tree,'change_community');" img="change.gif" alt=" modify "/>
 				<separator/>
 				<button href="javascript:del(document.formPage.tree);" img="del.gif" alt=" delete "/>
+				<separator/>
+                                <button href="javascript:save('item-community')" img="save.png" alt=" Save "/>
 			</buttons>
 			<tree-edit element="collectionList"/>
 			<buttons>
@@ -677,7 +687,6 @@
 		<identification title="Administration: "/>
 		<bar>
 			<item>Topics</item>
-			<item href="javascript:save('item-topic')">Save</item>
 			<item align="right" href="javascript:history.back();">Exit</item>
 		</bar>
 		<edit>
@@ -688,6 +697,8 @@
 				<button href="javascript:changeItem(document.formPage.tree,'change_topic');" img="change.gif" alt=" modify "/>
 				<separator/>
 				<button href="javascript:del(document.formPage.tree);" img="del.gif" alt=" delete "/>
+				<separator/>
+                                <button href="javascript:save('item-topic')" img="save.png" alt=" Save "/>
 			</buttons>
 			<tree-edit element="collectionList"/>
 			<buttons>
@@ -747,7 +758,6 @@
 		<identification title="Administration: "/>
 		<bar>
 			<item>Category</item>
-			<item href="javascript:save('item-decs')">Save</item>
 			<item align="right" href="javascript:history.back();">Exit</item>
 		</bar>
 		<edit>
@@ -758,16 +768,13 @@
 				<button href="javascript:changeItem(document.formPage.tree,'change_decs');" img="change.gif" alt=" change "/>
 				<separator/>
 				<button href="javascript:del(document.formPage.tree);" img="del.gif" alt=" delete "/>
+				<separator/>
+                                <button href="javascript:save('item-decs')" img="save.png" alt=" Save "/>
 			</buttons>
 			<tree-edit element="collectionList"/>
 			<buttons>
 				<separator/>
 				<separator/>
-				<!--
-				<button href="javascript:left(document.formPage.tree);" img="left.gif" alt=" decrease level "/>
-				<button href="javascript:right(document.formPage.tree);" img="right.gif" alt=" increase level "/>
-				<separator/>
-				-->
 				<button href="javascript:up(document.formPage.tree);" img="up.gif" alt=" move up "/>
 				<button href="javascript:down(document.formPage.tree);" img="down.gif" alt=" move down "/>
 			</buttons>
@@ -811,7 +818,6 @@
 		<identification title="Administration: "/>
 		<bar>
 			<item>Annexes</item>
-			<item href="javascript:save('attach')">Save</item>
 			<item align="right" href="javascript:history.back();">Exit</item>
 		</bar>
 		<edit>
@@ -822,6 +828,8 @@
 				<button href="javascript:changeItem(document.formPage.tree,'change_attachList');" img="change.gif" alt=" modify "/>
 				<separator/>
 				<button href="javascript:del(document.formPage.tree);" img="del.gif" alt=" delete "/>
+				<separator/>
+                                <button href="javascript:save('attach')" img="save.png" alt=" Save "/>
 			</buttons>
 			<tree-edit element="attachList"/>
 			<buttons>
@@ -875,12 +883,7 @@
 		<identification title="Administration: "/>
 		<bar>
 			<item>Highligths</item>
-			<flag element="calls" name="available">
-				<option value="yes">Available</option>
-				<option value="no">Unavailable</option>
-			</flag>
 			<item align="right" href="javascript:history.back();">Exit</item>
-			<item href="javascript:save('item')">Save</item>
 		</bar>
 		<edit>
 			<buttons>
@@ -890,6 +893,8 @@
 				<button href="javascript:changeItem(document.formPage.tree,'change_call');" img="change.gif" alt=" modify "/>
 				<separator/>
 				<button href="javascript:del(document.formPage.tree);" img="del.gif" alt=" delete "/>
+				<separator/>
+                                <button href="javascript:save('item')" img="save.png" alt=" Save "/>
 			</buttons>
 			<tree-edit element="collectionList"/>
 			<buttons>
@@ -943,11 +948,6 @@
 		<identification title="Administration: "/>
 		<bar>
 			<item>Warnings</item>
-			<flag element="warning" name="available">
-				<option value="yes">Available</option>
-				<option value="no">Unavailable</option>
-			</flag>
-			<item href="javascript:save('warning')">Save</item>
 			<item align="right" href="javascript:history.back();">Exit</item>
 		</bar>
 		<edit>
@@ -958,6 +958,8 @@
 				<button href="javascript:changeItem(document.formPage.tree,'change_warning');" img="change.gif" alt=" modify "/>
 				<separator/>
 				<button href="javascript:del(document.formPage.tree);" img="del.gif" alt=" delete "/>
+				<separator/>
+                                <button href="javascript:save('warning')" img="save.png" alt=" Save "/>
 			</buttons>
 			<tree-edit element="collectionList"/>
 			<buttons>
@@ -1007,7 +1009,6 @@
 		<identification title="Administration: "/>
 		<bar>
 			<item>Texts</item>
-			<item href="javascript:save('text')">Save</item>
 			<item align="right" href="javascript:history.back();">Exit</item>
 		</bar>
 		<edit>
@@ -1018,6 +1019,8 @@
 				<button href="javascript:changeItem(document.formPage.tree,'change_text');" img="change.gif" alt=" modify "/>
 				<separator/>
 				<button href="javascript:del(document.formPage.tree);" img="del.gif" alt=" delete "/>
+				<separator/>
+                                <button href="javascript:save('text')" img="save.png" alt=" Save "/>
 			</buttons>
 			<tree-edit element="texts"/>
 			<buttons>
@@ -1071,7 +1074,6 @@
 				<option value="yes">Available</option>
 				<option value="no">Unavailable</option>
 			</flag>
-			<item href="javascript:save('item')">Save</item>
 			<item align="right" href="javascript:history.back();">Exit</item>
 		</bar>
 		<edit>
@@ -1082,6 +1084,8 @@
 				<button href="javascript:changeItem(document.formPage.tree,'change_other-version');" img="change.gif" alt=" modify "/>
 				<separator/>
 				<button href="javascript:del(document.formPage.tree);" img="del.gif" alt=" delete "/>
+				<separator/>
+                                <button href="javascript:save('item')" img="save.png" alt=" Save "/>
 			</buttons>
 			<tree-edit element="other-versions"/>
 			<buttons>
@@ -1131,27 +1135,27 @@
 	<page id="responsable" title="Responsible institution" css="css/admin/adm.css">
 		<identification title="Administration: "/>
 		<bar>
-			<item>Institution</item>
+			<item>Responsible Institution</item>
 			<flag element="responsable" name="available">
 				<option value="yes">Available</option>
 				<option value="no">Unavailable</option>
 			</flag>
-			
-			<item href="javascript:save('item-responsable')">Modify</item>
+
 			<item align="right" href="javascript:history.back();">Exit</item>
 		</bar>
 		<edit>
 			<buttons>				
 				<separator/>				
 				<button href="javascript:changeItem(document.formPage.tree,'change_responsable');" img="change.gif" alt=" modify "/>
-				<separator/>				
+				<separator/>			
+                                <button href="javascript:save('item-responsable')" img="save.png" alt=" Save "/>
 			</buttons>
 			<tree-edit element="responsable"/>
 		</edit>
 	</page>
 	<page id="change_responsable" title="Modify responsible institution" css="css/admin/adm.css">
 		<bar>
-			<item>Institution</item>
+			<item>Responsible Institution</item>
 			<flag element="item" name="available">
 				<option value="yes">Available</option>
 				<option value="no">Unavailable</option>
@@ -1168,22 +1172,22 @@
 	<page id="metasearch" title="Metasearch" css="css/admin/adm.css">
 		<identification title="Administration: "/>
 		<bar>
-			<item>Texts</item>
-			<item href="javascript:save('text')">Save</item>
+			<item>Metasearch</item>
 			<item align="right" href="javascript:history.back();">Exit</item>
 		</bar>
 		<edit>
 			<buttons>				
 				<separator/>				
 				<button href="javascript:changeItem(document.formPage.tree,'change_metasearch');" img="change.gif" alt=" modify "/>
-				<separator/>				
+				<separator/>
+                                <button href="javascript:save('text')" img="save.png" alt=" Save "/>			
 			</buttons>
 			<tree-edit element="metasearch"/>
 		</edit>
 	</page>
 	<page id="change_metasearch" title="Metasearch" css="css/admin/adm.css">
 		<bar>
-			<item>Texts</item>
+			<item>Metasearch</item>
 			<flag element="item" name="available">
 				<option value="yes">Available</option>
 				<option value="no">Unavailable</option>
@@ -1196,12 +1200,10 @@
 			<item edit="text" name="text_content">Text</item>
 		</change>
 	</page>
-	
 	<page id="users" title="User list" css="css/admin/adm.css">
 		<identification title="Administration: "/>
 		<bar>
 			<item>Users</item>
-			<item href="javascript:save('user')">Save</item>
 			<item align="right" href="javascript:history.back();">Exit</item>
 		</bar>
 		<edit>
@@ -1212,6 +1214,8 @@
 				<button href="javascript:changeItem(document.formPage.tree,'change_user');" img="change.gif" alt=" modify "/>
 				<separator/>
 				<button href="javascript:del(document.formPage.tree);" img="del.gif" alt=" delete "/>
+				<separator/>
+                                <button href="javascript:save('user')" img="save.png" alt=" Save "/>
 			</buttons>
 			<tree-edit xml="xml/users.xml" element="users"/>
 			<buttons>
@@ -1265,12 +1269,10 @@
 			<item edit="password" name="password">Password</item>
 		</change>
 	</page>
-
 	<page id="metainfo" title="Metainfo list" css="css/admin/adm.css">
 		<identification title="Administration: "/>
 		<bar>
-			<item>Metainfo</item>
-			<item href="javascript:save('item-metainfo')">Save</item>
+			<item>Meta infomation about the site</item>
 			<item align="right" href="javascript:history.back();">Exit</item>
 		</bar>
 		<edit>
@@ -1281,6 +1283,8 @@
 				<button href="javascript:changeItem(document.formPage.tree,'change_metainfo');" img="change.gif" alt=" change "/>
 				<separator/>
 				<button href="javascript:del(document.formPage.tree);" img="del.gif" alt=" del "/>
+				<separator/>
+                                <button href="javascript:save('item-metainfo')" img="save.png" alt=" Save "/>
 			</buttons>
 			<tree-edit element="metainfo"/>
 			<buttons>
@@ -1308,7 +1312,7 @@
 	</page>
 	<page id="change_metainfo" title="Change metainfo" css="css/admin/adm.css">
 		<bar>
-			<item>Metainfo</item>
+			<item>Meta infomation about the site</item>
 			<flag element="item" name="available">
 				<option value="yes">Available</option>
 				<option value="no">Unavailable</option>
