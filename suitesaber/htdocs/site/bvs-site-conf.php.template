@@ -1,4 +1,4 @@
-<?php 
+;<?php /*
 
 [SITE INFO]
 DEFAULT_LANGUAGE=pt
@@ -7,26 +7,30 @@ DEFAULT_LANGUAGE=pt
 ; Set the directory of application in
 ; BVS-Site address. The effect will be
 ; http://bvs-site.com/DIRECTORY
-DIRECTORY=/site/
+DIRECTORY=/
 
 ; Full path to folder 'htdocs' in BVS-Site
 ; installation. Windows users must NOT put
 ; letter unit in path
-SITE_PATH=/var/www/suitesaber/htdocs/site/
+SITE_PATH=/home/bvs-site/htdocs/
 
 ; Full path to folder 'site' in folder bases.
 ; Windows users must NOT put letter unit in path
-DATABASE_PATH=/var/www/suitesaber/bases/site/
+DATABASE_PATH=/home/bvs-site/bases/site/
+
+
+; Full path where is the 'local' folder (destination of upload files)
+UPLOAD_FILES_PATH=/home/bvs-site/bases/site/
 
 ; Servername
-SERVERNAME=localhost:9090
+SERVERNAME=localhost
 
 ;Letter unit for Windows only
 LETTER_UNIT=D:
 
 [SKIN]
 ; Folder with CSS to be applied in BVS-Site
-SKIN_NAME=saber
+SKIN_NAME=classic
 
 [METASEARCH]
 ENGINE=local
@@ -45,4 +49,5 @@ SMTP_PASSWORD=
 [BVS SERVICES]
 SERVICES_SERVER=srv.bvsalud.org
 
-?>
+
+;*/ ?>
