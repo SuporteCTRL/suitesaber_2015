@@ -50,8 +50,8 @@ function GoSearch($target_node, $sourceListNode, $expression = ""){
 
             if ($form == 'advanced' & ! isset($selected_sources[$sourceName])){   // se fonte nï¿½o esta selecionada
 
-                // mesmo que a fonte nï¿½o esteja habilitada executa search nos casos
-                // onde o grupo $current_group = 'all' ou a fonte ï¿½ ï¿½nica dentro do grupo
+                // mesmo que a fonte ão esteja habilitada executa search nos casos
+                // onde o grupo $current_group = 'all' ou a fonte é única dentro do grupo
                 continue;
                 /*
                 if ( $GLOBALS[$current_group] != 'all' &  count($target_node->children[$i]->children) > 1){
@@ -60,7 +60,7 @@ function GoSearch($target_node, $sourceListNode, $expression = ""){
                 */
             }
 
-            // nï¿½o executa pesquisa nas fontes desabilitadas (available = no)
+            // não executa pesquisa nas fontes desabilitadas (available = no)
             if ($current_source["available"] == 'no'){
                 continue;
             }

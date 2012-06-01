@@ -5,7 +5,7 @@
     <xsl:include href="tree.xsl"/>
 
     <xsl:template match="*" mode="script">
-        <script language="JavaScript">
+        <script type="text/javascript">
             var HTMLAreaElement = null;
             var HTMLAreaModifyButtonLabel = "";
             var HTMLAreaCancelButtonLabel = "";
@@ -27,8 +27,9 @@
     </xsl:template>
 
     <xsl:template match="*" mode="form">
-        <form name="formPage" action="{$xml2html}?portal={$portal}" method="post" class="{$portal}">
-            <xsl:apply-templates/>
+        <form name="formPage" action="{$xml2html}?portal={$portal}" method="post" class="{name()}-{@id}">
+            <xsl:apply-templates select="bar"/>
+            <xsl:apply-templates select="menu|change"/>
         </form>
     </xsl:template>
 
@@ -42,52 +43,41 @@
     </xsl:template>
 
     <xsl:template match="change">
-        <table width="100%" class="change">
-            <tr valign="top">
-                <td>
-                    <br/>
-                    <ul>
-                        <xsl:apply-templates/>
-                    </ul>
-                </td>
-            </tr>
-        </table>
+        <div class="{name()}">
+            <ul>
+                <xsl:apply-templates/>
+            </ul>
+        </div>
     </xsl:template>
 
     <xsl:template match="item[@edit]">
-        <li type="disc">
-            <xsl:apply-templates select="text()"/><br/>
+        <li>
+            <label for="{@name}"><xsl:apply-templates select="text()"/></label>
             <xsl:apply-templates select="." mode="edit"/>
-            <br/>
         </li>
     </xsl:template>
 
     <xsl:template match="item[@edit = 'hidden']">
         <xsl:variable name="find-name" select="@name"/>
-
         <input type="hidden" name="{@name}" value="{@value}{$cgi/buffer/*[name() = $find-name]}"/>
     </xsl:template>
 
     <xsl:template match="item[@edit = 'readonly']" mode="edit">
         <xsl:variable name="find-name" select="@name"/>
-
         <input type="hidden" name="{@name}" value="{@value}{$cgi/buffer/*[name() = $find-name]}"/>
         <strong><xsl:value-of select="concat(@value,$cgi/buffer/*[name() = $find-name])"/></strong>
-
     </xsl:template>
 
 
     <xsl:template match="item[@edit = 'text']" mode="edit">
         <xsl:variable name="find-name" select="@name"/>
-
-        <input type="{@edit}" name="{@name}" value="{$cgi/buffer/*[name() = $find-name]}" size="90"/><br/>
+        <input type="{@edit}" id="{@name}" name="{@name}" value="{$cgi/buffer/*[name() = $find-name]}"/><br/>
     </xsl:template>
 
 
     <xsl:template match="item[@edit = 'password']" mode="edit">
         <xsl:variable name="find-name" select="@name"/>
-
-        <input type="password" name="{@name}" value="{$cgi/buffer/*[name() = $find-name]}" size="10"/><br/>
+        <input type="password" id="{@name}" name="{@name}"/><br/>
     </xsl:template>
 
     <xsl:template match="item[@edit = 'textarea']" mode="edit">
@@ -98,13 +88,8 @@
 
     <xsl:template match="item[@edit = 'htmlarea']" mode="edit">
         <xsl:variable name="find-name" select="@name"/>
-
-        <br/>
         <a href="" onclick="javascript: HTMLAreaBox(document.formPage.{@name},'{@label-modify}','{@label-cancel}','{/root/adm/@language}'); return false;" target="HTMLArea"><xsl:value-of select="@label-edit"/></a>
-        <br/>
-        <br/>
-        <textarea cols="70" rows="10" name="{@name}"><xsl:apply-templates select="$cgi/buffer/*[name() = $find-name]" mode="copy"/><xsl:value-of select="' '"/></textarea>
-        <br/>
+        <textarea cols="70" rows="10" id="{@name}" name="{@name}"><xsl:apply-templates select="$cgi/buffer/*[name() = $find-name]" mode="copy"/><xsl:value-of select="' '"/></textarea>
     </xsl:template>
 
     <xsl:template match="item[@edit = 'select']" mode="edit">
@@ -132,10 +117,9 @@
     </xsl:template>
 
     <xsl:template match="item[@edit = 'group']">
-        <li type="disc">
-            <xsl:apply-templates select="text()"/><br/>
+        <li>
+            <xsl:apply-templates select="text()"/>
             <ul>
-                <br/>
                 <xsl:apply-templates select="item"/>
             </ul>
         </li>
@@ -155,10 +139,9 @@
         <xsl:param name="colid"/>
         <xsl:variable name="source-id" select="concat('info-source-id_',$colid,'-',@id)"/>
 
-        <li type="disc">
-            <xsl:apply-templates select="text()"/><br/>
-            <input type="text" name="{$source-id}" value="{$cgi/buffer/*[name() = $source-id]}" size="90"/><br/>
-            <br/>
+        <li>
+            <label for="{$source-id}"><xsl:apply-templates select="text()"/></label>
+            <input type="text" name="{$source-id}" value="{$cgi/buffer/*[name() = $source-id]}"/><br/>
         </li>
     </xsl:template>
 

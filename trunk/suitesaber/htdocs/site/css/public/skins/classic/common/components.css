@@ -91,6 +91,24 @@
     color: #803E12;
 }
 
+	
+/* Network Boxes Styles */
+.firstColumn div ul .network {
+	margin-left: 5px;
+}
+.firstColumn div ul .network ul {
+	padding: 0px;
+	margin: 4px;
+}
+.firstColumn div ul .level ul li {
+	margin: 5px 0px 10px 0px;
+}
+.firstColumn div ul .level {
+	font-weight: bold;
+}
+.firstColumn div ul .level li{
+	font-weight: normal;
+}
 
 /* Information sources Boxes Styles */
 .collection H3 {
@@ -186,7 +204,7 @@
     text-decoration: underline;
 }
 
-#topic LI {
+.topic LI {
     list-style: none;
     margin: 0px;
     margin-bottom: 0px;
@@ -337,13 +355,13 @@
 
 #decsAutocomplete #terminput {
     margin-left: 15px;
-    width: 220px;
+    width: 120px;
 }
 
 #decsAutocomplete #container .ac_bd{
     margin-left: 15px;
     border: solid 1px #cccccc;
-    width: 300px;
+    width: 170px;
     height: 200px;
     overflow: auto;
     background: #fff;
@@ -386,34 +404,34 @@
 }
 
 /* About BVS Box Styles */
-#about H3 {
+.about H3 {
     border-color: #F0C29D;
 }
 
-#about H3 SPAN {
+.about H3 SPAN {
     border-color: #F47B20;
 }
 
-#about UL {
+.about UL {
     margin: 0px 15px 0px 15px;
     padding: 0px;
 }
 
-#about LI {
+.about LI {
     border-bottom: 1px solid #BEE0E0;
     list-style: none;
     padding: 3px;
 }
 
-.level2 #about LI {
+.level2 .about LI {
     border-bottom: 0px;
 }
 
-#about LI A {
+.about LI A {
     text-decoration: none;
 }
 
-#about LI A:hover {
+.about LI A:hover {
     text-decoration: underline;
 }
 
@@ -448,17 +466,23 @@ HTML>BODY .calls LI A { /* Mozilla exclusive definitions */
 }
 
 HTML>BODY .calls LI IMG { /* Mozilla exclusive definitions */
-    float: left;
+
     margin-right: 5px;
+	max-width:198px;
 }
 
+.calls LI IMG { /* Mozilla exclusive definitions */
+
+    margin-right: 5px;
+	max-width:198px;
+}
 .calls A:hover {
 
 }
 
 /* Related Portals Box Styles */
 #portal {
-    background: #EEF1F1 url(../../../../../image/public/skins/classic/common/portalListBackground.jpg) top right no-repeat;
+    
 }
 
 #portal H3 {
@@ -522,4 +546,14 @@ HTML>BODY .calls LI IMG { /* Mozilla exclusive definitions */
 }
 .RSS .logo{
     margin-left: 20px;
+}
+
+#portal li a.closed {
+background:url("../../../../../image/public/skins/regional/common/icon_plus.gif") no-repeat scroll 0 2px transparent;
+padding-left:14px;
+}
+
+#portal li a.opened {
+background:url("../../../../../image/public/skins/regional/common/icon_minus.gif") no-repeat scroll 0 2px transparent;
+padding-left:14px;
 }

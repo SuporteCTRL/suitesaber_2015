@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
-    <xsl:output method="xml" indent="no" omit-xml-declaration="yes" encoding="iso-8859-1"/>
+<xsl:output method="xml" encoding="iso-8859-1"
+    doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
+    doctype-public="-//W3C//DTD XHTML 1.0 Transitional//EN" indent="yes"/>
 
     <xsl:variable name="base-path" select="/root/define/DATABASE_PATH"/>
     <xsl:param name="xml-path" select="concat(/root/define/DATABASE_PATH,'xml/')"/>
@@ -72,86 +74,83 @@
     </xsl:template>
 
     <xsl:template match="*" mode="script">
-        <script language="JavaScript" src="{$location}js/menu.js">/* menu.js */</script>
+        <script type="text/javascript" src="{$location}js/menu.js"></script>
     </xsl:template>
 
     <xsl:template match="message">
-        <xsl:value-of select="concat('msgArray[',position(),'] = ','&quot;',@text,'&quot;',';')"/>
+        <xsl:value-of select="concat('&#10;msgArray[',position(),'] = ','&quot;',@text,'&quot;',';')"/>
     </xsl:template>
 
     <xsl:template match="*" mode="body">
         <body>
-            <xsl:apply-templates select="." mode="form"/>
+            <xsl:apply-templates select="."/>
         </body>
     </xsl:template>
 
     <xsl:template match="*" mode="form">
-        <form name="formPage" action="{$xml2html}" method="post" class="{$portal}">
-            <xsl:apply-templates select="$cgi/*" mode="hidden"/>
-            <input type="hidden" name="buffer" value=""/>
-            <xsl:apply-templates/>
-        </form>
-        <!--
-        <form name="formPreview" action="/preview.php" method="post" target="preview">
-            <input type="hidden" name="lang" value="{$lang}"/>
-        </form>
-        -->
+        <xsl:apply-templates select="menu"/>
     </xsl:template>
+
+    <xsl:template match="page">
+        <div class="top">
+            <xsl:apply-templates select="identification"/>
+            <xsl:apply-templates select="bar"/>
+        </div>
+        <xsl:apply-templates select="." mode="form"/>
+    </xsl:template>
+
     <xsl:template match="*" mode="hidden">
         <input type="hidden" name="{name()}" value="{.}"/>
     </xsl:template>
+    
     <xsl:template match="identification">
-        <span class="identification">
-            <center>
-                <xsl:apply-templates select="@title"/>
-                <xsl:apply-templates select="$doc-xml/bvs/identification/item" mode="hyphened"/>
-            </center>
-        </span>
+        <h1 class="identification">
+            <xsl:apply-templates select="@title"/>
+            <xsl:apply-templates select="$doc-xml/bvs/identification/item" mode="hyphened"/>
+        </h1>
     </xsl:template>
+    
     <xsl:template match="bar">
-        <hr size="1" noshade=""/>
-        <table width="100%" border="0" cellpadding="4" cellspacing="0" class="bar">
-            <tr valign="top">
-                <td align="left" valign="middle">
-                    <xsl:apply-templates select="*[not(@align = 'right')]" mode="piped"/>
-                </td>
-                <td align="right" valign="middle">
-                    <xsl:apply-templates select="*[@align = 'right']" mode="piped"/>
-                </td>
-            </tr>
+        <div class="bar">
+            <xsl:apply-templates select="*[not(@*)]" mode="componenttitle"/>
+            <ul class="left-options">
+                <xsl:apply-templates select="*[not(@align = 'right') and @*]" mode="piped"/>
+            </ul>
+            <ul class="right-options">
+                <xsl:apply-templates select="*[@align = 'right']" mode="piped"/>
+            </ul>
             <xsl:call-template name="subportals"/>
-        </table>
-        <hr size="1" noshade=""/>
-        <br/>
+        </div>
     </xsl:template>
 
     <xsl:template name="subportals">
             <xsl:if test="$subportas-xml//item">
-                <tr>
-                    <td align="left" valign="bottom" colspan="2" style="border-top: 1px solid #808080">
-                        <xsl:value-of select="'Subportals: '"/>
-                        <a target="_top">
+                <ul class="subportals">
+                    <li><xsl:value-of select="'Subportals: '"/></li>
+                    <li>
+                        <a>
                             <xsl:if test="$portal != ''">
                                 <xsl:attribute name="href">
-                                    <xsl:value-of select="concat('../admin/admFrames.php?lang=',$lang)"/>
+                                    <xsl:value-of select="concat('?xml=xml/',$lang,'/adm.xml&amp;xsl=xsl/adm/menu.xsl&amp;lang=',$lang)"/>
                                 </xsl:attribute>
                             </xsl:if>
                             <xsl:value-of select="'Home'"/>
                         </a>
+                    </li>
+                    <li>
                         <xsl:for-each select="$subportas-xml//item">
-                            <xsl:value-of select="' | '"/>
                             <a target="_top">
                                 <xsl:if test="$portal != @id">
                                     <xsl:attribute name="href">
-                                        <xsl:value-of select="concat('../admin/admFrames.php?lang=',$lang,'&amp;portal=', @id)"/>
+                                        <xsl:value-of select="concat('?xml=xml/',$lang,'/adm.xml&amp;xsl=xsl/adm/menu.xsl&amp;lang=',$lang,'&amp;portal=', @id)"/>
                                     </xsl:attribute>
                                 </xsl:if>
                                 <xsl:attribute name="target">_top</xsl:attribute>
                                 <xsl:value-of select="."/>
                             </a>
                         </xsl:for-each>
-                    </td>
-                </tr>
+                    </li>
+                </ul>
             </xsl:if>
     </xsl:template>
 
@@ -189,13 +188,13 @@
     </xsl:template>
 
     <xsl:template match="item[@type = 'ticker']">
-           <a href="../admin/edit-ticker.php?lang={$lang}&amp;page={text()}&amp;id={@id}{$portal_param}">
+           <a href="../admin/rss.php?lang={$lang}&amp;page={text()}&amp;id={@id}&amp;type=ticker{$portal_param}">
                 <xsl:apply-templates select="text()"/>
            </a>
     </xsl:template>
 
     <xsl:template match="item[@type = 'rss-highlight']">
-           <a href="../admin/edit-rss-highlight.php?lang={$lang}&amp;page={text()}&amp;id={@id}{$portal_param}">
+           <a href="../admin/rss.php?lang={$lang}&amp;page={text()}&amp;id={@id}&amp;type=highlight{$portal_param}">
                 <xsl:apply-templates select="text()"/>
            </a>
     </xsl:template>
@@ -207,7 +206,7 @@
     </xsl:template>
 
     <xsl:template match="item[@type = 'rss']">
-        <a href="../admin/rss.php?lang={$lang}&amp;page={text()}&amp;id={@id}{$portal_param}">
+        <a href="../admin/rss.php?lang={$lang}&amp;page={text()}&amp;id={@id}&amp;type=rss{$portal_param}">
             <xsl:apply-templates select="text()"/>
         </a>
     </xsl:template>
@@ -237,52 +236,38 @@
     </xsl:template>
 
     <xsl:template match="*" mode="piped">
-        <xsl:if test="position() != 1">&#160;<b>|</b>&#160;</xsl:if>
-        <xsl:apply-templates select="."/>
+        <li><xsl:apply-templates select="."/></li>
     </xsl:template>
+
+    <xsl:template match="*" mode="componenttitle">
+        <h3><xsl:apply-templates select="."/></h3>
+    </xsl:template>
+
     <xsl:template match="*" mode="hyphened">
         <xsl:if test="position() != 1">&#160;<b>-</b>&#160;</xsl:if>
         <xsl:apply-templates select="."/>
     </xsl:template>
+    
     <xsl:template match="item" mode="lined">
         <xsl:apply-templates select="."/>
         <br/>
     </xsl:template>
 
     <xsl:template match="menu">
-        <script language="JavaScript">
-            parent.frameHidden.menuXSL = "<xsl:value-of select="$cgi/xsl"/>";
-        </script>
-
-        <table width="100%" cellpadding="0" cellspacing="8" class="menu">
-            <colgroup width="35%"></colgroup>
-            <colgroup width="45%"></colgroup>
-            <colgroup width="20%"></colgroup>
-
-            <tr valign="top">
-                <xsl:apply-templates select="block[contains(@level,$user-level) or not(@level)] "/>
-            </tr>
-        </table>
+        <div class="middle">
+            <xsl:apply-templates select="block[contains(@level,$user-level) or not(@level)] "/>
+        </div>
     </xsl:template>
 
     <xsl:template match="block">
-        <td>
-            <table width="90%" cellpadding="4" cellspacing="2" class="block">
-                <tr>
-                    <td align="center" class="block-title">
-                        <xsl:apply-templates select="@title"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="block-body">
-                        <ul>
-                            <xsl:apply-templates mode="tree"/>
-                        </ul>
-                    </td>
-                </tr>
-            </table>
-        </td>
+            <div class="column" id="column{position()}">
+                <h2><xsl:apply-templates select="@title"/></h2>
+                <ul>
+                    <xsl:apply-templates mode="tree"/>
+                </ul>
+            </div>
     </xsl:template>
+    
     <xsl:template match="item | attach" mode="tree">
         <li type="disc">
             <xsl:apply-templates select="."/>
@@ -293,9 +278,11 @@
             </xsl:if>
         </li>
     </xsl:template>
+    
     <xsl:template match="line" mode="tree">
         <p/>
     </xsl:template>
+    
     <xsl:template match="attach[@file and @adm]">
         <a href="javascript:attachW('{@adm}')">
             <xsl:apply-templates select="." mode="label"/>
@@ -321,3 +308,4 @@
         <xsl:apply-templates select="$doc-xml/bvs/*[name() = $find-element]/*" mode="tree"/>
     </xsl:template>
 </xsl:stylesheet>
+

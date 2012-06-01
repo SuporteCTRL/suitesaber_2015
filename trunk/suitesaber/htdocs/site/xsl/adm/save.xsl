@@ -28,7 +28,6 @@
             <xsl:when test="name() = $page">
                 <xsl:element name="{name()}">
                     <xsl:attribute name="id"><xsl:value-of select="$cgi/id"/></xsl:attribute>
-                    <xsl:attribute name="lang"><xsl:value-of select="$cgi/lang"/></xsl:attribute>
                     <xsl:attribute name="available"><xsl:value-of select="$cgi/available"/></xsl:attribute>
                     <xsl:apply-templates select="$cgi/buffer/*" mode="cgi"/>
                 </xsl:element>

@@ -4,10 +4,11 @@ function preview ( prevAction )
 {
     var href = '../php/index.php';
 
-    if( document.forms.formPage.portal && document.forms.formPage.portal.value )
+    try {
         href += '?portal=' + document.forms.formPage.portal.value
+    } catch(e) {}
 
-    wPreview = window.open( href, "preview", "top=0,left=0,height=530,width=785,menubar=no,location=no,resizable=yes,scrollbars=yes,status=yes" );
+    wPreview = window.open( href, "preview", "top=0,left=0,height=530,width=785,menubar=no,location=no,resizable=yes,scrollbars=yes,status=no" );
     wPreview.focus();
 }
 

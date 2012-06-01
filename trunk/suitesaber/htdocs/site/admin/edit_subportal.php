@@ -12,6 +12,7 @@ $messageArray = array (
     array (
         "title" => "Administración: Biblioteca Virtual en Salud",
         "add" => "Añadir",
+        "exit" => "Salir",
         "remove" => "Borrar",
         "rename" => "Renomear",
         "selected" => "Selecionado",
@@ -23,6 +24,7 @@ $messageArray = array (
     array (
         "title" => "Administração: Biblioteca Virtual em Saúde",
         "add" => "Adicionar",
+        "exit" => "Sair",
         "remove" => "Remover",
         "rename" => "Renomear",
         "selected" => "Selecionado",
@@ -34,6 +36,7 @@ $messageArray = array (
     array (
         "title" => "Administration: Virtual Health Library",
         "add" => "Add",
+        "exit" => "Exit",
         "remove" => "Remove",
         "rename" => "Rename",
         "selected" => "Selected",
@@ -68,7 +71,7 @@ $message = $messageArray[$lang];
             <tr valign="top">
                 <td align="left" valign="middle"><?=$message['subportals']?></td>
                 <td align="right" valign="middle">
-                    <a href="admFrames.php?lang=<?=$checked['lang']?>" target="_top">Sai</a>
+                    <a href="../php/xmlRoot.php?xml=xml/<?=$lang?>/adm.xml&xsl=xsl/adm/menu.xsl&lang=<?=$lang?>" target="_top"><?=$message["exit"]?></a>
                 </td>
             </tr>
         </table>

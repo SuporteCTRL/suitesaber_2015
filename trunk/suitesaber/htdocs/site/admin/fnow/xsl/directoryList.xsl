@@ -8,11 +8,9 @@
 	<xsl:variable name="base" select="/directoryList/@base"/>
 	<xsl:variable name="pathData" select="/directoryList/@pathData"/>
 	<xsl:variable name="column" select="/directoryList/@column"/>
-	
 	<xsl:variable name="order" select="/directoryList/@order"/>
-	
 	<xsl:variable name="lang" select="/directoryList/cgi/lang/text()"/>
-	<xsl:variable name="texts-file" select="concat(/directoryList/@Fnow,'/xml/texts.xml')"/>
+    <xsl:variable name="texts-file" select="concat(/directoryList/@Fnow,'/xml/texts.xml')"/>
 	<xsl:variable name="texts" select="document($texts-file)/texts/language[@id = $lang]/labels"/>	
 	
 	<xsl:variable name="kiloByte" select="1024"/>
@@ -20,7 +18,7 @@
 	<xsl:variable name="gigaByte" select="1024 * $megaByte"/>
 	
 	<xsl:template match="/">
-		<xsl:apply-templates select="." mode="html"/>		
+		<xsl:apply-templates select="." mode="html"/>
 	</xsl:template>
 
 	<xsl:template match="*" mode="html">
@@ -272,7 +270,8 @@
 	<xsl:template match="file/@name" mode="onClick">
 		<xsl:variable name="clickFile" select="concat($pathData, $base, $relative, '/', . )"/>
 
-		<xsl:attribute name="onClick">javascript: return showLink('<xsl:value-of select="$clickFile"/>');</xsl:attribute>
+		<xsl:attribute name="href"><xsl:value-of select="$clickFile"/></xsl:attribute>
+		<xsl:attribute name="onClick">return showLink('<xsl:value-of select="$clickFile"/>');</xsl:attribute>
 	</xsl:template>
 
 	<xsl:template match="@*" mode="column">

@@ -9,15 +9,13 @@
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
     <head>
-        <title>
-            <?= $title[$checked['item']] ?>
-        </title>
-        <? include($DirNameLocal . "./head.php"); ?>
+        <title><?php echo $title[$checked['item']]; ?></title>
+        <?php include($DirNameLocal . "./head.php"); ?>
     </head>
     <body>
         <div class="container">
             <div class="level2">
-                <? include($localPath['html'] . "bvs.html"); ?>
+                <?php include($localPath['html'] . "bvs.html"); ?>
                 <div class="middle">
                     <?php
 
@@ -30,14 +28,14 @@
                     ?>
                 </div>
                 <div class="bottom">
-                    <? include($localPath['html'] . "/responsable.html"); ?>
+                    <?php include($localPath['html'] . "/responsable.html"); ?>
                 </div>
             </div>
             <div class="copyright">
-          <a href="http://www.suitesaber.org" target="_blank">Suíte Saber</a>
+                BVS Site <?php echo VERSION; ?> &copy; <a href="http://www.bireme.br/" target="_blank">BIREME/OPS/OMS</a>
             </div>
         </div>
-        <? include($DirNameLocal. "./foot.php");  ?>
+        <?php include($DirNameLocal. "./foot.php");?>
     </body>
 </html>
 <?php ob_end_flush();?>

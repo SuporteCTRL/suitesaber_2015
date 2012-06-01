@@ -49,7 +49,7 @@
             <div class="carousel pagination">
                 <xsl:text disable-output-escaping = "yes">&lt;?</xsl:text>
                 $url = "<xsl:value-of select="url" disable-output-escaping="yes"/>";
-                include("../php/show-ticker.php");
+                include("./php/show-ticker.php");
                 <xsl:text disable-output-escaping = "yes">?&gt;</xsl:text>
             </div>
         </div>

@@ -15,16 +15,11 @@
 $DirNameLocal=dirname(__FILE__).'/';
 
 // define constants
-define("VERSION","5.2.14");
+define("VERSION","5.3.1");
 define("USE_SERVER_PATH", false);
 
 if (USE_SERVER_PATH == true){
-    if( isset($_SERVER["PATH_TRANSLATED"]) ){
-        $pathTranslated = dirname($_SERVER["PATH_TRANSLATED"]);
-    } else {
-        $pathTranslated = dirname($_SERVER["SCRIPT_FILENAME"]);
-    }
-    $sitePath = dirname($pathTranslated);
+    $sitePath = $_SERVER['DOCUMENT_ROOT'];
 }else{
     $sitePath = realpath($DirNameLocal . "..");
 }
@@ -38,41 +33,47 @@ if( isset($def["SHOW_ERRORS"]) && $def["SHOW_ERRORS"] == true ){
     ini_set('display_errors', false);
 }
 
-$lang = "";
-if ( !isset($_REQUEST["lang"]) || $_REQUEST["lang"] == "" ) {
-    if (!isset($_COOKIE["clientLanguage"])) {
-        $lang = $def["DEFAULT_LANGUAGE"];
-    } else {
-        $lang = $_COOKIE["clientLanguage"];
-    }
-} else {
+// Parse language
+$lang = '';
+if(isset($_REQUEST["lang"])) {
     $lang = $_REQUEST["lang"];
-    setCookie("clientLanguage",$lang,time()+60*60*24*30,"/");
+} else if(isset($_COOKIE["clientLanguage"])) {
+    $lang = $_COOKIE["clientLanguage"];
+} else if(isset($def["ACCEPT_LANGUAGES"])){
+    preg_match_all('/([a-z]{1,8}(-[a-z]{1,8})?)s*(;s*qs*=s*(1|0.[0-9]+))?/i',
+                                       $_SERVER['HTTP_ACCEPT_LANGUAGE'], $lang);
+    if(isset($lang[1][1])){
+        if(preg_match("/\\b{$lang[1][1]}\\b/", $def["ACCEPT_LANGUAGES"])){
+            $lang = $lang[1][1];
+        }
+    }
+}
+if(!preg_match('/^[a-z][a-z](-[a-z][a-z])?$/',$lang)) {
+    $lang = $def["DEFAULT_LANGUAGE"];
+}
+if(!isset($_COOKIE["clientLanguage"]) || $_COOKIE["clientLanguage"] != $lang) {
+    setCookie("clientLanguage", $lang, time()  +60*60*24*30, "/");
 }
 
 // URL parameters security filter
 $checked  = array();
 
 if (isset($_GET["component"]) && !preg_match("/^[0-9]+$/", $_GET["component"]))
-    die("404 - File Not Found1");
+    die("404 - Component not Found");
 else
     $checked['component'] = $_GET["component"];
 
-if ( isset($_GET["item"]) && !preg_match("/^[0-9]+$/", $_GET["item"]) )
-    die("404 - File Not Found2");
+if (isset($_GET["item"]) && !preg_match("/^[0-9]+$/", $_GET["item"]))
+    die("404 - Item not Found");
 else
     $checked['item'] = $_GET["item"];
 
-if ( isset($_GET["id"]) && !preg_match("/^[0-9]+$/", $_GET["id"]) )
-    die("404 - File Not Found3");
+if (isset($_GET["id"]) && !preg_match("/^[0-9]+$/", $_GET["id"]))
+    die("404 - File Not Found");
 else
     $checked['id'] = $_GET["id"];
 
-if ( !preg_match("/^(pt)|(es)|(en)$/",$lang) )
-    die("invalid parameter lang" . $lang);
-else
-    $checked['lang'] = $lang;
-
+$checked['lang'] = $lang;
 
 $def['DEFAULT_DATA_PATH'] = $def['DATABASE_PATH'];
 if ( isset($_REQUEST['portal']) && preg_match('/^[a-zA-Z0-9_]+$/', $_REQUEST['portal'])){
@@ -94,15 +95,13 @@ foreach ($def as $key => $value){
     define($key, $value);
 }
 
-$localPath['html']= $def['DATABASE_PATH'] . "html/" . $checked['lang'] . "/";
-$localPath['xml'] = $def['DATABASE_PATH'] . "xml/" . $checked['lang'] . "/";
-$localPath['ini'] = $def['DATABASE_PATH'] . "ini/" . $checked['lang'] . "/";
-
 if ( !isset($def['SERVICES_SERVER']) ){
-    // default server for bvs services
     $def['SERVICES_SERVER'] = 'srv.bvsalud.org';
 }    
 
+$localPath['html']= $def['DATABASE_PATH'] . "html/" . $checked['lang'] . "/";
+$localPath['xml'] = $def['DATABASE_PATH'] . "xml/" . $checked['lang'] . "/";
+$localPath['ini'] = $def['DATABASE_PATH'] . "ini/" . $checked['lang'] . "/";
 
 unset($database);
 ?>

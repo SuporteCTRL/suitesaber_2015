@@ -22,9 +22,6 @@
     <xsl:template match="*" mode="form-save">
         <input type="hidden" name="xmlSave" value="{$doc-file}"/>
         <input type="hidden" name="xslSave" value="{$xsl-path}save.xsl"/>
-        <!--
-            <input type="hidden" name="debug" value="xmlSave"/>
-        -->
     </xsl:template>
 
     <xsl:template match="tree-edit">
@@ -48,25 +45,29 @@
     </xsl:template>
 
     <xsl:template match="collection | topic | community" mode="next-id">
-        <script language="JavaScript">
-            /* não deletar NUNCA este comentário */
-            <xsl:apply-templates select="//item[@id != '']" mode="sorted-id">
-                <xsl:sort select="@id" data-type="number" order="descending"/>
-            </xsl:apply-templates>
-            <xsl:if test="not(//item[@id != ''])">
-                var nextId = 1;
-            </xsl:if>
-        </script>
+        <xsl:apply-templates select="//item[@id &gt; 0]" mode="sorted-id">
+            <xsl:sort select="@id" data-type="number" order="descending"/>
+        </xsl:apply-templates>
+        <xsl:if test="not(//item[@id != ''])">
+            <script type="text/javascript">
+                <xsl:comment>
+                    var nextId =  1;
+                </xsl:comment>
+            </script>
+        </xsl:if>
     </xsl:template>
 
     <xsl:template match="item" mode="sorted-id">
         <xsl:if test="position() = 1">
-            var nextId = <xsl:value-of select="@id"/> + 1;
+            <script type="text/javascript">
+                <xsl:comment>
+                    var nextId = <xsl:value-of select="@id"/> + 1;
+                </xsl:comment>
+            </script>
         </xsl:if>
     </xsl:template>
 
     <!-- collection -->
-
     <xsl:template match="collection//item" mode="array">
         "<xsl:element name="available"><xsl:apply-templates select="@available" mode="escape_quotes_js"/></xsl:element>" +
         "<xsl:element name="id"><xsl:apply-templates select="@id" mode="escape_quotes_js"/></xsl:element>" +

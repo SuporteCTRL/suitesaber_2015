@@ -18,18 +18,13 @@ function getElementValue ($xml, $element, $attributes = '')
 
 //==============================================================================
 
-function readData($readFrom, $removeHeader = true)
-{
-
-    $e = error_reporting();
-    error_reporting($e & (E_ALL-E_WARNING));
-
+function readData($readFrom, $removeHeader = true) {
     if (preg_match("/swish/i", $readFrom)) {
 
         $swishStr = split("&",trim($readFrom));
 
         // indexa o vetor pelo valor que estiver antes do sinal de "="
-        foreach($swishStr as $i){
+        foreach($swishStr as $i) {
             $i_split = split("=",$i);
             $swishArg[$i_split[0]] = $i_split[1];
         }
@@ -39,7 +34,7 @@ function readData($readFrom, $removeHeader = true)
         $swish = new swishe2XML ($swishArg["path"], $swishArg["expression"], $swishArg["index"],"", "swish", $swishArgCount);
         $swish_result = $swish->search();
 
-        // transforma as entidades html em caracteres para nï¿½o gerar erro no XSL transformation
+        // transforma as entidades html em caracteres para não gerar erro no XSL transformation
         $translateEntities = get_html_translation_table (HTML_ENTITIES);
         $translateEntities = array_flip ($translateEntities);
         $translateEntities["&"] = "&amp;";
@@ -48,46 +43,62 @@ function readData($readFrom, $removeHeader = true)
 
         return $swish_result;
 
-    }else{
+    }else {
 
-        $query = strstr($readFrom, "?");
-
-        if ( strlen($query) > 250 ){
-            $str = PostIt($readFrom);
+        //check request url for method=POST parameter, if not default GET
+        if ( preg_match('/method=POST/',$readFrom) ) {
+            $str = PostIt($readUrl);
         }else{
-            $str = "";
-            $buffer = "";
-
-            $readUrl = encodeValues($readFrom);
-            $fp = fopen($readUrl,"r");
-
-            if ($fp)
-            {
-                while (!feof ($fp)) {
-                    $buffer= fgets($fp, 8096);
-                    $str.= $buffer;
-                }
-                fclose ($fp);
-            }
+            $readUrl = encodeValues($readFrom);        
+            $str = GetIt($readUrl);
         }
 
-        if ( $removeHeader )
-        {
+        $sxe = simplexml_load_string($str);
+
+        if($sxe){
+            if ( $removeHeader ) {
                 /* remove xml processing instruction */
-                if ( strncasecmp($str, "<?xml", 5) == 0 )
-                {
-                        $pos = strpos($str, "?>");
-                        if ( $pos > 0 )
-                        {
-                                $str = substr_replace($str,"",0,$pos + 2);
-                        }
+                if ( strncasecmp($str, "<?xml", 5) == 0 ) {
+                    $pos = strpos($str, "?>");
+                    if ( $pos > 0 ) {
+                        $str = substr_replace($str,"",0,$pos + 2);
+                    }
                 }
+            }
+            return $str;
         }
 
-        return $str;
+        return '<error type="invalid xml"/>';
     }
 }
 
+function display_xml_error($error, $xml)
+{
+    $return  = $xml[$error->line - 1] . "\n";
+    $return .= str_repeat('-', $error->column) . "^\n";
+
+    switch ($error->level) {
+        case LIBXML_ERR_WARNING:
+            $return .= "Warning $error->code: ";
+            break;
+         case LIBXML_ERR_ERROR:
+            $return .= "Error $error->code: ";
+            break;
+        case LIBXML_ERR_FATAL:
+            $return .= "Fatal Error $error->code: ";
+            break;
+    }
+
+    $return .= trim($error->message) .
+               "\n  Line: $error->line" .
+               "\n  Column: $error->column";
+
+    if ($error->file) {
+        $return .= "\n  File: $error->file";
+    }
+
+    return "$return\n\n--------------------------------------------\n\n";
+}
 
 //==============================================================================
 function PostIt($url) {
@@ -106,7 +117,7 @@ function PostIt($url) {
       "POST $path HTTP/1.0\n".
       "Host: $host\n".
       "User-Agent: PostIt\n".
-      "Content-Type: application/x-www-form-urlencoded\n".
+      "Content-Type: application/x-www-form-urlencoded; charset=iso-8859-1\n".
       "Content-Length: $contentLength\n\n".
       "$query\n";
 
@@ -119,14 +130,32 @@ function PostIt($url) {
             $result .= fgets($fp, 4096);
         }
     }
+    fclose($fp);
 
-    return strstr($result,"<");
+    $result_body = substr($result, strpos($result, "\r\n\r\n") + 4);
+
+    return $result_body;
   }
+
+//==============================================================================
+function GetIt($url) {
+    $headers = array(
+                'http'=>array(
+                        'method'=>"GET",
+                        'header'=>"Connection: close\r\n"
+                    )
+                );
+
+    $context = stream_context_create($headers);
+    $body = file_get_contents($url, false, $context);
+
+    return $body;
+
+}
 
 //==============================================================================
 function encodeValues( $docURL )
 {
-
     if (preg_match("/\?/", $docURL)) {
         $splited1[0] = substr($docURL, 0, strpos($docURL,"?"));
         $splited1[1] = substr($docURL, strpos($docURL,"?")+1);
@@ -134,39 +163,29 @@ function encodeValues( $docURL )
         return $docURL;
     }
 
+    // explode( "&", "lang=en&q=saude") => array("lang=en", "q=saude")
+    // explode( "&", "lang=en&q=saude & doença") => array("lang=en", "q=saude ", " doença")
     $splited2 = explode( "&", $splited1[1] );
 
-    if ( count($splited2) < 2 )
-    {
+    if ( count($splited2) < 2 ){
         return $docURL;
     }
-    $docURL = $splited1[0] . "?";
-    $fisrt = true;
+    $docURL = $splited1[0];
+    $op = '?';
     foreach ($splited2 as $value)
     {
-        if ( $first )
-        {
-            $first = false;
-        }
-        else
-        {
-            $docURL .= "&";
-        }
-        $splited3 = explode("=",$value);
-
-        $docURL .= $splited3[0];
-        /*
-        if ( count($splited3) > 1 ){
-            $docURL .= "=" . urlencode($splited3[1]);
-        }
-        */
+        $splited3 = explode('=', $value);
 
         if ( count($splited3) > 1 ){
+            $docURL .= $op.$splited3[0];
             for ($i = 1; $i < count($splited3); $i++){
-                $docURL .= "=" . urlencode($splited3[$i]);
+                $docURL .= '=' . urlencode($splited3[$i]);
             }
+        } else {
+            // %26 == '&'
+            $docURL .= '%26' . urlencode($splited3[0]);
         }
-
+        $op = '&';
     }
     return $docURL;
 }
@@ -250,10 +269,10 @@ function readCGI($HTTP_VARS, $root) {
 
       while ($myKey){
          if (count($HTTP_VARS[$myKey]) <= 1) {
-            $xmlString .= "<" . preg_replace("[\(|\)]","_",$myKey) .">" . trim($HTTP_VARS[$myKey]) ."</" . preg_replace("[\(|\)]","_",$myKey) . ">\n";
+            $xmlString .= "<" . preg_replace("[\(|\)]","_",$myKey) .">" . htmlspecialchars(trim($HTTP_VARS[$myKey])) ."</" . preg_replace("[\(|\)]","_",$myKey) . ">\n";
          } else {
            for($i = 0; $i < count($HTTP_VARS[$myKey]); $i++) {
-               $xmlString .= "<" . preg_replace("[\(|\)]","_",$myKey) .">" . trim($HTTP_VARS[$myKey][$i]) ."</" .preg_replace("[\(|\)]","_",$myKey) . ">\n";
+               $xmlString .= "<" . preg_replace("[\(|\)]","_",$myKey) .">" . htmlspecialchars(trim($HTTP_VARS[$myKey][$i])) ."</" .preg_replace("[\(|\)]","_",$myKey) . ">\n";
             }
          }
           next ($HTTP_VARS);

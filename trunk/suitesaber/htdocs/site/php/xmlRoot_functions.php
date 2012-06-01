@@ -28,7 +28,7 @@ function check_parameters(){
     else
         $checked['page'] = $page;
 
-    if ( !preg_match("/^(pt)|(es)|(en)$/",$lang) )
+    if ( !preg_match('/^[a-z][a-z](-[a-z][a-z])?$/',$lang) )
         die("invalid lang parameter 6");
     else
         $checked['lang'] = $lang;
@@ -244,10 +244,18 @@ function processTransformation( $xml, $xsl, $params=0){
 function putDoc ( $docURL, $docContent )
 {
     $ret = false;
-    $fp = fopen($docURL,"w");
 
-    if ( $fp )
-    {
+    $tracking = ini_set('track_errors', true);
+
+    $fp = @fopen($docURL,"w");
+    
+    $tracking = ini_set('track_errors', $tracking);
+
+    if( isset($php_errormsg) && $php_errormsg != "" ){
+        throw new Exception($php_errormsg);
+    }
+
+    if ( $fp ) {
         $ret = fwrite($fp,$docContent,strlen($docContent));
         fclose($fp);
     }

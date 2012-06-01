@@ -13,15 +13,18 @@
     </xsl:template>
 
     <xsl:template match="*" mode="script">
-        <script language="JavaScript" src="{$location}js/tree-edit.js">
-            /* tree-edit.js */
-        </script>
-        <script language="JavaScript">
+        <script type="text/javascript" src="{$location}js/tree-edit.js"></script>
+        <script type="text/javascript">
             <xsl:apply-templates select="../message-list/message"/>
         </script>
-        <script language="JavaScript" src="{$location}js/md5.js">
-            /* md5.js */
-        </script>
+        <script type="text/javascript" src="{$location}js/md5.js"></script>
+    </xsl:template>
+
+    <xsl:template match="page">
+        <div class="top">
+            <xsl:apply-templates select="identification"/>
+        </div>
+        <xsl:apply-templates select="." mode="form"/>
     </xsl:template>
 
     <xsl:template match="*" mode="form">
@@ -29,19 +32,18 @@
             <xsl:apply-templates select="$cgi/*" mode="hidden"/>
             <xsl:apply-templates select="." mode="form-save"/>
             <input type="hidden" name="buffer" value=""/>
-            <!--
-                <input type="hidden" name="debug" value="xmlSave"/>
-            -->
-            <xsl:apply-templates/>
+            <input type="hidden" name="xsl" value="{$xsl-path}menu.xsl"/>
+            <xsl:apply-templates select="bar"/>
+            <xsl:apply-templates select="edit|change"/>
         </form>
         <form name="formHidden" action="{$xml2html}" method="post">
             <xsl:apply-templates select="$cgi/*" mode="hidden"/>
             <input type="hidden" name="buffer" value=""/>
+            <input type="hidden" name="xsl" value="{$xsl-path}change.xsl"/>
         </form>
     </xsl:template>
 
     <xsl:template match="xsl" mode="hidden">
-        <input type="hidden" name="xsl" value="{$xsl-path}change.xsl"/>
     </xsl:template>
 
     <xsl:template match="*" mode="form-save">
@@ -82,43 +84,26 @@
     </xsl:template>
 
     <xsl:template match="buttons">
-        <table width="100%" cellpadding="0" cellspacing="0" class="button-list">
-            <tr>
-                <td>
-                    <table cellpadding="0" cellspacing="0">
-                        <tr>
-                            <xsl:apply-templates/>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-        </table>
-    </xsl:template>
-
-    <xsl:template match="separator">
-        <td width="25">&#160;</td>
+        <ul class="button-list{ceiling(position() div 4)}">
+            <xsl:apply-templates/>
+        </ul>
     </xsl:template>
 
     <xsl:template match="button">
-        <td width="10" valign="top">
-            <table>
-                <tr>
-                    <td>
-                        <xsl:apply-templates select="." mode="button"/>
-                    </td>
-                </tr>
-            </table>
-        </td>
+        <li>
+            <xsl:apply-templates select="." mode="button"/>
+        </li>
     </xsl:template>
 
     <xsl:template match="button" mode="button">
-        <center><a href="{@href}"><img src="{$image-location}{@img}" border="0" alt="{@alt}"/></a></center>
-        <center><a href="{@href}"><font size="1"><xsl:value-of select="@alt"/></font></a></center>
+        <a href="{@href}">
+            <img src="{$image-location}{@img}" border="0" alt="{@alt}"/>
+            <xsl:value-of select="@alt"/>
+        </a>
     </xsl:template>
 
     <xsl:template match="button[not(@href)]" mode="button">
-        <center><img src="{$image-location}{@img}" border="0" alt="{@alt}"/></center>
-        <center><font color="Gray" size="1"><xsl:value-of select="@alt"/></font></center>
+            <img src="{$image-location}{@img}" border="0" alt="{@alt}"/><xsl:value-of select="@alt"/>
     </xsl:template>
 
     <xsl:template match="tree-edit">
@@ -131,20 +116,25 @@
     </xsl:template>
 
     <xsl:template match="*" mode="next-id">
-        <script language="JavaScript">
-            /* não deletar NUNCA este comentário */
-            <xsl:apply-templates select="//item[@id != '']" mode="sorted-id">
-                <xsl:sort select="@id" data-type="number" order="descending"/>
-            </xsl:apply-templates>
-            <xsl:if test="not(//item[@id != ''])">
-                var nextId = 1;
-            </xsl:if>
-        </script>
+        <xsl:apply-templates select="//item[@id &gt; 0]" mode="sorted-id">
+            <xsl:sort select="@id" data-type="number" order="descending"/>
+        </xsl:apply-templates>
+        <xsl:if test="not(//item[@id != ''])">
+            <script type="text/javascript">
+                <xsl:comment>
+                    var nextId =  1;
+                </xsl:comment>
+            </script>
+        </xsl:if>
     </xsl:template>
 
     <xsl:template match="item" mode="sorted-id">
         <xsl:if test="position() = 1">
-            var nextId = <xsl:value-of select="@id"/> + 1;
+            <script type="text/javascript">
+                <xsl:comment>
+                    var nextId = <xsl:value-of select="@id"/> + 1;
+                </xsl:comment>
+            </script>
         </xsl:if>
     </xsl:template>
 
@@ -162,53 +152,43 @@
 
         <xsl:apply-templates select="$select" mode="var"/>
 
-        <table width="100%" class="tree-edit">
-            <tr valign="top">
-                <td>
-                    <br/>
-                    <ul>
-                        <li>
-                            <xsl:value-of select="ancestor::page/@title"/><br/>
-                            <select name="tree" size="15">
-                                <xsl:apply-templates select="$select" mode="option"/>
-                            </select><br/>
-                            <br/>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        </table>
+        <div class="tree-edit">
+            <label for="tree"><xsl:value-of select="ancestor::page/@title"/></label>
+            <select name="tree" id="tree" size="15">
+                <xsl:apply-templates select="$select" mode="option"/>
+            </select>
+        </div>
     </xsl:template>
 
     <xsl:template match="*" mode="var">
-        <script language="javascript">
-            var listValues = new Array(
+        <script type="text/javascript">
+                var listValues = new Array(
                 <xsl:apply-templates select="item | attach | warning | text | user" mode="array"/>
                 null
-            );
+                );
         </script>
     </xsl:template>
 
     <xsl:template match="item" mode="array">
         "<xsl:element name="available"><xsl:apply-templates select="@available" mode="escape_quotes_js"/></xsl:element>" +
         "<xsl:element name="id"><xsl:apply-templates select="@id" mode="escape_quotes_js"/></xsl:element>" +
-        "<xsl:element name="name"><xsl:apply-templates select="text()" mode="escape_quotes_js"/></xsl:element>" +
         "<xsl:element name="img"><xsl:apply-templates select="@img" mode="escape_quotes_js"/></xsl:element>" +
         "<xsl:element name="href"><xsl:apply-templates select="@href" mode="escape_quotes_js"/></xsl:element>" +
         "<xsl:element name="description"><xsl:apply-templates select="description" mode="copy-js"/><xsl:value-of select="' '"/></xsl:element>" +
-        "<xsl:element name="portal"><xsl:apply-templates select="portal" mode="copy-js"/><xsl:value-of select="' '"/></xsl:element>",
+        "<xsl:element name="portal"><xsl:apply-templates select="portal" mode="copy-js"/><xsl:value-of select="' '"/></xsl:element>" +
+        "<xsl:element name="name"><xsl:apply-templates select="text()" mode="escape_quotes_js"/></xsl:element>",
         <xsl:apply-templates select="item" mode="array"/>
     </xsl:template>
 
     <xsl:template match="collectionList//item" mode="array">
         "<xsl:element name="available"><xsl:apply-templates select="@available" mode="escape_quotes_js"/></xsl:element>" +
         "<xsl:element name="id"><xsl:apply-templates select="@id" mode="escape_quotes_js"/></xsl:element>" +
-        "<xsl:element name="name"><xsl:apply-templates select="text()" mode="escape_quotes_js"/></xsl:element>" +
         "<xsl:element name="href"><xsl:apply-templates select="@href" mode="escape_quotes_js"/></xsl:element>" +
         "<xsl:element name="type"><xsl:apply-templates select="@type" mode="escape_quotes_js"/></xsl:element>" +
         "<xsl:element name="file"><xsl:apply-templates select="@file" mode="escape_quotes_js"/></xsl:element>" +
         "<xsl:element name="adm"><xsl:apply-templates select="@adm" mode="escape_quotes_js"/></xsl:element>"+
-        "<xsl:element name="img"><xsl:apply-templates select="@img" mode="escape_quotes_js"/></xsl:element>",
+        "<xsl:element name="img"><xsl:apply-templates select="@img" mode="escape_quotes_js"/></xsl:element>"+
+        "<xsl:element name="name"><xsl:apply-templates select="text()" mode="escape_quotes_js"/></xsl:element>",
         <xsl:apply-templates select="item" mode="array"/>
     </xsl:template>
 
@@ -231,10 +211,6 @@
     </xsl:template>
 
     <xsl:template match="text()" mode="copy-of">
-<!--
-        <xsl:value-of select="normalize-space(.)"/>
-        por causa do HTMLArea
--->
         <xsl:value-of select="translate(.,'&#013;&#010;','  ')"/>
     </xsl:template>
 
@@ -265,9 +241,9 @@
     <xsl:template match="about//item" mode="array">
         "<xsl:element name="available"><xsl:apply-templates select="@available" mode="escape_quotes_js"/></xsl:element>" +
         "<xsl:element name="id"><xsl:apply-templates select="@id" mode="escape_quotes_js"/></xsl:element>" +
-        "<xsl:element name="name"><xsl:apply-templates select="text()" mode="escape_quotes_js"/></xsl:element>" +
         "<xsl:element name="img"><xsl:apply-templates select="@img" mode="escape_quotes_js"/></xsl:element>" +
         "<xsl:element name="href"><xsl:apply-templates select="@href" mode="escape_quotes_js"/></xsl:element>" +
+        "<xsl:element name="name"><xsl:apply-templates select="text()" mode="escape_quotes_js"/></xsl:element>" +
         "<xsl:element name="description"><xsl:apply-templates select="description" mode="copy-js"/><xsl:value-of select="' '"/></xsl:element>" +
         "<xsl:element name="portal"><xsl:apply-templates select="portal" mode="copy-js"/><xsl:value-of select="' '"/></xsl:element>",
         <xsl:apply-templates select="item" mode="array"/>
@@ -316,12 +292,12 @@
 
     <xsl:template match="* | @* | text()" mode="escape_quotes_js">
         <xsl:variable name="text">
-                    <xsl:call-template name="str_replace">
-                                <xsl:with-param name="source" select="."/>
-                                <xsl:with-param name="find">&quot;</xsl:with-param>
-                                <xsl:with-param name="replace">\&quot;</xsl:with-param>
-                        </xsl:call-template>
-                </xsl:variable>
+            <xsl:call-template name="str_replace">
+                        <xsl:with-param name="source" select="."/>
+                        <xsl:with-param name="find">&quot;</xsl:with-param>
+                        <xsl:with-param name="replace">\&quot;</xsl:with-param>
+                </xsl:call-template>
+        </xsl:variable>
 <!--
         <xsl:value-of select="normalize-space($text)"/>
         por causa do HTMLArea
@@ -387,20 +363,6 @@
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
-    
-    <xsl:template match="bar">
-        <hr size="1" noshade=""/>
-        <table width="100%" border="0" cellpadding="4" cellspacing="0" class="bar">
-            <tr valign="top">
-                <td align="left" valign="middle">
-                    <xsl:apply-templates select="*[not(@align = 'right')]" mode="piped"/>
-                </td>
-                <td align="right" valign="middle">
-                    <xsl:apply-templates select="*[@align = 'right']" mode="piped"/>
-                </td>
-            </tr>
-        </table>
-        <hr size="1" noshade=""/>
-        <br/>
-    </xsl:template>
+ 
 </xsl:stylesheet>
+

@@ -106,7 +106,7 @@ $message = $messageArray[$lang];
                         </a>
                     </td>
                     <td align="right" valign="middle">
-                        <a href="../admin/admFrames.php?xsl=xsl/adm/menu.xsl&lang=<?=$lang?>" target="_top"><?=$message["exit"]?></a>
+                        <a href="../php/xmlRoot.php?xml=xml/<?=$lang?>/adm.xml&xsl=xsl/adm/menu.xsl&lang=<?=$lang?>" target="_top"><?=$message["exit"]?></a>
                     </td>
                 </tr>
             </table>

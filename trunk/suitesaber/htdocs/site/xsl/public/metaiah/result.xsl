@@ -96,7 +96,7 @@
             </xsl:choose>
         </xsl:variable>
 
-        <li class="rotulo_center">
+        <li>
             <xsl:choose>
                 <xsl:when test="$countOriginalItens = 1 and $totalHits &gt; 0">
                     <a href="#">
@@ -110,12 +110,12 @@
                             </xsl:otherwise>
                         </xsl:choose>
                         <xsl:value-of select="@label"/>
-                        <span  class="resultados"><xsl:value-of select="$totalHits"/>&#160;<!--<xsl:value-of select="$searchTexts/text[@id = 'search_results']" />--></span>
+                        (<xsl:value-of select="$totalHits"/>&#160;<xsl:value-of select="$searchTexts/text[@id = 'search_results']" />)
                     </a>
                 </xsl:when>
                 <xsl:otherwise>
                     <xsl:value-of select="@label"/>
-                    <span  class="resultados"><xsl:value-of select="$totalHits"/>&#160;<!--<xsl:value-of select="$searchTexts/text[@id = 'search_results']" />--></span>
+                    (<xsl:value-of select="$totalHits"/>&#160;<xsl:value-of select="$searchTexts/text[@id = 'search_results']" />)
                     <xsl:if test="$totalHits &gt; 0">
                         <ul>
                             <xsl:apply-templates select="source" mode="info"/>
@@ -158,7 +158,7 @@
             </xsl:choose>
         </xsl:variable>
 
-        <li class="rotulo_center">
+        <li>
 
             <xsl:choose>
                 <xsl:when test="$sourceHits &gt; 0">
@@ -173,16 +173,16 @@
                             </xsl:otherwise>
                         </xsl:choose>
                         <xsl:value-of select="@label"/>
-                         <span  class="resultados"><xsl:value-of select="$sourceHits"/> </span>
+                        (<xsl:value-of select="$sourceHits"/>)
                     </a>
                 </xsl:when>
-                <xsl:when test="@error">
+                <xsl:when test="@error or error">
                     <xsl:value-of select="@label"/>
-                    <span title="{error}"> (<strong>!</strong>) </span>
+                    <span title="{error/@type}"> (<strong>!</strong>) </span>
                 </xsl:when>
                 <xsl:otherwise>
                     <xsl:value-of select="@label"/>
-                   <span  class="resultados"><xsl:value-of select="$sourceHits"/></span>
+                    (<xsl:value-of select="$sourceHits"/>)
                 </xsl:otherwise>
             </xsl:choose>
 

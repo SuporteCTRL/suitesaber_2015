@@ -4,8 +4,8 @@
 
     <xsl:param name="xml-path" />
     <xsl:param name="portal" select="''" />
+    <xsl:param name="lang" select="/node()/@lang | /node()/@language" />
     
-    <xsl:variable name="lang" select="/node()/@lang | /node()/@language" />
     <xsl:variable name="id" select="/node()/@id" />
     <xsl:variable name="metaIAH" select="'../metaiah/search.php'" />
     <xsl:variable name="bvsRoot" select="document(concat($xml-path,$lang,'/bvs.xml'))/bvs" />
