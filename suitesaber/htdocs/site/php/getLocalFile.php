@@ -32,7 +32,7 @@ switch ($file_extension) {
 	default: $ctype="application/force-download";
 }
 
-if ($ctype == 'text/html' || ereg('^image',$ctype) ){
+if ($ctype == 'text/html' || preg_match("/^image/",$ctype) ){
 	header("Content-Type: $ctype");
 	echo @readfile("$filename");
 	die();

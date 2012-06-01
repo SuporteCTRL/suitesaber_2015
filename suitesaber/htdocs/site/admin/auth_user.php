@@ -1,73 +1,58 @@
 <?
-//require_once('../bvs-mod/minixml/minixml.inc.php');
-
-ob_start();
+require("../php/include.php");
 
 $lang = $_POST["lang"];
 
-$messageArray["pt"]["invalid"] = "Usuário e/ou senha inválidos. Por favor verifique.";
-$messageArray["pt"]["back"] = "voltar";
-$messageArray["es"]["invalid"] = "Usuario y/o contraseña inválidos. Por favor verifique.";
-$messageArray["es"]["back"] = "volver";
-$messageArray["en"]["invalid"] = "Invalid user or password. Please verify.";
-$messageArray["en"]["back"] = "back";
+$filename = $def['DATABASE_PATH'] . "xml/users.xml";
 
-$message = $messageArray[$lang];
+$cgiList[] = "xml=xml/" . $lang . "/adm.xml";
+$cgiList[] = "xsl=xsl/adm/menu.xsl";
+$cgiList[] = "lang=" . $checked['lang'];
+$cgiText = join("&",$cgiList);
 
-if ( isset($_POST["auth_submit"]) ) {
+$login_redirect = $def['DIRECTORY']
+      . "php/xmlRoot.php?" . $cgiText
+      . (isset($checked['portal'])?'&portal='.$checked['portal']:'');
 
-        include "auth_config.php";
-        $filename = $database_name;
+$logout_redirect = "index.php";
 
-    if (!file_exists($filename)) {
+$logged_in = false;
 
-            echo "Invalid user file. Please check DATABASE_PATH in \"bvs-site-config.php\" file.";
+$xmlDoc = simplexml_load_file($filename);
+$usersXml = $xmlDoc->xpath('//user');
 
-    } else {
+foreach($usersXml as $user){
+    $username = (String) $user['name'];     // The cast is needed to
+    $password = (String) $user['password']; // prevent SimpleXML
+    $level =    (String) $user['type'];     // serialization in session
 
-        $logged_in = 0;
-        
-        $xmlDoc = simplexml_load_file($filename);
-        $usersXml = $xmlDoc->xpath('//user');
-
-        foreach( $usersXml as $user){
-            $username = (String) $user['name'];     // The cast is needed to
-            $password = (String) $user['password']; // prevent SimpleXML
-            $level =    (String) $user['type'];     // serialization in session
-
-            if ($_POST["auth_usr"] == trim($username)
-                && md5($_POST["auth_pwd"]) == trim($password)
-            ){
-                $logged_in = 1;
-                break;
-            }
-        }
-        if ($logged_in != 1) { // IF USER IS NOT LOGGED IN
-
-            echo $message['invalid'] . "<br><a href=\"".$_SERVER['HTTP_REFERER']."\">[" . $message['back'] ."]</a>";
-
-        } else { // ELSE LOGGED IN
-
-            session_start();
-            session_regenerate_id();
-            $_SESSION['auth_id'] = "BVS@BIREME";
-            $_SESSION['auth_username'] = $_POST["auth_usr"];
-            $_SESSION['auth_level'] = $level;
-
-            if (strlen($_POST['auth_pwd']) < 6){
-                $_SESSION['auth_pwd_change'] = 'true';
-            }
-
-            if ($_POST["auth_rm"] == 1) {
-                setcookie("phpAuth_username",$_POST["phpAuth_usr"],time()+3600);
-            }
-
-            $login_redirect .= (isset($checked['portal'])?'?portal='.$checked['portal']:'');
-            header('Location: '.$login_redirect.'');
-        }
-
-    } // END IF FILE EXISTS
-
+    if ($_POST["username"] == trim($username)
+        && md5($_POST["password"]) == trim($password)
+    ){
+        $logged_in = true;
+        break;
+    }
 }
-ob_end_flush();
+
+if ($logged_in === false) {
+    header("Location: ./index.php?error=INVALID_USER");
+} else {
+
+    session_start();
+    session_regenerate_id();
+    $_SESSION['auth_id'] = "BVS@BIREME";
+    $_SESSION['auth_username'] = $_POST["username"];
+    $_SESSION['auth_level'] = $level;
+
+    if (strlen($_POST['password']) < 6){
+        $_SESSION['auth_pwd_change'] = 'true';
+    }
+
+    if ($_POST["auth_rm"] == 1) {
+        setcookie("phpAuth_username",$_POST["phpAuth_usr"],time()+3600);
+    }
+
+    $login_redirect .= (isset($checked['portal'])?'?portal='.$checked['portal']:'');
+    header('Location: '.$login_redirect.'');
+}
 ?>

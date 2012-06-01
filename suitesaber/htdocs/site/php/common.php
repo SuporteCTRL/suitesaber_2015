@@ -133,6 +133,7 @@ function getGoogleTotal($url){
 
     return $total;
 }
+
 /**
  * Função recursiva para realizar copia de diretórios.
  * Assume-se que o $src seja um diretório válido e que

@@ -10,6 +10,7 @@
     $params['list']    = '/^(countries|subjects)$/';
     $params['country'] = '/^[A-Za-z]+$/';
     $params['network'] = '/^[A-Za-z]+$/';
+    $params['status']   = '/^[0-9]+$/';
 
     $action = "list";
     if(preg_match($params['list'], $_GET['list'],$listType)){

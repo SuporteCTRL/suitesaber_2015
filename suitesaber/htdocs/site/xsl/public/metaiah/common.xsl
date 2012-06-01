@@ -93,7 +93,7 @@
     </xsl:template>
 
     <xsl:template name="formHref">
-        <form name="formHref" method="post" target="">
+        <form name="formHref" method="post" target="result">
             <input type="hidden" name="" value=""/>
             <input type="hidden" name="" value=""/>
             <input type="hidden" name="" value=""/>

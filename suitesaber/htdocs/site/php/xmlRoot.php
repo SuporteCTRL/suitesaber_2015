@@ -2,9 +2,9 @@
 
 $xmlRootPath = dirname(__FILE__).'/';
 
-require($xmlRootPath . '../admin/auth_check.php');
-require($xmlRootPath . '../php/include.php');
-require($xmlRootPath . "./xmlRoot_functions.php");
+require_once($xmlRootPath . '../admin/auth_check.php');
+require_once($xmlRootPath . '../php/include.php');
+require_once($xmlRootPath . "./xmlRoot_functions.php");
 
 $xml = ( $xml != "" ? $xml : $_REQUEST['xml'] );
 $xsl = ( $xsl != "" ? $xsl : $_REQUEST['xsl'] );
@@ -42,26 +42,42 @@ if ( isset($checked['portal']) ){
 if ( isset($xslSave) )
 {
     $xslSave = "../" . $checked['xslSave'];
-    
-    $sucessWriteXml = xmlWrite($xmlContent,$xslSave,$checked['xmlSave'],$xsl_params);
-    if ( $sucessWriteXml != '' && $checked['page'] != 'users' ){
-        // generate html
-        htmlWrite($sucessWriteXml,$xsl_params);
 
-        // generate ini
-        iniWrite($sucessWriteXml,$xsl_params);
+    try {
+        $sucessWriteXml = xmlWrite($xmlContent,$xslSave,$checked['xmlSave'],$xsl_params);
+        if ( $sucessWriteXml != '' && $checked['page'] != 'users' ){
 
-        if ($checked['page'] == 'collection' || $checked['page'] == 'topic'){
-            // generate metaiah define xml
-            defineMetaIAHWrite();
+            // generate html
+            $xsl_params['lang'] = $lang;
+            htmlWrite($sucessWriteXml,$xsl_params);
+
+            // generate ini
+            iniWrite($sucessWriteXml,$xsl_params);
+
+            if ($checked['page'] == 'collection' || $checked['page'] == 'topic'){
+                // generate metaiah define xml
+                defineMetaIAHWrite();
+            }
         }
+    } catch (Exception $php_errormsg) {
+        $php_errormsg = htmlentities($php_errormsg);
+        $php_errormsg = str_replace("\n", '<br/>', $php_errormsg);
+        include('../admin/templates/error.php');
+        return;
     }
+
 
     if ( isset($xmlT) ){
         if ( $xmlT == "saved" ){
             $xmlContent = BVSDocXml("root",$checked['xmlSave']);
         }
     }
+
+    header("Location: " . $_SERVER['PHP_SELF'] . '?xml=' . $xml . '&xsl=' . $xsl
+                        .'&lang='.$lang
+                        .(isset($checked['portal'])?'&portal='.$checked['portal']:''));
+
+    return;
 }
 
 $xslTransform = SITE_PATH . $checked['xsl'];

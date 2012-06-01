@@ -8,7 +8,7 @@
     font-family: Arial, Helvetica, sans-serif;
     margin: 0px;
     width: 100%;
-    border-top:1px solid #931314;
+
 }
 .secondColumn {
     background: #ECF3F3;
@@ -50,7 +50,7 @@
 .ticker .carousel ul li{
     position:relative;
     width:224px;
-    height: 285px;
+    height: 65px;
     margin:0;
 }
 .ticker .carousel ul li cite{
@@ -125,7 +125,7 @@
     border: none;
 }
 .ticker div.center-wrap a.active{
-    background: #990000;
+    background: #567a7a;
     color: #FFF;
 }
 
@@ -141,12 +141,11 @@
     font-size: 12px;
 }
 .ticker h3 span {
-    font-size:19px !important;
+    font-size:13px !important;
 }
 .ticker h3 a{
     margin: 0px;
-
-    font-size: 16px;
+	 font-size: 12px;
     color: #375a80;
     line-height: 18px;
     text-decoration:none;
@@ -193,10 +192,14 @@ li img span{
 }
 
 .subportal2 .secondColumn, .subportal1 .secondColumn{
-    background:#ffffff;
+    /*background:#ffffff;*/
 }
 
 .generic h3 span{
     display:none;
 }
 
+.carousel-wrap h3{
+	border-top:none !important;
+	background:#f9fcfc !important;
+	}

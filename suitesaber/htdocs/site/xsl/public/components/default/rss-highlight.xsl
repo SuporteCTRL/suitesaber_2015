@@ -6,7 +6,7 @@
         <xsl:variable name="rssData" select="$bvsRoot/collectionList//item[@id = $component]" />
 
         <div class="rss-hl" id="rss-hl{$component}">
-            <h3>
+            <h3><span>
                 <xsl:choose>
                   <xsl:when test="$rssData/@href and $rssData/@href != ''">
                     <a href="{$rssData/@href}"><xsl:apply-templates select="$rssData" mode="component"/></a>
@@ -14,12 +14,12 @@
                   <xsl:otherwise>
                     <xsl:value-of select="$rssData/text()" />
                   </xsl:otherwise>
-                </xsl:choose>
+                </xsl:choose></span>
             </h3>
             <div class="wpNews">
                 <xsl:text disable-output-escaping = "yes">&lt;?</xsl:text>
                     $url = "<xsl:value-of select="url" disable-output-escaping="yes"/>";
-                    include("../php/show-rss-highlight.php");
+                    include("./php/show-rss-highlight.php");
                 <xsl:text disable-output-escaping = "yes">?&gt;</xsl:text>
             </div>
         </div>

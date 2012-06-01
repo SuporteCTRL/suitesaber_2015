@@ -429,7 +429,7 @@ function save ( itemName )
         document.formPage.tree.selectedIndex = breakLevel;
         return;
     }
-    formGo.xsl.value = parent.frameHidden.menuXSL;
+//    formGo.xsl.value = parent.frameHidden.menuXSL;
     formGo.buffer.value = listValuesJoin(itemName);
     formGo.submit();
 }

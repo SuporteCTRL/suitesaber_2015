@@ -42,7 +42,10 @@ if ( $url ) {
 
             print '<li>';
             if( $rss->items[$i]['enclosure'] ){
-                print "<img src=\"{$rss->items[$i]['enclosure']['url']}\" />";
+                $imgTitle = htmlentities($rss->items[$i]['title']);
+                print "<a href=\"{$rss->items[$i]['link']}\">";
+                print "<img title=\"{$imgTitle}\" alt=\"{$imgTitle}\" src=\"{$rss->items[$i]['enclosure']['url']}\" />";
+                print "</a>";
             }
             print <<< RSS
                     <h4>{$rss->items[$i]['category'][0]}</h4>

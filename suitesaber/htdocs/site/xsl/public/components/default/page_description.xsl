@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
-    <xsl:output method="html" />
+    <xsl:output method="html" encoding="iso-8859-1" />    
 
     <xsl:param name="component" select="/root/http-info/VARS/component" />
     <xsl:param name="id" select="/root/http-info/VARS/id" />
@@ -10,8 +10,6 @@
     <xsl:param name="texts" select="/root/bvs/texts" />
     <xsl:param name="bvsRoot" select="/root/bvs" />
     <xsl:param name="lang" select="/root/http-info//lang" />
-
-    <xsl:include href="xsl/public/components/texts.xsl"/>
 
     <xsl:template match="/">
         <!--textarea cols="120" rows="20">

@@ -18,8 +18,9 @@
                     <input type="submit" value="{text[@id = 'search_submit']}" name="submit" class="submit" /><br />
                  </div>
             </form>
+            
             <div id="searchDecs">
-                <a href="../php/decsws.php"><xsl:value-of select="text[@id = 'decs_mesh']"/></a>
+                <a href="../php/decsws.php"><xsl:apply-templates select="text[@id = 'decs_mesh']"/></a>
             </div>
 
         </div>
@@ -42,4 +43,7 @@
     <xsl:template match="metasearch//text">
         <xsl:apply-templates />
     </xsl:template>
+
+    <xsl:template match="metasearch//text[@available = 'no']" />
+
 </xsl:stylesheet>

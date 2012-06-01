@@ -2,27 +2,28 @@
     This file describes the where any information will be disposed
     on the VHL website.
 */
+
 .container {
     position: relative;
     _width: 780px;
     min-width: 780px;
     max-width: 1004px;
-    margin: -10px auto;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-	 box-shadow: 0 0 .25em #CCC; /* Implementação W3C */
-	-moz-box-shadow: 0 0 .25em #CCC;  /* Implementação Mozilla */
-	-webkit-box-shadow: 0 0 .25em #CCC; /* Implementação para browsers que renderizam via webkit */
-    border: 1px solid #cccccc;
+    margin: 0px auto;
+    background: #FFF;
+    padding: 0px;
+	-moz-border-radius:13px;
+	-webkit-border-radius:13px;
+	border-radius:13px;
+    
+
 }
 
 .bar {
-	 z-index: 5654644534;
     position: absolute;
-    top: 0px;
-    right: 23px;
+    top: 95px;
+    right: 0px;
     width: 50%;
-    padding-top: 95px;
+    padding-top: 2px;
 }
 
 .bar #otherVersions, .bar #contact {
@@ -37,12 +38,11 @@
 .top {
     height: 110px;
     clear: both;
-
 }
 
 .top #parent {
     float: left;
-    padding: 10px 0px 0px 15px;
+    padding: 18px 0px 0px 20px;
     width: 12%;
 }
 
@@ -53,9 +53,9 @@
 }
 
 .top #identification H1 {
-    padding-left: 50px;
-    margin-left: 120px;
-    vertical-align: middle;
+    margin: 0px;
+    margin-top: 75px;
+    margin-left: 100px;
 }
 
 .top #institutionList {
@@ -85,6 +85,7 @@
 .middle .firstColumn {
     float: left;
     width: 18.5%;
+
 }
 
 .middle .secondColumn {
@@ -201,7 +202,7 @@ HTML>BODY .level2 #search { /* Mozilla exclusive definitions */
 }
 
 .bottom #footNotes {
-    padding: 8px;
+    padding: 3px;
 }
 
 .bottom #footNotes P {
@@ -259,5 +260,5 @@ HTML>BODY .level2 #search { /* Mozilla exclusive definitions */
 }
 
 .copyright{
-    padding: 15px;
+    padding: 5px;
 }

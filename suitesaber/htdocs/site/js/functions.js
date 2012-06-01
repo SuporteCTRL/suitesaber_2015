@@ -132,8 +132,8 @@ function postHref ( href, target){
     }
 
     submitForm.submit();
-    resultWindow = window.open('',target);
-    resultWindow.focus();
+    //resultWindow = window.open('',target);
+    //resultWindow.focus();
 }
 
 

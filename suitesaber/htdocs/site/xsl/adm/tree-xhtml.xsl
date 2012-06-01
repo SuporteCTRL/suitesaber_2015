@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-
     <xsl:include href="tree.xsl"/>
 
     <xsl:variable name="find-element" select="/root/adm/page[@id = 'generic-xhtml']/edit/tree-edit/@element"/>
@@ -12,7 +10,7 @@
     </xsl:template>
 
     <xsl:template match="*" mode="script">
-        <script language="JavaScript" src="{$location}js/menu.js">            /* não deletar NUNCA este comentário */        </script>
+        <script type="text/javascript" src="{$location}js/menu.js"></script>
 
         <script type="text/javascript">
           _editor_url = "/bvs-mod/HTMLArea/";

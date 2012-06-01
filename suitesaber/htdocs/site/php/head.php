@@ -2,8 +2,7 @@
 <meta http-equiv="Expires" content="-1"/>
 <meta http-equiv="pragma" content="no-cache"/>
 
-<?php include( $localPath['html'] . "/metainfo.html"); ?>
-<?php include ("../../central/config.php");  ?>
+<? include( $localPath['html'] . "/metainfo.html"); ?>
 
 <meta name="robots" content="all" />
 <meta name="MSSmartTagsPreventParsing" content="true" />
@@ -18,7 +17,3 @@
 <link rel="shortcut icon" href="<?=$def['DIRECTORY']?>favicon.ico"/>
 <link rel="stylesheet" href="<?=$def['DIRECTORY']?>css/public/print.css" type="text/css" media="print"/>
 <link rel="stylesheet" href="<?=$def['DIRECTORY']?>css/public/skins/<?=SKIN_NAME?>/style-<?=$checked['lang']?>.css" type="text/css" media="screen"/>
-
-
-
-<link rel="stylesheet" rev="stylesheet" href="../../<? echo $app_path?>/css/<? echo $theme?>/colors_theme.css" type="text/css" media="screen"/>

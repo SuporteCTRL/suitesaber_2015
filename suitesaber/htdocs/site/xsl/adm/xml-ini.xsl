@@ -3,11 +3,11 @@
 <xsl:output method="text" indent="no" encoding="iso-8859-1"/>
 
 <xsl:param name="xml-path" />
+<xsl:param name="lang" />
 
 <xsl:variable name="line"><xsl:text>
 </xsl:text></xsl:variable>
 
-<xsl:variable name="lang" select="/node()/@lang" />
 <xsl:variable name="bvs-title">
     <xsl:choose>
         <xsl:when test="/bvs">
@@ -30,7 +30,7 @@
             <xsl:apply-templates select="//item"/>
         </xsl:when>
         <xsl:otherwise>
-            <xsl:text>subpages not present in this component</xsl:text>
+            <xsl:text>;subpages not present in this component</xsl:text>
         </xsl:otherwise>
     </xsl:choose>
 </xsl:template>
@@ -44,7 +44,7 @@
     <xsl:variable name="title">
         <xsl:value-of select="normalize-space(text())"/>
         <xsl:apply-templates select="ancestor::item" mode="ancestor"/>
-        <xsl:value-of select="concat(' : ',$bvs-title)"/>
+        <xsl:value-of select="concat(' : ',normalize-space($bvs-title))"/>
     </xsl:variable>
     <xsl:value-of select="concat(@id,'=&quot;',$title,'&quot;')"/>
     <xsl:value-of select="$line"/>
