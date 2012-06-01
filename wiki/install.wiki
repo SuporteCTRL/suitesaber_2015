@@ -71,7 +71,7 @@ Para a criação dos arquivos de configuração, dê o seguinte comando:
 
 {{{
 $ cd /var/www/suitesaber/htdocs
-$ ./install.sh
+$ sudo ./install.sh
 }}}
 
 Certifique-se que os diretórios /htdocs e /cgi-bin estão com permissão 755 e os diretórios /htdocs/bases (pasta dos uploads) /bases e /temp 777, aplicando recursivamente os seguintes comandos:
