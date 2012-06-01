@@ -103,7 +103,7 @@ $ sudo wget http://www.ashberg.de/php-barcode/download/files/genbarcode-0.4.tar.
 
 $ sudo tar -xvf genbarcode-0.4.tar.gz
 
-$ sudo cd genbarcode-0.4/
+$ cd genbarcode-0.4/
 
 $ sudo make install
 }}}
