@@ -1,0 +1,18 @@
+<link rel="stylesheet" href="/css/public/skins/classic/common/carousel.css" type="text/css"/><script type="text/javascript" src="/js/jsSlider/unobtrusivelib.js">//</script><script type="text/javascript" src="/js/jsSlider/prettify.js">//</script><script type="text/javascript" src="/js/jsSlider/jquery.carousel.pack.js">//</script><script type="text/javascript">
+        $(function(){
+            $.unobtrusivelib();
+            prettyPrint();
+            $("#ticker34 div.pagination").carousel(
+                {
+                    pagination: true,
+                    effect: "fade",
+                    autoSlide: true,
+                    loop: true,
+                    autoSlideInterval: 5000
+                }
+            );
+        });
+        </script><div class="ticker" id="ticker34"><h3><span>Newsletter BVS</span></h3><div class="carousel pagination"><?
+                $url = "http://srv.bvsalud.org/nlrss/?lang=es";
+                include("./php/show-ticker.php");
+                ?></div></div>
