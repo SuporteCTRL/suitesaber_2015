@@ -1,1 +1,0 @@
-../../../cgi-bin/mx title fst=@title.fst uctab=../../isisuc actab=../../isisac fullinv=title -all now tell=1
