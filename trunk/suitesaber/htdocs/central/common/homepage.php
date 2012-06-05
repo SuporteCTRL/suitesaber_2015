@@ -435,6 +435,14 @@ if ($dirtree==1){
 				</a>
 <?Php }
 }?>
+				<a href="/site/admin" target="_blank" class="menuButton tooltip newButton">
+
+					<span><?php echo $msgstr["admsite"]?></span>
+				</a>
+
+
+
+
 					</div>
 					<div class="spacer">&#160;</div>
 				</div>
