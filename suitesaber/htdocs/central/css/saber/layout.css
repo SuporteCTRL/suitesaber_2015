@@ -438,6 +438,7 @@ display: inline;
 	width: 100%;
 	text-align: center;
 	bottom: 0px;
+	z-index: -9999999;
 	}
 
 
