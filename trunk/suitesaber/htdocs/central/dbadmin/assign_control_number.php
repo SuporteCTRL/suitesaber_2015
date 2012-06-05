@@ -159,12 +159,8 @@ if (isset($arrHttp["encabezado"])){
 	$encabezado="&encabezado=s";
 }
 ?>
-<div class="sectionInfo">
-	<div class="breadcrumb">
-<?php echo $msgstr["assigncn"].": ".$arrHttp["base"]?>
-	</div>
-
-	<div class="actions">
+<div class="sectionInfo"></div>
+<div class="language">
 <?php
 	$ayuda="control_number.html";
 	$arrHttp["encabezado"]="s";
@@ -181,11 +177,13 @@ if (isset($arrHttp["encabezado"])){
 		}
 	}
 ?>
-
+</div>
+	<div class="breadcrumb"><h3>
+		<?php echo $msgstr["assigncn"].": ".$arrHttp["base"]?>
+	</h3></div>
+	<div class="actions">
 </div>
 
-<div class="spacer">&#160;</div>
-</div>
 <div class="helper">
 <a href=../documentacion/ayuda.php?help=<?php echo $_SESSION["lang"]?>/<?php echo $ayuda?> target=_blank><?php echo $msgstr["help"]?></a>
 <?php
