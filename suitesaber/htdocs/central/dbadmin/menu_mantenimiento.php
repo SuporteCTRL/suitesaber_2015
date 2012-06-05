@@ -100,8 +100,12 @@ function EnviarForma(Opcion,Mensaje){
 				document.admin.action="copies_linkdb.php"
 				document.admin.target=""
 				break;
-			default:
-				alert("coming soon!!!!!")
+			case "unlockbd":
+		   	document.admin.action="../dataentry/wxis/administrar.xis";
+
+				break;
+//			default:
+//				alert("coming soon!!!!!")
 				return;
 
 		}
@@ -114,6 +118,12 @@ function EnviarForma(Opcion,Mensaje){
 }
 
 </script>
+<style type="text/css">
+#botoes {
+	width: 300px; 	
+	}
+</style>
+
 <body>
 <?php
 if (isset($arrHttp["encabezado"])) {
@@ -145,9 +155,9 @@ echo	"</div>";
 <?php
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
  	echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/menu_mantenimiento.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "<font color=white>&nbsp; &nbsp; Script: menu_mantenimiento.php";
+echo " &nbsp; Script: menu_mantenimiento.php";
 ?>
-</font>
+
 </div>
 <div class="middle form">
 	<div class="formContent">
@@ -157,16 +167,17 @@ echo "<font color=white>&nbsp; &nbsp; Script: menu_mantenimiento.php";
 		<td>
 
 		<input type=hidden name=base value=<?php echo $arrHttp["base"]?>>
-             <br>
-			<ul>
-			<li><a id="conf"  href='javascript:EnviarForma("inicializar","<?php echo $msgstr["mnt_ibd"]?>")'><?php echo $msgstr["mnt_ibd"]?></a></li>
-			<li><a id="conf"   href='javascript:EnviarForma("eliminarbd","<?php echo $msgstr["mnt_ebd"]?>")'><?php echo $msgstr["mnt_ebd"]?></a></li>
-			<li><a id="conf"   href='javascript:EnviarForma("lock","<?php echo $msgstr["mnt_lock"]?>")'><?php echo $msgstr["mnt_lock"]?></a></li>
-			<li><a id="conf"   href='javascript:EnviarForma("unlock","<?php echo $msgstr["mnt_unlock"]?>")'><?php echo $msgstr["mnt_unlock"]?></a></li>
-			<li><a id="conf"   href='javascript:EnviarForma("cn","<?php echo $msgstr["assigncn"]?>")'><?php echo $msgstr["assigncn"]?></a></li>
-			<li><a id="conf"   href='javascript:EnviarForma("linkcopies","<?php echo $msgstr["linkcopies"]?>")'><?php echo $msgstr["linkcopies"]?></a></li>
-			<li><a id="conf"   href='Javascript:EnviarForma("resetcn","<?php echo $msgstr["resetcn"]?>")'><?php echo $msgstr["resetcn"]?></a></li>
-			</ul>
+         
+		
+			<a id="botoes" href='javascript:EnviarForma("inicializar","<?php echo $msgstr["mnt_ibd"]?>")'><?php echo $msgstr["mnt_ibd"]?></a></li>
+			<a id="botoes" href='javascript:EnviarForma("eliminarbd","<?php echo $msgstr["mnt_ebd"]?>")'><?php echo $msgstr["mnt_ebd"]?></a></li>
+			<a id="botoes" href='javascript:EnviarForma("lock","<?php echo $msgstr["mnt_lock"]?>")'><?php echo $msgstr["mnt_lock"]?></a></li>
+			<a id="botoes" href='javascript:EnviarForma("unlock","<?php echo $msgstr["mnt_unlock"]?>")'><?php echo $msgstr["mnt_unlock"]?></a></li>
+			<a id="botoes" href='javascript:EnviarForma("cn","<?php echo $msgstr["assigncn"]?>")'><?php echo $msgstr["assigncn"]?></a></li>
+			<a id="botoes" href='javascript:EnviarForma("linkcopies","<?php echo $msgstr["linkcopies"]?>")'><?php echo $msgstr["linkcopies"]?></a></li>
+			<a id="botoes" href='Javascript:EnviarForma("resetcn","<?php echo $msgstr["resetcn"]?>")'><?php echo $msgstr["resetcn"]?></a></li>
+			<hr>
+				<a  id=botoes href='javascript:EnviarForma("unlockbd","<?php echo $msgstr["mnt_desb"]?>")'><?php echo $msgstr["mnt_desb"]?></a>
 
 		</td>
 </table></form>

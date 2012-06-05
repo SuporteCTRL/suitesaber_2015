@@ -184,13 +184,13 @@ foreach ($fp as $value){
 // OPCIONES DEL MENU
  ?>
 <div class="helper">
-<a href=../documentacion/ayuda.php?help=<?php echo $_SESSION["lang"]?>/admin.html target=_blank><?php echo $msgstr["help"]?></a> <br />&nbsp &nbsp;
+<a href=../documentacion/ayuda.php?help=<?php echo $_SESSION["lang"]?>/admin.html target=_blank><?php echo $msgstr["help"]?></a> &nbsp;
 <?php
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
-	echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/admin.html target=_blank>".$msgstr["edhlp"]."</a> <br />";
-echo "<font color=white>&nbsp; &nbsp; Script: menu_modificardb.php";
+	echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/admin.html target=_blank>".$msgstr["edhlp"]."</a>";
+echo "&nbsp; Script: menu_modificardb.php";
 ?>
-</font>
+
 	</div>
  <div class="middle form">
 			<div class="formContent">
