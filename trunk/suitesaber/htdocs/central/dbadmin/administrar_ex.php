@@ -31,6 +31,8 @@ if (!isset($_SESSION["permiso"])){
 }
 include ("../config.php");
 include("../lang/dbadmin.php");
+include("../lang/dbadmin.php");
+include("../lang/soporte.php");
 
 function InicializarBd(){
 global $arrHttp,$OS,$xWxis,$db_path,$Wxis,$msgstr;
@@ -39,11 +41,21 @@ global $arrHttp,$OS,$xWxis,$db_path,$Wxis,$msgstr;
  	include("../common/wxis_llamar.php");
 	foreach ($contenido as $linea){
 	 	if ($linea=="OK"){
-	 		echo "<h4>".$arrHttp["base"]." ".$msgstr["init"]."</h4>";
+	 		echo "<h3>".$arrHttp["base"]." ".$msgstr["init"]."</h3>";
 	 	}
  	}
 }
+function MostrarPft(){
+global $arrHttp,$xWxis,$Wxis,$db_path,$wxisUrl;
 
+	$IsisScript=$xWxis.$arrHttp["IsisScript"];
+	if (!isset($arrHttp["from"])) $arrHttp["from"]="";
+	if (!isset($arrHttp["count"])) $arrHttp["count"]="";
+ 	$query = "&base=".$arrHttp["base"]."&cipar=$db_path"."par/".$arrHttp["cipar"]."&Opcion=".$arrHttp["Opcion"]."&from=".$arrHttp["from"]."&count=".$arrHttp["count"];
+  	include("../common/wxis_llamar.php");
+    return $contenido;
+
+}
 function VerStatus(){
 	global $arrHttp,$xWxis,$OS,$db_path,$Wxis;
 	$query = "&base=".$arrHttp["base"] . "&cipar=$db_path"."par/".$arrHttp["base"].".par&Opcion=status";
@@ -79,20 +91,23 @@ if (isset($arrHttp["encabezado"])){
 	include("../common/institutional_info.php");
 ?>
 <div class="sectionInfo">
-
-			<div class="breadcrumb">
-				<?php echo "<h5>".$msgstr["maintenance"]." " .$msgstr["database"].": ".$arrHttp["base"]."</h5>"?>
-			</div>
-
-			<div class="actions">
-<?php echo "<a href=\"../common/inicio.php?reinicio=s&base=".$arrHttp["base"]."&encabezado=s\" class=\"defaultButton backButton\">";
+<div class="language">
+<?php echo "<a href=\"../dbadmin/menu_mantenimiento.php?reinicio=s&base=".$arrHttp["base"]."&encabezado=s\" class=\"defaultButton\">";
 ?>
 
 					<span><strong><?php echo $msgstr["back"]?></strong></span>
 				</a>
-			</div>
-			<div class="spacer">&#160;</div>
 </div>
+</div>
+
+			<div class="breadcrumb">
+				<?php echo "<h3>".$msgstr["maintenance"]." " .$msgstr["database"].": ".$arrHttp["base"]."</h3>"?>
+			</div>
+
+			<div class="actions">
+
+			</div>
+
 <?php }
 echo "
 <div class=\"middle form\">
@@ -166,21 +181,69 @@ switch ($arrHttp["Opcion"]) {
 		$arrHttp["IsisScript"]="fullinv.xis";
 		MostrarPft();
 		break;
-	case "unlockbd":
-		$contenido=VerStatus();
-		echo "<p><span class=td>";
-		foreach ($contenido as $value) echo "<dd>$value<br>";
-		$arrHttp["IsisScript"]="administrar.xis";
-		MostrarPft();
-		break;
-	case "listar":
 
+
+		case "listar":
 	case "unlock":
 		$contenido=VerStatus();
+		foreach ($contenido as $linea){			if (substr($linea,0,7)=='MAXMFN:'){				$maxmfn=trim(substr($linea,7));
+				break;
+			}
+        }
+        $arrHttp["from"]=$arrHttp["Mfn"];
+		$arrHttp["count"]=$arrHttp["to"]-$arrHttp["from"]+1;
+		$to=$arrHttp["to"]+$arrHttp["count"]+1;
+		echo "<form name=forma1 method=post action=mfn_ask_range.php>";
+		echo "<input type=hidden name=base value=".$arrHttp["base"].">";
+		echo "<input type=hidden name=cipar value=".$arrHttp["cipar"].">";
+		echo "<input type=hidden name=Opcion value=".$arrHttp["Opcion"].">";
+		echo "<input type=hidden name=from value=".$arrHttp["from"].">";
+		echo "<input type=hidden name=to value=".$arrHttp["to"].">";
+		echo $msgstr["cg_from"]." = ".$arrHttp["from"]." - ".$msgstr["cg_to"]." = ".$arrHttp["to"]." (".$arrHttp["count"]." ".$msgstr["records"].")";
+		echo "<table class=listTable>";
+		switch ($arrHttp["Opcion"]){			case "unlock":
+				echo "<th>Mfn</th><th>&nbsp;</th>";
+				break;
+			case "listar":
+				echo "<th>Mfn</th><th>Locked by</th><th>Isis Status</th>";
+				break;		}
 		$arrHttp["IsisScript"]="administrar.xis";
-		echo "<p><span class=td>";
-		MostrarPft();
+		$contenido=MostrarPft();
+        $nb=0;
+		foreach ($contenido as $value) {
+			$value=trim($value);
+			if ($value!=""){				switch ($arrHttp["Opcion"]){					case "unlock":
+						$t=explode('|',$value);
+						if (trim($t[1])=="UNLOCKED") $nb++;
+						echo '<tr><td>'.$t[0]."</td><td>".$t[1]."</td>\n";
+						break;
+					case "listar":
+						$t=explode('|',$value);
+						if (trim($t[2])!=""){
+							$nb++;
+							echo '<tr><td>'.$t[0]."</td><td>".$t[1]."</td><td>".$t[2]."</td>\n";
+						}
+						break;				}
+			}		}
+		echo "</table>";
+        if ($nb==0){        	echo "<strong>".$msgstr["noblockedrecs"]."</strong>";        }else{        	echo $nb." ".$msgstr["blockedrecs"];        }
+		if ($arrHttp["to"]<$maxmfn){			echo "<p><input type=submit value=".$msgstr["continuar"].">";		}
+		echo "</form>";
 		break;
+
+
+	case "unlockbd":
+	   $arrHttp["IsisScript"]="administrar.xis";
+		$contenido=VerStatus();
+		foreach ($contenido as $value) echo "$value<br>";
+		echo "<p>".$msgstr["mnt_desb"];
+		echo "<p>";
+		$contenido=MostrarPft();
+		foreach ($contenido as $value) echo "<dd>$value<br>";
+		$contenido=VerStatus();
+		foreach ($contenido as $value) echo "$value<br>";
+		break;
+
 
 
 	case "listadecampos":

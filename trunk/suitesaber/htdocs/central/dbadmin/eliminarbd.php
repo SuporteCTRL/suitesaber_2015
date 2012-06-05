@@ -91,25 +91,26 @@ if (isset($arrHttp["encabezado"])){
 	include("../common/institutional_info.php");
 ?>
 <div class="sectionInfo">
+<div>
+<?php
+	if (!isset($arrHttp["eliminar"]))
+    	echo "<a href=\"menu_mantenimiento.php?base=".$arrHttp["base"]."$encabezado\" class=\"defaultButton\">";
+	else
+		echo "<a href=\"../common/inicio.php?reinicio=s\" class=\"defaultButton\">";
+?>
+				<span><strong><?php echo $msgstr["back"]?></strong></span>
+				</a>
+</div>
+</div>
 
 			<div class="breadcrumb">
-				<?php echo "<h5>".$msgstr["mnt_ebd"]." " .$msgstr["database"].": ".$arrHttp["base"]."</h5>"?>
+				<?php echo "<h3>".$msgstr["mnt_ebd"]." " .$msgstr["database"].": ".$arrHttp["base"]."</h3>"?>
 			</div>
 
 			<div class="actions">
-<?php
-	if (!isset($arrHttp["eliminar"]))
-    	echo "<a href=\"menu_mantenimiento.php?base=".$arrHttp["base"]."$encabezado\" class=\"defaultButton backButton\">";
-	else
-		echo "<a href=\"../common/inicio.php?reinicio=s\" class=\"defaultButton backButton\">";
 
-?>
-					<img src="../images/defaultButton_iconBorder.gif" alt="" title="" />
-					<span><strong><?php echo $msgstr["back"]?></strong></span>
-				</a>
 			</div>
-			<div class="spacer">&#160;</div>
-</div>
+
 <?php }
 echo "
 <div class=\"middle form\">
