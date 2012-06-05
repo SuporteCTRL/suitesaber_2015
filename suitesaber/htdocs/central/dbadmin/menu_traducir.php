@@ -55,7 +55,7 @@ if (isset($arrHttp["encabezado"])){
 echo "<div class=\"sectionInfo\"><div class=\"language\">";
 	
 if (isset($arrHttp["encabezado"])){
-	echo "<a href=\"../common/inicio.php?reinicio=s&base=".$arrHttp["base"]."\" class=\"defaultButton backButton\">";
+	echo "<a href=\"../common/inicio.php?reinicio=s&base=".$arrHttp["base"]."\" class=\"defaultButton\">";
 echo "<span>". $msgstr["back"]."</span></a>";
 }	
 	
