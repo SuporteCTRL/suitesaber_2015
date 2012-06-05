@@ -122,7 +122,9 @@ include("../common/header.php");
 <script language="javascript1.2" src="../dataentry/js/lr_trim.js"></script>
 <script language=Javascript src=../dataentry/js/selectbox.js></script>
 <style type=text/css>
-
+#botoes {
+	padding: 3px 4px 3px 4px;	
+	}
 td{
 	font-size:12px;
 	font-family:Arial;
@@ -314,21 +316,21 @@ function GenerarFormato(Tipo){
 	head=""    //COLUMNS HEADING
     switch (Tipo){
     	case "T":             //TABLE
-    		formato="'<table border=0 width=90%>'\n"
+    		formato="'<table border=1 width=90% cellspacing=0 cellspadding=0 >'\n"
     		for (i=0;i<document.forma1.list21.options.length;i++){
 			    campo=document.forma1.list21.options[i].value
 			    t=campo.split('|')
 				xTag=t[1]
 				xTipoE=t[0]
 				if (xTag=="" || xTipoE=="L"){
-					campo="'<tr><td colspan=2 valign=top><font face=arial size=2><b>"+t[2]+"</b></td>'/\n"
+					campo="'<tr><td colspan=2 valign=top><span style=\"font-family:arial; font-size:12px;\"><strong>"+t[2]+"</strong></td>'/\n"
 		    	}else {
 		    		if(Trim(t[5])!=""){
 						tag=SubCampos(xTag,t[5],t[6])
 					}else{
 						tag="v"+xTag+"+|<br>|"
 					}
-			    	campo="if p(v"+xTag+ ") then '<tr><td width=20% valign=top><font face=arial size=2><b>"+t[2]+"</b></td><td valign=top><font face=arial size=2>'"+tag+",'</td>' fi/\n"
+			    	campo="if p(v"+xTag+ ") then '<tr><td width=20% valign=top><span style=\"font-family:arial; font-size:12px;\"><strong>"+t[2]+"</b></td><td valign=top><span style=\"font-family:arial; font-size:12px;\">'"+tag+",'</td>' fi/\n"
 				}
 				formato+=campo
 			}
@@ -342,10 +344,10 @@ function GenerarFormato(Tipo){
 				xTag=t[1]
 				xTipoE=t[0]
 				if (xTag=="" || xTipoE=="L"){
-					campo="'<br><b>"+t[2]+"</b></td>'/\n"
+					campo="'<br /><strong>"+t[2]+"</strong></td>'/\n"
 		    	}else {
 		    		if (Tipo=='PL')
-		    			label_f=  "<font face=arial size=2><b>"+t[2]+"</b>: "
+		    			label_f=  "<span style=\"font-family:arial; font-size:12px;\"><strong>"+t[2]+"</strong></span>: "
 		 			else
 		 				label_f=""
 					if(Trim(t[5])!=""){
@@ -354,7 +356,7 @@ function GenerarFormato(Tipo){
 						tag="v"+xTag+"+|; |"
 					}
 
-		    		campo="if p(v"+xTag+ ") then '<br>"+label_f+"<font face=arial size=2>'"+tag+", fi/\n"
+		    		campo="if p(v"+xTag+ ") then '<br />"+label_f+"<span style=\"font-family:arial; font-size:12px;\">'"+tag+", fi/\n"
 				}
 				formato+=campo
 			}
@@ -374,7 +376,7 @@ function GenerarFormato(Tipo){
 					}else{
 						tag="v"+xTag+"+|; |"
 					}
-			    	campo="'<td valign=top><font face=arial size=2>'"+tag+" if a(v"+xTag+") then '&nbsp;' fi,'</td>'/\n"
+			    	campo="'<td valign=top><span style=\"font-family:arial; font-size:12px;\">'"+tag+" if a(v"+xTag+") then '&nbsp;' fi,'</span></td>'/\n"
 			    	formato+=campo
 			    	head+=t[2]+"\n"
 				}
@@ -472,15 +474,22 @@ function BorrarExpresion(){
 	document.forma1.Expresion.value=''
 }
 
+
+
 function EnviarForma(vp){
 	if (vp=="P") {
 
 		document.forma1.vp.value="S"
 		document.forma1.target="relat"
-	//	msgwin=window.open("","VistaPrevia","resizable, status, scrollbars")
-	}else{
+		//msgwin=window.open("","VistaPrevia","resizable, status, scrollbars")
+		}else{
 		document.forma1.vp.value=vp
 		document.forma1.target=""
+		}
+	if (vp=="PP") {
+		document.forma1.vp.value="PP"
+		document.forma1.target="VistaPrevia"
+		msgwin=window.open("","VistaPrevia","resizable, status, scrollbars")
 	}
 	de=Trim(document.forma1.Mfn.value)
   	a=Trim(document.forma1.to.value)
@@ -698,7 +707,7 @@ echo "</table>\n";
 	echo "<table  >
 			<tr>
 			<td align=left   valign=center>
-    		<a style=\"width:500px;\" class=\"areas1\" href=\"javascript:toggleLayer('useexformat');\"><strong>". $msgstr["useexformat"]."</strong></a>
+    		<a style=\"width:300px;\" class=\"areas1\" href=\"javascript:toggleLayer('useexformat');\"><strong>". $msgstr["useexformat"]."</strong></a>
     		<div id=useexformat >
     		<br />".$msgstr["r_formatos"].": <div class=styled-select><select  name=fgen onclick=javascript:BorrarFormato(\"todos\")></div>
     		<option value=''>";
@@ -737,11 +746,14 @@ if (isset($_SESSION["permiso"]["CENTRAL_ALL"]) or isset($_SESSION["permiso"]["CE
 <table border=0>
 	<tr>
 		<td valign=top>
-		<a class="areas1" style="width:500px;"  href="javascript:EsconderVentana('pftedit');toggleLayer('createformat');toggleLayer('pftedit')"><strong><?php echo $msgstr["r_creaf"]?></strong></a>
-    	<div id=createformat>
-    	<P><?php echo $msgstr["r_incluirc"]?><br>
+		<a class="areas1" style="width:300px;"  href="javascript:EsconderVentana('pftedit');toggleLayer('createformat');toggleLayer('pftedit')">
+		<strong><?php echo $msgstr["r_creaf"]?></strong></a>
+  <br />
+    	<div id=createformat style="margin-left:-7px; width:300px;"><br />
+    	<?php echo $msgstr["r_incluirc"]?>
 			<table border=0>
-				<td align=right width=100><Select name=list11 style="width:180px;font-size:10px;" multiple size=10 onDblClick="moveSelectedOptions(this.form['list11'],this.form['list21'],false)">
+				<td width=100>
+				<Select name=list11 style="width:150px;font-size:10px;" multiple size=10 onDblClick="moveSelectedOptions(this.form['list11'],this.form['list21'],false)">
 
  <?
  	$t=array();
@@ -751,19 +763,19 @@ if (isset($_SESSION["permiso"]["CENTRAL_ALL"]) or isset($_SESSION["permiso"]["CE
   	}
 ?>
 				</select></td>
-				<td align="center"><center>
+				<td style="width:30px;" align="center"><center>
 					<a id="ajuda" href="#" onClick="moveSelectedOptions(document.forms[0]['list11'],document.forms[0]['list21'],false);return false;">
-					&#9656;</A>
+					&#9656;</a>
 					<a id="ajuda"  href="#" onClick="moveAllOptions(document.forms[0]['list11'],document.forms[0]['list21'],false); return false;">
-					&#9656;&#9656;</A>
+					&#9656;&#9656;</a>
 					<a id="ajuda"  href="#" onClick="moveAllOptions(document.forms[0]['list21'],document.forms[0]['list11'],false); return false;">
-					&#9666;&#9666;</A>
+					&#9666;&#9666;</a>
 					<a id="ajuda"  href="#" onClick="moveSelectedOptions(document.forms[0]['list21'],document.forms[0]['list11'],false); return false;">
-					&#9666;</A>
+					&#9666;</a>
 
 				</td>
 				<td>
-					<select name="list21" multiple size="10" style="width:180px;font-size:10px;" onDblClick="moveSelectedOptions(this.form['list21'],this.form['list11'],false)">
+					<select name="list21" multiple size="10" style="width:100px;font-size:10px;" onDblClick="moveSelectedOptions(this.form['list21'],this.form['list11'],false)">
 
 					</select>
 				</td>
@@ -775,10 +787,10 @@ if (isset($_SESSION["permiso"]["CENTRAL_ALL"]) or isset($_SESSION["permiso"]["CE
 
 
 			</table>
-			<hr>
+	
 			<table>
 				<tr>
-				<td><p><?php echo $msgstr["r_fgent"]?></p>
+				<td><h2><?php echo $msgstr["r_fgent"]?></h2>
 					       <input type=radio name=tipof value=T onclick=GenerarFormato('T') ><?php echo $msgstr["r_tabla"]?>
 					<br /><input type=radio name=tipof value=P onclick=GenerarFormato('P')><?php echo $msgstr["r_parrafo"]?>
 					<br /><input type=radio name=tipof value=PL onclick=GenerarFormato('PL')><?php echo $msgstr["r_parrafo"]?>(com legendas)
@@ -789,14 +801,16 @@ if (isset($_SESSION["permiso"]["CENTRAL_ALL"]) or isset($_SESSION["permiso"]["CE
 				<tr>
 				<td>
 					<table>
-					<td valign="top">
+								<input id=botoes type=button name=borrar value=<?php echo $msgstr["borrar"]?> onClick='javascript:BorrarFormato("pft")'>
+					<tr><td valign="top" style="width:200px;">
 					
 					<?php echo $msgstr["pftex"]?>
-						<textarea name=pft cols=30 rows=10 style="font-family:courier new;"></textarea>
-						<input id=botoes type=button name=borrar value=<?php echo $msgstr["borrar"]?> onClick='javascript:BorrarFormato("pft")'>
+						<textarea name=pft cols=30 rows=15 style="width:200px;font-size:11px;font-family:courier new;"></textarea>
+
 	    			</td>
-    				<td valign="top"><?php echo $msgstr["r_heading"]?><br>
-    				<textarea name=headings cols=10 rows=10 style="font-family:courier new;" onfocus=CheckType()></textarea><td>
+    				<td valign="top" style="width:100px;"><?php echo $msgstr["r_heading"]?>
+    				<textarea name=headings cols=9 rows=15 style="width:100px;font-size:11px;font-family:courier new;" onfocus=CheckType()></textarea>
+    	</td></tr>
 			</table>
           </div>
 		</td>
@@ -822,20 +836,20 @@ if ($arrHttp["Opcion"]!="new"){?>
 <table>
 	<tr>
 		<td>
-		<a class="areas1" style="width:500px;" HREF="javascript:toggleLayer('testformat')"><strong><?php echo $msgstr["generateoutput"]?></strong></a>
-    		<div id="testformat"><br />
+		<a class="areas1" style="width:300px;" HREF="javascript:toggleLayer('testformat')"><strong><?php echo $msgstr["generateoutput"]?></strong></a>
+    		<div id="testformat" style="margin-left:-7px; width:300px;"><br />
     		<table>
-		<td bgcolor="#dddddd"><?php echo $msgstr["r_recsel"]?></td>
+		<!--<td bgcolor="#dddddd"><?php echo $msgstr["r_recsel"]?></td>-->
 	<tr>
-		<td  align="center"><strong><?php echo $msgstr["r_mfnr"]?></strong>: &nbsp; &nbsp; 
+		<td><strong><?php echo $msgstr["r_mfnr"]?></strong>:<br /> 
 		<?php echo $msgstr["r_desde"]?>: <input id="form" type="text" name="Mfn" size="5"><?php echo $msgstr["r_hasta"]?>:<input type="text"  id="form" name="to" size="5">
 	
 		 <a id="tag" href="javascript:BorrarRango()"><?php echo $msgstr["borrar"]?></a>
-		 	<hr>
+		 	
 		<script> if (top.window.frames.length>0)
-			document.writeln(" &nbsp; &nbsp; &nbsp; (<?php echo $msgstr["maxmfn"]?>: "+top.maxmfn+")")</script></td>
+			document.writeln(" &nbsp; (<?php echo $msgstr["maxmfn"]?>: "+top.maxmfn+")")</script></td>
 	<tr>
-		<td><strong><?php echo $msgstr["r_busqueda"]?></strong>: &nbsp;
+		<td><strong><?php echo $msgstr["r_busqueda"]?></strong>: <br />
 <?php
 unset($fp);
 if (file_exists($db_path.$arrHttp["base"]."/pfts/".$_SESSION["lang"]."/search_expr.tab"))
@@ -859,9 +873,11 @@ if ($fp){
 }
 ?>
 			</select>
-			<a id="botoes" href="javascript:Buscar()"><?php echo $msgstr["advsearch"]?></a>
+			<a id="botoes" href="javascript:Buscar()">
+			<!--<span style="transform:rotate(-45deg);font-size:24px;-moz-transform:rotate(-45deg);-webkit-transform:rotate(-45deg);-ms-transform:rotate(-45deg);-o-transform:rotate(-45deg);">&#9906;&nbsp;</span>-->
+			<?php echo $msgstr["advsearch"]?></a>
 			<br />
-			<textarea rows="2" cols="45" name="Expresion"><?php if ($Expresion!="") echo $Expresion?></textarea>
+			<textarea rows="2" cols="33" name="Expresion"><?php if ($Expresion!="") echo $Expresion?></textarea>
 			<br /><a id="botoes" href="javascript:BorrarExpresion()"><?php echo $msgstr["borrar"]?></a>
 <?php
 if (isset($_SESSION["permiso"]["CENTRAL_ALL"]) or isset($_SESSION["permiso"]["CENTRAL_SAVEXPR"])){
@@ -907,15 +923,19 @@ if (isset($_SESSION["permiso"]["CENTRAL_ALL"]) or isset($_SESSION["permiso"]["CE
 		<td align="center">
 		<br /><hr><br />
 			<strong><?php echo $msgstr["sendto"]?></strong>:
-			<a id="botoes" href="javascript:EnviarForma('WP')"><?php echo $msgstr["word"]?></a>
+			<select>
+			<option selected="">Selecione o tipo de saída</option>
+<option onclick="javascript:EnviarForma('WP')"><a id="botoes" href="javascript:EnviarForma('WP')"><?php echo $msgstr["word"]?></a></option>
 			
-			<a id="botoes" href="javascript:EnviarForma('TB')"><?php echo $msgstr["wsproc"]?></a>
+<option onclick="javascript:EnviarForma('TB')"><a id="botoes" href="javascript:EnviarForma('TB')"><?php echo $msgstr["wsproc"]?></a></option>
 			
-			<a id="botoes" href="javascript:EnviarForma('TXT')" value="T">TXT</a>			
+<option onclick="javascript:EnviarForma('TXT')"><a id="botoes" href="javascript:EnviarForma('TXT')" value="T">&real; TXT</a>			</option>
+	
+<option onclick="javascript:EnviarForma('PP')"><a id="botoes" href="javascript:EnviarForma('PP')"><?php echo $msgstr["print"]?></a></option>
 			
-			<a id="botoes" href="javascript:EnviarForma('P')"><?php echo $msgstr["vistap"]?></a>
+<option onclick="javascript:EnviarForma('P')"><a id="botoes" href="javascript:EnviarForma('P')"><?php echo $msgstr["preview"]?></a></option>
 			
-
+</select>
 		</td>
 </table>
 </div>
@@ -929,7 +949,7 @@ $save="Y";
 <table>
 	<tr>
 		<td>
-			<a class="areas1" style="width:500px;"  href="javascript:toggleLayer('saveformat')"><strong><?php echo $msgstr["r_guardar"]?></strong></a>
+			<a class="areas1" style="width:300px;"  href="javascript:toggleLayer('saveformat')"><strong><?php echo $msgstr["r_guardar"]?></strong></a>
     		<div id=saveformat><p>
 			<table border=0 cellpadding=0>
 				<td bgcolor="#dddddd">
@@ -988,7 +1008,7 @@ if (!isset($arrHttp["Modulo"]))
 </div>
 </div>
 
-<div style="position:relative;width:55%;background:#fff;float:right;height:580px;">
+<div style="position:relative;width:60%;background:#fff;float:right;height:1000px;">
 <iframe style="width:100%;height:100%;" src="#" id="relat" name="relat" frameborder="0" >
 </div>
 
