@@ -223,6 +223,7 @@ typeofrecerror=You must select a Worksheet, at least one value and a description
 typeofrecnowks=You must define first the Worksheet to be assigned to the type of record
 dbinitialized=Initialized
 folderne=Folder does not exists
+admsite=Administração do site
 ne=Does not exist
 gotoadm=Go to Database administration
 print=Print services
