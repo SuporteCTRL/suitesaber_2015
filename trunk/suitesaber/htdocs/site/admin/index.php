@@ -14,11 +14,11 @@ $label = loadLabels($texts);
 $langs = loadLangs(DATABASE_PATH.'xml/');
 $error = preg_replace('/[^A-Z_]/', '', $_REQUEST['error']);
     
-//echo'<?xml version="1.0" encoding="utf-8"?>';?>
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
-  <!--      <meta http-equiv="content-type" content="text/html; charset=UTF-8" /> -->
+
         <title><?php echo trans("ADMINISTRATION");?></title>
         <style type="text/css">
             ul.lang li.<?php echo $lang;?> {
