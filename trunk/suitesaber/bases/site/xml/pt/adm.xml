@@ -7,7 +7,7 @@
 		<message name="msgFirstItem" text="Já é o primeiro item!"/>
 		<message name="msgLastItem" text="Já é o último item!"/>
 	</message-list>
-	<page id="menu" title="Administração da BVS" css="css/admin/adm.css">
+	<page id="menu" title="Administração do Site" css="css/admin/adm.css">
 		<identification title="Administração: "/>
 		<bar>
 			<item href="../index.php?lang=pt">Visualizar site</item>
@@ -17,7 +17,7 @@
 		</bar>
 		<menu>
 			<block title="Estrutura" level="adm">
-				<item page="parent">BVS logotipo</item>
+				<item page="parent">Logotipo</item>
 				<item page="identification">Identificação</item>		
 				<item page="contact">Contato</item>		
 				<item page="other-versions">Versões</item>	
@@ -36,7 +36,7 @@
 			</block>
 		</menu>
 	</page>
-	<page id="menu-standard" title="Administração da BVS" css="css/admin/adm.css">
+	<page id="menu-standard" title="Administração do Site" css="css/admin/adm.css">
 		<identification title="Administração: "/>
 		<bar>
 			<item href="../index.php?lang=pt">Visualizar site</item>
@@ -50,7 +50,7 @@
 			</block>
 		</menu>
 	</page>
-	<page id="invalid-entry" title="Administração da BVS" css="css/admin/adm.css">
+	<page id="invalid-entry" title="Administração do Site" css="css/admin/adm.css">
 		<identification title="Administração: "/>
 		<bar>
 			<item align="right" href="javascript:back();">Volta</item>
@@ -60,7 +60,7 @@
 			Por favor verifique o usuário/senha e tente novamente.<br/>
 		</error>
 	</page>
-	<page id="identification" title="Informações para identificação da BVS" css="css/admin/adm.css">
+	<page id="identification" title="Informações para identificação do Site" css="css/admin/adm.css">
 		<identification title="Administração: "/>
 		<bar>
 			<item>Identificação</item>
@@ -128,10 +128,10 @@
 			<!--item edit="text" name="href">Link</item-->
 		</change>
 	</page>
-	<page id="parent" title="Conexão com a BVS pai" css="css/admin/adm.css">
+	<page id="parent" title="Conexão com o Portal" css="css/admin/adm.css">
 		<identification title="Administração: "/>
 		<bar>
-			<item>BVS pai</item>
+			<item>Portal</item>
 			<flag element="parent" name="available">
 				<option value="yes">Disponível</option>
 				<option value="no">Indisponível</option>
@@ -163,7 +163,7 @@
 	</page>
 	<page id="new_parent" title="Adiciona item pai" css="css/admin/adm.css">
 		<bar>
-			<item>BVS pai</item>
+			<item>Portal</item>
 			<flag element="item" name="available">
 				<option value="yes">Disponível</option>
 				<option value="no">Indisponível</option>
@@ -180,7 +180,7 @@
 	</page>
 	<page id="change_parent" title="Modifica item pai" css="css/admin/adm.css">
 		<bar>
-			<item>BVS pai</item>
+			<item>Portal</item>
 			<flag element="item" name="available">
 				<option value="yes">Disponível</option>
 				<option value="no">Indisponível</option>
@@ -394,10 +394,10 @@
 			<item edit="text" name="href">Link</item>
 		</change>
 	</page>
-	<page id="about" title="Lista de informações sobre esta BVS" css="css/admin/adm.css">
+	<page id="about" title="Lista de informações sobre esta Site" css="css/admin/adm.css">
 		<identification title="Administração: "/>
 		<bar>
-			<item>Informações sobre esta BVS</item>
+			<item>Informações sobre este Site</item>
 			<item align="right" href="javascript:history.back();">Sair</item>
 		</bar>
 		<edit>
@@ -423,9 +423,9 @@
 			</buttons>
 		</edit>
 	</page>
-	<page id="new_about" title="Adiciona item sobre a BVS" css="css/admin/adm.css">
+	<page id="new_about" title="Adiciona item sobre o site" css="css/admin/adm.css">
 		<bar>
-			<item>Informação sobre esta BVS</item>
+			<item>Informação sobre este site</item>
 			<flag element="item" name="available">
 				<option value="yes">Disponível</option>
 				<option value="no">Indisponível</option>
@@ -442,9 +442,9 @@
 			<item edit="htmlarea" name="portal" label-edit="clique aqui para usar o editor XHTML" label-modify=" modificar " label-cancel=" cancelar ">Página do Portal (XHTML)</item>
 		</change>
 	</page>
-	<page id="change_about" title="Modifica item sobre a BVS" css="css/admin/adm.css">
+	<page id="change_about" title="Modifica item sobre o Site" css="css/admin/adm.css">
 		<bar>
-			<item>Informação sobre esta BVS</item>
+			<item>Informação sobre este site</item>
 			<flag element="item" name="available">
 				<option value="yes">Disponível</option>
 				<option value="no">Indisponível</option>
