@@ -1,12 +1,12 @@
 marc|Bibliográfica|Y
 autoridades|Autoridades
 a|-----
+users|Leitores
 copies|Cópias
 loanobjects|Objetos para empréstimo
 providers|Fornecedores
 suggestions|Sugestões
-purchaseorder|Purchase Orders
+purchaseorder|Ordens de compra
 trans|Transações
 suspml|Suspensão e Multas
-users|Leitores
 acces|Usuários do sistema
