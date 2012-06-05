@@ -100,10 +100,6 @@ function EnviarForma(Opcion,Mensaje){
 				document.admin.action="copies_linkdb.php"
 				document.admin.target=""
 				break;
-			case "unlockbd":
-		   	document.admin.action="../dataentry/wxis/administrar.xis";
-
-				break;
 //			default:
 //				alert("coming soon!!!!!")
 				return;
@@ -165,22 +161,17 @@ echo " &nbsp; Script: menu_mantenimiento.php";
 <table cellspacing=5 width=400 align=center>
 	<tr>
 		<td>
-
 		<input type=hidden name=base value=<?php echo $arrHttp["base"]?>>
-         
-		
-			<a id="botoes" href='javascript:EnviarForma("inicializar","<?php echo $msgstr["mnt_ibd"]?>")'><?php echo $msgstr["mnt_ibd"]?></a></li>
+ 			<a id="botoes" href='javascript:EnviarForma("inicializar","<?php echo $msgstr["mnt_ibd"]?>")'><?php echo $msgstr["mnt_ibd"]?></a></li>
 			<a id="botoes" href='javascript:EnviarForma("eliminarbd","<?php echo $msgstr["mnt_ebd"]?>")'><?php echo $msgstr["mnt_ebd"]?></a></li>
 			<a id="botoes" href='javascript:EnviarForma("lock","<?php echo $msgstr["mnt_lock"]?>")'><?php echo $msgstr["mnt_lock"]?></a></li>
-			<a id="botoes" href='javascript:EnviarForma("unlock","<?php echo $msgstr["mnt_unlock"]?>")'><?php echo $msgstr["mnt_unlock"]?></a></li>
+			<a id="botoes" href='javascript:EnviarForma("unlockbd","<?php echo $msgstr["mnt_unlock"]?>")'><?php echo $msgstr["mnt_unlock"]?></a></li>
 			<a id="botoes" href='javascript:EnviarForma("cn","<?php echo $msgstr["assigncn"]?>")'><?php echo $msgstr["assigncn"]?></a></li>
 			<a id="botoes" href='javascript:EnviarForma("linkcopies","<?php echo $msgstr["linkcopies"]?>")'><?php echo $msgstr["linkcopies"]?></a></li>
 			<a id="botoes" href='Javascript:EnviarForma("resetcn","<?php echo $msgstr["resetcn"]?>")'><?php echo $msgstr["resetcn"]?></a></li>
-			<hr>
-				<a  id=botoes href='javascript:EnviarForma("unlockbd","<?php echo $msgstr["mnt_desb"]?>")'><?php echo $msgstr["mnt_desb"]?></a>
-
 		</td>
-</table></form>
+</table>
+</form>
 <form name=admin method=post action=administrar_ex.php onSubmit="Javascript:return false">
 <input type=hidden name=base>
 <input type=hidden name=cipar>
