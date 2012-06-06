@@ -25,7 +25,7 @@ $ sudo apt-get install php5
 Em seguida instale as extensões:
 
 {{{
-$ sudo apt-get install php5-curl php5-gd php5-gmp php5-mcrypt php5-tidy php5-xsl yaz
+$ sudo apt-get install php5-curl libapache2-mod-php5 libyaz4-dev php5-gd php5-gmp php5-dev php-pear php5-mcrypt php5-tidy php5-xsl yaz vim
 }}}
 
 
