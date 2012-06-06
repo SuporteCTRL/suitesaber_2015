@@ -923,19 +923,19 @@ if (isset($_SESSION["permiso"]["CENTRAL_ALL"]) or isset($_SESSION["permiso"]["CE
 		<td align="center">
 		<br /><hr><br />
 			<strong><?php echo $msgstr["sendto"]?></strong>:
-			<select>
-			<option selected="">Selecione o tipo de saída</option>
-<option onclick="javascript:EnviarForma('WP')"><a id="botoes" href="javascript:EnviarForma('WP')"><?php echo $msgstr["word"]?></a></option>
-			
-<option onclick="javascript:EnviarForma('TB')"><a id="botoes" href="javascript:EnviarForma('TB')"><?php echo $msgstr["wsproc"]?></a></option>
-			
-<option onclick="javascript:EnviarForma('TXT')"><a id="botoes" href="javascript:EnviarForma('TXT')" value="T">&real; TXT</a>			</option>
+		
 	
-<option onclick="javascript:EnviarForma('PP')"><a id="botoes" href="javascript:EnviarForma('PP')"><?php echo $msgstr["print"]?></a></option>
+<a id="botoes" href="javascript:EnviarForma('WP')"><?php echo $msgstr["word"]?></a>
 			
-<option onclick="javascript:EnviarForma('P')"><a id="botoes" href="javascript:EnviarForma('P')"><?php echo $msgstr["preview"]?></a></option>
+<a id="botoes" href="javascript:EnviarForma('TB')"><?php echo $msgstr["wsproc"]?></a>
 			
-</select>
+<a id="botoes" href="javascript:EnviarForma('TXT')" value="T">&real; TXT</a>			
+	
+<a id="botoes" href="javascript:EnviarForma('PP')"><?php echo $msgstr["print"]?></a>
+			
+<a id="botoes" href="javascript:EnviarForma('P')"><?php echo $msgstr["preview"]?></a>
+			
+
 		</td>
 </table>
 </div>
