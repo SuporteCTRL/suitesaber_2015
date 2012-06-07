@@ -28,6 +28,26 @@ Em seguida instale as extensões:
 $ sudo apt-get install php5-curl libapache2-mod-php5 libyaz4-dev php5-gd php5-gmp php5-dev php-pear php5-mcrypt php5-tidy php5-xsl yaz vim
 }}}
 
+Instale o YAZ para o funcionamento do protocolo Z39.50
+
+{{{
+$ sudo pecl install yaz
+}}}
+
+Quando aparecer a mensagem:
+path to YAZ installation? [autodetect] :
+
+pressione [ENTER]
+
+Em seguida crie o arquivo yaz.ini
+{{{
+$ sudo vi /etc/php5/conf.d/yaz.ini
+}}}
+
+cole o conteúdo abaixo:
+{{{
+extension=yaz.so
+}}}
 
 Pronto, agora seu servidor já está pronto para receber a Suíte Saber.
 
