@@ -35,7 +35,8 @@ $ sudo pecl install yaz
 }}}
 
 Quando aparecer a mensagem:
-path to YAZ installation? `[autodetect]` :
+
+`path to YAZ installation? [autodetect] :`
 
 pressione _ENTER_
 
