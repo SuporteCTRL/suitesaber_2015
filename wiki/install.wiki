@@ -35,9 +35,9 @@ $ sudo pecl install yaz
 }}}
 
 Quando aparecer a mensagem:
-path to YAZ installation? [autodetect] :
+path to YAZ installation? `[autodetect]` :
 
-pressione [ENTER]
+pressione _ENTER_
 
 Em seguida crie o arquivo yaz.ini
 {{{
