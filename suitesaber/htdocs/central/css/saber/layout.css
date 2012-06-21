@@ -1,116 +1,75 @@
-	/* general styles */
-
+/* general styles */
 body {
    margin: 0px;
 }
 
-
-
-FORM {
-
+form {
 	margin: 0px;
-
 	padding: 0px;
-
 }
 
+/* master classes -- defaultButton classes */
+
+a.defaultButton {
+	display: block;
+	float: left;
+	width: 200px;  /*cambiado*/
+	height: 32px;
+	margin-right: 1px;
+	text-align: left;
+	margin: 5px;
+	}
+
+a.defaultButton IMG {
+	width: 32px;
+	height: 32px;
+	vertical-align: middle;
+	margin-right: 7px;
+	float: left;
+	}
+
+a.defaultButton span {
+	display: -moz-inline-block;
+	display: inline-block;
+	vertical-align: top;
+	width: 150px;
+	padding: 0px;
+	float: left;
+	
+	}
 
 
-/* #master classes */
-
-	/* #defaultButton classes */
-
-	A.defaultButton {
-
-		display: block;
-
-		float: left;
-
-		width: 200px;  /*cambiado*/
-
-		height: 32px;
-
-		margin-right: 1px;
-
-		text-align: left;
-		margin: 5px;
-
+a.menuButton {
+	vertical-align: top;
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	border: 1px #ccc solid;
+	margin: 10px;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+	-moz-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+	-moz-text-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+	-webkit-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+	box-shadow: rgba(0,0,0, 0.5) 0px 0px 2px;
+	-moz-box-shadow: rgba(0,0,0, 0.5) 0px 0px 2px;
+	-webkit-box-shadow: rgba(0,0,0, 0.5) 0px 0px 2px;
+	padding: 20px;
 	}
 
 
 
-	A.defaultButton IMG {
-		
-		width: 32px;
-
-		height: 32px;
-
-		vertical-align: middle;
-
-		margin-right: 7px;
-
-		float: left;
-
+a.menuButton img {
+	width: 40px;
+	height: 40px;
+	vertical-align: top;
+	margin-right: 7px;
+	float: left;
 	}
 
-
-
-	A.defaultButton SPAN {
-
-		display: -moz-inline-block;
-		
-		display: inline-block;
-
-		vertical-align: top;
-
-		width: 150px;
-
-		padding: 0px;
-
-		float: left;
-
-	}
-
-
-A.menuButton {
-		vertical-align: top;
-		display: inline-block;
-		width: 40px;
-		height: 40px;
-		border: 1px #ccc solid;
-		margin: 10px;
-		-moz-border-radius: 5px;
-		-webkit-border-radius: 5px;
-		box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
-		-moz-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
-		-moz-text-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
-		-webkit-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
-		box-shadow: rgba(0,0,0, 0.5) 0px 0px 2px;
-		-moz-box-shadow: rgba(0,0,0, 0.5) 0px 0px 2px;
-		-webkit-box-shadow: rgba(0,0,0, 0.5) 0px 0px 2px;
-		padding: 20px;
-
-	}
-
-
-
-	A.menuButton IMG {
-
-		width: 40px;
-
-		height: 40px;
-
-		vertical-align: top;
-
-		margin-right: 7px;
-
-		float: left;
-
-	}
-
-
-
-	A.menuButton SPAN {
+a.menuButton span {
 	display: block;
 	margin-top: 70px;
 	text-align: center;
@@ -119,6 +78,7 @@ A.menuButton {
 	font-size: 12px;
 	width: 80px;
 	margin-left: -20px;
+	margin-right: 20px;
 
 
 	}
