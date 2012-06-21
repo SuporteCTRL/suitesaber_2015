@@ -16,7 +16,7 @@ A {
 /* ABCD ADDED*/
 
 	.helper A{
-		color:#cddef6
+		color:#666;
 	}
 
 	/* #defaultButton classes */
@@ -57,8 +57,9 @@ A {
 	}
 
 	.helper {
-		background: url('images/icon/helper_bg.png') no-repeat ;
+	/*	background: url('images/icon/helper_bg.png') no-repeat ;*/
 		color: #646567
+		overflow:scroll;
 	}
 
 	.alert {
