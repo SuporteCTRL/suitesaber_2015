@@ -63,7 +63,7 @@ if (isset($_SESSION["permiso"]["ACQ_ACQALL"]) or isset($_SESSION["permiso"]["ACQ
 ?>
 						<a href="../acquisitions/suggestions_status.php?base=suggestions&cipar=suggestions.par&sort=TI&encabezado=s" class="menuButton tooltip  multiLine checkButton">
 
-							<span><?php echo $msgstr["approve"]."/".$msgstr["reject"]?></span>
+							<span><?php echo $msgstr["approve"]." / ".$msgstr["reject"]?></span>
 						</a>
 <?php }
 if (isset($_SESSION["permiso"]["ACQ_ACQALL"]) or isset($_SESSION["permiso"]["ACQ_BIDDING"])){
