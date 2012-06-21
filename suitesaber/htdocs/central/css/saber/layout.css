@@ -18,7 +18,7 @@ a.defaultButton {
 	margin-right: 1px;
 	text-align: left;
 	margin: 5px;
-	}
+}
 
 a.defaultButton IMG {
 	width: 32px;
@@ -26,7 +26,7 @@ a.defaultButton IMG {
 	vertical-align: middle;
 	margin-right: 7px;
 	float: left;
-	}
+}
 
 a.defaultButton span {
 	display: -moz-inline-block;
@@ -36,7 +36,7 @@ a.defaultButton span {
 	padding: 0px;
 	float: left;
 	
-	}
+}
 
 
 a.menuButton {
@@ -57,9 +57,7 @@ a.menuButton {
 	-moz-box-shadow: rgba(0,0,0, 0.5) 0px 0px 2px;
 	-webkit-box-shadow: rgba(0,0,0, 0.5) 0px 0px 2px;
 	padding: 20px;
-	}
-
-
+}
 
 a.menuButton img {
 	width: 40px;
@@ -67,7 +65,7 @@ a.menuButton img {
 	vertical-align: top;
 	margin-right: 7px;
 	float: left;
-	}
+}
 
 a.menuButton span {
 	display: block;
@@ -79,185 +77,94 @@ a.menuButton span {
 	width: 80px;
 	margin-left: -20px;
 	margin-right: 20px;
+}
 
-
-	}
-
-
-
-
-
-	A.multiLine SPAN {
-
+a.multiLine span {
 		padding-top: 5px;
+}
 
-	}
-
-
-
-	BODY:first-of-type A.multiLine SPAN {
-
+body:first-of-type a.multiLine span {
 		padding-top: 10px;
+}
 
-	}
-
-
-
-	A.defaultButton STRONG{
-
+a.defaultButton strong{
 		display: block;
+}
 
-	}
-
-
-
-	.textEntry, .submit {
-
+.textEntry, .submit {
 		vertical-align: middle;
+}
 
-	}
-
-
-
-	.textEntry {
-
+.textEntry {
 		width: 180px;
+}
 
-	}
-
-
-
-	INPUT.textEntry, TEXTAREA.textEntry {
-
+input.textEntry, textarea.textEntry {
 		padding: 2px;
+}
 
-	}
-
-
-
-	INPUT.superTextEntry,
-
-	TEXTAREA.superTextEntry,
-
-	SELECT.superTextEntry,
-
-	INPUT.singleTextEntry,
-
-	TEXTAREA.singleTextEntry,
-
-	SELECT.singleTextEntry {
-
+input.superTextEntry, textarea.superTextEntry, select.superTextEntry, input.singleTextEntry, textarea.singleTextEntry,
+select.singleTextEntry {
 		width: 90%;
+}
 
-	}
-
-
-
-	TEXTAREA.textEntry {
-
+textarea.textEntry {
 		height: 70px;
-
 	}
 
-
-
-	INPUT.smallTextEntry,
-
-	TEXTAREA.smallTextEntry {
-
+input.smallTextEntry, textarea.smallTextEntry {
 		width: 100px;
-
 	}
 
-
-
-	SELECT.smallTextEntry {
-
+select.smallTextEntry {
 		width: 120px;
-
-	}
-	.helper {
-/*		margin-top: 25px;
-		height: 10px;
-		position: relative; */
-		padding: 0px 0px 0px 20px;
-		margin-bottom: 50px;
-		-moz-box-shadow: 0px 0px 15px #888;
-		-webkit-box-shadow: 0px 0px 15px #888;
-		box-shadow: 0px 0px 15px #888;
 	}
 
+.helper {
+/*	margin-top: 25px;
+	height: 10px;
+	position: relative; */
+	padding: 0px 0px 0px 0px;
+	margin-bottom: 50px;
+	-moz-box-shadow: 0px 0px 7px #888;
+	-webkit-box-shadow: 0px 0px 7px #888;
+	box-shadow: 0px 0px 7px #888;
+}
 
-
-	A.singleButton {
-
+a.singleButton {
 		display: block;
-
 		float: left;
-
 		padding: 2px 5px;
-
 		height: 18px;
-
 		position: relative;
-
 		vertical-align: middle;
-
 		margin-right: 3px;
+}
 
+body:first-of-type A.singleButton {
+	height: 16px;
+	padding-top: 4px;
+}
+
+a.singleButton img {
+	width: 16px;
+	height: 16px;
+	vertical-align: middle;
+	margin-right: 2px;
+}
+
+a.singleButton span.sb_lb, a.singleButton span.sb_rb {
+	position: absolute;
+	top: 0px;
+	width: 2px;
+	height: 22px;
+}
+
+a.singleButton span.sb_lb {
+	left: 0px;
 	}
 
-
-
-	BODY:first-of-type A.singleButton {
-
-		height: 16px;
-
-		padding-top: 4px;
-
-	}
-
-
-
-	A.singleButton IMG {
-
-		width: 16px;
-
-		height: 16px;
-
-		vertical-align: middle;
-
-		margin-right: 2px;
-
-	}
-
-
-
-	A.singleButton SPAN.sb_lb,
-
-	A.singleButton SPAN.sb_rb {
-
-		position: absolute;
-
-		top: 0px;
-
-		width: 2px;
-
-		height: 22px;
-
-	}
-
-
-
-	A.singleButton SPAN.sb_lb {
-
-		left: 0px;
-
-	}
-
-
-
-	A.singleButton SPAN.sb_rb {
+a.singleButton SPAN.sb_rb {
 
 		right: 0px;
 
@@ -439,139 +346,68 @@ display: inline;
 
 	}
 
-
-
-	.distributorLogo A SPAN {
-
-		display: none;
-
-	}
-
+.distributorLogo a span {
+	display: none;
+}
 	/*#END #footer classes */
 
-
-
 	/*#homepage classes */
-
-	.homepage {
-		width: 100%;
-		padding: 15px 15px 1px 15px; 
-
+.homepage {
+	width: 100%;
+	padding: 15px 15px 1px 15px; 
 	}
 
-
-
-	.homepage .mainBox {
-
-		position: relative;
-
-		margin-top: 15px; 
-
+.homepage .mainBox {
+	position: relative;
+	margin-top: 15px; 
 	}
 
-
-
-	.homepage .mainBox .boxTop,
-
-	.homepage .mainBox .boxBottom {
-
-		height: 0px;
-
-		clear: both;
-
+.homepage .mainBox .boxTop, .homepage .mainBox .boxBottom {
+	height: 0px;
+	clear: both;
 	}
 
+.homepage .mainBox .boxTop .btLeft,	.homepage .mainBox .boxTop .btRight, .homepage .mainBox .boxBottom .bbLeft,
+.homepage .mainBox .boxBottom .bbRight {
+	width: 0px;
+	height: 0px;
+	font-size: 1px;
+}
 
+.homepage .mainBox .boxTop .btLeft,	.homepage .mainBox .boxBottom .bbLeft {
+	float: left;
+}
 
-	.homepage .mainBox .boxTop .btLeft,
+.homepage .mainBox .boxTop .btRight, .homepage .mainBox .boxBottom .bbRight {
+	float: right;
 
-	.homepage .mainBox .boxTop .btRight,
+}
 
-	.homepage .mainBox .boxBottom .bbLeft,
+.homepage .mainBox .boxContent {
+	min-height: 101px;
+	padding: 10px 10px 5px 10px;
+}
 
-	.homepage .mainBox .boxBottom .bbRight {
+.homepage .mainBox .boxContent .sectionIcon {
+	float: left;
+	width: 150px;
+	height: 150px;
+	margin-right: 5px;
+}
 
-		width: 0px;
+.homepage .mainBox .boxContent .sectionTitle {
+	float: left;
+	width: 170px;
+	margin-right: 30px;
+}
 
-		height: 0px;
+.homepage .mainBox .boxContent .sectionTitle H4 {
+	margin: 15px 0px 5px 0px;
+}
 
-		font-size: 1px;
-
-
-
-	}
-
-
-
-	.homepage .mainBox .boxTop .btLeft,
-
-	.homepage .mainBox .boxBottom .bbLeft {
-
-		float: left;
-
-	}
-
-
-
-	.homepage .mainBox .boxTop .btRight,
-
-	.homepage .mainBox .boxBottom .bbRight {
-
-		float: right;
-
-	}
-
-
-
-	.homepage .mainBox .boxContent {
-
-		min-height: 101px;
-
-		padding: 10px 10px 5px 10px;
-
-	}
-
-
-
-	.homepage .mainBox .boxContent .sectionIcon {
-
-		float: left;
-
-		width: 150px;
-
-		height: 150px;
-
-		margin-right: 5px;
-
-	}
-
-
-
-	.homepage .mainBox .boxContent .sectionTitle {
-
-		float: left;
-
-		width: 170px;
-
-		margin-right: 30px;
-
-	}
-
-
-
-	.homepage .mainBox .boxContent .sectionTitle H4 {
-
-		margin: 15px 0px 5px 0px;
-
-	}
-
-
-
-	.homepage .mainBox .boxContent .sectionTitle H4 STRONG {
-
-		display: block;
-
-	}
+.homepage .mainBox .boxContent .sectionTitle H4 STRONG {
+	display: block;
+}
 
 
 
@@ -618,49 +454,27 @@ display: inline;
 
 
 
-	.homepage .mainBox .boxContent .searchTitles .stInput INPUT.textEntry {
+.homepage .mainBox .boxContent .searchTitles .stInput INPUT.textEntry {
+	width: 269px;
+	padding: 6px;
+}
 
-		width: 269px;
-
-		padding: 6px;
-
-	}
-
-
-
-	BODY:first-of-type .homepage .mainBox .boxContent .searchTitles .stInput INPUT.textEntry {
-
+body:first-of-type .homepage .mainBox .boxContent .searchTitles .stInput INPUT.textEntry {
 		margin-top: 5px;
-
 		width: 269px;
-
 		padding: 8px 6px;
-
 	}
 
-
-
-	.homepage .mainBox .boxContent .searchTitles A.defaultButton {
-
+.homepage .mainBox .boxContent .searchTitles A.defaultButton {
 		margin-top: 4px;
-
 	}
 
 	/*#END #homepage classes */
 
-
-
 	/*#list classes */
+	.list {}
 
-	.list {
-
-
-
-	}
-
-
-
-	.searchBox {
+.searchBox {
 
 		padding: 5px 15px;
 
@@ -1323,35 +1137,18 @@ display: inline;
 
 	/* #END #Login */
 
-	
-
-
-
 #button {
-
 	width:16px;
-
 	height:16px;
-
 	font-size: 10px;
-
 	font-color: #000;
-
 	text-decoration: none;
-
 	padding-left: 14px;
-
 	left: 94%;
-
 	position: absolute;
-
 	margin-top: 25px;
-
 	z-index: 1;
-
 }
-
-
 
 .toolbar_entry {
 	margin:1px;
@@ -1361,6 +1158,7 @@ display: inline;
 	font-size: 150%;
 	color: #FFFFFF;
 	padding: 5px;
+	border-radius: 5px;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
@@ -1370,14 +1168,17 @@ display: inline;
 	-moz-box-shadow: rgba(0,0,0, 0.5) 0px 0px 2px;
 	-webkit-box-shadow: rgba(0,0,0, 0.5) 0px 0px 2px;		
 	}
+	
 .toolbar_entry {
 	border: solid 1px #cccccc;	
 	background-color: #dddddd;
 	}
+	
 .toolbar_entry:hover {
 	border: solid 1px #cccccc;	
 	background-color: #F2EFEF;
 	}	
+	
 #conf {
 	font-size: 15px;
 	color: #000000;
@@ -1394,6 +1195,7 @@ li.listsub {
 	border-top: solid #cccccc 1px;
 	border-bottom: solid #999999 1px;
 	}	
+	
 li.listsub:hover, a.conf:hover {
 	background-color: #dddddd;
 	list-style-type: none;
