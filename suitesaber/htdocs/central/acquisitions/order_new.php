@@ -171,12 +171,8 @@ echo "<body>\n";
 include("../common/institutional_info.php");
 ?>
 <div class="sectionInfo">
-	<div class="breadcrumb">
-		<?php
-		$m=explode('|',$arrHttp["mov"]);
-		echo $m[1].": ".$msgstr["new"]?>
-	</div>
-	<div class="actions">
+<div class="language">
+
 		<a href=order_new_menu.php class="defaultButton">
 
 			<span><strong><?php echo $msgstr["cancel"]?></strong></span>
@@ -185,10 +181,20 @@ include("../common/institutional_info.php");
 
 			<span><strong><?php echo $msgstr["actualizar"]?></strong></span>
 		</a>
+
+</div>
+</div>
+	<div class="breadcrumb"><h3>
+		<?php
+		$m=explode('|',$arrHttp["mov"]);
+		echo $m[1].": ".$msgstr["new"]?>
+	</h3></div>
+	<div class="actions">
+
 	</div>
 
-	<div class="spacer">&#160;</div>
-</div>
+
+
 <div class="helper">
 <a href=../documentacion/ayuda.php?help=<?php echo $_SESSION["lang"]?>/acquisitions/suggestions_new.html target=_blank><?php echo $msgstr["help"]?></a>&nbsp &nbsp;
 <?php

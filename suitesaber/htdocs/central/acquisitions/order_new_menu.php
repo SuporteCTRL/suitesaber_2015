@@ -24,9 +24,7 @@ $arrHttp["base"]="suggestions";
 			$valortag[substr($tag[0],3)]=$value;
 		}
    	}
-
 }
-
 include("../common/header.php");
 include("javascript.php");
 ?>
@@ -38,8 +36,6 @@ include("../common/institutional_info.php");
 <div class="sectionInfo">
 	<div class="language">
 		<a href=../common/inicio.php?reinicio=s&encabezado=s&modulo=acquisitions&base=<?php echo $arrHttp["base"]?> class="defaultButton cancelButton">
-
-
 			<span><strong><?php echo $msgstr["cancel"]?></strong></span>
 		</a>
 	</div>
@@ -47,16 +43,14 @@ include("../common/institutional_info.php");
 	<div class="breadcrumb">
 		<h3><?php echo $msgstr["suggestions"].": ".$msgstr["new"]?></h3>
 	</div>
-	<div class="actions">
-
-    </div>
+	<div class="actions"></div>
 
 <div class="helper">
 <a href=../documentacion/ayuda.php?help=<?php echo $_SESSION["lang"]?>/acquisitions/suggestions_new.html target=_blank><?php echo $msgstr["help"]?></a>&nbsp &nbsp;
 <?php
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 	echo "<a href=../documentacion/edit.php?archivo=". $_SESSION["lang"]."/acquisitions/suggestions_new.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "<font color=white>&nbsp; &nbsp; Script: order_new.php</font>\n";
+echo "&nbsp; &nbsp; Script: order_new.php\n";
 ?>
 </div>
 <div class="middle form">
@@ -71,8 +65,7 @@ echo "<font color=white>&nbsp; &nbsp; Script: order_new.php</font>\n";
 	foreach ($fp as $var){
 		$var=trim($var);
 		$v=explode('|',$var);
-		$var=urlencode($var);		echo "<li><a href=order_new.php?base=purchaseorder&cipar=purchaseorder.par&mov=$var&Opcion=nuevo&wks=".$v[0].">".$v[1]."</a>";	}
-
+		$var=urlencode($var);		echo "<a id=\"botoes\" href=order_new.php?base=purchaseorder&cipar=purchaseorder.par&mov=$var&Opcion=nuevo&wks=".$v[0].">".$v[1]."</a>";	}
 ?>
 	</ul>
 	</div>
