@@ -35,7 +35,7 @@ include("../common/institutional_info.php");
 ?>
 <div class="sectionInfo">
 	<div class="language">
-		<a href=../common/inicio.php?reinicio=s&encabezado=s&modulo=acquisitions&base=<?php echo $arrHttp["base"]?> class="defaultButton cancelButton">
+		<a href=../common/inicio.php?reinicio=s&encabezado=s&modulo=acquisitions&base=<?php echo $arrHttp["base"]?> class="defaultButton">
 			<span><strong><?php echo $msgstr["cancel"]?></strong></span>
 		</a>
 	</div>
