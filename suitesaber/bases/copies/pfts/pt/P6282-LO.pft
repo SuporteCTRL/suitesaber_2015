@@ -8,7 +8,7 @@
     <dd>'ref(['marc'] l(['marc'],"CN_MARC_"v1),v90[1]^a)'</dd>
     <dd>'ref(['marc'] l(['marc'],"CN_MARC_"v1),v90[1]^b)'</dd>
     <dd>'ref(['marc'] l(['marc'],"CN_MARC_"v1),v90[1]^c)
-		if ref(['marc'] l(['marc'],"CN_MARC_"v1),v90^c)<>'' and ref(['marc'] l(['marc'],"CN_MARC_"v1),v90^g)<>'' then ' / ' ref(['marc'] l(['marc'],"CN_MARC_"v1),v90[1]^g)  fi,
+		if ref(['marc'] l(['marc'],"CN_MARC_"v1),v90^c)<>'' and ref(['marc'] l(['marc'],"CN_MARC_"v1),v90^g)<>'' then ' / ' fi,
 		ref(['marc'] l(['marc'],"CN_MARC_"v1),v90[1]^g)'</dd>
     <dd>'v63'</dd>
     <dd>'ref(['marc'] l(['marc'],"CN_MARC_"v1),v90[1]^f)'</dd>
