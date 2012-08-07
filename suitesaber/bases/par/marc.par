@@ -16,4 +16,4 @@ trans.*=%path_database%trans/data/trans.*
 doc-principal.pft=%path_database%marc/pfts/pt/doc-principal.pft
 doc-principal-iah.pft=%path_database%marc/pfts/pt/doc-principal-iah.pft
 server.pft=%path_database%marc/pfts/pt/server.pft
-GIZMO.*=/var/www/bases/gizmo/pt/qlf850.*
+GIZMO.*=%path_database%gizmo/pt/qlf850.*
