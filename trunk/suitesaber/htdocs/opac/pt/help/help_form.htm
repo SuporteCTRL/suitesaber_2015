@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="pt-br">
+<head>
+	<title>Dicas de pesquisa</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link rel="stylesheet" href="/iah/css/stylesheet.css" type="text/css" />
+
+
+</head>
+<body id="unico">
+
+<div id="dicas">
+
+<h1>Dicas de pesquisa</h1>
+
+<h2>Pesquisa livre</h2>
+
+	<ul>
+		<li>Entre com um ou mais termos na caixa de pesquisa e aperte a tecla <kbd>Enter</kbd> ou o botão de lupa para executar a busca.</li>
+		<li>Esta opção recupera palavras do título, autores e assuntos.</li>
+		<li>Use o símbolo de truncagem <span class="destaque">$</span> (cifrão) para pesquisar palavras com mesma raiz.
+			<ul><li>Exemplo: educ<span class="destaque">$</span> recupera educación, education, educação, etc. </li></ul></li>
+		<li>Não digite operadores booleanos (AND, OR ou AND NOT) entre as palavras.</li>
+		<li>Selecione a opção <span class="destaque">Todas as palavras (AND)</span> para relacionar as palavras (restringe o escopo da pesquisa), ou a opção <span class="destaque">Qualquer palavra (OR)</span> para somar as palavras (amplia o escopo da pesquisa).</li>
+		<li>Para pesquisar especificar o campo de pesquisa use a <span class="destaque">Pesquisa avançada.</span></li>
+	</ul> 
+
+<h2>Pesquisa avançada</h2>
+
+	<ul>
+		<li>Entre com uma ou mais palavras nos campos do formulário e clique no botão <span class="defaultButton">Pesquisar</span> para executar a busca.</li>
+		<li>Se desejar ver ou selecionar a partir de um índice específico, selecione o campo e clique no botão <img src="../image/indice.gif" alt="Índice" />.</li>
+		<li>Para digitar mais de uma palavra em uma mesma linha é necessário usar um operador booleano para relacionar uma com a outra. 
+			<ul><li>Exemplo:
+					<table class="dicas">
+						<tr><td>&nbsp;</td>	<td>Pesquisar</td>	<td>no campo</td></tr>
+						<tr><td>1</td>	<td>saúde and pública</td>	<td>Título</td></tr>
+					</table>
+			</li></ul></li>
+		<li>Utilize as linhas 1, 2 e 3 para pesquisar mais de uma palavra e/ou em campos diferente.
+			<ul><li>Exemplo:
+					<table class="dicas">
+						<tr>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>Pesquisar</td>
+							<td>no campo</td>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td>&nbsp;</td>
+							<td>economia <span class="destaque">or</span> indicadores</td>
+							<td>Assunto</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>and</td>
+							<td>19<span class="destaque">$</span></td>
+							<td>Data</td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td>and</td>
+							<td>fundação<span class="destaque">$</span></td>
+							<td>Autor</td>
+						</tr>
+					</table>
+			</li></ul></li>
+	</ul>
+
+<h2>Operadores booleanos</h2>
+	<p>Para combinar a pesquisa em mais de uma palavra no mesmo campo do formulário, é necessário usar os operadores booleanos entre elas. Abaixo se encontra a tabela do operadores booleanos e exemplos de seu uso:</p>
+	<table class="dicas dicasOper">
+		<tr>
+			<th>Operador</th>
+			<th>Exemplo</th>
+			<th>Ação</th>
+		</tr>
+		<tr>
+			<td><span class="destaque">and</span></td>
+			<td>economia <span class="destaque">and</span> indicadores</td>
+			<td>Recupera os documentos que contenham as duas palavras.</td>
+		</tr>
+		<tr>
+			<td><span class="destaque">or</span></td>
+			<td>economia <span class="destaque">or</span> indicadores</td>
+			<td>Recupera os documentos que contenham a palavra <span class="destaque">economia</span> ou a palavra <span class="destaque">indicadores</span>.</td>
+		</tr>
+		<tr>
+			<td><span class="destaque">and not</span></td>
+			<td>economia <span class="destaque">and not</span> indicadores</td>
+			<td>Recupera os documentos que contenham apenas a palavra <span class="destaque">economia</span> e não contenham a palavra <span class="destaque">indicadores</span>.</td>
+		</tr>
+	</table>
+</div>
+
+
+</body>
+
+</html>
