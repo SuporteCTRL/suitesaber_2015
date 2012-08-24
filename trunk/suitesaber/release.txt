@@ -1,6 +1,6 @@
 SUITE SABER 
 
-RELEASE V9.12 - Release com anotações sobre a versão.
+RELEASE V12.9 - Release com anotações sobre a versão.
 
 
 #Pasta iah renomeada para opac
