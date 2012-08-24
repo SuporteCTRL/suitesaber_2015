@@ -1,0 +1,8 @@
+SUITE SABER 
+
+RELEASE V9.12 - Release com anotações sobre a versão.
+
+
+#Pasta iah renomeada para opac
+	- Quando existir apenas uma base no sistema basta ir direto para a pesquisa pelo endereço http://localhost/opac
+	- Editar o arquivo /htdoc/opac/index.php 
