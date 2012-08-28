@@ -73,18 +73,22 @@ if (isset($arrHttp["encabezado"])) {
 
 ?>
 <div class="sectionInfo">
+<div class="language">
+<?php 
+echo "<a href=\"menu_mantenimiento.php?base=".$base."$encabezado\" class=\"defaultButton\">";
+?>
+	<span><strong><?php echo $msgstr["back"]?></strong></span></a>
+</div>
+
+</div>
+
 	<div class="breadcrumb">
 		<?php echo $msgstr["resetcn"].": $base"?>
 	</div>
+	
 	<div class="actions">
-<?php echo "<a href=\"menu_mantenimiento.php?base=".$base."$encabezado\" class=\"defaultButton backButton\">";
-?>
-					<img src="../images/defaultButton_iconBorder.gif" alt="" title="" />
-					<span><strong><?php echo $msgstr["back"]?></strong></span>
-				</a>
 	</div>
-	<div class="spacer">&#160;</div>
-</div>
+
 <div class="helper">
 <a href=../documentacion/ayuda.php?help=<?php echo $_SESSION["lang"]?>/resetautoinc.html target=_blank><?php echo $msgstr["help"]?></a>&nbsp &nbsp;
 <?php
@@ -103,7 +107,7 @@ echo "<table>
 	<td>".$msgstr["lastcn"]."</td><td><input type=textbox name=control_n value=$cn_val></td>";
 echo "<tr><td colspan=2>&nbsp;</td>";
 echo "</table>";
-echo "<p><input type=submit name=send value=".$msgstr["update"]." onclick=Enviar()>";
+echo "<p><input id=\"botoes\" type=submit name=send value=".$msgstr["update"]." onclick=Enviar()>";
 
 echo "</form></div></div>";
 include("../common/footer.php");
