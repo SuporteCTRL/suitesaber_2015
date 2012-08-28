@@ -171,7 +171,7 @@ if (isset($arrHttp["encabezado"])){
 		<span><strong>".$msgstr["cancel"]."</strong></span></a>
 			";
 		}else{
-			echo "<a href=\"../common/inicio.php?reinicio=s&base=".$arrHttp["base"]."$encabezado\" class=\"defaultButton cancelButton\">
+			echo "<a href=\"../common/inicio.php?reinicio=s&base=".$arrHttp["base"]."$encabezado\" class=\"defaultButton\">
 		<span><strong>".$msgstr["cancel"]."</strong></span></a>
 			";
 		}
