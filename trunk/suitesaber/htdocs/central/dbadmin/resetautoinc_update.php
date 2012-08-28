@@ -70,22 +70,30 @@ if (isset($arrHttp["encabezado"])) {
 
 ?>
 <div class="sectionInfo">
-	<div class="breadcrumb">
-		<?php echo $msg.": ".$arrHttp["base"]?>
-	</div>
-	<div class="actions">
+
+<div class="language">
 <?php
 if ($arrHttp["Opcion"]=="inventory")
-	echo "<a href=\"../common/inicio.php?reinicio=s\" class=\"defaultButton backButton\">";
+	echo "<a href=\"../common/inicio.php?reinicio=s\" class=\"defaultButton\">";
 else
-	echo "<a href=\"menu_mantenimiento.php?base=".$arrHttp["base"]."$encabezado\" class=\"defaultButton backButton\">";
+	echo "<a href=\"menu_mantenimiento.php?base=".$arrHttp["base"]."$encabezado\" class=\"defaultButton\">";
 ?>
 
 					<span><strong><?php echo $msgstr["back"]?></strong></span>
 				</a>
-	</div>
-	<div class="spacer">&#160;</div>
+
 </div>
+
+
+</div>
+
+	<div class="breadcrumb">
+		<?php echo $msg.": ".$arrHttp["base"]?>
+	</div>
+	<div class="actions">
+
+	</div>
+
 <div class="helper">
 <a href=../documentacion/ayuda.php?help=<?php echo $_SESSION["lang"]?>/copies_configuration.html target=_blank><?php echo $msgstr["help"]?></a>&nbsp &nbsp;
 <?php
