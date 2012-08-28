@@ -67,23 +67,21 @@ if (isset($arrHttp["encabezado"])){
 	include("../common/institutional_info.php");
 	$encabezado="&encabezado=s";
 }
-echo "<div class=\"sectionInfo\">
-	<div class=\"breadcrumb\">
-";
-echo $msgstr["assigncn"].": ".$arrHttp["base"];
-echo "	</div>
-	<div class=\"actions\">
-";
+?>
 
+<div class="sectionInfo">
+
+<div class="language">
+<?php
 $ayuda="control_number.html";
 if (isset($arrHttp["encabezado"])){
 	if (isset($_SESSION["permiso"]["CENTRAL_ALL"]) or isset($_SESSION["permiso"]["CENTRAL_RESETLCN"])){
-		echo "<a href=\"assign_control_number.php?base=".$arrHttp["base"]."$encabezado\" class=\"defaultButton backButton\">
+		echo "<a href=\"assign_control_number.php?base=".$arrHttp["base"]."$encabezado\" class=\"defaultButton\">
 
 	<span><strong>".$msgstr["back"]."</strong></span></a>
 		";
 	}else{
-		echo "<a href=\"../common/inicio.php?reinicio=s&base=".$arrHttp["base"]."$encabezado\" class=\"defaultButton backButton\">
+		echo "<a href=\"../common/inicio.php?reinicio=s&base=".$arrHttp["base"]."$encabezado\" class=\"defaultButton\">
 		<img src=\"../images/defaultButton_iconBorder.gif\" alt=\"\" title=\"\" />
 	<span><strong>".$msgstr["back"]."</strong></span></a>
 		";
@@ -93,8 +91,20 @@ if (isset($arrHttp["encabezado"])){
 ?>
 </div>
 
-<div class="spacer">&#160;</div>
 </div>
+	<div class="breadcrumb">
+
+<?php
+echo $msgstr["assigncn"].": ".$arrHttp["base"]; 
+?>
+</div>
+
+	<div class="actions">
+
+</div>
+
+
+
 <div class="middle form">
 	<div class="formContent">
 <?
