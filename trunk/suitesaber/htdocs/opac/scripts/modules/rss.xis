@@ -1,6 +1,6 @@
 <IsisScript name="iah-services">
 
-<include>iah/iah-functions.xis</include>
+<include>opac/iah-functions.xis</include>
 
 <section name="iah-services">
 
