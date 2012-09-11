@@ -1,6 +1,6 @@
 '<script type="text/javascript">
     function Open_Facic(from,to) {
-        var theURL = "/cgi-bin/wxis.exe/iah/scripts/?IsisScript=busca_facic.xis&base=TITLE&nextAction=MOSTRA_FACIC&id=',v5011,'&lang=',v5021,'&from=" + from + "&to=" + to;
+        var theURL = "/cgi-bin/wxis.exe/opac/scripts/?IsisScript=busca_facic.xis&base=TITLE&nextAction=MOSTRA_FACIC&id=',v5011,'&lang=',v5021,'&from=" + from + "&to=" + to;
            janela = window.open(theURL,"mostra50","left=240,top=225,width=670,height=550,toolbar=no,resizable=yes,menubar=no,scrollbars=yes");
            janela.moveTo(0,0);
            janela.focus();
