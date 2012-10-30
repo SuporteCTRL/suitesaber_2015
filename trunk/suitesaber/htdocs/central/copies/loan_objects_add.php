@@ -212,7 +212,7 @@ function Send(){
 </script>
 <?php
 	echo "<body>
-	<form name=forma1 action=loan_objects_update.php onsubmit='return false'>\n";
+	<form name=forma1 method=post action=loan_objects_update.php onsubmit='return false'>\n";
 	if (isset($arrHttp["encabezado"])){
 		include("../common/institutional_info.php");
 		$encabezado="&encabezado=s";
