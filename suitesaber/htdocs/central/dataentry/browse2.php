@@ -2,7 +2,7 @@
 /**
  * @program:   ABCD - ABCD-Central - http://reddes.bvsaude.org/projects/abcd
  * @copyright:  Copyright (C) 2009 BIREME/PAHO/WHO - VLIR/UOS
- * @file:      browse.php
+ * @file:      browse2.php
  * @desc:      Browse database records
  * @author:    Guilda Ascencio
  * @since:     20091203
@@ -184,7 +184,7 @@ function EjecutarBusqueda(Accion){
 
         document.diccionario.target=""
         if (Indices=="Y") document.diccionario.Expresion.value=document.forma1.expre.value
-        document.diccionario.action="browse.php"
+        document.diccionario.action="browse2.php"
 		document.diccionario.campo.value=escape(t[0])
 		document.diccionario.prefijo.value=t[2]
 		document.diccionario.id.value=t[1]
@@ -216,12 +216,19 @@ function PresentarDiccionario(){
 	document.diccionario.submit()
 	msgwin.focus()
 }
+
+/** Confirmação antes de excluir 20121023 
+	Adicionada a linha do if confirm **/
 function Eliminar(Mfn){
+if (confirm("<?php echo $msgstr["delitem"] ?>"+" "+Mfn)==true){
+
 	xEliminar=""
 	document.eliminar.Mfn.value=Mfn
 	document.eliminar.submit()
+	
+	}
 }
-
+/** FIM Confirmação antes de excluir **/
 function Mostrar(Mfn){
 	msgwin=window.open("show.php?base=<?php echo $arrHttp["base"]?>&cipar=<?php echo $arrHttp["base"]?>.par&Mfn="+Mfn+"&encabezado=s&Opcion=editar","show","width=600,height=400,scrollbars, resizable")
 	msgwin.focus()
@@ -229,7 +236,7 @@ function Mostrar(Mfn){
 </script>
 <?php
 echo "<body>";
-include("../common/institutional_info.php");
+//include("../common/institutional_info.php");
 $encabezado="&encabezado=s";
 ?>
 <form name=forma1 onsubmit="javascript:return false">
@@ -277,7 +284,7 @@ if (file_exists($db_path."/menu.dat")){
 <?php
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 	echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/admin.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "<font color=white>&nbsp; &nbsp; Script: browse.php</font>";
+echo "<font color=white>&nbsp; &nbsp; Script: browse2.php</font>";
 ?>
 </div>
 		<div class="middle list">
@@ -424,7 +431,7 @@ echo "
  <form name=eliminar method=post action=eliminar_registro.php>
  <input type=hidden name=base value=".$arrHttp["base"].">
  <input type=hidden name=from value=".$arrHttp["from"].">
- <input type=hidden name=retorno value=browse.php?base=".$arrHttp["base"]."&modulo=loan>\n ";
+ <input type=hidden name=retorno value=browse2.php?base=".$arrHttp["base"]."&modulo=loan>\n ";
  if (isset($arrHttp["Expresion"])) echo "<input type=hidden name=Expresion value=".urlencode($arrHttp["Expresion"]).">\n";
  echo "<input type=hidden name=Mfn>\n";
  if (isset($arrHttp["encabezado"])) echo "<input type=hidden name=encabezado value=s>\n";
@@ -448,7 +455,7 @@ echo "</form>
 	<input type=hidden name=Expresion>
 	<input type=hidden name=Tabla value=browse>
 </form>
-<form name=browse method=post action=browse.php>
+<form name=browse method=post action=browse2.php>
 	<input type=hidden name=showdeleted>
 	<input type=hidden name=base value=".$arrHttp["base"].">
 	<input type=hidden name=cipar value=".$arrHttp["base"].".par>
@@ -469,7 +476,7 @@ echo "</form>
 	<input type=hidden name=modulo value=".$arrHttp["modulo"].".par>
     <input type=hidden name=Mfn>
     <input type=hidden name=Status>
-    <input type=hidden name=retorno value=browse.php>
+    <input type=hidden name=retorno value=browse2.php>
     <input type=hidden name=Opcion value=editar>
     <input type=hidden name=encabezado value=s>
 ";

@@ -216,12 +216,19 @@ function PresentarDiccionario(){
 	document.diccionario.submit()
 	msgwin.focus()
 }
+
+/** Confirmação antes de excluir 20121023 
+	Adicionada a linha do if confirm **/
 function Eliminar(Mfn){
+if (confirm("<?php echo $msgstr["delitem"] ?>"+" "+Mfn)==true){
+
 	xEliminar=""
 	document.eliminar.Mfn.value=Mfn
 	document.eliminar.submit()
+	
+	}
 }
-
+/** FIM Confirmação antes de excluir **/
 function Mostrar(Mfn){
 	msgwin=window.open("show.php?base=<?php echo $arrHttp["base"]?>&cipar=<?php echo $arrHttp["base"]?>.par&Mfn="+Mfn+"&encabezado=s&Opcion=editar","show","width=600,height=400,scrollbars, resizable")
 	msgwin.focus()
