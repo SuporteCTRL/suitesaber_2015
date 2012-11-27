@@ -16,3 +16,6 @@ Mais as extensões:
   * php5-tidy
   * php5-xsl
   * yaz
+
+
+A SUÍTE SABER É INCOMPATÍVEL COM IMPRESSORAS MATRICIAIS.
