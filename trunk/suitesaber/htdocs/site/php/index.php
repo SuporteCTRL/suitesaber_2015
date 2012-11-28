@@ -60,8 +60,8 @@
         </div>
         <div class="copyright">
             BVS Site <?= VERSION ?> &copy; <a href="http://www.bireme.br/" target="_blank">BIREME/OPS/OMS</a>
-            <a href="http://validator.w3.org/check?uri=http://<?=$def["SERVERNAME"].$def["DIRECTORY"].$_SERVER["PHP_SELF"]?>" target="w3c"><img src="../image/common/valid-xhtml10.png" alt="Valid XHTML 1.0 Transitional" border="0"/></a>
-            <a href="http://jigsaw.w3.org/css-validator/validator?uri=http://<?=$def["SERVERNAME"].$def["DIRECTORY"].$_SERVER["PHP_SELF"]?>" target="w3c"><img src="../image/common/valid-css.png" alt="Valid CSS" border="0"/></a>
+            <a href="http://validator.w3.org/check?uri=http://<?=$def["SERVERNAME"].$def["DIRECTORY"].$_SERVER["PHP_SELF"]?>" target="w3c"><img src="../php/image/common/valid-xhtml10.png" alt="Valid XHTML 1.0 Transitional" border="0"/></a>
+            <a href="http://jigsaw.w3.org/css-validator/validator?uri=http://<?=$def["SERVERNAME"].$def["DIRECTORY"].$_SERVER["PHP_SELF"]?>" target="w3c"><img src="../php/image/common/valid-css.png" alt="Valid CSS" border="0"/></a>
         </div>
         <? include($DirNameLocal. "./foot.php");  ?>
     </body>
