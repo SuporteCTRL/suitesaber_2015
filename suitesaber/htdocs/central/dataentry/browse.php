@@ -160,7 +160,7 @@ function EjecutarBusqueda(Accion){
 			document.browse.from.value=1
 			break
 		case "previous":
-               desde=desde-29
+               desde=desde-60
                if (desde<=0) desde=1
                document.diccionario.from.value=desde
                document.browse.from.value=desde
