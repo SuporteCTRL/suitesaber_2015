@@ -57,6 +57,20 @@ if (isset($arrHttp["Expresion"]) and $arrHttp["Expresion"]!=""){
   	$Expresion="";
 }
 
+// SE LEE EL MÁXIMO MFN DE LA BASE DE DATOS
+$IsisScript=$xWxis."administrar.xis";
+$query = "&base=".$arrHttp["base"] . "&cipar=$db_path"."par/".$arrHttp["base"].".par&Opcion=status";
+include("../common/wxis_llamar.php");
+$ix=-1;
+foreach($contenido as $linea) {
+	$ix++;
+	if ($ix>1) {
+		if (trim($linea)!=""){
+	   		$a=split(":",$linea);
+	   		$tag[$a[0]]=$a[1];
+	  	}
+	}
+}
 
 include("../common/header.php");
 ?>
@@ -208,7 +222,7 @@ function EnviarForma(vp){
 function Buscar(){
 	base='<?php echo $arrHttp["base"]?>'
 	cipar=base+".par"
-	Url="../dataentry/buscar.php?Opcion=formab&prologo=prologoact&Target=s&Tabla=imprimir&base="+base+"&cipar="+cipar
+	Url="/central/dataentry/buscar.php?Opcion=formab&prologo=prologoact&Target=s&Tabla=imprimir&base="+base+"&cipar="+cipar
   	msgwin=window.open(Url,"Buscar","menu=no, resizable,scrollbars,width=750,height=400")
 	msgwin.focus()
 }

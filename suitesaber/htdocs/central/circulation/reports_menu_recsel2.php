@@ -57,6 +57,20 @@ if (isset($arrHttp["Expresion"]) and $arrHttp["Expresion"]!=""){
   	$Expresion="";
 }
 
+// SE LEE EL MÁXIMO MFN DE LA BASE DE DATOS
+$IsisScript=$xWxis."administrar.xis";
+$query = "&base=".$arrHttp["base"] . "&cipar=$db_path"."par/".$arrHttp["base"].".par&Opcion=status";
+include("../common/wxis_llamar.php");
+$ix=-1;
+foreach($contenido as $linea) {
+	$ix++;
+	if ($ix>1) {
+		if (trim($linea)!=""){
+	   		$a=split(":",$linea);
+	   		$tag[$a[0]]=$a[1];
+	  	}
+	}
+}
 
 include("../common/header.php");
 ?>
@@ -208,7 +222,7 @@ function EnviarForma(vp){
 function Buscar(){
 	base='<?php echo $arrHttp["base"]?>'
 	cipar=base+".par"
-	Url="../dataentry/buscar.php?Opcion=formab&prologo=prologoact&Target=s&Tabla=imprimir&base="+base+"&cipar="+cipar
+	Url="/central/dataentry/buscar.php?Opcion=formab&prologo=prologoact&Target=s&Tabla=imprimir&base="+base+"&cipar="+cipar
   	msgwin=window.open(Url,"Buscar","menu=no, resizable,scrollbars,width=750,height=400")
 	msgwin.focus()
 }
@@ -277,8 +291,10 @@ if (isset($arrHttp["encabezado"])) echo "<input type=hidden name=encabezado valu
 		<td  align=center colspan=2><strong><?php echo $msgstr["r_mfnr"]?></strong>: &nbsp; &nbsp; &nbsp;
 		<?php echo $msgstr["r_desde"]?>: <input type=text name=Mfn size=10>&nbsp; &nbsp; &nbsp; &nbsp;<?php echo $msgstr["r_hasta"]?>:<input type=text name=to size=10>
 		 &nbsp; &nbsp; &nbsp; <a href=javascript:BorrarRango() class=boton><?php echo $msgstr["borrar"]?></a>
-		<script> if (top.window.frames.length>0)
-			document.writeln(" &nbsp; &nbsp; &nbsp; (<?php echo $msgstr["maxmfn"]?>: "+top.maxmfn+")")</script></td>
+
+	 &nbsp; &nbsp; &nbsp; &nbsp;<?php echo $msgstr["maxmfn"].": ".$tag["MAXMFN"]?>
+			
+	</td>
 	<tr>
 		<td  align=center colspan=2><strong><?php echo $msgstr["r_busqueda"]?></strong>: &nbsp;
 <?php
