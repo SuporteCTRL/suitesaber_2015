@@ -240,31 +240,15 @@ if (isset($arrHttp["encabezado"])){	//include("../common/institutional_info.php
 }
 ?>
 
-<div class="sectionInfo">
-<div class="language">
-<?php
-	$ayuda="pft.html";
-	if (isset($arrHttp["encabezado"])){			echo "<a href=\"reports_menu.php?$encabezado\" class=\"defaultButton backButton\">
 
-		<span><strong>".$msgstr["back"]."</strong></span></a>
-			";
-	}
-?>
-</div>
-</div>
-	<div class="breadcrumb"><h3>
-<?php echo $parm[1]?>
-	</h3></div>
-
-
-<div class="//helper">
+<div class="helper">
 <a href=../documentacion/ayuda.php?help=<?php echo $_SESSION["lang"]?>/circulation/reports.html target=_blank><?php echo $msgstr["help"]?></a>&nbsp &nbsp;
 <?php
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 	echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/circulation/reports.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo " Script: reports_menu_recsel.php";
+echo "&nbsp; Script: reports_menu_recsel2.php";
 ?>
-</font>
+
 	</div>
 <form name=forma1 method=get action=../dataentry/imprimir_g.php onsubmit="Javascript:return false" target=VistaPrevia>
 <input type=hidden name=base value=<?php echo $arrHttp["base"]?>>
@@ -292,7 +276,7 @@ if (isset($arrHttp["encabezado"])) echo "<input type=hidden name=encabezado valu
 	<tr>
 		<td  align=center colspan=2><strong><?php echo $msgstr["r_mfnr"]?></strong>: &nbsp; &nbsp; &nbsp;
 		<?php echo $msgstr["r_desde"]?>: <input type=text name=Mfn size=10>&nbsp; &nbsp; &nbsp; &nbsp;<?php echo $msgstr["r_hasta"]?>:<input type=text name=to size=10>
-		 &nbsp; &nbsp; &nbsp; <a  id=botoes  href=javascript:BorrarRango() class=boton><?php echo $msgstr["borrar"]?></a>
+		 &nbsp; &nbsp; &nbsp; <a href=javascript:BorrarRango() class=boton><?php echo $msgstr["borrar"]?></a>
 		<script> if (top.window.frames.length>0)
 			document.writeln(" &nbsp; &nbsp; &nbsp; (<?php echo $msgstr["maxmfn"]?>: "+top.maxmfn+")")</script></td>
 	<tr>
@@ -306,7 +290,7 @@ else
 		$fp = file($db_path.$arrHttp["base"]."/pfts/".$lang_db."/search_expr.tab");
 if ($fp){
 	echo "&nbsp; &nbsp; &nbsp; &nbsp;".$msgstr["copysearch"].":";
-	echo "<select class=styled-select name=Expr  onChange=CopiarExpresion()>
+	echo "<select name=Expr  onChange=CopiarExpresion()>
     		<option value=''>
     ";
 	foreach ($fp as $value){
@@ -320,12 +304,12 @@ if ($fp){
 }
 ?>
 			</select>&nbsp; &nbsp;
-			<a  id=botoes  href=javascript:Buscar()><?php echo $msgstr["new"]?></a>
+			<a href=javascript:Buscar()><?php echo $msgstr["new"]?></a>
 			<br>
 			<textarea rows=2 cols=100 name=Expresion><?php if ($Expresion!="") echo $Expresion?></textarea>
-			<a  id=botoes  href=javascript:BorrarExpresion() class=boton><?php echo $msgstr["borrar"]?></a>
+			<a href=javascript:BorrarExpresion() class=boton><?php echo $msgstr["borrar"]?></a>
 <?php
-if (isset($_SESSION["permiso"]["CENTRAL_ALL"]) or isset($_SESSION["permiso"]["CENTRAL_SAVEXPR"])){	echo "&nbsp; <a  id=botoes  href=\"javascript:toggleLayer('savesearch')\"> <u><strong>". $msgstr["savesearch"]."</strong></u></a>";
+if (isset($_SESSION["permiso"]["CENTRAL_ALL"]) or isset($_SESSION["permiso"]["CENTRAL_SAVEXPR"])){	echo "&nbsp; <A HREF=\"javascript:toggleLayer('savesearch')\"> <u><strong>". $msgstr["savesearch"]."</strong></u></a>";
 	echo "<div id=savesearch>".$msgstr["r_desc"].": <input type=text name=Descripcion size=40>
      	&nbsp &nbsp <input type=button value=\"". $msgstr["savesearch"]."\" onclick=GuardarBusqueda()>
 		</div>\n";}
@@ -335,7 +319,7 @@ if (isset($_SESSION["permiso"]["CENTRAL_ALL"]) or isset($_SESSION["permiso"]["CE
 		<td colspan=2><strong><?php echo $msgstr["sortkey"]?></strong>: &nbsp;
 		<input type=text name=sortkey size=70> &nbsp; &nbsp; &nbsp; <?php echo $msgstr["sortkeycopy"]?>
 		&nbsp; &nbsp;
-    		<select  class=styled-select name=sort  onChange=CopySortKey()>
+    		<select name=sort  onChange=CopySortKey()>
     		<option value=''>
 <?php
 unset($fp);
@@ -356,7 +340,7 @@ if ($fp){
 
 echo "			</select>";
 if (isset($_SESSION["permiso"]["CENTRAL_ALL"]) or isset($_SESSION["permiso"]["CENTRAL_EDSORT"])){
- echo "&nbsp; &nbsp;<a  id=botoes  href=javascript:CreateSortKey()>".$msgstr["sortkeycreate"]."</a>";
+ echo "&nbsp; &nbsp;<a href=javascript:CreateSortKey()>".$msgstr["sortkeycreate"]."</a>";
  }
 ?>
 		</td>
@@ -364,11 +348,11 @@ if (isset($_SESSION["permiso"]["CENTRAL_ALL"]) or isset($_SESSION["permiso"]["CE
 	<tr>
 		<td colspan=2 width=100%>
 			<strong><?php echo $msgstr["sendto"]?></strong>:
-			<a id=botoes href=javascript:EnviarForma('WP')><?php echo $msgstr["word"]?></a>
-			&nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;
-			<a id=botoes href=javascript:EnviarForma('TB')><?php echo $msgstr["wsproc"]?></a>
-			&nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;
-			<a id=botoes href=javascript:EnviarForma('P')><?php echo $msgstr["vistap"]?></a>
+			<a href=javascript:EnviarForma('WP')><?php echo $msgstr["word"]?></a>
+			&nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp;
+			<a href=javascript:EnviarForma('TB')><?php echo $msgstr["wsproc"]?></a>
+			&nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp;
+			<a href=javascript:EnviarForma('P')><?php echo $msgstr["vistap"]?></a>
 
 		</td>
 </table>
@@ -382,7 +366,7 @@ if (isset($_SESSION["permiso"]["CENTRAL_ALL"]) or isset($_SESSION["permiso"]["CE
 	<input type=hidden name=Expresion value="">
 	<input type=hidden name=Descripcion value="">
 </form>	<p>
-<form name=sortkey method=post action=../dbadmin/sortkey_edit.php target=sortkey>
+<form name=sortkey method=post action=../dataentry/sortkey_edit.php target=sortkey>
 	<input type=hidden name=base value=<?php echo $arrHttp["base"]?>>
 	<input type=hidden name=encabezado value=s>
 </form>
