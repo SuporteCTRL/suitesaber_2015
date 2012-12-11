@@ -742,6 +742,28 @@ echo "</table>\n";
 }
 if (isset($_SESSION["permiso"]["CENTRAL_ALL"]) or isset($_SESSION["permiso"]["CENTRAL_EDPFT"]) or isset($_SESSION["permiso"]["CENTRAL_MODIFYDB"])){
 ?>
+
+<?php
+// SE LEE EL MÁXIMO MFN DE LA BASE DE DATOS
+$IsisScript=$xWxis."administrar.xis";
+$query = "&base=".$arrHttp["base"] . "&cipar=$db_path"."par/".$arrHttp["base"].".par&Opcion=status";
+include("../common/wxis_llamar.php");
+$ix=-1;
+foreach($contenido as $linea) {
+	$ix++;
+	if ($ix>1) {
+		if (trim($linea)!=""){
+	   		$a=split(":",$linea);
+	   		$tag[$a[0]]=$a[1];
+	  	}
+	}
+}
+
+
+
+?>
+
+
 <!-- CREATE A FORMAT -->
 <table border=0>
 	<tr>
@@ -833,6 +855,7 @@ if (isset($_SESSION["permiso"]["CENTRAL_ALL"]) or isset($_SESSION["permiso"]["CE
 	echo "<div id=\"createformat\"></div>";
 }
 if ($arrHttp["Opcion"]!="new"){?>
+
 <table>
 	<tr>
 		<td>
@@ -841,13 +864,16 @@ if ($arrHttp["Opcion"]!="new"){?>
     		<table>
 		<!--<td bgcolor="#dddddd"><?php echo $msgstr["r_recsel"]?></td>-->
 	<tr>
-		<td><strong><?php echo $msgstr["r_mfnr"]?></strong>:<br /> 
+		<td><strong><?php echo $msgstr["r_mfnr"]?></strong>&nbsp;(<?php echo $msgstr["maxmfn"].": ".$tag["MAXMFN"]?>):<br /> 
 		<?php echo $msgstr["r_desde"]?>: <input id="form" type="text" name="Mfn" size="5"><?php echo $msgstr["r_hasta"]?>:<input type="text"  id="form" name="to" size="5">
 	
 		 <a id="tag" href="javascript:BorrarRango()"><?php echo $msgstr["borrar"]?></a>
 		 	
-		<script> if (top.window.frames.length>0)
-			document.writeln(" &nbsp; (<?php echo $msgstr["maxmfn"]?>: "+top.maxmfn+")")</script></td>
+			
+			
+	</td> 	
+		 	
+
 	<tr>
 		<td><strong><?php echo $msgstr["r_busqueda"]?></strong>: <br />
 <?php
