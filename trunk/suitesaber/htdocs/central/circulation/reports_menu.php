@@ -185,8 +185,7 @@ function toggleLayer( whichLayer ){
 			//	document.forma1.nombre.value=""
 			//	document.forma1.descripcion.value=""
 			}
-			break
-			';
+			break';
 }
 ?>
 		case "useexformat":
@@ -313,10 +312,9 @@ if (isset($arrHttp["encabezado"])){	include("../common/institutional_info.php")
 	<div class="breadcrumb"><h3>
 <?php echo $msgstr["pft"].": ".$arrHttp["base"]?>
 </h3></div>
-
 	<div class="actions">
 <?php
-	if (isset($arrHttp["encabezado"])){		echo "<a href=\"../common/inicio.php?reinicio=s&modulo=loan&base=".$arrHttp["base"]."$encabezado\" class=\"defaultButton backButton\">
+	if (isset($arrHttp["encabezado"])){		echo "<br /><a href=\"../common/inicio.php?reinicio=s&modulo=loan&base=".$arrHttp["base"]."$encabezado\" class=\"defaultButton\">
 
 		<span><strong>".$msgstr["back"]."</strong></span></a>
 			";	}
@@ -367,7 +365,7 @@ echo "Script: reports_menu.php";
 </div>
 </div>
 <div style="position:relative;width:80%;background:#fff;float:right;height:580px;">
-<iframe style="width:100%;height:100%;" src="#" id="statist" name="statist" frameborder="0" >
+<iframe style="width:100%; height:100%;" src="#" id="statist" name="statist" frameborder="0" >
 </div>
 </center>
 <?php
