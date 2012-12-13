@@ -1,25 +1,25 @@
 '<!-- v5001=',v5001,'-->',
 
  '<input type="hidden" name="IsisScript" value="',v5000^s,'">'/
- '<!--input type="hidden" name="environment" value="',v5000,'"-->'/
+ '<input type="hidden" name="environment" value="',v5000,'">'/
 (|<input type="hidden" name="baseResubmit" value="|v5004|">|/)
-('<!--input type="hidden" name="avaibleFormats" value="',v5005,'"-->'/)
- '<!--input type="hidden" name="apperance" value="',v5006,'"-->'/
-('<!--input type="hidden" name="helpInfo" value="',v5010,'"-->'/)
-('<!--input type="hidden" name="gizmoDecod" value="',v5012,'"-->'/)
- '<!--input type="hidden" name="avaibleForms" value="',v5014,'"-->'/
- '<!--input type="hidden" name="logoImage" value="',v5030,'"-->'/
- '<!--input type="hidden" name="logoURL" value="',v5031,'"-->'/
- '<!--input type="hidden" name="headerImage" value="',v5040,'"-->'/
- '<!--input type="hidden" name="headerURL" value="',v5041,'"-->'/
+('<input type="hidden" name="avaibleFormats" value="',v5005,'">'/)
+ '<input type="hidden" name="apperance" value="',v5006,'">'/
+('<input type="hidden" name="helpInfo" value="',v5010,'">'/)
+('<input type="hidden" name="gizmoDecod" value="',v5012,'">'/)
+ '<input type="hidden" name="avaibleForms" value="',v5014,'">'/
+ '<input type="hidden" name="logoImage" value="',v5030,'">'/
+ '<input type="hidden" name="logoURL" value="',v5031,'">'/
+ '<input type="hidden" name="headerImage" value="',v5040,'">'/
+ '<input type="hidden" name="headerURL" value="',v5041,'">'/
  '<input type="hidden" name="form" value="',v6000,'">'/
 
 
 ,if v5001^s <> 'CONFIG' then,
-    '<!--input type="hidden" name="pathImages" value="',v5002,'"-->'/
-    '<!--input type="hidden" name="navBar" value="',v5007,'"-->'/
-    '<!--input type="hidden" name="hits" value="',v5008,'"-->'/
-    '<!--input type="hidden" name="format" value="',v5009,'"-->'/
+    '<input type="hidden" name="pathImages" value="',v5002,'">'/
+    '<input type="hidden" name="navBar" value="',v5007,'">'/
+    '<input type="hidden" name="hits" value="',v5008,'">'/
+    '<input type="hidden" name="format" value="',v5009,'">'/
     '<input type="hidden" name="lang" value="',v5021,'">'/
 ,fi,
 
@@ -69,7 +69,7 @@
  |<input type="hidden" name="apldef" value="|v5000^f|">|/
  |<input type="hidden" name="limit" value="|v7000|">|/
  |<input type="hidden" name="index" value="|v5015|">|/
- |<!--input type="hidden" name="baseFeatures" value="|v5018|"-->|/
+ |<input type="hidden" name="baseFeatures" value="|v5018|">|/
  |<input type="hidden" name="stopword" value="|v5019|">|/
  |<input type="hidden" name="photocopy" value="|v5114|">|/
  |<input type="hidden" name="logDatabase" value="|v5020|">|/

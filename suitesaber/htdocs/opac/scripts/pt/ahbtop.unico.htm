@@ -65,7 +65,7 @@
         return false;
     }
     function OpenNewfacic(id) {
-        var theURL = "/cgi-bin/wxis.exe/opac/scripts/?IsisScript=busca_facic.xis&base=TITLE&id=" + id + "&lang=[pft]v5021[/pft]&pathLibrary=[pft]v5050[/pft]";
+        var theURL = "/cgi-bin/wxis.exe/iah/scripts/?IsisScript=busca_facic.xis&base=TITLE&id=" + id + "&lang=[pft]v5021[/pft]";
         janela=window.open(theURL,"facic","left=240,top=225,width=670,height=550,toolbar=no,resizable=yes,menubar=no,scrollbars=yes");
         janela.moveTo(0,0);
         janela.focus();
@@ -81,18 +81,88 @@
 	}
 </script>
 
-<form action="[pft]getenv('SCRIPT_NAME')v5000^d,'scripts/'[/pft]" method="POST" name="search" onsubmit="return isFormComplete()">
+<form action="[pft]getenv('SCRIPT_NAME')v5000^d,'scripts/'[/pft]" method="GET" name="search" onsubmit="return isFormComplete()">
     [pft]@AHHIDD.PFT[/pft]
 
 
     <input type="hidden" name="nextAction" value="refine/resubmit" />
 
     <div class="contain">
+        <div class="barNavTop">
+            [pft]if val(v1002) = 0 then[/pft]
+                &nbsp;
+            [pft]else[/pft]
+                    <input type="button" class="defaultButton submit" value="sua seleção" name="yselect" onclick="javascript:void(AnySelected())" />
+                    <input type="submit" class="defaultButton submit" name="list.x" value="enviar resultado" />
+                    <input type="submit" class="defaultButton submit" name="new search.x" value="nova pesquisa" />
+                    <input type="submit" class="defaultButton submit" name="config.x" value="configurar" />
+                    <input type="button" class="defaultButton submit" onclick=window.location="#bottom" value="fim da página" />
 
+            [pft]fi[/pft]            
+        </div>
 
+        <div class="rowResult">
+            <div class="columnA">Base de dados:</div>
+            <div class="columnB"><b>[pft]v5003^*[/pft]</b></div>
+        </div>
 
+        <div class="rowResult">
+            <div class="columnA">Pesquisar:</div>
+            <div class="columnB"><b>
+                        [pft]
+                        if p(v8000) and v5001^* <>  'refine/resubmit' then,
+                            v8000,
+                        else,
+                            ,if p(v6102) then
+                                 v6102 ' [',v6100^p,']'
+                            ,else,
+                                ,if v6000='F' then,
+                                     replace(v6002,' ',s('&nbsp;'mpu,v6001,mpl'&nbsp;'))
+                                ,else,
+                                    ,(if p(v6002) then if iocc > 1 then '&nbsp;'v6001'&nbsp;'fi,v6002,' [',v6003^p,']' fi),
+                                ,fi,
+                            ,fi,
+                        fi,
+                        [/pft]
+                        </b>
+                        [pft]
+                            if v5018 : 'RSS' then
+                                '<a href="/webservices/rss.php?collection='v5003'&expression='replace(v6010,' ','+')'&label='v8000'">'
+                                    '<img src="'v5002'rss.gif" border="0" class="padout" />'
+                                '</a>'
+                            fi
+                        [/pft]                                    
+            </div>
+        </div>
+
+        <div class="rowResult">
+            <div class="columnA">Referências encontradas:</div>
+            <div class="columnB">
+                        <b>[pft]v1002[/pft]</b>&nbsp;&nbsp;
+                        [pft]if val(v1002) > 0 then '[<a href="#refine">Refinar a pesquisa</a>]' fi[/pft]
+            </div>
+        </div>
+
+                [pft]if val(v1002) > 0 then[/pft]
+        <div class="rowResult">
+            <div class="columnA">Mostrando:</div>
+            <div class="columnB">
+                        <b>[pft]v1031,' .. ',v1032[/pft]</b>&nbsp;&nbsp;
+
+                        [pft]
+                            /* procedimento que marca o texto a ser apresentado como label ^L para as opções de formato de apresentação   */
+                            proc('a9021!',replace(replace(v5006^a[1],' ',''),',','!a9021!')'!'),
+                            proc('a9022!',(if v9021 = v5021[1] then f(iocc,1,0) fi),'!'),
+
+                            proc('d5005',('a5005!',replace(v5005,s('^'v9022[1]),'^L'),'!')),
+                        [/pft]
+
+                        no formato [pft]'[<b>'(if  v5009[1] = v5005^n then v5005^L fi)'</b>]'[/pft]
+            </div>
+        </div>
+                [pft]fi[/pft]
     </div>
 
-    <!-- monta navegacao entre as paginas do resultado  // Deixar comentado para não repetir a navegação das páginas
+    <!-- monta navegacao entre as paginas do resultado -->
     [pft]if val(v1002) > 0 then @NAVPAGE.PFT fi[/pft]
 
