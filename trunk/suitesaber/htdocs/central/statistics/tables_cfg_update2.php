@@ -21,28 +21,19 @@ if (isset($arrHttp["encabezado"])){//	include("../common/institutional_info.php
 }
 echo "<form name=stats method=post>";
 echo "<div class=\"sectionInfo\">
-	<div class=\"breadcrumb\">".$msgstr["stats_conf"].": ".$arrHttp["base"]."</div>
-	<div class=\"actions\">";
+";
 if (isset($arrHttp["from"]) and $arrHttp["from"]=="statistics"){
 	$script="tables_generate.php";
 }else{
 	$script="../dbadmin/menu_modificardb.php";
 }
-	echo "<a href=\"$script?base=".$arrHttp["base"]."$encabezado\" class=\"defaultButton backButton\">";
-echo "<img src=\"../images/defaultButton_iconBorder.gif\" />
-	<span><strong>".$msgstr["back"]."</strong></span></a>
-	";
+
 ?>
-</div><div class="spacer">&#160;</div></div>
-<div class="helper">
-<a href=../documentacion/ayuda.php?help=<?php echo $_SESSION["lang"]?>/stats_tables_cfg.html target=_blank><?php echo $msgstr["help"]?></a>&nbsp &nbsp;
-<?php
-if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
-	echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/stats_tables_cfg.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "<font color=white>&nbsp; &nbsp; Script: tables_cfg_update.php";
-?>
-</font>
-	</div>
+</div>
+</div>
+
+
+
 <div class="middle form">
 	<div class="formContent">
 <?php
@@ -51,8 +42,10 @@ $fp=fopen($file,"w");
 $vc=explode("\n",$arrHttp["ValorCapturado"]);
 foreach ($vc as $value){	$r=fwrite($fp,$value."\n");}
 $r=fclose($fp);
-echo "<h4>". $arrHttp["base"]."/".$_SESSION["lang"]."/def/tabs.cfg"." ".$msgstr["updated"]."</h4>" ;
+echo "<h4>". $arrHttp["base"]."/".$_SESSION["lang"]."/def/tabs.cfg"." <br /><br /> ".$msgstr["updated"]."!</h4>" ;
 ?>
+
+<a id="botoes"  href="<?php echo"$script?base=".$arrHttp["base"]."$encabezado";?>" target="_top" >Recarregue a página</a>
 	</div>
 </div>
 </form>
