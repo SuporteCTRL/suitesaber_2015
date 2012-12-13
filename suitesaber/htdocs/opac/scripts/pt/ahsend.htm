@@ -74,7 +74,7 @@
         }
     }
 </script>
-<form action="[pft]getenv('SCRIPT_NAME')v5000^d,'scripts/'[/pft]" method="POST" name="Option" onSubmit="return validForm()">
+<form action="[pft]getenv('SCRIPT_NAME')v5000^d,'scripts/'[/pft]" method="POST" name="Option" onSubmit="return validForm()" target="_blank">
     [pft]@AHHIDD.PFT[/pft]
 
     <input type="hidden" name="nextAction" value="list" />
@@ -84,7 +84,7 @@
 
         <div class="barNav">
             <div class="leftCol">&nbsp;</div>
-            <div class="centerCol"><b>enviar resultado</b></div>
+            <div class="centerCol"><b>Enviar resultado</b></div>
             <div class="rightCol">&nbsp;</div>
         </div>
         <div class="row">&nbsp;</div>
@@ -95,23 +95,24 @@
 
         <div class="celRight">
             <div class="rowHigh">
-                    <input type="Radio" name="listOption" value="list_all" [pft]if a(v6210) then 'checked' fi[/pft] />
-                Todas as referências ([pft]v1002[/pft])
+                    <input type="Radio" name="listOption" value="list_all" id="list_all" [pft]if a(v6210) then 'checked' fi[/pft] />
+                <label for="list_all">Todas as referências ([pft]v1002[/pft])</label>
             </div>
             <div class="rowHigh">
-                    <input type="Radio" name="listOption" value="list_hits" />
-                Intervalo de referências de
+                    <input type="Radio" name="listOption" value="list_hits" id="list_hits" />
+                <label for="list_hits">Intervalo de referências de</label>
                     <input type="text" name="listHit" maxlength="6" size="4" onFocus="document.Option.listOption[1].checked = true" />
                 <span class="labl">&nbsp;-&nbsp;</span>
                 <input type="text" name="listHit" maxlength="6" size="4" onFocus="document.Option.listOption[1].checked = true" />
             </div>
             <div class="rowHigh">
                     [pft]if p(v6210) then[/pft]
-                        <input type="Radio" name="listOption" value="list_selected" checked />
+                        <input type="Radio" name="listOption" value="list_selected" id="list_selected" checked />
+
+                <label for="list_selected">Referências selecionadas [pft]if p(v6210) then '('f(nocc(v6210),1,0)')' fi[/pft]</label>
                     [pft]else[/pft]
-                        &nbsp;<img src="[pft]v5002[/pft]radio.gif" border="0" />
+                        <!--Nenhuma referência selecionada.-->
                     [pft]fi[/pft]
-                Referências selecionadas [pft]if p(v6210) then '('f(nocc(v6210),1,0)')' fi[/pft]
             </div>
         </div>
 
@@ -121,14 +122,16 @@
 
     <div class="contBorder">
 
-        <div class="celLeft"><b>Opções de envio</b></div>
+        <div class="celLeft"><b>Opções de exportação</b></div>
 
         <div class="celRight">
             <div class="rowHigh">
-                <input type="Radio" name="sendOption" value="print" checked />&nbsp;enviar para impressão
+                <input type="Radio" name="sendOption" value="print" id="print" checked />
+                     <label for="print">Enviar para impressão</label>
             </div>
             <div class="rowHigh">
-                <input type="Radio" name="sendOption" value="save" />&nbsp;enviar para seu computador no formato&nbsp;
+                <input type="Radio" name="sendOption" value="save" id="save" />
+                     <label for="save">Enviar para seu computador no formato</label>
             <select name="saveFileType" onFocus="document.Option.sendOption[1].checked = true">
             [pft]if v5018^f : 'XML' then[/pft]
                     <option value="save-xml">XML</option>
@@ -143,24 +146,42 @@
 
             [pft]if v5018^e = 'ON' then[/pft]
             <div class="rowHigh">
-                <input type="Radio" name="sendOption" value="e-mail" />&nbsp;enviar para o e-mail:&nbsp;&nbsp;
+                <input type="Radio" name="sendOption" value="e-mail" />&nbsp;Enviar para o e-mail:&nbsp;&nbsp;
                 <input type="text" name="sendToEmail" size="35" onFocus="document.Option.sendOption[2].checked = true" />
             </div>
             [pft]else[/pft]
             <div class="rowHigh">&nbsp;</div>
             [pft]fi[/pft]
         </div>
-
     </div>
 
-    <div class="row">&nbsp;</div>
+    <div class="rowHigh">&nbsp;</div>
+    <div class="contBorder">
 
-            <div class="rowAction">
+        <div class="celLeft"><b>Formato de apresentação</b></div>
+
+        <div class="celRight">
+           <div class="rowHigh">
+                [pft]if v5005^n <> 'DEFAULT' and v5005^t <> 'EXPORT' then[/pft]
+                        <input type="radio" name="format" value="[pft]v5005[1]^n[/pft]" id="[1]" checked />
+                             <label for="[1]">[pft]v5005[1]^1[/pft]</label>
+           </div>
+           <div class="rowHigh">
+                        <input type="radio" name="format" value="[pft]v5005[2]^n[/pft]"  id="[2]" />
+                             <label for="[2]">[pft]v5005[2]^1[/pft]</label>
+                [pft]else[/pft]
+                    [pft]v5005^p[/pft]
+                    <input type="hidden" name="format" value="[pft]v5009[/pft]" />
+                [pft]fi[/pft]
+           </div>
+        </div> 
+    </div>
+           <div class="rowAction">
                 <div class="leftCol">&nbsp;</div>
                 <div class="centerCol">
-                    <input type="button" class="defaultButton submit" value="cancelar" name="cancel" onclick="javascript:history.back()" />
+                    <input type="button" class="defaultButton submit" value="&larr; Voltar" name="cancel" onclick="javascript:history.back()" />
 
-                    <input type="submit" class="defaultButton submit" value="enviar" />
+                    <input type="submit" class="defaultButton submit" value="Enviar &rarr;" />
             </div>
                 <div class="rightCol">&nbsp;</div>                
             </div>

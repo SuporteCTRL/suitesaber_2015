@@ -92,22 +92,24 @@
             [pft]if val(v1002) = 0 then[/pft]
                 &nbsp;
             [pft]else[/pft]
-                    <input type="button" class="defaultButton submit" value="sua seleção" name="yselect" onclick="javascript:void(AnySelected())" />
-                    <input type="submit" class="defaultButton submit" name="list.x" value="enviar resultado" />
-                    <input type="submit" class="defaultButton submit" name="new search.x" value="nova pesquisa" />
-                    <input type="submit" class="defaultButton submit" name="config.x" value="configurar" />
-                    <input type="button" class="defaultButton submit" onclick=window.location="#bottom" value="fim da página" />
+                    <input type="button" class="defaultButton submit" value="Imprimir seleção" name="yselect" onclick="javascript:void(AnySelected())" />
+                    <input type="submit" class="defaultButton submit" name="list.x" value="Enviar resultado" />
+                    <input type="submit" class="defaultButton submit" name="new search.x" value="Nova pesquisa" />
+                    <!--<input type="submit" class="defaultButton submit" name="config.x" value="Configurar" />-->
+                    <input type="button" class="defaultButton submit" onclick=window.location="#bottom" value="Fim da página" />
+               [pft]fi[/pft] 
 
-            [pft]fi[/pft]            
         </div>
-
+            [pft]if val(v1002) = 0 then[/pft]
+                <br />
+            [pft]fi[/pft] 
         <div class="rowResult">
             <div class="columnA">Base de dados:</div>
             <div class="columnB"><b>[pft]v5003^*[/pft]</b></div>
         </div>
 
         <div class="rowResult">
-            <div class="columnA">Pesquisar:</div>
+            <div class="columnA">Pesquisa por:</div>
             <div class="columnB"><b>
                         [pft]
                         if p(v8000) and v5001^* <>  'refine/resubmit' then,
@@ -144,6 +146,7 @@
         </div>
 
                 [pft]if val(v1002) > 0 then[/pft]
+
         <div class="rowResult">
             <div class="columnA">Mostrando:</div>
             <div class="columnB">
@@ -157,19 +160,12 @@
                             proc('d5005',('a5005!',replace(v5005,s('^'v9022[1]),'^L'),'!')),
                         [/pft]
 
-                        no formato [pft]'[<b>'(if  v5009[1] = v5005^n then v5005^L fi)'</b>]'[/pft]
+                        <!-- no formato [pft]'[<b>'(if  v5009[1] = v5005^n then v5005^L fi)'</b>]'[/pft] -->
             </div>
         </div>
                 [pft]fi[/pft]
     </div>
-<table class="lista">
-    <!-- monta navegacao entre as paginas do resultado -->
-    
- <!--[if !IE]><!-->   
-    [pft]if val(v1002) > 0 then @NAVPAGE.PFT fi[/pft]
-<!--[if IE]>
-    [pft]if val(v1002) > 0 then @NAVPAGE_IE.PFT fi[/pft]
-<![endif]-->
 
- [pft],@cabecalho.pft,[/pft]   
+    <!-- monta navegacao entre as paginas do resultado  // Deixar comentado para não repetir a os números das páginas
+    [pft]if val(v1002) > 0 then @NAVPAGE.PFT fi[/pft]
 

@@ -25,6 +25,15 @@
                 ,fi,
 
             '</div>
-        </div>'
+
+        </div>
+        <!-- Rótulo das colunas -->
+
+	',@cabecalho.pft,'
+
+
+'
+
+
 
 
