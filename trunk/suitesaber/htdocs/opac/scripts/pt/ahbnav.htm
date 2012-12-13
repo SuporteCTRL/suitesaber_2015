@@ -1,26 +1,21 @@
-
+          
 [pft]if s(mpu,v5007,mpl) = 'ON' then[/pft]
+<!-- Rótulo das colunas: navpage.pft -->      
 
-            <div class="leftCol">
-            [pft]if val(v1001) = val(v1002) or val(v1001) = val(v1032) then[/pft]
-                 <a name="last"></a>
-            [pft]fi[/pft]
-            [pft]if val(v1001) = val(v1031) then[/pft]
-                <a name="first"></a>
-            [pft]fi[/pft]
-	
-            </div>
-
- 
+        </div>
 [pft]else[/pft]
-
-
+        <br />
+        <!--div class="row"><hr class="ruler" /></div-->
+        <div class="row">
+            <span class="labl"><b>[pft]v1001' / 'v1002[/pft]</b></span>
+        </div>
 [pft]fi[/pft]
 
 
     <!-- begin display of record -->
 
-      
+    <div class="contain">
+        <div class="resultCol">
 		<tr  class="lista">
 		<td class="lista alinhaCentro primeira">[pft]if val(v1001) = val(v1002) or val(v1001) = val(v1032) then[/pft]
                  <a name="last"></a>
