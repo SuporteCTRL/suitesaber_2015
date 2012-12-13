@@ -206,14 +206,7 @@ if (isset($_SESSION["permiso"]["CENTRAL_ALL"]) or isset($_SESSION["permiso"]["CI
 
 							<span><?php echo $msgstr["reports"]?></span>
 						</a>
-<?php
-}
-if (isset($_SESSION["permiso"]["CENTRAL_ALL"]) or isset($_SESSION["permiso"]["CIRC_CIRCALL"]) or isset($_SESSION["permiso"]["CIRC_CIRCFG"])){
-?>
-						<a href="../circulation/configure_menu.php?encabezado=s" class="menuButton tooltip toolsButton">
 
-							<span><?php echo $msgstr["configure"]?></span>
-						</a>
 <?php
 }
 if (isset($_SESSION["permiso"]["CENTRAL_ALL"]) or isset($_SESSION["permiso"]["CIRC_CIRCALL"]) or isset($_SESSION["permiso"]["CIRC_CIRCSTAT"])){
@@ -233,6 +226,20 @@ if (isset($_SESSION["permiso"]["CENTRAL_ALL"]) or isset($_SESSION["permiso"]["CI
 <?php
 }
 ?>
+
+
+<?php
+}
+if (isset($_SESSION["permiso"]["CENTRAL_ALL"]) or isset($_SESSION["permiso"]["CIRC_CIRCALL"]) or isset($_SESSION["permiso"]["CIRC_CIRCFG"])){
+?>
+						<a href="../circulation/configure_menu.php?encabezado=s" class="menuButton tooltip toolsButton">
+
+							<span><?php echo $msgstr["configure"]?></span>
+						</a>
+
+
+
+
 				</div>
 					<div class="spacer">&#160;</div>
 				</div>
