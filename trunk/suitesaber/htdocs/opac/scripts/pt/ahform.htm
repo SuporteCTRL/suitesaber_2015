@@ -11,7 +11,7 @@ function changeForm(valor)
 
 [pft]if v5001^s = 'FORM' then[/pft]
 
-    <form action="[pft]getenv('SCRIPT_NAME')v5000^d,'scripts/'[/pft]" method="POST" name="search" target="_parent">
+    <form action="[pft]getenv('SCRIPT_NAME')v5000^d,'scripts/'[/pft]" method="POST" name="search">
     [pft]@AHHIDD.PFT[/pft]
     <input type="hidden" name="nextAction" value="search" />    
     
@@ -22,7 +22,7 @@ function changeForm(valor)
     <div class="middle">
       <div class="formHead">
             <h3 class="context">
-                Acervo
+                Base de dados&nbsp;
             [pft]
                 ,if p(v5004) then,                    
                     '<select name="base" size="1">'
@@ -30,15 +30,15 @@ function changeForm(valor)
                             ('<option value="',v5004,if v5004 <> v5003[1] then '^nNew"' else '" selected' fi,'>'v5004^*,'</option>')
                     '</select>'
                 ,else,
-                        '<input type="hidden" name="base" value="',v5003,'" /><!--'v5003^* '-->'
+                        '<input type="hidden" name="base" value="',v5003,'" />'v5003^*
                 ,fi,    
                 [/pft]
-                : Pesquisa livre
+                : Formulário livre
             </h3>
             <div class="formOptions">
                 [pft]
                     if p(v5011^h) then
-                        '<a class="help" href="',v5011^h,'" target="_blank" title="Veja dicas de como pesquisar no catálogo. (Abre em nova janela)"><span>Dicas de pesquisa</span></a>'
+                        '<a class="help" href="',v5011^h,'"><span>ajuda</span></a>'
                     fi
                  [/pft]
 
@@ -46,10 +46,10 @@ function changeForm(valor)
 
                     if size(v5014) > 2 then
                         if v5014 : 'B' then
-                            `<a class="changeForm" href="javascript:void(changeForm('B'))">Pesquisa básica</a>`
+                            `<a class="changeForm" href="javascript:void(changeForm('B'))">Formulário básico</a>`
                         fi
                         if v5014 : 'A' then
-                            `<a class="changeForm" href="javascript:void(changeForm('A'))">Pesquisa avançada</a>`
+                            `<a class="changeForm" href="javascript:void(changeForm('A'))">Formulário avançado</a>`
                         fi
                     fi
        
@@ -69,9 +69,7 @@ function changeForm(valor)
             <div class="firstCol">&nbsp;&nbsp;&nbsp;</div>
                 <div class="secondCol">
                     <div class="ExprFree">
-                    <input type="text" name="exprSearch" value=[pft]`'`(replace(v6002,'"','&quot;'))`'`[/pft] onKeyDown="if(event.keyCode==13) document.search.submit();" /> 
-                <!-- Botão pesquisar após caixa de busca -->
-                    <input type="submit" class="buttonSearch" value="" name="search.x" title="Pesquisar" />
+                    <input type="text" name="exprSearch" value=[pft]`'`(replace(v6002,'"','&quot;'))`'`[/pft] onKeyDown="if(event.keyCode==13) document.search.submit();" />
                     </div>
                 </div>
         </div>
@@ -80,8 +78,8 @@ function changeForm(valor)
             <div class="firstCol">&nbsp;&nbsp;&nbsp;</div>
                 <div class="secondCol">
                     <span class="labl">
-                    <input type="radio" name="conectSearch" value="and" id="and" [pft]if s(mpu,v6001[1],mpl) = 'AND' or a(v6001) then 'checked' fi [/pft] /><label for="and"> Todas as palavras <b>(AND)</b> </label>
-                    <input type="radio" name="conectSearch" value="or"  id="or" [pft]if s(mpu,v6001[1],mpl) = 'OR' then 'checked' fi [/pft] /><label for="or"> Qualquer palavra <b>(OR)</b></label>
+                    <input type="radio" name="conectSearch" value="and" [pft]if s(mpu,v6001[1],mpl) = 'AND' or a(v6001) then 'checked' fi [/pft] />Todas as palavras <b>(AND)</b>&nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="conectSearch" value="or"  [pft]if s(mpu,v6001[1],mpl) = 'OR' then 'checked' fi [/pft] />Qualquer palavra <b>(OR)</b>
                     </span>
                 </div>
     [pft]
@@ -95,8 +93,8 @@ function changeForm(valor)
         <div class="rowAction">
             <div class="columnA">&nbsp;</div>
             <div class="columnB">
-                <!--<input type="submit" class="defaultButton submit" value="Configurar" name="config.x" />-->
-                <!--<input type="submit" class="defaultButton submit" value="Pesquisar" name="search.x" />-->
+                <input type="submit" class="defaultButton submit" value="configurar" name="config.x" />
+                <input type="submit" class="defaultButton submit" value="Pesquisar" />
             </div>
         </div>
 
@@ -109,7 +107,7 @@ function changeForm(valor)
     <div class="middle">
       <div class="formHead">
             <h3 class="context">
-                Acervo
+                Base de dados&nbsp;
             [pft]
                 ,if p(v5004) then,                    
                     '<select name="base" size="1">'
@@ -117,15 +115,15 @@ function changeForm(valor)
                             ('<option value="',v5004,if v5004 <> v5003[1] then '^nNew"' else '" selected' fi,'>'v5004^*,'</option>')
                     '</select>'
                 ,else,
-                        '<input type="hidden" name="base" value="',v5003,'" /><!--'v5003^* '-->'
+                        '<input type="hidden" name="base" value="',v5003,'" />'v5003^*
                 ,fi,    
                 [/pft]
-                : Pesquisa básica
+                : Formulário básico
             </h3>
             <div class="formOptions">
                 [pft]
                     if p(v5011^h) then
-                        '<a class="help" href="',v5011^h,'" target="_blank" title="Veja dicas de como pesquisar no catálogo. (Abre em nova janela)"><span>Dicas de pesquisa</span></a>'
+                        '<a class="help" href=",'v5011^h,'"><span>ajuda</span></a>'
                     fi
                  [/pft]
 
@@ -133,10 +131,10 @@ function changeForm(valor)
 
                     if size(v5014) > 2 then
                         if v5014 : 'F' then
-                            `<a class="changeForm" href="javascript:void(changeForm('F'))">Pesquisa livre</a>`
+                            `<a class="changeForm" href="javascript:void(changeForm('F'))">Formulário livre</a>`
                         fi
                         if v5014 : 'A' then
-                            `<a class="changeForm" href="javascript:void(changeForm('A'))">Pesquisa avançada</a>`
+                            `<a class="changeForm" href="javascript:void(changeForm('A'))">Formulário avançado</a>`
                         fi
                     fi
        
@@ -196,9 +194,9 @@ function changeForm(valor)
     [pft],),[/pft]
 
         <div class="rowAction">
-                <!--<input type="submit" class="defaultButton submit" value="Configurar" name="config.x" />-->
-                <input type="submit" class="defaultButton submit" value="Nova pesquisa" name="new search.x" />
-                <input type="submit" class="defaultButton submit" value="Pesquisar" name="search.x" />
+                <input type="submit" class="defaultButton submit" value="configurar" name="config.x" />
+                <input type="submit" class="defaultButton submit" value="nova pesquisa" name="new search.x" />
+                <input type="submit" class="defaultButton submit" value="Pesquisar" />
         </div>
 
     </div>
@@ -210,7 +208,7 @@ function changeForm(valor)
     <div class="middle">
       <div class="formHead">
             <h3 class="context">
-                Acervo
+                Base de dados&nbsp;
             [pft]
                 ,if p(v5004) then,                    
                     '<select name="base" size="1">'
@@ -218,15 +216,15 @@ function changeForm(valor)
                             ('<option value="',v5004,if v5004 <> v5003[1] then '^nNew"' else '" selected' fi,'>'v5004^*,'</option>')
                     '</select>'
                 ,else,
-                        '<input type="hidden" name="base" value="',v5003,'" /><!--'v5003^* '-->'
+                        '<input type="hidden" name="base" value="',v5003,'" />'v5003^*
                 ,fi,    
                 [/pft]
-                : Pesquisa avançada
+                : Formulário avançado
             </h3>
             <div class="formOptions">
                 [pft]
                     if p(v5011^h) then
-                        '<a class="help" href="',v5011^h,'" target="_blank" title="Veja dicas de como pesquisar no catálogo. (Abre em nova janela)"><span>Dicas de pesquisa</span></a>'
+                        '<a class="help" href="',v5011^h,'"><span>ajuda</span></a>'
                     fi
                  [/pft]
 
@@ -234,10 +232,10 @@ function changeForm(valor)
 
                     if size(v5014) > 2 then
                         if v5014 : 'F' then
-                            `<a class="changeForm" href="javascript:void(changeForm('F'))">Pesquisa livre</a>`
+                            `<a class="changeForm" href="javascript:void(changeForm('F'))">Formulário livre</a>`
                         fi
                         if v5014 : 'B' then
-                            `<a class="changeForm" href="javascript:void(changeForm('B'))">Pesquisa básica</a>`
+                            `<a class="changeForm" href="javascript:void(changeForm('B'))">Formulário básico</a>`
                         fi
                     fi
        
@@ -299,11 +297,11 @@ function changeForm(valor)
         <div class="rowAction">
             <div class="columnA">&nbsp;</div>
             <div class="columnB">
-                <!--<input type="submit" class="defaultButton submit" value="Configurar" name="config.x" />-->
+                <input type="submit" class="defaultButton submit" value="configurar" name="config.x" />
 
-                <input type="submit" class="defaultButton submit" value="Nova pesquisa" name="new search.x" />
+                <input type="submit" class="defaultButton submit" value="nova pesquisa" name="new search.x" />
 
-                <input type="submit" class="defaultButton submit" value="Pesquisar" name="search.x"  />
+                <input type="submit" class="defaultButton submit" value="Pesquisar" />
             </div>
         </div>
 
@@ -312,6 +310,7 @@ function changeForm(valor)
 
 
 </form>
+
 
 [pft]if p(v5011^n) then[/pft]
         <div class="formNotes">[pft]cat(v5011^n)[/pft]</div>

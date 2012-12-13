@@ -373,21 +373,23 @@ div.barNavTop input, select, textarea, a {
 }
 
 .colPg {
+	font-size: 14px;
 	float: left;
 	text-align: left;
 	width: 26%;
 	font-weight: bold;
-	font-style: italic;
 }
 
 .colPgNav {
 	float: left;
 	text-align: right;
-	width: 72%;
+	width: 100%;
 	font-weight: bold;
 	font-style: italic;
 	margin-left: 1em;
 	white-space: nowrap;
+	margin-bottom: 5px;
+	margin-top: 5px;
 }
 
 div.selectCol {
@@ -548,9 +550,9 @@ div.rowJnlDetl {
 
 /* FEE */
 
-/* CabeÁalho */
+/* Cabe√ßalho */
 #barrasuperior {
-	background-color: #3a89af;
+/*	background-color: #3a89af;*/
  	position:relative;
 	margin-top:0px;/*-8px;*/
 	width:100%;
@@ -569,7 +571,7 @@ body {
 	}
 
 
-/* FIM cabeÁalho */
+/* FIM cabe√ßalho */
 
 /* Caixa de busca */ 
 .ExprFree input {
@@ -598,12 +600,12 @@ body {
 
 /* FIM Caixa de busca */
 
-/* Impress„o resultados */
+/* Impress√£o resultados */
 
 .copyright a {
 	font-size:12px;
 }
-/* FIM Impress„o resultados */
+/* FIM Impress√£o resultados */
 
 /* Link para site - ahbtop */
 .instituicao {
@@ -636,7 +638,10 @@ font-weight:bold;
 
 table.lista {
 	width:100%;
-	border-collapse:collapse;}
+	border-collapse:collapse;
+	margin-top: 5px;
+	margin-bottom: 5px;	
+	}
 tr.lista {
 	border:1px solid #DDD;
 	padding:5px;
@@ -679,4 +684,39 @@ a.linkUnico:hover  {
 /* widget de busca (em outro site) */
 .searchwidget {
 	width:100%;
+}
+
+/*NAVAGA«√O*/
+input[type="image"]#naveganum {
+	width: 20px;
+	height: 20px;
+	border: 0;
+	color: #fff;
+	vertical-align: middle;
+	text-decoration: none;
+	text-align: center;
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	padding: 3px;
+	background-color: #6CB3D4;
+}
+
+input[type="image"]#naveganum:hover {
+
+}
+
+
+#navegadestaq {
+	margin-bottom: 20px;
+	float: right;
+	color: #fff;
+	font-size: 20px;
+	font-weight: bold;
+	background-color: #f00;
+	text-align: center;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	padding: 5px;
 }
