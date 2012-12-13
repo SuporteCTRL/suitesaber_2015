@@ -3,11 +3,9 @@
   <sourceList>
     <group label="Bases de dados internas">
       <item id="17-89" label="Base Bibliográfica" href="/opac/?base=MARC&amp;lang=pt" base-search-url="http://localhost:9090/cgi-bin/wxis.exe/opac/scripts/?IsisScript=iah.xis&amp;lang=pt&amp;base=MARC&amp;nextAction=xml&amp;count=1" base-browse-url="http://localhost:9090/cgi-bin/wxis.exe/opac/scripts/?IsisScript=iah.xis&amp;lang=pt&amp;base=MARC&amp;nextAction=lnk"/>
-      <item id="17-109" label="Biblioteca Pública do Rio Grande do Sul" href="http://bpe.saberabcd.com/cgi-local/wxis.exe/opac/scripts/?IsisScript=iah.xis&amp;base=BPE&amp;lang=en&amp;form=F" base-search-url="http://bpe.saberabcd.com/cgi-local/wxis.exe/opac/scripts/?IsisScript=iah.xis&amp;lang=pt&amp;base=BPE&amp;nextAction=xml&amp;count=1" base-browse-url="http://bpe.saberabcd.com/cgi-local/wxis.exe/opac/scripts/?IsisScript=iah.xis&amp;lang=pt&amp;base=BPE&amp;nextAction=lnk"/>
     </group>
   </sourceList>
   <search>
     <item source="17-89" search-parameters="exprSearch="/>
-    <item source="17-109" search-parameters="exprSearch="/>
   </search>
 </define>
