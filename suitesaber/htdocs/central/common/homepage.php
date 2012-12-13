@@ -514,7 +514,7 @@ function MenuLoanAdministrator(){
 		<![endif]-->
 		
 		
-<div class="footer">		
+	
 		<?php include ("footer.php"); ?>		
 	<div style="float: right; margin-bottom: 0px;margin-top: -20px;z-index:598599;">		
 		<form name=cambiolang><?php echo $msgstr["lang"]?>:
@@ -541,4 +541,3 @@ function MenuLoanAdministrator(){
 	</select> 
 	</form>		
 	</div>
-</div>
