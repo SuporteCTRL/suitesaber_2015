@@ -41,18 +41,36 @@ include("../common/get_post.php");
 //foreach ($arrHttp as $var=>$value) echo "$var = $value<br>";
 include("../common/header.php");
 ?>
+
+<div class=heading>
+
+	<div class="institutionalInfo">
+	</div>
+
+	<div class="userInfo">
+	</div>
+
+</div>
+
+
 <div class="sectionInfo">
+<div class="language">
+<?php echo "<a href=javascript:self.close()  class=\"defaultButton\">";
+?>
+
+		<span><strong><?php echo $msgstr["cerrar"]?></strong></span></a>
+
+</div>
+
+</div>
 	<div class="breadcrumb">
-<?php echo $msgstr["cnv_import"]." ".$msgstr["cnv_ver"]?>
+<h3><?php echo $msgstr["cnv_import"]." ".$msgstr["cnv_ver"]?></h3>
 	</div>
 	<div class="actions">
-<?php echo "<a href=javascript:self.close()  class=\"defaultButton cancelButton\">";
-?>
-		<img src="../images/defaultButton_iconBorder.gif" alt="" title="" />
-		<span><strong><?php echo $msgstr["cerrar"]?></strong></span></a>
+
 	</div>
-	<div class="spacer">&#160;</div>
-</div>
+
+
 <?php
 echo "
 	<div class=\"helper\">
