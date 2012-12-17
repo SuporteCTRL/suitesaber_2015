@@ -6,11 +6,13 @@
 90 0 if v1='P' or v1='X' then "TC_"v1,"_"v90/ fi   /*Libros prestados o devueltos por No. de clasificación */ 
 90 0 if v1='P' or v1='X' then "ON_"v1,"_"v95/ fi   /*Libros prestados o devueltos por No. del objeto */ 
 10 0 "NI="v10/v10 
-20 0 "CU_"v20/v20 
-20 0 'CO_'v20
+20 0 "CL_"v20/v20 
 30 0 "DA_"v30.4/"DA_"v30.6/"DA_"v30 
 30 0 v30*6.2,'/',v30*4.2,'/',v30.4
 30 0 "DA_"v30.4/"DA_"v30.6/"DA_"v30 
 30 0 'TIME_'v30
-500 0 v500
+40 0 "DP_"v40
+80 0 "MT_"v80
+100 8 '|TI_|'(v100^z|%|/)
+500 0 "DE_"v500
 500 0 v500*6.2,'/',v500*4.2,'/'v500*2.2
