@@ -1,5 +1,4 @@
-
-'<body onload="//self.print();self.close();">
+'<body onload="self.print();self.close();">
 
 <style>
 body {
@@ -7,16 +6,9 @@ margin: 0px;
 }
 
 table {
-/*width: 80mm;*/
 width: 100%;
-/*border-left-width: 0.5mm;
-border-left-style: dashed;*/
 border-color: #000;
-/*border-right-width: 0.5mm;
-border-right-style: dashed;*/
 border-bottom: none;
-/*border-top-width: 0.5mm;
-border-top-style: solid;*/
 padding: 0 3mm 0 3mm;
 }
 h1 {
