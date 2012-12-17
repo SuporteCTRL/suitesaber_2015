@@ -7,14 +7,8 @@ margin: 0px;
 
 table {
 width: 80mm;
-border-left-width: 0.5mm;
-border-left-style: dashed;
 border-color: #000;
-border-right-width: 0.5mm;
-border-right-style: dashed;
 border-bottom: none;
-border-top-width: 0.5mm;
-border-top-style: solid;
 padding: 0 3mm 0 3mm;
 }
 h1 {
@@ -23,9 +17,6 @@ h1 {
 	padding:0px;
 }
 td.titulo {
-border-bottom-width: 0.5mm;
-border-bottom-style: dashed;
-border-color: #000;
 color: #000000;
 text-align: center;
 text-transform: uppercase;
