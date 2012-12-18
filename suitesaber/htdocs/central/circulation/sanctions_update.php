@@ -1,29 +1,7 @@
 <?php
 /**
- * @program:   ABCD - ABCD-Central - http://reddes.bvsaude.org/projects/abcd
- * @copyright:  Copyright (C) 2009 BIREME/PAHO/WHO - VLIR/UOS
- * @file:      sanctions_update.php
- * @desc:      Update sanctions in database
- * @author:    Guilda Ascencio
- * @since:     20091203
- * @version:   1.0
- *
- * == BEGIN LICENSE ==
- *
- *    This program is free software: you can redistribute it and/or modify
- *    it under the terms of the GNU Lesser General Public License as
- *    published by the Free Software Foundation, either version 3 of the
- *    License, or (at your option) any later version.
- *
- *    This program is distributed in the hope that it will be useful,
- *    but WITHOUT ANY WARRANTY; without even the implied warranty of
- *    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *    GNU Lesser General Public License for more details.
- *  
- *    You should have received a copy of the GNU Lesser General Public License
- *    along with this program.  If not, see <http://www.gnu.org/licenses/>.
- *  
- * == END LICENSE ==
+ *Editado em 18/12/2012
+ *Roger C. Guilherme
 */
 session_start();
 if (!isset($_SESSION["permiso"])){
@@ -74,8 +52,9 @@ switch ($arrHttp["type"]){
 		$status="0";	                                  		//v10
 		$cod_usuario=$arrHttp["usuario"];                  		//v20
  		$concepto=$arrHttp["reason"];    						//v40
-    	$fecha=$fecha_desde;	              					//v30
-      	$monto=$arrHttp["units"]*$p[7]*$locales["fine"];        //v50
+ 		$monto=str_replace(",","","$arrHttp[units]");
+ 		$fecha=$fecha_desde;	              					//v30
+      	//$monto=$arrHttp["units"]*$p[7]*$locales["fine"];        //v50
       	$ValorCapturado="0001$tipor\n0010$status\n0020$cod_usuario\n0030$fecha\n0040$concepto\n0050$monto\n";
       	if (isset($arrHttp["comments"])) $ValorCapturado.="0100".$arrHttp["comments"];
 		break;
@@ -114,7 +93,7 @@ switch ($arrHttp["type"]){
  		$concepto=$arrHttp["reason"];    						//v40
     	$fecha=$fecha_desde;	          						//v30
     	$fecha_v=$exp_date;	                 					//v60
-    	$ValorCapturado="0001$tipor\n0010$status\n0020$cod_usuario\n0030$fecha\n0040$concepto\n0060$fecha_v\n";
+    	$ValorCapturado="0001$tipor\n0010$status\n0020$cod_usuario\n0030$fecha\n0040$concepto\n0050$monto\n0060$fecha_v\n";
     	if (isset($arrHttp["comments"])) $ValorCapturado.="0100".$arrHttp["comments"];
 		break;
 }

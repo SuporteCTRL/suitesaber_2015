@@ -42,29 +42,32 @@ include("../common/get_post.php");
 include("../common/header.php");
 $encabezado="";
 include("../common/institutional_info.php");
-echo "
-		<div class=\"sectionInfo\">
-			<div class=\"breadcrumb\">".
-				$msgstr["policy"]."
-			</div>
-			<div class=\"actions\">\n";
-
-				echo "<a href=\"loanobjects.php?encabezado=s\" class=\"defaultButton backButton\">
-
-					<span><strong>". $msgstr["back"]."</strong></span>
-				</a>
-			</div>
-			<div class=\"spacer\">&#160;</div>
+?>
+		<div class="sectionInfo">
+		<div class="language">
+					<a href="configure_menu.php?encabezado=s" class="defaultButton">
+					<span><strong><?php echo $msgstr["back"] ?></strong></span>
+			   	</a>
 		</div>
-		<div class=\"middle form\">
-			<div class=\"formContent\">\n";
+		</div>
+			<div class="breadcrumb">
+		<h3><?php echo  $msgstr["policy"] ?></h3>
+			</div>
+			<div class="actions">
+			</div>
+
+	      <div class="middle form">
+			<div class="formContent"></div>
+			
+<?php			
+			
 $archivo=$db_path."circulation/def/".$_SESSION["lang"]."/typeofitems.tab";
 if (!file_exists($archivo)) $archivo=$db_path."circulation/def/".$lang_db."/typeofitems.tab";
 $fp=fopen($archivo,"w");
 $ValorCapturado=urldecode($arrHttp["ValorCapturado"]);
 fwrite($fp,$ValorCapturado);
 fclose($fp);
-echo "<h4>".$archivo." <strong>". $msgstr["saved"]." </strong></h4>";
+echo "<h4>".$archivo." <br /><br /><strong>". $msgstr["saved"]." !</strong></h4>";
 echo "</div></div>";
 include("../common/footer.php");
 echo "

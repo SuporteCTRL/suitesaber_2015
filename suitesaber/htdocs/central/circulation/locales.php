@@ -1,4 +1,10 @@
 <?php
+
+/**
+ *Editado em 18/12/2012
+ *Roger C. Guilherme
+*/
+
 function LeerLocales(){
 global $db_path,$locales,$config_date_format;
 	if (file_exists($db_path."circulation/def/".$_SESSION["lang"]."/locales.tab")){
@@ -209,23 +215,32 @@ function Test(){
 <?php
 $encabezado="";
 include("../common/institutional_info.php");
-echo "
-		<div class=\"sectionInfo\">
-		<div class=\"language\">";
-echo "<a href=\"configure_menu.php?encabezado=s\" class=\"defaultButton backButton\">
-			<span><strong>". $msgstr["back"]."</strong></span>
+?>
+
+		<div class="sectionInfo">
+		
+		<div class="language">
+		<a href="configure_menu.php?encabezado=s" class="defaultButton">
+			<span><strong><?php echo $msgstr["back"] ?></strong></span>
 		</a>
-		<a href=javascript:Guardar() class=\"defaultButton saveButton\">
-			<span><strong>".$msgstr["update"]."</strong></span>
+		<a href=javascript:Guardar() class="defaultButton">
+			<span><strong><?php echo $msgstr["update"] ?></strong></span>
 		</a>	
 		</div>
+		
+		
 		</div>
-		<div class=\"breadcrumb\"><h3>".$msgstr["local"]."
-		</h3></div>
-		<div class=\"actions\">
+
+
+		<div class="breadcrumb">
+		<h3><?php echo $msgstr["local"] ?></h3></div>
+		<div class="actions">
 		</div>
-		<div class=\"helper\">
-	<a href=../documentacion/ayuda.php?help=".$_SESSION["lang"]."/circulation/locales.html target=_blank>".$msgstr["help"]."</a>&nbsp &nbsp;";
+		<div class="helper">
+	<a href=../documentacion/ayuda.php?help=".$_SESSION["lang"]."/circulation/locales.html target=_blank><?php echo $msgstr["help"] ?></a>&nbsp; &nbsp;
+	
+<?php	
+
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 	echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/circulation/locales.html target=_blank>".$msgstr["edhlp"]."</a>";
 echo "&nbsp; &nbsp; Script: locales.php </font>";
@@ -250,17 +265,32 @@ if (!file_exists($archivo)) $archivo=$db_path."circulation/def/".$lang_db."/loca
 if (file_exists($archivo)){
 	$locales=parse_ini_file($archivo,true);
 }
-
-echo "<br>
+?>
+<br />
 <table cellspacing=8>
-<tr><td valign=top>1. ".$msgstr["currency"]."</td><td valign=top><input type=text name=currency  size=4 value=\"".$locales["currency"]."\"></td>
-<tr><td valign=top>2. ".$msgstr["fine"]."</td><td valign=top><input type=text name=fine  size=10 value=\"".$locales["fine"]."\"></td>
-<tr><td valign=top>3. ".$msgstr["dateformat"]."</td><td valign=top>".$config_date_format."</td>
-<tr><td valign=top>4. ".$msgstr["workingdays"] ."<br> &nbsp; &nbsp; ".$msgstr["workinghours"]."</td>
+
+<tr>
+
+<td valign=top>1. <?php echo $msgstr["currency"] ?></td>
+<td valign=top><input type="text" name="currency"  size="4" value="<?php echo "$locales[currency]"; 
+echo "";
+?>" /></td>
+
+<tr>
+<td valign=top>2. <?php echo $msgstr["fine"]?></td>
+<td valign=top><input type=text name=fine  size=10 value="<?php echo $locales["fine"] ?>"></td>
+
+<tr>
+<td valign=top>3. <?php echo $msgstr["dateformat"]?></td>
+<td valign=top><?php echo $config_date_format?></td>
+
+<tr><td valign=top>4. <?php echo $msgstr["workingdays"]?><br /> &nbsp; &nbsp; <?php echo $msgstr["workinghours"]?></td>
 <td valign=top>
-	<table border=0 bgcolor=#cccccc cellpadding=5>
-	<td bgcolor=white align=center>
-		<input type=checkbox name=mon value=mon";
+	<table border="0" bgcolor="#cccccc" cellpadding="5">
+	<td bgcolor="white" align="center">
+
+<?php
+		echo "<input type=checkbox name=mon value=mon";
 		if (!empty($locales[1]["from"]) and !empty($locales[1]["to"])) echo " checked";
 		echo " onclick=LimpiarHorario(this)><b>".$msgstr["mon"]."</b>&nbsp;
 		<br>".$msgstr["from"].":<input type=text name=mon_from size=4 value=\"".$locales[1]["from"]."\"><select name=smon_from><option value=am";

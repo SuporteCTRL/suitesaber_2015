@@ -1,29 +1,7 @@
 <?php
 /**
- * @program:   ABCD - ABCD-Central - http://reddes.bvsaude.org/projects/abcd
- * @copyright:  Copyright (C) 2009 BIREME/PAHO/WHO - VLIR/UOS
- * @file:      sanctions_ex.php
- * @desc:      Sanctions EX
- * @author:    Guilda Ascencio
- * @since:     20091203
- * @version:   1.0
- *
- * == BEGIN LICENSE ==
- *
- *    This program is free software: you can redistribute it and/or modify
- *    it under the terms of the GNU Lesser General Public License as
- *    published by the Free Software Foundation, either version 3 of the
- *    License, or (at your option) any later version.
- *
- *    This program is distributed in the hope that it will be useful,
- *    but WITHOUT ANY WARRANTY; without even the implied warranty of
- *    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *    GNU Lesser General Public License for more details.
- *   
- *    You should have received a copy of the GNU Lesser General Public License
- *    along with this program.  If not, see <http://www.gnu.org/licenses/>.
- *   
- * == END LICENSE ==
+ *Editado em 18/12/2012
+ *Roger C. Guilherme
 */
 ////////////////////////////////////////////////////////////////////////////////////
 //  Register suspensions and fines to a user
@@ -97,23 +75,31 @@ echo "<body>";
  include("../common/institutional_info.php");
 ?>
 <div class="sectionInfo">
+	<div class="language">
+			<?php include("submenu_prestamo.php");?>
+	</div>
+
+
+</div>
+
+
 	<div class="breadcrumb">
-		<?php echo $msgstr["suspend"]."/".$msgstr["fine"]?>
+		<h3><?php echo $msgstr["suspend"]."/".$msgstr["fine"]?></h3>
 	</div>
 	<div class="actions">
-		<?php include("submenu_prestamo.php");?>
+
 	</div>
-	<div class="spacer">&#160;</div>
-</div>
+
+
 <div class="helper">
 <?php echo "<a href=../documentacion/ayuda.php?help=". $_SESSION["lang"]."/circulation/sanctions.html target=_blank>". $msgstr["help"]."</a>&nbsp &nbsp;";
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))	echo "<a href=../documentacion/edit.php?archivo=". $_SESSION["lang"]."/circulation/sanctions.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo  "<font color=white>&nbsp; &nbsp; Script: sanctions_ex.php </font>";
+echo  "&nbsp; &nbsp; Script: sanctions_ex.php";
 ?>
 	</div>
 <div class="middle form">
 	<div class="formContent">
-<form name=sanctions method=post action=sanctions_update.php onSubmit="return false">
+<form name="sanctions" method="post" action="sanctions_update.php" onSubmit="return false">
 <?// se presenta la  información del usuario
 	$formato_us=$db_path."users/loans/".$_SESSION["lang"]."/loans_usdisp.pft";
     if (!isset($formato_us)) $formato_us=$db_path."users/loans/".$lang_db."/loans_usdisp.pft";
@@ -172,7 +158,7 @@ foreach ($fp as $value) {	$val=explode('|',$value);
            	<strong><?php echo $msgstr["fines_days"]?></strong>
      	</td>
      	<td>
-     		<input type="text" name="units" size=3 value=""  />
+     		<input type="text" name="units" size=3 value="<?php str_replace(",","","") ?>"  />
 		</td>
 	<tr>
 		<td>

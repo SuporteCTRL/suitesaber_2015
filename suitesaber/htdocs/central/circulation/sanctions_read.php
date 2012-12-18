@@ -1,29 +1,7 @@
 <?php
 /**
- * @program:   ABCD - ABCD-Central - http://reddes.bvsaude.org/projects/abcd
- * @copyright:  Copyright (C) 2009 BIREME/PAHO/WHO - VLIR/UOS
- * @file:      sanctions_read.php
- * @desc:      Determine whether the suspension has expired
- * @author:    Guilda Ascencio
- * @since:     20091203
- * @version:   1.0
- *
- * == BEGIN LICENSE ==
- *
- *    This program is free software: you can redistribute it and/or modify
- *    it under the terms of the GNU Lesser General Public License as
- *    published by the Free Software Foundation, either version 3 of the
- *    License, or (at your option) any later version.
- *
- *    This program is distributed in the hope that it will be useful,
- *    but WITHOUT ANY WARRANTY; without even the implied warranty of
- *    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *    GNU Lesser General Public License for more details.
- *  
- *    You should have received a copy of the GNU Lesser General Public License
- *    along with this program.  If not, see <http://www.gnu.org/licenses/>.
- *  
- * == END LICENSE ==
+ *Editado em 18/12/2012
+ *Roger C. Guilherme
 */
 function PrepararFecha($FechaP){
 global $locales,$config_date_format;;
@@ -82,10 +60,10 @@ global $locales;
 	$nsusp=0;
 	if (count($susp)>0) {
 		$sanctions_output.= "<br><strong>".$msgstr["suspensions"]."</strong>
-		<table width=95% bgcolor=#cccccc> ";
+		<table class=\"listTable\"> ";
 		if (isset($_SESSION["permiso"]["CENTRAL_ALL"]) or isset($_SESSION["permiso"]["CIRC_CIRCALL"])  or isset($_SESSION["permiso"]["CIRC_DELSUS"]))
 			$sanctions_output.= "<th>&nbsp;</th>";
-		$sanctions_output.= "<th>".$msgstr["date"]."</th><th>".$msgstr["cause"]."</th><th>".$msgstr["expire"]."</th><th>".$msgstr["comments"]."</th>";
+		$sanctions_output.= "<th>".$msgstr["date"]."</th><th>".$msgstr["concept"]."</th><th>".$msgstr["expire"]."</th><th>".$msgstr["comments"]."</th>";
 		foreach ($susp as $linea) {
 			$p=explode("|",$linea);
 			$nsusp=$nsusp+1;
@@ -100,7 +78,7 @@ global $locales;
 		}
 		$sanctions_output.=  "</table>";
 		if (isset($_SESSION["permiso"]["CENTRAL_ALL"]) or isset($_SESSION["permiso"]["CIRC_CIRCALL"])  or isset($_SESSION["permiso"]["CIRC_DELSUS"])){
-			$sanctions_output.="<a href=javascript:DeleteSuspentions()>".$msgstr["update"].'</a><br>';
+			$sanctions_output.="<a id=botoesgo href=javascript:DeleteSuspentions()>".$msgstr["resolv"].'</a><br>';
 		}
 
 		$sanctions_output.="</dd>";
@@ -119,7 +97,7 @@ global $locales;
 	}
 	$nmulta=0;
 	if (count($multa)>0) {
-		$sanctions_output.=  "<br><strong>".$msgstr["fine"]."</strong><table width=95% bgcolor=#cccccc>";
+		$sanctions_output.=  "<br><strong>".$msgstr["fine"]."</strong><table class=\"listTable\">";
 		if (isset($_SESSION["permiso"]["CENTRAL_ALL"]) or isset($_SESSION["permiso"]["CIRC_CIRCALL"])  or isset($_SESSION["permiso"]["CIRC_DELFINE"]))
 			$sanctions_output.="<th>".$msgstr["payed"]."</th>";
 		$sanctions_output.="<th>".$msgstr["date"]."</th><th>".$msgstr["concept"]."</th><th>".$msgstr["amount"]."</th><th>".$msgstr["comments"]."</th>";
@@ -129,14 +107,15 @@ global $locales;
 				$nmulta=$nmulta+1;
 				$fecha1=PrepararFecha($p[3]);
 				$sanctions_output.= "<tr>";
+				$p[5]=number_format($p[5]/100,2,",",".");
 				if (isset($_SESSION["permiso"]["CENTRAL_ALL"]) or isset($_SESSION["permiso"]["CIRC_CIRCALL"])  or isset($_SESSION["permiso"]["CIRC_DELFINE"]))
-					$sanctions_output.="<td bgcolor=white><input type=checkbox name=pay value=".$p[8]."></td>";
-				$sanctions_output.="<td bgcolor=white nowrap align=center>".$fecha1."</td><td bgcolor=white nowrap align=center>".$p[4]."</td><td bgcolor=white nowrap align=center>".$p[5]."<td bgcolor=white>".$p[7]."</td>";
+					$sanctions_output.="<td><input type=checkbox name=pay value=".$p[8]."></td>";
+					$sanctions_output.="<td nowrap align=center>".$fecha1."</td><td nowrap align=center>".$p[4]."</td><td nowrap align=center>".$locales["currency"].$p[5]."<td>".$p[7]."</td>";
             }
 		}
 		$sanctions_output.= "</table>";
 		if (isset($_SESSION["permiso"]["CENTRAL_ALL"]) or isset($_SESSION["permiso"]["CIRC_CIRCALL"])  or isset($_SESSION["permiso"]["CIRC_DELFINE"]))
-        	$sanctions_output.="<a href=javascript:PagarMultas()>".$msgstr["update"]."</a><p>";
+        	$sanctions_output.="<a id=botoesgo href=javascript:PagarMultas()>".$msgstr["resolv"]."</a><p>";
     	$sanctions_output.= "\n<script>nMultas=".$nmulta."</script>";
 	}
 	if ($sanctions_output!="" and isset($arrHttp["inventory"])) $ec_output.="<font color=red><strong>".$msgstr["pending_sanctions"]."</strong></font>";
