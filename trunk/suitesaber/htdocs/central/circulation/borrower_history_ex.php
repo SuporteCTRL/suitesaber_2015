@@ -123,7 +123,7 @@ global $locales,$config_date_format;;
 
 	if (count($prestamos)>0) {
 		$ec_output.= "<strong>".$msgstr["loans"]."</strong>
-		<table width=95% bgcolor=#cccccc>
+		<table style=\"max-width:900px;\" class=\"listTable\">
 		<td> </td><th>".$msgstr["inventory"]."</th><th>".$msgstr["control_n"]."</th><th>".$msgstr["signature"]."</th><th>".$msgstr["reference"]."</th><th>".$msgstr["typeofitems"]."</th><th>".$msgstr["loandate"]."</th><th>".$msgstr["devdate"]."</th>
 		<th>Devolução real</th><th>Renovado</th>";
 
@@ -184,7 +184,7 @@ global $locales,$config_date_format;;
 	$nsusp=0;
 	if (count($susp)>0) {
 		$sanctions_output.= "<br><strong>".$msgstr["suspensions"]."</strong>
-		<table width=95% bgcolor=#cccccc><th>".$msgstr["status"]."</th>
+		<table class=\"listTable\"><th>".$msgstr["status"]."</th>
 		<th>".$msgstr["date"]."</th><th>".$msgstr["cause"]."</th><th>".$msgstr["expire"]."</th><th>".$msgstr["comments"]."</th>";
 		foreach ($susp as $linea) {
 			$p=explode("|",$linea);
@@ -213,7 +213,7 @@ global $locales,$config_date_format;;
 	$nmulta=0;
 	if (count($multa)>0) {
 		$sanctions_output.=  "<br><strong>".$msgstr["fine"]."</strong>
-		<table width=95% bgcolor=#cccccc><th>".$msgstr["status"]."</th>
+		<table class=\"listTable\"><th>".$msgstr["status"]."</th>
 		<th>".$msgstr["date"]."</th><th>".$msgstr["concept"]."</th><th>".$msgstr["amount"]."</th><th>".$msgstr["comments"]."</th>";
 		foreach ($multa as $linea) {
 
