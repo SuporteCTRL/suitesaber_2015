@@ -361,7 +361,7 @@ TD.showSTitle .collectionMode A.selected {
 	background:      -o-linear-gradient(top, #E6E6E6, gainsboro);
 	cursor: pointer;
 }
-#botoes {
+#botoes, #botoesgo {
 	display: inline-block;
 	margin:1px;
 	text-align: center;
