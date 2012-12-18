@@ -1,0 +1,53 @@
+'<style>
+table, td, tr, th {
+		border: 1px #3A89AF solid;
+		border-collapse: collapse;
+		text-align: center;
+	}
+tr:first-child  {
+	background: #3A89AF;
+	color: #fff;
+	font-size: 12px;
+}
+
+tr:last-child {
+	background: #3A89AF;
+}
+tr:hover.result {
+	background: #eee;
+}
+</style>'
+'<tr class="result">',
+'<td valign=top>'
+	(if v10 = '0' then '<span style="color:red">'
+		if v1='M' then 'Multa ativa' fi, 
+		if v1='S' then 'Leitor suspenso' fi, '</span>' fi),
+
+	(if v10 = '1' then '<span style="color:blue">'
+		if v1='M' then 'Multa deletada pelo supervisor' fi, 
+		if v1='S' then 'Suspensão deletada pelo supervisor' fi, '</span>' fi),
+
+	(if v10 = '2' then '<span style="color:green">'
+		if v1='M' then 'Multa paga' fi, 
+		if v1='S' then 'Suspensão cancelada' fi,'</span>' fi)
+
+	(if v10 = '3' then '<span style="color:blue">'
+		if v1='M' then 'Multa não ativa' fi, 
+		if v1='S' then 'Suspensão não ativa' fi, '</span>' fi),
+
+	if a(v10) then '&nbsp;' fi,'</td>'/
+'<td valign=top  style="text-align:left;width:180px;">
+
+	<a href=# onClick=javascript:window.open("/central/dataentry/show.php?base=users&cipar=users.par&Mfn='v20'&encabezado=s&Opcion=editar","","location=0,status=0,scrollbars=1,width=650,height=600");>
+
+	 'v20,' - ',
+
+	ref(['users'] l(['users'],'CO_'v20),v30),'</a>' 
+
+	 if a(v20) then '&nbsp;' fi,'</td>'/
+
+'<td valign=top>'if p(v30) then v30*6.2,'/',v30*4.2,'/',v30.4+|; | else '&nbsp;' fi,'</td>'
+'<td valign=top>'if p(v50) then v50 else '&nbsp;' fi,'</td>'
+'<td valign=top>'if p(v60) then v60*6.2,'/',v60*4.2,'/'v60.4+|; | else '&nbsp;' fi,'</td>'
+'<td valign=top>'if p(v40) then v40 else '&nbsp;' fi,'</td>'
+'<td valign=top>'if p(v100) then v100 else '&nbsp;' fi,'</td>'
