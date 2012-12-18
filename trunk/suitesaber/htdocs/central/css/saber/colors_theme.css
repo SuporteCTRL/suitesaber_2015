@@ -64,6 +64,18 @@ input#search_int {
 		color: #ffffff; 
 		
 	}
+
+#botoesgo{
+	background-color: #5FB529;
+	color: #ffffff;	
+	}
+
+#botoesgo:hover, #botoes_top:hover{
+		background: #666666;
+		color: #ffffff; 
+		
+	}	
+	
 A.defaultButton SPAN {
 		background: #888888;
 		color: #ffffff;
