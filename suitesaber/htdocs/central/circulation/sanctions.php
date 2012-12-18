@@ -85,7 +85,7 @@ if (isset($arrHttp["usuario"]) and $arrHttp["usuario"]!="") $link_u="&usuario=".
 <?php
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 	echo "<a href=../documentacion/edit.php?archivo=". $_SESSION["lang"]."/circulation/sanctions.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "<font color=white>&nbsp; &nbsp; Script: sanctions.php</font>\n";
+echo "&nbsp; &nbsp; Script: sanctions.php\n";
 ?>
 	</div>
 <div class="middle list">
@@ -101,7 +101,7 @@ echo "<font color=white>&nbsp; &nbsp; Script: sanctions.php</font>\n";
 		<input type="text" name="usuario" id="code" value="<?php if (isset($arrHttp["usuario"])) echo $arrHttp["usuario"]?>" class="textEntry" onfocus="this.className = 'textEntry textEntryFocus';"  onblur="this.className = 'textEntry';" />
 
 		<input type="button" name="index" value="<?php echo $msgstr["list"]?>" class="submit" onClick="AbrirIndice('U',document.usersearch.usuario)" />
-		<input type="submit" name="buscar" value="<?php echo $msgstr["search"]?>" xclass="submitAdvanced" onclick="EnviarForma()"/>
+		<input id="botoes" type="submit" name="buscar" value="<?php echo $msgstr["search"]?>" xclass="submitAdvanced" onclick="EnviarForma()"/>
 		</td>
 	</table>
 	</form>
