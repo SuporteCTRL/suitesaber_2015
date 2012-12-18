@@ -1,29 +1,7 @@
 <?php
 /**
- * @program:   ABCD - ABCD-Central - http://reddes.bvsaude.org/projects/abcd
- * @copyright:  Copyright (C) 2009 BIREME/PAHO/WHO - VLIR/UOS 
- * @file:      locales_update.php
- * @desc:      Records hour and dates
- * @author:    Guilda Ascencio
- * @since:     20091203
- * @version:   1.0
- *
- * == BEGIN LICENSE ==
- *
- *    This program is free software: you can redistribute it and/or modify
- *    it under the terms of the GNU Lesser General Public License as
- *    published by the Free Software Foundation, either version 3 of the
- *    License, or (at your option) any later version.
- *
- *    This program is distributed in the hope that it will be useful,
- *    but WITHOUT ANY WARRANTY; without even the implied warranty of
- *    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *    GNU Lesser General Public License for more details.
- *   
- *    You should have received a copy of the GNU Lesser General Public License
- *    along with this program.  If not, see <http://www.gnu.org/licenses/>.
- *   
- * == END LICENSE ==
+ *Editado em 18/12/2012
+ *Roger C. Guilherme
 */
 session_start();
 if (!isset($_SESSION["permiso"])){
@@ -39,22 +17,26 @@ include("../common/get_post.php");
 include("../common/header.php");
 include("../common/institutional_info.php");
 //foreach ($arrHttp as $var=>$value) echo "$var=$value<br>";
-echo "
-		<div class=\"sectionInfo\">
-			<div class=\"breadcrumb\">".$msgstr["local"]."
-			</div>
-			<div class=\"actions\">\n";
+?>
 
-				echo "<a href=\"configure_menu.php?encabezado=s\" class=\"defaultButton backButton\">
+		<div class="sectionInfo">
+		<div class="language">
+				<a href="configure_menu.php?encabezado=s" class="defaultButton">
 
-					<span><strong>". $msgstr["back"]."</strong></span>
+					<span><strong><?php echo $msgstr["back"] ?></strong></span>
 				</a>
-
-			</div>
-			<div class=\"spacer\">&#160;</div>
+		</div>		
 		</div>
-		<div class=\"helper\">
-	<a href=../documentacion/ayuda.php?help=".$_SESSION["lang"]."/locales.html target=_blank>".$msgstr["help"]."</a>&nbsp &nbsp;";
+		
+			<div class="breadcrumb"><h3><?php echo $msgstr["local"] ?></h3></div>
+			<div class="actions"></div>
+			
+
+		<div class="helper">
+	<a href=../documentacion/ayuda.php?help=".$_SESSION["lang"]."/locales.html target=_blank><?php $msgstr["help"] ?></a>&nbsp; &nbsp;
+	
+	
+<?php	
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 	echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/locales.html target=_blank>".$msgstr["edhlp"]."</a>";
 echo "&nbsp; &nbsp; Script: locales.php </font>";
@@ -64,7 +46,7 @@ echo "</div>
 //foreach ($arrHttp as $var=>$value) echo "$var = $value<br>";
 echo "<xmp>";
 $salida="; 0=domingo, 1=lunes, ...";
-$salida="currency=".$arrHttp["currency"]."\n";
+$salida="currency=".$arrHttp["currency"]."\r\n";
 $salida.="fine=".$arrHttp["fine"]."\n";
 //  Se graba el horario 0=domingo, 1=lunes, ...
 $salida.= "[1]\n";
