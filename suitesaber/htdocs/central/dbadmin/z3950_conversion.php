@@ -160,7 +160,7 @@ if (!isset($arrHttp["Table"])){
 	echo $msgstr["description"].": ";
 	echo "<input type=text name=descr size=30 value='".$arrHttp["descr"]."'>\n";
 }
-echo "<a href=javascript:Enviar()>".$msgstr["update"]."</a>  &nbsp; &nbsp";
+echo "<a id=botoes href=javascript:Enviar()>".$msgstr["update"]."</a>  &nbsp; &nbsp";
 if (!isset($arrHttp["encabezado"])) echo "<a href=menu_modificardb.php?base=". $arrHttp["base"].">".$msgstr["cancel"]."</a>";
 echo "</form>";
 ?>
