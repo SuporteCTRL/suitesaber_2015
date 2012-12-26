@@ -67,11 +67,11 @@ if (isset($arrHttp["encabezado"])){
 	
 <div class="language">
 <?php
-	echo "<a href=z3950_conf.php?base=^a".$arrHttp["base"]."$encabezado class=\"defaultButton backButton\">
+	echo "<a href=z3950_conf.php?base=^a".$arrHttp["base"]."$encabezado class=\"defaultButton\">
 
 		<span><strong>".$msgstr["back"]."</strong></span>
 		</a>\n";
-	echo "<a href=javascript:Enviar() class=\"defaultButton saveButton\">
+	echo "<a href=javascript:Enviar() class=\"defaultButton\">
 	
 		<span><strong>".$msgstr["save"]."</strong></span>
 		</a>\n";
@@ -92,7 +92,7 @@ if (isset($arrHttp["encabezado"])){
 <?php
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 	echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/z3950_conf.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "<font color=white>&nbsp; &nbsp; Script: z3950_conversion.php </font>";
+echo "&nbsp; &nbsp; Script: z3950_conversion.php";
 ?>
 	</div>
 <div class="middle form">

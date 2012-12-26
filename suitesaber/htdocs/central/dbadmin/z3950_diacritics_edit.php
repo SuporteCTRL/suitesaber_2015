@@ -127,26 +127,34 @@ if (isset($arrHttp["encabezado"])){
 }
 ?>
 <div class="sectionInfo">
+
+<div class="language">
+
+<?php
+	if ($encabezado!="") echo "<a href=z3950_conf.php?&base=^a".$arrHttp["base"]."$encabezado class=\"defaultButton\">";
+?>
+
+<span><strong><?php echo $msgstr["back"]?></strong></span>
+</a>
+
+</div>
+</div>
+
 	<div class="breadcrumb">
-<?php echo $msgstr["z3950"].". ".$msgstr["z3950_diacritics"] ?>
+<h3><?php echo $msgstr["z3950"].". ".$msgstr["z3950_diacritics"] ?></h3>
 	</div>
 
 	<div class="actions">
-<?php
-	if ($encabezado!="") echo "<a href=z3950_conf.php?&base=^a".$arrHttp["base"]."$encabezado class=\"defaultButton backButton\">";
-?>
-<img src="../images/defaultButton_iconBorder.gif" alt="" title="" />
-<span><strong><?php echo $msgstr["back"]?></strong></span>
-</a>
+
 			</div>
-			<div class="spacer">&#160;</div>
-</div>
+
+
 <div class="helper">
 <a href=../documentacion/ayuda.php?help=<?php echo $_SESSION["lang"]?>/z3950_conf.html target=_blank><?php echo $msgstr["help"]?></a>&nbsp &nbsp;
 <?php
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 	echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/z3950_conf.html target=_blank>".$msgstr["edhlp"]."</a>";
-echo "<font color=white>&nbsp; &nbsp; Script: z3950_diacritics_edit.php </font>";
+echo "&nbsp; &nbsp; Script: z3950_diacritics_edit.php";
 ?>
 	</div>
 <div class="middle form">
