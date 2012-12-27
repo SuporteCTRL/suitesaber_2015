@@ -33,7 +33,7 @@ if p(v5030) or p(v5040) then
 		
 
             <div class="spacer"> </div>
-            <a name="top"></a>
+            <a name="top"><br /></a>
     </div>'
 
 fi
