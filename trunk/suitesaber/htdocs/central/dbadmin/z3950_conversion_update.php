@@ -7,6 +7,8 @@
  * @author:    Guilda Ascencio
  * @since:     20091203
  * @version:   1.0
+ * @update 20121227
+ * author: Roger Guilherme
  *
  * == BEGIN LICENSE ==
  *
@@ -91,23 +93,50 @@ if (isset($arrHttp["encabezado"])){
 }else{
 	$encabezado="";
 }
-echo "
-	<div class=\"sectionInfo\">
-	<div class=\"breadcrumb\">".$msgstr["z3950"].": ".$msgstr["z3950_cnv"]." (".$arrHttp["base"].")</div>
-	<div class=\"actions\">\n";
-echo "<a href=z3950_conf.php?base=^a". $arrHttp["base"].$encabezado." class=\"defaultButton backButton\">
-	<img src=\"../images/defaultButton_iconBorder.gif\" alt=\"\" title=\"\" />
+?>
+	<div class="sectionInfo">
+	<div class="language">
+	<?php
+	
+echo "<a href=z3950_conf.php?base=^a". $arrHttp["base"].$encabezado." class=\"defaultButton\">
 		<span><strong>". $msgstr["back"]."</strong></span>
-		</a>
+		</a>";	
+	
+	?>
+	
+	</div>
+	</div>
+<?php
+
+echo "<div class=\"breadcrumb\">".$msgstr["z3950"].": ".$msgstr["z3950_cnv"]." (".$arrHttp["base"].")</div>
+		<div class=\"actions\">\n";
+
+?>		
+
+
 		</div>
-			<div class=\"spacer\">&#160;</div>
-		</div>";
-echo "<div class=\"middle form\">
-			<div class=\"formContent\">";
-echo "<font size=1 face=arial> &nbsp; &nbsp; Script: z3950_conversion_update.php</font>";
-echo "<center><h4>".$arrHttp["base"]."/def/z3950.cnv: ".$msgstr["updated"];
-echo "</h4></center></div></div>";
+
+
+			
+	<div class="helper">		
+				&nbsp; &nbsp; Script: z3950_conversion_update.php
+	</div>
+
+	<div class="middle form">
+	<div class="formContent">
+	<center>
+	<h4>
+	<?php echo "$arrHttp[base]";
+				 echo "/def/z3950.cnv: ";
+				 echo "$msgstr[updated]"; 
+	?>
+	</h4>
+	</center>
+	</div>
+	</div>
+<?php
 include("../common/footer.php");
-echo "</body>
-</html>";
+?>
+</body>
+</html>
 ?>
