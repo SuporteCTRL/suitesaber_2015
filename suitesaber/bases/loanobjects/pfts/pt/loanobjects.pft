@@ -6,27 +6,59 @@
 
 '<table cellspacing="0" cellpadding="3" class="mrc">'
 
-if p(v10) then '<tr class="mrc"><th class="mrc">Base de dados</th><td class="mrc">'v10+|<br />|,'</td></tr>' fi/
+if v10='marc' then
+'<caption style="text-align:left; font-weight:bold;">'ref(['marc'] l(['marc'],"CN_MARC_"v1),
+	
+	v245^a if p(v245^b) then ' : ' v245^b fi, if p(v245^c) then ' / 'v245^c fi,
 
-/* if p(v959^l) then '<tr class="mrc"><th class="mrc">Biblioteca</th><td class="mrc">'v959^l+|<br />|,'</td></tr>' fi/ */
+	if p(v260) then '. &ndash; ' v260^a' : 'v260^b', 'v260^c'.' fi,
 
-if p(v959^b) then '<tr class="mrc"><th class="mrc">Biblioteca</th><td class="mrc">'v959^b+|<br />|,'</td></tr>' fi/
+if p(v300^a) then ' &ndash; ' v300^a, " : "v300^b, " ; "v300^c".", fi,
 
-if p(v959^i) then '<tr class="mrc"><th class="mrc">Número de inventário</th><td class="mrc">'v959^i+|<br />|,'</td></tr>' fi/
+if p(v490^a) then (' &ndash; (' v490^a, ' ; 'v490^v, ').'/) fi,	)
 
-if p(v959^t) then '<tr class="mrc"><th class="mrc">Tomo</th><td class="mrc">'v959^t+|<br />|,'</td></tr>' fi/
+'</caption>'
+fi,
 
-if p(v959^v) then '<tr class="mrc"><th class="mrc">Volume/Parte</th><td class="mrc">'v959^v+|<br />|,'</td></tr>' fi/
+if v10='title' then
+'<caption style="text-align:left; font-weight:bold;">'ref(['title'] l(['title'],"CN_TITLE_"v1),
+	v245^a, " : "v245^b,
+		if s(v245^a,v245^c)<>'' then ' / ' fi,
+	v245^c,
 
-if p(v959^o) then '<tr class="mrc"><th class="mrc">Tipo de material</th><td class="mrc">'v959^o+|<br />|,'</td></tr>' fi/
+	'. '
 
-if p(v200) then '<tr class="mrc"><th class="mrc">Status</th><td class="mrc">'
-	if v200^a='0' then 'Pré-catalogação' fi,
-	if v200^a='1' then 'Enviado para empréstimo' fi,
-	if v200^a='2' then 'Verificado, carimbado, em processamento técnico' fi,
-	if v200^a='3' then 'Falta' fi,
-	if v200^a='4' then 'Descartado' fi,
-'</td></tr>' fi/
+	v362^a
+
+
+	 ' &ndash; ' 
+
+	v260^a, ":"v260^b, 
+
+	if p(v363^i) then ', 'v363^i'-' fi,
+	if p(v363^j) then v363^j,'.' 
+		else '&nbsp;&nbsp;&nbsp;&nbsp;.' fi,)
+'</caption>'
+fi,
+
+'<tr>'
+'<th class="mrc" style="text-align:left; width:10px;">N. de registro</th>'
+'<th class="mrc" style="text-align:left; width:20px;">Biblioteca</th>'
+'<th class="mrc" style="text-align:left; width:20px;">Ano</th>'
+'<th class="mrc" style="text-align:left; width:20px;">Volume</th>'
+'<th class="mrc" style="text-align:left; width:20px;">Fascículo</th>'
+'<th class="mrc" style="text-align:left; width:20px;">Tipo de material</th>'
+'</tr>'
+
+if p(v959) then '<tr>'(
+
+'<td style="width:20px;">'v959^i'</td>', 
+'<td style="width:20px;">'v959^l'</td>', 
+'<td style="width:20px;">'v959^t'</td>', 
+'<td style="width:20px;">'v959^v'</td>', 
+'<td style="width:20px;">'v959^b'</td>', 
+'<td style="width:20px;">'v959^o+|</td></tr>|
+/) fi,
 
 '</table>'
 
@@ -38,6 +70,8 @@ if p(v1) then
 '<dl class="ctrl">
 	<dt class="destaque">MFN:</dt>
 		<dd>'mfn(6)'</dd>
+	<dt class="destaque">Base de dados:</dt>
+		<dd>'v10'</dd>
 	<dt class="destaque">Número de controle:</dt>
 		<dd>'v1'</dd>
 </dl>'
