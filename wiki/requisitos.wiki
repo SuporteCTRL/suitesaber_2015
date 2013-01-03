@@ -3,11 +3,11 @@
 
 = Pré-requisitos =
 
-A Suíte Saber funciona exclusivamente no Sistema Operacional Linux. Nossos testes e desenvolvimento são feitos no [http://www.ubuntu-br.org/ Ubuntu].
+== Servidor ==
 
-Também é necessária a instalação de servidor [http://www.apache.org/ Apache] 2.x e [http://www.php.net/ PHP 5.x]
+A Suíte Saber funciona exclusivamente no sistema operacional Linux. Nossos testes e desenvolvimento são feitos no [http://www.ubuntu-br.org/ Ubuntu].
 
-Mais as extensões:
+São necessárias as instalações de servidor [http://www.apache.org/ Apache] 2.x e [http://www.php.net/ PHP] 5.x com as extensões:
 
   * php5-curl
   * php5-gd
@@ -17,5 +17,16 @@ Mais as extensões:
   * php5-xsl
   * yaz
 
+== Clientes ==
 
-A SUÍTE SABER É INCOMPATÍVEL COM IMPRESSORAS MATRICIAIS.
+Os computadores para acesso à Suíte Saber devem ter, obrigatoriamente:
+
+  * acesso à internet ou à intranet, conforme o local do servidor;
+  * navegador atualizado (preferencialmente Firefox ou Chrome).
+
+Os computadores para acesso à Suíte Saber devem ter, opcionalmente:
+
+  * impressora térmica, para impressão dos comprovantes de empréstimo
+    * *impressoras matriciais não são compatíveis*
+  * leitor de código de barras, para transações de empréstimo
+    * configuração para o término da leitura (_terminator_): TAB
