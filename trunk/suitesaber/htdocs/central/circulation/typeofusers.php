@@ -124,8 +124,8 @@ echo "  </div>
 			<div class=\"formContent\">";
 ?>
 <form name=typeofusers>		<br>
-			<a href="javascript:void(0)" onclick="mygrid.addRow((new Date()).valueOf(),['',''],mygrid.getRowIndex(mygrid.getSelectedId()))"><?php echo $msgstr["addrowbef"]?></a>
-			&nbsp; &nbsp; &nbsp;<a href="javascript:void(0)" onclick="mygrid.deleteSelectedItem()"><?php echo $msgstr["remselrow"]?></a>
+			<a id="botoes" href="javascript:void(0)" onclick="mygrid.addRow((new Date()).valueOf(),['',''],mygrid.getRowIndex(mygrid.getSelectedId()))"><?php echo $msgstr["addrowbef"]?></a>
+			&nbsp; &nbsp; &nbsp;<a id="botoes" href="javascript:void(0)" onclick="mygrid.deleteSelectedItem()"><?php echo $msgstr["remselrow"]?></a>
 
 	<table  style="width:98%; height:200" id=tblToGrid class="dhtmlxGrid">
 <?php
@@ -162,8 +162,8 @@ echo "  </div>
 ?>
 
 	</table>
-	&nbsp; &nbsp; &nbsp;<a href=javascript:Enviar()><?php echo $msgstr["update"]?></a>&nbsp; &nbsp; &nbsp; &nbsp;
-	<a href=configure_menu.php?encabezado=s><?php echo $msgstr["cancel"]?></a>
+	&nbsp; &nbsp; &nbsp;<a id="botoes" href=javascript:Enviar()><?php echo $msgstr["update"]?></a>&nbsp; &nbsp; &nbsp; &nbsp;
+	<a id="botoes" href=configure_menu.php?encabezado=s><?php echo $msgstr["cancel"]?></a>
 <script>
 
     nfilas=<?php echo $nfilas."\n"?>
