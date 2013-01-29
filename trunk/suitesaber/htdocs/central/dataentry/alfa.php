@@ -228,16 +228,33 @@ echo "function AbrirIndice(Termino){
 
 </script>\n";
 ?>
+
+<style type="text/css">
+#indice {
+	vertical-align: top;
+	margin: 2px;
+	font-size: 10px;	
+	width: 15px;
+	height: 15px;
+	}
+#indice:hover {
+	margin: 1px;
+	position: relative;
+	font-size: 12px;	
+	width: 20px;
+	height: 20px;
+	}	
+</style>
 	<body>
 	<div class="helper">
 	<a href=../documentacion/ayuda.php?help=<?php echo $_SESSION["lang"]?>/alfa.html target=_blank><?php echo $msgstr["help"]?></a>&nbsp &nbsp;
 	<?php if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"])) echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/alfa.html target=_blank>".$msgstr["edhlp"]."</a>";
-	echo "&nbsp; &nbsp; Script: alfa.php" ?>
-</font>
+	echo "&nbsp; Script: alfa.php" ?>
+
 	</div>
- <div class="middle form">
+
 			<div class="formContent">
-				<form method=post name=Lista onSubmit="javascript:return false">
+				<form  method=post name=Lista onSubmit="javascript:return false">
 <?php
 // si viene de la opción de capturar de otra base de datos se presenta la lista de bases de datos disponibles
 if (isset($arrHttp["capturar"]) and $arrHttp["capturar"]=="S"){
@@ -258,7 +275,7 @@ if (isset($arrHttp["capturar"]) and $arrHttp["capturar"]=="S"){
 	}
 	echo "\n<script>bsel=\"S\"</script>\n";
 	echo "&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; ".$msgstr["database"].":
-			<select name=baseSel onChange=CambiarBase() style=width:130px>
+			<select name=baseSel onChange=CambiarBase() style=width:123px>
 			<option value=\"\">
 	\n";
 	$i=-1;
@@ -295,16 +312,16 @@ if (isset($arrHttp["capturar"]) and $arrHttp["capturar"]=="S"){
 	}
 }
 if (isset($arrHttp["capturar"]) and $arrHttp["capturar"]=="S")
-	$xwidth="380";
+	$xwidth="400";
 else
-	$xwidth="570";
+	$xwidth="600";
 ?>
-	<table cellpadding=0 cellspacing=0 border=0  height=80%>
+	<table>
 
 
-	<td  width=5% align=center><font size=1 face="verdana"><?php for ($i=65;$i<91;$i++ ) echo "<a href=javascript:AbrirIndice('".chr($i)."')>".chr($i)."</a><br>"?></td>
-	<td width=95% valign=top>
-	<Select name=autoridades multiple size=28 style="width:<?php echo $xwidth?>px; xheight=300px" onchange=ObtenerTerminos()>
+	<td style="width:35px; text-align: right;"><?php for ($i=65;$i<91;$i++ ) echo "<a id=indice href=javascript:AbrirIndice('".chr($i)."')>".chr($i)."</a>"?></td>
+	<td valign=top>
+<Select name=autoridades multiple size=28 style="width:<?php echo $xwidth?>px; xheight=300px" onchange=ObtenerTerminos()>
 <?php
 
 	foreach ($contenido as $linea){
@@ -320,12 +337,12 @@ else
 	</select></td>
 
 	</table>
-	<table cellpadding=0 cellspacing=0 border=0 width=100%  height=20% bgcolor=#4E617C>
-		<td valign=top width=100%><a href=Javascript:Continuar() class="defaultButton backButton">
-		<img src="img/arrowRightTwo.png" alt="" title="" />
+	<table width=100%  bgcolor=#d2d2d2>
+		<td style="height: 60px;"><a href=Javascript:Continuar() class="defaultButton">
+
 					<span><strong><?php echo $msgstr["masterms"]?></strong></span></a>
-	    &nbsp;  &nbsp;
-		<?php echo $msgstr["avanzara"]?> &nbsp;<input type=text name=ira size=15 value="" onKeyPress="codes(event)" > &nbsp;<a href=Javascript:IrA()><span><strong><?php echo $msgstr["continuar"]?></strong></span></a></td>
+	    &nbsp;
+		<?php echo $msgstr["avanzara"]?> &nbsp;<input type=text name=ira size=15 value="" onKeyPress="codes(event)" > &nbsp;<a id="botoes" href=Javascript:IrA()><span><strong><?php echo $msgstr["continuar"]?></strong></span></a></td>
 	</table>
 	</form>
 	</div>
