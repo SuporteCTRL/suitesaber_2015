@@ -90,15 +90,11 @@ $encabezado="";
 if (isset($arrHttp["encabezado"])){
 	include("../common/institutional_info.php");
 }
-echo "
-	<div class=\"sectionInfo\">
-
-			<div class=\"breadcrumb\"><h5>".
-				$msgstr["fdt"]." " .$msgstr["database"]. ": " . $arrHttp["base"]."</h5>
-			</div>
-
-			<div class=\"actions\">
-	";
+?>
+	<div class="sectionInfo">
+	<div class="language">
+	
+<?php
 if (isset($arrHttp["encabezado"]))
 		$encabezado="&encabezado=s";
 else
@@ -109,16 +105,29 @@ if (isset($arrHttp["Fixed_field"])) {
 	if (!isset($arrHttp["ventana"]))
 		echo "<a href=menu_modificardb.php?base=". $arrHttp["base"].$encabezado." class=\"defaultButton backButton\">";
 	else
-		echo "<a href=\"javascript:self.close()\" class=\"defaultButton backButton\">";
+		echo "<a href=\"javascript:self.close()\" class=\"defaultButton\">";
 }
 echo "
-		<img src=\"../images/defaultButton_iconBorder.gif\" alt=\"\" title=\"\" />
+	
 		<span><strong>". $msgstr["back"]."</strong></span>
 		</a>
-	</div>
-	<div class=\"spacer\">&#160;</div>
 	</div>";
-echo"
+?>	
+	
+	</div>
+	
+	</div>
+
+			<div class="breadcrumb">
+			<h3><?php echo $msgstr["fdt"]; echo " : "; echo $arrHttp["base"]; ?></h3>
+			</div>
+
+			<div class="actions">
+			</div>
+
+
+<?php
+echo "
 	<div class=\"middle form\">
 		<div class=\"formContent\">";
 echo "<font size=1 face=arial> &nbsp; &nbsp; Script: fdt_update.php";
