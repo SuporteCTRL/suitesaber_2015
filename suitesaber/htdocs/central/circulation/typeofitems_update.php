@@ -48,25 +48,31 @@ echo "<body>";
 include("../common/institutional_info.php");
 ?>
 <div class="sectionInfo">
-	<div class="breadcrumb">
-<?php echo $msgstr["typeofitems"]?>
-	</div>
+<div class="language">
 
-	<div class="actions">
 		<a href="configure_menu.php" class="defaultButton backButton">
 
 		<span><strong><?php echo $msgstr["back"]?></strong></span>
 		</a>
-	</div>
-	<div class="spacer">&#160;</div>
+
 </div>
+</div>
+	<div class="breadcrumb">
+<h3><?php echo $msgstr["typeofitems"]?></h3>
+	</div>
+
+	<div class="actions">
+
+	</div>
+
+
 <div class="helper">
 <?php if ($_SESSION["permiso"]=="admloan") echo "&nbsp; &nbsp; Script: typeofitems_update.php" ?></font>
 	</div>
 <div class="middle form">
 			<div class="formContent">
 <center><h4>
-<?php echo $msgstr["typeofitems"]." ".$msgstr["saved"]?>!!!!</h4>
+<?php echo $msgstr["typeofitems"]." ".$msgstr["saved"]?>!</h4>
 
 		</td>
 </table>
