@@ -97,25 +97,33 @@ include("../common/header.php");
 <?php
 $encabezado="";
 include("../common/institutional_info.php");
-echo "
-		<div class=\"sectionInfo\">
-			<div class=\"breadcrumb\">".
-				$msgstr["typeofitems"]."
+?>
+
+		<div class="sectionInfo">
+		
+			<div class="language">
+		
+				<a href="configure_menu.php?encabezado=s" class="defaultButton">
+		<span><strong><?php echo $msgstr["back"] ?></strong></span>
+		</a>
+		
+		<a href=javascript:Enviar() class="defaultButton">
+
+					<span><strong><?php echo $msgstr["update"] ?></strong></span>
+		</a>
 			</div>
-			<div class=\"actions\">\n";
-
-				echo "<a href=\"configure_menu.php?encabezado=s\" class=\"defaultButton backButton\">
-
-					<span><strong>". $msgstr["back"]."</strong></span>
-				</a>
-				<a href=javascript:Enviar() class=\"defaultButton saveButton\">
-
-					<span><strong>".$msgstr["update"]."</strong></span>
-				</a>
-			</div>
-			<div class=\"spacer\">&#160;</div>
+		
+		</div>		
+		<div class="breadcrumb">
+			<h3><?php	$msgstr["typeofitems"]?> </h3>
 		</div>
-       	<div class=\"helper\">
+		<div class="actions">
+
+		</div>
+
+		
+		
+ <?php echo"<div class=\"helper\">
 	<a href=../documentacion/ayuda.php?help=".$_SESSION["lang"]."/circulation/loans_typeofitems.html target=_blank>".$msgstr["help"]."</a>&nbsp; &nbsp;";
 if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
 	echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/circulation/loans_typeofitems.html target=_blank>".$msgstr["edhlp"]."</a>";
@@ -125,8 +133,8 @@ echo "</div>
 			<div class=\"formContent\">";
 ?>
 <form name=typeofitems>		<br>
-			<a href="javascript:void(0)" onclick="mygrid.addRow((new Date()).valueOf(),['',''],mygrid.getRowIndex(mygrid.getSelectedId()))"><?php echo $msgstr["addrowbef"]?></a>
-			&nbsp; &nbsp; &nbsp;<a href="javascript:void(0)" onclick="mygrid.deleteSelectedItem()"><?php echo $msgstr["remselrow"]?></a>
+			<a  id="botoes"  href="javascript:void(0)" onclick="mygrid.addRow((new Date()).valueOf(),['',''],mygrid.getRowIndex(mygrid.getSelectedId()))"><?php echo $msgstr["addrowbef"]?></a>
+			&nbsp; &nbsp; &nbsp;<a  id="botoes"  href="javascript:void(0)" onclick="mygrid.deleteSelectedItem()"><?php echo $msgstr["remselrow"]?></a>
 
 	<table  style="width:98%; height:200" id=tblToGrid class="dhtmlxGrid">
 <?php
@@ -164,8 +172,8 @@ echo "</div>
 ?>
 
 	</table>
-	&nbsp; &nbsp; &nbsp;<a href=javascript:Enviar()><?php echo $msgstr["update"]?></a>&nbsp; &nbsp; &nbsp; &nbsp;
-	<a href=configure_menu.php?encabezado=s><?php echo $msgstr["cancel"]?></a>
+	&nbsp; &nbsp; &nbsp;<a  id="botoes"  href=javascript:Enviar()><?php echo $msgstr["update"]?></a>&nbsp; &nbsp; &nbsp; &nbsp;
+	<a  id="botoes"  href=configure_menu.php?encabezado=s><?php echo $msgstr["cancel"]?></a>
 <script>
 
     nfilas=<?php echo $nfilas."\n"?>
