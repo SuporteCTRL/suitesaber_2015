@@ -1,4 +1,4 @@
-...
+Veja abaixo como solucionar alguns erros que podem ocorrer durante a operação da Suíte Saber e/ou do ABCD.
 
 == Importação de arquivos ==
 
@@ -29,6 +29,8 @@ O servidor, por padrão, é configurado para carregar arquivos inferiores ou igu
 
 ----
 
+= Empréstimo =
+
 == Índice do empréstimo (ABCD)==
 
 Ao clicar em uma das letras do índice utilizado para realizar a busca pelo número de registro do item e número do usuário, a janela de empréstimo (*prestar.php*) é fechada.
@@ -43,4 +45,34 @@ Logo após, busque pela linha e delete o comando *;self.close()*.
 
 {{{
 <td  bgcolor=#cccccc align=center><font size=1 face="arial"><? for ($i=65;$i<91;$i++ ) echo "<a href=javascript:AbrirIndice('".chr($i)."');self.close()>".chr($i)."</a>  "?></td>
+}}}
+
+----
+
+== Transações ==
+
+No Módulo de Empréstimo, na opção Transações, que se encontra na aba Base de Dados, a seta do botão *« Last* está errada.
+
+== Solução ==
+
+Busque as linhas 365 [v. 1.0.3] ou 393 [v. 1.0.5] do arquivo:
+
+|| ...\central\dataentry\browse.php alterar: ||
+
+Troque
+
+{{{
+« <?php echo $msgstr["last"]?>
+
+para:
+
+» <?php echo $msgstr["last"]?>
+}}}
+
+ou:
+
+{{{
+&#171; <?php echo $msgstr["last"]?>
+para:
+&#187; <?php echo $msgstr["last"]?>
 }}}
