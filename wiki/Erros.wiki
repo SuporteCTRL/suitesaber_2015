@@ -1,11 +1,46 @@
-= Introduction =
+...
 
-Add your content here.
+== Importação de arquivos ==
 
+Ao tentar realizar o upload de um arquivo, é possível que a seguinte mensagem seja exibida:
 
-= Details =
+|| Warning: Invalid argument supplied for foreach() in C:\abcd\www\htdocs\central\dataentry\upload.php on line 16 ||
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+== Soluções ==
+
+ # Aumentar o Timeout;
+ # Aumentar o tamanho permitido para o envio de arquivos.
+
+Para aumentar o tamanho máximo permitido para o envio de arquivos, acesse o *php.ini* do servidor, conforme é mostrado abaixo.
+
+{{{
+; Whether to allow HTTP file uploads.
+file_uploads = On
+
+; Temporary directory for HTTP uploaded files (will use system default if not
+; specified).
+;upload_tmp_dir =
+
+; Maximum allowed size for uploaded files.
+upload_max_filesize = 2M
+}}}
+
+O servidor, por padrão, é configurado para carregar arquivos inferiores ou iguais a 2MB. Portanto, para carregar um arquivo maior, altere este valor.
+
+----
+
+== Índice do empréstimo (ABCD)==
+
+Ao clicar em uma das letras do índice utilizado para realizar a busca pelo número de registro do item e número do usuário, a janela de empréstimo (*prestar.php*) é fechada.
+
+== Solução ==
+
+Acesse o seguinte arquivo:
+
+|| ...\central\circulation\capturaclaves.php ||
+
+Logo após, busque pela linha e delete o comando *;self.close()*.
+
+{{{
+<td  bgcolor=#cccccc align=center><font size=1 face="arial"><? for ($i=65;$i<91;$i++ ) echo "<a href=javascript:AbrirIndice('".chr($i)."');self.close()>".chr($i)."</a>  "?></td>
+}}}
