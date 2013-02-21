@@ -59,20 +59,26 @@ Busque as linhas 365 [v. 1.0.3] ou 393 [v. 1.0.5] do arquivo:
 
 || ...\central\dataentry\browse.php alterar: ||
 
-Troque
+Logo após, substitua a seta em:
 
 {{{
 « <?php echo $msgstr["last"]?>
+}}}
 
-para:
+por:
 
+{{{
 » <?php echo $msgstr["last"]?>
 }}}
 
-ou:
+Caso não seja possível visualizar a seta, mas sim sua linguagem CSS, substitua:
 
 {{{
 &#171; <?php echo $msgstr["last"]?>
-para:
+}}}
+
+por:
+
+{{{
 &#187; <?php echo $msgstr["last"]?>
 }}}
