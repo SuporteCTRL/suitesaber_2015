@@ -82,3 +82,34 @@ por:
 {{{
 &#187; <?php echo $msgstr["last"]?>
 }}}
+
+----
+
+== Erro ao informar números de registros (ABCD) ==
+
+Ao colocar um número de usuário inexistente, é possível que seja exibida uma mensagem contendo esta informação (borrower statement - estado_de_cuenta.php).
+
+Também ao colocar um número de registro de item que não está emprestado, vai para uma tela  em branco com a mensagem: unautorized user.
+
+Nas linhas 160-166 do arquivo ...\central\circulation\loan_return_reserve.php, parece indicar que deveria vir uma mensagem amigável, mas não ocorre em nenhum idioma:
+
+{{{
+ if (isset($arrHttp["error"]) and $arrHttp["inventory"]!=""){
+       echo "
+       <script>
+       alert('".$arrHttp["inventory"].": El número de inventario no está prestado')
+       </script>
+       ";
+}
+}}}
+
+== Solução ==
+
+if (isset($arrHttp["error"]) and $arrHttp["inventory"]!=""){
+        echo "
+        <script>
+        alert('".$arrHttp["inventory"].": ".$msgstr["inventory"]." ".$msgstr["noloan"]."')
+        </script>
+        ";
+}
+?>
