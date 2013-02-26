@@ -143,7 +143,7 @@ e, entre elas, acrescente o seguinte código:
 
 == Formatação da referência (conforme ABNT) ==
 
-Para realizar a formatação de referências, conforme a ABNT, altere ou crie, caso não exista, o arquivo ...\www\bases\[base]\pfts\[lang]\cite.pft e copie para o arquivo o código abaixo:
+Para realizar a formatação de referências conforme a ABNT, altere ou crie, caso não exista, o arquivo ...\www\bases\[base]\pfts\[lang]\cite.pft e copie para o arquivo o código abaixo:
 
 {{{
 'Referência conforme ABNT NBR 6023:2002.'
