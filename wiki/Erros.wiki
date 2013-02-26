@@ -89,9 +89,11 @@ por:
 
 Ao colocar um número de usuário inexistente, é possível que seja exibida uma mensagem contendo esta informação (borrower statement - estado_de_cuenta.php).
 
-Também ao colocar um número de registro de item que não está emprestado, vai para uma tela  em branco com a mensagem: unautorized user.
+Também ao colocar um número de registro de item que não está emprestado, uma tela em branco com a mensagem "unautorized user" surgirá.
 
-Nas linhas 160-166 do arquivo ...\central\circulation\loan_return_reserve.php, parece indicar que deveria vir uma mensagem amigável, mas não ocorre em nenhum idioma:
+== Solução ==
+
+Nas linhas 160-166 do arquivo ...\central\circulation\loan_return_reserve.php, substitua o trecho *El número de inventario no está prestado* por *".$msgstr["inventory"]." ".$msgstr["noloan"]."*, conforme é mostrado abaixo:
 
 {{{
  if (isset($arrHttp["error"]) and $arrHttp["inventory"]!=""){
@@ -103,8 +105,9 @@ Nas linhas 160-166 do arquivo ...\central\circulation\loan_return_reserve.php, p
 }
 }}}
 
-== Solução ==
+para:
 
+{{{
 if (isset($arrHttp["error"]) and $arrHttp["inventory"]!=""){
         echo "
         <script>
@@ -112,4 +115,4 @@ if (isset($arrHttp["error"]) and $arrHttp["inventory"]!=""){
         </script>
         ";
 }
-?>
+}}}
