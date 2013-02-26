@@ -129,13 +129,17 @@ Dentro de cada submenu integrante da aba de Transações, é possível visualiza
 
 == Solução ==
 
-No arquivo .../central/circulation/borrower_history.php, busque as tags abaixo:
+Vá até o arquivo:
+
+|| .../central/circulation/borrower_history.php ||
+
+busque as tags abaixo:
 
 {{{
 <div class="actions"></div>
 }}}
 
-e, entre elas, acrescente o seguinte código:
+entre elas, acrescente o seguinte código:
 
 {{{
 <?php include("submenu_prestamo.php");?>
