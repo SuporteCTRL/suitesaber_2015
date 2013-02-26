@@ -136,3 +136,35 @@ e, entre elas, acrescente o seguinte código:
 {{{
 <?php include("submenu_prestamo.php");?>
 }}}
+
+----
+
+= OPAC =
+
+== Formatação da referência (conforme ABNT) ==
+
+Para realizar a formatação de referências, conforme a ABNT, altere ou crie, caso não exista, o arquivo ...\www\bases\[base]\pfts\[lang]\cite.pft e copie para o arquivo o código abaixo:
+
+{{{
+'Referência conforme ABNT NBR 6023:2002.'
+'<br /><br />'
+mdl,v100^a,v110^a,v111^a,v130^a,
+if p(v222^b) then
+	mhl,v222^a," : "v222^b,
+else
+	mdl,v222^a,
+fi,
+if p(v245^b) then
+	mhl,'<strong>'v245^a'</strong>',if p(v245^h) then mhl else mdl fi," : "v245^b,
+else
+	if p(v245^h) then mhl else mdl fi,'<strong>'v245^a'</strong>',
+fi,
+" ["v245^h"]. ",
+mdl,v250^a, 
+mhl,v260^a" : ",v260^b", ",mdl, v260^c,
+v300^a,
+mhl,if p(v440) then '(',(v440^a,|, n.|v440^n,|, |v440^v, if occ < nocc(v440) then '; ' fi,) ')'/ fi,
+/#,
+}}}
+
+----
