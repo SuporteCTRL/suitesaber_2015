@@ -93,7 +93,11 @@ Também ao colocar um número de registro de item que não está emprestado, uma
 
 == Solução ==
 
-Nas linhas 160-166 do arquivo ...\central\circulation\loan_return_reserve.php, substitua o trecho *El número de inventario no está prestado* por *".$msgstr["inventory"]." ".$msgstr["noloan"]."*, conforme é mostrado abaixo:
+Busque as linhas 160-166 do arquivo:
+
+|| ...\central\circulation\loan_return_reserve.php ||
+
+substitua o trecho *El número de inventario no está prestado* por *".$msgstr["inventory"]." ".$msgstr["noloan"]."*, conforme é mostrado abaixo:
 
 {{{
  if (isset($arrHttp["error"]) and $arrHttp["inventory"]!=""){
