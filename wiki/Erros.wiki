@@ -231,13 +231,3 @@ em:
 .defaultbuttondown
 .defaultbuttonover
 }}}
-
-----
-
-Eliminação do excesso de SPAN
-
-
-O SPAN provoca mal funcionamento do CSS
-
-Como a linha é apresentada:
-<span><strong>".$msgstr["cancel"]."</strong></span>
