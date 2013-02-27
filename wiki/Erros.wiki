@@ -176,3 +176,17 @@ mhl,if p(v440) then '(',(v440^a,|, n.|v440^n,|, |v440^v, if occ < nocc(v440) the
 }}}
 
 ----
+
+== Definir a última base de dados como padrão ==
+
+Para manter a última base de dados selecionada por padrão na lista suspensa do painel principal, vá até o arquivo:
+
+|| \www\htdocs\central\common\homepage.php ||
+
+e insira a expressão *selected* na linha 267:
+
+{{{
+	    echo "<option selected value=\"^a$key^badm|$value\" $xselected>".$t[0]."\n";
+}}}
+
+----
