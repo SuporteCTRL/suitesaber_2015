@@ -1,5 +1,7 @@
 Veja abaixo como solucionar alguns erros que podem ocorrer durante a operação da Suíte Saber e/ou do ABCD.
 
+----
+
 == Eliminação do excesso de SPAN (ABCD) ==
 
 O SPAN provoca mal funcionamento do CSS e pode ser encontrado em determinados arquivos do ABCD.
@@ -45,6 +47,8 @@ remova o SPAN dos seguintes arquivos:
 || *Arquivo* || *Linha* ||
 || config_vars.php || 424 - 430 ||
 || tables_cfg.php || 451 - 460 ||
+
+----
 
 = Bases de dados =
 
@@ -95,8 +99,6 @@ Logo após, busque pela linha e delete o comando *;self.close()*.
 <td  bgcolor=#cccccc align=center><font size=1 face="arial"><? for ($i=65;$i<91;$i++ ) echo "<a href=javascript:AbrirIndice('".chr($i)."');self.close()>".chr($i)."</a>  "?></td>
 }}}
 
-----
-
 == Transações ==
 
 No Módulo de Empréstimo, na opção Transações, que se encontra na aba Base de Dados, a seta do botão *« Last* está errada.
@@ -130,8 +132,6 @@ por:
 {{{
 &#187; <?php echo $msgstr["last"]?>
 }}}
-
-----
 
 == Erro ao informar números de registros (ABCD) ==
 
@@ -168,8 +168,6 @@ if (isset($arrHttp["error"]) and $arrHttp["inventory"]!=""){
         ";
 }
 }}}
-
-----
 
 == Link para histórico do usuário (ABCD) ==
 
@@ -223,8 +221,6 @@ mhl,if p(v440) then '(',(v440^a,|, n.|v440^n,|, |v440^v, if occ < nocc(v440) the
 /#,
 }}}
 
-----
-
 == Definir a última base de dados como padrão ==
 
 Para manter a última base de dados selecionada por padrão na lista suspensa do painel principal, vá até o arquivo:
@@ -236,8 +232,6 @@ insira a expressão *selected* na linha 267:
 {{{
 	    echo "<option selected value=\"^a$key^badm|$value\" $xselected>".$t[0]."\n";
 }}}
-
-----
 
 == Definir a primeira base de dados como padrão ==
 
@@ -257,8 +251,6 @@ O termo *selected*, mencionado anteriormente, não deverá ser utilizado. Ao inv
 		    }
 		}
 }}}
-
-----
 
 == Melhorar a aparência da barra de ferramentas de catalogação ==
 
