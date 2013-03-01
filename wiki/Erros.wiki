@@ -1,5 +1,53 @@
 Veja abaixo como solucionar alguns erros que podem ocorrer durante a operação da Suíte Saber e/ou do ABCD.
 
+== Eliminação do excesso de SPAN (ABCD) ==
+
+O SPAN provoca mal funcionamento do CSS e pode ser encontrado em determinados arquivos do ABCD.
+
+Exemplo de como a linha é apresentada:
+
+{{{
+<span><strong>".$msgstr["cancel"]."</strong></span>
+}}}
+
+== Solução ==
+
+Acesse a pasta:
+
+||  .../central/dbadmin/ ||
+
+remova o SPAN dos seguintes arquivos:
+
+|| *Arquivo* || *Linha* ||
+|| fdt.php || 1252 ||
+|| fdt_short_a.php || 1388 ||
+|| fixed_marc.php || 67 ||
+|| fst.php || 195 ||
+|| fmt.php || 337 ||
+|| iah_edit_db.php || 1488 - 1498 ||
+|| pft.php || 1190 ||
+|| typeofrecs.php || 78 ||
+|| advancedsearch.php || 195 ||
+|| databases_list.php || 104 ||
+|| editpar.php || 74 ||
+|| help_ed.php || 221 ||
+|| crearbd_ex_copy.php || 340 ||
+|| menu_creardb.php ||175 ||
+|| menu_mantenimiento.php || 103 ||
+|| typeofrecs_marc_edit.php || 219 ||
+
+Acesse também a pasta:
+
+|| .../central/statistics/ ||
+
+remova o SPAN dos seguintes arquivos:
+
+|| *Arquivo* || *Linha* ||
+|| config_vars.php || 424 - 430 ||
+|| tables_cfg.php || 451 - 460 ||
+
+= Bases de dados =
+
 == Importação de arquivos ==
 
 Ao tentar realizar o upload de um arquivo, é possível que a seguinte mensagem seja exibida:
