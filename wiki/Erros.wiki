@@ -76,40 +76,7 @@ altere a linha do logo da instituição para:
 <img src="<?php $institution_logo?>" alt="Logo do <?php echo $institution_name?>" align="left" />
 }}}
 
-----
-
-= Bases de dados =
-
-== Importação de arquivos ==
-
-Ao tentar realizar o upload de um arquivo, é possível que a seguinte mensagem seja exibida:
-
-|| Warning: Invalid argument supplied for foreach() in C:\abcd\www\htdocs\central\dataentry\upload.php on line 16 ||
-
-== Soluções ==
-
- # Aumentar o Timeout;
- # Aumentar o tamanho permitido para o envio de arquivos.
-
-Para aumentar o tamanho máximo permitido para o envio de arquivos, acesse o *php.ini* do servidor, conforme é mostrado abaixo.
-
-{{{
-; Whether to allow HTTP file uploads.
-file_uploads = On
-
-; Temporary directory for HTTP uploaded files (will use system default if not
-; specified).
-;upload_tmp_dir =
-
-; Maximum allowed size for uploaded files.
-upload_max_filesize = 2M
-}}}
-
-O servidor, por padrão, é configurado para carregar arquivos inferiores ou iguais a 2MB. Portanto, para carregar um arquivo maior, altere este valor.
-
-----
-
-= Empréstimo =
+= Empréstimo (ABCD)=
 
 == Índice do empréstimo (ABCD)==
 
@@ -125,40 +92,6 @@ Logo após, busque pela linha e delete o comando *;self.close()*.
 
 {{{
 <td  bgcolor=#cccccc align=center><font size=1 face="arial"><? for ($i=65;$i<91;$i++ ) echo "<a href=javascript:AbrirIndice('".chr($i)."');self.close()>".chr($i)."</a>  "?></td>
-}}}
-
-== Transações ==
-
-No Módulo de Empréstimo, na opção Transações, que se encontra na aba Base de Dados, a seta do botão *« Last* está errada.
-
-== Solução ==
-
-Busque as linhas 365 [v. 1.0.3] ou 393 [v. 1.0.5] do arquivo:
-
-|| ...\central\dataentry\browse.php alterar: ||
-
-Logo após, substitua a seta em:
-
-{{{
-« <?php echo $msgstr["last"]?>
-}}}
-
-por:
-
-{{{
-» <?php echo $msgstr["last"]?>
-}}}
-
-Caso não seja possível visualizar a seta, mas sim sua linguagem CSS, substitua:
-
-{{{
-&#171; <?php echo $msgstr["last"]?>
-}}}
-
-por:
-
-{{{
-&#187; <?php echo $msgstr["last"]?>
 }}}
 
 == Erro ao informar números de registros (ABCD) ==
@@ -217,6 +150,75 @@ entre elas, acrescente o seguinte código:
 
 {{{
 <?php include("submenu_prestamo.php");?>
+}}}
+
+----
+
+= Bases de dados =
+
+== Importação de arquivos ==
+
+Ao tentar realizar o upload de um arquivo, é possível que a seguinte mensagem seja exibida:
+
+|| Warning: Invalid argument supplied for foreach() in C:\abcd\www\htdocs\central\dataentry\upload.php on line 16 ||
+
+== Soluções ==
+
+ # Aumentar o Timeout;
+ # Aumentar o tamanho permitido para o envio de arquivos.
+
+Para aumentar o tamanho máximo permitido para o envio de arquivos, acesse o *php.ini* do servidor, conforme é mostrado abaixo.
+
+{{{
+; Whether to allow HTTP file uploads.
+file_uploads = On
+
+; Temporary directory for HTTP uploaded files (will use system default if not
+; specified).
+;upload_tmp_dir =
+
+; Maximum allowed size for uploaded files.
+upload_max_filesize = 2M
+}}}
+
+O servidor, por padrão, é configurado para carregar arquivos inferiores ou iguais a 2MB. Portanto, para carregar um arquivo maior, altere este valor.
+
+----
+
+= Empréstimo =
+
+== Transações ==
+
+No Módulo de Empréstimo, na opção Transações, que se encontra na aba Base de Dados, a seta do botão *« Last* está errada.
+
+== Solução ==
+
+Busque as linhas 365 [v. 1.0.3] ou 393 [v. 1.0.5] do arquivo:
+
+|| ...\central\dataentry\browse.php alterar: ||
+
+Logo após, substitua a seta em:
+
+{{{
+« <?php echo $msgstr["last"]?>
+}}}
+
+por:
+
+{{{
+» <?php echo $msgstr["last"]?>
+}}}
+
+Caso não seja possível visualizar a seta, mas sim sua linguagem CSS, substitua:
+
+{{{
+&#171; <?php echo $msgstr["last"]?>
+}}}
+
+por:
+
+{{{
+&#187; <?php echo $msgstr["last"]?>
 }}}
 
 ----
