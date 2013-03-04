@@ -50,6 +50,34 @@ remova o SPAN dos seguintes arquivos:
 
 ----
 
+== Logo da instituição (ABCD) ==
+
+Até a versão 1.2b1 do ABCD, o logotipo possui chamadas diferentes. Caso você troque o logotipo no arquivo *config.php* e ele não seja alterado em todas as telas, faça o procedimento abaixo.
+
+Acesse o arquivo:
+
+|| ...\htdocs\central\config.php ||
+
+adicione:
+
+{{{			
+$institution_logo="/ABCD/www/htdocs/central/images/tools.png";
+}}}
+
+Acesse os arquivos:
+
+|| ...\htdocs\index.php ||
+|| ...\htdocs\central\dataentry\menubases.php ||
+|| ...\htdocs\central\common\institutional_info.php ||
+	   
+altere a linha do logo da instituição para:
+
+{{{
+<img src="<?php $institution_logo?>" alt="Logo do <?php echo $institution_name?>" align="left" />
+}}}
+
+----
+
 = Bases de dados =
 
 == Importação de arquivos ==
