@@ -76,9 +76,9 @@ altere a linha do logo da instituição para:
 <img src="<?php $institution_logo?>" alt="Logo do <?php echo $institution_name?>" align="left" />
 }}}
 
-= Empréstimo (ABCD)=
+= Empréstimo =
 
-== Índice do empréstimo (ABCD)==
+== Índice do empréstimo ==
 
 Ao clicar em uma das letras do índice utilizado para realizar a busca pelo número de registro do item e número do usuário, a janela de empréstimo (*prestar.php*) é fechada.
 
