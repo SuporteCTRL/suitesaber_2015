@@ -1,8 +1,8 @@
 Veja abaixo como solucionar alguns erros que podem ocorrer durante a operação da Suíte Saber e/ou do ABCD.
 
-----
+= ABCD =
 
-== Eliminação do excesso de SPAN (ABCD) ==
+== Eliminação do excesso de SPAN ==
 
 O SPAN provoca mal funcionamento do CSS e pode ser encontrado em determinados arquivos do ABCD.
 
@@ -50,7 +50,7 @@ remova o SPAN dos seguintes arquivos:
 
 ----
 
-== Logo da instituição (ABCD) ==
+== Logo da instituição ==
 
 Até a versão 1.2b1 do ABCD, o logotipo possui chamadas diferentes. Caso você troque o logotipo no arquivo *config.php* e ele não seja alterado em todas as telas, faça o procedimento abaixo.
 
@@ -94,7 +94,7 @@ Logo após, busque pela linha e delete o comando *;self.close()*.
 <td  bgcolor=#cccccc align=center><font size=1 face="arial"><? for ($i=65;$i<91;$i++ ) echo "<a href=javascript:AbrirIndice('".chr($i)."');self.close()>".chr($i)."</a>  "?></td>
 }}}
 
-== Erro ao informar números de registros (ABCD) ==
+== Erro ao informar números de registros ==
 
 Ao colocar um número de usuário inexistente, é possível que seja exibida uma mensagem contendo esta informação (borrower statement - estado_de_cuenta.php).
 
@@ -130,7 +130,7 @@ if (isset($arrHttp["error"]) and $arrHttp["inventory"]!=""){
 }
 }}}
 
-== Link para histórico do usuário (ABCD) ==
+== Link para histórico do usuário ==
 
 Dentro de cada submenu integrante da aba de Transações, é possível visualizar os links para alternar entre cada função de transação. Estes links não, porém, não estão disponíveis no submenu de Histórico do Leitor.
 
