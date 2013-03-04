@@ -48,11 +48,11 @@ remova o SPAN dos seguintes arquivos:
 || config_vars.php || 424 - 430 ||
 || tables_cfg.php || 451 - 460 ||
 
-----
-
 == Logo da instituição ==
 
 Até a versão 1.2b1 do ABCD, o logotipo possui chamadas diferentes. Caso você troque o logotipo no arquivo *config.php* e ele não seja alterado em todas as telas, faça o procedimento abaixo.
+
+== Solução ==
 
 Acesse o arquivo:
 
@@ -75,8 +75,6 @@ altere a linha do logo da instituição para:
 {{{
 <img src="<?php $institution_logo?>" alt="Logo do <?php echo $institution_name?>" align="left" />
 }}}
-
-= Empréstimo =
 
 == Índice do empréstimo ==
 
