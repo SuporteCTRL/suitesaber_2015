@@ -69,6 +69,7 @@ Acesse os arquivos:
 || ...\htdocs\index.php ||
 || ...\htdocs\central\dataentry\menubases.php ||
 || ...\htdocs\central\common\institutional_info.php ||
+
 	   
 altere a linha do logo da instituição para:
 
