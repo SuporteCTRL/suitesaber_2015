@@ -76,6 +76,66 @@ altere a linha do logo da instituição para:
 <img src="<?php $institution_logo?>" alt="Logo do <?php echo $institution_name?>" align="left" />
 }}}
 
+== Alterar título das janelas ==
+
+É possível inserir o nome da instituição desejada como título de cada janela. Para definir o nome de cada tela, siga as instruções abaixo:
+
+*Tela inicial (exibida antes do login)*
+
+Acesse o arquivo:
+
+|| ...\htdocs\index.php ||
+		    
+insira a tag:
+
+{{{
+<title><?php echo $institution_name?></title>
+}}}
+
+*Tela inicial (exibida após o login)*
+
+Acesse o arquivo:
+
+|| ...\htdocs\central\common\header.php ||
+
+insira a tag:
+
+{{{
+<title><?php echo $institution_name?></title>			
+}}}
+
+*Catalogação*
+
+Acesse o arquivo:
+
+|| ...\htdocs\central\dataentry\inicio_main.php ||
+
+insira a tag:
+
+{{{
+echo "<HTML><title>$institution_name</title>
+}}}
+
+Para informar as definições da nova janela (quando escolhida esta opção no login) e alterar logo do cabeçalho, acesse o arquivo:
+
+|| ...\htdocs\index.php ||
+
+altere para:
+
+{{{
+<img src="<?php echo $institution_logo?>" alt="Logo do <?php echo $institution_name?>" align="left" />
+}}}
+			
+Logo após, acesse o arquivo:
+
+|| ...\htdocs\central\common\institutional_info.php ||
+
+altere para:
+
+{{{
+<img src="<?php echo $institution_logo?>" alt="Logo do <?php echo $institution_name?>" align="left" />
+}}}
+
 == Índice do empréstimo ==
 
 Ao clicar em uma das letras do índice utilizado para realizar a busca pelo número de registro do item e número do usuário, a janela de empréstimo (*prestar.php*) é fechada.
