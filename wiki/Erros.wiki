@@ -136,6 +136,28 @@ altere para:
 <img src="<?php echo $institution_logo?>" alt="Logo do <?php echo $institution_name?>" align="left" />
 }}}
 
+== Favicon ==
+
+Para adiconar um favicon, acesse o arquivo:
+
+|| ...\htdocs\index.php ||
+						
+adicione:
+
+{{{
+<link rel="shortcut icon" href="central/images/favicon.ico" />
+}}}
+			
+No arquivo:
+
+|| ...\htdocs\central\common\header.php ||
+	
+adicione:
+
+{{{
+<link rel="shortcut icon" href="../images/favicon.ico" />
+}}}
+
 == Índice do empréstimo ==
 
 Ao clicar em uma das letras do índice utilizado para realizar a busca pelo número de registro do item e número do usuário, a janela de empréstimo (*prestar.php*) é fechada.
