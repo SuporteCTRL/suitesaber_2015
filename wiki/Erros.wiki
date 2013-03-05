@@ -159,6 +159,42 @@ adicione:
 <link rel="shortcut icon" href="../images/favicon.ico" />
 }}}
 
+== Organizar breadcrumb ==
+
+Para realizar esta ação, é necessário acessar os arquivos abaixo:
+						
+|| ...\htdocs\central\dbadmin\trad_ayudas_dataentry.php ||
+|| ...\htdocs\central\dbadmin\translate.php ||
+|| ...\htdocs\central\dbadmin\translate_update.php ||
+|| ...\htdocs\central\dbadmin\trad_ayudas_dataentry.php ||
+|| ...\htdocs\central\dbadmin\trad_ayudas_statistics.php ||
+|| ...\htdocs\central\dbadmin\trad_ayudas_adm.php ||			
+|| ...\htdocs\central\dbadmin\advancedsearch_update.php ||	
+|| ...\htdocs\central\dbadmin\pft_update.php ||
+|| ...\htdocs\central\dbadmin\actualizararchivotxt.php ||
+						
+altere para:
+
+{{{
+				echo "
+					<div class=\"sectionInfo\">
+					<div class=\"breadcrumb\">".
+					$msgstr["tradyudas"]."
+					</div>
+					<div class=\"actions\">\n";
+
+		Original (com algumas variações):
+
+				echo " <body>
+				<div class=\"sectionInfo\">
+						<div class=\"breadcrumb\">"."<h5>".
+							$msgstr["tradyudas"]."</h5>
+						</div>
+						<div class=\"actions\">
+
+				";
+}}}
+
 == Índice do empréstimo ==
 
 Ao clicar em uma das letras do índice utilizado para realizar a busca pelo número de registro do item e número do usuário, a janela de empréstimo (*prestar.php*) é fechada.
