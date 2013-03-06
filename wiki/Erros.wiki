@@ -173,19 +173,10 @@ Para realizar esta ação, é necessário acessar os arquivos abaixo:
 || ...\htdocs\central\dbadmin\pft_update.php ||
 || ...\htdocs\central\dbadmin\actualizararchivotxt.php ||
 						
-altere para:
+alterar o seguinte trecho:
 
 {{{
-				echo "
-					<div class=\"sectionInfo\">
-					<div class=\"breadcrumb\">".
-					$msgstr["tradyudas"]."
-					</div>
-					<div class=\"actions\">\n";
-
-		Original (com algumas variações):
-
-				echo " <body>
+echo " <body>
 				<div class=\"sectionInfo\">
 						<div class=\"breadcrumb\">"."<h5>".
 							$msgstr["tradyudas"]."</h5>
@@ -194,6 +185,18 @@ altere para:
 
 				";
 }}}
+
+para:
+
+{{{
+				echo "
+					<div class=\"sectionInfo\">
+					<div class=\"breadcrumb\">".
+					$msgstr["tradyudas"]."
+					</div>
+					<div class=\"actions\">\n";
+}}}
+
 
 == Índice do empréstimo ==
 
