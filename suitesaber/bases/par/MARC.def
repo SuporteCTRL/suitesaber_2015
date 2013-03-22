@@ -1,7 +1,6 @@
 [FILE_LOCATION]
 
 FILE DATABASE.*=%path_database%marc/data/marc.*
-FILE copies.*=%path_database%copies/data/copies.*
 FILE DATABASE.XML=%path_database%marc/pfts/lilXML.pft
 FILE loanobjects.*=%path_database%loanobjects/data/loanobjects.*
 FILE cabecalho.pft=%path_database%marc/pfts/%lang%/cabecalho.pft
@@ -13,7 +12,9 @@ FILE todos_iah.pft=%path_database%marc/pfts/%lang%/todos_iah.pft
 FILE descritores.pft=%path_database%marc/pfts/%lang%/descritores.pft
 FILE doc-principal.pft=%path_database%marc/pfts/%lang%/doc-principal.pft
 FILE doc-principal-iah.pft=%path_database%marc/pfts/%lang%/doc-principal-iah.pft
-FILE server.pft=%path_database%marc/pfts/%lang%/server.pft
+FILE relators-700.pft=%path_database%marc/pfts/%lang%/relators-700.pft
+FILE relators-710.pft=%path_database%marc/pfts/%lang%/relators-710.pft
+FILE relators-711.pft=%path_database%marc/pfts/%lang%/relators-711.pft
 FILE BOOKMARK.PFT=%path_database%marc/pfts/%lang%/bookmark.pft
 FILE DBLIL_LINK.PFT=%path_database%marc/pfts/%lang%/dblil_link.pft
 FILE availability.pft=%path_database%marc/pfts/%lang%/availability.pft
