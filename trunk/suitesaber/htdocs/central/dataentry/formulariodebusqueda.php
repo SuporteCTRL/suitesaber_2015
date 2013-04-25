@@ -247,7 +247,7 @@ function Diccionario(jx){
 		echo "<div class=\"helper\">
 			<a href=../documentacion/ayuda.php?help=". $_SESSION["lang"]."/buscar.html target=_blank>".$msgstr["help"]."</a>&nbsp &nbsp";
 		if (isset($_SESSION["permiso"]["CENTRAL_EDHLPSYS"]))
-			echo "<a href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/buscar.html target=_blank>".$msgstr["edhlp"]."</a>";
+			echo "<a  href=../documentacion/edit.php?archivo=".$_SESSION["lang"]."/buscar.html target=_blank>".$msgstr["edhlp"]."</a>";
 		echo "&nbsp; &nbsp; Script: buscar.php</font>";
 		echo "</div>";
 	}
@@ -271,7 +271,7 @@ function Diccionario(jx){
 	echo "<input type=hidden name=Operadores value=\"\">\n";
 	echo "<input type=hidden name=Expresion value=\"\">\n";
 	if (isset($arrHttp["prestamo"])) echo "<input type=hidden name=prestamo value=\"".$arrHttp['prestamo']."\">\n";
-	if (isset($arrHttp["Tabla"])) echo "<input type=hidden name=Tabla value=".$arrHttp['Tabla'].">\n";
+	if (isset($arrHttp["Tabla"])) echo "<input  type=hidden name=Tabla value=".$arrHttp['Tabla'].">\n";
 	echo "<br>\n<center>\n";
 	echo "<table valign=center cellpadding=0 Cellspacing=0 border=0>\n
 			<tr>
@@ -350,7 +350,7 @@ function Diccionario(jx){
  		}else {
        		echo "<input type=hidden name=oper>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;";
     	}
-    	echo "<font size=1><a href=\"javascript:Diccionario(".$jx.")\"><font size=1>".$msgstr["indice"]."</a>\n";
+    	echo "<font size=1><a id=botoes href=\"javascript:Diccionario(".$jx.")\"><font size=1>".$msgstr["indice"]."</a>\n";
    		echo "</td>\n";
 
 	}
