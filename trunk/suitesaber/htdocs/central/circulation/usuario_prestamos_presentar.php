@@ -253,7 +253,7 @@ if ($sanctions_output!="") {
 
 if (count($prestamos)>0) $ec_output.= "<br /><strong><a id=botoes href=javascript:DevolverRenovar('D')>".$msgstr["return"]."</a>  <a   id=botoes href=javascript:DevolverRenovar('R')>".$msgstr["renew"]."</a></strong>
 <a id=botoes  href=\"javascript: void(0)\" 
-   onclick=\"window.open('/central/dataentry/imprimir_g.php?base=trans&cipar=trans.par&fgen=recibo|CT&encabezado=s&Expresion=".$arrHttp["usuario"]."',   'windowname1',  'width=350, height=700'); return false;\">&nbsp;Recibo de empréstimo&nbsp;</a>
+   onclick=\"window.open('/central/dataentry/imprimir_g.php?base=trans&cipar=trans.par&fgen=recibo|CT&encabezado=s&Expresion=CL_".$arrHttp["usuario"]."',   'windowname1',  'width=350, height=700'); return false;\">&nbsp;Recibo de empréstimo&nbsp;</a>
 
    ";
 $ec_output.= "</form>";
