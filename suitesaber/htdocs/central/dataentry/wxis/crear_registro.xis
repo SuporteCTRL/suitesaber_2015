@@ -25,11 +25,11 @@
     			<update>
 					<field action=import tag=9090>9090</field>
 					<field action=import tag=9060>9060</field>
-     				<proc><pft>,'d*'(if p(v9090) then if v9090*4<>'' then 'a'v9090.4'²',replace(v9090*4,'\"','"'),'²'/ fi fi)</pft></proc>
+     				<proc><pft>,'d*'(if p(v9090) then if v9090*4<>'' then 'a'v9090.4'²',replace(v9090*4,'\"','"'),'²'/ fi fi) 'a980²'v9060,'^d'date'²'</pft></proc>
             		<write>Unlock</write>
 					<field action=import tag=3030>3030</field>
 					<field action=import tag=3031>3031</field>
-					<display><pft type=reload><pft>if p(v3031) then v3031 else "@"v3030".pft" fi</pft></pft></display>
+					<display><pft type=reload><pft>if p(v3031) then v3031 else '@',v3030'.pft' fi</pft></pft></display>
 
     			</update>
  			</do>
