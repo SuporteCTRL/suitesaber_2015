@@ -1,9 +1,8 @@
 <?php
 $Permiso=$_SESSION["permiso"];
 $fp = file($db_path."bases.dat");
-
 include("../config.php");
-
+include("header.php");
 if (!$fp){
 	echo "falta el archivo bases.dat";
 	die;
@@ -17,22 +16,34 @@ foreach ($fp as $linea){
 	}
 
 }
-include("header.php");
 $central="";
 $circulation="";
 $acquisitions="";
 $ixcentral=0;
 foreach ($_SESSION["permiso"] as $key=>$value){
-	if (substr($key,0,8)=="CENTRAL_")  	{		$central="Y";
-		$ixcentral=$ixcentral+1;	}
+	if (substr($key,0,8)=="CENTRAL_")  	{
+		$central="Y";
+		$ixcentral=$ixcentral+1;
+	}
 	if (substr($key,0,5)=="CIRC_")  	$circulation="Y";
 	if (substr($key,0,4)=="ACQ_")  		$acquisitions="Y";
 
 }
 // Se determina el nombre de la página de ayuda a mostrar
+if (!isset($_SESSION["MODULO"])) {
+	if ($central=="Y" and $ixcentral>1) {
+		$arrHttp["modulo"]="catalog";
+	}else{
+		if ($circulation=="Y"){
+			$arrHttp["modulo"]="loan";
+		}else{
+			$arrHttp["modulo"]="acquisitions";
+		}
+	}
+}
 
-if (!isset($_SESSION["MODULO"])) {	if ($central=="Y" and $ixcentral>1) {		$arrHttp["modulo"]="catalog";	}else{		if ($circulation=="Y"){			$arrHttp["modulo"]="loan";		}else{			$arrHttp["modulo"]="acquisitions";		}	}}
-switch ($arrHttp["modulo"]){	case "catalog":
+switch ($arrHttp["modulo"]){
+	case "catalog":
 		$ayuda="homepage.html";
 		$module_name=$msgstr["catalogacion"];
 		$_SESSION["MODULO"]="catalog";
@@ -46,7 +57,6 @@ switch ($arrHttp["modulo"]){	case "catalog":
 		$ayuda="circulation/homepage.html";
 		$module_name=$msgstr["loantit"];
 		$_SESSION["MODULO"]="loan";}
-
 ?>
 <script languaje=javascript>
 	function CambiarLenguaje(){
@@ -88,7 +98,8 @@ switch ($arrHttp["modulo"]){	case "catalog":
 		    	return
 		    }
 		}
-	    switch(Modulo){			case 'table':
+	    switch(Modulo){
+			case 'table':
 				document.admin.action="../dataentry/browse.php"
 				break
 	    	case "resetautoinc":
@@ -144,7 +155,6 @@ switch ($arrHttp["modulo"]){	case "catalog":
 	}
 	</script>
 
-
 	<script>
 	$(function() {
 		$( "#tabs" ).tabs().find( ".ui-tabs-nav" ).sortable({ axis: "x" });
@@ -167,7 +177,9 @@ switch ($arrHttp["modulo"]){	case "catalog":
  
 </head>
 <body>
+
 <?php include("institutional_info.php");
+
 	if (isset($msg_path))
 		$path_this=$msg_path;
 	else
@@ -359,7 +371,6 @@ if (isset($Permiso["CENTRAL_Z3950CONF"])  or isset($Permiso["CENTRAL_ALL"])){
 <?php
 }
 ?>
-
 			</div>
 			<div class="spacer">&#160;</div>
 			</div>
@@ -367,9 +378,8 @@ if (isset($Permiso["CENTRAL_Z3950CONF"])  or isset($Permiso["CENTRAL_ALL"])){
 			<div class="bbLeft">&#160;</div>
 			<div class="bbRight">&#160;</div>
 		</div>
+		</div>
 	</div>
-
-</div>
 <?php
 
 if (isset($Permiso["CENTRAL_ALL"])  or isset($Permiso["CENTRAL_CRDB"])  or isset($Permiso["CENTRAL_URDADM"])
@@ -377,12 +387,9 @@ if (isset($Permiso["CENTRAL_ALL"])  or isset($Permiso["CENTRAL_CRDB"])  or isset
 {
 ?>
 
-
-
 <!-- SEGUNDO ACORDEON -->
 
-<div id="tabs-2"> 
-                    
+<div id="tabs-2">               
 			<div class="mainBox" onmouseover="this.className = 'mainBox mainBoxHighlighted';" onmouseout="this.className = 'mainBox';">
 				<div class="boxTop">
 					<div class="btLeft">&#160;</div>
