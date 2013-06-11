@@ -61,10 +61,11 @@ if p(v245) then '</tr>' fi,
 if s(v240^a,v730^a,v740^a)<>'' then 
 '<tr class="mrc"><th class="mrc">Título uniforme</th>
 <td class="mrc">',
-
-     (v240^a'<br />' )
-	 (v730^a'<br />' )
-	 (v740^a'<br />' ) fi,
+   if p(v240) then (v240^a'<br />' ) fi,
+	if p(v730) then (v730^a'<br />' ) fi,
+	if p(v740) then (v740^a'<br />' ) fi, 
+	 
+fi,
 	 
 if s(v240^a,v730^a,v740^a)<>'' then  '</td></tr>'/ fi, 
 
@@ -174,7 +175,7 @@ if p(v310^a) then '<tr class="mrc"><th class="mrc">Periodicidade</th><td class="
 
 '<!-- Notas -->'
 
-(if p(v500^a) then if occ=1 then '<tr class="mrc"><th class="mrc">Nota geral</th><td class="mrc">',fi,,v500^a+|;  |,,'<br />'/fi/), if p(v500) then '</td></tr>' fi, 
+(if p(v500^a) then if occ=1 then '<tr class="mrc"><th class="mrc">Nota geral</th><td class="mrc">',fi,,v500^a+|  |,,'<br />'/fi/), if p(v500) then '</td></tr>' fi, 
 
 (if p(v502^a) then if occ=1 then '<tr class="mrc"><th class="mrc">Nota de dissertação ou tese</th><td class="mrc">',fi,,v502^a+|;  |,,'<br />'/fi/), if p(v502) then '</td></tr>' fi,
 
