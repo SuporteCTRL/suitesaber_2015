@@ -1,0 +1,228 @@
+O presente tutorial foi organizado a partir de instalações feitas no Ubuntu 11.04.
+
+
+# Instalação da Suíte Saber #
+
+O exemplo de instalação que daremos é igual ao executado pela [Control](http://control.com.br) a partir do [Ubuntu](http://www.ubuntu-br.org/).
+
+## Apache ##
+No terminal do Ubuntu instale o Apache com o seguinte comando:
+```
+$ sudo apt-get install apache2
+```
+
+
+Confirme todas as solicitações e em seguida instale o PHP5 com o comando:
+
+```
+$ sudo apt-get install php5
+```
+
+
+Em seguida instale as extensões:
+
+```
+$ sudo apt-get install php5-curl libapache2-mod-php5 libyaz4-dev php5-gd php5-gmp php5-dev php-pear php5-mcrypt php5-tidy php5-xsl yaz vim
+```
+
+Instale o YAZ para o funcionamento do protocolo Z39.50
+
+```
+$ sudo pecl install yaz
+```
+
+Quando aparecer a mensagem:
+
+`path to YAZ installation? [autodetect] :`
+
+pressione _ENTER_
+
+Em seguida crie o arquivo yaz.ini
+```
+$ sudo vi /etc/php5/conf.d/yaz.ini
+```
+
+cole o conteúdo abaixo:
+```
+extension=yaz.so
+```
+
+Pronto, agora seu servidor já está pronto para receber a Suíte Saber.
+
+## Download ##
+
+Para instalar a partir de nosso SVN instale o Subversion.
+
+```
+$ sudo apt-get install subversion
+```
+
+
+Com o terminal do seu Ubuntu aberto vá em /var/www/
+
+```
+$ cd /var/www/
+```
+
+Em seguida digite:
+
+```
+$ sudo svn checkout http://suitesaber.googlecode.com/svn/trunk/suitesaber
+```
+
+Desta forma você já obterá a suíte em sua estrutura original.
+
+No caso de preferir o download do pacote de instalação. Após o download, descompacte o diretório /suitesaber em /var/www/
+
+```
+$ sudo tar -xzvf suitesaber.tar.gz
+```
+
+Os diretórios devem ficar dispostos como na estrutura abaixo:
+
+  * /var/www/suitesaber/htdocs
+  * /var/www/suitesaber/bases
+  * /var/www/suitesaber/cgi-bin
+  * /var/www/suitesaber/temp
+
+Para a criação dos arquivos de configuração, dê o seguinte comando:
+
+```
+$ cd /var/www/suitesaber/htdocs
+$ sudo ./install.sh
+```
+
+Certifique-se que os diretórios /htdocs e /cgi-bin estão com permissão 755 e os diretórios /htdocs/bases (pasta dos uploads) /bases e /temp 777, aplicando recursivamente os seguintes comandos:
+
+
+```
+$ sudo chmod 755 -R /var/www/suitesaber/htdocs/ /var/www/suitesaber/cgi-bin/
+```
+
+```
+$ sudo chmod 777 -R /var/www/suitesaber/htdocs/bases/ /var/www/suitesaber/bases/ /var/www/suitesaber/temp/ 
+```
+
+## Pacote para geração de códigos de barras ##
+
+A geração de códigos de barras é feita a partir do script de [PHP-Barcode](http://www.ashberg.de/php-barcode/), criado e mantido por [Folke Ashberg](http://www.ashberg.de/).
+
+1. Instalar dependência: [GNU Barcode](http://www.gnu.org/software/barcode/)
+```
+$ sudo apt-get install barcode
+```
+
+2. Instalar PHP-Barcode
+
+```
+$ cd /opt
+
+$ sudo wget http://www.ashberg.de/php-barcode/download/files/genbarcode-0.4.tar.gz
+
+$ sudo tar -xvf genbarcode-0.4.tar.gz
+
+$ cd genbarcode-0.4/
+
+$ sudo make install
+```
+
+## Configuração da Suíte Saber ##
+
+Caso você faça uma instalação com uma estrutura diferente a deste tutorial você precisará editar os arquivos:
+
+  * /htdocs/central/config.php
+  * /htdocs/iah/scripts/iah.def.php
+  * /htdocs/site/bvs-site-config.php
+
+e editar o caminho físico da instalação, que está por padrão em: /var/www/suitesaber/
+
+## Criando o Virtualhost ##
+
+No seu terminal digite:
+
+```
+$ sudo vi /etc/apache2/sites-available/suitesaber
+```
+
+cole o conteúdo abaixo:
+
+```
+
+<VirtualHost *:9090>
+        ServerAdmin webmaster@suitesaber.org
+        ServerName localhost
+        DocumentRoot /var/www/suitesaber/htdocs
+        <Directory />
+                Options FollowSymLinks
+                AllowOverride None
+        </Directory>
+        <Directory /var/www/suitesaber/htdocs/>
+                Options -Indexes FollowSymLinks -MultiViews
+                AllowOverride None
+                Order allow,deny
+                allow from all
+        </Directory>
+
+        ScriptAlias /cgi-bin/ /var/www/suitesaber/cgi-bin/
+        <Directory "/var/www/suitesaber/cgi-bin">
+                AllowOverride None
+                Options +ExecCGI -MultiViews +SymLinksIfOwnerMatch
+                Order allow,deny
+                Allow from all
+        </Directory>
+
+
+        ErrorLog /var/log/apache2/error.log
+
+        # Possible values include: debug, info, notice, warn, error, crit,
+        # alert, emerg.
+        LogLevel warn
+
+        CustomLog /var/log/apache2/access.log combined
+
+    Alias /doc/ "/usr/share/doc/"
+    <Directory "/usr/share/doc/">
+        Options Indexes MultiViews FollowSymLinks
+        AllowOverride None
+        Order deny,allow
+        Deny from all
+        Allow from 127.0.0.0/255.0.0.0 ::1/128
+    </Directory>
+
+</VirtualHost>
+
+```
+
+**Observação**: caso você faça uma instalação com uma estrutura diferente a deste tutorial você precisará editar o caminho físico do VirtualHost.
+
+Salve com o comando :w e saia :q em seguida edite o arquivo /etc/apache2/ports.conf
+
+```
+$ sudo vi /etc/apache2/ports.conf
+```
+
+Acrescente:
+
+```
+Listen 9090
+```
+
+Salve novamente com :w e saia com :q. Instale o virtualhost com o comando:
+
+```
+$ sudo a2ensite suitesaber
+```
+
+Reinicie o Apache:
+
+```
+$ sudo /etc/init.d/apache2 restart
+```
+
+Pronto agora é só abrir o Mozilla Firefox ou o Google Chrome e utilizar o programa.
+
+Lembre-se, você colocou a porta 9090, logo, para acessar sua Suíte você precisará digitar http://localhost:9090 no seu navegador.
+
+Login: saber
+
+Senha: adm

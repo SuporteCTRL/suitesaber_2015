@@ -1,0 +1,59 @@
+# Visão Geral #
+A Suíte Saber é um conjunto de soluções para gestão e organização de bibliotecas e acervos. É uma variante do software ABCD criado pela [BIREME](http://.bireme.br) em 2008.
+
+A Suíte é desenvolvida em PHP utilizando HTML5, CSS3 e JQuery com objetivo de oferecer suavidade e praticidade de uso da ferramenta.
+
+
+---
+
+
+# Módulos #
+A Suíte Saber possui um agrupamento de soluções que formam os seguintes módulos:
+
+  * Controle de aquisição
+  * Catalogação
+  * Empréstimo
+  * Site da instituição/pesquisa
+
+# Dados técnicos #
+
+O aplicativo utiliza a estrutura de banco de dados [CDS/ISIS](http://oraculo.inf.br/index.php?title=CDS/ISIS) desenvolvida pela UNESCO. O CDS/ISIS é um banco de dados textual que trabalha nativamente com formatos bibliográficos que fazem uso de campos e subcampos.
+
+É possível fazer importação de registros com a utilização do protocolo Z3950 e do ISO2709.
+
+O sistema exporta relatórios em Word, Excel, TXT e HTML.
+
+## Tecnologia ##
+
+O Suíte saber necessita de um servidor Apache 2.x e PHP 5.2.x
+
+Extensões essenciais PHP:
+
+  * php5-curl
+  * php5-gd
+  * php5-gmp
+  * php5-mcrypt
+  * php5-tidy
+  * php5-xsl
+  * yaz
+
+
+# Links #
+
+  * [Esqueleto básico em HTML do Suíte Saber](https://docs.google.com/document/pub?id=1QrRvqc8g6uE0NNVLv2xTAP4HWE7PojeXYSA12Xh9vmw")
+
+  * [Relação de campos automáticos](https://docs.google.com/spreadsheet/pub?key=0AkPvjw8N5ATwdE5vZkxNVjJXODN0OGhtbG1yU2g3OXc&single=true&gid=0&output=html)
+
+  * [Ligação entre registros da mesma base de dados (comando REF)](https://docs.google.com/document/pub?id=1FPdC-NHesRPfZm_7Z5G1ZFKuuzbRnVJ_LJxA0pEiNZ0)
+
+# Download a partir do SVN #
+
+Baixe o Suíte Saber para o seu host utilizando o seguinte comando:
+
+```
+$ sudo svn checkout http://suitesaber.googlecode.com/svn/trunk/suitesaber
+```
+
+Login: saber
+
+Senha: adm

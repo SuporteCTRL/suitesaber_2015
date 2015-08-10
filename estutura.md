@@ -1,0 +1,46 @@
+# Layout Básico #
+
+Em princípio a Suíte Saber manterá um layout quase idêntico ao do ABCD, porém algumas DIVs mudaram de posição.
+
+Pedimos aos colaboradores que mantenham esta estrutura fixa durante o desenvolvimento de novas telas.
+
+
+```
+//--CABEÇALHO PRINCIPAL--//
+
+<div class="heading">
+
+	<div class="institutionalInfo"></div>
+
+	<div class="userInfo">
+		<span>NOME DO USUÁRIO | PERFIL</span>
+		<a href=#>LOGOUT</a>
+	</div>
+
+</div>
+
+//--SEGUNDO CABEÇALHO--//
+
+<div class="sectionInfo">
+       <div class="language"></div>
+</div>
+
+<div class="breadcrumb">
+	<h3>TÍTULO DA SEÇÃO</h3>
+</div>
+
+<div class="actions">
+</div>
+
+<div class="helper" >
+	<a href=PÁGINA DE AJUDA></a>
+</div>
+
+//--CORPO DA PÁGINA--//
+<div class="middle homepage">
+</div>
+
+//--RODAPÉ--//
+<div class="footer">
+</div>
+```
