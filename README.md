@@ -1,4 +1,4 @@
-Visão Geral
+<h4>Visão Geral</h4>
 
 O software ABCD (Automação de Bibliotecas e Centros de Documentação) é uma aplicação Web, código aberto (software livre) e multilíngue de gestão de Bibliotecas e Arquivos, criado em 2008 e lançado em novembro de 2009 pela BIREME (Centro Latino-Americano e do Caribe de Informação em Ciência da Saúde). A BIREME, com o apoio da UNESCO, é a instituição responsável pela coordenação do desenvolvimento, manutenção e distribuição gratuita do sistema.
 Em 2010 a Control Informação e Documentação adotou o Sistema ABCD como uma alternativa de software viável para automação de acervos bibliográficos e arquivísticos. Desde então estamos oferecendo serviços de instalação, customização e treinamento, bem como realizando análises, testes e implementação de melhorias no ABCD.
@@ -25,20 +25,21 @@ O aplicativo utiliza a estrutura de banco de dados CDS/ISIS desenvolvida pela UN
 
 O sistema exporta relatórios em Word, Excel, TXT e HTML.
 
-Tecnologia
+<h4>Tecnologia</h4>
 
 O Suíte saber necessita de um servidor Apache 2.x e PHP5.x
 
-Extensões essenciais PHP:
+<h4>Extensões essenciais PHP:</h4>
 
-php5-curl
-php5-gd
-php5-gmp
-php5-mcrypt
-php5-tidy
-php5-xsl
-yaz
-Links
+<li>php5-curl</li>
+<li>php5-gd</li>
+<li>php5-gmp</li>
+<li>php5-mcrypt</li>
+<li>php5-tidy</li>
+<li>php5-xsl</li>
+<li>yaz</li>
+
+<h4>Links</h4>
 
 Esqueleto básico em HTML do Suíte Saber
 Relação de campos automáticos
